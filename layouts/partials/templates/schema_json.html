@@ -1,0 +1,131 @@
+{{- if .IsHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {{ (site.Params.schema.publisherType | default "Organization" | title) | jsonify }},
+  "name": {{ site.Title | jsonify }},
+  "url": {{ site.Home.Permalink | jsonify }},
+  "description": {{ (site.Params.description | plainify | truncate 180) | jsonify }},
+  {{- if (eq site.Params.schema.publisherType "Person") }}
+  "image": {{ (site.Params.assets.favicon | default "favicon.ico" | absURL) | jsonify }},
+  {{- else }}
+  "logo": {{ (site.Params.assets.favicon | default "favicon.ico" | absURL) | jsonify }},
+  {{- end }}
+  "sameAs": [
+    {{- if site.Params.schema.sameAs }}
+      {{- range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " | jsonify }}{{ end }}
+    {{- else }}
+      {{- range $i, $e := site.Params.SocialIcons }}{{ if $i }}, {{ end }}{{ trim $e.url " " | safeURL | jsonify }}{{ end }}
+    {{- end }}
+  ]
+}
+</script>
+{{- else if (or .IsPage .IsSection) }}
+{{- $url := replace .Parent.Permalink (printf "%s" site.Home.Permalink) "" }}
+{{- $langURL := strings.TrimPrefix (printf "%s/" .Lang) $url }}
+{{- $bcList := split $langURL "/" }}
+
+{{- $scratch := newScratch }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+  {{- range $index, $element := $bcList }}
+    {{- $scratch.Add "path" (printf "%s/" $element) }}
+    {{- $bcPage := site.GetPage ($scratch.Get "path") }}
+    {{- if and $bcPage (gt (len .) 0) }}
+    {{- if $index }}, {{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ add 1 $index }},
+      "name": {{ $bcPage.Name | jsonify }},
+      "item": {{ $bcPage.Permalink | jsonify }}
+    }
+    {{- end }}
+  {{- end }}
+  {{- if ge (len $bcList) 2 }}, {{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ len $bcList }},
+      "name": {{ .Name | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+  ]
+}
+</script>
+{{- if .IsPage }}
+{{- $description := "" }}
+{{- with .Description | plainify }}
+  {{- $description = . }}
+{{- else }}
+  {{- $description = .Summary | plainify }}
+{{- end }}
+{{- $imageURL := "" }}
+{{- if .Params.cover.image }}
+  {{- if ne .Params.cover.relative true }}
+    {{- $imageURL = .Params.cover.image | absURL }}
+  {{- else }}
+    {{- $imageURL = (path.Join .RelPermalink .Params.cover.image) | absURL }}
+  {{- end }}
+{{- else }}
+  {{- $images := partial "templates/_funcs/get-page-images" . }}
+  {{- with index $images 0 }}
+    {{- $imageURL = .Permalink }}
+  {{- end }}
+{{- end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | plainify | jsonify }},
+  "name": {{ .Title | plainify | jsonify }},
+  "description": {{ $description | jsonify }},
+  "keywords": [
+    {{- if .Params.keywords }}
+      {{- range $i, $e := .Params.keywords }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{- else }}
+      {{- range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e | jsonify }}{{ end }}
+    {{- end }}
+  ],
+  "articleBody": {{ .Plain | jsonify }},
+  "wordCount": {{ .WordCount }},
+  "inLanguage": {{ (.Language.Lang | default "en-us") | jsonify }},
+  {{- with $imageURL }}
+  "image": {{ . | jsonify }},
+  {{- end }}
+  "datePublished": {{ .PublishDate.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
+  {{- with (.Params.author | default site.Params.author) }}
+  "author":
+    {{- if or (eq (printf "%T" .) "[]string") (eq (printf "%T" .) "[]interface {}") }}
+  [{{- range $i, $v := . -}}
+  {{- if $i }}, {{ end -}}
+  {
+    "@type": "Person",
+    "name": {{ $v | jsonify }}
+  }
+  {{- end }}],
+    {{- else }}
+  {
+    "@type": "Person",
+    "name": {{ . | jsonify }}
+  },
+    {{- end }}
+  {{- end }}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  },
+  "publisher": {
+    "@type": {{ (site.Params.schema.publisherType | default "Organization" | title) | jsonify }},
+    "name": {{ site.Title | jsonify }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ (site.Params.assets.favicon | default "favicon.ico" | absURL) | jsonify }}
+    }
+  }
+}
+</script>
+{{- end }}
+{{- end }}

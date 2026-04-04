@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "68abb3a0d7439004",
+    "id": "a3a6232bd61b2951",
     "type": "split",
     "children": [
       {
-        "id": "cc039d7f25b1163b",
+        "id": "f57aaa9c602839c9",
         "type": "tabs",
         "children": [
           {
-            "id": "5600d2073d099ce7",
+            "id": "5aa253ca004f09d8",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "1bef7484da03b321",
+    "id": "41edcf69966925b8",
     "type": "split",
     "children": [
       {
-        "id": "7b069907430b95e0",
+        "id": "33cadd1a617fa26b",
         "type": "tabs",
         "children": [
           {
-            "id": "0afd438831b45cf7",
+            "id": "8d8d3df56ebadb65",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "cdcbb0f4716fe6a0",
+            "id": "691754af0d1d0d39",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +61,7 @@
             }
           },
           {
-            "id": "3c4a1ff1042519ea",
+            "id": "e93a66d2d2eb3454",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,15 +77,15 @@
     "width": 300
   },
   "right": {
-    "id": "9c623e4afb078fbd",
+    "id": "a249cd9d1dc47253",
     "type": "split",
     "children": [
       {
-        "id": "eb374930abbfce4c",
+        "id": "fc5f1ef63807bde6",
         "type": "tabs",
         "children": [
           {
-            "id": "902ffee5b120e0ec",
+            "id": "c30b3e8e68a34829",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +103,7 @@
             }
           },
           {
-            "id": "a680ac92debc129f",
+            "id": "5f03715984901418",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -116,7 +116,7 @@
             }
           },
           {
-            "id": "ae4c8da92c504224",
+            "id": "109e9e610f365c33",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +131,7 @@
             }
           },
           {
-            "id": "66b9c05bc07de6bc",
+            "id": "7470cc0ca5ea0f14",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -145,7 +145,7 @@
             }
           },
           {
-            "id": "038f4a73c4d3119e",
+            "id": "7ec5d09df62bd849",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -176,53 +176,9 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "5600d2073d099ce7",
+  "active": "8d8d3df56ebadb65",
   "lastOpenFiles": [
-    "public/assets/css/stylesheet.62d7dcab917780e582fb74b27ca5e0630db50b6c8d82a382122698be5301e396.css",
-    "public/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ff62d3b8868db9e8.jpg",
-    "public/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ea0fac86708034af.webp",
-    "resources/_gen/images/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ea0fac86708034af.webp",
-    "resources/_gen/images/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ff62d3b8868db9e8.jpg",
-    "public/blog/書摘/到達彼岸的智慧/心經_hu_556b546ef185c93f.jpg",
-    "public/blog/書摘/到達彼岸的智慧/心經_hu_e48ca61d2e2a9580.webp",
-    "resources/_gen/images/blog/書摘/到達彼岸的智慧/心經_hu_e48ca61d2e2a9580.webp",
-    "resources/_gen/images/blog/書摘/到達彼岸的智慧/心經_hu_556b546ef185c93f.jpg",
-    "public/blog/書摘/見佛殺佛/見佛殺佛_hu_eb2eade9cc788c33.jpg",
-    "public/blog/書摘/見佛殺佛/見佛殺佛_hu_11a42aaf755fdb5.webp",
-    "content/blog/_index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/10自傷疼痛/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/09心臟瓣膜疼痛/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/08腕隧道症候群/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/07胃痛/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/06腰部肌肉纖維化/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/05貝西氏症/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/04生理期疼痛/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/03未知疼痛/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/02僵直性脊椎炎/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/01成果發表/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/00撿拾疼痛的碎片/index.md",
-    "blog_pagebundle_backup/聆聽疼痛計畫/10自傷疼痛",
-    "blog_pagebundle_backup/聆聽疼痛計畫/09心臟瓣膜疼痛",
-    "blog_pagebundle_backup/聆聽疼痛計畫/08腕隧道症候群",
-    "blog_pagebundle_backup/聆聽疼痛計畫/07胃痛",
-    "blog_pagebundle_backup/聆聽疼痛計畫/06腰部肌肉纖維化",
-    "blog_pagebundle_backup/聆聽疼痛計畫/05貝西氏症",
-    "blog_pagebundle_backup/聆聽疼痛計畫/04生理期疼痛",
-    "blog_pagebundle_backup/聆聽疼痛計畫/03未知疼痛",
-    "blog_pagebundle_backup/聆聽疼痛計畫/02僵直性脊椎炎",
-    "blog_pagebundle_backup/聆聽疼痛計畫/01成果發表",
-    "blog_pagebundle_backup/書摘/見佛殺佛/index.md",
-    "blog_pagebundle_backup/書摘/英雄之旅/index.md",
-    "blog_pagebundle_backup/書摘/聆聽疼痛/index.md",
-    "blog_pagebundle_backup/書摘/病從所願/index.md",
-    "blog_pagebundle_backup/書摘/旁觀他人之痛苦/index.md",
-    "blog_pagebundle_backup/書摘/敘事治療工作地圖/index.md",
-    "blog_pagebundle_backup/書摘/擁抱陰影/index.md",
-    "blog_pagebundle_backup/書摘/找回家庭的療癒力/index.md",
-    "blog_pagebundle_backup/書摘/成為一個人/index.md",
-    "blog_pagebundle_backup/日常書寫/關於語言的反思/index.md",
-    "blog_pagebundle_backup/電影心得/鄰家兄弟/index.md",
-    "blog_pagebundle_backup/電影心得/范保德/index.md",
-    "blog_pagebundle_backup/電影心得/阿鼻/index.md"
+    "layouts/partials/templates/schema_json.html",
+    "layouts/partials/templates"
   ]
 }
