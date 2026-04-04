@@ -2,7 +2,7 @@
   max-width: 920px;
   margin: 0 auto;
   padding: 2rem 0 4rem;
-  color: #1f2937;
+  color: var(--primary);
 }
 
 .about-hero {
@@ -19,7 +19,7 @@
 
 .about-kicker {
   margin: 0 0 0.5rem;
-  color: #7c8a98;
+  color: var(--secondary);
   font-size: 0.9rem;
   letter-spacing: 0.08em;
 }
@@ -29,13 +29,13 @@
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
   letter-spacing: -0.03em;
-  color: #111827;
+  color: var(--primary);
 }
 
 .about-subtitle {
   width: min(100%, 620px);
   margin: 1rem auto 0;
-  color: #4b5563;
+  color: var(--secondary);
   font-size: 1rem;
   line-height: 1.8;
 }
@@ -56,8 +56,8 @@
   height: 100%;
   object-fit: cover;
   border-radius: 999px;
-  border: 3px solid #ffffff;
-  background: #ffffff;
+  border: 3px solid var(--theme);
+  background: var(--theme);
 }
 
 .about-grid {
@@ -82,18 +82,18 @@
 }
 
 .about-card-soft {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 252, 0.96));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--entry) 96%, white 4%), color-mix(in srgb, var(--theme) 92%, var(--entry) 8%));
 }
 
 .about-section-title {
   margin: 0 0 1rem;
-  color: #1f6f77;
+  color: var(--primary);
   font-size: 1.15rem;
   letter-spacing: 0.02em;
 }
 
 .about-content {
-  color: #374151;
+  color: var(--primary);
   font-size: 1.04rem;
   line-height: 2;
 }
@@ -113,7 +113,7 @@
 }
 
 .about-content a:hover {
-  color: #1f6f77;
+  color: var(--primary);
   border-bottom-color: #64e5eeda;
 }
 
