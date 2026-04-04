@@ -1,0 +1,58 @@
+{{- with .cxt -}}
+{{- $coverImage := .Params.cover.image -}}
+{{- if and (not $coverImage) (not $.IsSingle) -}}
+  {{- $coverImage = site.Params.salonDefaultCover -}}
+{{- end -}}
+{{- if and $coverImage (not $.isHidden) -}}
+<figure class="entry-cover">
+    {{- $loading := cond $.IsSingle "eager" "lazy" -}}
+    {{- $addLink := and site.Params.cover.linkFullImages $.IsSingle -}}
+    {{- $alt := (.Params.cover.alt | default .Params.cover.caption | default .Title | plainify) -}}
+
+    {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) -}}
+    {{- $pageBundleCover := (.Resources.ByType "image").GetMatch (printf "%s.*" $coverStem) -}}
+    {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s.*" $coverStem) -}}
+    {{- if not $pageBundleCover -}}
+      {{- $pageBundleCover = (.Resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
+    {{- end -}}
+    {{- if not $globalResourcesCover -}}
+      {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
+    {{- end -}}
+    {{- $cover := or $pageBundleCover $globalResourcesCover -}}
+
+    {{- $imgdl := $coverImage -}}
+    {{- if not (or (hasPrefix $coverImage "http://") (hasPrefix $coverImage "https://")) -}}
+      {{- $imgdl = $coverImage | relURL -}}
+    {{- end -}}
+    {{- if $cover -}}
+      {{- $imgdl = $cover.RelPermalink -}}
+    {{- end -}}
+
+    {{- if $addLink -}}
+      <a href="{{ $imgdl }}" target="_blank" rel="noopener noreferrer">
+    {{- end -}}
+
+    {{- if $cover -}}
+      {{- partial "optimized-image.html" (dict
+        "resource" $cover
+        "alt" $alt
+        "loading" $loading
+        "sizes" "(min-width: 768px) 720px, 100vw"
+        "maxWidth" 1600
+      ) -}}
+    {{- else -}}
+      <img loading="{{ $loading }}" src="{{ $coverImage | relURL }}" alt="{{ $alt }}">
+    {{- end -}}
+
+    {{- if $addLink -}}
+      </a>
+    {{- end -}}
+
+    {{- if $.IsSingle -}}
+      {{- with .Params.cover.caption -}}
+        <figcaption>{{ . | markdownify }}</figcaption>
+      {{- end -}}
+    {{- end -}}
+</figure>
+{{- end -}}
+{{- end -}}

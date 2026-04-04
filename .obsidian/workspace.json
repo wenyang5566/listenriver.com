@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "68abb3a0d7439004",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc039d7f25b1163b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5600d2073d099ce7",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新分頁"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1bef7484da03b321",
+    "type": "split",
+    "children": [
+      {
+        "id": "7b069907430b95e0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0afd438831b45cf7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "檔案瀏覽器"
+            }
+          },
+          {
+            "id": "cdcbb0f4716fe6a0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜尋"
+            }
+          },
+          {
+            "id": "3c4a1ff1042519ea",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "書籤"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9c623e4afb078fbd",
+    "type": "split",
+    "children": [
+      {
+        "id": "eb374930abbfce4c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "902ffee5b120e0ec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向連結"
+            }
+          },
+          {
+            "id": "a680ac92debc129f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "對外連結"
+            }
+          },
+          {
+            "id": "ae4c8da92c504224",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "標籤"
+            }
+          },
+          {
+            "id": "66b9c05bc07de6bc",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "所有屬性"
+            }
+          },
+          {
+            "id": "038f4a73c4d3119e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大綱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "bases:建立新的 base": false
+    }
+  },
+  "active": "5600d2073d099ce7",
+  "lastOpenFiles": [
+    "public/assets/css/stylesheet.62d7dcab917780e582fb74b27ca5e0630db50b6c8d82a382122698be5301e396.css",
+    "public/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ff62d3b8868db9e8.jpg",
+    "public/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ea0fac86708034af.webp",
+    "resources/_gen/images/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ea0fac86708034af.webp",
+    "resources/_gen/images/blog/書摘/正念生活的藝術/正念生活的藝術_hu_ff62d3b8868db9e8.jpg",
+    "public/blog/書摘/到達彼岸的智慧/心經_hu_556b546ef185c93f.jpg",
+    "public/blog/書摘/到達彼岸的智慧/心經_hu_e48ca61d2e2a9580.webp",
+    "resources/_gen/images/blog/書摘/到達彼岸的智慧/心經_hu_e48ca61d2e2a9580.webp",
+    "resources/_gen/images/blog/書摘/到達彼岸的智慧/心經_hu_556b546ef185c93f.jpg",
+    "public/blog/書摘/見佛殺佛/見佛殺佛_hu_eb2eade9cc788c33.jpg",
+    "public/blog/書摘/見佛殺佛/見佛殺佛_hu_11a42aaf755fdb5.webp",
+    "content/blog/_index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/10自傷疼痛/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/09心臟瓣膜疼痛/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/08腕隧道症候群/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/07胃痛/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/06腰部肌肉纖維化/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/05貝西氏症/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/04生理期疼痛/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/03未知疼痛/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/02僵直性脊椎炎/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/01成果發表/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/00撿拾疼痛的碎片/index.md",
+    "blog_pagebundle_backup/聆聽疼痛計畫/10自傷疼痛",
+    "blog_pagebundle_backup/聆聽疼痛計畫/09心臟瓣膜疼痛",
+    "blog_pagebundle_backup/聆聽疼痛計畫/08腕隧道症候群",
+    "blog_pagebundle_backup/聆聽疼痛計畫/07胃痛",
+    "blog_pagebundle_backup/聆聽疼痛計畫/06腰部肌肉纖維化",
+    "blog_pagebundle_backup/聆聽疼痛計畫/05貝西氏症",
+    "blog_pagebundle_backup/聆聽疼痛計畫/04生理期疼痛",
+    "blog_pagebundle_backup/聆聽疼痛計畫/03未知疼痛",
+    "blog_pagebundle_backup/聆聽疼痛計畫/02僵直性脊椎炎",
+    "blog_pagebundle_backup/聆聽疼痛計畫/01成果發表",
+    "blog_pagebundle_backup/書摘/見佛殺佛/index.md",
+    "blog_pagebundle_backup/書摘/英雄之旅/index.md",
+    "blog_pagebundle_backup/書摘/聆聽疼痛/index.md",
+    "blog_pagebundle_backup/書摘/病從所願/index.md",
+    "blog_pagebundle_backup/書摘/旁觀他人之痛苦/index.md",
+    "blog_pagebundle_backup/書摘/敘事治療工作地圖/index.md",
+    "blog_pagebundle_backup/書摘/擁抱陰影/index.md",
+    "blog_pagebundle_backup/書摘/找回家庭的療癒力/index.md",
+    "blog_pagebundle_backup/書摘/成為一個人/index.md",
+    "blog_pagebundle_backup/日常書寫/關於語言的反思/index.md",
+    "blog_pagebundle_backup/電影心得/鄰家兄弟/index.md",
+    "blog_pagebundle_backup/電影心得/范保德/index.md",
+    "blog_pagebundle_backup/電影心得/阿鼻/index.md"
+  ]
+}

@@ -1,0 +1,23 @@
+{{- $scratch := newScratch -}}
+
+{{- if not .Date.IsZero -}}
+  {{- $scratch.Add "meta" (slice (printf "<span class='post-meta-item post-meta-date' title='%s'>%s</span>" (.Date) (.Date.Format "2006年01月02日"))) -}}
+{{- end -}}
+
+{{- if (.Param "ShowReadingTime") -}}
+  {{- $scratch.Add "meta" (slice (printf "<span class='post-meta-item'>閱讀 %d 分鐘</span>" .ReadingTime)) -}}
+{{- end -}}
+
+{{- if (.Param "ShowWordCount") -}}
+  {{- $scratch.Add "meta" (slice (printf "<span class='post-meta-item'>%d 字</span>" .WordCount)) -}}
+{{- end -}}
+
+{{- if not (.Param "hideAuthor") -}}
+  {{- with (partial "author.html" .) -}}
+    {{- $scratch.Add "meta" (slice (printf "<span class='post-meta-item post-meta-author'>%s</span>" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with ($scratch.Get "meta") -}}
+  {{- delimit . "<span class='post-meta-sep'>·</span>" | safeHTML -}}
+{{- end -}}

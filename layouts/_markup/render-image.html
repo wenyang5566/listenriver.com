@@ -1,0 +1,37 @@
+{{- $alt := .Text | default .Title | default "article image" -}}
+{{- $destination := .Destination -}}
+{{- $resource := "" -}}
+
+{{- if and .Page (not (or (hasPrefix $destination "http://") (hasPrefix $destination "https://") (hasPrefix $destination "/"))) -}}
+  {{- $stem := replaceRE "\\.[^.]+$" "" (path.Base $destination) -}}
+  {{- $resource = .Page.Resources.GetMatch (printf "%s.*" $stem) -}}
+  {{- if not $resource -}}
+    {{- $resource = .Page.Resources.GetMatch $destination -}}
+  {{- end -}}
+  {{- if not $resource -}}
+    {{- $resource = .Page.Resources.GetMatch (printf "*%s" $destination) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $resource -}}
+  <figure class="post-figure">
+    {{- partial "optimized-image.html" (dict
+      "resource" $resource
+      "alt" $alt
+      "loading" "lazy"
+      "sizes" "(min-width: 900px) 860px, 100vw"
+      "maxWidth" 1100
+      "class" "post-content-image"
+    ) -}}
+    {{- with .Title }}
+      <figcaption>{{ . }}</figcaption>
+    {{- end }}
+  </figure>
+{{- else -}}
+  <figure class="post-figure">
+    <img src="{{ $destination | safeURL }}" alt="{{ $alt }}" loading="lazy" class="post-content-image">
+    {{- with .Title }}
+      <figcaption>{{ . }}</figcaption>
+    {{- end }}
+  </figure>
+{{- end -}}

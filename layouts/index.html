@@ -1,0 +1,69 @@
+{{ define "main" }}
+  {{- partial "hero-banner.html" . -}}
+
+  {{- $defaultCover := .Site.Params.salonDefaultCover }}
+  {{- $categoryOrder := .Site.Params.salonCategoryOrder }}
+  {{- $allCats := $.Site.Taxonomies.categories }}
+
+
+  <div class="salon-home">
+    {{- range $catName := $categoryOrder }}
+        {{- $cat := index $allCats $catName }}
+      {{- if $cat }}
+        {{- $posts := $cat.Pages }}
+        {{- if gt (len $posts) 0 }}
+        <section class="salon-section">
+          <div class="salon-section-header">
+            <h2 class="salon-section-title">{{ $catName }}</h2>
+            <a href="{{ $cat.Page.RelPermalink }}" class="salon-section-more">查看全部 →</a>
+          </div>
+          <div class="salon-carousel-wrapper">
+            <button class="carousel-btn carousel-btn-prev" aria-label="往前">&#8249;</button>
+            <div class="salon-carousel" data-carousel>
+              {{- range $posts }}
+              {{- $img := "" }}
+              {{- $coverImage := .Params.cover.image | default "cover.*" }}
+              {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) }}
+              {{- $res := .Resources.GetMatch (printf "%s.*" $coverStem) }}
+              {{- if not $res }}
+                {{- $res = .Resources.GetMatch $coverImage }}
+              {{- end }}
+              {{- if and (not $res) (.Params.cover.image) }}
+                {{- $img = .Params.cover.image }}
+              {{- else if $defaultCover }}
+                {{- $img = $defaultCover }}
+              {{- end }}
+              <a href="{{ .RelPermalink }}" class="salon-card">
+                <div class="salon-card-img">
+                  {{- if $res }}
+                  {{- partial "optimized-image.html" (dict
+                    "resource" $res
+                    "alt" .Title
+                    "loading" "lazy"
+                    "sizes" "(min-width: 1200px) 320px, (min-width: 768px) 33vw, 100vw"
+                    "maxWidth" 720
+                  ) -}}
+                  {{- else if $img }}
+                  <img src="{{ $img }}" alt="{{ .Title }}" loading="lazy">
+                  {{- else }}
+                  <div class="salon-card-img-placeholder"></div>
+                  {{- end }}
+                </div>
+                <div class="salon-card-body">
+                  <div class="salon-card-title">{{ .Title }}</div>
+                  {{- if .Summary }}
+                  <div class="salon-card-excerpt">{{ .Summary | plainify | truncate 60 }}</div>
+                  {{- end }}
+                  <div class="salon-card-date">{{ .Date.Format "2006/01/02" }}</div>
+                </div>
+              </a>
+              {{- end }}
+            </div>
+            <button class="carousel-btn carousel-btn-next" aria-label="往後">&#8250;</button>
+          </div>
+        </section>
+        {{- end }}
+      {{- end }}
+    {{- end }}
+  </div>
+{{ end }}

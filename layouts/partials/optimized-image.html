@@ -1,0 +1,36 @@
+{{- $resource := .resource -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $maxWidth := .maxWidth | default 1600 -}}
+
+{{- if not $resource -}}
+  {{- return -}}
+{{- end -}}
+
+{{- $processableFormats := slice "jpg" "jpeg" "png" "tif" "bmp" "gif" "webp" -}}
+{{- if not (in $processableFormats $resource.MediaType.SubType) -}}
+  <img loading="{{ $loading }}" src="{{ $resource.RelPermalink }}" alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }}>
+  {{- return -}}
+{{- end -}}
+
+{{- $targetWidth := $resource.Width -}}
+{{- if gt $targetWidth $maxWidth -}}
+  {{- $targetWidth = $maxWidth -}}
+{{- end -}}
+
+{{- $fallback := $resource.Resize (printf "%dx q80" $targetWidth) -}}
+{{- $webp := $resource.Resize (printf "%dx webp q75" $targetWidth) -}}
+
+<picture>
+  <source srcset="{{ $webp.RelPermalink }}" type="image/webp">
+  <img
+    loading="{{ $loading }}"
+    src="{{ $fallback.RelPermalink }}"
+    alt="{{ $alt }}"
+    width="{{ $fallback.Width }}"
+    height="{{ $fallback.Height }}"
+    sizes="{{ $sizes }}"
+    {{ with $class }}class="{{ . }}"{{ end }}>
+</picture>

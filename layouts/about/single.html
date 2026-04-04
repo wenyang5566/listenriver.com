@@ -1,0 +1,25 @@
+﻿{{- define "main" }}
+<article class="about-page about-page-light">
+  <section class="about-hero">
+    <div class="about-hero-head">
+      <p class="about-kicker">{{ .Site.Title }}</p>
+      <h1 class="about-title">{{ .Site.Params.author | default "文揚 Wen-Yang" }}</h1>
+    </div>
+
+    <div class="about-avatar-wrap">
+      <img class="about-avatar" src="{{ "/images/profile.jpg" | relURL }}" alt="{{ .Site.Params.author | default .Site.Title }}">
+    </div>
+
+    <p class="about-subtitle">練習書寫，練習陪伴；日常書寫，聆聽疼痛。</p>
+  </section>
+
+  <section class="about-grid about-grid-single">
+    <section class="about-card about-card-wide about-card-soft">
+      <h2 class="about-section-title">網站介紹</h2>
+      <div class="about-content">
+        {{ .Content }}
+      </div>
+    </section>
+  </section>
+</article>
+{{- end }}
