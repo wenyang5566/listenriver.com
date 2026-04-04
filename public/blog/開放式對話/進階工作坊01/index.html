@@ -118,7 +118,7 @@ Q：有沒有注意到第一輪沒有注意到的細節？或是「覺得這個�
 例如：意象是光、黑暗、道路，在一個很暗的空間前進。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A01/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.1e2bbb6a21cf8536f3b183c2a9052cfd81174cb1c1a151e2d341c7af6c96f448.css" integrity="sha256-Hiu7aiHPhTbzsYPCqQUs/YEXTLHBoVHi00HHr2yW9Eg=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2da2156ee74d688871542889831dd9e24a12ceb59bcd4f190069062cbc08e0d1.css" integrity="sha256-LaIVbudNaIhxVCiJgx3Z4koSzrWbzU8ZAGkGLLwI4NE=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -336,6 +336,29 @@ A：這裡很多精神醫療的夥伴，像是吃藥其實是一個經驗，要�
       </a>
 
       <div class="header-side header-side-right">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+          <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
         <a href="/" class="header-icon-link" aria-label="首頁">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
         </a>
@@ -495,6 +518,178 @@ A：這裡很多精神醫療的夥伴，像是吃藥其實是一個經驗，要�
         </div>
       <a href="/categories/" class="nav-chip nav-chip-more">全部分類</a>
     </div>
+  </nav>
+
+  <div class="mobile-nav-backdrop" data-mobile-nav-close hidden></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="手機選單" aria-hidden="true">
+    <div class="mobile-nav-drawer-head">
+      <div>
+        <div class="mobile-nav-eyebrow">導覽</div>
+        <div class="mobile-nav-title">聆聽的河流｜閱讀、書寫、心理與電影</div>
+      </div>
+      <button class="header-icon-button mobile-nav-close" type="button" aria-label="關閉選單" data-mobile-nav-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 6l12 12"></path>
+          <path d="M18 6l-12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-nav-primary">
+      <a href="/" class="mobile-nav-primary-link">首頁</a>
+      <a href="/blog/" class="mobile-nav-primary-link">最新文章</a>
+      <a href="/categories/" class="mobile-nav-primary-link">全部分類</a>
+      <a href="/about/" class="mobile-nav-primary-link">關於我</a>
+    </div>
+
+    <div class="mobile-nav-groups">
+        <section class="mobile-nav-group">
+          <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+            <span>閱讀&amp;筆記</span>
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
+          </button>
+          <div class="mobile-nav-group-panel">
+                <a href="/categories/%E6%97%A5%E5%B8%B8%E6%9B%B8%E5%AF%AB/" class="mobile-nav-sub-link">
+                  <span>日常書寫</span>
+                  <span class="mobile-nav-sub-count">14</span>
+                </a>
+                <a href="/categories/%E6%9B%B8%E6%91%98/" class="mobile-nav-sub-link">
+                  <span>書摘</span>
+                  <span class="mobile-nav-sub-count">28</span>
+                </a>
+                <a href="/categories/%E8%AC%9B%E5%BA%A7%E5%BF%83%E5%BE%97/" class="mobile-nav-sub-link">
+                  <span>講座心得</span>
+                  <span class="mobile-nav-sub-count">3</span>
+                </a>
+                <a href="/categories/%E8%AC%9B%E5%BA%A7%E7%AD%86%E8%A8%98/" class="mobile-nav-sub-link">
+                  <span>講座筆記</span>
+                  <span class="mobile-nav-sub-count">9</span>
+                </a>
+                <a href="/categories/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/" class="mobile-nav-sub-link">
+                  <span>閱讀心得</span>
+                  <span class="mobile-nav-sub-count">27</span>
+                </a>
+                <a href="/categories/%E9%9B%BB%E5%BD%B1%E5%BF%83%E5%BE%97/" class="mobile-nav-sub-link">
+                  <span>電影心得</span>
+                  <span class="mobile-nav-sub-count">30</span>
+                </a>
+          </div>
+        </section>
+        <section class="mobile-nav-group">
+          <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+            <span>自我成長</span>
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
+          </button>
+          <div class="mobile-nav-group-panel">
+              <a href="/categories/%e8%87%aa%e6%88%91%e6%88%90%e9%95%b7/" class="mobile-nav-sub-link mobile-nav-sub-link-all">進入自我成長</a>
+                <a href="/categories/%E8%A6%AA%E5%AF%86%E9%97%9C%E4%BF%82/" class="mobile-nav-sub-link">
+                  <span>親密關係</span>
+                  <span class="mobile-nav-sub-count">2</span>
+                </a>
+                <a href="/categories/%E6%88%90%E7%82%BA%E4%B8%80%E5%80%8B%E4%BA%BA/" class="mobile-nav-sub-link">
+                  <span>成為一個人</span>
+                  <span class="mobile-nav-sub-count">14</span>
+                </a>
+                <a href="/categories/%E4%B8%80%E8%A1%8C%E7%A6%AA%E5%B8%AB/" class="mobile-nav-sub-link">
+                  <span>一行禪師</span>
+                  <span class="mobile-nav-sub-count">6</span>
+                </a>
+          </div>
+        </section>
+        <section class="mobile-nav-group">
+          <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+            <span>邁向助人工作</span>
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
+          </button>
+          <div class="mobile-nav-group-panel">
+              <a href="/categories/%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/" class="mobile-nav-sub-link mobile-nav-sub-link-all">進入邁向助人工作</a>
+                <a href="/categories/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/" class="mobile-nav-sub-link">
+                  <span>開放式對話</span>
+                  <span class="mobile-nav-sub-count">9</span>
+                </a>
+                <a href="/categories/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85/" class="mobile-nav-sub-link">
+                  <span>創傷知情</span>
+                  <span class="mobile-nav-sub-count">5</span>
+                </a>
+                <a href="/categories/%E5%AE%B6%E6%97%8F%E6%B2%BB%E7%99%82/" class="mobile-nav-sub-link">
+                  <span>家族治療</span>
+                  <span class="mobile-nav-sub-count">7</span>
+                </a>
+                <a href="/categories/%E5%8F%97%E8%8B%A6%E7%9A%84%E5%80%92%E5%BD%B1/" class="mobile-nav-sub-link">
+                  <span>受苦的倒影</span>
+                  <span class="mobile-nav-sub-count">2</span>
+                </a>
+                <a href="/categories/%E5%BB%BA%E5%88%B6%E6%B0%91%E6%97%8F%E8%AA%8C/" class="mobile-nav-sub-link">
+                  <span>建制民族誌</span>
+                  <span class="mobile-nav-sub-count">3</span>
+                </a>
+          </div>
+        </section>
+        <section class="mobile-nav-group">
+          <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+            <span>會所模式</span>
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
+          </button>
+          <div class="mobile-nav-group-panel">
+              <a href="/categories/%e6%9c%83%e6%89%80%e6%a8%a1%e5%bc%8f/" class="mobile-nav-sub-link mobile-nav-sub-link-all">進入會所模式</a>
+                <a href="/categories/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/" class="mobile-nav-sub-link">
+                  <span>會所實習</span>
+                  <span class="mobile-nav-sub-count">7</span>
+                </a>
+                <a href="/categories/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/" class="mobile-nav-sub-link">
+                  <span>會所工作日誌</span>
+                  <span class="mobile-nav-sub-count">13</span>
+                </a>
+                <a href="/categories/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/" class="mobile-nav-sub-link">
+                  <span>會所工作手冊</span>
+                  <span class="mobile-nav-sub-count">2</span>
+                </a>
+          </div>
+        </section>
+        <section class="mobile-nav-group">
+          <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+            <span>Projects</span>
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
+          </button>
+          <div class="mobile-nav-group-panel">
+                <a href="/categories/%E7%B2%BE%E9%81%B8%E6%96%87%E7%AB%A0/" class="mobile-nav-sub-link">
+                  <span>精選文章</span>
+                  <span class="mobile-nav-sub-count">8</span>
+                </a>
+                <a href="/categories/%E7%B4%A0%E6%8F%8F/" class="mobile-nav-sub-link">
+                  <span>素描</span>
+                  <span class="mobile-nav-sub-count">13</span>
+                </a>
+                <a href="/categories/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/" class="mobile-nav-sub-link">
+                  <span>聆聽疼痛計畫</span>
+                  <span class="mobile-nav-sub-count">11</span>
+                </a>
+          </div>
+        </section>
+    </div>
+  </aside>
+
+  <div class="mobile-reading-progress" aria-hidden="true">
+    <span class="mobile-reading-progress-bar" data-reading-progress></span>
+  </div>
+
+  <nav class="mobile-bottom-bar" aria-label="手機快捷操作">
+    <a href="/" class="mobile-bottom-link" aria-label="回首頁">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
+      <span>首頁</span>
+    </a>
+    <a href="/blog/" class="mobile-bottom-link is-active" aria-label="文章列表">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 0 4 23z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path></svg>
+      <span>文章</span>
+    </a>
+    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-mobile-toc-shortcut aria-label="開啟目錄">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 12h10"></path><path d="M5 17h14"></path></svg>
+      <span>目錄</span>
+    </button>
+    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-scroll-top aria-label="回到頂部">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
+      <span>頂部</span>
+    </button>
   </nav>
 </header>
 <main class="main">

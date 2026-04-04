@@ -17,6 +17,13 @@
       </a>
 
       <div class="header-side header-side-right">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 7h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 17h16"></path>
+          </svg>
+        </button>
         {{- if (not site.Params.disableThemeToggle) }}
         <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -81,5 +88,76 @@
       {{- end }}
       <a href="{{ "/categories/" | relLangURL }}" class="nav-chip nav-chip-more">全部分類</a>
     </div>
+  </nav>
+
+  <div class="mobile-nav-backdrop" data-mobile-nav-close hidden></div>
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="手機選單" aria-hidden="true">
+    <div class="mobile-nav-drawer-head">
+      <div>
+        <div class="mobile-nav-eyebrow">導覽</div>
+        <div class="mobile-nav-title">{{ $brandTitle }}</div>
+      </div>
+      <button class="header-icon-button mobile-nav-close" type="button" aria-label="關閉選單" data-mobile-nav-close>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 6l12 12"></path>
+          <path d="M18 6l-12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-nav-primary">
+      <a href="{{ "/" | relLangURL }}" class="mobile-nav-primary-link">首頁</a>
+      <a href="{{ "/blog/" | relLangURL }}" class="mobile-nav-primary-link">最新文章</a>
+      <a href="{{ "/categories/" | relLangURL }}" class="mobile-nav-primary-link">全部分類</a>
+      <a href="{{ "/about/" | relLangURL }}" class="mobile-nav-primary-link">關於我</a>
+    </div>
+
+    <div class="mobile-nav-groups">
+      {{- range $groups }}
+        <section class="mobile-nav-group">
+          <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+            <span>{{ .title }}</span>
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
+          </button>
+          <div class="mobile-nav-group-panel">
+            {{- if .url }}
+              <a href="{{ .url | relLangURL }}" class="mobile-nav-sub-link mobile-nav-sub-link-all">進入{{ .title }}</a>
+            {{- end }}
+            {{- range .items }}
+              {{- $cat := index $allCats . }}
+              {{- if $cat }}
+                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="mobile-nav-sub-link">
+                  <span>{{ . }}</span>
+                  <span class="mobile-nav-sub-count">{{ len $cat.Pages }}</span>
+                </a>
+              {{- end }}
+            {{- end }}
+          </div>
+        </section>
+      {{- end }}
+    </div>
+  </aside>
+
+  <div class="mobile-reading-progress" aria-hidden="true">
+    <span class="mobile-reading-progress-bar" data-reading-progress></span>
+  </div>
+
+  <nav class="mobile-bottom-bar" aria-label="手機快捷操作">
+    <a href="{{ "/" | relLangURL }}" class="mobile-bottom-link{{ if .IsHome }} is-active{{ end }}" aria-label="回首頁">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
+      <span>首頁</span>
+    </a>
+    <a href="{{ "/blog/" | relLangURL }}" class="mobile-bottom-link{{ if eq .Section "blog" }} is-active{{ end }}" aria-label="文章列表">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 0 4 23z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path></svg>
+      <span>文章</span>
+    </a>
+    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-mobile-toc-shortcut aria-label="開啟目錄">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 12h10"></path><path d="M5 17h14"></path></svg>
+      <span>目錄</span>
+    </button>
+    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-scroll-top aria-label="回到頂部">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
+      <span>頂部</span>
+    </button>
   </nav>
 </header>
