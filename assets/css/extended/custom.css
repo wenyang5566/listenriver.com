@@ -386,12 +386,16 @@
   align-items: center;
   gap: 4px;
   padding-right: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-group-link-main {
   color: var(--primary);
   text-decoration: none;
   font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-group-link-main:hover {
@@ -554,23 +558,25 @@
 .mobile-nav-primary {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  margin-bottom: 18px;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
 .mobile-nav-primary-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 14px;
-  border-radius: 16px;
+  min-height: 42px;
+  padding: 0 10px;
+  border-radius: 14px;
   background: rgba(111, 202, 209, 0.12);
   color: var(--primary);
-  font-size: 0.94rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
   text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .mobile-nav-groups {
@@ -1078,10 +1084,23 @@ body.mobile-nav-locked {
 
   .header-top {
     min-height: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .header-top::-webkit-scrollbar {
+    display: none;
+  }
+
+  .header-brand,
+  .header-side-right {
+    flex-shrink: 0;
   }
 
   .header-side-right {
@@ -1089,10 +1108,16 @@ body.mobile-nav-locked {
     transform: none;
     margin-left: auto;
     gap: 6px;
+    flex-wrap: nowrap;
   }
 
   .header-brand-mark {
-    width: min(118px, 34vw);
+    width: min(108px, 30vw);
+  }
+
+  .header-icon-link,
+  .header-cta {
+    display: none;
   }
 
   .header-icon-link {
@@ -1100,13 +1125,9 @@ body.mobile-nav-locked {
     height: 36px;
   }
 
-  .header-icon-link[aria-label="首頁"],
-  .header-icon-link[aria-label="全部分類"] {
-    display: none;
-  }
-
   .header-mobile-menu-toggle {
     display: inline-flex;
+    order: 2;
   }
 
   .header-icon-link svg {
@@ -1114,12 +1135,9 @@ body.mobile-nav-locked {
     height: 17px;
   }
 
-  .header-cta {
-    min-width: 84px;
-    height: 38px;
-    padding: 0 12px;
-    border-radius: 12px;
-    font-size: 0.84rem;
+  .header-icon-button {
+    width: 36px;
+    height: 36px;
   }
 
   .header-nav {
@@ -1145,8 +1163,39 @@ body.mobile-nav-locked {
   }
 
   .mobile-nav-drawer-head .header-icon-button {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .mobile-nav-eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .mobile-nav-title {
+    font-size: 1.02rem;
+  }
+
+  .mobile-nav-primary {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+  }
+
+  .dark .mobile-nav-primary {
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-nav-primary-link {
+    justify-content: flex-start;
+    min-height: 38px;
+    padding: 0 8px;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 
   .category-entry {
@@ -1578,10 +1627,6 @@ body.mobile-nav-locked {
     height: 34px;
   }
 
-  .mobile-nav-primary {
-    grid-template-columns: 1fr;
-  }
-
   .mobile-nav-drawer {
     padding-left: 14px;
     padding-right: 14px;
@@ -1595,10 +1640,8 @@ body.mobile-nav-locked {
     padding: 7px;
   }
 
-  .header-cta {
-    min-width: 78px;
-    padding: 0 10px;
-    font-size: 0.8rem;
+  .header-brand-mark {
+    width: min(100px, 32vw);
   }
 
   .nav-chip {

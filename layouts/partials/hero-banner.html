@@ -15,6 +15,7 @@
       {{- end }}
     </a>
     <div class="salon-channel-meta">
+      <div class="salon-channel-kicker">編輯選集</div>
       <div class="salon-channel-name">{{ .Site.Params.salonAuthor | default .Site.Title }}</div>
       <div class="salon-channel-subtitle">{{ .Site.Title }}</div>
       <div class="salon-social-icons">
@@ -37,7 +38,13 @@
       </div>
     </div>
   </div>
+  <div class="salon-channel-main">
   {{- with .Site.Params.salonDescription }}
   <div class="salon-channel-desc">{{ . }}</div>
   {{- end }}
+    <div class="salon-channel-actions">
+      <a href="/blog/" class="salon-channel-action salon-channel-action-primary">開始閱讀</a>
+      <a href="/about/" class="salon-channel-action">關於作者</a>
+    </div>
+  </div>
 </div>
