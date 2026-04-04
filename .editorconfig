@@ -1,0 +1,10 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+[*.{md,html,yml,yaml,toml,css,scss,js,json,xml,txt}]
+charset = utf-8
+
