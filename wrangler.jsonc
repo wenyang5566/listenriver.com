@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "listenriver",
+  "compatibility_date": "2026-04-04",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "layouts"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
