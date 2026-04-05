@@ -2061,8 +2061,8 @@ body:not(.list) .main {
 
 @media (max-width: 640px) {
   .main {
-    padding-left: 18px !important;
-    padding-right: 18px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .post-single {
@@ -2081,8 +2081,8 @@ body:not(.list) .main {
   .post-comments,
   .post-single .post-footer {
     box-sizing: border-box;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: clamp(2px, 1.6vw, 8px);
+    padding-right: clamp(2px, 1.6vw, 8px);
   }
 
   .post-single .post-header {
@@ -2110,6 +2110,11 @@ body:not(.list) .main {
 
   .post-single .post-content > * {
     max-width: 100%;
+  }
+
+  .post-single .post-content ul,
+  .post-single .post-content ol {
+    padding-left: 1.35rem;
   }
 
   .post-single .post-content > p:first-of-type {
@@ -2149,13 +2154,15 @@ body:not(.list) .main {
   }
 
   .post-interactions {
-    margin-top: 1.85rem;
+    margin-top: 2.05rem;
     padding-top: 1.05rem;
   }
 
   .post-interactions__panel {
     gap: 0.95rem;
     justify-content: space-between;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   .post-stat,
@@ -2166,7 +2173,7 @@ body:not(.list) .main {
   .post-like-button,
   .post-stat,
   .post-comment-button {
-    min-height: 40px;
+    min-height: 42px;
   }
 
   .post-like-button {
@@ -2360,7 +2367,21 @@ body:not(.list) .main {
 
   .post-comments-host,
   #waline .wl-editor-container {
-    border-radius: 16px;
+    border-radius: 18px;
+  }
+
+  .post-comments {
+    margin-top: 2.2rem;
+    padding-top: 1.55rem;
+  }
+
+  .post-comments-title {
+    margin-bottom: 1rem;
+  }
+
+  .post-comments-host {
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   [data-theme="dark"] .post-single .post-meta-top,
@@ -2370,6 +2391,20 @@ body:not(.list) .main {
 }
 
 @media (max-width: 420px) {
+  .main {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+
+  .post-single .post-header,
+  .post-single .post-content,
+  .post-interactions,
+  .post-comments,
+  .post-single .post-footer {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
   .post-single .post-content {
     line-height: 2.06;
   }
