@@ -2,13 +2,15 @@
 
 .salon-hero {
   position: relative;
-  width: 100%;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   --salon-hero-height: 186px;
   --salon-hero-shift-y: -6px;
   min-height: var(--salon-hero-height);
-  border-radius: 26px;
-  --salon-hero-title-font: "Noto Sans Rounded", "GenSekiGothic TW", "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-  --salon-hero-meta-font: "Noto Sans Rounded", "GenSekiGothic TW", "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  border-radius: 26px 26px 0 0;
+  --salon-hero-title-font: "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --salon-hero-meta-font: "Noto Sans TC", "Source Han Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   overflow: hidden;
   background:
     radial-gradient(circle at 12% 24%, rgba(255, 241, 222, 0.82), transparent 22%),
@@ -141,10 +143,11 @@
   color: #67c1cb;
   font-size: clamp(1.92rem, 3.55vw, 2.76rem);
   line-height: 1;
-  letter-spacing: 0.015em;
+  letter-spacing: 0.01em;
   font-weight: 400;
   font-family: var(--salon-hero-title-font);
   text-rendering: optimizeLegibility;
+  text-shadow: 0 0 16px rgba(250, 247, 242, 0.18);
 }
 
 .salon-hero-divider {
@@ -159,10 +162,11 @@
   color: #67c1cb;
   font-size: clamp(1.92rem, 3.55vw, 2.76rem);
   line-height: 1;
-  letter-spacing: 0.035em;
+  letter-spacing: 0.02em;
   font-weight: 400;
   font-family: var(--salon-hero-meta-font);
   white-space: nowrap;
+  text-shadow: 0 0 16px rgba(250, 247, 242, 0.16);
 }
 
 .salon-hero-subtitle {
@@ -170,7 +174,7 @@
   padding-left: 2px;
   color: rgba(96, 94, 88, 0.88);
   font-size: 0.8rem;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.03em;
   line-height: 1.45;
   font-family: var(--salon-hero-meta-font);
   font-weight: 400;
@@ -196,14 +200,19 @@
 }
 
 .salon-channel-info {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: flex-start;
   gap: 2rem;
   padding: 1.5rem 2rem;
+  margin: -22px auto 0;
   border-bottom: 1px solid var(--border);
   background: var(--entry);
   max-width: 1400px;
-  margin: 0 auto;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 26px 26px 0 0;
+  box-shadow: 0 -10px 26px rgba(15, 23, 42, 0.05);
 }
 
 .salon-channel-left {
@@ -525,10 +534,13 @@
   }
 
   .salon-hero {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     --salon-hero-height: 136px;
     --salon-hero-shift-y: -4px;
     min-height: var(--salon-hero-height);
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
   }
 
   .salon-hero::before {
@@ -566,7 +578,7 @@
 
   .salon-hero-title {
     font-size: clamp(1.22rem, 5.8vw, 1.58rem);
-    letter-spacing: 0.015em;
+    letter-spacing: 0.01em;
   }
 
   .salon-hero-divider {
@@ -576,7 +588,7 @@
   .salon-hero-topics {
     width: 100%;
     font-size: clamp(1.22rem, 5.8vw, 1.58rem);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     white-space: normal;
   }
 
@@ -591,7 +603,7 @@
   .salon-hero-subtitle {
     margin-top: 7px;
     font-size: 0.64rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     line-height: 1.32;
     text-shadow: 0 0 14px rgba(248, 245, 239, 0.8);
   }
@@ -601,11 +613,11 @@
     z-index: 2;
     flex-direction: column;
     gap: 0.85rem;
-    margin-top: -10px;
+    margin-top: -14px;
     padding: 0.95rem 1rem 1rem;
     border: 1px solid rgba(17, 24, 39, 0.08);
     border-radius: 20px 20px 0 0;
-    box-shadow: 0 -6px 18px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 -8px 18px rgba(15, 23, 42, 0.05);
   }
 
   .salon-channel-left {
@@ -745,7 +757,7 @@
     --salon-hero-height: 122px;
     --salon-hero-shift-y: -3px;
     min-height: var(--salon-hero-height);
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0;
   }
 
   .salon-hero::after {
@@ -769,7 +781,7 @@
 
   .salon-hero-topics {
     font-size: 1.06rem;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
   }
 
   .salon-hero-copy::after {
@@ -780,7 +792,7 @@
 
   .salon-hero-subtitle {
     font-size: 0.58rem;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     text-shadow: 0 0 12px rgba(248, 245, 239, 0.82);
   }
 
