@@ -110,23 +110,33 @@
   function initPostInteractions(root) {
     const apiBase = normalizeApiBase(root.dataset.apiBase || '');
     const postPath = root.dataset.postPath || window.location.pathname;
-    const likeButton = root.querySelector('[data-post-like-button]');
-    const viewsValue = root.querySelector('[data-post-views]');
-    const likesValue = root.querySelector('[data-post-likes]');
+    const commentsPath = postPath.replace(/\/$/, '') || '/';
+    const likeButtons = Array.from(root.querySelectorAll('[data-post-like-button]'));
+    const commentButtons = Array.from(root.querySelectorAll('[data-post-comments-button]'));
+    const viewsValues = Array.from(root.querySelectorAll('[data-post-views]'));
+    const likesValues = Array.from(root.querySelectorAll('[data-post-likes]'));
+    const commentValues = Array.from(root.querySelectorAll('[data-post-comments]'));
+    const floatingBar = root.querySelector('[data-post-floating-bar]');
+    const commentsEnabled = root.dataset.commentsEnabled === 'true';
+    const commentsServerUrl = normalizeApiBase(root.dataset.commentsServerUrl || '');
+    const commentsAnchor = document.querySelector('[data-comments-anchor]');
+    const content = document.querySelector('.post-content');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     const rabbitImageSrc = '/images/mao_3.png';
     const viewedSessionKey = 'listenriver:view:' + postPath;
     const likedSessionKey = 'listenriver:like:' + postPath;
     let isLikePending = false;
 
-    if (!likeButton || !viewsValue || !likesValue) return;
+    if (!likeButtons.length || !viewsValues.length || !likesValues.length) return;
 
     if (!apiBase) {
       root.classList.add('post-interactions--offline');
-      likeButton.setAttribute('aria-disabled', 'true');
-      likeButton.title = '尚未設定統計 API';
-      viewsValue.textContent = '--';
-      likesValue.textContent = '--';
+      likeButtons.forEach((button) => {
+        button.setAttribute('aria-disabled', 'true');
+        button.title = '尚未設定統計 API';
+      });
+      setCountText(viewsValues, '--');
+      setCountText(likesValues, '--');
     } else {
       const schedule = window.requestIdleCallback || function(callback) {
         window.setTimeout(callback, 700);
@@ -142,37 +152,80 @@
       });
     }
 
-    if (sessionStorage.getItem(likedSessionKey)) {
-      likeButton.classList.add('is-liked');
+    if (commentsEnabled && commentsServerUrl && commentValues.length) {
+      loadCommentCount();
+    } else if (commentValues.length) {
+      setCountText(commentValues, '--');
     }
 
-    likeButton.addEventListener('click', async () => {
-      if (!apiBase || isLikePending) return;
+    if (sessionStorage.getItem(likedSessionKey)) {
+      likeButtons.forEach((button) => button.classList.add('is-liked'));
+    }
 
-      isLikePending = true;
-      likeButton.classList.add('is-busy');
-      likeButton.setAttribute('aria-busy', 'true');
+    likeButtons.forEach((button) => {
+      button.addEventListener('click', async () => {
+        if (!apiBase || isLikePending) return;
 
-      try {
-        const payload = await postJson(apiBase + '/like', { post: postPath });
-        const stats = extractStats(payload);
-        if (stats.likes !== null) {
-          likesValue.textContent = formatCount(stats.likes);
+        isLikePending = true;
+        likeButtons.forEach((item) => {
+          item.classList.add('is-busy');
+          item.setAttribute('aria-busy', 'true');
+        });
+
+        try {
+          const payload = await postJson(apiBase + '/like', { post: postPath });
+          const stats = extractStats(payload);
+          if (stats.likes !== null) {
+            setCountText(likesValues, formatCount(stats.likes));
+          }
+          if (stats.views !== null) {
+            setCountText(viewsValues, formatCount(stats.views));
+          }
+          likeButtons.forEach((item) => item.classList.add('is-liked'));
+          sessionStorage.setItem(likedSessionKey, '1');
+          launchRabbitBurst(button, rabbitImageSrc, prefersReducedMotion.matches ? 3 : 6);
+        } catch (error) {
+          likeButtons.forEach((item) => {
+            item.title = '按讚暫時失敗，請稍後再試';
+          });
+        } finally {
+          isLikePending = false;
+          likeButtons.forEach((item) => {
+            item.classList.remove('is-busy');
+            item.removeAttribute('aria-busy');
+          });
         }
-        if (stats.views !== null) {
-          viewsValue.textContent = formatCount(stats.views);
-        }
-        likeButton.classList.add('is-liked');
-        sessionStorage.setItem(likedSessionKey, '1');
-        launchRabbitBurst(likeButton, rabbitImageSrc, prefersReducedMotion.matches ? 3 : 6);
-      } catch (error) {
-        likeButton.title = '按讚暫時失敗，請稍後再試';
-      } finally {
-        isLikePending = false;
-        likeButton.classList.remove('is-busy');
-        likeButton.removeAttribute('aria-busy');
-      }
+      });
     });
+
+    commentButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!commentsAnchor) return;
+
+        commentsAnchor.scrollIntoView({
+          behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    if (floatingBar && content) {
+      const updateFloatingBar = () => {
+        const contentRect = content.getBoundingClientRect();
+        const commentsRect = commentsAnchor ? commentsAnchor.getBoundingClientRect() : null;
+        const passedIntro = contentRect.top < -160;
+        const beforeComments = commentsRect ? commentsRect.top > window.innerHeight * 0.72 : contentRect.bottom > 220;
+        const hasReadableSpace = contentRect.bottom > window.innerHeight * 0.45;
+        const visible = passedIntro && beforeComments && hasReadableSpace;
+
+        floatingBar.classList.toggle('is-visible', visible);
+        floatingBar.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      };
+
+      updateFloatingBar();
+      window.addEventListener('scroll', updateFloatingBar, { passive: true });
+      window.addEventListener('resize', updateFloatingBar, { passive: true });
+    }
 
     async function loadStats() {
       try {
@@ -184,12 +237,12 @@
 
         const payload = await response.json();
         const stats = extractStats(payload);
-        viewsValue.textContent = formatCount(stats.views);
-        likesValue.textContent = formatCount(stats.likes);
+        setCountText(viewsValues, formatCount(stats.views));
+        setCountText(likesValues, formatCount(stats.likes));
       } catch (error) {
         root.classList.add('post-interactions--offline');
-        viewsValue.textContent = '--';
-        likesValue.textContent = '--';
+        setCountText(viewsValues, '--');
+        setCountText(likesValues, '--');
       }
     }
 
@@ -206,9 +259,33 @@
         const payload = await postJson(apiBase + '/view', { post: postPath }, true);
         const stats = extractStats(payload);
         if (stats.views !== null) {
-          viewsValue.textContent = formatCount(stats.views);
+          setCountText(viewsValues, formatCount(stats.views));
         }
       } catch (error) {
+      }
+    }
+
+    async function loadCommentCount() {
+      try {
+        const response = await fetch(commentsServerUrl + '/api/comment?type=count&url=' + encodeURIComponent(commentsPath), {
+          headers: { Accept: 'application/json' },
+          credentials: 'omit'
+        });
+        if (!response.ok) throw new Error('comment count request failed');
+
+        const payload = await response.json();
+        const value = typeof payload === 'number'
+          ? payload
+          : Array.isArray(payload)
+            ? payload[0]
+            : Array.isArray(payload?.data)
+              ? payload.data[0]
+              : payload?.data ?? payload?.result ?? 0;
+
+        const numericValue = typeof value === 'number' ? value : Number(value) || 0;
+        setCountText(commentValues, formatCount(numericValue));
+      } catch (error) {
+        setCountText(commentValues, '--');
       }
     }
   }
@@ -253,6 +330,12 @@
     }
 
     return new Intl.NumberFormat('zh-TW').format(value);
+  }
+
+  function setCountText(nodes, value) {
+    nodes.forEach((node) => {
+      node.textContent = value;
+    });
   }
 
   function launchRabbitBurst(button, imageSrc, amount) {

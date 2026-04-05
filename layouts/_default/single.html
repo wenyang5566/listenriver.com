@@ -41,7 +41,7 @@
       {{ .Content }}
     {{- end }}
   </div>
-  {{- partial "post_interactions.html" . -}}
+  {{- partial "post_interactions_v2.html" . -}}
   {{- if (.Param "comments") }}
     {{- partial "comments.html" . }}
   {{- end }}
