@@ -73,6 +73,21 @@ params:
 
 If the Worker URL changes, update that value and redeploy the site.
 
+## Image Workflow
+
+Use this split for article images:
+
+- `old_images/` stores original source images locally and should not be committed
+- `content/.../<post>/` stores only the web-ready page bundle images that Hugo will publish
+
+When you import older article images or add new large originals:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\optimize-content-images.ps1
+```
+
+That script keeps the originals outside deployment and reduces oversized page bundle images before pushing to `main`.
+
 ## Release Checklist
 
 - Confirm `git status` is clean except for intentional files

@@ -35,13 +35,7 @@
               <a href="{{ .RelPermalink }}" class="salon-card">
                 <div class="salon-card-img">
                   {{- if $res }}
-                  {{- partial "optimized-image.html" (dict
-                    "resource" $res
-                    "alt" .Title
-                    "loading" "lazy"
-                    "sizes" "(min-width: 1200px) 320px, (min-width: 768px) 33vw, 100vw"
-                    "maxWidth" 720
-                  ) -}}
+                  <img src="{{ $res.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
                   {{- else if $img }}
                   <img src="{{ $img }}" alt="{{ .Title }}" loading="lazy">
                   {{- else }}

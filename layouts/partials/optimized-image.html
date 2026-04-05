@@ -4,11 +4,23 @@
 {{- $loading := .loading | default "lazy" -}}
 {{- $sizes := .sizes | default "100vw" -}}
 {{- $maxWidth := .maxWidth | default 1600 -}}
-{{- $widths := .widths | default (slice 320 480 640 768 920 1080 1280 1600) -}}
+{{- $widths := .widths | default (slice 480 768 1080 1440) -}}
 {{- $decoding := .decoding | default "async" -}}
 {{- $fetchpriority := .fetchpriority | default (cond (eq $loading "eager") "high" "auto") -}}
 
 {{- if not $resource -}}
+  {{- return -}}
+{{- end -}}
+
+{{- if ne $resource.ResourceType "image" -}}
+  <img
+    loading="{{ $loading }}"
+    decoding="{{ $decoding }}"
+    fetchpriority="{{ $fetchpriority }}"
+    src="{{ $resource.RelPermalink }}"
+    alt="{{ $alt }}"
+    sizes="{{ $sizes }}"
+    {{ with $class }}class="{{ . }}"{{ end }}>
   {{- return -}}
 {{- end -}}
 
@@ -40,15 +52,17 @@
   {{- $variantWidths = $variantWidths | append $targetWidth -}}
 {{- end -}}
 
-{{- $fallbackPrimary := $resource.Resize (printf "%dx q80" $targetWidth) -}}
-{{- $webpPrimary := $resource.Resize (printf "%dx webp q75" $targetWidth) -}}
 {{- $fallbackSrcset := slice -}}
 {{- $webpSrcset := slice -}}
+{{- $fallbackPrimary := "" -}}
 
 {{- range $variantWidths -}}
   {{- $width := . -}}
   {{- $fallbackVariant := $resource.Resize (printf "%dx q80" $width) -}}
   {{- $webpVariant := $resource.Resize (printf "%dx webp q75" $width) -}}
+  {{- if eq $width $targetWidth -}}
+    {{- $fallbackPrimary = $fallbackVariant -}}
+  {{- end -}}
   {{- $fallbackSrcset = $fallbackSrcset | append (printf "%s %dw" $fallbackVariant.RelPermalink $width) -}}
   {{- $webpSrcset = $webpSrcset | append (printf "%s %dw" $webpVariant.RelPermalink $width) -}}
 {{- end -}}
