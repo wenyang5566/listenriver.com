@@ -16,4 +16,4 @@ description: "網站介紹與個人簡介"
 
 對我來說，聆聽是一條河流，寬廣又深邃，可以容納，亦可接在地上，深入各式各樣的生命經驗，不被聽見的聲音、不被看見的風景與角落；聆聽是柔軟且堅實的，是創造連結的必要媒介，人與人之間的理解，不可缺少聆聽。
 
-歡迎心得回饋或交流討論： <a href="mailto:wenyang5566@gmail.com">wenyang5566@gmail.com</a>
+歡迎心得回饋或交流討論：[wenyang5566@gmail.com](mailto:wenyang5566@gmail.com)

@@ -2,6 +2,8 @@
 languageCode: "zh-tw"
 title: "聆聽的河流｜閱讀、書寫、心理與電影"
 theme: "PaperMod"
+ignoreLogs:
+  - warning-goldmark-raw-html
 
 pagination:
   pagerSize: 10
