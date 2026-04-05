@@ -399,6 +399,9 @@
   scroll-snap-type: x proximity;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pinch-zoom;
   padding: 0.25rem 0 0.75rem;
   flex: 1;
 }
@@ -457,6 +460,7 @@
   flex-direction: column;
   transition: border-color 0.15s;
   scroll-snap-align: start;
+  touch-action: manipulation;
 }
 
 .salon-card:hover {
@@ -715,6 +719,7 @@
     gap: 0.75rem;
     padding-right: 1rem;
     scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
   }
 
   .carousel-btn {
