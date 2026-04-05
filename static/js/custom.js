@@ -111,6 +111,10 @@
     const apiBase = normalizeApiBase(root.dataset.apiBase || '');
     const postPath = root.dataset.postPath || window.location.pathname;
     const commentsPath = postPath.replace(/\/$/, '') || '/';
+    const commentPathCandidates = Array.from(new Set([
+      commentsPath,
+      commentsPath === '/' ? '/' : commentsPath + '/'
+    ]));
     const likeButtons = Array.from(root.querySelectorAll('[data-post-like-button]'));
     const commentButtons = Array.from(root.querySelectorAll('[data-post-comments-button]'));
     const viewsValues = Array.from(root.querySelectorAll('[data-post-views]'));
@@ -154,6 +158,7 @@
 
     if (commentsEnabled && commentsServerUrl && commentValues.length) {
       loadCommentCount();
+      document.addEventListener('listenriver:comments-updated', handleCommentsUpdated);
     } else if (commentValues.length) {
       setCountText(commentValues, '--');
     }
@@ -265,24 +270,23 @@
       }
     }
 
+    function handleCommentsUpdated(event) {
+      const updatedPath = normalizeCommentPath(event.detail && event.detail.path);
+      if (updatedPath === commentsPath || updatedPath === commentsPath + '/') {
+        loadCommentCount();
+      }
+    }
+
     async function loadCommentCount() {
       try {
-        const response = await fetch(commentsServerUrl + '/api/comment?type=count&url=' + encodeURIComponent(commentsPath), {
-          headers: { Accept: 'application/json' },
-          credentials: 'omit'
-        });
-        if (!response.ok) throw new Error('comment count request failed');
+        let numericValue = 0;
 
-        const payload = await response.json();
-        const value = typeof payload === 'number'
-          ? payload
-          : Array.isArray(payload)
-            ? payload[0]
-            : Array.isArray(payload?.data)
-              ? payload.data[0]
-              : payload?.data ?? payload?.result ?? 0;
+        for (const candidatePath of commentPathCandidates) {
+          const value = await fetchCommentCount(commentsServerUrl, candidatePath);
+          numericValue = value;
+          if (value > 0) break;
+        }
 
-        const numericValue = typeof value === 'number' ? value : Number(value) || 0;
         setCountText(commentValues, formatCount(numericValue));
       } catch (error) {
         setCountText(commentValues, '--');
@@ -292,6 +296,32 @@
 
   function normalizeApiBase(value) {
     return value.replace(/\/+$/, '');
+  }
+
+  function normalizeCommentPath(value) {
+    return (value || '').replace(/\/$/, '') || '/';
+  }
+
+  async function fetchCommentCount(serverUrl, path) {
+    const response = await fetch(serverUrl + '/api/comment?type=count&url=' + encodeURIComponent(path), {
+      headers: { Accept: 'application/json' },
+      credentials: 'omit'
+    });
+
+    if (!response.ok) {
+      throw new Error('comment count request failed');
+    }
+
+    const payload = await response.json();
+    const value = typeof payload === 'number'
+      ? payload
+      : Array.isArray(payload)
+        ? payload[0]
+        : Array.isArray(payload?.data)
+          ? payload.data[0]
+          : payload?.data ?? payload?.result ?? 0;
+
+    return typeof value === 'number' ? value : Number(value) || 0;
   }
 
   async function postJson(url, body, keepalive) {

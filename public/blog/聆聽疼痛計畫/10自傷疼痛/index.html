@@ -623,7 +623,7 @@
           <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path>
         </svg>
       </span>
-      <span class="post-comment-button__count" data-post-comments>--</span>
+      <span class="post-comment-button__count" data-post-comments data-path="/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/10%E8%87%AA%E5%82%B7%E7%96%BC%E7%97%9B/">--</span>
     </button>
     <span class="post-stat post-stat--views">
       <span class="post-stat__icon" aria-hidden="true">
@@ -652,7 +652,7 @@
         </svg>
       </span>
       <span class="post-floating-tools__label">留言</span>
-      <span class="post-floating-tools__count" data-post-comments>--</span>
+      <span class="post-floating-tools__count" data-post-comments data-path="/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/10%E8%87%AA%E5%82%B7%E7%96%BC%E7%97%9B/">--</span>
     </button>
     <span class="post-floating-tools__item post-floating-tools__item--static">
       <span class="post-floating-tools__icon" aria-hidden="true">
@@ -693,6 +693,7 @@
 
   if (root) {
     const mount = root.querySelector('#waline');
+    const normalizedPath = (root.dataset.path || window.location.pathname).replace(/\/$/, '') || '/';
     const loadComments = async () => {
       if (!mount || mount.dataset.walineReady === '1') return;
 
@@ -715,9 +716,10 @@
         init({
           el: mount,
           serverURL: root.dataset.serverUrl,
-          path: root.dataset.path.replace(/\/$/, ''),
+          path: normalizedPath,
           lang: root.dataset.lang || 'zh-TW',
           pageview: false,
+          comment: '[data-post-comments]',
           reaction: false,
           search: false,
           copyright: false,
@@ -729,6 +731,24 @@
             submit: root.dataset.submit || '送出'
           }
         });
+
+        let refreshTimer = 0;
+        const notifyCommentCountUpdate = () => {
+          window.clearTimeout(refreshTimer);
+          refreshTimer = window.setTimeout(() => {
+            document.dispatchEvent(new CustomEvent('listenriver:comments-updated', {
+              detail: { path: normalizedPath }
+            }));
+          }, 250);
+        };
+
+        const observer = new MutationObserver((mutations) => {
+          const shouldRefresh = mutations.some((mutation) => mutation.addedNodes.length || mutation.removedNodes.length);
+          if (shouldRefresh) notifyCommentCountUpdate();
+        });
+
+        observer.observe(mount, { childList: true, subtree: true });
+        notifyCommentCountUpdate();
       } catch (error) {
         mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
       }

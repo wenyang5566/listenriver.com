@@ -19,7 +19,7 @@
           <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path>
         </svg>
       </span>
-      <span class="post-comment-button__count" data-post-comments>--</span>
+      <span class="post-comment-button__count" data-post-comments data-path="{{ .RelPermalink }}">--</span>
     </button>
     {{- end }}
     <span class="post-stat post-stat--views">
@@ -50,7 +50,7 @@
         </svg>
       </span>
       <span class="post-floating-tools__label">留言</span>
-      <span class="post-floating-tools__count" data-post-comments>--</span>
+      <span class="post-floating-tools__count" data-post-comments data-path="{{ .RelPermalink }}">--</span>
     </button>
     {{- end }}
     <span class="post-floating-tools__item post-floating-tools__item--static">

@@ -24,6 +24,7 @@
 
   if (root) {
     const mount = root.querySelector('#waline');
+    const normalizedPath = (root.dataset.path || window.location.pathname).replace(/\/$/, '') || '/';
     const loadComments = async () => {
       if (!mount || mount.dataset.walineReady === '1') return;
 
@@ -46,9 +47,10 @@
         init({
           el: mount,
           serverURL: root.dataset.serverUrl,
-          path: root.dataset.path.replace(/\/$/, ''),
+          path: normalizedPath,
           lang: root.dataset.lang || 'zh-TW',
           pageview: false,
+          comment: '[data-post-comments]',
           reaction: false,
           search: false,
           copyright: false,
@@ -60,6 +62,24 @@
             submit: root.dataset.submit || '送出'
           }
         });
+
+        let refreshTimer = 0;
+        const notifyCommentCountUpdate = () => {
+          window.clearTimeout(refreshTimer);
+          refreshTimer = window.setTimeout(() => {
+            document.dispatchEvent(new CustomEvent('listenriver:comments-updated', {
+              detail: { path: normalizedPath }
+            }));
+          }, 250);
+        };
+
+        const observer = new MutationObserver((mutations) => {
+          const shouldRefresh = mutations.some((mutation) => mutation.addedNodes.length || mutation.removedNodes.length);
+          if (shouldRefresh) notifyCommentCountUpdate();
+        });
+
+        observer.observe(mount, { childList: true, subtree: true });
+        notifyCommentCountUpdate();
       } catch (error) {
         mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
       }
