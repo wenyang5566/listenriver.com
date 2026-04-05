@@ -1,9 +1,18 @@
-{{- $banner := .Site.Params.salonBanner }}
-{{- if $banner }}
 <div class="salon-hero">
-  <img src="{{ $banner }}" alt="banner" class="salon-hero-img">
+  <div class="salon-hero-inner">
+    <div class="salon-hero-lockup">
+      <span class="salon-hero-mark" aria-hidden="true"></span>
+      <div class="salon-hero-copy">
+        <div class="salon-hero-headline">
+          <h1 class="salon-hero-title">聆聽的河流</h1>
+          <span class="salon-hero-divider" aria-hidden="true"></span>
+          <p class="salon-hero-topics">閱讀・書寫・心理・電影</p>
+        </div>
+        <p class="salon-hero-subtitle">以閱讀、書寫、心理與電影，慢慢整理情緒與世界的流向。</p>
+      </div>
+    </div>
+  </div>
 </div>
-{{- end }}
 
 <div class="salon-channel-info">
   <div class="salon-channel-left">
