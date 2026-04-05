@@ -11,7 +11,6 @@ tags:
   - 成為一個人
 aliases:
   - /blog/閱讀書摘/英雄之旅/
-  - /blog/書摘/書摘英雄之旅/
 type: post
 cover:
   image: 英雄之旅.png

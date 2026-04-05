@@ -10,7 +10,6 @@ tags:
   - 聆聽疼痛
 aliases:
   - /blog/閱讀心得/聆聽疼痛/
-  - /blog/閱讀心得/閱讀心得聆聽疼痛/
 type: post
 cover:
   image: 聆聽疼痛.jpg

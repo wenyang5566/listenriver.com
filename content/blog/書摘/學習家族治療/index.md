@@ -11,7 +11,6 @@ tags:
   - 家族治療
 aliases:
   - /blog/閱讀書摘/學習家族治療/
-  - /blog/書摘/書摘學習家族治療/
 type: post
 ---
 

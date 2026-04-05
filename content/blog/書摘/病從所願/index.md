@@ -8,7 +8,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/病從所願/
-  - /blog/書摘/書摘病從所願/
 type: post
 cover:
   image: 病從所願.jpg

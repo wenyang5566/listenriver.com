@@ -12,7 +12,6 @@ tags:
   - 創傷知情
 aliases:
   - /blog/閱讀心得/尋找復原力/
-  - /blog/閱讀心得/閱讀心得尋找復原力人有重新創造的能力/
 type: post
 cover:
   image: 尋找復原力.jpg

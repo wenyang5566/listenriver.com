@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/危殆生活/
-  - /blog/書摘/書摘危殆生活/
 type: post
 cover:
   image: 危殆生活1.jpg

@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/危殆生活/
-  - /blog/閱讀心得/閱讀心得危殆生活豐而危殆的連帶/
 type: post
 cover:
   image: 危殆生活1.jpg

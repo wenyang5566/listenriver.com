@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/擁抱陰影/
-  - /blog/閱讀心得/閱讀心得擁抱陰影從對立走向相對/
 type: post
 cover:
   image: 擁抱陰影.jpg

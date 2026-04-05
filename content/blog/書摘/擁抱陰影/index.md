@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/擁抱陰影/
-  - /blog/書摘/書摘擁抱陰影/
 type: post
 cover:
   image: 擁抱陰影.jpg

@@ -11,7 +11,6 @@ tags:
   - 家族治療
 aliases:
   - /blog/閱讀書摘/關係的評估與修復/
-  - /blog/書摘/書摘關係的評估與修復/
 type: post
 ---
 

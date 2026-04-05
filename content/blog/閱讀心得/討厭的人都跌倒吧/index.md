@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/討厭的人都跌倒吧/
-  - /blog/閱讀心得/閱讀心得討厭的人都跌倒吧/
 type: post
 cover:
   image: 討厭的人都跌倒吧.jpg

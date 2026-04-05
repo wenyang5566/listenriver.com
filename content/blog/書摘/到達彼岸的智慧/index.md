@@ -12,7 +12,6 @@ tags:
   - 正念
 aliases:
   - /blog/閱讀書摘/心經/
-  - /blog/書摘/書摘一行禪師講心經到達彼岸的智慧/
 type: post
 cover:
   image: 心經.jpg

@@ -43,6 +43,18 @@ Build to a temporary verification directory:
 hugo --destination public-build-check
 ```
 
+Audit legacy aliases before or after article renames:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\audit-aliases.ps1
+```
+
+Remove only the known low-value alias noise:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\audit-aliases.ps1 -FixKnownNoise
+```
+
 ## CI
 
 GitHub Actions workflow:

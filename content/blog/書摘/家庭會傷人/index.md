@@ -12,7 +12,6 @@ tags:
   - 家庭會傷人
 aliases:
   - /blog/閱讀書摘/家庭會傷人/
-  - /blog/書摘/書摘家庭會傷人/
 type: post
 cover:
   image: 家庭會傷人.jpg

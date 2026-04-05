@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/割腕的誘惑/
-  - /blog/書摘/書摘割腕的誘惑停止自我傷害/
 type: post
 cover:
   image: 割腕的誘惑.jpg

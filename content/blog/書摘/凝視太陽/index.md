@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/凝視太陽/
-  - /blog/書摘/書摘凝視太陽/
 type: post
 cover:
   image: 凝視太陽.jpg

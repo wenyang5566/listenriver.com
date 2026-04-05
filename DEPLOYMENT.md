@@ -76,6 +76,7 @@ If the Worker URL changes, update that value and redeploy the site.
 ## Release Checklist
 
 - Confirm `git status` is clean except for intentional files
+- Run `powershell -ExecutionPolicy Bypass -File .\scripts\audit-aliases.ps1`
 - Run `hugo --destination public-build-check`
 - If Worker code changed, run `npm run check` in `workers/post-interactions`
 - Push source changes to `main`
@@ -83,3 +84,27 @@ If the Worker URL changes, update that value and redeploy the site.
 - Confirm Cloudflare Pages build succeeds
 - If Worker changed, confirm Worker deploy succeeds
 - Smoke-check article pages, mobile reading layout, dark mode, and interactions
+
+## Alias Maintenance
+
+Use aliases to preserve old URLs after article renames or folder moves.
+
+Keep aliases when they represent:
+
+- an older published slug
+- an older section or category path
+- a dated historical URL that may already be indexed or shared
+
+Remove aliases when they are clearly noise, such as:
+
+- duplicated category prefixes like `/blog/書摘/書摘...`
+- typo slugs created during a move or rename
+- accidental duplicate variants that were never intentionally published
+
+Recommended workflow after changing titles or folder structure:
+
+1. Add or keep the real legacy URLs in front matter `aliases`
+2. Run `powershell -ExecutionPolicy Bypass -File .\scripts\audit-aliases.ps1`
+3. If the report only shows known noise, run `powershell -ExecutionPolicy Bypass -File .\scripts\audit-aliases.ps1 -FixKnownNoise`
+4. Rebuild with `hugo --destination public-build-check`
+5. After deploy, revalidate in Google Search Console

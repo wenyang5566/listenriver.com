@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/修身與齊家/
-  - /blog/書摘/書摘修身與齊家/
 type: post
 ---
 

@@ -11,7 +11,6 @@ tags:
   - 家族治療
 aliases:
   - /blog/閱讀書摘/敘事治療工作地圖/
-  - /blog/書摘/書摘敘事治療工作地圖/
 type: post
 ---
 

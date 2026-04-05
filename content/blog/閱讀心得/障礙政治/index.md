@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
   - 障礙政治
 aliases:
-  - /blog/閱讀心得/閱讀心得障礙政治/
 type: post
 cover:
   image: 障礙政治.jpg

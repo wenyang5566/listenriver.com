@@ -11,7 +11,6 @@ tags:
   - 建制民族誌
 aliases:
   - /blog/閱讀心得/建制民族誌/
-  - /blog/閱讀心得/閱讀心得為何建制民族誌如此強大從體制中解殖的方法/
 type: post
 cover:
   image: 建制民族誌.JPG

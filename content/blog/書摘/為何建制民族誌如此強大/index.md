@@ -11,7 +11,6 @@ tags:
   - 建制民族誌
 aliases:
   - /blog/閱讀書摘/建制民族誌/
-  - /blog/書摘/書摘為何建制民族誌如此強大解碼日常生活的權力遊戲/
 type: post
 cover:
   image: 建制民族誌.JPG

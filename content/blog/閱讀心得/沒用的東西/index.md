@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/沒用的東西/
-  - /blog/閱讀心得/閱讀心得沒用的東西/
 type: post
 cover:
   image: 沒用的東西.jpg

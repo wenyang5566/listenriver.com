@@ -10,7 +10,6 @@ tags:
   - 現象學
 aliases:
   - /blog/閱讀書摘/現象學十四講/
-  - /blog/書摘/書摘現象學十四講/
 type: post
 cover:
   image: 現象學十四講.jpg

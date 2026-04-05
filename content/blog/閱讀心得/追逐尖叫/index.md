@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/追逐尖叫/
-  - /blog/閱讀心得/閱讀心得追逐尖叫如果有人愛你你就有了機會/
 type: post
 cover:
   image: 追逐尖叫.jpg

@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/打從心底/
-  - /blog/閱讀心得/閱讀心得打從心底/
 type: post
 cover:
   image: 打從心底.jpg

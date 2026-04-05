@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/病從所願/
-  - /blog/閱讀心得/閱讀心得病從所願/
 type: post
 cover:
   image: 病從所願.jpg

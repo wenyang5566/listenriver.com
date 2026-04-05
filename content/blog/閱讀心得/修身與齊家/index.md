@@ -11,7 +11,6 @@ tags:
   - 成為一個人
 aliases:
   - /blog/閱讀心得/修身與齊家/
-  - /blog/閱讀心得/閱讀心得修身與齊家誠者自成也/
 type: post
 cover:
   image: 修身與齊家1.jpg

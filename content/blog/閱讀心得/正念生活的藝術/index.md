@@ -12,7 +12,6 @@ tags:
   - 正念
 aliases:
   - /blog/閱讀心得/正念生活的藝術/
-  - /blog/閱讀心得/閱讀心得正念生活的藝術/
 type: post
 cover:
   image: 正念生活的藝術.jpg

@@ -8,7 +8,6 @@ categories:
 tags:
   - 日常書寫
 aliases:
-  - /blog/生活反思與心得/categories的療癒空間/
   - /blog/日常書寫/20210210clubhouse的療癒空間/
 type: post
 cover:

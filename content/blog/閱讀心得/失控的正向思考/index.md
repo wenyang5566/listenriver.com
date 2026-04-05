@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/失控的正向思考/
-  - /blog/閱讀心得/閱讀心得失控的正向思考/
 type: post
 cover:
   image: 失控的正向思考.png

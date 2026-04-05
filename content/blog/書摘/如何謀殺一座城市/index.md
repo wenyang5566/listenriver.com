@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/如何謀殺一座城市/
-  - /blog/書摘/書摘如何謀殺一座城市/
 type: post
 ---
 

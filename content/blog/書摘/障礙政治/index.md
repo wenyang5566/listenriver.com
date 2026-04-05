@@ -10,7 +10,6 @@ tags:
   - 障礙政治
 aliases:
   - /blog/閱讀書摘/障礙政治/
-  - /blog/書摘/書摘障礙政治/
 type: post
 cover:
   image: 障礙政治.jpg

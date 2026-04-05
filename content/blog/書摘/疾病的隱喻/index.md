@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/疾病的隱喻/
-  - /blog/書摘/書摘疾病的隱喻/
 type: post
 ---
 

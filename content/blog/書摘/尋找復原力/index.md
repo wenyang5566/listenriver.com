@@ -11,7 +11,6 @@ tags:
   - 創傷知情
 aliases:
   - /blog/閱讀書摘/尋找復原力/
-  - /blog/書摘/書摘尋找復原力/
 type: post
 cover:
   image: 尋找復原力.jpg

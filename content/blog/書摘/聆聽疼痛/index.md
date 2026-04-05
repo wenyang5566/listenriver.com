@@ -11,7 +11,6 @@ tags:
 aliases:
   - /blog/閱讀書摘/聆聽疼痛/
   - /blog/閱讀書摘/聆聽疼痛2/
-  - /blog/書摘/書摘聆聽疼痛/
 type: post
 cover:
   image: 聆聽疼痛.jpg

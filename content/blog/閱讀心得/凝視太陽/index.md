@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/凝視太陽/
-  - /blog/閱讀心得/閱讀心得凝視太陽死亡恐懼的背後是勇氣/
 type: post
 cover:
   image: 凝視太陽.jpg

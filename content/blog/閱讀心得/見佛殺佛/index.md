@@ -12,7 +12,6 @@ tags:
   - 正念
 aliases:
   - /blog/閱讀心得/見佛殺佛/
-  - /blog/閱讀心得/閱讀心得見佛殺佛/
 type: post
 cover:
   image: 見佛殺佛.jpg

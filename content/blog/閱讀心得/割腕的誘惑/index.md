@@ -9,9 +9,7 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/割腕的誘惑停止自我傷害/
-  - /blog/閱讀心得/閱讀心得割腕的誘惑/
   - /blog/閱讀心得/割腕的誘惑/
-  - /blog/閱讀心得/閱讀心得割腕的誘惑停止自我傷害/
 type: post
 cover:
   image: 割腕的誘惑.jpg

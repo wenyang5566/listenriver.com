@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/流浪者之歌/
-  - /blog/書摘/書摘流浪者之歌/
 type: post
 ---
 

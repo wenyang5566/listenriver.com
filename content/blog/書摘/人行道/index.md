@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/人行道/
-  - /blog/書摘/書摘人行道/
 type: post
 ---
 

@@ -11,7 +11,6 @@ tags:
   - 一行禪師
   - 正念
 aliases:
-  - /blog/書摘/書摘見佛殺佛/
 type: post
 cover:
   image: 見佛殺佛.jpg

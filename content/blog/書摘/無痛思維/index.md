@@ -10,7 +10,6 @@ tags:
   - 聆聽疼痛
 aliases:
   - /blog/閱讀書摘/無痛思維/
-  - /blog/書摘/書摘無痛思維/
 type: post
 cover:
   image: 無痛思維.jpg

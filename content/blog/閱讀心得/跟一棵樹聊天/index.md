@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/跟一棵樹聊天/
-  - /blog/閱讀心得/閱讀心得跟一棵樹聊天聽他的人生哲學溝通師的37堂植物療癒通心課/
 type: post
 cover:
   image: 跟一棵樹聊天.jpg

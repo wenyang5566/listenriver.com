@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/圖騰與禁忌/
-  - /blog/閱讀心得/閱讀心得圖騰與禁忌/
 type: post
 cover:
   image: 圖騰與禁忌.png

@@ -9,7 +9,6 @@ tags:
   - 閱讀心得
 aliases:
   - /blog/閱讀心得/水母與搖滾/
-  - /blog/閱讀心得/閱讀心得水母與搖滾字花十年選詩歌卷/
 type: post
 cover:
   image: 水母與搖滾.jpg

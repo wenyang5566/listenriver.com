@@ -9,7 +9,6 @@ tags:
   - 書摘
 aliases:
   - /blog/閱讀書摘/旁觀他人之痛苦/
-  - /blog/書摘/書摘旁觀他人之痛苦/
 type: post
 ---
 
