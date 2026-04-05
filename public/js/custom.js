@@ -117,12 +117,13 @@
     const rabbitImageSrc = '/images/mao_3.png';
     const viewedSessionKey = 'listenriver:view:' + postPath;
     const likedSessionKey = 'listenriver:like:' + postPath;
+    let isLikePending = false;
 
     if (!likeButton || !viewsValue || !likesValue) return;
 
     if (!apiBase) {
       root.classList.add('post-interactions--offline');
-      likeButton.disabled = true;
+      likeButton.setAttribute('aria-disabled', 'true');
       likeButton.title = '尚未設定統計 API';
       viewsValue.textContent = '--';
       likesValue.textContent = '--';
@@ -146,10 +147,11 @@
     }
 
     likeButton.addEventListener('click', async () => {
-      if (!apiBase || likeButton.disabled) return;
+      if (!apiBase || isLikePending) return;
 
-      likeButton.disabled = true;
+      isLikePending = true;
       likeButton.classList.add('is-busy');
+      likeButton.setAttribute('aria-busy', 'true');
 
       try {
         const payload = await postJson(apiBase + '/like', { post: postPath });
@@ -166,8 +168,9 @@
       } catch (error) {
         likeButton.title = '按讚暫時失敗，請稍後再試';
       } finally {
-        likeButton.disabled = false;
+        isLikePending = false;
         likeButton.classList.remove('is-busy');
+        likeButton.removeAttribute('aria-busy');
       }
     });
 

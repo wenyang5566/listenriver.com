@@ -1391,10 +1391,14 @@ body.mobile-nav-locked {
   transform: translateY(-1px);
 }
 
-.post-like-button:disabled {
-  cursor: not-allowed;
+.post-like-button[aria-disabled="true"] {
+  cursor: default;
   opacity: 0.62;
   transform: none;
+}
+
+.post-like-button[aria-busy="true"] {
+  cursor: pointer;
 }
 
 .post-like-button__icon {
