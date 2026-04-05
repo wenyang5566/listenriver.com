@@ -3,3 +3,6 @@
 /resources/_gen/
 /.hugo_build.lock
 /.obsidian/
+/.tmp_hugo_check/
+/old_data/
+*.base
