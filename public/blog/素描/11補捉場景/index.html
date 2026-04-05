@@ -10,7 +10,7 @@
 <meta name="description" content="今天的課程就是運用所學去建構複雜的場景，先不看場景的細部，而是先捕捉幾條輔助的參考線，切分出幾個區域，抓到形準。即使沒有完全畫得一模一樣，但捕捉到物與物之間和諧的關係，我想這應該也是塞尚的啟示吧">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E7%B4%A0%E6%8F%8F/11%E8%A3%9C%E6%8D%89%E5%A0%B4%E6%99%AF/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f7c01fc430cc8560e5b52b9e003a00ed4fb3ad2e491d61d24a02e3697844c7dc.css" integrity="sha256-98AfxDDMhWDltSueADoA7U&#43;zrS5JHWHSSgLjaXhEx9w=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7288ae702b076752dd7037312b0564b1f6087036cb4ec655efbfc1df10ef916c.css" integrity="sha256-coiucCsHZ1LdcDcxKwVksfYIcDbLTsZV77/B3xDvkWw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -587,7 +587,81 @@
       <span class="post-like-button__count" data-post-likes>--</span>
     </button>
   </div>
+</section><section
+  class="post-comments"
+  aria-label="留言"
+  data-waline-root
+  data-server-url="https://wenyang-waline.vercel.app"
+  data-path="/blog/%E7%B4%A0%E6%8F%8F/11%E8%A3%9C%E6%8D%89%E5%A0%B4%E6%99%AF/"
+  data-lang="zh-TW"
+  data-placeholder="寫點什麼吧..."
+  data-nick="如何稱呼"
+  data-mail="Email"
+  data-submit="送出"
+>
+  <h2 class="post-comments-title">留言</h2>
+  <div id="waline" class="post-comments-host"></div>
 </section>
+<script type="module">
+  const root = document.querySelector('[data-waline-root]');
+
+  if (root) {
+    const mount = root.querySelector('#waline');
+    const loadComments = async () => {
+      if (!mount || mount.dataset.walineReady === '1') return;
+
+      mount.dataset.walineReady = '1';
+
+      try {
+        const ensureStylesheet = () => {
+          if (document.querySelector('link[data-waline-styles]')) return;
+
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+          link.setAttribute('data-waline-styles', 'true');
+          document.head.appendChild(link);
+        };
+
+        ensureStylesheet();
+        const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js');
+
+        init({
+          el: mount,
+          serverURL: root.dataset.serverUrl,
+          path: root.dataset.path.replace(/\/$/, ''),
+          lang: root.dataset.lang || 'zh-TW',
+          pageview: false,
+          reaction: false,
+          search: false,
+          copyright: false,
+          meta: ['nick', 'mail'],
+          locale: {
+            placeholder: root.dataset.placeholder || '寫點什麼吧...',
+            nick: root.dataset.nick || '如何稱呼',
+            mail: root.dataset.mail || 'Email',
+            submit: root.dataset.submit || '送出'
+          }
+        });
+      } catch (error) {
+        mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          loadComments();
+        }
+      }, { rootMargin: '320px 0px' });
+
+      observer.observe(root);
+    } else {
+      loadComments();
+    }
+  }
+</script>
 
   <footer class="post-footer">
     <ul class="post-tags">

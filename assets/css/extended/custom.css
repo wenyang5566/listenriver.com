@@ -1829,3 +1829,76 @@ body.mobile-nav-locked {
   }
 }
 
+.post-comments {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.post-comments-title {
+  margin: 0 0 1rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.post-comments-host {
+  min-height: 240px;
+}
+
+.post-comments-error {
+  margin: 0;
+  color: var(--secondary);
+}
+
+#waline .wl-meta .wl-browser,
+#waline .wl-meta .wl-os,
+#waline .wl-action-rss,
+#waline .wl-action.wl-markdown,
+#waline .wl-action[aria-label*="Markdown"],
+#waline .wl-action[title*="Markdown"] {
+  display: none !important;
+}
+
+#waline {
+  --waline-theme-color: rgba(111, 202, 209, 0.92);
+  --waline-active-color: rgba(84, 194, 201, 1);
+  --waline-color: var(--primary);
+  --waline-bg-color: transparent;
+  --waline-bg-color-light: rgba(15, 23, 42, 0.03);
+  --waline-bg-color-hover: rgba(15, 23, 42, 0.05);
+  --waline-border-color: rgba(17, 24, 39, 0.12);
+  --waline-disable-bg-color: rgba(15, 23, 42, 0.03);
+  --waline-disable-color: rgba(107, 114, 128, 0.72);
+  --waline-info-bg-color: rgba(15, 23, 42, 0.04);
+  --waline-info-color: var(--secondary);
+  --waline-border: 1px solid var(--waline-border-color);
+  --waline-box-shadow: none;
+  --waline-font-size: 1rem;
+  --waline-avatar-size: 3rem;
+  --waline-m-avatar-size: 2.3rem;
+  --waline-editor-min-height: 140px;
+}
+
+#waline .wl-editor,
+#waline .wl-input,
+#waline .wl-card {
+  border-radius: 14px;
+}
+
+#waline .wl-header input,
+#waline .wl-input,
+#waline .wl-editor {
+  font-family: inherit;
+}
+
+#waline .wl-header label,
+#waline .wl-count,
+#waline .wl-empty {
+  color: var(--primary);
+}
+
+#waline .wl-btn.primary {
+  border-radius: 999px;
+  padding-inline: 1rem;
+}
+

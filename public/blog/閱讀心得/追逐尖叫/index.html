@@ -10,7 +10,7 @@
 <meta name="description" content="無論是毒品或是成癮都是非常龐大的議題，絕非一兩本書或幾句話就可以完整詮釋，不過《追逐尖叫》的內容其實可以幫助我們打破一部分的傳統反毒觀念，透過瞭解反毒戰爭的歷史脈絡、禁令之下犧牲者的故事、除罪化國家管制的方法，作者帶我們一邊回顧歷史一邊找尋毒品和成癮的真相。在閱讀的過程中，我發現作者的記敘方式以人物為中心撰寫，讓生硬的歷史轉化為吸引人的故事。另外，作者總能夠清楚知道自己要訪問什麼人物，讓讀者能有邏輯地循著腳步閱讀，並且一步步被帶往毒品除罪化的觀點。儘管我不完全認同作者的每一段結論，但我認為好好認識毒品、毒品戰爭、毒品除罪化的利弊是這本書最大的收穫。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/%E8%BF%BD%E9%80%90%E5%B0%96%E5%8F%AB/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f7c01fc430cc8560e5b52b9e003a00ed4fb3ad2e491d61d24a02e3697844c7dc.css" integrity="sha256-98AfxDDMhWDltSueADoA7U&#43;zrS5JHWHSSgLjaXhEx9w=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7288ae702b076752dd7037312b0564b1f6087036cb4ec655efbfc1df10ef916c.css" integrity="sha256-coiucCsHZ1LdcDcxKwVksfYIcDbLTsZV77/B3xDvkWw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -719,7 +719,81 @@
       <span class="post-like-button__count" data-post-likes>--</span>
     </button>
   </div>
+</section><section
+  class="post-comments"
+  aria-label="留言"
+  data-waline-root
+  data-server-url="https://wenyang-waline.vercel.app"
+  data-path="/blog/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/%E8%BF%BD%E9%80%90%E5%B0%96%E5%8F%AB/"
+  data-lang="zh-TW"
+  data-placeholder="寫點什麼吧..."
+  data-nick="如何稱呼"
+  data-mail="Email"
+  data-submit="送出"
+>
+  <h2 class="post-comments-title">留言</h2>
+  <div id="waline" class="post-comments-host"></div>
 </section>
+<script type="module">
+  const root = document.querySelector('[data-waline-root]');
+
+  if (root) {
+    const mount = root.querySelector('#waline');
+    const loadComments = async () => {
+      if (!mount || mount.dataset.walineReady === '1') return;
+
+      mount.dataset.walineReady = '1';
+
+      try {
+        const ensureStylesheet = () => {
+          if (document.querySelector('link[data-waline-styles]')) return;
+
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+          link.setAttribute('data-waline-styles', 'true');
+          document.head.appendChild(link);
+        };
+
+        ensureStylesheet();
+        const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js');
+
+        init({
+          el: mount,
+          serverURL: root.dataset.serverUrl,
+          path: root.dataset.path.replace(/\/$/, ''),
+          lang: root.dataset.lang || 'zh-TW',
+          pageview: false,
+          reaction: false,
+          search: false,
+          copyright: false,
+          meta: ['nick', 'mail'],
+          locale: {
+            placeholder: root.dataset.placeholder || '寫點什麼吧...',
+            nick: root.dataset.nick || '如何稱呼',
+            mail: root.dataset.mail || 'Email',
+            submit: root.dataset.submit || '送出'
+          }
+        });
+      } catch (error) {
+        mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          loadComments();
+        }
+      }, { rootMargin: '320px 0px' });
+
+      observer.observe(root);
+    } else {
+      loadComments();
+    }
+  }
+</script>
 
   <footer class="post-footer">
     <ul class="post-tags">

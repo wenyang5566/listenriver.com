@@ -10,7 +10,7 @@
 <meta name="description" content="很喜歡洪瑞麟這位畫家兼礦工的筆觸和理念。身處在未知黑暗的礦坑裡，每天不斷遭遇危險的處境，生與死的問題浮現眼前，因此這是一份辛勞且需要被嚴肅看待的工作，如此的精神被洪瑞麟詮釋為「宗教性」，並且那也是一種「善」。礦坑充滿著煤炭與汗水，礦工的辛苦和勞動的身軀，在洪瑞麟眼中是如米開朗基羅般的偉大藝術，他於是用墨水在燈光微弱的礦坑裡作畫。以「掘光而行」為主題，會發現洪瑞麟有關礦坑的油畫作品，如何在一片黑暗中凸顯光亮，將光明與黑暗、生命和死亡兩種對立的屬性予以調和，呈現出和諧的畫作。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E6%97%A5%E5%B8%B8%E6%9B%B8%E5%AF%AB/%E6%8E%98%E5%85%89%E8%80%8C%E8%A1%8C/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f7c01fc430cc8560e5b52b9e003a00ed4fb3ad2e491d61d24a02e3697844c7dc.css" integrity="sha256-98AfxDDMhWDltSueADoA7U&#43;zrS5JHWHSSgLjaXhEx9w=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7288ae702b076752dd7037312b0564b1f6087036cb4ec655efbfc1df10ef916c.css" integrity="sha256-coiucCsHZ1LdcDcxKwVksfYIcDbLTsZV77/B3xDvkWw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -587,7 +587,81 @@
       <span class="post-like-button__count" data-post-likes>--</span>
     </button>
   </div>
+</section><section
+  class="post-comments"
+  aria-label="留言"
+  data-waline-root
+  data-server-url="https://wenyang-waline.vercel.app"
+  data-path="/blog/%E6%97%A5%E5%B8%B8%E6%9B%B8%E5%AF%AB/%E6%8E%98%E5%85%89%E8%80%8C%E8%A1%8C/"
+  data-lang="zh-TW"
+  data-placeholder="寫點什麼吧..."
+  data-nick="如何稱呼"
+  data-mail="Email"
+  data-submit="送出"
+>
+  <h2 class="post-comments-title">留言</h2>
+  <div id="waline" class="post-comments-host"></div>
 </section>
+<script type="module">
+  const root = document.querySelector('[data-waline-root]');
+
+  if (root) {
+    const mount = root.querySelector('#waline');
+    const loadComments = async () => {
+      if (!mount || mount.dataset.walineReady === '1') return;
+
+      mount.dataset.walineReady = '1';
+
+      try {
+        const ensureStylesheet = () => {
+          if (document.querySelector('link[data-waline-styles]')) return;
+
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+          link.setAttribute('data-waline-styles', 'true');
+          document.head.appendChild(link);
+        };
+
+        ensureStylesheet();
+        const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js');
+
+        init({
+          el: mount,
+          serverURL: root.dataset.serverUrl,
+          path: root.dataset.path.replace(/\/$/, ''),
+          lang: root.dataset.lang || 'zh-TW',
+          pageview: false,
+          reaction: false,
+          search: false,
+          copyright: false,
+          meta: ['nick', 'mail'],
+          locale: {
+            placeholder: root.dataset.placeholder || '寫點什麼吧...',
+            nick: root.dataset.nick || '如何稱呼',
+            mail: root.dataset.mail || 'Email',
+            submit: root.dataset.submit || '送出'
+          }
+        });
+      } catch (error) {
+        mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          loadComments();
+        }
+      }, { rootMargin: '320px 0px' });
+
+      observer.observe(root);
+    } else {
+      loadComments();
+    }
+  }
+</script>
 
   <footer class="post-footer">
     <ul class="post-tags">

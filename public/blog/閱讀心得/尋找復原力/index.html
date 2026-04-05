@@ -10,7 +10,7 @@
 <meta name="description" content="復原力不只關乎社會文化如何教導我們看待失敗，也關乎每個人的容納差異的能力、是否有勇氣擁抱自我的陰影。我很喜歡《擁抱陰影》所說的：「對立會使我們生命的立足點越來越小，相對卻允許自我能被兩者同時穿越。」從對立走向相對，幫助我們能夠創造空間，鬆動原本僵化的情緒能力，讓情緒得以流動，自我能穿越其中，因為任何情緒都是自我的一部分，不需要去對抗它，只需要改變與其之間的關係，仔細傾聽並融為一體。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/%E5%B0%8B%E6%89%BE%E5%BE%A9%E5%8E%9F%E5%8A%9B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f7c01fc430cc8560e5b52b9e003a00ed4fb3ad2e491d61d24a02e3697844c7dc.css" integrity="sha256-98AfxDDMhWDltSueADoA7U&#43;zrS5JHWHSSgLjaXhEx9w=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7288ae702b076752dd7037312b0564b1f6087036cb4ec655efbfc1df10ef916c.css" integrity="sha256-coiucCsHZ1LdcDcxKwVksfYIcDbLTsZV77/B3xDvkWw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -630,7 +630,81 @@
       <span class="post-like-button__count" data-post-likes>--</span>
     </button>
   </div>
+</section><section
+  class="post-comments"
+  aria-label="留言"
+  data-waline-root
+  data-server-url="https://wenyang-waline.vercel.app"
+  data-path="/blog/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/%E5%B0%8B%E6%89%BE%E5%BE%A9%E5%8E%9F%E5%8A%9B/"
+  data-lang="zh-TW"
+  data-placeholder="寫點什麼吧..."
+  data-nick="如何稱呼"
+  data-mail="Email"
+  data-submit="送出"
+>
+  <h2 class="post-comments-title">留言</h2>
+  <div id="waline" class="post-comments-host"></div>
 </section>
+<script type="module">
+  const root = document.querySelector('[data-waline-root]');
+
+  if (root) {
+    const mount = root.querySelector('#waline');
+    const loadComments = async () => {
+      if (!mount || mount.dataset.walineReady === '1') return;
+
+      mount.dataset.walineReady = '1';
+
+      try {
+        const ensureStylesheet = () => {
+          if (document.querySelector('link[data-waline-styles]')) return;
+
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+          link.setAttribute('data-waline-styles', 'true');
+          document.head.appendChild(link);
+        };
+
+        ensureStylesheet();
+        const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js');
+
+        init({
+          el: mount,
+          serverURL: root.dataset.serverUrl,
+          path: root.dataset.path.replace(/\/$/, ''),
+          lang: root.dataset.lang || 'zh-TW',
+          pageview: false,
+          reaction: false,
+          search: false,
+          copyright: false,
+          meta: ['nick', 'mail'],
+          locale: {
+            placeholder: root.dataset.placeholder || '寫點什麼吧...',
+            nick: root.dataset.nick || '如何稱呼',
+            mail: root.dataset.mail || 'Email',
+            submit: root.dataset.submit || '送出'
+          }
+        });
+      } catch (error) {
+        mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          loadComments();
+        }
+      }, { rootMargin: '320px 0px' });
+
+      observer.observe(root);
+    } else {
+      loadComments();
+    }
+  }
+</script>
 
   <footer class="post-footer">
     <ul class="post-tags">

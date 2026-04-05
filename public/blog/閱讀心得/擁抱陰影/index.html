@@ -10,7 +10,7 @@
 <meta name="description" content="總結來說，《擁抱陰影》點出陰影的必然存在，萬物都是相對相生，同時存在矛盾。關鍵是要從自身的矛盾對立進階成悖論，因為對立帶來衝突，而悖論可以產生意義，也是宗教重要的元素。我很喜歡鐘穎老師在序提到「對立會使我們生命的立足點越來越小，相對卻允許自我能被兩者同時穿越」的概念，我覺得那是整本書的核心，也是擁抱陰影的重要方向。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/%E6%93%81%E6%8A%B1%E9%99%B0%E5%BD%B1/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f7c01fc430cc8560e5b52b9e003a00ed4fb3ad2e491d61d24a02e3697844c7dc.css" integrity="sha256-98AfxDDMhWDltSueADoA7U&#43;zrS5JHWHSSgLjaXhEx9w=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7288ae702b076752dd7037312b0564b1f6087036cb4ec655efbfc1df10ef916c.css" integrity="sha256-coiucCsHZ1LdcDcxKwVksfYIcDbLTsZV77/B3xDvkWw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -597,7 +597,81 @@
       <span class="post-like-button__count" data-post-likes>--</span>
     </button>
   </div>
+</section><section
+  class="post-comments"
+  aria-label="留言"
+  data-waline-root
+  data-server-url="https://wenyang-waline.vercel.app"
+  data-path="/blog/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/%E6%93%81%E6%8A%B1%E9%99%B0%E5%BD%B1/"
+  data-lang="zh-TW"
+  data-placeholder="寫點什麼吧..."
+  data-nick="如何稱呼"
+  data-mail="Email"
+  data-submit="送出"
+>
+  <h2 class="post-comments-title">留言</h2>
+  <div id="waline" class="post-comments-host"></div>
 </section>
+<script type="module">
+  const root = document.querySelector('[data-waline-root]');
+
+  if (root) {
+    const mount = root.querySelector('#waline');
+    const loadComments = async () => {
+      if (!mount || mount.dataset.walineReady === '1') return;
+
+      mount.dataset.walineReady = '1';
+
+      try {
+        const ensureStylesheet = () => {
+          if (document.querySelector('link[data-waline-styles]')) return;
+
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.css';
+          link.setAttribute('data-waline-styles', 'true');
+          document.head.appendChild(link);
+        };
+
+        ensureStylesheet();
+        const { init } = await import('https://cdn.jsdelivr.net/npm/@waline/client@v3/dist/waline.js');
+
+        init({
+          el: mount,
+          serverURL: root.dataset.serverUrl,
+          path: root.dataset.path.replace(/\/$/, ''),
+          lang: root.dataset.lang || 'zh-TW',
+          pageview: false,
+          reaction: false,
+          search: false,
+          copyright: false,
+          meta: ['nick', 'mail'],
+          locale: {
+            placeholder: root.dataset.placeholder || '寫點什麼吧...',
+            nick: root.dataset.nick || '如何稱呼',
+            mail: root.dataset.mail || 'Email',
+            submit: root.dataset.submit || '送出'
+          }
+        });
+      } catch (error) {
+        mount.innerHTML = '<p class="post-comments-error">留言區載入失敗，請稍後再試。</p>';
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          observer.disconnect();
+          loadComments();
+        }
+      }, { rootMargin: '320px 0px' });
+
+      observer.observe(root);
+    } else {
+      loadComments();
+    }
+  }
+</script>
 
   <footer class="post-footer">
     <ul class="post-tags">

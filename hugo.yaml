@@ -41,9 +41,18 @@ params:
   salonGravatar: wenyang5566@email.com
   salonDescription: "一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。"
   postInteractionsApi: "https://listenriver-post-interactions.wenyang5566.workers.dev"
+  waline:
+    serverURL: "https://wenyang-waline.vercel.app"
+    lang: "zh-TW"
+    locale:
+      placeholder: "寫點什麼吧..."
+      nick: "如何稱呼"
+      mail: "Email"
+      submit: "送出"
 
   defaultTheme: auto
   profileMode.enabled: false
+  comments: true
 
   ShowReadingTime: true
   ShowShareButtons: false
