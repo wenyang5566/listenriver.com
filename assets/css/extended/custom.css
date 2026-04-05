@@ -1992,6 +1992,10 @@ body.mobile-nav-locked {
   color: var(--secondary);
 }
 
+.dark .post-comments {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
 #waline .wl-meta .wl-browser,
 #waline .wl-meta .wl-os,
 #waline .wl-action-rss,
@@ -2159,6 +2163,82 @@ body.mobile-nav-locked {
   padding-inline: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.dark #waline {
+  --waline-theme-color: rgba(111, 202, 209, 0.92);
+  --waline-active-color: rgba(129, 226, 233, 1);
+  --waline-color: rgba(241, 245, 249, 0.92);
+  --waline-bg-color: transparent;
+  --waline-bg-color-light: rgba(255, 255, 255, 0.04);
+  --waline-bg-color-hover: rgba(255, 255, 255, 0.06);
+  --waline-border-color: rgba(255, 255, 255, 0.1);
+  --waline-disable-bg-color: rgba(255, 255, 255, 0.04);
+  --waline-disable-color: rgba(148, 163, 184, 0.72);
+  --waline-info-bg-color: rgba(255, 255, 255, 0.04);
+  --waline-info-color: rgba(148, 163, 184, 0.88);
+}
+
+.dark #waline .wl-editor-container {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.74);
+}
+
+.dark #waline .wl-header input,
+.dark #waline .wl-input {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.9);
+  color: rgba(241, 245, 249, 0.92);
+}
+
+.dark #waline .wl-editor {
+  background: rgba(15, 23, 42, 0.88);
+  color: rgba(241, 245, 249, 0.92);
+}
+
+.dark #waline .wl-header input:focus,
+.dark #waline .wl-input:focus,
+.dark #waline .wl-editor:focus {
+  border-color: rgba(111, 202, 209, 0.72);
+  background: rgba(15, 23, 42, 0.96);
+}
+
+.dark #waline .wl-header label,
+.dark #waline .wl-count,
+.dark #waline .wl-empty,
+.dark #waline .wl-card .wl-nick,
+.dark #waline .wl-content {
+  color: rgba(241, 245, 249, 0.92);
+}
+
+.dark #waline .wl-card {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark #waline .wl-card .wl-meta,
+.dark #waline .wl-card .wl-action {
+  color: rgba(148, 163, 184, 0.86);
+}
+
+.dark #waline .wl-card .wl-action:hover,
+.dark #waline .wl-card .wl-action:focus-visible {
+  color: rgba(241, 245, 249, 0.92);
+}
+
+.dark .post-floating-tools {
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.84);
+  box-shadow: 0 14px 36px rgba(2, 6, 23, 0.38);
+}
+
+.dark .post-floating-tools__item:hover,
+.dark .post-floating-tools__item:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dark .post-floating-tools__item--static:hover,
+.dark .post-floating-tools__item--static:focus-visible {
+  background: transparent;
 }
 
 @media (max-width: 640px) {
