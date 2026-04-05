@@ -24,8 +24,18 @@
               {{- $coverImage := .Params.cover.image | default "cover.*" }}
               {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) }}
               {{- $res := .Resources.GetMatch (printf "%s.*" $coverStem) }}
+              {{- $cardWebpSm := "" }}
+              {{- $cardWebpLg := "" }}
+              {{- $cardFallbackSm := "" }}
+              {{- $cardFallbackLg := "" }}
               {{- if not $res }}
                 {{- $res = .Resources.GetMatch $coverImage }}
+              {{- end }}
+              {{- if $res }}
+                {{- $cardWebpSm = $res.Fill "280x224 webp q72" }}
+                {{- $cardWebpLg = $res.Fill "420x336 webp q72" }}
+                {{- $cardFallbackSm = $res.Fill "280x224 jpg q72" }}
+                {{- $cardFallbackLg = $res.Fill "420x336 jpg q72" }}
               {{- end }}
               {{- if and (not $res) (.Params.cover.image) }}
                 {{- $img = .Params.cover.image }}
@@ -35,9 +45,23 @@
               <a href="{{ .RelPermalink }}" class="salon-card">
                 <div class="salon-card-img">
                   {{- if $res }}
-                  <img src="{{ $res.RelPermalink }}" alt="{{ .Title }}" loading="lazy">
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcset="{{ $cardWebpSm.RelPermalink }} 280w, {{ $cardWebpLg.RelPermalink }} 420w"
+                      sizes="(max-width: 600px) 76vw, 280px">
+                    <img
+                      src="{{ $cardFallbackLg.RelPermalink }}"
+                      srcset="{{ $cardFallbackSm.RelPermalink }} 280w, {{ $cardFallbackLg.RelPermalink }} 420w"
+                      sizes="(max-width: 600px) 76vw, 280px"
+                      alt="{{ .Title }}"
+                      loading="lazy"
+                      decoding="async"
+                      width="{{ $cardFallbackLg.Width }}"
+                      height="{{ $cardFallbackLg.Height }}">
+                  </picture>
                   {{- else if $img }}
-                  <img src="{{ $img }}" alt="{{ .Title }}" loading="lazy">
+                  <img src="{{ $img }}" alt="{{ .Title }}" loading="lazy" decoding="async">
                   {{- else }}
                   <div class="salon-card-img-placeholder"></div>
                   {{- end }}

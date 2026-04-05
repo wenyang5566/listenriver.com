@@ -1,5 +1,6 @@
 /public/
 /public-build-check/
+/public-build-check-*/
 /public-build-benchmark/
 /public-build-benchmark-2/
 /public-build-benchmark-3/
