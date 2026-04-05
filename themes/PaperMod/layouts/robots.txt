@@ -4,4 +4,6 @@ Disallow:
 {{- else }}
 Disallow: /
 {{- end }}
-Sitemap: {{ "sitemap.xml" | absURL }}
+Sitemap: https://listenriver.com/sitemap.xml
+
+# Update: 2026-04-06
