@@ -10,6 +10,13 @@
     window.addEventListener('scroll', () => {
       if (ticking) return;
       requestAnimationFrame(() => {
+        if (window.innerWidth <= 640) {
+          header.classList.remove('nav--hidden');
+          lastY = Math.max(window.scrollY, 0);
+          ticking = false;
+          return;
+        }
+
         const y = window.scrollY;
         const diff = y - lastY;
 
@@ -64,6 +71,7 @@
   }
 
   const mobileDrawer = document.getElementById('mobile-nav-drawer');
+  const mobileNavBackdrop = document.querySelector('.mobile-nav-backdrop');
   const mobileMenuToggle = document.querySelector('.header-mobile-menu-toggle');
   const mobileNavCloseButtons = document.querySelectorAll('[data-mobile-nav-close]');
   const mobileNavGroups = document.querySelectorAll('.mobile-nav-group');
@@ -78,6 +86,9 @@
     document.body.classList.toggle('mobile-nav-locked', open);
     mobileDrawer.setAttribute('aria-hidden', open ? 'false' : 'true');
     mobileMenuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (mobileNavBackdrop) {
+      mobileNavBackdrop.hidden = !open;
+    }
   }
 
   if (mobileDrawer && mobileMenuToggle) {

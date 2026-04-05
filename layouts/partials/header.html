@@ -177,4 +177,107 @@
     </button>
     {{- end }}
   </nav>
+
+  <script>
+    (() => {
+      const header = document.getElementById('site-header');
+      const themeToggle = document.getElementById('theme-toggle');
+      const mobileDrawer = document.getElementById('mobile-nav-drawer');
+      const mobileMenuToggle = document.querySelector('.header-mobile-menu-toggle');
+      const mobileBackdrop = document.querySelector('.mobile-nav-backdrop');
+      const mobileCloseButtons = document.querySelectorAll('[data-mobile-nav-close]');
+      const mobileGroupButtons = document.querySelectorAll('.mobile-nav-group-trigger');
+      const scrollTopButtons = document.querySelectorAll('[data-scroll-top]');
+      const mobileTocShortcut = document.querySelector('[data-mobile-toc-shortcut]');
+
+      const setMobileNavOpen = (open) => {
+        if (!header || !mobileDrawer || !mobileMenuToggle) return;
+
+        header.classList.toggle('mobile-nav-open', open);
+        document.body.classList.toggle('mobile-nav-locked', open);
+        mobileDrawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+        mobileMenuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (mobileBackdrop) mobileBackdrop.hidden = !open;
+      };
+
+      if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
+        themeToggle.dataset.boundThemeToggle = '1';
+        themeToggle.addEventListener('click', () => {
+          const html = document.documentElement;
+          const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+          html.dataset.theme = nextTheme;
+          localStorage.setItem('pref-theme', nextTheme);
+        });
+      }
+
+      if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
+        mobileMenuToggle.dataset.boundMobileMenu = '1';
+        mobileMenuToggle.addEventListener('click', () => {
+          const willOpen = !header.classList.contains('mobile-nav-open');
+          setMobileNavOpen(willOpen);
+        });
+      }
+
+      mobileCloseButtons.forEach((button) => {
+        if (button.dataset.boundMobileClose) return;
+        button.dataset.boundMobileClose = '1';
+        button.addEventListener('click', () => {
+          setMobileNavOpen(false);
+        });
+      });
+
+      mobileGroupButtons.forEach((button) => {
+        if (button.dataset.boundMobileGroup) return;
+        button.dataset.boundMobileGroup = '1';
+        button.addEventListener('click', () => {
+          const group = button.closest('.mobile-nav-group');
+          const willOpen = group && !group.classList.contains('is-open');
+
+          document.querySelectorAll('.mobile-nav-group').forEach((item) => {
+            item.classList.remove('is-open');
+            const trigger = item.querySelector('.mobile-nav-group-trigger');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          });
+
+          if (group && willOpen) {
+            group.classList.add('is-open');
+            button.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      scrollTopButtons.forEach((button) => {
+        if (button.dataset.boundScrollTop) return;
+        button.dataset.boundScrollTop = '1';
+        button.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+          });
+        });
+      });
+
+      if (mobileTocShortcut && !mobileTocShortcut.dataset.boundTocShortcut) {
+        mobileTocShortcut.dataset.boundTocShortcut = '1';
+        mobileTocShortcut.addEventListener('click', () => {
+          const floatingToc = document.querySelector('[data-floating-toc]');
+          const tocButton = floatingToc ? floatingToc.querySelector('.floating-toc-toggle') : null;
+          if (!floatingToc || !tocButton) return;
+
+          const willOpen = !floatingToc.classList.contains('is-open');
+          floatingToc.classList.remove('is-open');
+          tocButton.setAttribute('aria-expanded', 'false');
+
+          if (willOpen) {
+            floatingToc.classList.add('is-open');
+            tocButton.setAttribute('aria-expanded', 'true');
+            floatingToc.scrollIntoView({
+              block: 'nearest',
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+            });
+          }
+        });
+      }
+    })();
+  </script>
 </header>
