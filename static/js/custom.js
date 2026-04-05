@@ -61,13 +61,32 @@
   });
 
   const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  function syncThemeToggleState() {
+    if (!themeToggle) return;
+
+    const isDark = html.dataset.theme === 'dark';
+    const nextModeLabel = isDark ? '切換為淺色模式' : '切換為深色模式';
+    themeToggle.setAttribute('aria-label', nextModeLabel);
+    themeToggle.setAttribute('title', nextModeLabel + ' (Alt + T)');
+  }
+
+  syncThemeToggleState();
+
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-      html.dataset.theme = nextTheme;
-      localStorage.setItem('pref-theme', nextTheme);
+      window.setTimeout(syncThemeToggleState, 0);
     });
+  }
+
+  if (window.matchMedia) {
+    const darkSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    if (typeof darkSchemeMedia.addEventListener === 'function') {
+      darkSchemeMedia.addEventListener('change', syncThemeToggleState);
+    } else if (typeof darkSchemeMedia.addListener === 'function') {
+      darkSchemeMedia.addListener(syncThemeToggleState);
+    }
   }
 
   const mobileDrawer = document.getElementById('mobile-nav-drawer');
@@ -77,6 +96,7 @@
   const mobileNavGroups = document.querySelectorAll('.mobile-nav-group');
   const scrollTopButtons = document.querySelectorAll('[data-scroll-top]');
   const mobileTocShortcut = document.querySelector('[data-mobile-toc-shortcut]');
+  const mobileBackButtons = document.querySelectorAll('[data-mobile-back]');
   const readingProgressBar = document.querySelector('[data-reading-progress]');
 
   function setMobileNavOpen(open) {
@@ -138,14 +158,42 @@
     });
   });
 
+  mobileBackButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const fallbackUrl = button.getAttribute('data-fallback-url') || '/';
+      const referrer = document.referrer;
+      const hasSameOriginReferrer = !!referrer && (() => {
+        try {
+          return new URL(referrer).origin === window.location.origin;
+        } catch (error) {
+          return false;
+        }
+      })();
+
+      if (window.history.length > 1 && hasSameOriginReferrer) {
+        window.history.back();
+        return;
+      }
+
+      window.location.href = fallbackUrl;
+    });
+  });
+
   if (readingProgressBar) {
-    const progressSource = document.querySelector('.post-content') || document.documentElement;
+    const progressSource = document.querySelector('.post-content');
     const updateReadingProgress = () => {
+      if (!progressSource) {
+        readingProgressBar.style.width = '0%';
+        return;
+      }
+
       const viewportHeight = window.innerHeight;
+      const contentTop = progressSource.offsetTop;
       const fullHeight = progressSource.scrollHeight;
-      const scrolled = window.scrollY;
-      const available = Math.max(fullHeight - viewportHeight, 1);
-      const ratio = Math.max(0, Math.min(scrolled / available, 1));
+      const contentBottom = contentTop + fullHeight;
+      const scrolled = window.scrollY + viewportHeight * 0.18;
+      const available = Math.max(contentBottom - contentTop - viewportHeight * 0.42, 1);
+      const ratio = Math.max(0, Math.min((scrolled - contentTop) / available, 1));
       readingProgressBar.style.width = (ratio * 100).toFixed(2) + '%';
     };
 
@@ -153,6 +201,8 @@
     window.addEventListener('scroll', updateReadingProgress, { passive: true });
     window.addEventListener('resize', updateReadingProgress, { passive: true });
   }
+
+  initReaderMediaEnhancements();
 
   const floatingToc = document.querySelector('[data-floating-toc]');
   if (floatingToc) {
@@ -162,6 +212,13 @@
     function closeToc() {
       floatingToc.classList.remove('is-open');
       if (tocButton) tocButton.setAttribute('aria-expanded', 'false');
+      if (mobileTocShortcut) mobileTocShortcut.setAttribute('aria-expanded', 'false');
+    }
+
+    function openToc() {
+      floatingToc.classList.add('is-open');
+      if (tocButton) tocButton.setAttribute('aria-expanded', 'true');
+      if (mobileTocShortcut) mobileTocShortcut.setAttribute('aria-expanded', 'true');
     }
 
     if (tocButton) {
@@ -169,25 +226,19 @@
         event.preventDefault();
         const willOpen = !floatingToc.classList.contains('is-open');
         closeToc();
-        if (willOpen) {
-          floatingToc.classList.add('is-open');
-          tocButton.setAttribute('aria-expanded', 'true');
-        }
+        if (willOpen) openToc();
       });
     }
 
-    if (mobileTocShortcut && tocButton) {
-      mobileTocShortcut.addEventListener('click', () => {
+    if (mobileTocShortcut) {
+      mobileTocShortcut.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         const willOpen = !floatingToc.classList.contains('is-open');
         closeToc();
 
         if (willOpen) {
-          floatingToc.classList.add('is-open');
-          tocButton.setAttribute('aria-expanded', 'true');
-          floatingToc.scrollIntoView({
-            block: 'nearest',
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-          });
+          openToc();
         }
       });
     }
@@ -198,9 +249,11 @@
       });
     });
 
+    syncActiveTocLink(tocLinks);
+
     document.addEventListener('click', event => {
       if (!event.target.closest('.nav-group')) closeGroups();
-      if (!event.target.closest('[data-floating-toc]')) closeToc();
+      if (!event.target.closest('[data-floating-toc]') && !event.target.closest('[data-mobile-toc-shortcut]')) closeToc();
     });
 
     document.addEventListener('keydown', event => {
@@ -213,6 +266,7 @@
     if (mobileTocShortcut) {
       mobileTocShortcut.classList.add('is-disabled');
       mobileTocShortcut.setAttribute('aria-disabled', 'true');
+      mobileTocShortcut.setAttribute('aria-expanded', 'false');
     }
 
     document.addEventListener('click', event => {
@@ -544,5 +598,177 @@
       } catch (error) {
       }
     });
+  }
+
+  function initReaderMediaEnhancements() {
+    const articleRoot = document.querySelector('.post-single');
+    if (!articleRoot) return;
+
+    const figures = Array.from(articleRoot.querySelectorAll('.post-figure, .post-single > .entry-cover'));
+    const images = figures
+      .map((figure) => figure.querySelector('img'))
+      .filter((image) => image && !image.closest('.post-content-image--missing'));
+
+    if (!images.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const imageMeta = images.map((image, index) => {
+      const figure = image.closest('.post-figure, .entry-cover');
+      const captionNode = figure ? figure.querySelector('figcaption') : null;
+      const src = image.currentSrc || image.src;
+      const alt = image.getAttribute('alt') || '';
+
+      image.classList.add('is-zoomable');
+      image.setAttribute('tabindex', '0');
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', alt ? `放大圖片：${alt}` : '放大圖片');
+
+      return {
+        image,
+        src,
+        alt,
+        caption: captionNode ? captionNode.textContent.trim() : '',
+        index
+      };
+    });
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'reader-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.innerHTML = `
+      <div class="reader-lightbox-backdrop" data-reader-lightbox-close></div>
+      <div class="reader-lightbox-dialog" role="dialog" aria-modal="true" aria-label="圖片預覽">
+        <button class="reader-lightbox-close" type="button" aria-label="關閉圖片預覽" data-reader-lightbox-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 6l12 12"></path>
+            <path d="M18 6l-12 12"></path>
+          </svg>
+        </button>
+        <figure class="reader-lightbox-figure">
+          <img class="reader-lightbox-image" alt="">
+          <figcaption class="reader-lightbox-caption"></figcaption>
+        </figure>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector('.reader-lightbox-image');
+    const lightboxCaption = lightbox.querySelector('.reader-lightbox-caption');
+    let activeIndex = -1;
+
+    function openLightbox(index) {
+      const target = imageMeta[index];
+      if (!target) return;
+
+      activeIndex = index;
+      lightboxImage.src = target.src;
+      lightboxImage.alt = target.alt;
+      lightboxCaption.textContent = target.caption || target.alt || '';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('reader-lightbox-open');
+
+      if (prefersReducedMotion) {
+        lightboxImage.style.transition = 'none';
+      }
+    }
+
+    function closeLightbox() {
+      if (!lightbox.classList.contains('is-open')) return;
+
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('reader-lightbox-open');
+      activeIndex = -1;
+      window.setTimeout(() => {
+        if (!lightbox.classList.contains('is-open')) {
+          lightboxImage.removeAttribute('src');
+        }
+      }, 180);
+    }
+
+    function moveLightbox(step) {
+      if (activeIndex === -1 || imageMeta.length < 2) return;
+      const nextIndex = (activeIndex + step + imageMeta.length) % imageMeta.length;
+      openLightbox(nextIndex);
+    }
+
+    imageMeta.forEach((item) => {
+      item.image.addEventListener('click', () => openLightbox(item.index));
+      item.image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(item.index);
+        }
+      });
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target.closest('[data-reader-lightbox-close]')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox.classList.contains('is-open')) return;
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowRight') {
+        moveLightbox(1);
+      } else if (event.key === 'ArrowLeft') {
+        moveLightbox(-1);
+      }
+    });
+  }
+
+  function syncActiveTocLink(links) {
+    if (!links || !links.length || typeof IntersectionObserver !== 'function') return;
+
+    const headingMap = new Map();
+    links.forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      if (!href.startsWith('#')) return;
+      const target = document.getElementById(decodeURIComponent(href.slice(1)));
+      if (target) headingMap.set(target, link);
+    });
+
+    if (!headingMap.size) return;
+
+    let currentId = '';
+
+    const setActive = (id) => {
+      if (!id || currentId === id) return;
+      currentId = id;
+      links.forEach((link) => {
+        const active = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('is-active', active);
+        if (active) {
+          link.setAttribute('aria-current', 'true');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visibleEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+
+      if (visibleEntry?.target?.id) {
+        setActive(visibleEntry.target.id);
+      }
+    }, {
+      rootMargin: '-18% 0px -62% 0px',
+      threshold: [0, 0.25, 0.6, 1]
+    });
+
+    headingMap.forEach((_, heading) => observer.observe(heading));
+
+    const firstHeading = headingMap.keys().next().value;
+    if (firstHeading?.id) {
+      setActive(firstHeading.id);
+    }
   }
 })();

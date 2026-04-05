@@ -202,6 +202,8 @@
     window.addEventListener('resize', updateReadingProgress, { passive: true });
   }
 
+  initReaderMediaEnhancements();
+
   const floatingToc = document.querySelector('[data-floating-toc]');
   if (floatingToc) {
     const tocButton = floatingToc.querySelector('.floating-toc-toggle');
@@ -246,6 +248,8 @@
         closeToc();
       });
     });
+
+    syncActiveTocLink(tocLinks);
 
     document.addEventListener('click', event => {
       if (!event.target.closest('.nav-group')) closeGroups();
@@ -594,5 +598,177 @@
       } catch (error) {
       }
     });
+  }
+
+  function initReaderMediaEnhancements() {
+    const articleRoot = document.querySelector('.post-single');
+    if (!articleRoot) return;
+
+    const figures = Array.from(articleRoot.querySelectorAll('.post-figure, .post-single > .entry-cover'));
+    const images = figures
+      .map((figure) => figure.querySelector('img'))
+      .filter((image) => image && !image.closest('.post-content-image--missing'));
+
+    if (!images.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const imageMeta = images.map((image, index) => {
+      const figure = image.closest('.post-figure, .entry-cover');
+      const captionNode = figure ? figure.querySelector('figcaption') : null;
+      const src = image.currentSrc || image.src;
+      const alt = image.getAttribute('alt') || '';
+
+      image.classList.add('is-zoomable');
+      image.setAttribute('tabindex', '0');
+      image.setAttribute('role', 'button');
+      image.setAttribute('aria-label', alt ? `放大圖片：${alt}` : '放大圖片');
+
+      return {
+        image,
+        src,
+        alt,
+        caption: captionNode ? captionNode.textContent.trim() : '',
+        index
+      };
+    });
+
+    const lightbox = document.createElement('div');
+    lightbox.className = 'reader-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.innerHTML = `
+      <div class="reader-lightbox-backdrop" data-reader-lightbox-close></div>
+      <div class="reader-lightbox-dialog" role="dialog" aria-modal="true" aria-label="圖片預覽">
+        <button class="reader-lightbox-close" type="button" aria-label="關閉圖片預覽" data-reader-lightbox-close>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 6l12 12"></path>
+            <path d="M18 6l-12 12"></path>
+          </svg>
+        </button>
+        <figure class="reader-lightbox-figure">
+          <img class="reader-lightbox-image" alt="">
+          <figcaption class="reader-lightbox-caption"></figcaption>
+        </figure>
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector('.reader-lightbox-image');
+    const lightboxCaption = lightbox.querySelector('.reader-lightbox-caption');
+    let activeIndex = -1;
+
+    function openLightbox(index) {
+      const target = imageMeta[index];
+      if (!target) return;
+
+      activeIndex = index;
+      lightboxImage.src = target.src;
+      lightboxImage.alt = target.alt;
+      lightboxCaption.textContent = target.caption || target.alt || '';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('reader-lightbox-open');
+
+      if (prefersReducedMotion) {
+        lightboxImage.style.transition = 'none';
+      }
+    }
+
+    function closeLightbox() {
+      if (!lightbox.classList.contains('is-open')) return;
+
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('reader-lightbox-open');
+      activeIndex = -1;
+      window.setTimeout(() => {
+        if (!lightbox.classList.contains('is-open')) {
+          lightboxImage.removeAttribute('src');
+        }
+      }, 180);
+    }
+
+    function moveLightbox(step) {
+      if (activeIndex === -1 || imageMeta.length < 2) return;
+      const nextIndex = (activeIndex + step + imageMeta.length) % imageMeta.length;
+      openLightbox(nextIndex);
+    }
+
+    imageMeta.forEach((item) => {
+      item.image.addEventListener('click', () => openLightbox(item.index));
+      item.image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openLightbox(item.index);
+        }
+      });
+    });
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target.closest('[data-reader-lightbox-close]')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (!lightbox.classList.contains('is-open')) return;
+
+      if (event.key === 'Escape') {
+        closeLightbox();
+      } else if (event.key === 'ArrowRight') {
+        moveLightbox(1);
+      } else if (event.key === 'ArrowLeft') {
+        moveLightbox(-1);
+      }
+    });
+  }
+
+  function syncActiveTocLink(links) {
+    if (!links || !links.length || typeof IntersectionObserver !== 'function') return;
+
+    const headingMap = new Map();
+    links.forEach((link) => {
+      const href = link.getAttribute('href') || '';
+      if (!href.startsWith('#')) return;
+      const target = document.getElementById(decodeURIComponent(href.slice(1)));
+      if (target) headingMap.set(target, link);
+    });
+
+    if (!headingMap.size) return;
+
+    let currentId = '';
+
+    const setActive = (id) => {
+      if (!id || currentId === id) return;
+      currentId = id;
+      links.forEach((link) => {
+        const active = link.getAttribute('href') === `#${id}`;
+        link.classList.toggle('is-active', active);
+        if (active) {
+          link.setAttribute('aria-current', 'true');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visibleEntry = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+
+      if (visibleEntry?.target?.id) {
+        setActive(visibleEntry.target.id);
+      }
+    }, {
+      rootMargin: '-18% 0px -62% 0px',
+      threshold: [0, 0.25, 0.6, 1]
+    });
+
+    headingMap.forEach((_, heading) => observer.observe(heading));
+
+    const firstHeading = headingMap.keys().next().value;
+    if (firstHeading?.id) {
+      setActive(firstHeading.id);
+    }
   }
 })();

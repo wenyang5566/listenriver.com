@@ -1,4 +1,4 @@
-{{- $alt := .Text | default .Title | default "article image" -}}
+﻿{{- $alt := .Text | default .Title | default "article image" -}}
 {{- $destination := .Destination | strings.TrimSpace -}}
 {{- $isRemote := or (hasPrefix $destination "http://") (hasPrefix $destination "https://") -}}
 {{- $isRootRelative := and (hasPrefix $destination "/") (not $isRemote) -}}
@@ -29,8 +29,9 @@
       "resource" $resource
       "alt" $alt
       "loading" "lazy"
-      "sizes" "(min-width: 900px) 860px, 100vw"
+      "sizes" "(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
       "maxWidth" 1100
+      "widths" (slice 360 480 640 768 920 1100)
       "class" "post-content-image"
     ) -}}
     {{- with .Title }}
@@ -39,7 +40,14 @@
   </figure>
 {{- else if or $isRemote $staticExists -}}
   <figure class="post-figure">
-    <img src="{{ if $isRootRelative }}{{ $destination | relURL }}{{ else }}{{ $destination | safeURL }}{{ end }}" alt="{{ $alt }}" loading="lazy" class="post-content-image">
+    <img
+      src="{{ if $isRootRelative }}{{ $destination | relURL }}{{ else }}{{ $destination | safeURL }}{{ end }}"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async"
+      fetchpriority="auto"
+      sizes="(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
+      class="post-content-image">
     {{- with .Title }}
       <figcaption>{{ . }}</figcaption>
     {{- end }}
@@ -47,8 +55,8 @@
 {{- else -}}
   <figure class="post-figure post-figure--missing">
     <div class="post-content-image post-content-image--missing" role="img" aria-label="{{ $alt }}">
-      <span>圖片目前缺失</span>
+      <span>Image unavailable</span>
     </div>
-    <figcaption>{{ .Title | default "這張內文圖片原本指向舊站檔案，但目前檔案不在站內。" }}</figcaption>
+    <figcaption>{{ .Title | default "This image could not be found." }}</figcaption>
   </figure>
 {{- end -}}

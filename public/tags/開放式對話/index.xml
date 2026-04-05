@@ -75,14 +75,20 @@
 &lt;p&gt;&lt;strong&gt;我們的工作就是幫他看到他還有愛，為什麼想控制、會恨，其實都還是有在乎&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;figure class=&#34;post-figure&#34;&gt;&lt;picture&gt;
-  &lt;source srcset=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_56d323b718cb3869.webp&#34; type=&#34;image/webp&#34;&gt;
+  &lt;source
+    srcset=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_f2aec659b9df2487.webp 360w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_d2866c723cad003a.webp 480w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_382679e6f3e3ff2b.webp 640w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_9a6324ec5605e6f3.webp 768w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_bd5845ea07fab30.webp 920w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_56d323b718cb3869.webp 1100w&#34;
+    sizes=&#34;(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)&#34;
+    type=&#34;image/webp&#34;&gt;
   &lt;img
     loading=&#34;lazy&#34;
+    decoding=&#34;async&#34;
+    fetchpriority=&#34;auto&#34;
     src=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_ef5bbbb1ff195f28.jpg&#34;
+    srcset=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_6684f1c8adb551f3.jpg 360w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_ace13323e95178ef.jpg 480w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_ee7e669f5b9b30ae.jpg 640w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_cb2290a8e60bde66.jpg 768w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_aeff023332657e54.jpg 920w, /blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_ef5bbbb1ff195f28.jpg 1100w&#34;
     alt=&#34;article image&#34;
     width=&#34;1100&#34;
     height=&#34;825&#34;
-    sizes=&#34;(min-width: 900px) 860px, 100vw&#34;
+    sizes=&#34;(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)&#34;
     class=&#34;post-content-image&#34;&gt;
 &lt;/picture&gt;
 
@@ -90,97 +96,7 @@
 &lt;h4 id=&#34;精神疾病是文化建構的&#34;&gt;【精神疾病是文化建構的】&lt;/h4&gt;
 &lt;p&gt;也許真的有腦中的狀況，可是我們不是只有看到腦中的狀況，雖然有身體的部分但是一定也有文化的部分，同時受到歷史文化、生物學所形塑。&lt;/p&gt;
 &lt;p&gt;看精神醫療歷史就知道，&lt;strong&gt;有時候是病，有時候不是病，他不是百分之百絕對，是流動的&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;舉例：如果有一天，因為現在是3C世界，如果有人手腳不好，會不會被視為3C失用症？&lt;/p&gt;
-&lt;p&gt;開放式對話不只要看生理的部分，還要看這個人在文化中、關係中受苦的部分是什麼&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;生病會受苦，但蠻多是來自關係的受苦，我們做的就是編織關係&lt;/strong&gt;。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;技術重要還是態度重要&#34;&gt;【技術重要還是態度重要？】&lt;/h4&gt;
-&lt;p&gt;&lt;figure class=&#34;post-figure&#34;&gt;&lt;picture&gt;
-  &lt;source srcset=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_6ecdd89ca84ca80d.webp&#34; type=&#34;image/webp&#34;&gt;
-  &lt;img
-    loading=&#34;lazy&#34;
-    src=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_da86815e6fbfd096.jpg&#34;
-    alt=&#34;article image&#34;
-    width=&#34;1100&#34;
-    height=&#34;825&#34;
-    sizes=&#34;(min-width: 900px) 860px, 100vw&#34;
-    class=&#34;post-content-image&#34;&gt;
-&lt;/picture&gt;
-
-  &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;都很重要。如果只有技術，就變冷冰冰工匠；只有態度，就只是好人，沒辦法做治療。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;沒有同理的技術比沒有技術的同理更容易讓個案受冒犯&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;（美國）學習步驟：一開始觀摩，然後技術模仿，要有東西可以複製，學了之後要練習，過程中就要修心法，注意自己哪些做不好，反覆練習，最後融合在一起，自然而然就可以發揮。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h4 id=&#34;同盟alliance--共謀coalition&#34;&gt;【同盟Alliance ＆ 共謀Coalition】&lt;/h4&gt;
-&lt;p&gt;&lt;figure class=&#34;post-figure&#34;&gt;&lt;picture&gt;
-  &lt;source srcset=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0015_hu_6a931810f2d178b0.webp&#34; type=&#34;image/webp&#34;&gt;
-  &lt;img
-    loading=&#34;lazy&#34;
-    src=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0015_hu_e55b90ab1e77c151.jpg&#34;
-    alt=&#34;article image&#34;
-    width=&#34;1100&#34;
-    height=&#34;825&#34;
-    sizes=&#34;(min-width: 900px) 860px, 100vw&#34;
-    class=&#34;post-content-image&#34;&gt;
-&lt;/picture&gt;
-
-  &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;figure class=&#34;post-figure&#34;&gt;&lt;picture&gt;
-  &lt;source srcset=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0016_hu_1ba97d1829b51f36.webp&#34; type=&#34;image/webp&#34;&gt;
-  &lt;img
-    loading=&#34;lazy&#34;
-    src=&#34;/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0016_hu_d9231349112b140c.jpg&#34;
-    alt=&#34;article image&#34;
-    width=&#34;1100&#34;
-    height=&#34;825&#34;
-    sizes=&#34;(min-width: 900px) 860px, 100vw&#34;
-    class=&#34;post-content-image&#34;&gt;
-&lt;/picture&gt;
-
-  &lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;家族治療會進到很多不同關係，今天講的是最簡單的，其他都是排列組合或是人數上的差別。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;同盟關係&lt;/strong&gt;：允許界線是彈性調整的。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;共謀關係&lt;/strong&gt;：&lt;strong&gt;關係只能維持現況，有人要加入就會緊張，害怕有人落單，也會擔心有人離開，害怕被拋棄&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;同盟關係&lt;/strong&gt;：比較願意袒露脆弱。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;共謀關係&lt;/strong&gt;：&lt;strong&gt;傾向隱藏秘密，藏著一些秘密讓你覺得我們是一個獨特團體&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;同盟關係&lt;/strong&gt;：**有不同表達，有時像朋友、有時像伴侶可以彈性調整。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;共謀關係&lt;/strong&gt;：比較是條件的，「&lt;strong&gt;要XX才是我們家的孩子，沒有做到XX就不是我們家的孩子&lt;/strong&gt;」&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;同盟關係&lt;/strong&gt;：策略上會引入資源，允許被改變。；&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;共謀關係&lt;/strong&gt;：會有各種八點擋情節，&lt;strong&gt;拉攏、討好、威脅、貶低&lt;/strong&gt;，可能是用口語或非口語。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Satir學派說要做一致性溝通，但&lt;strong&gt;共謀就是各種不一致：「我愛你但不能跟你一起」、「我恨你但要跟你發生關係」這些是宮鬥戲的精華&lt;/strong&gt;。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h5 id=&#34;舉例1&#34;&gt;舉例1：&lt;/h5&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;兒子要出門，媽媽說頭好痛&lt;/p&gt;</description>
+&lt;p&gt;舉例：如果有一天，因為現在是3C世界，如果有人手腳不好，會不會被視為3C失用症？&lt;/p&gt;</description>
     </item>
     <item>
       <title>開放式對話進階工作坊Day1</title>

@@ -13,7 +13,7 @@
   <div class="header-top-shell">
     <div class="header-top">
       <div class="header-side header-side-right">
-        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false" onclick="window.listenriverMobileMenuToggle && window.listenriverMobileMenuToggle(event)">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 7h16"></path>
             <path d="M4 12h16"></path>
@@ -21,7 +21,7 @@
           </svg>
         </button>
         {{- if (not site.Params.disableThemeToggle) }}
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式" onclick="window.listenriverThemeToggle && window.listenriverThemeToggle(event)">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -110,6 +110,15 @@
 
     <div class="mobile-nav-groups">
       {{- range $groups }}
+        {{- $groupScratch := newScratch -}}
+        {{- $groupScratch.Set "count" 0 -}}
+        {{- range .items }}
+          {{- $cat := index $allCats . -}}
+          {{- if $cat -}}
+            {{- $groupScratch.Add "count" (len $cat.Pages) -}}
+          {{- end -}}
+        {{- end -}}
+        {{- $groupCount := $groupScratch.Get "count" -}}
         <section class="mobile-nav-group">
           <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
             <span>{{ .title }}</span>
@@ -117,7 +126,10 @@
           </button>
           <div class="mobile-nav-group-panel">
             {{- if .url }}
-              <a href="{{ .url | relLangURL }}" class="mobile-nav-sub-link mobile-nav-sub-link-all">進入{{ .title }}</a>
+              <a href="{{ .url | relLangURL }}" class="mobile-nav-sub-link mobile-nav-sub-link-parent">
+                <span>{{ .title }}</span>
+                <span class="mobile-nav-sub-count">{{ $groupCount }}</span>
+              </a>
             {{- end }}
             {{- range .items }}
               {{- $cat := index $allCats . }}
@@ -138,21 +150,19 @@
     <span class="mobile-reading-progress-bar" data-reading-progress></span>
   </div>
 
-  <nav class="mobile-bottom-bar{{ if .IsPage }} mobile-bottom-bar--article{{ if not (.Param "comments") }} mobile-bottom-bar--article-no-comments{{ end }}{{ end }}" aria-label="手機快捷操作">
+  <nav class="mobile-bottom-bar{{ if .IsPage }} mobile-bottom-bar--article{{ end }}" aria-label="手機快捷操作">
     {{- if .IsPage }}
-      {{- if .Param "comments" }}
-      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-comments-button aria-label="查看留言">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path></svg>
-        <span class="mobile-bottom-link__count" data-post-comments data-path="{{ .RelPermalink }}">--</span>
+      <a href="{{ "/" | relLangURL }}" class="mobile-bottom-link mobile-bottom-link--article" aria-label="回首頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
+        <span class="mobile-bottom-link__label">首頁</span>
+      </a>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-mobile-back data-fallback-url="{{ "/blog/" | relLangURL }}" aria-label="回上一頁">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+        <span class="mobile-bottom-link__label">上一頁</span>
       </button>
-      {{- end }}
-      <span class="mobile-bottom-link mobile-bottom-link--article mobile-bottom-link--static" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-        <span class="mobile-bottom-link__count" data-post-views>--</span>
-      </span>
-      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-like-button aria-label="喜歡這篇文章">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.25c-.3 0-.6-.09-.86-.26C8.29 18.06 3 14.08 3 8.99 3 5.96 5.42 3.75 8.2 3.75c1.52 0 2.98.68 3.8 1.83.82-1.15 2.28-1.83 3.8-1.83 2.78 0 5.2 2.21 5.2 5.24 0 5.09-5.29 9.07-8.14 11-.26.17-.56.26-.86.26Z"></path></svg>
-        <span class="mobile-bottom-link__count" data-post-likes>--</span>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-mobile-toc-shortcut aria-label="開啟目錄">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 12h10"></path><path d="M5 17h14"></path></svg>
+        <span class="mobile-bottom-link__label">目錄</span>
       </button>
       <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-scroll-top aria-label="回到頂部">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
@@ -178,111 +188,4 @@
     {{- end }}
   </nav>
 
-  <script>
-    (() => {
-      const header = document.getElementById('site-header');
-      const themeToggle = document.getElementById('theme-toggle');
-      const mobileDrawer = document.getElementById('mobile-nav-drawer');
-      const mobileMenuToggle = document.querySelector('.header-mobile-menu-toggle');
-      const mobileBackdrop = document.querySelector('.mobile-nav-backdrop');
-      const mobileCloseButtons = document.querySelectorAll('[data-mobile-nav-close]');
-      const mobileGroupButtons = document.querySelectorAll('.mobile-nav-group-trigger');
-      const scrollTopButtons = document.querySelectorAll('[data-scroll-top]');
-      const mobileTocShortcut = document.querySelector('[data-mobile-toc-shortcut]');
-
-      const setMobileNavOpen = (open) => {
-        if (!header || !mobileDrawer || !mobileMenuToggle) return;
-
-        header.classList.toggle('mobile-nav-open', open);
-        document.body.classList.toggle('mobile-nav-locked', open);
-        mobileDrawer.setAttribute('aria-hidden', open ? 'false' : 'true');
-        mobileMenuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        if (mobileBackdrop) mobileBackdrop.hidden = !open;
-      };
-
-      window.listenriverThemeToggle = () => {
-        const html = document.documentElement;
-        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-        html.dataset.theme = nextTheme;
-        localStorage.setItem('pref-theme', nextTheme);
-      };
-
-      window.listenriverMobileMenuToggle = () => {
-        if (!header) return;
-        const willOpen = !header.classList.contains('mobile-nav-open');
-        setMobileNavOpen(willOpen);
-      };
-
-      if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
-        themeToggle.dataset.boundThemeToggle = '1';
-        themeToggle.addEventListener('click', window.listenriverThemeToggle);
-      }
-
-      if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
-        mobileMenuToggle.dataset.boundMobileMenu = '1';
-        mobileMenuToggle.addEventListener('click', window.listenriverMobileMenuToggle);
-      }
-
-      mobileCloseButtons.forEach((button) => {
-        if (button.dataset.boundMobileClose) return;
-        button.dataset.boundMobileClose = '1';
-        button.addEventListener('click', () => {
-          setMobileNavOpen(false);
-        });
-      });
-
-      mobileGroupButtons.forEach((button) => {
-        if (button.dataset.boundMobileGroup) return;
-        button.dataset.boundMobileGroup = '1';
-        button.addEventListener('click', () => {
-          const group = button.closest('.mobile-nav-group');
-          const willOpen = group && !group.classList.contains('is-open');
-
-          document.querySelectorAll('.mobile-nav-group').forEach((item) => {
-            item.classList.remove('is-open');
-            const trigger = item.querySelector('.mobile-nav-group-trigger');
-            if (trigger) trigger.setAttribute('aria-expanded', 'false');
-          });
-
-          if (group && willOpen) {
-            group.classList.add('is-open');
-            button.setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
-
-      scrollTopButtons.forEach((button) => {
-        if (button.dataset.boundScrollTop) return;
-        button.dataset.boundScrollTop = '1';
-        button.addEventListener('click', () => {
-          window.scrollTo({
-            top: 0,
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-          });
-        });
-      });
-
-      if (mobileTocShortcut && !mobileTocShortcut.dataset.boundTocShortcut) {
-        mobileTocShortcut.dataset.boundTocShortcut = '1';
-        mobileTocShortcut.addEventListener('click', () => {
-          const floatingToc = document.querySelector('[data-floating-toc]');
-          const tocButton = floatingToc ? floatingToc.querySelector('.floating-toc-toggle') : null;
-          if (!floatingToc || !tocButton) return;
-
-          const willOpen = !floatingToc.classList.contains('is-open');
-          floatingToc.classList.remove('is-open');
-          tocButton.setAttribute('aria-expanded', 'false');
-
-          if (willOpen) {
-            floatingToc.classList.add('is-open');
-            tocButton.setAttribute('aria-expanded', 'true');
-            floatingToc.scrollIntoView({
-              block: 'nearest',
-              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-            });
-          }
-        });
-      }
-    })();
-  </script>
 </header>

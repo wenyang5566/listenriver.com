@@ -1427,19 +1427,25 @@ body.mobile-nav-locked {
 }
 
 /* Article reading layout */
+body:not(.list) .main {
+  max-width: calc(960px + var(--gap) * 2);
+}
+
 .post-single {
   max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-single .post-header {
-  max-width: 760px;
+  max-width: 920px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1.2rem;
 }
 
 .post-single .post-content {
-  max-width: 760px;
+  max-width: 920px;
   margin: 0 auto;
   font-size: 1.06rem;
   line-height: 1.95;
@@ -1521,7 +1527,7 @@ body.mobile-nav-locked {
 
 .post-interactions {
   margin: 2rem auto 0;
-  max-width: 760px;
+  max-width: 920px;
   padding-top: 1rem;
   border-top: 1px solid rgba(17, 24, 39, 0.1);
 }
@@ -1833,9 +1839,14 @@ body.mobile-nav-locked {
 }
 
 .post-single .post-content .post-figure {
-  max-width: 480px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post-single .post-content .post-figure,
+.post-single > .entry-cover {
+  position: relative;
 }
 
 .post-single .post-content .post-figure picture,
@@ -1849,6 +1860,47 @@ body.mobile-nav-locked {
   height: auto;
   border-radius: 18px;
   box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
+}
+
+.post-single .post-content .post-content-image.is-zoomable,
+.post-single > .entry-cover img.is-zoomable {
+  cursor: zoom-in;
+}
+
+.post-single .post-content .post-figure::after,
+.post-single > .entry-cover::after {
+  content: "點擊放大";
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.7);
+  color: #f8fafc;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.post-single .post-content .post-figure:hover::after,
+.post-single .post-content .post-figure:focus-within::after,
+.post-single > .entry-cover:hover::after,
+.post-single > .entry-cover:focus-within::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.post-single .post-content .post-figure:hover .post-content-image.is-zoomable,
+.post-single .post-content .post-figure:focus-within .post-content-image.is-zoomable,
+.post-single > .entry-cover:hover img.is-zoomable,
+.post-single > .entry-cover:focus-within img.is-zoomable {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.12);
+  filter: saturate(1.02);
 }
 
 .post-single .post-content .post-figure--missing {
@@ -1872,15 +1924,19 @@ body.mobile-nav-locked {
 }
 
 .post-single .post-content .post-figure figcaption {
-  margin-top: 0.7rem;
+  margin-top: 0.8rem;
   color: var(--secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  line-height: 1.72;
   text-align: center;
+  text-wrap: balance;
+  max-width: 34rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post-single .post-content .entry-cover {
-  max-width: 620px;
+  max-width: 760px;
   margin: 0 auto 1.2rem;
 }
 
@@ -1890,7 +1946,7 @@ body.mobile-nav-locked {
 }
 
 .post-single > .entry-cover {
-  max-width: 620px;
+  max-width: 760px;
   margin: 0 auto 1.3rem;
 }
 
@@ -1901,10 +1957,95 @@ body.mobile-nav-locked {
   width: 100%;
 }
 
+.floating-toc-body a.is-active {
+  background: rgba(111, 202, 209, 0.18);
+  color: #155e66;
+  font-weight: 700;
+}
+
+.reader-lightbox-open {
+  overflow: hidden;
+}
+
+.reader-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.reader-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reader-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 11, 18, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.reader-lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+
+.reader-lightbox-figure {
+  margin: 0;
+  width: min(92vw, 1120px);
+}
+
+.reader-lightbox-image {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 150px);
+  object-fit: contain;
+  border-radius: 22px;
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.reader-lightbox-caption {
+  margin: 0.95rem auto 0;
+  max-width: 52rem;
+  color: rgba(241, 245, 249, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.reader-lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.7);
+  color: #f8fafc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.reader-lightbox-close svg {
+  width: 20px;
+  height: 20px;
+}
+
 @media (max-width: 900px) {
   .post-single .post-header,
   .post-single .post-content {
-    max-width: 700px;
+    max-width: 760px;
   }
 
   .post-single .post-content {
@@ -2120,6 +2261,17 @@ body.mobile-nav-locked {
     margin-bottom: 1.2rem;
   }
 
+  .post-single .post-content .post-figure::after,
+  .post-single > .entry-cover::after {
+    right: 12px;
+    bottom: 12px;
+    opacity: 1;
+    transform: none;
+    font-size: 0.72rem;
+    padding: 0.34rem 0.62rem;
+    background: rgba(17, 24, 39, 0.58);
+  }
+
   .post-single .post-content ul,
   .post-single .post-content ol {
     padding-left: 1.5rem;
@@ -2150,6 +2302,32 @@ body.mobile-nav-locked {
     font-size: 0.84rem;
     line-height: 1.7;
     padding: 0 0.2rem;
+  }
+
+  .reader-lightbox-dialog {
+    padding: 20px 14px 26px;
+  }
+
+  .reader-lightbox-figure {
+    width: min(100vw - 20px, 760px);
+  }
+
+  .reader-lightbox-image {
+    max-height: calc(100vh - 170px);
+    border-radius: 18px;
+  }
+
+  .reader-lightbox-close {
+    top: 14px;
+    right: 14px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .reader-lightbox-caption {
+    font-size: 0.86rem;
+    line-height: 1.68;
+    margin-top: 0.8rem;
   }
 
   .post-single .post-content pre,
