@@ -2080,8 +2080,9 @@ body:not(.list) .main {
   .post-interactions,
   .post-comments,
   .post-single .post-footer {
-    padding-left: 0.9rem;
-    padding-right: 0.9rem;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .post-single .post-header {
@@ -2345,7 +2346,10 @@ body:not(.list) .main {
   }
 
   .post-single > .entry-cover {
+    width: 100%;
     max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 1rem;
   }
 
@@ -2366,15 +2370,6 @@ body:not(.list) .main {
 }
 
 @media (max-width: 420px) {
-  .post-single .post-header,
-  .post-single .post-content,
-  .post-interactions,
-  .post-comments,
-  .post-single .post-footer {
-    padding-left: 0.88rem;
-    padding-right: 0.88rem;
-  }
-
   .post-single .post-content {
     line-height: 2.06;
   }
@@ -2490,8 +2485,8 @@ body:not(.list) .main {
 
 @media (max-width: 420px) {
   .main {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
   }
 
   .header-top {
