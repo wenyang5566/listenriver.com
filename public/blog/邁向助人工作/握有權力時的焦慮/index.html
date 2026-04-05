@@ -10,7 +10,7 @@
 <meta name="description" content="當然，我知道「凡分配必有不公平」的法則，劃定一條線的範圍時，必定會有人被排除在外**，但我還是很理想地希望可以減少那些不滿的情況發生。回過頭看自己寫的東西，會覺得自己太過固執或濫好人，但是這的確是我的想法沒錯，我只是不知道該如何處理那份焦慮，也尚未學會處理權力關係。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%A1%E6%9C%89%E6%AC%8A%E5%8A%9B%E6%99%82%E7%9A%84%E7%84%A6%E6%85%AE/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.179712d0e1ffea5277dc37194be352a05800bee0345ca16d31c0bf24f6733155.css" integrity="sha256-F5cS0OH/6lJ33DcZS&#43;NSoFgAvuA0XKFtMcC/JPZzMVU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ce986635c5fb615f682d9220a4ef2bbfe02a2cf6de7670a28e774fc0c4ff8cd0.css" integrity="sha256-zphmNcX7YV9oLZIgpO8rv&#43;AqLPbednCijndPwMT/jNA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -488,23 +488,23 @@
     <span class="mobile-reading-progress-bar" data-reading-progress></span>
   </div>
 
-  <nav class="mobile-bottom-bar" aria-label="手機快捷操作">
-    <a href="/" class="mobile-bottom-link" aria-label="回首頁">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
-      <span>首頁</span>
-    </a>
-    <a href="/blog/" class="mobile-bottom-link is-active" aria-label="文章列表">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 0 4 23z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path></svg>
-      <span>文章</span>
-    </a>
-    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-mobile-toc-shortcut aria-label="開啟目錄">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 12h10"></path><path d="M5 17h14"></path></svg>
-      <span>目錄</span>
-    </button>
-    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-scroll-top aria-label="回到頂部">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
-      <span>頂部</span>
-    </button>
+  <nav class="mobile-bottom-bar mobile-bottom-bar--article" aria-label="手機快捷操作">
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-comments-button aria-label="查看留言">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+        <span class="mobile-bottom-link__count" data-post-comments data-path="/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%A1%E6%9C%89%E6%AC%8A%E5%8A%9B%E6%99%82%E7%9A%84%E7%84%A6%E6%85%AE/">--</span>
+      </button>
+      <span class="mobile-bottom-link mobile-bottom-link--article mobile-bottom-link--static" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <span class="mobile-bottom-link__count" data-post-views>--</span>
+      </span>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-like-button aria-label="喜歡這篇文章">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.25c-.3 0-.6-.09-.86-.26C8.29 18.06 3 14.08 3 8.99 3 5.96 5.42 3.75 8.2 3.75c1.52 0 2.98.68 3.8 1.83.82-1.15 2.28-1.83 3.8-1.83 2.78 0 5.2 2.21 5.2 5.24 0 5.09-5.29 9.07-8.14 11-.26.17-.56.26-.86.26Z"></path></svg>
+        <span class="mobile-bottom-link__count" data-post-likes>--</span>
+      </button>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-scroll-top aria-label="回到頂部">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
+        <span class="mobile-bottom-link__label">頂部</span>
+      </button>
   </nav>
 </header>
 <main class="main">

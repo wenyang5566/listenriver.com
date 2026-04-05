@@ -138,7 +138,27 @@
     <span class="mobile-reading-progress-bar" data-reading-progress></span>
   </div>
 
-  <nav class="mobile-bottom-bar" aria-label="手機快捷操作">
+  <nav class="mobile-bottom-bar{{ if .IsPage }} mobile-bottom-bar--article{{ if not (.Param "comments") }} mobile-bottom-bar--article-no-comments{{ end }}{{ end }}" aria-label="手機快捷操作">
+    {{- if .IsPage }}
+      {{- if .Param "comments" }}
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-comments-button aria-label="查看留言">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+        <span class="mobile-bottom-link__count" data-post-comments data-path="{{ .RelPermalink }}">--</span>
+      </button>
+      {{- end }}
+      <span class="mobile-bottom-link mobile-bottom-link--article mobile-bottom-link--static" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <span class="mobile-bottom-link__count" data-post-views>--</span>
+      </span>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-like-button aria-label="喜歡這篇文章">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.25c-.3 0-.6-.09-.86-.26C8.29 18.06 3 14.08 3 8.99 3 5.96 5.42 3.75 8.2 3.75c1.52 0 2.98.68 3.8 1.83.82-1.15 2.28-1.83 3.8-1.83 2.78 0 5.2 2.21 5.2 5.24 0 5.09-5.29 9.07-8.14 11-.26.17-.56.26-.86.26Z"></path></svg>
+        <span class="mobile-bottom-link__count" data-post-likes>--</span>
+      </button>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-scroll-top aria-label="回到頂部">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
+        <span class="mobile-bottom-link__label">頂部</span>
+      </button>
+    {{- else }}
     <a href="{{ "/" | relLangURL }}" class="mobile-bottom-link{{ if .IsHome }} is-active{{ end }}" aria-label="回首頁">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
       <span>首頁</span>
@@ -155,5 +175,6 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
       <span>頂部</span>
     </button>
+    {{- end }}
   </nav>
 </header>

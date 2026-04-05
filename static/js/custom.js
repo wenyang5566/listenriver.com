@@ -115,11 +115,11 @@
       commentsPath,
       commentsPath === '/' ? '/' : commentsPath + '/'
     ]));
-    const likeButtons = Array.from(root.querySelectorAll('[data-post-like-button]'));
-    const commentButtons = Array.from(root.querySelectorAll('[data-post-comments-button]'));
-    const viewsValues = Array.from(root.querySelectorAll('[data-post-views]'));
-    const likesValues = Array.from(root.querySelectorAll('[data-post-likes]'));
-    const commentValues = Array.from(root.querySelectorAll('[data-post-comments]'));
+    const likeButtons = Array.from(document.querySelectorAll('[data-post-like-button]'));
+    const commentButtons = Array.from(document.querySelectorAll('[data-post-comments-button]'));
+    const viewsValues = Array.from(document.querySelectorAll('[data-post-views]'));
+    const likesValues = Array.from(document.querySelectorAll('[data-post-likes]'));
+    const commentValues = Array.from(document.querySelectorAll('[data-post-comments]'));
     const floatingBar = root.querySelector('[data-post-floating-bar]');
     const commentsEnabled = root.dataset.commentsEnabled === 'true';
     const commentsServerUrl = normalizeApiBase(root.dataset.commentsServerUrl || '');

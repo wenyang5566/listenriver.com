@@ -10,7 +10,7 @@
 <meta name="description" content="過去，個人的意識形態像是遍滿大地的涓涓溪流，少數人是寬廣的河川；網路時代的社群則讓溪流集中成為大河，溪流消失了，一旦被大河稀釋，就是失去了自己。身處在社會網絡中，逃避自己、不做自己想做的事、懶惰而一味模仿他人都是不負責任的。在個體化的路上，尤其在網路時代，自己的意識和個體性是珍貴無比的存在，當個任性的人也能算是善待自己，允許自己成為自己，是抵抗集體洪流的方法。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E8%87%AA%E6%88%91%E6%88%90%E9%95%B7/%E4%BB%BB%E6%80%A7%E7%9A%84%E4%BA%BA/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.179712d0e1ffea5277dc37194be352a05800bee0345ca16d31c0bf24f6733155.css" integrity="sha256-F5cS0OH/6lJ33DcZS&#43;NSoFgAvuA0XKFtMcC/JPZzMVU=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.ce986635c5fb615f682d9220a4ef2bbfe02a2cf6de7670a28e774fc0c4ff8cd0.css" integrity="sha256-zphmNcX7YV9oLZIgpO8rv&#43;AqLPbednCijndPwMT/jNA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -488,23 +488,23 @@
     <span class="mobile-reading-progress-bar" data-reading-progress></span>
   </div>
 
-  <nav class="mobile-bottom-bar" aria-label="手機快捷操作">
-    <a href="/" class="mobile-bottom-link" aria-label="回首頁">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
-      <span>首頁</span>
-    </a>
-    <a href="/blog/" class="mobile-bottom-link is-active" aria-label="文章列表">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 0 4 23z"></path><path d="M8 7h8"></path><path d="M8 11h8"></path></svg>
-      <span>文章</span>
-    </a>
-    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-mobile-toc-shortcut aria-label="開啟目錄">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 12h10"></path><path d="M5 17h14"></path></svg>
-      <span>目錄</span>
-    </button>
-    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-scroll-top aria-label="回到頂部">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
-      <span>頂部</span>
-    </button>
+  <nav class="mobile-bottom-bar mobile-bottom-bar--article" aria-label="手機快捷操作">
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-comments-button aria-label="查看留言">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path></svg>
+        <span class="mobile-bottom-link__count" data-post-comments data-path="/blog/%E8%87%AA%E6%88%91%E6%88%90%E9%95%B7/%E4%BB%BB%E6%80%A7%E7%9A%84%E4%BA%BA/">--</span>
+      </button>
+      <span class="mobile-bottom-link mobile-bottom-link--article mobile-bottom-link--static" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6-10-6-10-6Z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <span class="mobile-bottom-link__count" data-post-views>--</span>
+      </span>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-post-like-button aria-label="喜歡這篇文章">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.25c-.3 0-.6-.09-.86-.26C8.29 18.06 3 14.08 3 8.99 3 5.96 5.42 3.75 8.2 3.75c1.52 0 2.98.68 3.8 1.83.82-1.15 2.28-1.83 3.8-1.83 2.78 0 5.2 2.21 5.2 5.24 0 5.09-5.29 9.07-8.14 11-.26.17-.56.26-.86.26Z"></path></svg>
+        <span class="mobile-bottom-link__count" data-post-likes>--</span>
+      </button>
+      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-scroll-top aria-label="回到頂部">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
+        <span class="mobile-bottom-link__label">頂部</span>
+      </button>
   </nav>
 </header>
 <main class="main">

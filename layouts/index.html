@@ -5,10 +5,9 @@
   {{- $categoryOrder := .Site.Params.salonCategoryOrder }}
   {{- $allCats := $.Site.Taxonomies.categories }}
 
-
   <div class="salon-home">
     {{- range $catName := $categoryOrder }}
-        {{- $cat := index $allCats $catName }}
+      {{- $cat := index $allCats $catName }}
       {{- if $cat }}
         {{- $posts := $cat.Pages }}
         {{- if gt (len $posts) 0 }}
@@ -18,7 +17,7 @@
             <a href="{{ $cat.Page.RelPermalink }}" class="salon-section-more">查看全部 →</a>
           </div>
           <div class="salon-carousel-wrapper">
-            <button class="carousel-btn carousel-btn-prev" aria-label="往前">&#8249;</button>
+            <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
             <div class="salon-carousel" data-carousel>
               {{- range $posts }}
               {{- $img := "" }}
@@ -59,7 +58,7 @@
               </a>
               {{- end }}
             </div>
-            <button class="carousel-btn carousel-btn-next" aria-label="往後">&#8250;</button>
+            <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
           </div>
         </section>
         {{- end }}
