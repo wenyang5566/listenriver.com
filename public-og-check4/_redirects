@@ -1,3 +1,0 @@
-/tags/閱讀書摘/ /tags/書摘/ 301
-/categories/閱讀書摘/:splat /categories/書摘/:splat 301
-/:path.html /:path/ 301
