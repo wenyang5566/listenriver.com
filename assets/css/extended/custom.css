@@ -1097,6 +1097,15 @@ body.mobile-nav-locked {
 }
 
 @media (max-width: 640px) {
+  #site-header,
+  .site-header,
+  #site-header.nav--hidden,
+  .site-header.nav--hidden {
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
   body {
     padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px));
   }
@@ -1123,6 +1132,14 @@ body.mobile-nav-locked {
     justify-content: flex-start;
     gap: 8px;
     overflow: visible;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .header-top-shell {
+    position: relative;
+    z-index: 1001;
+    pointer-events: auto;
   }
 
   .header-brand,
@@ -1134,6 +1151,9 @@ body.mobile-nav-locked {
     gap: 6px;
     flex-wrap: nowrap;
     width: 100%;
+    position: relative;
+    z-index: 1003;
+    pointer-events: auto;
   }
 
   .header-icon-link,
@@ -1159,6 +1179,16 @@ body.mobile-nav-locked {
   .header-icon-button {
     width: 36px;
     height: 36px;
+    position: relative;
+    z-index: 1004;
+    pointer-events: auto;
+  }
+
+  .header-mobile-menu-toggle,
+  #theme-toggle {
+    pointer-events: auto;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .header-nav {

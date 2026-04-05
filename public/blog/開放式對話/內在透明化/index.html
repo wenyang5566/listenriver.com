@@ -10,7 +10,7 @@
 <meta name="description" content="如同《開放對話·期待對話》裡提到「翻轉教育」，老師能夠透過學生知道自己的限制，因此老師也是學生。對助人者來說，即使案主表面看起來弱勢，但他具備最多關於受苦的知識和資訊，能夠成為老師為助人者解答。於是，這場會談就成為了重要的學習：助人者學習受苦的知識；案主學習如何教導助人者。雙方在學習的對話關係中成為夥伴，站在同一陣線，一起想辦法解決受苦的問題。更深入剖析，助人者作為學生的角色時，他的提問非常重要，問句像是一把鑰匙一樣，能夠開啟不同的對話，召喚出不同的東西。⁡">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%85%A7%E5%9C%A8%E9%80%8F%E6%98%8E%E5%8C%96/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa1661d5a3588823e01395a049318dce48a2678d80f7d6ded2a06ba7feccf684.css" integrity="sha256-&#43;hZh1aNYiCPgE5WgSTGNzkiiZ42A99be0qBrp/7M9oQ=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f61e93382d2d99f786af97157807f158b2dc3326cd1bcc57b0b3d19173ffd198.css" integrity="sha256-9h6TOC0tmfeGr5cVeAfxWLLcMybNG8xXsLPRkXP/0Zg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -151,14 +151,14 @@
   <div class="header-top-shell">
     <div class="header-top">
       <div class="header-side header-side-right">
-        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false" onclick="window.listenriverMobileMenuToggle && window.listenriverMobileMenuToggle(event)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 7h16"></path>
             <path d="M4 12h16"></path>
             <path d="M4 17h16"></path>
           </svg>
         </button>
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式" onclick="window.listenriverThemeToggle && window.listenriverThemeToggle(event)">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -529,22 +529,27 @@
         if (mobileBackdrop) mobileBackdrop.hidden = !open;
       };
 
+      window.listenriverThemeToggle = () => {
+        const html = document.documentElement;
+        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        html.dataset.theme = nextTheme;
+        localStorage.setItem('pref-theme', nextTheme);
+      };
+
+      window.listenriverMobileMenuToggle = () => {
+        if (!header) return;
+        const willOpen = !header.classList.contains('mobile-nav-open');
+        setMobileNavOpen(willOpen);
+      };
+
       if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
         themeToggle.dataset.boundThemeToggle = '1';
-        themeToggle.addEventListener('click', () => {
-          const html = document.documentElement;
-          const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-          html.dataset.theme = nextTheme;
-          localStorage.setItem('pref-theme', nextTheme);
-        });
+        themeToggle.addEventListener('click', window.listenriverThemeToggle);
       }
 
       if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
         mobileMenuToggle.dataset.boundMobileMenu = '1';
-        mobileMenuToggle.addEventListener('click', () => {
-          const willOpen = !header.classList.contains('mobile-nav-open');
-          setMobileNavOpen(willOpen);
-        });
+        mobileMenuToggle.addEventListener('click', window.listenriverMobileMenuToggle);
       }
 
       mobileCloseButtons.forEach((button) => {

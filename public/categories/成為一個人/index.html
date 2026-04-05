@@ -10,7 +10,7 @@
 <meta name="description" content="聆聽的河流｜閱讀、書寫、心理與電影">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/categories/%E6%88%90%E7%82%BA%E4%B8%80%E5%80%8B%E4%BA%BA/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa1661d5a3588823e01395a049318dce48a2678d80f7d6ded2a06ba7feccf684.css" integrity="sha256-&#43;hZh1aNYiCPgE5WgSTGNzkiiZ42A99be0qBrp/7M9oQ=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f61e93382d2d99f786af97157807f158b2dc3326cd1bcc57b0b3d19173ffd198.css" integrity="sha256-9h6TOC0tmfeGr5cVeAfxWLLcMybNG8xXsLPRkXP/0Zg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -93,14 +93,14 @@
   <div class="header-top-shell">
     <div class="header-top">
       <div class="header-side header-side-right">
-        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false" onclick="window.listenriverMobileMenuToggle && window.listenriverMobileMenuToggle(event)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 7h16"></path>
             <path d="M4 12h16"></path>
             <path d="M4 17h16"></path>
           </svg>
         </button>
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式" onclick="window.listenriverThemeToggle && window.listenriverThemeToggle(event)">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -471,22 +471,27 @@
         if (mobileBackdrop) mobileBackdrop.hidden = !open;
       };
 
+      window.listenriverThemeToggle = () => {
+        const html = document.documentElement;
+        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        html.dataset.theme = nextTheme;
+        localStorage.setItem('pref-theme', nextTheme);
+      };
+
+      window.listenriverMobileMenuToggle = () => {
+        if (!header) return;
+        const willOpen = !header.classList.contains('mobile-nav-open');
+        setMobileNavOpen(willOpen);
+      };
+
       if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
         themeToggle.dataset.boundThemeToggle = '1';
-        themeToggle.addEventListener('click', () => {
-          const html = document.documentElement;
-          const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-          html.dataset.theme = nextTheme;
-          localStorage.setItem('pref-theme', nextTheme);
-        });
+        themeToggle.addEventListener('click', window.listenriverThemeToggle);
       }
 
       if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
         mobileMenuToggle.dataset.boundMobileMenu = '1';
-        mobileMenuToggle.addEventListener('click', () => {
-          const willOpen = !header.classList.contains('mobile-nav-open');
-          setMobileNavOpen(willOpen);
-        });
+        mobileMenuToggle.addEventListener('click', window.listenriverMobileMenuToggle);
       }
 
       mobileCloseButtons.forEach((button) => {

@@ -10,7 +10,7 @@
 <meta name="description" content="我認為開放式對話是一種將人類受苦經驗轉化的方法，藉由對話創造出開放的空間，讓原本無法用言語述說、表現在身體上的症狀和經歷得以被說出，同時也被見證。有些受苦經驗是零碎、斷裂的；有些則過於巨大而無法觸碰，這些尚未能被好好辨識、整理的經驗隱藏在內心深處、難以被描述，而開放式對話藉由「對話」讓痛苦能被拾起、找到出口，並建構出新的意義。從這個觀點來看，開放式對話的確是在與當事人創造共同的語言，讓受苦的經驗/聲音能被表達出來。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%AF%8F%E4%B8%80%E7%A8%AE%E8%81%B2%E9%9F%B3%E7%9A%84%E5%AD%98%E5%9C%A8/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa1661d5a3588823e01395a049318dce48a2678d80f7d6ded2a06ba7feccf684.css" integrity="sha256-&#43;hZh1aNYiCPgE5WgSTGNzkiiZ42A99be0qBrp/7M9oQ=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f61e93382d2d99f786af97157807f158b2dc3326cd1bcc57b0b3d19173ffd198.css" integrity="sha256-9h6TOC0tmfeGr5cVeAfxWLLcMybNG8xXsLPRkXP/0Zg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -152,14 +152,14 @@
   <div class="header-top-shell">
     <div class="header-top">
       <div class="header-side header-side-right">
-        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false" onclick="window.listenriverMobileMenuToggle && window.listenriverMobileMenuToggle(event)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 7h16"></path>
             <path d="M4 12h16"></path>
             <path d="M4 17h16"></path>
           </svg>
         </button>
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式" onclick="window.listenriverThemeToggle && window.listenriverThemeToggle(event)">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -530,22 +530,27 @@
         if (mobileBackdrop) mobileBackdrop.hidden = !open;
       };
 
+      window.listenriverThemeToggle = () => {
+        const html = document.documentElement;
+        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        html.dataset.theme = nextTheme;
+        localStorage.setItem('pref-theme', nextTheme);
+      };
+
+      window.listenriverMobileMenuToggle = () => {
+        if (!header) return;
+        const willOpen = !header.classList.contains('mobile-nav-open');
+        setMobileNavOpen(willOpen);
+      };
+
       if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
         themeToggle.dataset.boundThemeToggle = '1';
-        themeToggle.addEventListener('click', () => {
-          const html = document.documentElement;
-          const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-          html.dataset.theme = nextTheme;
-          localStorage.setItem('pref-theme', nextTheme);
-        });
+        themeToggle.addEventListener('click', window.listenriverThemeToggle);
       }
 
       if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
         mobileMenuToggle.dataset.boundMobileMenu = '1';
-        mobileMenuToggle.addEventListener('click', () => {
-          const willOpen = !header.classList.contains('mobile-nav-open');
-          setMobileNavOpen(willOpen);
-        });
+        mobileMenuToggle.addEventListener('click', window.listenriverMobileMenuToggle);
       }
 
       mobileCloseButtons.forEach((button) => {

@@ -13,7 +13,7 @@
   <div class="header-top-shell">
     <div class="header-top">
       <div class="header-side header-side-right">
-        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false" onclick="window.listenriverMobileMenuToggle && window.listenriverMobileMenuToggle(event)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 7h16"></path>
             <path d="M4 12h16"></path>
@@ -21,7 +21,7 @@
           </svg>
         </button>
         {{- if (not site.Params.disableThemeToggle) }}
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式" onclick="window.listenriverThemeToggle && window.listenriverThemeToggle(event)">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -200,22 +200,27 @@
         if (mobileBackdrop) mobileBackdrop.hidden = !open;
       };
 
+      window.listenriverThemeToggle = () => {
+        const html = document.documentElement;
+        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        html.dataset.theme = nextTheme;
+        localStorage.setItem('pref-theme', nextTheme);
+      };
+
+      window.listenriverMobileMenuToggle = () => {
+        if (!header) return;
+        const willOpen = !header.classList.contains('mobile-nav-open');
+        setMobileNavOpen(willOpen);
+      };
+
       if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
         themeToggle.dataset.boundThemeToggle = '1';
-        themeToggle.addEventListener('click', () => {
-          const html = document.documentElement;
-          const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-          html.dataset.theme = nextTheme;
-          localStorage.setItem('pref-theme', nextTheme);
-        });
+        themeToggle.addEventListener('click', window.listenriverThemeToggle);
       }
 
       if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
         mobileMenuToggle.dataset.boundMobileMenu = '1';
-        mobileMenuToggle.addEventListener('click', () => {
-          const willOpen = !header.classList.contains('mobile-nav-open');
-          setMobileNavOpen(willOpen);
-        });
+        mobileMenuToggle.addEventListener('click', window.listenriverMobileMenuToggle);
       }
 
       mobileCloseButtons.forEach((button) => {

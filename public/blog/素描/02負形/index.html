@@ -10,7 +10,7 @@
 <meta name="description" content="在練習負形的時候，注重空間與空間的感覺和關係，也就是它們彼此的相對位置、大小、形狀，「感覺」始終是抽象的，而線條即是具現化感覺的過程，透過反覆勾勒線條、擦拭線條的過程，讓感覺漸漸與眼所觀察的圖像靠近。呼應上一次的心得，意識三重構把意識分為語言、圖像、體感層次。畫畫的確就是一種體感與圖像雙向來回轉化的過程：眼所見的圖像引發了體感，體感再轉化進入身體當中、內心當中的圖像，畫畫或許即是如此反覆、來回轉化的過程。">
 <meta name="author" content="文揚 Wen-Yang">
 <link rel="canonical" href="/blog/%E7%B4%A0%E6%8F%8F/02%E8%B2%A0%E5%BD%A2/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fa1661d5a3588823e01395a049318dce48a2678d80f7d6ded2a06ba7feccf684.css" integrity="sha256-&#43;hZh1aNYiCPgE5WgSTGNzkiiZ42A99be0qBrp/7M9oQ=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f61e93382d2d99f786af97157807f158b2dc3326cd1bcc57b0b3d19173ffd198.css" integrity="sha256-9h6TOC0tmfeGr5cVeAfxWLLcMybNG8xXsLPRkXP/0Zg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -151,14 +151,14 @@
   <div class="header-top-shell">
     <div class="header-top">
       <div class="header-side header-side-right">
-        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
+        <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false" onclick="window.listenriverMobileMenuToggle && window.listenriverMobileMenuToggle(event)">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M4 7h16"></path>
             <path d="M4 12h16"></path>
             <path d="M4 17h16"></path>
           </svg>
         </button>
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式" onclick="window.listenriverThemeToggle && window.listenriverThemeToggle(event)">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -529,22 +529,27 @@
         if (mobileBackdrop) mobileBackdrop.hidden = !open;
       };
 
+      window.listenriverThemeToggle = () => {
+        const html = document.documentElement;
+        const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+        html.dataset.theme = nextTheme;
+        localStorage.setItem('pref-theme', nextTheme);
+      };
+
+      window.listenriverMobileMenuToggle = () => {
+        if (!header) return;
+        const willOpen = !header.classList.contains('mobile-nav-open');
+        setMobileNavOpen(willOpen);
+      };
+
       if (themeToggle && !themeToggle.dataset.boundThemeToggle) {
         themeToggle.dataset.boundThemeToggle = '1';
-        themeToggle.addEventListener('click', () => {
-          const html = document.documentElement;
-          const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-          html.dataset.theme = nextTheme;
-          localStorage.setItem('pref-theme', nextTheme);
-        });
+        themeToggle.addEventListener('click', window.listenriverThemeToggle);
       }
 
       if (mobileMenuToggle && !mobileMenuToggle.dataset.boundMobileMenu) {
         mobileMenuToggle.dataset.boundMobileMenu = '1';
-        mobileMenuToggle.addEventListener('click', () => {
-          const willOpen = !header.classList.contains('mobile-nav-open');
-          setMobileNavOpen(willOpen);
-        });
+        mobileMenuToggle.addEventListener('click', window.listenriverMobileMenuToggle);
       }
 
       mobileCloseButtons.forEach((button) => {
