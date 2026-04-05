@@ -1265,7 +1265,8 @@ body.mobile-nav-locked {
 
   .floating-toc {
     left: 10px;
-    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    z-index: 930;
   }
 
   .floating-toc-toggle {
@@ -1279,6 +1280,7 @@ body.mobile-nav-locked {
   .floating-toc-panel {
     width: min(280px, calc(100vw - 20px));
     padding: 14px;
+    max-height: min(48vh, 340px);
   }
 }
 
