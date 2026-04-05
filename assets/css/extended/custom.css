@@ -517,7 +517,12 @@
   backdrop-filter: blur(6px);
   z-index: 880;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.2s ease;
+}
+
+.mobile-nav-backdrop[hidden] {
+  display: none !important;
 }
 
 .site-header.mobile-nav-open .mobile-nav-drawer {
@@ -526,6 +531,7 @@
 
 .site-header.mobile-nav-open .mobile-nav-backdrop {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .mobile-nav-drawer-head {
@@ -1116,14 +1122,7 @@ body.mobile-nav-locked {
     padding-bottom: 8px;
     justify-content: flex-start;
     gap: 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .header-top::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
   }
 
   .header-brand,
@@ -1134,6 +1133,7 @@ body.mobile-nav-locked {
   .header-side-right {
     gap: 6px;
     flex-wrap: nowrap;
+    width: 100%;
   }
 
   .header-icon-link,
@@ -1265,7 +1265,7 @@ body.mobile-nav-locked {
 
   .floating-toc {
     left: 10px;
-    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(112px + env(safe-area-inset-bottom, 0px));
     z-index: 930;
   }
 
