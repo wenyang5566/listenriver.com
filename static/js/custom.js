@@ -110,7 +110,7 @@
   function initPostInteractions(root) {
     const apiBase = normalizeApiBase(root.dataset.apiBase || '');
     const postPath = root.dataset.postPath || window.location.pathname;
-    const commentsPath = postPath.replace(/\/$/, '') || '/';
+    const commentsPath = normalizeCommentPath(postPath);
     const commentPathCandidates = Array.from(new Set([
       commentsPath,
       commentsPath === '/' ? '/' : commentsPath + '/'
@@ -130,6 +130,10 @@
     const viewedSessionKey = 'listenriver:view:' + postPath;
     const likedSessionKey = 'listenriver:like:' + postPath;
     let isLikePending = false;
+
+    commentValues.forEach((node) => {
+      node.dataset.path = commentsPath;
+    });
 
     if (!likeButtons.length || !viewsValues.length || !likesValues.length) return;
 
@@ -299,7 +303,13 @@
   }
 
   function normalizeCommentPath(value) {
-    return (value || '').replace(/\/$/, '') || '/';
+    const rawValue = value || window.location.pathname;
+
+    try {
+      return decodeURIComponent(rawValue).replace(/\/$/, '') || '/';
+    } catch (error) {
+      return rawValue.replace(/\/$/, '') || '/';
+    }
   }
 
   async function fetchCommentCount(serverUrl, path) {

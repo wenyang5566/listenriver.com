@@ -1592,7 +1592,17 @@ Satir學派說要做一致性溝通，但共謀就是各種不一致：「我愛
 
   if (root) {
     const mount = root.querySelector('#waline');
-    const normalizedPath = (root.dataset.path || window.location.pathname).replace(/\/$/, '') || '/';
+    const normalizeCommentPath = (value) => {
+      const rawValue = value || window.location.pathname;
+
+      try {
+        return decodeURIComponent(rawValue).replace(/\/$/, '') || '/';
+      } catch (error) {
+        return rawValue.replace(/\/$/, '') || '/';
+      }
+    };
+
+    const normalizedPath = normalizeCommentPath(root.dataset.path);
     const loadComments = async () => {
       if (!mount || mount.dataset.walineReady === '1') return;
 

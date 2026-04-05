@@ -653,7 +653,17 @@ Jason一開始提到，法國人把高潮（La petite mort）稱為「小死亡 
 
   if (root) {
     const mount = root.querySelector('#waline');
-    const normalizedPath = (root.dataset.path || window.location.pathname).replace(/\/$/, '') || '/';
+    const normalizeCommentPath = (value) => {
+      const rawValue = value || window.location.pathname;
+
+      try {
+        return decodeURIComponent(rawValue).replace(/\/$/, '') || '/';
+      } catch (error) {
+        return rawValue.replace(/\/$/, '') || '/';
+      }
+    };
+
+    const normalizedPath = normalizeCommentPath(root.dataset.path);
     const loadComments = async () => {
       if (!mount || mount.dataset.walineReady === '1') return;
 
