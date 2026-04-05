@@ -1,16 +1,26 @@
 {{- $alt := .Text | default .Title | default "article image" -}}
-{{- $destination := .Destination -}}
+{{- $destination := .Destination | strings.TrimSpace -}}
+{{- $isRemote := or (hasPrefix $destination "http://") (hasPrefix $destination "https://") -}}
+{{- $isRootRelative := and (hasPrefix $destination "/") (not $isRemote) -}}
 {{- $resource := "" -}}
+{{- $staticExists := false -}}
 
-{{- if and .Page (not (or (hasPrefix $destination "http://") (hasPrefix $destination "https://") (hasPrefix $destination "/"))) -}}
+{{- if .Page -}}
   {{- $stem := replaceRE "\\.[^.]+$" "" (path.Base $destination) -}}
   {{- $resource = .Page.Resources.GetMatch (printf "%s.*" $stem) -}}
+  {{- if not $resource -}}
+    {{- $resource = .Page.Resources.GetMatch (path.Base $destination) -}}
+  {{- end -}}
   {{- if not $resource -}}
     {{- $resource = .Page.Resources.GetMatch $destination -}}
   {{- end -}}
   {{- if not $resource -}}
-    {{- $resource = .Page.Resources.GetMatch (printf "*%s" $destination) -}}
+    {{- $resource = .Page.Resources.GetMatch (printf "*%s*" (path.Base $destination)) -}}
   {{- end -}}
+{{- end -}}
+
+{{- if $isRootRelative -}}
+  {{- $staticExists = fileExists (printf "static/%s" (strings.TrimPrefix "/" $destination)) -}}
 {{- end -}}
 
 {{- if $resource -}}
@@ -27,11 +37,18 @@
       <figcaption>{{ . }}</figcaption>
     {{- end }}
   </figure>
-{{- else -}}
+{{- else if or $isRemote $staticExists -}}
   <figure class="post-figure">
-    <img src="{{ $destination | safeURL }}" alt="{{ $alt }}" loading="lazy" class="post-content-image">
+    <img src="{{ if $isRootRelative }}{{ $destination | relURL }}{{ else }}{{ $destination | safeURL }}{{ end }}" alt="{{ $alt }}" loading="lazy" class="post-content-image">
     {{- with .Title }}
       <figcaption>{{ . }}</figcaption>
     {{- end }}
+  </figure>
+{{- else -}}
+  <figure class="post-figure post-figure--missing">
+    <div class="post-content-image post-content-image--missing" role="img" aria-label="{{ $alt }}">
+      <span>圖片目前缺失</span>
+    </div>
+    <figcaption>{{ .Title | default "這張內文圖片原本指向舊站檔案，但目前檔案不在站內。" }}</figcaption>
   </figure>
 {{- end -}}

@@ -61,13 +61,32 @@
   });
 
   const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  function syncThemeToggleState() {
+    if (!themeToggle) return;
+
+    const isDark = html.dataset.theme === 'dark';
+    const nextModeLabel = isDark ? '切換為淺色模式' : '切換為深色模式';
+    themeToggle.setAttribute('aria-label', nextModeLabel);
+    themeToggle.setAttribute('title', nextModeLabel + ' (Alt + T)');
+  }
+
+  syncThemeToggleState();
+
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const nextTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
-      html.dataset.theme = nextTheme;
-      localStorage.setItem('pref-theme', nextTheme);
+      window.setTimeout(syncThemeToggleState, 0);
     });
+  }
+
+  if (window.matchMedia) {
+    const darkSchemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+    if (typeof darkSchemeMedia.addEventListener === 'function') {
+      darkSchemeMedia.addEventListener('change', syncThemeToggleState);
+    } else if (typeof darkSchemeMedia.addListener === 'function') {
+      darkSchemeMedia.addListener(syncThemeToggleState);
+    }
   }
 
   const mobileDrawer = document.getElementById('mobile-nav-drawer');
@@ -77,6 +96,7 @@
   const mobileNavGroups = document.querySelectorAll('.mobile-nav-group');
   const scrollTopButtons = document.querySelectorAll('[data-scroll-top]');
   const mobileTocShortcut = document.querySelector('[data-mobile-toc-shortcut]');
+  const mobileBackButtons = document.querySelectorAll('[data-mobile-back]');
   const readingProgressBar = document.querySelector('[data-reading-progress]');
 
   function setMobileNavOpen(open) {
@@ -138,14 +158,42 @@
     });
   });
 
+  mobileBackButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const fallbackUrl = button.getAttribute('data-fallback-url') || '/';
+      const referrer = document.referrer;
+      const hasSameOriginReferrer = !!referrer && (() => {
+        try {
+          return new URL(referrer).origin === window.location.origin;
+        } catch (error) {
+          return false;
+        }
+      })();
+
+      if (window.history.length > 1 && hasSameOriginReferrer) {
+        window.history.back();
+        return;
+      }
+
+      window.location.href = fallbackUrl;
+    });
+  });
+
   if (readingProgressBar) {
-    const progressSource = document.querySelector('.post-content') || document.documentElement;
+    const progressSource = document.querySelector('.post-content');
     const updateReadingProgress = () => {
+      if (!progressSource) {
+        readingProgressBar.style.width = '0%';
+        return;
+      }
+
       const viewportHeight = window.innerHeight;
+      const contentTop = progressSource.offsetTop;
       const fullHeight = progressSource.scrollHeight;
-      const scrolled = window.scrollY;
-      const available = Math.max(fullHeight - viewportHeight, 1);
-      const ratio = Math.max(0, Math.min(scrolled / available, 1));
+      const contentBottom = contentTop + fullHeight;
+      const scrolled = window.scrollY + viewportHeight * 0.18;
+      const available = Math.max(contentBottom - contentTop - viewportHeight * 0.42, 1);
+      const ratio = Math.max(0, Math.min((scrolled - contentTop) / available, 1));
       readingProgressBar.style.width = (ratio * 100).toFixed(2) + '%';
     };
 
@@ -162,6 +210,13 @@
     function closeToc() {
       floatingToc.classList.remove('is-open');
       if (tocButton) tocButton.setAttribute('aria-expanded', 'false');
+      if (mobileTocShortcut) mobileTocShortcut.setAttribute('aria-expanded', 'false');
+    }
+
+    function openToc() {
+      floatingToc.classList.add('is-open');
+      if (tocButton) tocButton.setAttribute('aria-expanded', 'true');
+      if (mobileTocShortcut) mobileTocShortcut.setAttribute('aria-expanded', 'true');
     }
 
     if (tocButton) {
@@ -169,25 +224,19 @@
         event.preventDefault();
         const willOpen = !floatingToc.classList.contains('is-open');
         closeToc();
-        if (willOpen) {
-          floatingToc.classList.add('is-open');
-          tocButton.setAttribute('aria-expanded', 'true');
-        }
+        if (willOpen) openToc();
       });
     }
 
-    if (mobileTocShortcut && tocButton) {
-      mobileTocShortcut.addEventListener('click', () => {
+    if (mobileTocShortcut) {
+      mobileTocShortcut.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         const willOpen = !floatingToc.classList.contains('is-open');
         closeToc();
 
         if (willOpen) {
-          floatingToc.classList.add('is-open');
-          tocButton.setAttribute('aria-expanded', 'true');
-          floatingToc.scrollIntoView({
-            block: 'nearest',
-            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
-          });
+          openToc();
         }
       });
     }
@@ -200,7 +249,7 @@
 
     document.addEventListener('click', event => {
       if (!event.target.closest('.nav-group')) closeGroups();
-      if (!event.target.closest('[data-floating-toc]')) closeToc();
+      if (!event.target.closest('[data-floating-toc]') && !event.target.closest('[data-mobile-toc-shortcut]')) closeToc();
     });
 
     document.addEventListener('keydown', event => {
@@ -213,6 +262,7 @@
     if (mobileTocShortcut) {
       mobileTocShortcut.classList.add('is-disabled');
       mobileTocShortcut.setAttribute('aria-disabled', 'true');
+      mobileTocShortcut.setAttribute('aria-expanded', 'false');
     }
 
     document.addEventListener('click', event => {
