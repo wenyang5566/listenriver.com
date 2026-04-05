@@ -98,6 +98,16 @@
   const mobileTocShortcut = document.querySelector('[data-mobile-toc-shortcut]');
   const mobileBackButtons = document.querySelectorAll('[data-mobile-back]');
   const readingProgressBar = document.querySelector('[data-reading-progress]');
+  let lastMobileMenuTrigger = null;
+
+  function toggleInert(element, inert) {
+    if (!element) return;
+    if (inert) {
+      element.setAttribute('inert', '');
+    } else {
+      element.removeAttribute('inert');
+    }
+  }
 
   function setMobileNavOpen(open) {
     if (!header || !mobileDrawer || !mobileMenuToggle) return;
@@ -106,13 +116,26 @@
     document.body.classList.toggle('mobile-nav-locked', open);
     mobileDrawer.setAttribute('aria-hidden', open ? 'false' : 'true');
     mobileMenuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggleInert(mobileDrawer, !open);
     if (mobileNavBackdrop) {
       mobileNavBackdrop.hidden = !open;
+    }
+
+    if (open) {
+      const firstFocusable = mobileDrawer.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      window.requestAnimationFrame(() => {
+        (firstFocusable || mobileDrawer).focus?.();
+      });
+    } else if (lastMobileMenuTrigger) {
+      window.requestAnimationFrame(() => {
+        lastMobileMenuTrigger.focus();
+      });
     }
   }
 
   if (mobileDrawer && mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
+      lastMobileMenuTrigger = mobileMenuToggle;
       const willOpen = !header.classList.contains('mobile-nav-open');
       setMobileNavOpen(willOpen);
     });
@@ -147,6 +170,12 @@
         setMobileNavOpen(false);
       }
     }, { passive: true });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && header.classList.contains('mobile-nav-open')) {
+        setMobileNavOpen(false);
+      }
+    });
   }
 
   scrollTopButtons.forEach((button) => {
@@ -405,6 +434,7 @@
 
         floatingBar.classList.toggle('is-visible', visible);
         floatingBar.setAttribute('aria-hidden', visible ? 'false' : 'true');
+        toggleInert(floatingBar, !visible);
       };
 
       updateFloatingBar();
@@ -635,6 +665,7 @@
     const lightbox = document.createElement('div');
     lightbox.className = 'reader-lightbox';
     lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.setAttribute('inert', '');
     lightbox.innerHTML = `
       <div class="reader-lightbox-backdrop" data-reader-lightbox-close></div>
       <div class="reader-lightbox-dialog" role="dialog" aria-modal="true" aria-label="圖片預覽">
@@ -666,6 +697,7 @@
       lightboxCaption.textContent = target.caption || target.alt || '';
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
+      toggleInert(lightbox, false);
       document.body.classList.add('reader-lightbox-open');
 
       if (prefersReducedMotion) {
@@ -678,6 +710,7 @@
 
       lightbox.classList.remove('is-open');
       lightbox.setAttribute('aria-hidden', 'true');
+      toggleInert(lightbox, true);
       document.body.classList.remove('reader-lightbox-open');
       activeIndex = -1;
       window.setTimeout(() => {

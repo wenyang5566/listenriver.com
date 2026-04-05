@@ -583,6 +583,8 @@
   .salon-hero-title {
     font-size: clamp(1.22rem, 5.8vw, 1.58rem);
     letter-spacing: 0.01em;
+    color: #1f5f67;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.34);
   }
 
   .salon-hero-divider {
@@ -594,6 +596,8 @@
     font-size: clamp(1.22rem, 5.8vw, 1.58rem);
     letter-spacing: 0.02em;
     white-space: normal;
+    color: #1f5f67;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.34);
   }
 
   .salon-hero-copy::after {
@@ -606,10 +610,11 @@
 
   .salon-hero-subtitle {
     margin-top: 7px;
-    font-size: 0.64rem;
+    font-size: 0.7rem;
     letter-spacing: 0.02em;
-    line-height: 1.32;
-    text-shadow: 0 0 14px rgba(248, 245, 239, 0.8);
+    line-height: 1.45;
+    color: rgba(69, 68, 64, 0.96);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
   }
 
   .salon-channel-info {
@@ -622,6 +627,7 @@
     border: 1px solid rgba(17, 24, 39, 0.08);
     border-radius: 20px 20px 0 0;
     box-shadow: 0 -8px 18px rgba(15, 23, 42, 0.05);
+    background: rgba(255, 255, 255, 0.98);
   }
 
   .salon-channel-left {
@@ -647,23 +653,42 @@
   }
 
   .salon-channel-subtitle {
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     line-height: 1.5;
     margin-bottom: 5px;
+    color: #4b5563;
   }
 
   .salon-channel-kicker {
     margin-bottom: 4px;
     font-size: 0.68rem;
+    color: #14606a;
   }
 
   .salon-social-icons {
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .salon-social-icon {
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    border-radius: 999px;
+    color: #4b5563;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(17, 24, 39, 0.12);
   }
 
   .salon-social-icon svg {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .salon-social-icon:hover,
+  .salon-social-icon:focus-visible {
+    color: #0f172a;
+    border-color: rgba(20, 96, 106, 0.4);
+    background: #ffffff;
   }
 
   .salon-channel-desc {
@@ -672,19 +697,33 @@
     border-top: 1px solid var(--border);
     padding-left: 0;
     padding-top: 0.75rem;
-    font-size: 0.8rem;
-    line-height: 1.65;
+    font-size: 0.84rem;
+    line-height: 1.72;
+    color: #374151;
   }
 
   .salon-channel-actions {
     margin-top: 0.8rem;
-    gap: 8px;
+    gap: 10px;
   }
 
   .salon-channel-action {
-    min-height: 34px;
-    padding: 0 13px;
-    font-size: 0.78rem;
+    min-height: 44px;
+    padding: 0 16px;
+    font-size: 0.84rem;
+    border-width: 1.5px;
+  }
+
+  .salon-channel-action:not(.salon-channel-action-primary) {
+    color: #1f2937;
+    background: #ffffff;
+    border-color: rgba(17, 24, 39, 0.16);
+  }
+
+  .salon-channel-action-primary {
+    background: #0f766e;
+    border-color: #0f766e;
+    color: #ffffff;
   }
 
   .salon-home {
@@ -796,9 +835,9 @@
   }
 
   .salon-hero-subtitle {
-    font-size: 0.58rem;
+    font-size: 0.64rem;
     letter-spacing: 0.02em;
-    text-shadow: 0 0 12px rgba(248, 245, 239, 0.82);
+    line-height: 1.42;
   }
 
   .salon-channel-info {
@@ -831,5 +870,9 @@
   .salon-channel-actions {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .salon-channel-action {
+    width: 100%;
   }
 }
