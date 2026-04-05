@@ -1,23 +1,18 @@
 ---
-ai_keywords:
-  - 開放式問句
-  - 開放式對話
-  - 家庭社群網絡
-  - 心理諮商
-  - 非口語溝通
 title: 開放式對話進階工作坊Day1
+date: 2020-11-14
+description:
+
+draft: false
 categories:
   - 開放式對話
   - 講座筆記
-date: 2020-11-14
-description:
-draft: false
 tags:
   - 開放式對話
   - 講座筆記
-type: post
 aliases:
   - /blog/開放式對話/開放式對話進階工作坊_day1/
+type: post
 cover:
   image: 0001.jpg
   alt: "開放式對話進階工作坊Day1"

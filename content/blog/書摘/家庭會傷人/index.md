@@ -1,24 +1,18 @@
 ---
-ai_keywords:
-  - 羞愧感
-  - 家庭創傷
-  - 理想化
-  - 假我
-  - 自我防衛
-aliases:
-  - /blog/閱讀書摘/家庭會傷人/
-  - /blog/書摘/書摘家庭會傷人/
-categories:
-  - 書摘
-  - 家族治療
+title: 書摘｜《家庭會傷人》
 date: 2020-04-08 10:07:47+08:00
 description: 原文作者：John Bradshaw
 draft: false
+categories:
+  - 書摘
+  - 家族治療
 tags:
   - 書摘
   - 家族治療
   - 家庭會傷人
-title: 書摘｜《家庭會傷人》
+aliases:
+  - /blog/閱讀書摘/家庭會傷人/
+  - /blog/書摘/書摘家庭會傷人/
 type: post
 cover:
   image: 家庭會傷人.jpg

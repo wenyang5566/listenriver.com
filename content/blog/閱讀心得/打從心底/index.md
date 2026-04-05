@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 自我探索
-  - 情感關係
-  - 自我認同
-  - 內在衝突
-  - 人生抉擇
-categories:
-  - 閱讀心得
+title: 閱讀心得｜《打從心底》
 date: 2022-03-14 11:07:47+08:00
 description: 自己確實是個害怕凝視鏡子的人，矛盾的是，不斷想透過對話、以他人為鏡來找到自己。既逃避鏡中自我，卻不停找尋鏡中自我，或許是不夠理想、或是單純的鴕鳥心態，近似於Bowen說的情緒切割一樣。
 draft: false
+categories:
+  - 閱讀心得
 tags:
   - 閱讀心得
-title: 閱讀心得｜《打從心底》
-type: post
 aliases:
   - /blog/閱讀心得/打從心底/
   - /blog/閱讀心得/閱讀心得打從心底/
+type: post
 cover:
   image: 打從心底.jpg
   alt: "閱讀心得｜《打從心底》"

@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 經濟不平等
-  - 種族主義
-  - 民族誌謬誤
-  - 自主創業
-  - 社會結構
-categories:
-  - 書摘
+title: 書摘｜《人行道》
 date: 2019-11-23 10:07:47+08:00
 description: 原文作者：Mitchell Duneier
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《人行道》
-type: post
 aliases:
   - /blog/閱讀書摘/人行道/
   - /blog/書摘/書摘人行道/
+type: post
 ---
 
 ### P.445

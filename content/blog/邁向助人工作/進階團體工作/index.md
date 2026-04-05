@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 家庭動力
-  - 生命經驗
-  - 人際關係
-  - 團體動力
-  - 家族治療
+title: 進階團體工作
 date: 2022-10-28 12:07:47+08:00
 description: 今天體悟到團體的Leader不是領導而是引導。對於團體中浮現的個人生命議題要有敏感度，但不是指著人告訴他應該哪裡改變、哪裡做不好。反而是帶著寬容接納的態度去叩問探詢，用適合的問題引導出更有深度的內容和動力。
 draft: false
-title: 進階團體工作
 categories:
   - 邁向助人工作
 tags:
   - 邁向助人工作
-type: post
 aliases:
   - /blog/日常書寫/20221028團體/
+type: post
 cover:
   image: 111期中.jpg
   alt: "進階團體工作"

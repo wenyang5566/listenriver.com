@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 多重宇宙
-  - 家庭關係
-  - 無常
-  - 虛無主義
-  - 無限可能
-aliases:
-  - /blog/電影心得/eeaao2/
-categories:
-  - 電影心得
+title: 《媽的多重宇宙》：無常的意義是無限可能；縱身躍下便是愛
 date: 2022-06-05 11:07:49+08:00
 description: 對比於電影前半部，Evelyn重拾了媽媽的角色和責任，用擁抱的姿態面對Joy，表達了母親的愛。同樣的，作為女兒的Evelyn，突破了原本一心想追求阿爸認同，而不敢介紹貝琪的那個規訓的自己。而關於婚姻，Evelyn也認清了自己是愛威門的。
 draft: false
+categories:
+  - 電影心得
 tags:
   - 電影心得
   - 媽的多重宇宙
-title: 《媽的多重宇宙》：無常的意義是無限可能；縱身躍下便是愛
+aliases:
+  - /blog/電影心得/eeaao2/
 type: post
 cover:
   image: EEAAO2.jpg

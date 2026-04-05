@@ -1,25 +1,18 @@
 ---
-ai_keywords:
-  - 會所
-  - 成長
-  - 會員
-  - 學習
-  - 會員F
-  - 會所工作
-  - 會所模式
+title: 20250911會所工作日誌03_回顧會員F來會所的學習
+date: 2025-09-11
+description:
+
+draft: false
 categories:
   - 會所工作日誌
   - 會所模式
-date: 2025-09-11
-description:
-draft: false
 tags:
   - 會所工作日誌
   - 會所模式
-title: 20250911會所工作日誌03_回顧會員F來會所的學習
-type: post
 aliases:
   - /blog/會所模式/會所工作日誌03_回顧會員F來會所的學習/
+type: post
 cover:
   image: 會所工作日誌03.jpg
   alt: "20250911會所工作日誌03_回顧會員F來會所的學習"

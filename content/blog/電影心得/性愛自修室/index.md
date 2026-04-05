@@ -1,18 +1,12 @@
 ---
-ai_keywords:
-  - 性別教育
-  - 自我探索
-  - 情感教育
-  - 人際關係
-  - 個人成長
-categories:
-  - 電影心得
+title: 《性愛自修室 Sex Education》
 date: 2021-09-27 10:07:47+08:00
 description: 人始終是流動的、動態的、有機的存在。縱然大多時候我們很有可能處於困惑、焦慮的狀態，但這並不要緊。在關係的建立與消失之間，人總是會成長，並趨於成為完整的自己。關係是一場冒險。我們帶著許多「不確定」做出選擇、承擔風險和代價。在選擇堆疊過程中，一邊探索未知，一邊自我成長。
 draft: false
+categories:
+  - 電影心得
 tags:
   - 電影心得
-title: 《性愛自修室 Sex Education》
 type: post
 cover:
   image: SexEducation.jpg

@@ -1,10 +1,5 @@
 ---
-ai_keywords:
-  - 療癒
-  - 連結
-  - 成為一個人
-  - 成為自己
-  - 正念
+title: Becoming自己的過程：找回內在連結
 date: 2021-08-17 10:07:47+08:00
 description: Becoming自己的過程是一輩子的課題，意外發現過去接觸的書和課程能夠串連起來，共同指向同一條路，用不同角度去理解「找回自己」這麽抽象、深奧的概念。總的來說，我相信每個人的人生中必會面臨創傷和成癮的課題，若沒有發覺其中的智慧，就有可能深陷其中；相反地，循著自己身上情緒的線索，會發現人的運作是存在基本原理、法則的。
 draft: false
@@ -14,10 +9,9 @@ categories:
 tags:
   - 成為一個人
   - 自我成長
-title: Becoming自己的過程：找回內在連結
-type: post
 aliases:
   - /blog/成為一個人/20210817becoming-自己的過程/
+type: post
 cover:
   image: 成為自己.jpg
   alt: "Becoming自己的過程：找回內在連結"

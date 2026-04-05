@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 詩歌
-  - 《沒用的東西》
-  - 資本主義
-  - 社會批判
-  - 廖瞇
-categories:
-  - 閱讀心得
+title: 閱讀心得｜《沒用的東西》
 date: 2022-10-16 11:08:47+08:00
 description: 廖瞇的詩也常以俳句和對稱的方式呈現，用雙關的字句創造出有趣的玩味。能夠把日常生活中的反思用詩的語言書寫，真的更具有感染力和延伸的空間。
 draft: false
+categories:
+  - 閱讀心得
 tags:
   - 閱讀心得
-title: 閱讀心得｜《沒用的東西》
-type: post
 aliases:
   - /blog/閱讀心得/沒用的東西/
   - /blog/閱讀心得/閱讀心得沒用的東西/
+type: post
 cover:
   image: 沒用的東西.jpg
   alt: "閱讀心得｜《沒用的東西》"

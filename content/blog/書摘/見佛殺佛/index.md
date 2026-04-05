@@ -1,23 +1,17 @@
 ---
-ai_keywords:
-  - 工作修行
-  - 正念
-  - 無我
-  - 無常
-  - 禪宗
-aliases:
-  - /blog/書摘/書摘見佛殺佛/
-categories:
-  - 書摘
-  - 一行禪師
+title: 書摘｜《見佛殺佛》
 date: 2022-05-19 11:07:47+08:00
 description: ""
 draft: false
+categories:
+  - 書摘
+  - 一行禪師
 tags:
   - 書摘
   - 一行禪師
   - 正念
-title: 書摘｜《見佛殺佛》
+aliases:
+  - /blog/書摘/書摘見佛殺佛/
 type: post
 cover:
   image: 見佛殺佛.jpg

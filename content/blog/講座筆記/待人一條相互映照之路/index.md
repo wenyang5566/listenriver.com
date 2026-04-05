@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 素人行動
-  - 待人
-  - 組織發展
-  - 社群經營
-  - 社會關懷
-categories:
-  - 講座筆記
+title: 待人：一條相互映照之路
 date: 2018-12-20 10:07:47+08:00
 description: ""
 draft: false
+categories:
+  - 講座筆記
 tags:
   - 講座筆記
-title: 待人：一條相互映照之路
-type: post
 aliases:
   - /blog/講座筆記/20181220待人一條相互映之路/
+type: post
 cover:
   image: IMG_2062.JPG
   alt: "待人：一條相互映照之路"

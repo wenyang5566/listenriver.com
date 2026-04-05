@@ -1,10 +1,5 @@
 ---
-ai_keywords:
-  - 心理困擾
-  - 憂鬱症
-  - 自殺
-  - 家人衝突
-  - 死亡
+title: Clubhouse的密室：不可言說的那件事
 date: 2021-02-11 10:07:47+08:00
 description: 我想我見證的是，一個真正容許負面情緒存在、失敗得以「正常化」的對話空間。失敗不再被視為軟弱的表現，而是為了生存下去的努力。跳脫出任何諮商理論或心理學，在當下我很確定的一件事情是：「每個人都需要好好被聽見」。我也更深信著《開放對話·期待對話》所說：「被人聽見是人一生中最原始的經驗，其重要性對人的生存來講不亞於呼吸。」
 draft: false
@@ -12,10 +7,9 @@ categories:
   - 日常書寫
 tags:
   - 日常書寫
-title: Clubhouse的密室：不可言說的那件事
-type: post
 aliases:
   - /blog/日常書寫/20210211clubhouse的密室/
+type: post
 cover:
   image: clubhouse的密室.png
   alt: "Clubhouse的密室：不可言說的那件事"

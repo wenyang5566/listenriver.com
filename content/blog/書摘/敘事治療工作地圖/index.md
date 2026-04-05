@@ -1,24 +1,18 @@
 ---
-ai_keywords:
-  - 治療對話
-  - 工作地圖
-  - 問題內化
-  - 外化對話
-  - 敘事治療
-categories:
-  - 書摘
-  - 家族治療
+title: 書摘｜《敘事治療工作地圖》
 date: 2021-02-05 10:07:47+08:00
 description: 原文作者：Michael White
 draft: false
+categories:
+  - 書摘
+  - 家族治療
 tags:
   - 書摘
   - 家族治療
-title: 書摘｜《敘事治療工作地圖》
-type: post
 aliases:
   - /blog/閱讀書摘/敘事治療工作地圖/
   - /blog/書摘/書摘敘事治療工作地圖/
+type: post
 ---
 
 ### P.8

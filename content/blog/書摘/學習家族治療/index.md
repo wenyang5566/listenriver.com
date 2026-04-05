@@ -1,24 +1,18 @@
 ---
-ai_keywords:
-  - 過去模式
-  - 公認的故事
-  - 家庭記憶
-  - 治療過程
-  - 家族治療
-categories:
-  - 書摘
-  - 家族治療
+title: 書摘｜《學習家族治療》
 date: 2021-01-10 10:07:47+08:00
 description: 原文作者：Salvador Minuchin，Wai-Yung Lee，George M. Simon
 draft: false
+categories:
+  - 書摘
+  - 家族治療
 tags:
   - 書摘
   - 家族治療
-title: 書摘｜《學習家族治療》
-type: post
 aliases:
   - /blog/閱讀書摘/學習家族治療/
   - /blog/書摘/書摘學習家族治療/
+type: post
 ---
 
 ### P.122公認的故事

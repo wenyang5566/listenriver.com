@@ -1,23 +1,17 @@
 ---
-ai_keywords:
-  - 個體化
-  - 英雄之旅
-  - 自我成長
-  - 榮格心理學
-  - 內在權威
-aliases:
-  - /blog/閱讀書摘/英雄之旅/
-  - /blog/書摘/書摘英雄之旅/
-categories:
-  - 書摘
+title: 書摘｜《英雄之旅》
 date: 2021-07-17 10:07:47+08:00
 description: 原文作者：Murray Stein
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
   - 正念
   - 成為一個人
-title: 書摘｜《英雄之旅》
+aliases:
+  - /blog/閱讀書摘/英雄之旅/
+  - /blog/書摘/書摘英雄之旅/
 type: post
 cover:
   image: 英雄之旅.png

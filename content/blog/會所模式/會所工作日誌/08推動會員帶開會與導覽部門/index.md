@@ -1,23 +1,18 @@
 ---
-ai_keywords:
-  - 團體動力
-  - 推動會員
-  - 動力
-  - 會所工作
-  - 會所模式
+title: 20251111會所工作日誌08_推動會員帶開會與導覽部門
+date: 2025-11-11
+description:
+
+draft: false
 categories:
   - 會所工作日誌
   - 會所模式
-date: 2025-11-11
-description:
-draft: false
 tags:
   - 會所工作日誌
   - 會所模式
-title: 20251111會所工作日誌08_推動會員帶開會與導覽部門
-type: post
 aliases:
   - /blog/會所模式/會所工作日誌08_推動會員帶開會與導覽部門/
+type: post
 cover:
   image: 會所工作日誌08.jpg
   alt: "20251111會所工作日誌08_推動會員帶開會與導覽部門"

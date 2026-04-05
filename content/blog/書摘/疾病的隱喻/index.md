@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 療養院
-  - 精神錯亂
-  - 疾病隱喻
-  - 癌症
-  - 貧窮
-categories:
-  - 書摘
+title: 書摘｜《疾病的隱喻》
 date: 2019-11-11 10:07:47+08:00
 description: 作者：Susan Sontag
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《疾病的隱喻》
-type: post
 aliases:
   - /blog/閱讀書摘/疾病的隱喻/
   - /blog/書摘/書摘疾病的隱喻/
+type: post
 ---
 
 ### P.45

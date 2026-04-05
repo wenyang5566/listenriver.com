@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 悉達多
-  - 智慧
-  - 愛
-  - 世界
-  - 知識
-categories:
-  - 書摘
+title: 書摘｜《流浪者之歌》
 date: 2019-08-21 10:07:47+08:00
 description: 原文作者：Hermann Hesse
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《流浪者之歌》
-type: post
 aliases:
   - /blog/閱讀書摘/流浪者之歌/
   - /blog/書摘/書摘流浪者之歌/
+type: post
 ---
 
 ### P.115

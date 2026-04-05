@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 複雜情緒
-  - 身體疼痛
-  - 精神病態行為
-  - 心理機制
-  - 自我傷害
-aliases:
-  - /blog/閱讀書摘/割腕的誘惑/
-  - /blog/書摘/書摘割腕的誘惑停止自我傷害/
-categories:
-  - 書摘
+title: 書摘｜《割腕的誘惑：停止自我傷害》
 date: 2022-08-03 10:07:48+08:00
 description: 原文作者： Steven Levenkron ；譯者： 李俊毅
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《割腕的誘惑：停止自我傷害》
+aliases:
+  - /blog/閱讀書摘/割腕的誘惑/
+  - /blog/書摘/書摘割腕的誘惑停止自我傷害/
 type: post
 cover:
   image: 割腕的誘惑.jpg

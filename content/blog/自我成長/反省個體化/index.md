@@ -1,10 +1,5 @@
 ---
-ai_keywords:
-  - 自我界線
-  - 陰影
-  - 個體化
-  - 成為一個人
-  - 正念
+title: 反省個體化
 date: 2022-05-01
 description: 我一直覺得，個體化就像是在紙上拓印出名為「自己」的形狀，用外界任何事情來拓，塗得越用力，線條越清晰。那意味著自己帶著一顆批判的心，把外界不斷他者化，畫出完整的自己。
 draft: false
@@ -14,10 +9,9 @@ categories:
   - 精選文章
 tags:
   - 成為一個人
-title: 反省個體化
-type: post
 aliases:
   - /blog/成為一個人/20220501反省個體化/
+type: post
 cover:
   image: 反省個體化.jpg
   alt: "反省個體化"

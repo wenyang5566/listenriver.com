@@ -1,10 +1,5 @@
 ---
-ai_keywords:
-  - 畫觀念
-  - 排線
-  - 素描課
-  - 實在感
-  - 存在感
+title: 素描13：實在感
 date: 2022-12-07 10:07:47+08:00
 description: 建立物體的實在感，對我來說更像是存在感，排線一層一層加深的過程很像在創造一個東西，感受到存在感、重量感的出現。
 draft: false
@@ -12,10 +7,9 @@ categories:
   - 素描
 tags:
   - 素描
-title: 素描13：實在感
-type: post
 aliases:
   - /blog/素描/素描入門二1/
+type: post
 cover:
   image: 素描＿入門二＿1.jpg
   alt: "素描13：實在感"

@@ -1,22 +1,18 @@
 ---
-ai_keywords:
-  - 生命敘事
-  - 意義感
-  - 敘事團體
-  - 會所工作
+title: 20260304會所工作日誌11_敘事的見證
+date: 2026-03-04
+description:
+
+draft: false
 categories:
   - 會所工作日誌
   - 會所模式
-date: 2026-03-04
-description:
-draft: false
 tags:
   - 會所模式
   - 會所工作日誌
-title: 20260304會所工作日誌11_敘事的見證
-type: blog
 aliases:
   - /blog/會所模式/會所工作日誌011_敘事的見證/
+type: post
 cover:
   image: 會所工作日誌11.jpg
   alt: "20260304會所工作日誌11_敘事的見證"

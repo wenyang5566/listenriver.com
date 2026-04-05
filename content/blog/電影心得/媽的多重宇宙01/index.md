@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 多重宇宙
-  - 人類獨特性
-  - 跨維度連結
-  - 不二法門
-  - 相即智慧
-categories:
-  - 電影心得
+title: 《媽的多重宇宙 EEAAO》01
 date: 2022-05-19 11:07:49+08:00
 description: 消化心得到目前為止還沒有很深，只覺得這是一部關於愛與連結的電影。仔細觀察會發現，無論在哪個多重宇宙，這些角色都彼此相遇，像是會說「我是威門，但至少不是你認識的那一個」，這意味著他們無論在哪一個宇宙都遇見了彼此，那份愛與連結是橫跨宇宙的，包括Evelyn和國稅局員工也是，在另一個宇宙建立起不同的關係，而那其實也是被稱為「緣分」的東西。
 draft: false
+categories:
+  - 電影心得
 tags:
   - 電影心得
   - 媽的多重宇宙
-title: 《媽的多重宇宙 EEAAO》01
-type: post
 aliases:
   - /blog/電影心得/eeaao/
+type: post
 cover:
   image: EEAAO.jpg
   alt: "《媽的多重宇宙 EEAAO》01"

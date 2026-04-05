@@ -1,23 +1,17 @@
 ---
-ai_keywords:
-  - 美劇
-  - 無恥之徒
-  - 觀後感
-  - 角色
-  - 貧窮
-categories:
-  - 電影心得
+title: 美劇《無恥之徒 Shameless》心得：人人都是無恥之徒
 date: 2025-02-15
 description: 如同劇名Shameless，可以輕易發現劇中每個角色都有無恥自私的一面，每個人都是無恥之徒。我想整部劇描繪出貧窮者很現實、真實的生活：在你正要努力爬起來的時候，總是會有爛事發生；或是被結構性的壓迫給壓垮；或是透過酒精、藥物或性來抒解壓力。但同時，可以看見社區/社群有團結的一面，當有困難的時候互相扶持，而且絕不當告密鬼。
 draft: false
+categories:
+  - 電影心得
 tags:
   - 電影心得
   - 無恥之徒
   - Shamless
-title: 美劇《無恥之徒 Shameless》心得：人人都是無恥之徒
-type: post
 aliases:
   - /blog/電影心得/美劇無恥之徒-shameless觀後感人人都是無恥之徒/
+type: post
 cover:
   image: 無恥之徒.png
   alt: "美劇《無恥之徒 Shameless》心得：人人都是無恥之徒"

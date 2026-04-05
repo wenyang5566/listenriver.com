@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 事物變化
-  - 中觀學
-  - 般若心經
-  - 語言幻象
-  - 色即是空
-categories:
-  - 講座筆記
+title: 紀金慶老師｜《般若心經》短講｜逐字稿
 date: 2021-12-21 10:07:47+08:00
 description: ""
 draft: false
+categories:
+  - 講座筆記
 tags:
   - 講座筆記
-title: 紀金慶老師｜《般若心經》短講｜逐字稿
-type: post
 aliases:
   - /blog/講座筆記/20211221般若心經短講/
+type: post
 ---
 
 ## 短講連結

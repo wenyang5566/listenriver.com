@@ -1,25 +1,19 @@
 ---
-ai_keywords:
-  - 勵馨基金會
-  - 諮商心理師
-  - 創傷知情
-  - 兒少服務
-  - 童年逆境
+title: 講座筆記｜創傷知情與兒少服務工作坊筆記
+date: 2021-04-27 10:07:47+08:00
+description: ""
+draft: false
 categories:
   - 講座筆記
   - 創傷知情
   - 邁向助人工作
-date: 2021-04-27 10:07:47+08:00
-description: ""
-draft: false
 tags:
   - 講座筆記
   - 創傷知情
   - 邁向助人工作
-title: 講座筆記｜創傷知情與兒少服務工作坊筆記
-type: post
 aliases:
   - /blog/創傷知情/講座筆記創傷知情與兒少服務工作坊/
+type: post
 cover:
   image: 創傷知情工作坊2.jpg
   alt: "講座筆記｜創傷知情與兒少服務工作坊筆記"

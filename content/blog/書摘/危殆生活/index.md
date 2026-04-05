@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 無家者
-  - 江湖資本
-  - 艱苦人
-  - 𨑨迌人
-  - 做事人
-aliases:
-  - /blog/閱讀書摘/危殆生活/
-  - /blog/書摘/書摘危殆生活/
-categories:
-  - 書摘
+title: 書摘｜《危殆生活》
 date: 2022-07-29 10:07:47+08:00
 description: 作者：黃克先
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《危殆生活》
+aliases:
+  - /blog/閱讀書摘/危殆生活/
+  - /blog/書摘/書摘危殆生活/
 type: post
 cover:
   image: 危殆生活1.jpg

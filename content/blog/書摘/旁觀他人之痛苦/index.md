@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 痛苦
-  - 戰爭
-  - 影像
-  - 暴力
-  - 人權
-categories:
-  - 書摘
+title: 書摘｜《旁觀他人之痛苦》
 date: 2019-11-07 10:07:47+08:00
 description: 作者：Susan Sontag
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《旁觀他人之痛苦》
-type: post
 aliases:
   - /blog/閱讀書摘/旁觀他人之痛苦/
   - /blog/書摘/書摘旁觀他人之痛苦/
+type: post
 ---
 
 ### 思考

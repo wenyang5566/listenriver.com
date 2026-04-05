@@ -1,19 +1,13 @@
 ---
-ai_keywords:
-- 心理空間
-- 靜止
-- 安靜
-- 聆聽
-- 冥想
-categories:
-- 電影心得
+title: 《午夜福音》EP6
 date: 2022-11-24 10:07:47+08:00
 description: 關於冥想，也關於聆聽的提醒⁡
 draft: false
+categories:
+  - 電影心得
 tags:
-- 電影心得
-- 午夜福音
-title: 《午夜福音》EP6
+  - 電影心得
+  - 午夜福音
 type: post
 cover:
   image: 午夜福音6.jpg

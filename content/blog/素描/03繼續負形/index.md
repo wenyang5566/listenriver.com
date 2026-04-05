@@ -1,10 +1,5 @@
 ---
-ai_keywords:
-  - 感覺轉化
-  - 觀看方式
-  - 負形
-  - 正念畫畫
-  - 素描練習
+title: 素描03：Still負形
 date: 2022-07-06 10:07:47+08:00
 description: 我發現，自己需要在無拘無束的狀態下比較能畫，想著不需要任何規則、完全回到感覺上，把感覺轉化成線條和圖塊，那種狀態就如第一堂課所教的：「不評價、不認知，拿掉概念，純粹感知。」還在慢慢摸索這樣如正念般的狀態去畫畫。
 draft: false
@@ -13,10 +8,9 @@ categories:
 tags:
   - 素描
   - 正念
-title: 素描03：Still負形
-type: post
 aliases:
   - /blog/素描/素描3/
+type: post
 cover:
   image: 素描3.jpg
   alt: "素描03：Still負形"

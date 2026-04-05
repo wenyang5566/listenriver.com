@@ -1,24 +1,17 @@
 ---
-ai_keywords:
-  - 長效針
-  - 複雜用藥
-  - 精神科用藥
-  - 藥物副作用
-  - 調藥
-  - 會所工作
-  - 會所模式
+title: 20251001會所工作日誌06_複雜用藥下，改變如何發生??
+date: 2025-10-01
+description:
+
+draft: false
 categories:
   - 會所工作日誌
   - 會所模式
-date: 2025-10-01
-description:
-draft: false
 tags:
   - 會所工作日誌
-title: 20251001會所工作日誌06_複雜用藥下，改變如何發生??
-type: post
 aliases:
   - /blog/會所模式/會所工作日誌06_複雜用藥下改變如何發生/
+type: post
 cover:
   image: 會所工作日誌06.jpg
   alt: "20251001會所工作日誌06_複雜用藥下，改變如何發生??"

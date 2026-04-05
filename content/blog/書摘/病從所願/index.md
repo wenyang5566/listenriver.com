@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 死亡意識
-  - 病從所願
-  - 疾病體驗
-  - 醫療思考
-  - 人文臨床
-categories:
-  - 書摘
+title: 書摘｜《病從所願》
 date: 2023-01-27 10:07:47+08:00
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《病從所願》
-type: post
 aliases:
   - /blog/閱讀書摘/病從所願/
   - /blog/書摘/書摘病從所願/
+type: post
 cover:
   image: 病從所願.jpg
   alt: "書摘｜《病從所願》"

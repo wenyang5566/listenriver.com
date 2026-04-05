@@ -1,23 +1,18 @@
 ---
-ai_keywords:
-  - 語言
-  - 疼痛
-  - 聆聽疼痛
-  - 人文臨床
-categories:
-  - 書摘
+title: 書摘｜《聆聽疼痛》
 date: 2023-02-03 10:07:47+08:00
 description: 原文作者：David Biro
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
   - 聆聽疼痛
-title: 書摘｜《聆聽疼痛》
-type: post
 aliases:
   - /blog/閱讀書摘/聆聽疼痛/
   - /blog/閱讀書摘/聆聽疼痛2/
   - /blog/書摘/書摘聆聽疼痛/
+type: post
 cover:
   image: 聆聽疼痛.jpg
   alt: "書摘｜《聆聽疼痛》"

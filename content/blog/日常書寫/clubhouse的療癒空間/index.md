@@ -1,13 +1,5 @@
 ---
-ai_keywords:
-  - 開放式對話
-  - 療癒空間
-  - 自我揭露
-  - 對話精神
-  - 情感共鳴
-aliases:
-  - /blog/生活反思與心得/categories的療癒空間/
-  - /blog/日常書寫/20210210clubhouse的療癒空間/
+title: Clubhouse的療癒空間：從獨白轉為對話，在對話中產生共鳴
 date: 2021-02-10 10:07:47+08:00
 description: 起初，大多數人都站在「分享個人經驗」的角度發言，包括遭受性侵、復原、與創傷相處、或是陪伴受害者的經驗；而隨著越來越多人開始自我揭露，很神奇地，每個人的經驗多少都能夠回應彼此，「共鳴」也因此產生。在共鳴中，大量關於身體感受的抽象經驗得以被同理，當有人說出自己「不被他人理解」的感受時，也能夠在這房間中被接住。
 draft: false
@@ -15,7 +7,9 @@ categories:
   - 日常書寫
 tags:
   - 日常書寫
-title: Clubhouse的療癒空間：從獨白轉為對話，在對話中產生共鳴
+aliases:
+  - /blog/生活反思與心得/categories的療癒空間/
+  - /blog/日常書寫/20210210clubhouse的療癒空間/
 type: post
 cover:
   image: clubhouse的療癒空間.png

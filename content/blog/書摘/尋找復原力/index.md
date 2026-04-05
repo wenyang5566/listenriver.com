@@ -1,23 +1,17 @@
 ---
-ai_keywords:
-  - 自我覺察
-  - 復原力
-  - 脆弱
-  - 自我調節
-  - 心理傷口
-aliases:
-  - /blog/閱讀書摘/尋找復原力/
-  - /blog/書摘/書摘尋找復原力/
-categories:
-  - 書摘
-  - 創傷知情
+title: 書摘｜《尋找復原力》
 date: 2022-01-12 10:07:47+08:00
 description: 作者：留佩萱
 draft: false
+categories:
+  - 書摘
+  - 創傷知情
 tags:
   - 書摘
   - 創傷知情
-title: 書摘｜《尋找復原力》
+aliases:
+  - /blog/閱讀書摘/尋找復原力/
+  - /blog/書摘/書摘尋找復原力/
 type: post
 cover:
   image: 尋找復原力.jpg

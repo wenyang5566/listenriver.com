@@ -1,23 +1,18 @@
 ---
-ai_keywords:
-  - 精神疾病
-  - 開放式對話
-  - 家庭動力
-  - 關係受苦
-  - 治療實踐
+title: 開放式對話進階工作坊Day 2
+date: 2020-11-15
+description:
+
+draft: false
 categories:
   - 開放式對話
   - 講座筆記
-date: 2020-11-15
-description:
-draft: false
 tags:
   - 開放式對話
   - 講座筆記
-title: 開放式對話進階工作坊Day 2
-type: post
 aliases:
   - /blog/開放式對話/開放式對話進階工作坊_day2/
+type: post
 cover:
   image: 0001.jpg
   alt: "開放式對話進階工作坊Day 2"

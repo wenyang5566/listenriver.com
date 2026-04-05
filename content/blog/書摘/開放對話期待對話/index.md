@@ -1,24 +1,19 @@
 ---
-ai_keywords:
-  - 跨界合作
-  - 對話精神
-  - 開放式對話
-  - 開放對話
-categories:
-  - 書摘
-  - 開放式對話
+title: 書摘｜《開放對話・期待對話：尊重他者當下的他異性》
 date: 2021-02-10 10:07:47+08:00
 description: 原文作者：原文作者： Jaakko Seikkula, Tom Erik Arnkil
 draft: false
+categories:
+  - 書摘
+  - 開放式對話
 tags:
   - 書摘
   - 開放式對話
-title: 書摘｜《開放對話・期待對話：尊重他者當下的他異性》
-type: post
 aliases:
   - /blog/閱讀書摘/開放對話-期待對話/
   - /blog/閱讀書摘/開放對話期待對話/
   - /blog/書摘/書摘開放對話期待對話尊重他者當下的他異性/
+type: post
 ---
 ## 推薦序三
 ### P.18

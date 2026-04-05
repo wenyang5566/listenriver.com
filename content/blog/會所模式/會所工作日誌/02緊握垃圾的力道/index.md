@@ -1,23 +1,18 @@
 ---
-ai_keywords:
-  - 會所工作
-  - 會員J
-  - 會所模式
-  - 清潔
-  - 收垃圾
+title: 20250910會所工作日誌02_緊握垃圾的力道
+date: 2025-09-10
+description:
+
+draft: false
 categories:
   - 會所工作日誌
   - 會所模式
-date: 2025-09-10
-description:
-draft: false
 tags:
   - 會所工作日誌
   - 會所模式
-title: 20250910會所工作日誌02_緊握垃圾的力道
-type: post
 aliases:
   - /blog/會所模式/會所工作日誌02_緊握垃圾的力道/
+type: post
 cover:
   image: 會所工作日誌02.jpg
   alt: "20250910會所工作日誌02_緊握垃圾的力道"

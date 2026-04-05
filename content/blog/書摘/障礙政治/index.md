@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 社會問題
-  - 社會壓迫
-  - 身體損傷
-  - 社會模式
-  - 障礙者
-aliases:
-  - /blog/閱讀書摘/障礙政治/
-  - /blog/書摘/書摘障礙政治/
-categories:
-  - 書摘
+title: 書摘｜《障礙政治》
 date: 2023-10-30 10:07:47+08:00
 description: 原文作者：Michael Oliver, Colin Barnes
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
   - 障礙政治
-title: 書摘｜《障礙政治》
+aliases:
+  - /blog/閱讀書摘/障礙政治/
+  - /blog/書摘/書摘障礙政治/
 type: post
 cover:
   image: 障礙政治.jpg

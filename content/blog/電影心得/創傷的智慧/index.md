@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-- 情緒調節
-- 創傷
-- 成癮
-- 童年創傷
-- 連結斷裂
-categories:
-- 電影心得
-- 創傷知情
+title: 《創傷的智慧The Wisdom of Trauma》
+
 date: 2021-07-30 10:07:47+08:00
 description: 「創傷從根本上來說，意味著與自我的連結斷開了。為什麼會斷開？因為做我們自己太痛苦了。這將成為一種終身動力，我不再知道如何處理情緒。這意味著在人際關係中，當我感到有點痛的時候，我會立刻退出，這樣我就不必去感受那些我不知道該怎麼辦的情緒。所以便有了連結斷裂。」
 draft: false
+categories:
+  - 電影心得
+  - 創傷知情
 tags:
-- 電影心得
-- 創傷知情
-title: 《創傷的智慧The Wisdom of Trauma》
-
+  - 電影心得
+  - 創傷知情
 type: post
 cover:
   image: 創傷的智慧.jpg

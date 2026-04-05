@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 個體化
-  - 原型
-  - 對立
-  - 相對
-  - 陰影
-aliases:
-  - /blog/閱讀書摘/擁抱陰影/
-  - /blog/書摘/書摘擁抱陰影/
-categories:
-  - 書摘
+title: 書摘｜《擁抱陰影》
 date: 2021-12-30 10:07:47+08:00
 description: 原文作者：Robert A. Johnson
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《擁抱陰影》
+aliases:
+  - /blog/閱讀書摘/擁抱陰影/
+  - /blog/書摘/書摘擁抱陰影/
 type: post
 cover:
   image: 擁抱陰影.jpg

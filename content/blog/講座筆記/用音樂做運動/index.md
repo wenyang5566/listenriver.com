@@ -1,21 +1,15 @@
 ---
-ai_keywords:
-  - 時代背景
-  - 音樂社會運動
-  - 群眾行動
-  - 青年參與
-  - 社會變革
-categories:
-  - 講座筆記
+title: 用音樂做運動
 date: 2019-03-03 10:07:47+08:00
 description: ""
 draft: false
+categories:
+  - 講座筆記
 tags:
   - 講座筆記
-title: 用音樂做運動
-type: post
 aliases:
   - /blog/講座筆記/20190303用音樂做運動/
+type: post
 cover:
   image: 用音樂做運動.png
   alt: "用音樂做運動"

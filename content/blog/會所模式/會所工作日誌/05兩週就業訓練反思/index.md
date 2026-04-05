@@ -1,25 +1,18 @@
 ---
-ai_keywords:
-  - 會員F
-  - 就業訓練
-  - 職場評估
-  - 會員J
-  - 會所工作
-  - 會所模式
-  - 就業前準備
+title: 20250926會所工作日誌05_就業訓練反思
+date: 2025-09-26
+description:
+
+draft: false
 categories:
   - 會所工作日誌
   - 會所模式
-date: 2025-09-26
-description:
-draft: false
 tags:
   - 會所工作日誌
   - 會所模式
-title: 20250926會所工作日誌05_就業訓練反思
-type: post
 aliases:
   - /blog/會所模式/會所工作日誌05_兩週就業訓練反思/
+type: post
 cover:
   image: 會所工作日誌05.jpg
   alt: "20250926會所工作日誌05_就業訓練反思"

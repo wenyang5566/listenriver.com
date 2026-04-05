@@ -1,19 +1,13 @@
 ---
-ai_keywords:
-- 記憶傳承
-- 家族循環
-- 家庭關係
-- 橫山家之味
-- 小黃蝶
-categories:
-- 電影心得
+title: 《橫山家之味 Still Walking》
 date: 2021-07-28 10:07:47+08:00
 description: 如同小黃蝶的傳說成為家族紀事被傳承下去，新世代的家庭成員也帶著上一代的記憶、行為模式、情緒傷口繼續生活。也像由佳里所說：「死掉不代表不存在。」每一個家庭成員都傳遞了一點東西，無論是否在世。
 draft: false
+categories:
+  - 電影心得
 tags:
-- 電影心得
-- 是枝裕和
-title: 《橫山家之味 Still Walking》
+  - 電影心得
+  - 是枝裕和
 type: post
 cover:
   image: 橫山家之味2.jpg

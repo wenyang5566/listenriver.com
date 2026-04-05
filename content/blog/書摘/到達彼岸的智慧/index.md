@@ -1,24 +1,18 @@
 ---
-ai_keywords:
-  - 彼岸
-  - 相即
-  - 一行禪師
-  - 心經
-  - 哲學思考
-aliases:
-  - /blog/閱讀書摘/心經/
-  - /blog/書摘/書摘一行禪師講心經到達彼岸的智慧/
-categories:
-  - 書摘
-  - 一行禪師
+title: 書摘｜一行禪師講《心經》：到達彼岸的智慧
 date: 2022-05-17 11:07:47+08:00
 description: ""
 draft: false
+categories:
+  - 書摘
+  - 一行禪師
 tags:
   - 書摘
   - 一行禪師
   - 正念
-title: 書摘｜一行禪師講《心經》：到達彼岸的智慧
+aliases:
+  - /blog/閱讀書摘/心經/
+  - /blog/書摘/書摘一行禪師講心經到達彼岸的智慧/
 type: post
 cover:
   image: 心經.jpg

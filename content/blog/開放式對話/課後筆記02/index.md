@@ -1,23 +1,17 @@
 ---
-ai_keywords:
-  - 身體感覺
-  - 同理
-  - 心理諮商
-  - 開放式對話
-  - 內在透明化
+title: 開放式對話（Open Dialogue）課後筆記Part2
 date: 2020-08-22
 description: 對助人工作者來說，開放式對話可以協助創造出更多的空間，為工作者和當事人雙方創造空間。在學習覺察身體感覺時，我發現身體不只會受到對方情緒影響，也會受到自身而來的情緒影響，光是分辨兩種影響就需要耗費不少心力，處理情緒時更需要時間和空間。在面對巨量情緒時，開放式對話擴展了因情緒受限的框架，或者應該說是把情緒用更扁平、貼近的方式拓展開來，從而賦予更大的自由和空間。
 draft: false
-tags:
-  - 開放式對話
-  - 講座筆記
-title: 開放式對話（Open Dialogue）課後筆記Part2
 categories:
   - 開放式對話
   - 講座筆記
-type: post
+tags:
+  - 開放式對話
+  - 講座筆記
 aliases:
   - /blog/開放式對話/開放式對話_課後筆記part2/
+type: post
 cover:
   image: 開放式對話課後筆記14.jpg
   alt: "開放式對話（Open Dialogue）課後筆記Part2"

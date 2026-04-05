@@ -1,22 +1,16 @@
 ---
-ai_keywords:
-  - 縉紳化
-  - 城市衰退
-  - 消費主義
-  - 社區連結
-  - 弱勢居民
-categories:
-  - 書摘
+title: 書摘｜《如何謀殺一座城市》
 date: 2019-12-13 10:07:47+08:00
 description: 原文作者：Peter Moskowitz
 draft: false
+categories:
+  - 書摘
 tags:
   - 書摘
-title: 書摘｜《如何謀殺一座城市》
-type: post
 aliases:
   - /blog/閱讀書摘/如何謀殺一座城市/
   - /blog/書摘/書摘如何謀殺一座城市/
+type: post
 ---
 
 ### P.89

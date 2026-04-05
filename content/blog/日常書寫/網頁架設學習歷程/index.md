@@ -1,21 +1,16 @@
 ---
-ai_keywords:
-  - 網站架設
-  - AI工具
-  - Waline
-  - Vercel
-  - Obsidian
+title: 網頁架設學習歷程
 date: 2026-02-23
 description:
+
 draft: false
 categories:
   - 日常書寫
 tags:
   - 日常書寫
-title: 網頁架設學習歷程
-type: blog
 aliases:
   - /blog/日常書寫/20260223網頁架設學習歷程/
+type: post
 cover:
   image: 網頁學習歷程.png
   alt: "網頁架設學習歷程"
