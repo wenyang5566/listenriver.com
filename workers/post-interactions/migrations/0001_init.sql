@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS post_stats (
+  slug TEXT PRIMARY KEY,
+  views INTEGER NOT NULL DEFAULT 0,
+  likes INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_post_stats_updated_at
+  ON post_stats (updated_at DESC);

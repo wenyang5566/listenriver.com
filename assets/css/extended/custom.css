@@ -1328,6 +1328,163 @@ body.mobile-nav-locked {
   opacity: 0.5;
 }
 
+.post-interactions {
+  margin: 2rem auto 0;
+  max-width: 760px;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(17, 24, 39, 0.1);
+}
+
+.post-interactions__panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.45rem;
+  flex-wrap: wrap;
+  padding: 0.2rem 0;
+}
+
+.post-stat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 0;
+  min-width: 0;
+  padding: 0;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.post-stat__icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.post-stat__label {
+  color: var(--secondary);
+}
+
+.post-stat__value,
+.post-like-button__count {
+  font-variant-numeric: tabular-nums;
+}
+
+.post-like-button {
+  min-height: 0;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  background: transparent;
+  color: var(--primary);
+}
+
+.post-like-button:hover {
+  transform: translateY(-1px);
+}
+
+.post-like-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+  transform: none;
+}
+
+.post-like-button__icon {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #f2547d;
+  flex: 0 0 auto;
+}
+
+.post-like-button__icon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.post-like-button__count {
+  min-width: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.post-like-button.is-liked {
+  color: #f2547d;
+}
+
+.post-like-button.is-busy .post-like-button__icon {
+  animation: post-like-pulse 0.8s ease;
+}
+
+.post-interactions--offline .post-stat,
+.post-interactions--offline .post-like-button {
+  opacity: 0.7;
+}
+
+.post-rabbit-burst {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  pointer-events: none;
+  z-index: 1200;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) scale(0.9);
+  animation: post-rabbit-burst 1.25s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.post-rabbit-burst img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes post-rabbit-burst {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.9);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--burst-x), var(--burst-y), 0) scale(1.45);
+  }
+}
+
+@keyframes post-like-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(0.84);
+  }
+
+  65% {
+    transform: scale(1.24);
+  }
+}
+
 .post-single .post-content ul,
 .post-single .post-content ol {
   padding-left: 1.4rem;
@@ -1416,6 +1573,39 @@ body.mobile-nav-locked {
     max-width: 100%;
     font-size: 1rem;
     line-height: 1.9;
+  }
+
+  .post-interactions {
+    margin-top: 1.6rem;
+    padding-top: 1rem;
+  }
+
+  .post-interactions__panel {
+    gap: 0.95rem;
+    justify-content: space-between;
+  }
+
+  .post-stat {
+    font-size: 0.96rem;
+  }
+
+  .post-like-button,
+  .post-stat {
+    min-height: 40px;
+  }
+
+  .post-like-button {
+    gap: 0.38rem;
+  }
+
+  .post-like-button__icon {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .post-like-button__icon svg {
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   .post-single .post-content h2 {

@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "listenriver-post-interactions",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-04-05",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "SITE_ORIGIN": "https://listenriver.com"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "listenriver-post-interactions",
+      "database_id": "5b1c88a4-19a7-4ebf-b26b-69382a1f4e46",
+      "migrations_dir": "migrations"
+    }
+  ]
+}

@@ -41,6 +41,10 @@
       {{ .Content }}
     {{- end }}
   </div>
+  {{- partial "post_interactions.html" . -}}
+  {{- if (.Param "comments") }}
+    {{- partial "comments.html" . }}
+  {{- end }}
   {{- end }}
 
   <footer class="post-footer">
@@ -57,10 +61,6 @@
       {{- partial "share_icons.html" . -}}
     {{- end }}
   </footer>
-
-  {{- if (.Param "comments") }}
-    {{- partial "comments.html" . }}
-  {{- end }}
 </article>
 
 {{- end }}{{/* end main */}}

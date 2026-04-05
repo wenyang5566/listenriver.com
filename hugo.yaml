@@ -40,6 +40,7 @@ params:
   salonFacebook: https://www.facebook.com/profile.php?id=100000266878039
   salonGravatar: wenyang5566@email.com
   salonDescription: "一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。"
+  postInteractionsApi: "https://listenriver-post-interactions.wenyang5566.workers.dev"
 
   defaultTheme: auto
   profileMode.enabled: false
