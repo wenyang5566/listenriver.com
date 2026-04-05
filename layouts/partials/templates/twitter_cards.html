@@ -1,0 +1,23 @@
+{{- $title := or .Title site.Title site.Params.title | plainify | htmlUnescape | strings.TrimSpace -}}
+{{- $description := or .Description .Summary site.Params.description | plainify | htmlUnescape | strings.TrimSpace -}}
+{{- $socialImage := partial "templates/_funcs/get-social-preview.html" . -}}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $description }}">
+<meta name="twitter:image" content="{{ index $socialImage "url" }}">
+{{- with index $socialImage "alt" }}
+<meta name="twitter:image:alt" content="{{ . }}">
+{{- end }}
+
+{{- with site.Params.social }}
+  {{- if reflect.IsMap . }}
+    {{- with .twitter }}
+      {{- $content := . }}
+      {{- if not (strings.HasPrefix . "@") }}
+        {{- $content = printf "@%v" . }}
+      {{- end }}
+<meta name="twitter:site" content="{{ $content }}">
+    {{- end }}
+  {{- end }}
+{{- end }}

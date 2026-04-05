@@ -98,19 +98,8 @@
     {{- end -}}
   {{- end -}}
 
-  {{- $imageURL := "" -}}
-  {{- if .Params.cover.image -}}
-    {{- if ne .Params.cover.relative true -}}
-      {{- $imageURL = .Params.cover.image | absURL -}}
-    {{- else -}}
-      {{- $imageURL = (path.Join .RelPermalink .Params.cover.image) | absURL -}}
-    {{- end -}}
-  {{- else -}}
-    {{- $images := partial "templates/_funcs/get-page-images" . -}}
-    {{- with index $images 0 -}}
-      {{- $imageURL = .Permalink -}}
-    {{- end -}}
-  {{- end -}}
+  {{- $socialImage := partial "templates/_funcs/get-social-preview.html" . -}}
+  {{- $imageURL := index $socialImage "url" -}}
 
   {{- $pageType := cond (eq .Type "about") "AboutPage" "BlogPosting" -}}
   {{- $pageSchema := dict

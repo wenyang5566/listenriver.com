@@ -1,0 +1,66 @@
+{{- $page := . -}}
+{{- $defaultAlt := site.Params.socialDefaultImageAlt | default site.Params.description | default site.Title | plainify | htmlUnescape | strings.TrimSpace -}}
+{{- $fallbackPath := site.Params.socialDefaultImage | default "/images/og-default.png" -}}
+{{- $image := dict
+  "url" ($fallbackPath | absURL)
+  "alt" $defaultAlt
+  "width" "1200"
+  "height" "630"
+  "type" "image/png"
+  "isDefault" true
+-}}
+
+{{- with $page.Params.cover.image -}}
+  {{- $coverPath := . -}}
+  {{- $coverURL := "" -}}
+  {{- $coverWidth := "" -}}
+  {{- $coverHeight := "" -}}
+  {{- $coverType := "" -}}
+  {{- $coverAlt := $page.Params.cover.alt | default ($page.Title | default site.Title) | plainify | htmlUnescape | strings.TrimSpace -}}
+  {{- with $page.Resources.GetMatch $coverPath -}}
+    {{- $coverURL = .Permalink -}}
+    {{- $coverWidth = printf "%d" .Width -}}
+    {{- $coverHeight = printf "%d" .Height -}}
+    {{- $coverType = .MediaType.Type -}}
+  {{- else -}}
+    {{- if ne $page.Params.cover.relative true -}}
+      {{- $coverURL = $coverPath | absURL -}}
+    {{- else -}}
+      {{- $coverURL = (path.Join $page.RelPermalink $coverPath) | absURL -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $image = dict
+    "url" $coverURL
+    "alt" $coverAlt
+    "width" $coverWidth
+    "height" $coverHeight
+    "type" $coverType
+    "isDefault" false
+  -}}
+{{- else -}}
+  {{- with partial "templates/_funcs/get-page-images" $page -}}
+    {{- with index . 0 -}}
+      {{- $pageAlt := $page.Params.cover.alt | default ($page.Title | default site.Title) | plainify | htmlUnescape | strings.TrimSpace -}}
+      {{- $pageWidth := index $image "width" -}}
+      {{- $pageHeight := index $image "height" -}}
+      {{- $pageType := index $image "type" -}}
+      {{- $isDefault := eq .Permalink (($fallbackPath | absURL)) -}}
+      {{- with .Image -}}
+        {{- $pageWidth = printf "%d" .Width -}}
+        {{- $pageHeight = printf "%d" .Height -}}
+        {{- $pageType = .MediaType.Type -}}
+        {{- $isDefault = false -}}
+      {{- end -}}
+      {{- $image = dict
+        "url" .Permalink
+        "alt" $pageAlt
+        "width" $pageWidth
+        "height" $pageHeight
+        "type" $pageType
+        "isDefault" $isDefault
+      -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $image -}}

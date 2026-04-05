@@ -27,6 +27,10 @@ params:
 
   author: "文揚 Wen-Yang"
   description: "聆聽的河流｜閱讀、書寫、心理與電影"
+  images:
+    - "/images/og-default.png"
+  socialDefaultImage: "/images/og-default.png"
+  socialDefaultImageAlt: "聆聽的河流｜閱讀、書寫、心理與電影"
 
   salonBanner: /images/logo_ver3.png
   salonDefaultCover: /images/mao_3.png
