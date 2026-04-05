@@ -1,39 +1,35 @@
-# listenriver.com
+﻿# listenriver.com
 
-Hugo source for `listenriver.com`, deployed from GitHub to Cloudflare.
+Source repository for `listenriver.com`.
 
-## Deployment Model
+This project uses Hugo for the site, GitHub Actions for CI validation, and Cloudflare for production hosting.
 
-This repository now follows a source-only deployment flow:
+## Stack
 
-- Commit and push source files only.
-- Do not commit `public/` build output.
-- GitHub Actions validates that the site can build.
-- Cloudflare pulls from `main` and runs the production build.
+- Site generator: Hugo `0.155.2` extended
+- Theme: PaperMod
+- Hosting: Cloudflare Pages
+- Article interactions: Cloudflare Worker + D1
 
-## Cloudflare Pages Settings
+## Repository Model
 
-Set the Cloudflare Pages project like this:
+This repository follows a source-only deployment model.
 
-- Production branch: `main`
-- Framework preset: `Hugo`
-- Build command: `hugo --gc --minify`
-- Build output directory: `public`
-- Root directory: `/`
-- Environment variable: `HUGO_VERSION=0.155.2`
+- Commit source files only
+- Do not commit `public/` output
+- Let Cloudflare Pages build the site from `main`
+- Let GitHub Actions validate builds before or alongside deployment
 
-Because `baseURL` is already set to `https://listenriver.com/` in [hugo.yaml](D:/Hugo/listenriver.com/hugo.yaml), the default build command should stay simple unless you intentionally want preview builds to rewrite absolute URLs.
+## Project Structure
 
-## GitHub Actions
+- [content](D:/Hugo/listenriver.com/content): articles and pages
+- [layouts](D:/Hugo/listenriver.com/layouts): Hugo templates and overrides
+- [assets](D:/Hugo/listenriver.com/assets): processed CSS and other asset pipeline files
+- [static](D:/Hugo/listenriver.com/static): static files copied as-is
+- [workers/post-interactions](D:/Hugo/listenriver.com/workers/post-interactions): article interactions API
+- [hugo.yaml](D:/Hugo/listenriver.com/hugo.yaml): site configuration
 
-The repository includes [hugo-build.yml](D:/Hugo/listenriver.com/.github/workflows/hugo-build.yml) for CI validation:
-
-- Builds the Hugo site on pushes and pull requests
-- Checks the Cloudflare Worker in `workers/post-interactions`
-
-This workflow validates the repo. It does not deploy the site.
-
-## Local Commands
+## Local Development
 
 Build the site:
 
@@ -47,21 +43,43 @@ Build to a temporary verification directory:
 hugo --destination public-build-check
 ```
 
-## Post Interactions Worker
+## CI
 
-The article interaction API lives in [workers/post-interactions](D:/Hugo/listenriver.com/workers/post-interactions).
+GitHub Actions workflow:
 
-Useful commands:
+- [hugo-build.yml](D:/Hugo/listenriver.com/.github/workflows/hugo-build.yml)
 
-```powershell
-cd workers/post-interactions
-npm install
-npm run check
-```
+What it checks:
 
-Deploy the worker when needed:
+- Hugo site build
+- Cloudflare Worker type/config validation
 
-```powershell
-cd workers/post-interactions
-npm run deploy
-```
+## Deployment
+
+Cloudflare Pages should be configured to:
+
+- Track branch: `main`
+- Use framework preset: `Hugo`
+- Run build command: `hugo --gc --minify`
+- Publish directory: `public`
+- Use environment variable: `HUGO_VERSION=0.155.2`
+
+Detailed deployment guidance:
+
+- [DEPLOYMENT.md](D:/Hugo/listenriver.com/DEPLOYMENT.md)
+
+## Worker
+
+The article interactions service lives here:
+
+- [workers/post-interactions](D:/Hugo/listenriver.com/workers/post-interactions)
+
+Worker-specific setup and commands:
+
+- [workers/post-interactions/README.md](D:/Hugo/listenriver.com/workers/post-interactions/README.md)
+
+## Team Workflow
+
+Contributor guidance and day-to-day rules:
+
+- [CONTRIBUTING.md](D:/Hugo/listenriver.com/CONTRIBUTING.md)
