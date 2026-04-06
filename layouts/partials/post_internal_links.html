@@ -1,0 +1,38 @@
+﻿{{- $limit := site.Params.articleInternalLinksLimit | default 3 -}}
+{{- $links := slice -}}
+{{- range (.GetTerms "categories") -}}
+  {{- if lt (len $links) $limit -}}
+    {{- $links = $links | append (dict "title" (printf "More in %s" .LinkTitle) "url" .RelPermalink "meta" "Category") -}}
+  {{- end -}}
+{{- end -}}
+{{- range (.GetTerms "tags") -}}
+  {{- if lt (len $links) $limit -}}
+    {{- $links = $links | append (dict "title" (printf "Explore tag: %s" .LinkTitle) "url" .RelPermalink "meta" "Tag") -}}
+  {{- end -}}
+{{- end -}}
+{{- if lt (len $links) $limit -}}
+  {{- $related := .Site.RegularPages.Related . | first 6 -}}
+  {{- range $related -}}
+    {{- if and (ne .RelPermalink $.RelPermalink) (lt (len $links) $limit) -}}
+      {{- $links = $links | append (dict "title" .Title "url" .RelPermalink "meta" "Article") -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $links) 0 -}}
+<section class="post-relationship-section post-internal-links-section" aria-labelledby="post-internal-links-title">
+  <div class="home-section-heading post-relationship-heading">
+    <div>
+      <span class="home-section-kicker">Internal Links</span>
+      <h2 id="post-internal-links-title" class="home-section-title">Continue exploring</h2>
+    </div>
+  </div>
+  <div class="post-inline-links">
+    {{- range first $limit $links -}}
+    <a class="post-inline-link" href="{{ .url }}">
+      <span class="post-inline-link__meta">{{ .meta }}</span>
+      <span class="post-inline-link__title">{{ .title }}</span>
+    </a>
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}

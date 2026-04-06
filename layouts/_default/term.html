@@ -1,0 +1,64 @@
+﻿{{- define "main" -}}
+{{- if eq .Data.Plural "categories" -}}
+  {{- $pages := .RegularPages.ByDate.Reverse -}}
+  {{- $featured := first 3 $pages -}}
+  <header class="page-header taxonomy-term-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <span class="taxonomy-page-kicker">Category</span>
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description taxonomy-page-description">
+      {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content taxonomy-page-content">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  {{- if gt (len $featured) 0 }}
+  <section class="taxonomy-featured" aria-labelledby="taxonomy-featured-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Featured</span>
+        <h2 id="taxonomy-featured-title" class="home-section-title">Start with these posts</h2>
+      </div>
+      <p class="taxonomy-section-note">{{ len $pages }} posts are grouped under this category.</p>
+    </div>
+    <div class="taxonomy-featured-grid">
+      {{- range $featured -}}
+        {{- partial "article-card.html" (dict "page" .) -}}
+      {{- end -}}
+    </div>
+  </section>
+  {{- end }}
+
+  <section class="taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Archive</span>
+        <h2 id="taxonomy-article-list-title" class="home-section-title">All posts</h2>
+      </div>
+    </div>
+    {{- range $pages -}}
+      {{- partial "article-card.html" (dict "page" . "class" "post-entry category-entry") -}}
+    {{- end -}}
+  </section>
+{{- else -}}
+  <header class="page-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+  </header>
+  {{- range .RegularPages.ByDate.Reverse -}}
+    {{- partial "article-card.html" (dict "page" .) -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}

@@ -1,6 +1,12 @@
 ---
 title: "電影筆記"
 description: "從影像、角色與敘事出發，整理電影與影集如何回應創傷、關係與社會處境。"
+keywords:
+  - 電影筆記
+  - 影像閱讀
+  - 創傷
+  - 關係
+  - 社會處境
 robotsNoIndex: false
 ---
 

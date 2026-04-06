@@ -1,6 +1,11 @@
 ---
 title: "自我成長"
 description: "圍繞親密關係、成為自己與生命轉化的書寫，整理那些內在改變真正發生的瞬間。"
+keywords:
+  - 自我成長
+  - 親密關係
+  - 成為自己
+  - 生命轉化
 robotsNoIndex: false
 ---
 

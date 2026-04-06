@@ -1,6 +1,11 @@
 ---
 title: "閱讀筆記"
 description: "收納書摘、閱讀心得與講座筆記，從閱讀進入經驗、思想與助人工作的現場。"
+keywords:
+  - 閱讀筆記
+  - 書摘
+  - 閱讀心得
+  - 講座筆記
 robotsNoIndex: false
 ---
 

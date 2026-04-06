@@ -1,0 +1,23 @@
+﻿{{- $prev := .PrevInSection -}}
+{{- $next := .NextInSection -}}
+{{- if or $prev $next -}}
+<nav class="post-sequence-nav" aria-label="Post sequence navigation">
+  {{- if $prev -}}
+  <a class="post-sequence-link post-sequence-link--prev" href="{{ $prev.RelPermalink }}">
+    <span class="post-sequence-link__label">Previous</span>
+    <span class="post-sequence-link__title">{{ $prev.Title }}</span>
+  </a>
+  {{- else -}}
+  <div class="post-sequence-link post-sequence-link--placeholder" aria-hidden="true"></div>
+  {{- end -}}
+
+  {{- if $next -}}
+  <a class="post-sequence-link post-sequence-link--next" href="{{ $next.RelPermalink }}">
+    <span class="post-sequence-link__label">Next</span>
+    <span class="post-sequence-link__title">{{ $next.Title }}</span>
+  </a>
+  {{- else -}}
+  <div class="post-sequence-link post-sequence-link--placeholder" aria-hidden="true"></div>
+  {{- end -}}
+</nav>
+{{- end -}}

@@ -1,0 +1,29 @@
+{{- $meta := dict
+  "閱讀筆記" (dict "eyebrow" "Reading" "accent" "books")
+  "電影筆記" (dict "eyebrow" "Cinema" "accent" "screen")
+  "社會工作" (dict "eyebrow" "Practice" "accent" "field")
+  "自我成長" (dict "eyebrow" "Growth" "accent" "self")
+  "日常書寫" (dict "eyebrow" "Daily Notes" "accent" "daily")
+-}}
+{{- $order := site.Params.salonCategoryOrder | default (slice) -}}
+{{- $items := slice -}}
+{{- range $name := $order -}}
+  {{- $page := site.GetPage (printf "/categories/%s" $name) -}}
+  {{- $term := index site.Taxonomies.categories $name -}}
+  {{- $count := 0 -}}
+  {{- if $term -}}
+    {{- $count = len $term.Pages -}}
+  {{- end -}}
+  {{- $item := dict
+    "name" $name
+    "page" $page
+    "count" $count
+    "eyebrow" ""
+    "accent" ""
+  -}}
+  {{- with index $meta $name -}}
+    {{- $item = merge $item . -}}
+  {{- end -}}
+  {{- $items = $items | append $item -}}
+{{- end -}}
+{{- return $items -}}

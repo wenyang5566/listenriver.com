@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
   const header = document.getElementById('site-header');
   const mobileMedia = window.matchMedia('(max-width: 640px)');
   const body = document.body;
@@ -207,5 +207,68 @@
       closeMobileNav();
       setTocOpen(false);
     }
+  });
+})();
+
+
+(function () {
+  const mobileMedia = window.matchMedia('(max-width: 640px)');
+
+  document.querySelectorAll('[data-mobile-back]').forEach(button => {
+    button.addEventListener('click', () => {
+      if (window.history.length > 1) {
+        window.history.back();
+        return;
+      }
+      const fallbackUrl = button.getAttribute('data-fallback-url');
+      if (fallbackUrl) {
+        window.location.href = fallbackUrl;
+      }
+    });
+  });
+
+  function getRailStep(rail) {
+    const firstCard = rail.querySelector('.category-card');
+    if (!firstCard) {
+      return Math.max(rail.clientWidth * 0.8, 280);
+    }
+    const style = window.getComputedStyle(rail);
+    const gap = parseFloat(style.columnGap || style.gap || '0');
+    return firstCard.getBoundingClientRect().width + gap;
+  }
+
+  function scrollRail(rail, direction) {
+    rail.scrollBy({ left: getRailStep(rail) * direction, behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('[data-category-rail-prev]').forEach(button => {
+    button.addEventListener('click', () => {
+      const rail = document.getElementById(button.getAttribute('data-category-rail-prev'));
+      if (rail) {
+        scrollRail(rail, -1);
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-category-rail-next]').forEach(button => {
+    button.addEventListener('click', () => {
+      const rail = document.getElementById(button.getAttribute('data-category-rail-next'));
+      if (rail) {
+        scrollRail(rail, 1);
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-category-rail]').forEach(rail => {
+    rail.addEventListener('wheel', event => {
+      if (mobileMedia.matches) {
+        return;
+      }
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+        return;
+      }
+      event.preventDefault();
+      rail.scrollBy({ left: event.deltaY, behavior: 'auto' });
+    }, { passive: false });
   });
 })();

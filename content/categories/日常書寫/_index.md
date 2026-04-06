@@ -1,6 +1,11 @@
 ---
 title: "日常書寫"
 description: "從生活觀察、病痛經驗到偶然的情緒碎片，保存那些不一定被分類完成的日常時刻。"
+keywords:
+  - 日常書寫
+  - 生活觀察
+  - 病痛經驗
+  - ListenRiver
 robotsNoIndex: false
 ---
 

@@ -1,6 +1,13 @@
 ---
 title: "分類總覽"
 description: "ListenRiver 的五大主分類：閱讀筆記、電影筆記、社會工作、自我成長、日常書寫。"
+keywords:
+  - ListenRiver 分類
+  - 閱讀筆記
+  - 電影筆記
+  - 社會工作
+  - 自我成長
+  - 日常書寫
 robotsNoIndex: false
 ---
 

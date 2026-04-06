@@ -41,6 +41,8 @@
       {{ .Content }}
     {{- end }}
   </div>
+  {{- partial "post_internal_links.html" . -}}
+  {{- partial "post_related.html" . -}}
   {{- partial "post_interactions_v2.html" . -}}
   {{- if (.Param "comments") }}
     {{- partial "comments.html" . }}
@@ -55,7 +57,7 @@
       {{- end }}
     </ul>
     {{- if (.Param "ShowPostNavLinks") }}
-      {{- partial "post_nav_links.html" . }}
+      {{- partial "post_sequence_nav.html" . }}
     {{- end }}
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
       {{- partial "share_icons.html" . -}}

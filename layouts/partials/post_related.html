@@ -1,0 +1,33 @@
+﻿{{- $limit := site.Params.articleRelatedLimit | default 4 -}}
+{{- $related := .Site.RegularPages.Related . | first $limit -}}
+{{- $related = where $related "RelPermalink" "ne" .RelPermalink -}}
+{{- if lt (len $related) 3 -}}
+  {{- $sameCategoryRecent := slice -}}
+  {{- with .Params.categories -}}
+    {{- $category := index . 0 -}}
+    {{- $sameCategoryRecent = where site.RegularPages "Params.categories" "intersect" (slice $category) -}}
+    {{- $sameCategoryRecent = where $sameCategoryRecent "RelPermalink" "ne" $.RelPermalink -}}
+    {{- $sameCategoryRecent = first $limit ($sameCategoryRecent.ByDate.Reverse) -}}
+  {{- end -}}
+  {{- range $sameCategoryRecent -}}
+    {{- if not (in $related .) -}}
+      {{- $related = $related | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $related = first $limit $related -}}
+{{- if gt (len $related) 0 -}}
+<section class="post-relationship-section post-related-section" aria-labelledby="post-related-title">
+  <div class="home-section-heading post-relationship-heading">
+    <div>
+      <span class="home-section-kicker">Related</span>
+      <h2 id="post-related-title" class="home-section-title">Related reading</h2>
+    </div>
+  </div>
+  <div class="post-relationship-grid">
+    {{- range $related -}}
+      {{- partial "article-card.html" (dict "page" . "class" "post-entry post-relationship-entry") -}}
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}

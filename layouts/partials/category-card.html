@@ -1,0 +1,15 @@
+{{- $item := .item -}}
+{{- $page := $item.page -}}
+{{- if $page -}}
+<article class="category-card category-card--{{ $item.accent | default "default" }}">
+  <a class="category-card__link" href="{{ $page.RelPermalink }}">
+    <span class="category-card__eyebrow">{{ $item.eyebrow | default "Category" }}</span>
+    <h3 class="category-card__title">{{ $page.Title }}</h3>
+    <p class="category-card__description">{{ $page.Description }}</p>
+    <div class="category-card__meta">
+      <span>{{ $item.count }} 篇文章</span>
+      <span>進入分類</span>
+    </div>
+  </a>
+</article>
+{{- end -}}
