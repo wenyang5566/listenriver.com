@@ -3,17 +3,17 @@ title: 《艾格妮撿風景 The Gleaner and I》02
 date: 2021-10-22 10:07:47+08:00
 description: 看似普通的撿拾，實際上有龐大的意義。重新賦予價值的同時，也代表它撐出了空間和灰色地帶，是具有創造性的。撿拾是社會標準的反動，也是保持反思的方法，它幫助思考究竟我們真實的需要是什麼，並在同質性中尋找異質性的存在。這一切最佳的方法就是親自彎腰來仔細端倪，用手真實地觸摸、拾起，異質性就存在於現實/真實之中。
 draft: false
-categories:
-  - 電影心得
-tags:
-  - 電影心得
-  - 艾格妮撿風景
 aliases:
   - /blog/電影心得/艾格妮撿風景-the-gleaner-and-i/
 type: post
 cover:
   image: 撿風景.jpg
   alt: "《艾格妮撿風景 The Gleaner and I》02"
+categories:
+  - 電影筆記
+tags:
+  - 電影心得
+  - 艾格妮撿風景
 ---
 
 延續[《艾格妮撿風景 The Gleaner and I》01](艾格妮撿風景01.md)，再看一遍《艾格妮撿風景 The Gleaner and I》還是冒出很多想法，撿拾的意義除了是重新定義價值之外，也是回到主觀現實經驗的一種直接接觸。

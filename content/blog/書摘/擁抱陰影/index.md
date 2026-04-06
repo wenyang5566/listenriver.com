@@ -3,16 +3,16 @@ title: 書摘｜《擁抱陰影》
 date: 2021-12-30 10:07:47+08:00
 description: 原文作者：Robert A. Johnson
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/擁抱陰影/
 type: post
 cover:
   image: 擁抱陰影.jpg
   alt: "書摘｜《擁抱陰影》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 ## 閱讀心得
 

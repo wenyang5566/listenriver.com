@@ -3,19 +3,18 @@ title: 書摘｜《正念生活的藝術》
 date: 2022-05-04 11:07:47+08:00
 description: ""
 draft: false
-categories:
-  - 書摘
-  - 一行禪師
-tags:
-  - 書摘
-  - 一行禪師
-  - 正念
 aliases:
   - /blog/閱讀書摘/正念生活的藝術/
 type: post
 cover:
   image: 正念生活的藝術.jpg
   alt: "書摘｜《正念生活的藝術》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
+  - 一行禪師
+  - 正念
 ---
 
 ## 相關文章

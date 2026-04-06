@@ -3,13 +3,13 @@ title: 書摘｜《如何謀殺一座城市》
 date: 2019-12-13 10:07:47+08:00
 description: 原文作者：Peter Moskowitz
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/如何謀殺一座城市/
 type: post
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ### P.89

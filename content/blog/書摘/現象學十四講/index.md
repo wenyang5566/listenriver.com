@@ -3,17 +3,17 @@ title: 書摘｜《現象學十四講》
 date: 2022-02-08 10:07:47+08:00
 description: 原文作者：Robert Sokolowski
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
-  - 現象學
 aliases:
   - /blog/閱讀書摘/現象學十四講/
 type: post
 cover:
   image: 現象學十四講.jpg
   alt: "書摘｜《現象學十四講》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
+  - 現象學
 ---
 
 ## 閱讀心得

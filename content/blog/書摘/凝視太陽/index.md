@@ -3,16 +3,16 @@ title: 書摘｜《凝視太陽》
 date: 2020-10-30 10:07:47+08:00
 description: 原文作者：Irvin D. Yalom
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/凝視太陽/
 type: post
 cover:
   image: 凝視太陽.jpg
   alt: "書摘｜《凝視太陽》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ## 閱讀心得

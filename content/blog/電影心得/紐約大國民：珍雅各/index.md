@@ -3,14 +3,14 @@ title: '《紐約大國民：珍雅各》Citizen Jane: Battle for the City'
 date: 2020-06-20
 description: Jane Jacobs讓我學會的不只是去看見異質性、多樣性的重要，本質上而言是看見每人存在的價值。相對於坐在辦公室的規劃者，實地用眼睛、身體、感官經驗給我們的感受是更加真實的，理論固然有其重要性，可是主觀的感受才是重要的。
 draft: false
-categories:
-  - 電影心得
-tags:
-  - 電影心得
 type: post
 cover:
   image: 珍雅各.png
   alt: "《紐約大國民：珍雅各》Citizen Jane: Battle for the City"
+categories:
+  - 電影筆記
+tags:
+  - 電影心得
 ---
 
 >「**城市有能力滿足所有人的需要，前提是，它是由所有人創造。**」

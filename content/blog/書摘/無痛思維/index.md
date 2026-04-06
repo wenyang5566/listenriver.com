@@ -3,17 +3,17 @@ title: 書摘｜《無痛思維》
 date: 2022-08-13 11:07:47+08:00
 description: 原文作者： Deepak Ravindran ；譯者： 林怡婷
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
-  - 聆聽疼痛
 aliases:
   - /blog/閱讀書摘/無痛思維/
 type: post
 cover:
   image: 無痛思維.jpg
   alt: "書摘｜《無痛思維》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
+  - 聆聽疼痛
 ---
 
 ## 閱讀心得

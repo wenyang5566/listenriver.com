@@ -3,17 +3,17 @@ title: 《艾格妮撿風景 The Gleaner and I》01
 date: 2019-07-29 10:07:47+08:00
 description: 撿拾的概念讓人聯想到無限多的想法，關注貧窮、關注非主流族群，對我來說都是一種撿拾。《艾格妮撿風景》讓我用不同的觀點去看待「撿拾」的行為，我覺得是非常有趣且有意義的，同時也感受到法國藝術家的浪漫。
 draft: false
-categories:
-  - 電影心得
-tags:
-  - 電影心得
-  - 艾格妮撿風景
 aliases:
   - /blog/電影心得/艾格妮撿風景/
 type: post
 cover:
   image: 艾格妮撿風景.png
   alt: "《艾格妮撿風景 The Gleaner and I》01"
+categories:
+  - 電影筆記
+tags:
+  - 電影心得
+  - 艾格妮撿風景
 ---
 
 

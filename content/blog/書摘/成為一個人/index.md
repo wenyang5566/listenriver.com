@@ -3,12 +3,6 @@ title: 書摘｜《成為一個人》
 date: 2021-06-30 10:07:47+08:00
 description: 原文作者：Carl Rogers
 draft: false
-categories:
-  - 書摘
-  - 成為一個人
-tags:
-  - 書摘
-  - 成為一個人
 aliases:
   - /blog/閱讀書摘/成為一個人/
   - /blog/成為一個人/書摘成為一個人/
@@ -16,6 +10,12 @@ type: post
 cover:
   image: 成為一個人.png
   alt: "書摘｜《成為一個人》"
+categories:
+  - 閱讀筆記
+  - 自我成長
+tags:
+  - 書摘
+  - 成為一個人
 ---
 
 ## 閱讀心得

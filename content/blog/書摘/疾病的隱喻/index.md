@@ -3,13 +3,13 @@ title: 書摘｜《疾病的隱喻》
 date: 2019-11-11 10:07:47+08:00
 description: 作者：Susan Sontag
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/疾病的隱喻/
 type: post
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ### P.45

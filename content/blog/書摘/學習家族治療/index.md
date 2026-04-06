@@ -3,15 +3,15 @@ title: 書摘｜《學習家族治療》
 date: 2021-01-10 10:07:47+08:00
 description: 原文作者：Salvador Minuchin，Wai-Yung Lee，George M. Simon
 draft: false
-categories:
-  - 書摘
-  - 家族治療
-tags:
-  - 書摘
-  - 家族治療
 aliases:
   - /blog/閱讀書摘/學習家族治療/
 type: post
+categories:
+  - 閱讀筆記
+  - 社會工作
+tags:
+  - 書摘
+  - 家族治療
 ---
 
 ### P.122公認的故事

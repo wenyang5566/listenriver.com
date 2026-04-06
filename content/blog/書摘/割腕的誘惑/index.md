@@ -3,16 +3,16 @@ title: 書摘｜《割腕的誘惑：停止自我傷害》
 date: 2022-08-03 10:07:48+08:00
 description: 原文作者： Steven Levenkron ；譯者： 李俊毅
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/割腕的誘惑/
 type: post
 cover:
   image: 割腕的誘惑.jpg
   alt: "書摘｜《割腕的誘惑：停止自我傷害》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ## 閱讀心得

@@ -2,20 +2,18 @@
 title: 20250916會所工作日誌04_就業前準備
 date: 2025-09-16
 description:
-
 draft: false
-categories:
-  - 會所工作日誌
-  - 會所模式
-tags:
-  - 會所工作日誌
-  - 會所模式
 aliases:
   - /blog/會所模式/會所工作日誌04_就業前準備/
 type: post
 cover:
   image: 會所工作日誌04.jpg
   alt: "20250916會所工作日誌04_就業前準備"
+categories:
+  - 社會工作
+tags:
+  - 會所工作日誌
+  - 會所模式
 ---
 
 為了9/26的職場評估，開始了兩位會員的訓練。

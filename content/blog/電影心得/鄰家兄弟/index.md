@@ -3,14 +3,14 @@ title: 《鄰家兄弟 Paddleton》電影心得
 date: 2022-07-31 10:07:47+08:00
 description: 在死亡的面前，似乎一切都會原形畢露。隨著死亡逼近，Michael開始談論他不曾告訴過別人的秘密，Andy也拋出一些「願望」類型的問句，但一切都是平靜的，卻直到最後一刻爆發。這樣的軌跡說明了死亡和無常一直都在，差別在於我們如何察覺它、它離我們多麽靠近或遙遠。
 draft: false
-categories:
-  - 電影心得
-tags:
-  - 電影心得
 type: post
 cover:
   image: 鄰家兄弟.JPG
   alt: "《鄰家兄弟 Paddleton》電影心得"
+categories:
+  - 電影筆記
+tags:
+  - 電影心得
 ---
 
 看完《鄰家兄弟 Paddleton》這部關於安樂死的電影，感覺挺平靜的，完全不同於《一路玩到掛 The Bucket List》那種瘋狂冒險，而是用一種平淡卻深刻的方式談死亡。故事是關於Andy陪伴Michael進行安樂死的過程，中間呈現出「**當事人與陪伴者**」雙方複雜的張力。

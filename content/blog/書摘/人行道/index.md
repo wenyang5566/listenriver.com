@@ -3,13 +3,13 @@ title: 書摘｜《人行道》
 date: 2019-11-23 10:07:47+08:00
 description: 原文作者：Mitchell Duneier
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/人行道/
 type: post
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ### P.445

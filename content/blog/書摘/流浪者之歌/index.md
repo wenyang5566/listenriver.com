@@ -3,13 +3,13 @@ title: 書摘｜《流浪者之歌》
 date: 2019-08-21 10:07:47+08:00
 description: 原文作者：Hermann Hesse
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/流浪者之歌/
 type: post
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ### P.115

@@ -3,11 +3,6 @@ title: 書摘｜《聆聽疼痛》
 date: 2023-02-03 10:07:47+08:00
 description: 原文作者：David Biro
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
-  - 聆聽疼痛
 aliases:
   - /blog/閱讀書摘/聆聽疼痛/
   - /blog/閱讀書摘/聆聽疼痛2/
@@ -15,6 +10,11 @@ type: post
 cover:
   image: 聆聽疼痛.jpg
   alt: "書摘｜《聆聽疼痛》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
+  - 聆聽疼痛
 ---
 
 ## 閱讀心得

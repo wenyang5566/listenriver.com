@@ -3,13 +3,13 @@ title: 書摘｜《旁觀他人之痛苦》
 date: 2019-11-07 10:07:47+08:00
 description: 作者：Susan Sontag
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/旁觀他人之痛苦/
 type: post
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ### 思考

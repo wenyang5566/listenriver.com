@@ -3,16 +3,16 @@ title: 書摘｜《危殆生活》
 date: 2022-07-29 10:07:47+08:00
 description: 作者：黃克先
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/危殆生活/
 type: post
 cover:
   image: 危殆生活1.jpg
   alt: "書摘｜《危殆生活》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ## 閱讀心得

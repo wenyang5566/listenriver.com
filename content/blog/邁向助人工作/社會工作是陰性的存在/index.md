@@ -3,16 +3,16 @@ title: 社會工作是陰性的存在
 date: 2022-08-24 10:07:47+08:00
 description: 「社工的角色一定要跟人搭配，很多時候是串連，去創造一個空間。」
 draft: false
-categories:
-  - 邁向助人工作
-tags:
-  - 邁向助人工作
 aliases:
   - /blog/日常書寫/20220824社會工作是陰性的存在/
 type: post
 cover:
   image: 社會工作是陰性的存在.jpg
   alt: "社會工作是陰性的存在"
+categories:
+  - 社會工作
+tags:
+  - 邁向助人工作
 ---
 
 >「社工的角色一定要跟人搭配，很多時候是串連，去創造一個空間。」

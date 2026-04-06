@@ -3,13 +3,13 @@ title: 書摘｜《修身與齊家》
 date: 2022-09-30 11:07:47+08:00
 description: 作者：王行
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
 aliases:
   - /blog/閱讀書摘/修身與齊家/
 type: post
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
 ---
 
 ## 閱讀心得

@@ -3,15 +3,15 @@ title: 書摘｜《敘事治療工作地圖》
 date: 2021-02-05 10:07:47+08:00
 description: 原文作者：Michael White
 draft: false
-categories:
-  - 書摘
-  - 家族治療
-tags:
-  - 書摘
-  - 家族治療
 aliases:
   - /blog/閱讀書摘/敘事治療工作地圖/
 type: post
+categories:
+  - 閱讀筆記
+  - 社會工作
+tags:
+  - 書摘
+  - 家族治療
 ---
 
 ### P.8

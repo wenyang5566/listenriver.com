@@ -2,20 +2,18 @@
 title: 開放式對話進階工作坊Day1
 date: 2020-11-14
 description:
-
 draft: false
-categories:
-  - 開放式對話
-  - 講座筆記
-tags:
-  - 開放式對話
-  - 講座筆記
 aliases:
   - /blog/開放式對話/開放式對話進階工作坊_day1/
 type: post
 cover:
   image: 0001.jpg
   alt: "開放式對話進階工作坊Day1"
+categories:
+  - 社會工作
+tags:
+  - 開放式對話
+  - 講座筆記
 ---
 ##### 講座名稱：開放式對話進階工作坊
 

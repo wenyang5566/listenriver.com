@@ -3,18 +3,18 @@ title: 書摘｜《英雄之旅》
 date: 2021-07-17 10:07:47+08:00
 description: 原文作者：Murray Stein
 draft: false
-categories:
-  - 書摘
-tags:
-  - 書摘
-  - 正念
-  - 成為一個人
 aliases:
   - /blog/閱讀書摘/英雄之旅/
 type: post
 cover:
   image: 英雄之旅.png
   alt: "書摘｜《英雄之旅》"
+categories:
+  - 閱讀筆記
+tags:
+  - 書摘
+  - 正念
+  - 成為一個人
 ---
 
 ## 閱讀心得

@@ -2,18 +2,17 @@
 title: 網頁架設學習歷程
 date: 2026-02-23
 description:
-
 draft: false
-categories:
-  - 日常書寫
-tags:
-  - 日常書寫
 aliases:
   - /blog/日常書寫/20260223網頁架設學習歷程/
 type: post
 cover:
   image: 網頁學習歷程.png
   alt: "網頁架設學習歷程"
+categories:
+  - 日常書寫
+tags:
+  - 日常書寫
 ---
 
 生日這天過得如日常般幸福，但很想分享個人網站作為成果發表。我終於順利把網站從wenyang0223.github.io搬家到 [http://listenriver.com](https://listenriver.com/) ，並且建立Waline 的留言板還有毛生按讚按鈕。

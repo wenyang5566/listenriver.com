@@ -2,10 +2,15 @@
 languageCode: "zh-tw"
 defaultContentLanguage: "zh-tw"
 defaultContentLanguageInSubdir: false
-title: "聆聽的河流｜閱讀、書寫、心理與電影"
+title: "聆聽的河流｜閱讀・書寫・心理・社會工作"
 theme: "PaperMod"
+enableRobotsTXT: true
 ignoreLogs:
   - warning-goldmark-raw-html
+
+services:
+  googleAnalytics:
+    id: "G-P9L49HVNL4"
 
 languages:
   zh-tw:
@@ -18,32 +23,29 @@ pagination:
   pagerSize: 10
 
 params:
+  env: production
   mainSections:
     - blog
 
   homeInfoParams:
     Title: "聆聽的河流"
-    Content: "閱讀、書寫、助人工作與生活觀察"
+    Content: "閱讀・書寫・心理・社會工作"
 
   author: "文揚 Wen-Yang"
-  description: "聆聽的河流｜閱讀、書寫、心理與電影"
+  description: "聆聽的河流｜閱讀・書寫・心理・社會工作"
   images:
     - "/images/og-default.png"
   socialDefaultImage: "/images/og-default.png"
-  socialDefaultImageAlt: "聆聽的河流｜閱讀、書寫、心理與電影"
+  socialDefaultImageAlt: "聆聽的河流｜閱讀・書寫・心理・社會工作"
 
   salonBanner: /images/logo_ver3.png
   salonDefaultCover: /images/mao_3.png
   salonCategoryOrder:
-    - 精選文章
+    - 閱讀筆記
+    - 電影筆記
+    - 社會工作
+    - 自我成長
     - 日常書寫
-    - 閱讀心得
-    - 電影心得
-    - 書摘
-    - 開放式對話
-    - 講座筆記
-    - 會所模式
-    - 聆聽疼痛計畫
 
   avatar: /images/profile.jpg
   name: 文揚 Wen-Yang

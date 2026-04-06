@@ -3,18 +3,17 @@ title: 開放式對話（Open Dialogue）課後筆記Part1
 date: 2020-08-21
 description: 開放式對話（Open Dialogue）是來自芬蘭的服務模式，由Jaakko Seikkula創立，服務對象為思覺失調患者，當事人的症狀除了大家熟知的妄想、幻聽、幻覺之外，在生活中也可能碰到問題，像是有些人無法依照氣溫選擇自己的穿著；有些人以前有興趣的事，現在失去興趣，變得不願意出門。思覺失調在精神醫療領域中可以說是最棘手的病症，而開放式對話嘗試使用不同傳統精神醫療模式的方法創造能夠幫助思覺失調患者康復的環境。
 draft: false
-categories:
-  - 開放式對話
-  - 講座筆記
-tags:
-  - 講座筆記
-  - 開放式對話
 aliases:
   - /blog/開放式對話/開放式對話_課後筆記part1/
 type: post
 cover:
   image: 開放式對話課後筆記3.jpg
   alt: "開放式對話（Open Dialogue）課後筆記Part1"
+categories:
+  - 社會工作
+tags:
+  - 講座筆記
+  - 開放式對話
 ---
 
 ##### 講座名稱：開放式對話簡介

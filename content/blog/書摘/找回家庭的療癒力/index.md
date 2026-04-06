@@ -3,12 +3,6 @@ title: 書摘｜《找回家庭的療癒力：多世代家族治療》
 date: 2020-12-29 10:07:47+08:00
 description: 原文作者：Maurizio Andolfi
 draft: false
-categories:
-  - 書摘
-  - 家族治療
-tags:
-  - 書摘
-  - 家族治療
 aliases:
   - /blog/閱讀書摘/找回家庭的療癒力多世代家族治療/
   - /blog/閱讀書摘/找回家庭的療癒力-多世代家族治療/
@@ -16,6 +10,12 @@ type: post
 cover:
   image: 找回家庭的療癒力.png
   alt: "書摘｜《找回家庭的療癒力：多世代家族治療》"
+categories:
+  - 閱讀筆記
+  - 社會工作
+tags:
+  - 書摘
+  - 家族治療
 ---
 
 ## 閱讀心得

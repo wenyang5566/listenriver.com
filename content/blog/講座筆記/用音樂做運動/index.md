@@ -3,16 +3,16 @@ title: 用音樂做運動
 date: 2019-03-03 10:07:47+08:00
 description: ""
 draft: false
-categories:
-  - 講座筆記
-tags:
-  - 講座筆記
 aliases:
   - /blog/講座筆記/20190303用音樂做運動/
 type: post
 cover:
   image: 用音樂做運動.png
   alt: "用音樂做運動"
+categories:
+  - 社會工作
+tags:
+  - 講座筆記
 ---
 
 ##### 課程名稱：大學生與空間改造（畢恆達老師）

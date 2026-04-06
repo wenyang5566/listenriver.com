@@ -3,19 +3,19 @@ title: 書摘｜《家庭會傷人》
 date: 2020-04-08 10:07:47+08:00
 description: 原文作者：John Bradshaw
 draft: false
-categories:
-  - 書摘
-  - 家族治療
-tags:
-  - 書摘
-  - 家族治療
-  - 家庭會傷人
 aliases:
   - /blog/閱讀書摘/家庭會傷人/
 type: post
 cover:
   image: 家庭會傷人.jpg
   alt: "書摘｜《家庭會傷人》"
+categories:
+  - 閱讀筆記
+  - 社會工作
+tags:
+  - 書摘
+  - 家族治療
+  - 家庭會傷人
 ---
 
 ## 閱讀心得

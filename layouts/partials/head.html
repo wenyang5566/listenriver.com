@@ -1,11 +1,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{- if hugo.IsProduction | or (eq site.Params.env "production") | and (ne .Params.robotsNoIndex true) }}
-<meta name="robots" content="index, follow">
-{{- else }}
-<meta name="robots" content="noindex, nofollow">
-{{- end }}
+{{- $robots := "index, follow" -}}
+{{- if not (or hugo.IsProduction (eq site.Params.env "production")) -}}
+  {{- $robots = "noindex, nofollow" -}}
+{{- else if eq .Params.robotsNoIndex true -}}
+  {{- $robots = "noindex, nofollow" -}}
+{{- else if or (eq .Section "tags") (eq .Section "topics") -}}
+  {{- $robots = "noindex, follow" -}}
+{{- else if in .RelPermalink "/page/" -}}
+  {{- $robots = "noindex, follow" -}}
+{{- end -}}
+<meta name="robots" content="{{ $robots }}">
 
 {{- /* Title */}}
 <title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
