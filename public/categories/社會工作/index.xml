@@ -1,91 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>社會工作 on 聆聽的河流｜閱讀・書寫・心理・社會工作</title>
-    <link>https://listenriver.com/categories/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C/</link>
-    <description>Recent content in 社會工作 on 聆聽的河流｜閱讀・書寫・心理・社會工作</description>
-    <image>
-      <title>聆聽的河流｜閱讀・書寫・心理・社會工作</title>
-      <url>https://listenriver.com/images/og-default.png</url>
-      <link>https://listenriver.com/images/og-default.png</link>
-    </image>
-    <generator>Hugo</generator>
-    <language>zh-tw</language>
-    <lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://listenriver.com/categories/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>會所工作日誌14_強迫症、重複檢查的意義、安全感</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/14%E5%BC%B7%E8%BF%AB%E7%97%87%E7%9A%84%E6%84%8F%E7%BE%A9/</link>
-      <pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/14%E5%BC%B7%E8%BF%AB%E7%97%87%E7%9A%84%E6%84%8F%E7%BE%A9/</guid>
-      <description>儘管我們都無法確定真正的答案，但我覺得這樣的連結是回應她的病痛經驗，將原本被病理化的症狀，還原為她的生命敘事，試著從另一種的角度去看待強迫症，並賦予意義。被貼上強迫症標籤的人特別辛苦，重複的行為與強迫的意念，經常把人簡化為一個扁平的人。聆聽病痛的意義就在於，想要從不同角度詮釋生命敘事，會所有條件創造如此的氛圍，而這本身就在對抗精神醫療的病理化觀點。</description>
-    </item>
-    <item>
-      <title>會所工作日誌13_初次社區宣導</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/13%E5%88%9D%E6%AC%A1%E7%A4%BE%E5%8D%80%E5%AE%A3%E5%B0%8E/</link>
-      <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/13%E5%88%9D%E6%AC%A1%E7%A4%BE%E5%8D%80%E5%AE%A3%E5%B0%8E/</guid>
-      <description>看見會員從準備到順利上台發表，真的好感動哦，像是成果發表一樣，展現出平常累積厚實的關係基底所延伸出來的成長與進步，其中也蘊含工作者的工作方法與信念，而且能夠用對話的方式呈現真是太棒了。</description>
-    </item>
-    <item>
-      <title>20260309會所工作日誌12_餐飲部當然不只是料理</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/12%E9%A4%90%E9%A3%B2%E9%83%A8%E7%95%B6%E7%84%B6%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%96%99%E7%90%86/</link>
-      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/12%E9%A4%90%E9%A3%B2%E9%83%A8%E7%95%B6%E7%84%B6%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%96%99%E7%90%86/</guid>
-      <description>料理的意義，我很喜歡從《迷宮飯》所描繪的意象去講，吃飯聯繫了所有人，是滿足生命基本需求、是與大地連結、是自己動手做、是與人分工合作、是與人聊天分食，是鑲嵌於日常生活與人際關係當中，不可或缺的一環。餐飲部當然不只是料理而已！</description>
-    </item>
-    <item>
-      <title>20260304會所工作日誌11_敘事的見證</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/11%E6%95%98%E4%BA%8B%E7%9A%84%E8%A6%8B%E8%AD%89/</link>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/11%E6%95%98%E4%BA%8B%E7%9A%84%E8%A6%8B%E8%AD%89/</guid>
-      <description>&lt;p&gt;為了對外的宣導活動，就開始以團體的形式來整理大家的生命敘事，剛好參與的會員都是日出席的人，形成一個信任感足夠的團體，好棒的氛圍&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>社會工作 on 聆聽的河流｜閱讀・書寫・心理・社會工作</title><link>https://listenriver.com/categories/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C/</link><description>Recent content in 社會工作 on 聆聽的河流｜閱讀・書寫・心理・社會工作</description><image><title>聆聽的河流｜閱讀・書寫・心理・社會工作</title><url>https://listenriver.com/images/og-default.png</url><link>https://listenriver.com/images/og-default.png</link></image><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Thu, 02 Apr 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://listenriver.com/categories/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml"/><item><title>會所工作日誌14_強迫症、重複檢查的意義、安全感</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/14%E5%BC%B7%E8%BF%AB%E7%97%87%E7%9A%84%E6%84%8F%E7%BE%A9/</link><pubDate>Thu, 02 Apr 2026 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/14%E5%BC%B7%E8%BF%AB%E7%97%87%E7%9A%84%E6%84%8F%E7%BE%A9/</guid><description>儘管我們都無法確定真正的答案，但我覺得這樣的連結是回應她的病痛經驗，將原本被病理化的症狀，還原為她的生命敘事，試著從另一種的角度去看待強迫症，並賦予意義。被貼上強迫症標籤的人特別辛苦，重複的行為與強迫的意念，經常把人簡化為一個扁平的人。聆聽病痛的意義就在於，想要從不同角度詮釋生命敘事，會所有條件創造如此的氛圍，而這本身就在對抗精神醫療的病理化觀點。</description></item><item><title>會所工作日誌13_初次社區宣導</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/13%E5%88%9D%E6%AC%A1%E7%A4%BE%E5%8D%80%E5%AE%A3%E5%B0%8E/</link><pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/13%E5%88%9D%E6%AC%A1%E7%A4%BE%E5%8D%80%E5%AE%A3%E5%B0%8E/</guid><description>看見會員從準備到順利上台發表，真的好感動哦，像是成果發表一樣，展現出平常累積厚實的關係基底所延伸出來的成長與進步，其中也蘊含工作者的工作方法與信念，而且能夠用對話的方式呈現真是太棒了。</description></item><item><title>20260309會所工作日誌12_餐飲部當然不只是料理</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/12%E9%A4%90%E9%A3%B2%E9%83%A8%E7%95%B6%E7%84%B6%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%96%99%E7%90%86/</link><pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/12%E9%A4%90%E9%A3%B2%E9%83%A8%E7%95%B6%E7%84%B6%E4%B8%8D%E5%8F%AA%E6%98%AF%E6%96%99%E7%90%86/</guid><description>料理的意義，我很喜歡從《迷宮飯》所描繪的意象去講，吃飯聯繫了所有人，是滿足生命基本需求、是與大地連結、是自己動手做、是與人分工合作、是與人聊天分食，是鑲嵌於日常生活與人際關係當中，不可或缺的一環。餐飲部當然不只是料理而已！</description></item><item><title>20260304會所工作日誌11_敘事的見證</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/11%E6%95%98%E4%BA%8B%E7%9A%84%E8%A6%8B%E8%AD%89/</link><pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/11%E6%95%98%E4%BA%8B%E7%9A%84%E8%A6%8B%E8%AD%89/</guid><description>&lt;p&gt;為了對外的宣導活動，就開始以團體的形式來整理大家的生命敘事，剛好參與的會員都是日出席的人，形成一個信任感足夠的團體，好棒的氛圍&lt;/p&gt;
 &lt;p&gt;前一天就計劃好，把桌子搬到活動室內，可以安定住大家，不然在外面太容易分心、太多干擾的因素。實際上進行團體時，最容易分心的會員可以順利坐下來聽彼此訴說，而且維持一整天，真是太好了&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;身為做病痛研究的人，聆聽這些生命敘事、病痛敘事，真的好滿足，很期望可以把這些整理妥當，在聆聽與訴說的過程中，讓這些敘事得以被見證。&lt;/p&gt;
-&lt;p&gt;最後，長期聽打的技能讓我可以一邊發問一邊打逐字稿，投入在敘事裡的探問與挖掘，藉此看見更深層次或是更具有脈絡性的生命個體，看見生命的掙扎、有機性、無常等，或是賦予新的意義，種種的細節都讓我覺得非常充實且富有意義感。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>會所工作日誌10_料理是行動、是對話</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/10%E6%96%99%E7%90%86%E6%98%AF%E8%A1%8C%E5%8B%95%E6%98%AF%E5%B0%8D%E8%A9%B1/</link>
-      <pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/10%E6%96%99%E7%90%86%E6%98%AF%E8%A1%8C%E5%8B%95%E6%98%AF%E5%B0%8D%E8%A9%B1/</guid>
-      <description>回到餐飲部，這次紅燒獅子頭的成功經驗讓我覺得很有成就感。除此之外，發揮創意把多的香菜拿去煎蛋感覺也超棒。很喜歡《迷宮飯》裡面，先西對於烹飪的堅持，可以用創意發想的方式去組合新的料理。可以深切體會料理這件事為何成為會所的部門之一，料理需要人們有想法、合作、行動、而且有具體的成果。結合開放式對話與會所的學習，我一直都把人們視為用行動在對話的主體。餐飲部亦是如此，料理是行動的結果，是彼此相遇之處。</description>
-    </item>
-    <item>
-      <title>20251118會所工作日誌09_不敢說借過的會員</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/09%E4%B8%8D%E6%95%A2%E8%AA%AA%E5%80%9F%E9%81%8E%E7%9A%84%E6%9C%83%E5%93%A1/</link>
-      <pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/09%E4%B8%8D%E6%95%A2%E8%AA%AA%E5%80%9F%E9%81%8E%E7%9A%84%E6%9C%83%E5%93%A1/</guid>
-      <description>綜合那天發生的兩件事，其實本質上都非常類似，反映出會員J不敢與人太過靠近的慣性，長期下來形成僵化的行為模式。我覺得他在會所要練的的確就是練習與人好好的互動，平時都太過急躁，要用自己的方式跟人家互動，讓人不得不配合。</description>
-    </item>
-    <item>
-      <title>20251111會所工作日誌08_推動會員帶開會與導覽部門</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/08%E6%8E%A8%E5%8B%95%E6%9C%83%E5%93%A1%E5%B8%B6%E9%96%8B%E6%9C%83%E8%88%87%E5%B0%8E%E8%A6%BD%E9%83%A8%E9%96%80/</link>
-      <pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/08%E6%8E%A8%E5%8B%95%E6%9C%83%E5%93%A1%E5%B8%B6%E9%96%8B%E6%9C%83%E8%88%87%E5%B0%8E%E8%A6%BD%E9%83%A8%E9%96%80/</guid>
-      <description>&lt;p&gt;工作至今四個多月，日復一日帶開會給會員看，終於推動會員可以帶開會、導覽部門，真是讓人感動！！&lt;/p&gt;
+&lt;p&gt;最後，長期聽打的技能讓我可以一邊發問一邊打逐字稿，投入在敘事裡的探問與挖掘，藉此看見更深層次或是更具有脈絡性的生命個體，看見生命的掙扎、有機性、無常等，或是賦予新的意義，種種的細節都讓我覺得非常充實且富有意義感。&lt;/p&gt;</description></item><item><title>會所工作日誌10_料理是行動、是對話</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/10%E6%96%99%E7%90%86%E6%98%AF%E8%A1%8C%E5%8B%95%E6%98%AF%E5%B0%8D%E8%A9%B1/</link><pubDate>Fri, 13 Feb 2026 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/10%E6%96%99%E7%90%86%E6%98%AF%E8%A1%8C%E5%8B%95%E6%98%AF%E5%B0%8D%E8%A9%B1/</guid><description>回到餐飲部，這次紅燒獅子頭的成功經驗讓我覺得很有成就感。除此之外，發揮創意把多的香菜拿去煎蛋感覺也超棒。很喜歡《迷宮飯》裡面，先西對於烹飪的堅持，可以用創意發想的方式去組合新的料理。可以深切體會料理這件事為何成為會所的部門之一，料理需要人們有想法、合作、行動、而且有具體的成果。結合開放式對話與會所的學習，我一直都把人們視為用行動在對話的主體。餐飲部亦是如此，料理是行動的結果，是彼此相遇之處。</description></item><item><title>20251118會所工作日誌09_不敢說借過的會員</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/09%E4%B8%8D%E6%95%A2%E8%AA%AA%E5%80%9F%E9%81%8E%E7%9A%84%E6%9C%83%E5%93%A1/</link><pubDate>Tue, 18 Nov 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/09%E4%B8%8D%E6%95%A2%E8%AA%AA%E5%80%9F%E9%81%8E%E7%9A%84%E6%9C%83%E5%93%A1/</guid><description>綜合那天發生的兩件事，其實本質上都非常類似，反映出會員J不敢與人太過靠近的慣性，長期下來形成僵化的行為模式。我覺得他在會所要練的的確就是練習與人好好的互動，平時都太過急躁，要用自己的方式跟人家互動，讓人不得不配合。</description></item><item><title>20251111會所工作日誌08_推動會員帶開會與導覽部門</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/08%E6%8E%A8%E5%8B%95%E6%9C%83%E5%93%A1%E5%B8%B6%E9%96%8B%E6%9C%83%E8%88%87%E5%B0%8E%E8%A6%BD%E9%83%A8%E9%96%80/</link><pubDate>Tue, 11 Nov 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/08%E6%8E%A8%E5%8B%95%E6%9C%83%E5%93%A1%E5%B8%B6%E9%96%8B%E6%9C%83%E8%88%87%E5%B0%8E%E8%A6%BD%E9%83%A8%E9%96%80/</guid><description>&lt;p&gt;工作至今四個多月，日復一日帶開會給會員看，終於推動會員可以帶開會、導覽部門，真是讓人感動！！&lt;/p&gt;
 &lt;p&gt;這位會員平常都會說要社工帶、社工有唸心理學所以就要讓社工做，但那天我觀察到他的眼神比較有動力，就順勢推動讓他來開會，我覺得很有成就感！&lt;/p&gt;
 &lt;p&gt;事後核對為什麼可以做到？他說因為最近睡得比較好，而且看過社工帶很多次。&lt;/p&gt;
 &lt;p&gt;//&lt;/p&gt;
 &lt;p&gt;有一種等待開花結果的感覺，日復一日的相處與培養關係，終究是可以有所進步的。對我來說非常有意義！&lt;/p&gt;
 &lt;p&gt;讓會員知道這不是一件困難的事，在開會中可以伴隨一些輕鬆的氣氛。&lt;/p&gt;
 &lt;p&gt;//&lt;/p&gt;
-&lt;p&gt;不過老實說，平常帶餐飲部開會，會員們習慣隨時走來走去，一下跑去抽煙、忙東忙西、上廁所，光是要大家好好坐著開會都很難了，要凝聚穩定的團體動力實在不容易。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>20251022會所工作日誌07_白板溝通</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/07%E7%99%BD%E6%9D%BF%E6%BA%9D%E9%80%9A/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/07%E7%99%BD%E6%9D%BF%E6%BA%9D%E9%80%9A/</guid>
-      <description>寫論文時一直覺得自己想寫病痛的議題不符合社會工作的範疇，現在回想起來，覺得慢性病痛其實也是許多會員的生命經驗，那種抽象、主觀、旁人難以理解的受苦經驗，與慢性疼痛有本質上的相似。現在才覺得，我的論文描繪出一種慢性病痛的重要性與價值，事實上那些收穫我都帶在身上，在工作中也能如此聯想而有所共鳴。</description>
-    </item>
-    <item>
-      <title>20251001會所工作日誌06_複雜用藥下，改變如何發生??</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/06%E8%A4%87%E9%9B%9C%E7%94%A8%E8%97%A5%E4%B8%8B%E6%94%B9%E8%AE%8A%E5%A6%82%E4%BD%95%E7%99%BC%E7%94%9F/</link>
-      <pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/06%E8%A4%87%E9%9B%9C%E7%94%A8%E8%97%A5%E4%B8%8B%E6%94%B9%E8%AE%8A%E5%A6%82%E4%BD%95%E7%99%BC%E7%94%9F/</guid>
-      <description>&lt;p&gt;昨天帶出門的會員，在返家途中昏倒，讓我有些自責。昏倒雖然據說是常常發生的，但事後才知道她最近沒有穩定服藥，可能有點關聯。&lt;/p&gt;
+&lt;p&gt;不過老實說，平常帶餐飲部開會，會員們習慣隨時走來走去，一下跑去抽煙、忙東忙西、上廁所，光是要大家好好坐著開會都很難了，要凝聚穩定的團體動力實在不容易。&lt;/p&gt;</description></item><item><title>20251022會所工作日誌07_白板溝通</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/07%E7%99%BD%E6%9D%BF%E6%BA%9D%E9%80%9A/</link><pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/07%E7%99%BD%E6%9D%BF%E6%BA%9D%E9%80%9A/</guid><description>寫論文時一直覺得自己想寫病痛的議題不符合社會工作的範疇，現在回想起來，覺得慢性病痛其實也是許多會員的生命經驗，那種抽象、主觀、旁人難以理解的受苦經驗，與慢性疼痛有本質上的相似。現在才覺得，我的論文描繪出一種慢性病痛的重要性與價值，事實上那些收穫我都帶在身上，在工作中也能如此聯想而有所共鳴。</description></item><item><title>20251001會所工作日誌06_複雜用藥下，改變如何發生??</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/06%E8%A4%87%E9%9B%9C%E7%94%A8%E8%97%A5%E4%B8%8B%E6%94%B9%E8%AE%8A%E5%A6%82%E4%BD%95%E7%99%BC%E7%94%9F/</link><pubDate>Wed, 01 Oct 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/06%E8%A4%87%E9%9B%9C%E7%94%A8%E8%97%A5%E4%B8%8B%E6%94%B9%E8%AE%8A%E5%A6%82%E4%BD%95%E7%99%BC%E7%94%9F/</guid><description>&lt;p&gt;昨天帶出門的會員，在返家途中昏倒，讓我有些自責。昏倒雖然據說是常常發生的，但事後才知道她最近沒有穩定服藥，可能有點關聯。&lt;/p&gt;
 &lt;p&gt;今天跟著同事帶會員去家訪，好好監督她把藥排好，才發現她竟然吃那麼多種藥！&lt;/p&gt;
 &lt;p&gt;光是精神科就達到9種藥物，加上頭暈去看神經內科又加了2顆，每天平均要吃15顆藥左右。&lt;/p&gt;
 &lt;hr&gt;
@@ -147,35 +71,28 @@
 &lt;li&gt;
 &lt;p&gt;其他（腸胃/便秘）：癒吐寧、便通樂(解便秘)、美克旅(解頭暈)&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>20250926會所工作日誌05_就業訓練反思</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/05%E5%85%A9%E9%80%B1%E5%B0%B1%E6%A5%AD%E8%A8%93%E7%B7%B4%E5%8F%8D%E6%80%9D/</link>
-      <pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/05%E5%85%A9%E9%80%B1%E5%B0%B1%E6%A5%AD%E8%A8%93%E7%B7%B4%E5%8F%8D%E6%80%9D/</guid>
-      <description>&lt;p&gt;前天9/26是職場評估的日子，從決定接下職場，到實際面試評估，約只有兩週的時間，當時內部討論兩位會員比較有機會，會員J和會員F。最終的結果是，會員F成功面試錄取了工作！&lt;/p&gt;
+&lt;/ol&gt;</description></item><item><title>20250926會所工作日誌05_就業訓練反思</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/05%E5%85%A9%E9%80%B1%E5%B0%B1%E6%A5%AD%E8%A8%93%E7%B7%B4%E5%8F%8D%E6%80%9D/</link><pubDate>Fri, 26 Sep 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/05%E5%85%A9%E9%80%B1%E5%B0%B1%E6%A5%AD%E8%A8%93%E7%B7%B4%E5%8F%8D%E6%80%9D/</guid><description>&lt;p&gt;前天9/26是職場評估的日子，從決定接下職場，到實際面試評估，約只有兩週的時間，當時內部討論兩位會員比較有機會，會員J和會員F。最終的結果是，會員F成功面試錄取了工作！&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;當初決定接下職場時，我只抱持著「試試看」的態度，帶著不確定性面對這個職場的機會。不曉得就業前準備會帶給會員什麼壓力與變化，對我來說算是只要五成把握。&lt;/p&gt;
 &lt;p&gt;實際就業前準備的時間，過去在向陽就業組實習的經驗完全派上用場，至少我大致該如何操作，以及一般清潔職場的標準在哪。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;ㄧ會員j&#34;&gt;ㄧ、會員J&lt;/h3&gt;
+&lt;h3 id="ㄧ會員j"&gt;ㄧ、會員J&lt;/h3&gt;
 &lt;p&gt;針對會員J，可以明顯看出他起初對訓練是有點不屑的，因為他過去就曾做過社區和醫院的打掃工作，但只要進一步抓他的小毛病或不確實清潔的地方，他依然會聽你的，面對自己的不足。&lt;/p&gt;
 &lt;p&gt;其中，可以觀察到他的優缺點，例如，會員J平常愛吹牛說大話，但實際上很缺乏信心。當我要求他自我評估好的時候再叫我檢查，他為卡住而躊躇不前。&lt;/p&gt;
 &lt;p&gt;會員J的自卑在餐飲部工作日也能明顯觀察到，他總是要「讓」其他人先做，即便自己有經驗卻也不信任自己，呈現退縮。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;二會員f&#34;&gt;二、會員F&lt;/h3&gt;
+&lt;h3 id="二會員f"&gt;二、會員F&lt;/h3&gt;
 &lt;p&gt;針對會員F，他四十年來完全沒有工作經驗，但反而較能承受壓力，願意嘗試就服員教導的打掃方法，放下自己既有的方法。光是這點就能看出他還沒那麼僵化。&lt;/p&gt;
 &lt;p&gt;會員F起初在我們的評估中，是離職場還有一段距離、需要花更多時間才能上工的人，因為他常常呈現悠閒的態度，來會所消磨時間。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;三試論成功的因素&#34;&gt;三、試論成功的因素&lt;/h3&gt;
+&lt;h3 id="三試論成功的因素"&gt;三、試論成功的因素&lt;/h3&gt;
 &lt;p&gt;這次的就業前準備，雖然只有兩週，而且會員F完全沒有工作經驗，但是在密集來到會所練習，同時也未變更餐飲部的工作日的條件下，仍然做到了，實在很讓人感動。&lt;/p&gt;
 &lt;p&gt;為什麼可以成功走到這步？首先我認為是會員願意配合，沒有因為壓力而嚇跑，而是信任我們，如實地表現自己的狀態。&lt;/p&gt;
 &lt;p&gt;他既沒有擺爛，也沒有逃避，只是在某些時候感覺有些慵懶。&lt;/p&gt;
 &lt;p&gt;我覺得第二點是，最近才知道會員F的藥物減少了許多，現在只有思樂康而已，在生理方面沒有受太大的副作用影響。&lt;/p&gt;
 &lt;p&gt;第三，不間斷的投入。儘管我也沒有太多把握，只知道要全力以赴投入在這個關係上，會員多少還是能感受到，至少在關係上更靠近了。畢竟一起通關斬將，多少都有革命情感。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;四心得&#34;&gt;四、心得&lt;/h3&gt;
+&lt;h3 id="四心得"&gt;四、心得&lt;/h3&gt;
 &lt;p&gt;在面試錄取的當天，就服員與會員F聊了許久，&lt;/p&gt;
 &lt;p&gt;：「為什麼想要這份工作？」&lt;/p&gt;
 &lt;p&gt;：「因為想要跟其他人說我有工作」&lt;/p&gt;
@@ -184,27 +101,13 @@
 &lt;p&gt;直到面試的環境，會員F表示願意接下兩天工作，撐半年的時間！！實在太令人感動，因為原本還在苦惱沒有會員適合來工作的問題。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;會員F的進步是非常明顯的，他的動力也在面試當天有所提升，完全超出我的預期。&lt;/p&gt;
-&lt;p&gt;很高興會員F經過兩週努力訓練，成功錄取工作，我聽到錄取的同時彷彿自己也錄取了，超級開心。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>20250916會所工作日誌04_就業前準備</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/04%E5%B0%B1%E6%A5%AD%E5%89%8D%E6%BA%96%E5%82%99/</link>
-      <pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/04%E5%B0%B1%E6%A5%AD%E5%89%8D%E6%BA%96%E5%82%99/</guid>
-      <description>&lt;p&gt;為了9/26的職場評估，開始了兩位會員的訓練。&lt;/p&gt;
+&lt;p&gt;很高興會員F經過兩週努力訓練，成功錄取工作，我聽到錄取的同時彷彿自己也錄取了，超級開心。&lt;/p&gt;</description></item><item><title>20250916會所工作日誌04_就業前準備</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/04%E5%B0%B1%E6%A5%AD%E5%89%8D%E6%BA%96%E5%82%99/</link><pubDate>Tue, 16 Sep 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/04%E5%B0%B1%E6%A5%AD%E5%89%8D%E6%BA%96%E5%82%99/</guid><description>&lt;p&gt;為了9/26的職場評估，開始了兩位會員的訓練。&lt;/p&gt;
 &lt;p&gt;兩位會員個性正好相反，會員J很急躁、缺乏耐心，但手腳速度快；會員F則是過於細心仔細而速度過慢。那天正好一紅一藍的衣服搭配！&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;在出餐日的框架下，要求他們要彼此合作完成蚵仔煎這道菜，期望可以互補彼此的個性。至少那天有順利完成且不差。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;會員J在面對就業前準備時，不斷回想起過去做清潔的失敗經驗，動力不穩定。但我知道只要他願意，是可以做到的。&lt;/p&gt;
-&lt;p&gt;一開始告訴他要穿鞋子，隔天穿鞋不穿襪；再隔天多了襪子正要稱讚時，卻是破到不行的襪子，有點荒謬好笑&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>20250911會所工作日誌03_回顧會員F來會所的學習</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/03%E5%9B%9E%E9%A1%A7%E6%9C%83%E5%93%A1f%E4%BE%86%E6%9C%83%E6%89%80%E7%9A%84%E5%AD%B8%E7%BF%92/</link>
-      <pubDate>Thu, 11 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/03%E5%9B%9E%E9%A1%A7%E6%9C%83%E5%93%A1f%E4%BE%86%E6%9C%83%E6%89%80%E7%9A%84%E5%AD%B8%E7%BF%92/</guid>
-      <description>&lt;p&gt;會員F一直都是懶懶散散的狀態，感覺這個人沒什麼慾望、沒什麼動力。積極各種方式激起他的動力他也只是會心一笑。&lt;/p&gt;
+&lt;p&gt;一開始告訴他要穿鞋子，隔天穿鞋不穿襪；再隔天多了襪子正要稱讚時，卻是破到不行的襪子，有點荒謬好笑&lt;/p&gt;</description></item><item><title>20250911會所工作日誌03_回顧會員F來會所的學習</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/03%E5%9B%9E%E9%A1%A7%E6%9C%83%E5%93%A1f%E4%BE%86%E6%9C%83%E6%89%80%E7%9A%84%E5%AD%B8%E7%BF%92/</link><pubDate>Thu, 11 Sep 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/03%E5%9B%9E%E9%A1%A7%E6%9C%83%E5%93%A1f%E4%BE%86%E6%9C%83%E6%89%80%E7%9A%84%E5%AD%B8%E7%BF%92/</guid><description>&lt;p&gt;會員F一直都是懶懶散散的狀態，感覺這個人沒什麼慾望、沒什麼動力。積極各種方式激起他的動力他也只是會心一笑。&lt;/p&gt;
 &lt;p&gt;為了準備隔天大學生的參訪，今天整理他來會所的經歷。他一樣說當初來會所就是來「殺時間」，&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;：「那現在呢？」&lt;/p&gt;
@@ -221,14 +124,7 @@
 &lt;p&gt;&lt;strong&gt;一直以來都是我在說這句，期望明天還能見到會員來會所，沒想到是會員主動這樣告訴我，有一種角色互相對調的感覺，好有趣&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;隔天，會員F不僅獨立完成了三卷玉子燒，也順利報告了自己來會所的經歷。&lt;/p&gt;
-&lt;p&gt;這種前一天才準備、隔天就能上場的經驗也是不容易。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>20250910會所工作日誌02_緊握垃圾的力道</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/02%E7%B7%8A%E6%8F%A1%E5%9E%83%E5%9C%BE%E7%9A%84%E5%8A%9B%E9%81%93/</link>
-      <pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/02%E7%B7%8A%E6%8F%A1%E5%9E%83%E5%9C%BE%E7%9A%84%E5%8A%9B%E9%81%93/</guid>
-      <description>&lt;p&gt;會員J是一個非常急躁、脾氣不好的人，平常會透過剪紙、寫字或泡泡紙來紓壓，但一邊碎碎念，那天在路上看到泡泡紙他甚至直接衝過去撿起來按。是個常常處於生氣狀態，也在到處發洩情緒的人。&lt;/p&gt;
+&lt;p&gt;這種前一天才準備、隔天就能上場的經驗也是不容易。&lt;/p&gt;</description></item><item><title>20250910會所工作日誌02_緊握垃圾的力道</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/02%E7%B7%8A%E6%8F%A1%E5%9E%83%E5%9C%BE%E7%9A%84%E5%8A%9B%E9%81%93/</link><pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/02%E7%B7%8A%E6%8F%A1%E5%9E%83%E5%9C%BE%E7%9A%84%E5%8A%9B%E9%81%93/</guid><description>&lt;p&gt;會員J是一個非常急躁、脾氣不好的人，平常會透過剪紙、寫字或泡泡紙來紓壓，但一邊碎碎念，那天在路上看到泡泡紙他甚至直接衝過去撿起來按。是個常常處於生氣狀態，也在到處發洩情緒的人。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;初次認識會員J時，我誤以為他是非常會煮飯的人，因為他經常自稱是餐飲部的元老會員、諸葛亮，強調自己記性很好，可以一心多用，實際上他的確展現出積極的態度做清潔打掃與洗碗等會務工作，而且會認為其他會員做事速度太慢。&lt;/p&gt;
 &lt;p&gt;更進一步的瞭解後才知道，原來他不會做菜，或是說對於做菜十分缺乏信心，但他明明就在餐飲部那麼久，甚至前期是最穩定出席的會員，曾經按照食譜做了好幾道菜，我覺得這實在說不過去。&lt;/p&gt;
@@ -248,271 +144,26 @@
 &lt;hr&gt;
 &lt;p&gt;這段時間在餐飲組做了不少操作，除了重新設計白板之外，還有培養做事很慢的會員F學會玉子燒，也漸漸看清會員J的生存模式。&lt;/p&gt;
 &lt;p&gt;我覺得，建立關係之後，好像可以更看清楚一個人的模樣，他一路以來是如何生存下來的，存在什麼盲點、生命的議題，才比較能掌握這個人的利害關係。當然，這中間也會有實驗性的嘗試，拋出一些話語，觀察他有什麼反應。&lt;/p&gt;
-&lt;p&gt;覺得在會所工作真的很需要高敏感，會員J表面上看起來很積極願意做清潔，但實際上在掩飾他對烹飪的不自信，當我要搶著要丟垃圾時他也不願意放手。那種緊握的力道真的很深刻，彷彿在吶喊緊握著僅存的尊嚴。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>20250829會所工作日誌01_工作一個月</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/01%E5%B7%A5%E4%BD%9C%E4%B8%80%E5%80%8B%E6%9C%88/</link>
-      <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/01%E5%B7%A5%E4%BD%9C%E4%B8%80%E5%80%8B%E6%9C%88/</guid>
-      <description>雖然我有一些想法和靈感，覺得應該這麼做，但我也很難站在全知的角度說服其他人「這麼做絕對正確」。我只能帶著實驗精神不斷嘗試與行動，發生錯誤或失敗就再次修正行動。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜自傷疼痛</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/10%E8%87%AA%E5%82%B7%E7%96%BC%E7%97%9B/</link>
-      <pubDate>Wed, 04 Oct 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/10%E8%87%AA%E5%82%B7%E7%96%BC%E7%97%9B/</guid>
-      <description>每當刀子割下或吞藥那瞬間，就很像種下一顆種子，種子是會生根的，所以同時能夠讓我，感覺到自己是被牢牢抓住的，是很深刻的體認到自己的存在，也可以往上長出強壯的樹苗，然後很大聲地喊著，我存在在這裡。我覺得這是我的疼痛會有的樣子，是我自己種下來的，一切的一切都是要向內或向外告訴這個世界，告訴自己我存在，一種踏實感，扎根，扎痛，種子裂開的時候也會是疼痛的，那個種皮被撕裂的時候，那個胚芽在冒頭的時候，各種各樣的都是在撕扯，他們都拼命想要長成他們想要的樣子，要很用力地扎。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜腕隧道症候群</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/08%E8%85%95%E9%9A%A7%E9%81%93%E7%97%87%E5%80%99%E7%BE%A4/</link>
-      <pubDate>Tue, 03 Oct 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/08%E8%85%95%E9%9A%A7%E9%81%93%E7%97%87%E5%80%99%E7%BE%A4/</guid>
-      <description>這裡好像有許多的心臟嵌入在側邊，在兩側的壁面上有一顆顆半突出著，數量密密麻麻的嚇人，它們在活躍的跳動，在壁面向外伸縮，沒有軀體也沒有頭顱，它們沒有意識，但它們奮力的跳動，好像有了生命，有些能夠向外到二米而有些只能到10釐米，每一顆心臟都是看起來很又醜又怪異，它們身上佈滿黏稠的液體，有點像是癩蛤蟆背上的那種黏液，而心臟顏色是鮮明的紅色，紅色像是有警示的意味。它們雖然外表看起來可怕，但它們不會傷害人，只是長的很醜。其實，它們都曾經是我的一部分，他們沒有傷害我，但我厭惡它們，我祈禱它們有能死亡的一天，所以我對它們感到悲哀又內疚，但我不想再看到它們了，結束這場夢吧。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜胃痛</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/07%E8%83%83%E7%97%9B/</link>
-      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/07%E8%83%83%E7%97%9B/</guid>
-      <description>上次覺得是關在籠子裡的獅子的感覺，剛剛那樣聊完反而覺得，我才是被疼痛關起來的人，被疼痛決定方向。我對疼痛一開始的想像是，覺得好像是內部的感受，但好像比我想像更外部，現實中的影響比我想像得更全面。疼痛更像是一道召喚，很接近一種死亡，不可能抵抗，我的出生也是被出生，疼痛某部分也是這樣的召喚。這些聊完再講隱喻就蠻不一樣的。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜腰部肌肉纖維化</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/06%E8%85%B0%E9%83%A8%E8%82%8C%E8%82%89%E7%BA%96%E7%B6%AD%E5%8C%96/</link>
-      <pubDate>Sun, 01 Oct 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/06%E8%85%B0%E9%83%A8%E8%82%8C%E8%82%89%E7%BA%96%E7%B6%AD%E5%8C%96/</guid>
-      <description>我覺得在平日時，疼痛就是我隱形的緊身衣，他會一直存在，包含我現在，只有三分酸酸的，之前可能五百丹，很緊，我知道好像有人生產完會去穿塑身衣，快要不能呼吸的程度，所以覺得疼痛就是緊身衣，我現在就是一百丹、五十丹的緊身衣。這裡會有的突發狀況是扭傷，變成疊加在上面，變成再多一件，從精神、 壓力影響到我們的心情跟身體，自己覺得這個對我而言是慢慢從壓力跟不良習慣。那個身體的感覺是很全面的、無時無刻。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜貝西氏症</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/05%E8%B2%9D%E8%A5%BF%E6%B0%8F%E7%97%87/</link>
-      <pubDate>Sat, 30 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/05%E8%B2%9D%E8%A5%BF%E6%B0%8F%E7%97%87/</guid>
-      <description>在某個程度上，我覺得這些疼痛經驗，很像是一座被壓縮在小小水晶球的迷宮，他有一些自己的樣態，是交織的、複雜的，但是又是被高度壓縮的，以致於，滿多時候會經歷到某一種孤獨，好像即便是跟妳最親近的人，也不太能真的認知到，你到底在經歷什麼事情，但她的密度可能又是很高，質量很有份量。就某個層面來說，當你把這一切都經歷完之後，這樣講好芭樂，某個程度上的確是一個負擔，或是痛苦的事情，但是他到某個階段之後，就會發現他美麗的地方。我覺得很像迷宮，他是很被壓縮的。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜生理期疼痛</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/04%E7%94%9F%E7%90%86%E6%9C%9F%E7%96%BC%E7%97%9B/</link>
-      <pubDate>Fri, 29 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/04%E7%94%9F%E7%90%86%E6%9C%9F%E7%96%BC%E7%97%9B/</guid>
-      <description>最主要困擾就是工作，每次要請假的時候都很抱歉，每次兩三天都要在家休息，因為總是有朋友或家裡有事情，我就是一直都沒辦法參與，可能有人覺得我不合群，還有晚上沒辦法睡，影響日常生活作息。...痛的當下注意力在那個上面會更痛，痛會被你放大，會很專注在痛到不行、死去活來，確實會讓你感覺更痛。如果痛就會去看影片或泡澡，痛的時候身體或發炎，可能交感神經比較活躍，如果有那種讓神經舒緩下來的方式也會好很多。當然說實話就吞兩顆藥，有人跑去喝酒什麼的，那是最快可以舒緩，但痛還是會在。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜心臟瓣膜疼痛</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/09%E5%BF%83%E8%87%9F%E7%93%A3%E8%86%9C%E7%96%BC%E7%97%9B/</link>
-      <pubDate>Thu, 28 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/09%E5%BF%83%E8%87%9F%E7%93%A3%E8%86%9C%E7%96%BC%E7%97%9B/</guid>
-      <description>疼痛是訊息或提醒，就是現在的感覺，因為如果沒有用這些方式提醒我，或許永遠不會意識到說我要調整自己，不管是想法或信念，因為我一直不調整，他就只好來提醒我，這一些都是我自己責任。過去的我可能會對這件事情有些情緒，現在的我搞不好也還有情緒，但過去的我更憤怒、悲傷、無助，所以其實我把這次當作對自己諮商。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜未知疼痛</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/03%E6%9C%AA%E7%9F%A5%E7%96%BC%E7%97%9B/</link>
-      <pubDate>Wed, 27 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/03%E6%9C%AA%E7%9F%A5%E7%96%BC%E7%97%9B/</guid>
-      <description>以前會覺得蠻討厭它的，因為我父親他的疼痛是比我更痛，要吃嗎啡止痛那種，可能受他影響，以前很討厭疼痛，覺得自己體力差，連接球都接不到，因為我很難用力用力容易酸，會覺得這個疼痛蠻討厭、厭惡它。但是我現在是有點覺得說，好吧我現在就是這樣，就是學一種方式，正念減壓，是針對慢性疼痛的病人去扭轉慢性疼痛的認知，用一些深呼吸去扭轉疼痛，可能又來了，去改善對疼痛的感覺跟反應。就覺得我就是這樣，隔一段時間就是要休息。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜僵直性脊椎炎</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/02%E5%83%B5%E7%9B%B4%E6%80%A7%E8%84%8A%E6%A4%8E%E7%82%8E/</link>
-      <pubDate>Tue, 26 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/02%E5%83%B5%E7%9B%B4%E6%80%A7%E8%84%8A%E6%A4%8E%E7%82%8E/</guid>
-      <description>我覺得它是一個很像一塊面紗，我本來看出去的未來是很光明的，可是黑色面紗照在未來，把眼前未來都蓋住，那個面紗會蔓延到生活每一吋，在侵蝕你的生活。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜成果發表</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/01%E6%88%90%E6%9E%9C%E7%99%BC%E8%A1%A8/</link>
-      <pubDate>Mon, 25 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/01%E6%88%90%E6%9E%9C%E7%99%BC%E8%A1%A8/</guid>
-      <description>疼痛是什麼呢？疼痛是一塊黑色面紗把未來遮住；疼痛是被鞭子打到骨頭碎掉；疼痛是對自己的提醒和訊號；疼痛是被壓縮的小小水晶球迷宮；疼痛是隱形的緊身衣；疼痛是關在籠子裡的獅子；疼痛是一顆顆跳動的心臟；疼痛是往自己身上種下種子。</description>
-    </item>
-    <item>
-      <title>聆聽疼痛計畫｜撿拾疼痛的碎片</title>
-      <link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/00%E6%92%BF%E6%8B%BE%E7%96%BC%E7%97%9B%E7%9A%84%E7%A2%8E%E7%89%87/</link>
-      <pubDate>Sun, 24 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/00%E6%92%BF%E6%8B%BE%E7%96%BC%E7%97%9B%E7%9A%84%E7%A2%8E%E7%89%87/</guid>
-      <description>文字語言是轉化疼痛的方法之一。超越性的力量來自聆聽和書寫，是受苦之人找尋自我存在的浮木。痛苦的語言是零碎的，所以是浮木。但有沒有一種可能，當這些浮木堆積起來、縝密地排列、被好好檢視時，那麼浮木不再是浮木，而是一座堅實的橋樑，引導受苦之人穿越到任何地方，賦予疼痛不同的意義</description>
-    </item>
-    <item>
-      <title>實習總報告</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/07%E5%AF%A6%E7%BF%92%E7%B8%BD%E5%A0%B1%E5%91%8A/</link>
-      <pubDate>Fri, 01 Sep 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/07%E5%AF%A6%E7%BF%92%E7%B8%BD%E5%A0%B1%E5%91%8A/</guid>
-      <description>「鼓勵會員為自己做決定」是在向陽很重要的一件事，仔細梳理這件事的重要性，我發現背後關乎會員是否可以「成為自己」。對於精神障礙者來說，經常被認為無法為自己做決定而失去做決定的責任與權力，即便是與家庭關係良好的會員，在會所做出的決定，往往回到家與家人討論後又會有所變動。看到會員經常被奪走決定權與責任而變得被動，我覺得在與會員工作的時候，有一個重要的目標即是希望他可以重新搶奪回自己的主導權、決定權，大至自己的人生安排，小至日常生活的行程。</description>
-    </item>
-    <item>
-      <title>如實</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/06%E5%A6%82%E5%AF%A6/</link>
-      <pubDate>Mon, 24 Jul 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/06%E5%A6%82%E5%AF%A6/</guid>
-      <description>會所的開放、平等與夥伴關心，很能用「真實性」與「透明性」去看，可以更瞭解「如實」的重要性何在，在這樣「如實」下打造的環境，讓會員可以更「如其所是」地存在，這也是我所看見的會所。不只是職員與會員之間的如實表達，職員自己與自己的內在對話也要如實，這就可以呼應三手欄這個工具，如鏡子般映照自我。</description>
-    </item>
-    <item>
-      <title>與會員H訂計畫</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/05%E8%88%87%E6%9C%83%E5%93%A1h%E8%A8%82%E8%A8%88%E7%95%AB/</link>
-      <pubDate>Sun, 16 Jul 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/05%E8%88%87%E6%9C%83%E5%93%A1h%E8%A8%82%E8%A8%88%E7%95%AB/</guid>
-      <description>讓我覺得很難過的是：我覺得有一種困難是，就是會員H的應對上這些困難，影響人際關係跟工作，他的障礙要花這麼多時間才能理解、被梳理出來，不像其他的障別，障礙很明確可見，這是要花很多心力才能勉強描繪出那個精神世界造成的影響，背後是可能是創傷、壓力、壞習慣、身心反應。</description>
-    </item>
-    <item>
-      <title>承認無知、真誠表達與夥伴關係</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/04%E6%89%BF%E8%AA%8D%E7%84%A1%E7%9F%A5%E7%9C%9F%E8%AA%A0%E8%A1%A8%E9%81%94%E8%88%87%E5%A4%A5%E4%BC%B4%E9%97%9C%E4%BF%82/</link>
-      <pubDate>Fri, 14 Jul 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/04%E6%89%BF%E8%AA%8D%E7%84%A1%E7%9F%A5%E7%9C%9F%E8%AA%A0%E8%A1%A8%E9%81%94%E8%88%87%E5%A4%A5%E4%BC%B4%E9%97%9C%E4%BF%82/</guid>
-      <description>這裡存在一種心情是「我真的聽不懂，聽不懂就是聽不懂，不用不懂裝懂」這樣的心情是一種坦然面對自身「無知」或承認自己理解能力有限的過程。挑戰一般人對於助人工作者必須「知」的預設。承認自己的無能、無知是有難度的，然而也有很大的好處，也就是讓我們可以更真誠站在一種對方的朋友、夥伴的立場去聆聽跟回應。也就是這樣的過程，當關係建立足夠之後，我們更有可能成為所謂的夥伴（或某種朋友）的平等關係上去行動與說話。或許會所裡所稱的「夥伴關係」是這樣來的。</description>
-    </item>
-    <item>
-      <title>期中實習結束</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/03%E6%9C%9F%E4%B8%AD%E5%AF%A6%E7%BF%92%E7%B5%90%E6%9D%9F/</link>
-      <pubDate>Wed, 05 Jul 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/03%E6%9C%9F%E4%B8%AD%E5%AF%A6%E7%BF%92%E7%B5%90%E6%9D%9F/</guid>
-      <description>實習真的對我來說是跨出另一大步，朝向助人工作的目標前進。這幾年，我努力以「非本科系」的身份，試圖爬進助人工作領域，靠著閱讀、反思、各種珍貴的經驗與人脈……我覺得自己突破重重關卡，好不容易獲得了某個實質的「證明」，告訴自己也告訴這個世界，自己是足夠好的，也真正開始長出自己的「專業」。</description>
-    </item>
-    <item>
-      <title>對話本身就是行動</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%B0%8D%E8%A9%B1%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E8%A1%8C%E5%8B%95/</link>
-      <pubDate>Fri, 23 Jun 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%B0%8D%E8%A9%B1%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E8%A1%8C%E5%8B%95/</guid>
-      <description>郡回應說，為什麼解決問題不是重點，依舊讓我有點震驚，原來解決問題真的不是重點？這讓我反思，其實行動研究非常注重「解決問題」，需要不斷檢視「行動是否有效」來修正自己的行動。想必在行動研究裡，觀摩裡的幾個句子會被老師視為「無效」吧。或許在行動研究以及社會工作的洗禮下，我也自然成了想解決問題的體質。</description>
-    </item>
-    <item>
-      <title>為自己做決定即是成為自己</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/02%E7%82%BA%E8%87%AA%E5%B7%B1%E5%81%9A%E6%B1%BA%E5%AE%9A%E5%8D%B3%E6%98%AF%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/</link>
-      <pubDate>Sat, 27 May 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/02%E7%82%BA%E8%87%AA%E5%B7%B1%E5%81%9A%E6%B1%BA%E5%AE%9A%E5%8D%B3%E6%98%AF%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/</guid>
-      <description>⁡在向陽實習的期間，我瞭解到讓會員主動做決定的重要性，工作者的角色除了要觀察會員的動力之外，也要順著他的動力，引導當事人可以主動做出決定。從這個角度來說，所謂的「案主自決」並非字面意思那麼簡單，或是把責任直接丟給案主，而是一個複雜的互動過程，必須引導案主為自己做出決定。當案主可以主動做出決定時，那麼就如《成為一個人》所說的可以更加成為自己，這中間要克服的是：該如何為自己做出決定？該如何信任自己的體驗？該如何面對挫折的可能？承擔失敗的風險？這個過程也就是「成為自己」了。</description>
-    </item>
-    <item>
-      <title>幻聽與疼痛：不可見的受苦</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/02%E5%B9%BB%E8%81%BD%E8%88%87%E7%96%BC%E7%97%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E8%A6%8B%E7%9A%84%E5%8F%97%E8%8B%A6/</link>
-      <pubDate>Tue, 16 May 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/02%E5%B9%BB%E8%81%BD%E8%88%87%E7%96%BC%E7%97%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E8%A6%8B%E7%9A%84%E5%8F%97%E8%8B%A6/</guid>
-      <description>這讓我感到有點豁然開朗，似乎真的能夠這樣說的通。也就是說，幻聽和疼痛真的有類似的特性，同樣的不可見、難以描述、依賴語言、需要向這個世界證明、一種內在的受苦經驗，把我過去對疼痛的理解和瞭解統統用上，這讓我感覺更瞭解幻聽了，也拉近與會員J的距離，很神奇。我覺得這都指向了，會所存在的意義為何，它作為一個共同的空間、社群可以彼此依存、互相對話理解的平台，在人與人的流動之間，彼此的受苦經驗能夠得到點療癒或被理解的可能。</description>
-    </item>
-    <item>
-      <title>促進對話的方法：內在透明化</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%85%A7%E5%9C%A8%E9%80%8F%E6%98%8E%E5%8C%96/</link>
-      <pubDate>Fri, 12 May 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%85%A7%E5%9C%A8%E9%80%8F%E6%98%8E%E5%8C%96/</guid>
-      <description>如同《開放對話·期待對話》裡提到「翻轉教育」，老師能夠透過學生知道自己的限制，因此老師也是學生。對助人者來說，即使案主表面看起來弱勢，但他具備最多關於受苦的知識和資訊，能夠成為老師為助人者解答。於是，這場會談就成為了重要的學習：助人者學習受苦的知識；案主學習如何教導助人者。雙方在學習的對話關係中成為夥伴，站在同一陣線，一起想辦法解決受苦的問題。更深入剖析，助人者作為學生的角色時，他的提問非常重要，問句像是一把鑰匙一樣，能夠開啟不同的對話，召喚出不同的東西。⁡</description>
-    </item>
-    <item>
-      <title>過道、渡者、苦難工作者</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%81%8E%E9%81%93%E6%B8%A1%E8%80%85%E8%8B%A6%E9%9B%A3%E5%B7%A5%E4%BD%9C%E8%80%85/</link>
-      <pubDate>Sun, 07 May 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%81%8E%E9%81%93%E6%B8%A1%E8%80%85%E8%8B%A6%E9%9B%A3%E5%B7%A5%E4%BD%9C%E8%80%85/</guid>
-      <description>過道，不只成為他人的過道，也成為自己的過道。渡者，不只成為他人的渡者，也成為自己的渡者。 ⁡無論是過道或是渡者，都賦予了苦難「方向性」，苦難因此有了指向，有了出口。也正如過去所學習的，要以「穿越」的方式來面對苦難。 ⁡</description>
-    </item>
-    <item>
-      <title>《受苦的倒影》新書講座：成為過道</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8F%97%E8%8B%A6%E7%9A%84%E5%80%92%E5%BD%B1/</link>
-      <pubDate>Sat, 06 May 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8F%97%E8%8B%A6%E7%9A%84%E5%80%92%E5%BD%B1/</guid>
-      <description>聽到「要成為過道而不是承接者」還是讓我蠻衝擊的！思含後來補充：渡者的概念，功課還是當事人要承擔，不是你要承擔。這次的講座真的大豐收，也覺得自己被支持了，老師甚至發揮督導的角色分享自己對助人工作者的想法。整理完這篇心得覺得，嗯～那就繼續痛苦地書寫、邊哭邊寫吧！</description>
-    </item>
-    <item>
-      <title>行動科學到開放式對話：人們用行動在對話</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E4%BA%BA%E5%80%91%E7%94%A8%E8%A1%8C%E5%8B%95%E5%9C%A8%E5%B0%8D%E8%A9%B1/</link>
-      <pubDate>Sat, 29 Apr 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E4%BA%BA%E5%80%91%E7%94%A8%E8%A1%8C%E5%8B%95%E5%9C%A8%E5%B0%8D%E8%A9%B1/</guid>
-      <description>行動研究與開放式對話都是有關人際行為世界可以如何得到更好的改變，是身為人際工作者的重要學習。因此，將這兩個理論融合，我的結論是「人際的世界處處都是行動，處處都是對話，人們是用行動在對話。這不分權力關係、能力強弱，即便弱的一方也是用弱在行動」。</description>
-    </item>
-    <item>
-      <title>慾望、驅力、動力</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/01%E6%85%BE%E6%9C%9B%E9%A9%85%E5%8A%9B%E5%8B%95%E5%8A%9B/</link>
-      <pubDate>Sat, 25 Mar 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/01%E6%85%BE%E6%9C%9B%E9%A9%85%E5%8A%9B%E5%8B%95%E5%8A%9B/</guid>
-      <description>在人與人的關係中，慾望也是必須被看見的。人際關係一不小心就淪為他者化的獨白，為了追求平等的對話關係，除了尊重他異性之外，肯認自己的慾望也是一個關鍵。究竟內心深處想要的是什麼？帶動動力的意義也包括要帶動「奪權」的慾望，奪回屬於自己的權力，這是生而為人本質上很重要的一部分。</description>
-    </item>
-    <item>
-      <title>初入會所的觀察</title>
-      <link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/01%E5%88%9D%E5%85%A5%E6%9C%83%E6%89%80%E7%9A%84%E8%A7%80%E5%AF%9F/</link>
-      <pubDate>Tue, 14 Mar 2023 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/01%E5%88%9D%E5%85%A5%E6%9C%83%E6%89%80%E7%9A%84%E8%A7%80%E5%AF%9F/</guid>
-      <description>會所營造的團體動力、夥伴協作關係都有深奧的智慧和意義，這些意義指出了人際關係、情緒、界線、能力、超越性、民主、參與等重要議題，並且也更根本地指出，作為一個助人工作者該如何建立助人關係、以何種方式存在於受苦主體身旁，與主體為伴。</description>
-    </item>
-    <item>
-      <title>進階團體工作</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%80%B2%E9%9A%8E%E5%9C%98%E9%AB%94%E5%B7%A5%E4%BD%9C/</link>
-      <pubDate>Fri, 28 Oct 2022 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%80%B2%E9%9A%8E%E5%9C%98%E9%AB%94%E5%B7%A5%E4%BD%9C/</guid>
-      <description>今天體悟到團體的Leader不是領導而是引導。對於團體中浮現的個人生命議題要有敏感度，但不是指著人告訴他應該哪裡改變、哪裡做不好。反而是帶著寬容接納的態度去叩問探詢，用適合的問題引導出更有深度的內容和動力。</description>
-    </item>
-    <item>
-      <title>一位好的父親是如何養成的？</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E4%B8%80%E4%BD%8D%E5%A5%BD%E7%9A%84%E7%88%B6%E8%A6%AA%E6%98%AF%E5%A6%82%E4%BD%95%E9%A4%8A%E6%88%90%E7%9A%84/</link>
-      <pubDate>Fri, 21 Oct 2022 12:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E4%B8%80%E4%BD%8D%E5%A5%BD%E7%9A%84%E7%88%B6%E8%A6%AA%E6%98%AF%E5%A6%82%E4%BD%95%E9%A4%8A%E6%88%90%E7%9A%84/</guid>
-      <description>相較於女性成為母親的歷程，較容易會看到女性之間的經驗傳承和分享；對男性來說，成為一位父親的歷程似乎是全憑己力，尤其是沒有一個好的父親榜樣作為參考時，往往延續上一代的父子關係，告訴孩子：「因為我小時候我爸也是這樣對我的。」躲進兒子的角色而始終難以成為父親。</description>
-    </item>
-    <item>
-      <title>社會工作是陰性的存在</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C%E6%98%AF%E9%99%B0%E6%80%A7%E7%9A%84%E5%AD%98%E5%9C%A8/</link>
-      <pubDate>Wed, 24 Aug 2022 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C%E6%98%AF%E9%99%B0%E6%80%A7%E7%9A%84%E5%AD%98%E5%9C%A8/</guid>
-      <description>「社工的角色一定要跟人搭配，很多時候是串連，去創造一個空間。」</description>
-    </item>
-    <item>
-      <title>人生百味：第二次的期中報告</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%A5%B3%E6%80%A7%E4%B8%BB%E7%BE%A9%E4%BA%BA%E7%94%9F%E7%99%BE%E5%91%B3/</link>
-      <pubDate>Fri, 20 May 2022 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%A5%B3%E6%80%A7%E4%B8%BB%E7%BE%A9%E4%BA%BA%E7%94%9F%E7%99%BE%E5%91%B3/</guid>
-      <description>對我來說，女性主義的重點之一在於如何從「他者」當中建立主體性，透過各式各樣的方法賦予當事人發聲的力量去對抗標籤和壓迫。從助人工作的角度來看，百味用一種緩慢的、貼近的、接納的態度來輔助貧窮者們去學會怎麼「說自己」，而不是由社會來告訴你自己該如何被看待。</description>
-    </item>
-    <item>
-      <title>社會工作觀察：匿名戒酒會，非正式的知識建構</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E7%9A%84%E7%9F%A5%E8%AD%98%E5%BB%BA%E6%A7%8B/</link>
-      <pubDate>Fri, 15 Apr 2022 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E7%9A%84%E7%9F%A5%E8%AD%98%E5%BB%BA%E6%A7%8B/</guid>
-      <description>我自己一直在觀察，如何與父權社會的男性工作，而郭大哥身上具備了那樣的生命經驗和能力，能夠改變藥酒癮的人，達到社會工作的目的。我相信，在他身上存在一種非正式的知識建構，是教科書沒有寫的、專家沒辦法說的，而是唯有真正的當事人經歷了一切才建構起的知識，發展成一套非常厲害的工作方法。</description>
-    </item>
-    <item>
-      <title>換位思考與非暴力溝通</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%9B%E4%BD%8D%E6%80%9D%E8%80%83%E8%88%87%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%BA%9D%E9%80%9A/</link>
-      <pubDate>Wed, 25 Aug 2021 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%9B%E4%BD%8D%E6%80%9D%E8%80%83%E8%88%87%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%BA%9D%E9%80%9A/</guid>
-      <description>非暴力溝通不只是在學習溝通能力，我認為更多的是「與人連結、與自我連結」的能力。受到社會化的影響，長期處於言語暴力環境下的我們容易變得麻木，和情緒保持遙遠的距離，正如上述所說，**非暴力溝通能幫助我們找回內在的連結、情緒的界限，是擁抱自己也是善待自己的方法之一。</description>
-    </item>
-    <item>
-      <title>同步聽打培訓</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%90%8C%E6%AD%A5%E8%81%BD%E6%89%93%E5%9F%B9%E8%A8%93/</link>
-      <pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%90%8C%E6%AD%A5%E8%81%BD%E6%89%93%E5%9F%B9%E8%A8%93/</guid>
-      <description>上完兩天的課程，我覺得同步聽打服務意味著聽障者的平權，希望消弭與聽人之間的差異，能夠接收到同樣完整的內容，如上課、講座都能盡量無障礙。反過頭來思考，我會希望聽障者不要因為缺少聽打服務而沒辦法參與某個講座、得到某個體驗，那都是讓選擇受到限制的狀況，從這個角度來說，我對於人權的理念即是希望拓寬選擇的範圍，撐出選擇的空間，盡量讓人不要因為自身差異而缺少選擇權。</description>
-    </item>
-    <item>
-      <title>講座心得｜創傷知情與兒少服務工作坊</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E5%BF%83%E5%BE%97/</link>
-      <pubDate>Mon, 17 May 2021 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E5%BF%83%E5%BE%97/</guid>
-      <description>綜合所學到的內容，我覺得創傷知情的重點之一在於「學習如何調節自身情緒狀態」。身體作為情緒的載體，無論我們有無意識，其實都在自動幫助我們進行調節，戰或逃或凍結也是一種自然面對創傷的反應。然而**重點在於，如何藉由練習，嘗試發展出較為正向的調節方式，並且是自己更能夠掌握的，讓自己能在進入「紅燈」狀態之前，就先在「黃燈」意識到並踩下煞車。</description>
-    </item>
-    <item>
-      <title>講座筆記｜創傷知情與兒少服務工作坊筆記</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E7%AD%86%E8%A8%98/</link>
-      <pubDate>Tue, 27 Apr 2021 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E7%AD%86%E8%A8%98/</guid>
-      <description>&lt;h5 id=&#34;活動名稱創傷知情與兒少服務工作坊&#34;&gt;活動名稱：創傷知情與兒少服務工作坊&lt;/h5&gt;
-&lt;h5 id=&#34;日期2021年4月27-28日&#34;&gt;日期：2021年4月27-28日&lt;/h5&gt;
-&lt;h5 id=&#34;主辦單位勵馨基金會&#34;&gt;主辦單位：勵馨基金會&lt;/h5&gt;
-&lt;h5 id=&#34;講師胡美齡-諮商心理師華人創傷知情團隊&#34;&gt;講師：胡美齡 諮商心理師（華人創傷知情團隊）&lt;/h5&gt;
+&lt;p&gt;覺得在會所工作真的很需要高敏感，會員J表面上看起來很積極願意做清潔，但實際上在掩飾他對烹飪的不自信，當我要搶著要丟垃圾時他也不願意放手。那種緊握的力道真的很深刻，彷彿在吶喊緊握著僅存的尊嚴。&lt;/p&gt;</description></item><item><title>20250829會所工作日誌01_工作一個月</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/01%E5%B7%A5%E4%BD%9C%E4%B8%80%E5%80%8B%E6%9C%88/</link><pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%97%A5%E8%AA%8C/01%E5%B7%A5%E4%BD%9C%E4%B8%80%E5%80%8B%E6%9C%88/</guid><description>雖然我有一些想法和靈感，覺得應該這麼做，但我也很難站在全知的角度說服其他人「這麼做絕對正確」。我只能帶著實驗精神不斷嘗試與行動，發生錯誤或失敗就再次修正行動。</description></item><item><title>聆聽疼痛計畫｜自傷疼痛</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/10%E8%87%AA%E5%82%B7%E7%96%BC%E7%97%9B/</link><pubDate>Wed, 04 Oct 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/10%E8%87%AA%E5%82%B7%E7%96%BC%E7%97%9B/</guid><description>每當刀子割下或吞藥那瞬間，就很像種下一顆種子，種子是會生根的，所以同時能夠讓我，感覺到自己是被牢牢抓住的，是很深刻的體認到自己的存在，也可以往上長出強壯的樹苗，然後很大聲地喊著，我存在在這裡。我覺得這是我的疼痛會有的樣子，是我自己種下來的，一切的一切都是要向內或向外告訴這個世界，告訴自己我存在，一種踏實感，扎根，扎痛，種子裂開的時候也會是疼痛的，那個種皮被撕裂的時候，那個胚芽在冒頭的時候，各種各樣的都是在撕扯，他們都拼命想要長成他們想要的樣子，要很用力地扎。</description></item><item><title>聆聽疼痛計畫｜腕隧道症候群</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/08%E8%85%95%E9%9A%A7%E9%81%93%E7%97%87%E5%80%99%E7%BE%A4/</link><pubDate>Tue, 03 Oct 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/08%E8%85%95%E9%9A%A7%E9%81%93%E7%97%87%E5%80%99%E7%BE%A4/</guid><description>這裡好像有許多的心臟嵌入在側邊，在兩側的壁面上有一顆顆半突出著，數量密密麻麻的嚇人，它們在活躍的跳動，在壁面向外伸縮，沒有軀體也沒有頭顱，它們沒有意識，但它們奮力的跳動，好像有了生命，有些能夠向外到二米而有些只能到10釐米，每一顆心臟都是看起來很又醜又怪異，它們身上佈滿黏稠的液體，有點像是癩蛤蟆背上的那種黏液，而心臟顏色是鮮明的紅色，紅色像是有警示的意味。它們雖然外表看起來可怕，但它們不會傷害人，只是長的很醜。其實，它們都曾經是我的一部分，他們沒有傷害我，但我厭惡它們，我祈禱它們有能死亡的一天，所以我對它們感到悲哀又內疚，但我不想再看到它們了，結束這場夢吧。</description></item><item><title>聆聽疼痛計畫｜胃痛</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/07%E8%83%83%E7%97%9B/</link><pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/07%E8%83%83%E7%97%9B/</guid><description>上次覺得是關在籠子裡的獅子的感覺，剛剛那樣聊完反而覺得，我才是被疼痛關起來的人，被疼痛決定方向。我對疼痛一開始的想像是，覺得好像是內部的感受，但好像比我想像更外部，現實中的影響比我想像得更全面。疼痛更像是一道召喚，很接近一種死亡，不可能抵抗，我的出生也是被出生，疼痛某部分也是這樣的召喚。這些聊完再講隱喻就蠻不一樣的。</description></item><item><title>聆聽疼痛計畫｜腰部肌肉纖維化</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/06%E8%85%B0%E9%83%A8%E8%82%8C%E8%82%89%E7%BA%96%E7%B6%AD%E5%8C%96/</link><pubDate>Sun, 01 Oct 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/06%E8%85%B0%E9%83%A8%E8%82%8C%E8%82%89%E7%BA%96%E7%B6%AD%E5%8C%96/</guid><description>我覺得在平日時，疼痛就是我隱形的緊身衣，他會一直存在，包含我現在，只有三分酸酸的，之前可能五百丹，很緊，我知道好像有人生產完會去穿塑身衣，快要不能呼吸的程度，所以覺得疼痛就是緊身衣，我現在就是一百丹、五十丹的緊身衣。這裡會有的突發狀況是扭傷，變成疊加在上面，變成再多一件，從精神、 壓力影響到我們的心情跟身體，自己覺得這個對我而言是慢慢從壓力跟不良習慣。那個身體的感覺是很全面的、無時無刻。</description></item><item><title>聆聽疼痛計畫｜貝西氏症</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/05%E8%B2%9D%E8%A5%BF%E6%B0%8F%E7%97%87/</link><pubDate>Sat, 30 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/05%E8%B2%9D%E8%A5%BF%E6%B0%8F%E7%97%87/</guid><description>在某個程度上，我覺得這些疼痛經驗，很像是一座被壓縮在小小水晶球的迷宮，他有一些自己的樣態，是交織的、複雜的，但是又是被高度壓縮的，以致於，滿多時候會經歷到某一種孤獨，好像即便是跟妳最親近的人，也不太能真的認知到，你到底在經歷什麼事情，但她的密度可能又是很高，質量很有份量。就某個層面來說，當你把這一切都經歷完之後，這樣講好芭樂，某個程度上的確是一個負擔，或是痛苦的事情，但是他到某個階段之後，就會發現他美麗的地方。我覺得很像迷宮，他是很被壓縮的。</description></item><item><title>聆聽疼痛計畫｜生理期疼痛</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/04%E7%94%9F%E7%90%86%E6%9C%9F%E7%96%BC%E7%97%9B/</link><pubDate>Fri, 29 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/04%E7%94%9F%E7%90%86%E6%9C%9F%E7%96%BC%E7%97%9B/</guid><description>最主要困擾就是工作，每次要請假的時候都很抱歉，每次兩三天都要在家休息，因為總是有朋友或家裡有事情，我就是一直都沒辦法參與，可能有人覺得我不合群，還有晚上沒辦法睡，影響日常生活作息。...痛的當下注意力在那個上面會更痛，痛會被你放大，會很專注在痛到不行、死去活來，確實會讓你感覺更痛。如果痛就會去看影片或泡澡，痛的時候身體或發炎，可能交感神經比較活躍，如果有那種讓神經舒緩下來的方式也會好很多。當然說實話就吞兩顆藥，有人跑去喝酒什麼的，那是最快可以舒緩，但痛還是會在。</description></item><item><title>聆聽疼痛計畫｜心臟瓣膜疼痛</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/09%E5%BF%83%E8%87%9F%E7%93%A3%E8%86%9C%E7%96%BC%E7%97%9B/</link><pubDate>Thu, 28 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/09%E5%BF%83%E8%87%9F%E7%93%A3%E8%86%9C%E7%96%BC%E7%97%9B/</guid><description>疼痛是訊息或提醒，就是現在的感覺，因為如果沒有用這些方式提醒我，或許永遠不會意識到說我要調整自己，不管是想法或信念，因為我一直不調整，他就只好來提醒我，這一些都是我自己責任。過去的我可能會對這件事情有些情緒，現在的我搞不好也還有情緒，但過去的我更憤怒、悲傷、無助，所以其實我把這次當作對自己諮商。</description></item><item><title>聆聽疼痛計畫｜未知疼痛</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/03%E6%9C%AA%E7%9F%A5%E7%96%BC%E7%97%9B/</link><pubDate>Wed, 27 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/03%E6%9C%AA%E7%9F%A5%E7%96%BC%E7%97%9B/</guid><description>以前會覺得蠻討厭它的，因為我父親他的疼痛是比我更痛，要吃嗎啡止痛那種，可能受他影響，以前很討厭疼痛，覺得自己體力差，連接球都接不到，因為我很難用力用力容易酸，會覺得這個疼痛蠻討厭、厭惡它。但是我現在是有點覺得說，好吧我現在就是這樣，就是學一種方式，正念減壓，是針對慢性疼痛的病人去扭轉慢性疼痛的認知，用一些深呼吸去扭轉疼痛，可能又來了，去改善對疼痛的感覺跟反應。就覺得我就是這樣，隔一段時間就是要休息。</description></item><item><title>聆聽疼痛計畫｜僵直性脊椎炎</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/02%E5%83%B5%E7%9B%B4%E6%80%A7%E8%84%8A%E6%A4%8E%E7%82%8E/</link><pubDate>Tue, 26 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/02%E5%83%B5%E7%9B%B4%E6%80%A7%E8%84%8A%E6%A4%8E%E7%82%8E/</guid><description>我覺得它是一個很像一塊面紗，我本來看出去的未來是很光明的，可是黑色面紗照在未來，把眼前未來都蓋住，那個面紗會蔓延到生活每一吋，在侵蝕你的生活。</description></item><item><title>聆聽疼痛計畫｜成果發表</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/01%E6%88%90%E6%9E%9C%E7%99%BC%E8%A1%A8/</link><pubDate>Mon, 25 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/01%E6%88%90%E6%9E%9C%E7%99%BC%E8%A1%A8/</guid><description>疼痛是什麼呢？疼痛是一塊黑色面紗把未來遮住；疼痛是被鞭子打到骨頭碎掉；疼痛是對自己的提醒和訊號；疼痛是被壓縮的小小水晶球迷宮；疼痛是隱形的緊身衣；疼痛是關在籠子裡的獅子；疼痛是一顆顆跳動的心臟；疼痛是往自己身上種下種子。</description></item><item><title>聆聽疼痛計畫｜撿拾疼痛的碎片</title><link>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/00%E6%92%BF%E6%8B%BE%E7%96%BC%E7%97%9B%E7%9A%84%E7%A2%8E%E7%89%87/</link><pubDate>Sun, 24 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E8%81%86%E8%81%BD%E7%96%BC%E7%97%9B%E8%A8%88%E7%95%AB/00%E6%92%BF%E6%8B%BE%E7%96%BC%E7%97%9B%E7%9A%84%E7%A2%8E%E7%89%87/</guid><description>文字語言是轉化疼痛的方法之一。超越性的力量來自聆聽和書寫，是受苦之人找尋自我存在的浮木。痛苦的語言是零碎的，所以是浮木。但有沒有一種可能，當這些浮木堆積起來、縝密地排列、被好好檢視時，那麼浮木不再是浮木，而是一座堅實的橋樑，引導受苦之人穿越到任何地方，賦予疼痛不同的意義</description></item><item><title>實習總報告</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/07%E5%AF%A6%E7%BF%92%E7%B8%BD%E5%A0%B1%E5%91%8A/</link><pubDate>Fri, 01 Sep 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/07%E5%AF%A6%E7%BF%92%E7%B8%BD%E5%A0%B1%E5%91%8A/</guid><description>「鼓勵會員為自己做決定」是在向陽很重要的一件事，仔細梳理這件事的重要性，我發現背後關乎會員是否可以「成為自己」。對於精神障礙者來說，經常被認為無法為自己做決定而失去做決定的責任與權力，即便是與家庭關係良好的會員，在會所做出的決定，往往回到家與家人討論後又會有所變動。看到會員經常被奪走決定權與責任而變得被動，我覺得在與會員工作的時候，有一個重要的目標即是希望他可以重新搶奪回自己的主導權、決定權，大至自己的人生安排，小至日常生活的行程。</description></item><item><title>如實</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/06%E5%A6%82%E5%AF%A6/</link><pubDate>Mon, 24 Jul 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/06%E5%A6%82%E5%AF%A6/</guid><description>會所的開放、平等與夥伴關心，很能用「真實性」與「透明性」去看，可以更瞭解「如實」的重要性何在，在這樣「如實」下打造的環境，讓會員可以更「如其所是」地存在，這也是我所看見的會所。不只是職員與會員之間的如實表達，職員自己與自己的內在對話也要如實，這就可以呼應三手欄這個工具，如鏡子般映照自我。</description></item><item><title>與會員H訂計畫</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/05%E8%88%87%E6%9C%83%E5%93%A1h%E8%A8%82%E8%A8%88%E7%95%AB/</link><pubDate>Sun, 16 Jul 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/05%E8%88%87%E6%9C%83%E5%93%A1h%E8%A8%82%E8%A8%88%E7%95%AB/</guid><description>讓我覺得很難過的是：我覺得有一種困難是，就是會員H的應對上這些困難，影響人際關係跟工作，他的障礙要花這麼多時間才能理解、被梳理出來，不像其他的障別，障礙很明確可見，這是要花很多心力才能勉強描繪出那個精神世界造成的影響，背後是可能是創傷、壓力、壞習慣、身心反應。</description></item><item><title>承認無知、真誠表達與夥伴關係</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/04%E6%89%BF%E8%AA%8D%E7%84%A1%E7%9F%A5%E7%9C%9F%E8%AA%A0%E8%A1%A8%E9%81%94%E8%88%87%E5%A4%A5%E4%BC%B4%E9%97%9C%E4%BF%82/</link><pubDate>Fri, 14 Jul 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/04%E6%89%BF%E8%AA%8D%E7%84%A1%E7%9F%A5%E7%9C%9F%E8%AA%A0%E8%A1%A8%E9%81%94%E8%88%87%E5%A4%A5%E4%BC%B4%E9%97%9C%E4%BF%82/</guid><description>這裡存在一種心情是「我真的聽不懂，聽不懂就是聽不懂，不用不懂裝懂」這樣的心情是一種坦然面對自身「無知」或承認自己理解能力有限的過程。挑戰一般人對於助人工作者必須「知」的預設。承認自己的無能、無知是有難度的，然而也有很大的好處，也就是讓我們可以更真誠站在一種對方的朋友、夥伴的立場去聆聽跟回應。也就是這樣的過程，當關係建立足夠之後，我們更有可能成為所謂的夥伴（或某種朋友）的平等關係上去行動與說話。或許會所裡所稱的「夥伴關係」是這樣來的。</description></item><item><title>期中實習結束</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/03%E6%9C%9F%E4%B8%AD%E5%AF%A6%E7%BF%92%E7%B5%90%E6%9D%9F/</link><pubDate>Wed, 05 Jul 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/03%E6%9C%9F%E4%B8%AD%E5%AF%A6%E7%BF%92%E7%B5%90%E6%9D%9F/</guid><description>實習真的對我來說是跨出另一大步，朝向助人工作的目標前進。這幾年，我努力以「非本科系」的身份，試圖爬進助人工作領域，靠著閱讀、反思、各種珍貴的經驗與人脈……我覺得自己突破重重關卡，好不容易獲得了某個實質的「證明」，告訴自己也告訴這個世界，自己是足夠好的，也真正開始長出自己的「專業」。</description></item><item><title>對話本身就是行動</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%B0%8D%E8%A9%B1%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E8%A1%8C%E5%8B%95/</link><pubDate>Fri, 23 Jun 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%B0%8D%E8%A9%B1%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E8%A1%8C%E5%8B%95/</guid><description>郡回應說，為什麼解決問題不是重點，依舊讓我有點震驚，原來解決問題真的不是重點？這讓我反思，其實行動研究非常注重「解決問題」，需要不斷檢視「行動是否有效」來修正自己的行動。想必在行動研究裡，觀摩裡的幾個句子會被老師視為「無效」吧。或許在行動研究以及社會工作的洗禮下，我也自然成了想解決問題的體質。</description></item><item><title>為自己做決定即是成為自己</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/02%E7%82%BA%E8%87%AA%E5%B7%B1%E5%81%9A%E6%B1%BA%E5%AE%9A%E5%8D%B3%E6%98%AF%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/</link><pubDate>Sat, 27 May 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/02%E7%82%BA%E8%87%AA%E5%B7%B1%E5%81%9A%E6%B1%BA%E5%AE%9A%E5%8D%B3%E6%98%AF%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/</guid><description>⁡在向陽實習的期間，我瞭解到讓會員主動做決定的重要性，工作者的角色除了要觀察會員的動力之外，也要順著他的動力，引導當事人可以主動做出決定。從這個角度來說，所謂的「案主自決」並非字面意思那麼簡單，或是把責任直接丟給案主，而是一個複雜的互動過程，必須引導案主為自己做出決定。當案主可以主動做出決定時，那麼就如《成為一個人》所說的可以更加成為自己，這中間要克服的是：該如何為自己做出決定？該如何信任自己的體驗？該如何面對挫折的可能？承擔失敗的風險？這個過程也就是「成為自己」了。</description></item><item><title>幻聽與疼痛：不可見的受苦</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/02%E5%B9%BB%E8%81%BD%E8%88%87%E7%96%BC%E7%97%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E8%A6%8B%E7%9A%84%E5%8F%97%E8%8B%A6/</link><pubDate>Tue, 16 May 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/02%E5%B9%BB%E8%81%BD%E8%88%87%E7%96%BC%E7%97%9B%E6%98%AF%E4%B8%8D%E5%8F%AF%E8%A6%8B%E7%9A%84%E5%8F%97%E8%8B%A6/</guid><description>這讓我感到有點豁然開朗，似乎真的能夠這樣說的通。也就是說，幻聽和疼痛真的有類似的特性，同樣的不可見、難以描述、依賴語言、需要向這個世界證明、一種內在的受苦經驗，把我過去對疼痛的理解和瞭解統統用上，這讓我感覺更瞭解幻聽了，也拉近與會員J的距離，很神奇。我覺得這都指向了，會所存在的意義為何，它作為一個共同的空間、社群可以彼此依存、互相對話理解的平台，在人與人的流動之間，彼此的受苦經驗能夠得到點療癒或被理解的可能。</description></item><item><title>促進對話的方法：內在透明化</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%85%A7%E5%9C%A8%E9%80%8F%E6%98%8E%E5%8C%96/</link><pubDate>Fri, 12 May 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E5%85%A7%E5%9C%A8%E9%80%8F%E6%98%8E%E5%8C%96/</guid><description>如同《開放對話·期待對話》裡提到「翻轉教育」，老師能夠透過學生知道自己的限制，因此老師也是學生。對助人者來說，即使案主表面看起來弱勢，但他具備最多關於受苦的知識和資訊，能夠成為老師為助人者解答。於是，這場會談就成為了重要的學習：助人者學習受苦的知識；案主學習如何教導助人者。雙方在學習的對話關係中成為夥伴，站在同一陣線，一起想辦法解決受苦的問題。更深入剖析，助人者作為學生的角色時，他的提問非常重要，問句像是一把鑰匙一樣，能夠開啟不同的對話，召喚出不同的東西。⁡</description></item><item><title>過道、渡者、苦難工作者</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%81%8E%E9%81%93%E6%B8%A1%E8%80%85%E8%8B%A6%E9%9B%A3%E5%B7%A5%E4%BD%9C%E8%80%85/</link><pubDate>Sun, 07 May 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%81%8E%E9%81%93%E6%B8%A1%E8%80%85%E8%8B%A6%E9%9B%A3%E5%B7%A5%E4%BD%9C%E8%80%85/</guid><description>過道，不只成為他人的過道，也成為自己的過道。渡者，不只成為他人的渡者，也成為自己的渡者。 ⁡無論是過道或是渡者，都賦予了苦難「方向性」，苦難因此有了指向，有了出口。也正如過去所學習的，要以「穿越」的方式來面對苦難。 ⁡</description></item><item><title>《受苦的倒影》新書講座：成為過道</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8F%97%E8%8B%A6%E7%9A%84%E5%80%92%E5%BD%B1/</link><pubDate>Sat, 06 May 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8F%97%E8%8B%A6%E7%9A%84%E5%80%92%E5%BD%B1/</guid><description>聽到「要成為過道而不是承接者」還是讓我蠻衝擊的！思含後來補充：渡者的概念，功課還是當事人要承擔，不是你要承擔。這次的講座真的大豐收，也覺得自己被支持了，老師甚至發揮督導的角色分享自己對助人工作者的想法。整理完這篇心得覺得，嗯～那就繼續痛苦地書寫、邊哭邊寫吧！</description></item><item><title>行動科學到開放式對話：人們用行動在對話</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E4%BA%BA%E5%80%91%E7%94%A8%E8%A1%8C%E5%8B%95%E5%9C%A8%E5%B0%8D%E8%A9%B1/</link><pubDate>Sat, 29 Apr 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E4%BA%BA%E5%80%91%E7%94%A8%E8%A1%8C%E5%8B%95%E5%9C%A8%E5%B0%8D%E8%A9%B1/</guid><description>行動研究與開放式對話都是有關人際行為世界可以如何得到更好的改變，是身為人際工作者的重要學習。因此，將這兩個理論融合，我的結論是「人際的世界處處都是行動，處處都是對話，人們是用行動在對話。這不分權力關係、能力強弱，即便弱的一方也是用弱在行動」。</description></item><item><title>慾望、驅力、動力</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/01%E6%85%BE%E6%9C%9B%E9%A9%85%E5%8A%9B%E5%8B%95%E5%8A%9B/</link><pubDate>Sat, 25 Mar 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%B7%A5%E4%BD%9C%E6%89%8B%E5%86%8A/01%E6%85%BE%E6%9C%9B%E9%A9%85%E5%8A%9B%E5%8B%95%E5%8A%9B/</guid><description>在人與人的關係中，慾望也是必須被看見的。人際關係一不小心就淪為他者化的獨白，為了追求平等的對話關係，除了尊重他異性之外，肯認自己的慾望也是一個關鍵。究竟內心深處想要的是什麼？帶動動力的意義也包括要帶動「奪權」的慾望，奪回屬於自己的權力，這是生而為人本質上很重要的一部分。</description></item><item><title>初入會所的觀察</title><link>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/01%E5%88%9D%E5%85%A5%E6%9C%83%E6%89%80%E7%9A%84%E8%A7%80%E5%AF%9F/</link><pubDate>Tue, 14 Mar 2023 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E6%9C%83%E6%89%80%E6%A8%A1%E5%BC%8F/%E6%9C%83%E6%89%80%E5%AF%A6%E7%BF%92/01%E5%88%9D%E5%85%A5%E6%9C%83%E6%89%80%E7%9A%84%E8%A7%80%E5%AF%9F/</guid><description>會所營造的團體動力、夥伴協作關係都有深奧的智慧和意義，這些意義指出了人際關係、情緒、界線、能力、超越性、民主、參與等重要議題，並且也更根本地指出，作為一個助人工作者該如何建立助人關係、以何種方式存在於受苦主體身旁，與主體為伴。</description></item><item><title>進階團體工作</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%80%B2%E9%9A%8E%E5%9C%98%E9%AB%94%E5%B7%A5%E4%BD%9C/</link><pubDate>Fri, 28 Oct 2022 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%80%B2%E9%9A%8E%E5%9C%98%E9%AB%94%E5%B7%A5%E4%BD%9C/</guid><description>今天體悟到團體的Leader不是領導而是引導。對於團體中浮現的個人生命議題要有敏感度，但不是指著人告訴他應該哪裡改變、哪裡做不好。反而是帶著寬容接納的態度去叩問探詢，用適合的問題引導出更有深度的內容和動力。</description></item><item><title>一位好的父親是如何養成的？</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E4%B8%80%E4%BD%8D%E5%A5%BD%E7%9A%84%E7%88%B6%E8%A6%AA%E6%98%AF%E5%A6%82%E4%BD%95%E9%A4%8A%E6%88%90%E7%9A%84/</link><pubDate>Fri, 21 Oct 2022 12:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E4%B8%80%E4%BD%8D%E5%A5%BD%E7%9A%84%E7%88%B6%E8%A6%AA%E6%98%AF%E5%A6%82%E4%BD%95%E9%A4%8A%E6%88%90%E7%9A%84/</guid><description>相較於女性成為母親的歷程，較容易會看到女性之間的經驗傳承和分享；對男性來說，成為一位父親的歷程似乎是全憑己力，尤其是沒有一個好的父親榜樣作為參考時，往往延續上一代的父子關係，告訴孩子：「因為我小時候我爸也是這樣對我的。」躲進兒子的角色而始終難以成為父親。</description></item><item><title>社會工作是陰性的存在</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C%E6%98%AF%E9%99%B0%E6%80%A7%E7%9A%84%E5%AD%98%E5%9C%A8/</link><pubDate>Wed, 24 Aug 2022 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%A4%BE%E6%9C%83%E5%B7%A5%E4%BD%9C%E6%98%AF%E9%99%B0%E6%80%A7%E7%9A%84%E5%AD%98%E5%9C%A8/</guid><description>「社工的角色一定要跟人搭配，很多時候是串連，去創造一個空間。」</description></item><item><title>人生百味：第二次的期中報告</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%A5%B3%E6%80%A7%E4%B8%BB%E7%BE%A9%E4%BA%BA%E7%94%9F%E7%99%BE%E5%91%B3/</link><pubDate>Fri, 20 May 2022 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%A5%B3%E6%80%A7%E4%B8%BB%E7%BE%A9%E4%BA%BA%E7%94%9F%E7%99%BE%E5%91%B3/</guid><description>對我來說，女性主義的重點之一在於如何從「他者」當中建立主體性，透過各式各樣的方法賦予當事人發聲的力量去對抗標籤和壓迫。從助人工作的角度來看，百味用一種緩慢的、貼近的、接納的態度來輔助貧窮者們去學會怎麼「說自己」，而不是由社會來告訴你自己該如何被看待。</description></item><item><title>社會工作觀察：匿名戒酒會，非正式的知識建構</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E7%9A%84%E7%9F%A5%E8%AD%98%E5%BB%BA%E6%A7%8B/</link><pubDate>Fri, 15 Apr 2022 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E9%9D%9E%E6%AD%A3%E5%BC%8F%E7%9A%84%E7%9F%A5%E8%AD%98%E5%BB%BA%E6%A7%8B/</guid><description>我自己一直在觀察，如何與父權社會的男性工作，而郭大哥身上具備了那樣的生命經驗和能力，能夠改變藥酒癮的人，達到社會工作的目的。我相信，在他身上存在一種非正式的知識建構，是教科書沒有寫的、專家沒辦法說的，而是唯有真正的當事人經歷了一切才建構起的知識，發展成一套非常厲害的工作方法。</description></item><item><title>換位思考與非暴力溝通</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%9B%E4%BD%8D%E6%80%9D%E8%80%83%E8%88%87%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%BA%9D%E9%80%9A/</link><pubDate>Wed, 25 Aug 2021 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%9B%E4%BD%8D%E6%80%9D%E8%80%83%E8%88%87%E9%9D%9E%E6%9A%B4%E5%8A%9B%E6%BA%9D%E9%80%9A/</guid><description>非暴力溝通不只是在學習溝通能力，我認為更多的是「與人連結、與自我連結」的能力。受到社會化的影響，長期處於言語暴力環境下的我們容易變得麻木，和情緒保持遙遠的距離，正如上述所說，**非暴力溝通能幫助我們找回內在的連結、情緒的界限，是擁抱自己也是善待自己的方法之一。</description></item><item><title>同步聽打培訓</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%90%8C%E6%AD%A5%E8%81%BD%E6%89%93%E5%9F%B9%E8%A8%93/</link><pubDate>Sun, 08 Aug 2021 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%90%8C%E6%AD%A5%E8%81%BD%E6%89%93%E5%9F%B9%E8%A8%93/</guid><description>上完兩天的課程，我覺得同步聽打服務意味著聽障者的平權，希望消弭與聽人之間的差異，能夠接收到同樣完整的內容，如上課、講座都能盡量無障礙。反過頭來思考，我會希望聽障者不要因為缺少聽打服務而沒辦法參與某個講座、得到某個體驗，那都是讓選擇受到限制的狀況，從這個角度來說，我對於人權的理念即是希望拓寬選擇的範圍，撐出選擇的空間，盡量讓人不要因為自身差異而缺少選擇權。</description></item><item><title>講座心得｜創傷知情與兒少服務工作坊</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E5%BF%83%E5%BE%97/</link><pubDate>Mon, 17 May 2021 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E5%BF%83%E5%BE%97/</guid><description>綜合所學到的內容，我覺得創傷知情的重點之一在於「學習如何調節自身情緒狀態」。身體作為情緒的載體，無論我們有無意識，其實都在自動幫助我們進行調節，戰或逃或凍結也是一種自然面對創傷的反應。然而**重點在於，如何藉由練習，嘗試發展出較為正向的調節方式，並且是自己更能夠掌握的，讓自己能在進入「紅燈」狀態之前，就先在「黃燈」意識到並踩下煞車。</description></item><item><title>講座筆記｜創傷知情與兒少服務工作坊筆記</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E7%AD%86%E8%A8%98/</link><pubDate>Tue, 27 Apr 2021 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%89%B5%E5%82%B7%E7%9F%A5%E6%83%85%E5%B7%A5%E4%BD%9C%E5%9D%8A%E7%AD%86%E8%A8%98/</guid><description>&lt;h5 id="活動名稱創傷知情與兒少服務工作坊"&gt;活動名稱：創傷知情與兒少服務工作坊&lt;/h5&gt;
+&lt;h5 id="日期2021年4月27-28日"&gt;日期：2021年4月27-28日&lt;/h5&gt;
+&lt;h5 id="主辦單位勵馨基金會"&gt;主辦單位：勵馨基金會&lt;/h5&gt;
+&lt;h5 id="講師胡美齡-諮商心理師華人創傷知情團隊"&gt;講師：胡美齡 諮商心理師（華人創傷知情團隊）&lt;/h5&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;相關文章&#34;&gt;相關文章：&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9801.md&#34;&gt;開放式對話（Open Dialogue）課後筆記Part1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9802.md&#34;&gt;開放式對話（Open Dialogue）課後筆記Part2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a01.md&#34;&gt;開放式對話進階工作坊Day1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a02.md&#34;&gt;開放式對話進階工作坊Day 2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e6%9b%b8%e6%91%98/%e9%96%8b%e6%94%be%e5%b0%8d%e8%a9%b1%e6%9c%9f%e5%be%85%e5%b0%8d%e8%a9%b1.md&#34;&gt;書摘｜《開放對話・期待對話：尊重他者當下的他異性》&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e8%82%af%e8%aa%8d%e6%af%8f%e4%b8%80%e7%a8%ae%e8%81%b2%e9%9f%b3%e7%9a%84%e5%ad%98%e5%9c%a8.md&#34;&gt;開放式對話：肯認每一種聲音的存在&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e5%85%a7%e5%9c%a8%e9%80%8f%e6%98%8e%e5%8c%96.md&#34;&gt;促進對話的方法：內在透明化&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e4%ba%ba%e5%80%91%e7%94%a8%e8%a1%8c%e5%8b%95%e5%9c%a8%e5%b0%8d%e8%a9%b1.md&#34;&gt;行動科學到開放式對話：人們用行動在對話&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e5%b0%8d%e8%a9%b1%e6%9c%ac%e8%ba%ab%e5%b0%b1%e6%98%af%e8%a1%8c%e5%8b%95.md&#34;&gt;對話本身就是行動&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://silvertranslation.blogspot.com/2015/05/blog-post.html&#34;&gt;開放式對話真實性準則&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e7%ad%86%e8%a8%98.md&#34;&gt;講座筆記｜創傷知情與兒少服務工作坊筆記&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e5%bf%83%e5%be%97.md&#34;&gt;講座心得｜創傷知情與兒少服務工作坊&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="相關文章"&gt;相關文章：&lt;/h4&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9801.md"&gt;開放式對話（Open Dialogue）課後筆記Part1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9802.md"&gt;開放式對話（Open Dialogue）課後筆記Part2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a01.md"&gt;開放式對話進階工作坊Day1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a02.md"&gt;開放式對話進階工作坊Day 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e6%9b%b8%e6%91%98/%e9%96%8b%e6%94%be%e5%b0%8d%e8%a9%b1%e6%9c%9f%e5%be%85%e5%b0%8d%e8%a9%b1.md"&gt;書摘｜《開放對話・期待對話：尊重他者當下的他異性》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e8%82%af%e8%aa%8d%e6%af%8f%e4%b8%80%e7%a8%ae%e8%81%b2%e9%9f%b3%e7%9a%84%e5%ad%98%e5%9c%a8.md"&gt;開放式對話：肯認每一種聲音的存在&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e5%85%a7%e5%9c%a8%e9%80%8f%e6%98%8e%e5%8c%96.md"&gt;促進對話的方法：內在透明化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e4%ba%ba%e5%80%91%e7%94%a8%e8%a1%8c%e5%8b%95%e5%9c%a8%e5%b0%8d%e8%a9%b1.md"&gt;行動科學到開放式對話：人們用行動在對話&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%96%8b%e6%94%be%e5%bc%8f%e5%b0%8d%e8%a9%b1/%e5%b0%8d%e8%a9%b1%e6%9c%ac%e8%ba%ab%e5%b0%b1%e6%98%af%e8%a1%8c%e5%8b%95.md"&gt;對話本身就是行動&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://silvertranslation.blogspot.com/2015/05/blog-post.html"&gt;開放式對話真實性準則&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e7%ad%86%e8%a8%98.md"&gt;講座筆記｜創傷知情與兒少服務工作坊筆記&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e5%bf%83%e5%be%97.md"&gt;講座心得｜創傷知情與兒少服務工作坊&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;day-1&#34;&gt;Day 1&lt;/h2&gt;
+&lt;h2 id="day-1"&gt;Day 1&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;創傷知情Trauma-informed&lt;/strong&gt;&lt;/p&gt;
@@ -528,7 +179,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;創傷知情四大原則&#34;&gt;創傷知情四大原則&lt;/h5&gt;
+&lt;h5 id="創傷知情四大原則"&gt;創傷知情四大原則&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;理解創傷Realize：&lt;/p&gt;
@@ -544,7 +195,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h6 id=&#34;小花的故事&#34;&gt;小花的故事&lt;/h6&gt;
+&lt;h6 id="小花的故事"&gt;小花的故事&lt;/h6&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;台灣老師，進到教室就一定要認真上課，不然就是壞小孩&lt;/p&gt;
@@ -560,7 +211,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;創傷是什麼&#34;&gt;創傷是什麼？&lt;/h5&gt;
+&lt;h5 id="創傷是什麼"&gt;創傷是什麼？&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;從研究來看，&lt;strong&gt;最容易造成身心影響的是虐待疏忽跟家庭暴力，因為它是長期的&lt;/strong&gt;。&lt;/p&gt;
@@ -594,7 +245,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;童年逆境研究adverse-childhood-experience&#34;&gt;童年逆境研究（Adverse Childhood Experience）&lt;/h5&gt;
+&lt;h5 id="童年逆境研究adverse-childhood-experience"&gt;童年逆境研究（Adverse Childhood Experience）&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Felitti醫生，做肥胖的醫生，想解決肥胖的問題，&lt;strong&gt;有一次問錯問題：「第一次性經驗幾公斤」發現童年的創傷跟肥胖或許有關，編了童年逆境的問卷&lt;/strong&gt;。&lt;/p&gt;
@@ -604,7 +255,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;ace-research&#34;&gt;ACE research&lt;/h5&gt;
+&lt;h5 id="ace-research"&gt;ACE research&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;分數五分，幾乎百分之百會使用抗憂鬱藥物。酒癮、憂鬱症、抗憂鬱藥物、成為家暴加害人、自傷企圖、青少年性行為/懷孕、工作表現、成為家暴受害人、HIV、藥物濫用等都有關&lt;/strong&gt;。&lt;/p&gt;
@@ -620,8 +271,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;創傷壓力釋放影片tre-star原始人&#34;&gt;創傷壓力釋放影片「tre-star」原始人&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=2qx63W496Uo&#34;&gt;創傷壓力釋放影片「tre-star」原始人&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id="創傷壓力釋放影片tre-star原始人"&gt;創傷壓力釋放影片「tre-star」原始人&lt;/h5&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=2qx63W496Uo"&gt;創傷壓力釋放影片「tre-star」原始人&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;面臨威脅時，肌肉僵硬、壓力反應，戰或逃，為什麼會有凍結？&lt;/p&gt;
@@ -640,143 +291,99 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;so-what-happened&#34;&gt;So What Happened?&lt;/h5&gt;
+&lt;h5 id="so-what-happened"&gt;So What Happened?&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;最近二三十年發展的，人我神經生理學interpersonal neurobiology，&lt;strong&gt;壓力調節系統&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>親密關係暴力的矛盾與複雜困境</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E8%A6%AA%E5%AF%86%E9%97%9C%E4%BF%82%E6%9A%B4%E5%8A%9B%E7%9A%84%E7%9F%9B%E7%9B%BE%E8%88%87%E8%A4%87%E9%9B%9C%E5%9B%B0%E5%A2%83/</link>
-      <pubDate>Sun, 18 Apr 2021 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E8%A6%AA%E5%AF%86%E9%97%9C%E4%BF%82%E6%9A%B4%E5%8A%9B%E7%9A%84%E7%9F%9B%E7%9B%BE%E8%88%87%E8%A4%87%E9%9B%9C%E5%9B%B0%E5%A2%83/</guid>
-      <description>從家族治療的觀點來看，親密關係暴力正是家庭系統出現問題的情境，也是需要觀察家庭動力和互動模式的情境。根據循環因果的概念，我們很難在親密關係中評斷誰是最正確/錯誤的，或是誰該負多一點責任，探討這些問題也不太有幫助。</description>
-    </item>
-    <item>
-      <title>握有權力時的焦慮</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%A1%E6%9C%89%E6%AC%8A%E5%8A%9B%E6%99%82%E7%9A%84%E7%84%A6%E6%85%AE/</link>
-      <pubDate>Tue, 09 Feb 2021 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%A1%E6%9C%89%E6%AC%8A%E5%8A%9B%E6%99%82%E7%9A%84%E7%84%A6%E6%85%AE/</guid>
-      <description>當然，我知道「凡分配必有不公平」的法則，劃定一條線的範圍時，必定會有人被排除在外**，但我還是很理想地希望可以減少那些不滿的情況發生。回過頭看自己寫的東西，會覺得自己太過固執或濫好人，但是這的確是我的想法沒錯，我只是不知道該如何處理那份焦慮，也尚未學會處理權力關係。</description>
-    </item>
-    <item>
-      <title>開放式對話：肯認每一種聲音的存在</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%AF%8F%E4%B8%80%E7%A8%AE%E8%81%B2%E9%9F%B3%E7%9A%84%E5%AD%98%E5%9C%A8/</link>
-      <pubDate>Tue, 24 Nov 2020 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%AF%8F%E4%B8%80%E7%A8%AE%E8%81%B2%E9%9F%B3%E7%9A%84%E5%AD%98%E5%9C%A8/</guid>
-      <description>我認為開放式對話是一種將人類受苦經驗轉化的方法，藉由對話創造出開放的空間，讓原本無法用言語述說、表現在身體上的症狀和經歷得以被說出，同時也被見證。有些受苦經驗是零碎、斷裂的；有些則過於巨大而無法觸碰，這些尚未能被好好辨識、整理的經驗隱藏在內心深處、難以被描述，而開放式對話藉由「對話」讓痛苦能被拾起、找到出口，並建構出新的意義。從這個觀點來看，開放式對話的確是在與當事人創造共同的語言，讓受苦的經驗/聲音能被表達出來。</description>
-    </item>
-    <item>
-      <title>貧窮人的台北：缺席者的發聲練習</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%BC%BA%E5%B8%AD%E8%80%85%E7%9A%84%E7%99%BC%E8%81%B2%E7%B7%B4%E7%BF%92/</link>
-      <pubDate>Fri, 20 Nov 2020 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%BC%BA%E5%B8%AD%E8%80%85%E7%9A%84%E7%99%BC%E8%81%B2%E7%B7%B4%E7%BF%92/</guid>
-      <description>從歌曲中可以感受到，儘管每個人背負的故事不同，但是對於流浪的心情卻能找到共同的感受，集體創作出具有代表性的作品，並用自己的聲音歌唱。這兩首作品感人的地方在於：將那些尚未被好好訴說、整理；尚未能用言語描述的故事或心情，用音樂的方式詮釋並賦予意義。</description>
-    </item>
-    <item>
-      <title>開放式對話進階工作坊Day 2</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/</link>
-      <pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/</guid>
-      <description>&lt;h5 id=&#34;講座名稱開放式對話進階工作坊&#34;&gt;講座名稱：開放式對話進階工作坊&lt;/h5&gt;
-&lt;h5 id=&#34;日期2020年11月14-15日&#34;&gt;日期：2020年11月14-15日&lt;/h5&gt;
-&lt;h5 id=&#34;主辦單位荷光性諮商中心&#34;&gt;主辦單位：荷光性諮商中心&lt;/h5&gt;
-&lt;h5 id=&#34;講師郝柏瑋&#34;&gt;講師：郝柏瑋&lt;/h5&gt;
+&lt;p&gt;最近二三十年發展的，人我神經生理學interpersonal neurobiology，&lt;strong&gt;壓力調節系統&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>親密關係暴力的矛盾與複雜困境</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E8%A6%AA%E5%AF%86%E9%97%9C%E4%BF%82%E6%9A%B4%E5%8A%9B%E7%9A%84%E7%9F%9B%E7%9B%BE%E8%88%87%E8%A4%87%E9%9B%9C%E5%9B%B0%E5%A2%83/</link><pubDate>Sun, 18 Apr 2021 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E8%A6%AA%E5%AF%86%E9%97%9C%E4%BF%82%E6%9A%B4%E5%8A%9B%E7%9A%84%E7%9F%9B%E7%9B%BE%E8%88%87%E8%A4%87%E9%9B%9C%E5%9B%B0%E5%A2%83/</guid><description>從家族治療的觀點來看，親密關係暴力正是家庭系統出現問題的情境，也是需要觀察家庭動力和互動模式的情境。根據循環因果的概念，我們很難在親密關係中評斷誰是最正確/錯誤的，或是誰該負多一點責任，探討這些問題也不太有幫助。</description></item><item><title>握有權力時的焦慮</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%A1%E6%9C%89%E6%AC%8A%E5%8A%9B%E6%99%82%E7%9A%84%E7%84%A6%E6%85%AE/</link><pubDate>Tue, 09 Feb 2021 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E6%8F%A1%E6%9C%89%E6%AC%8A%E5%8A%9B%E6%99%82%E7%9A%84%E7%84%A6%E6%85%AE/</guid><description>當然，我知道「凡分配必有不公平」的法則，劃定一條線的範圍時，必定會有人被排除在外**，但我還是很理想地希望可以減少那些不滿的情況發生。回過頭看自己寫的東西，會覺得自己太過固執或濫好人，但是這的確是我的想法沒錯，我只是不知道該如何處理那份焦慮，也尚未學會處理權力關係。</description></item><item><title>開放式對話：肯認每一種聲音的存在</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%AF%8F%E4%B8%80%E7%A8%AE%E8%81%B2%E9%9F%B3%E7%9A%84%E5%AD%98%E5%9C%A8/</link><pubDate>Tue, 24 Nov 2020 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%AF%8F%E4%B8%80%E7%A8%AE%E8%81%B2%E9%9F%B3%E7%9A%84%E5%AD%98%E5%9C%A8/</guid><description>我認為開放式對話是一種將人類受苦經驗轉化的方法，藉由對話創造出開放的空間，讓原本無法用言語述說、表現在身體上的症狀和經歷得以被說出，同時也被見證。有些受苦經驗是零碎、斷裂的；有些則過於巨大而無法觸碰，這些尚未能被好好辨識、整理的經驗隱藏在內心深處、難以被描述，而開放式對話藉由「對話」讓痛苦能被拾起、找到出口，並建構出新的意義。從這個觀點來看，開放式對話的確是在與當事人創造共同的語言，讓受苦的經驗/聲音能被表達出來。</description></item><item><title>貧窮人的台北：缺席者的發聲練習</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%BC%BA%E5%B8%AD%E8%80%85%E7%9A%84%E7%99%BC%E8%81%B2%E7%B7%B4%E7%BF%92/</link><pubDate>Fri, 20 Nov 2020 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E7%BC%BA%E5%B8%AD%E8%80%85%E7%9A%84%E7%99%BC%E8%81%B2%E7%B7%B4%E7%BF%92/</guid><description>從歌曲中可以感受到，儘管每個人背負的故事不同，但是對於流浪的心情卻能找到共同的感受，集體創作出具有代表性的作品，並用自己的聲音歌唱。這兩首作品感人的地方在於：將那些尚未被好好訴說、整理；尚未能用言語描述的故事或心情，用音樂的方式詮釋並賦予意義。</description></item><item><title>開放式對話進階工作坊Day 2</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/</link><pubDate>Sun, 15 Nov 2020 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/</guid><description>&lt;h5 id="講座名稱開放式對話進階工作坊"&gt;講座名稱：開放式對話進階工作坊&lt;/h5&gt;
+&lt;h5 id="日期2020年11月14-15日"&gt;日期：2020年11月14-15日&lt;/h5&gt;
+&lt;h5 id="主辦單位荷光性諮商中心"&gt;主辦單位：荷光性諮商中心&lt;/h5&gt;
+&lt;h5 id="講師郝柏瑋"&gt;講師：郝柏瑋&lt;/h5&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;相關文章&#34;&gt;相關文章：&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9801.md&#34;&gt;開放式對話（Open Dialogue）課後筆記Part1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9802.md&#34;&gt;開放式對話（Open Dialogue）課後筆記Part2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a01.md&#34;&gt;開放式對話進階工作坊Day1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a02.md&#34;&gt;開放式對話進階工作坊Day 2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e6%9b%b8%e6%91%98/%e9%96%8b%e6%94%be%e5%b0%8d%e8%a9%b1%e6%9c%9f%e5%be%85%e5%b0%8d%e8%a9%b1.md&#34;&gt;書摘｜《開放對話・期待對話：尊重他者當下的他異性》&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e8%82%af%e8%aa%8d%e6%af%8f%e4%b8%80%e7%a8%ae%e8%81%b2%e9%9f%b3%e7%9a%84%e5%ad%98%e5%9c%a8.md&#34;&gt;開放式對話：肯認每一種聲音的存在&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e5%85%a7%e5%9c%a8%e9%80%8f%e6%98%8e%e5%8c%96.md&#34;&gt;促進對話的方法：內在透明化&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e4%ba%ba%e5%80%91%e7%94%a8%e8%a1%8c%e5%8b%95%e5%9c%a8%e5%b0%8d%e8%a9%b1.md&#34;&gt;行動科學到開放式對話：人們用行動在對話&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e5%b0%8d%e8%a9%b1%e6%9c%ac%e8%ba%ab%e5%b0%b1%e6%98%af%e8%a1%8c%e5%8b%95.md&#34;&gt;對話本身就是行動&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://silvertranslation.blogspot.com/2015/05/blog-post.html&#34;&gt;開放式對話真實性準則&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e7%ad%86%e8%a8%98.md&#34;&gt;講座筆記｜創傷知情與兒少服務工作坊筆記&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e5%bf%83%e5%be%97.md&#34;&gt;講座心得｜創傷知情與兒少服務工作坊&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="相關文章"&gt;相關文章：&lt;/h4&gt;
+&lt;p&gt;&lt;a href="%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9801.md"&gt;開放式對話（Open Dialogue）課後筆記Part1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9802.md"&gt;開放式對話（Open Dialogue）課後筆記Part2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a01.md"&gt;開放式對話進階工作坊Day1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a02.md"&gt;開放式對話進階工作坊Day 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e6%9b%b8%e6%91%98/%e9%96%8b%e6%94%be%e5%b0%8d%e8%a9%b1%e6%9c%9f%e5%be%85%e5%b0%8d%e8%a9%b1.md"&gt;書摘｜《開放對話・期待對話：尊重他者當下的他異性》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e8%82%af%e8%aa%8d%e6%af%8f%e4%b8%80%e7%a8%ae%e8%81%b2%e9%9f%b3%e7%9a%84%e5%ad%98%e5%9c%a8.md"&gt;開放式對話：肯認每一種聲音的存在&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e5%85%a7%e5%9c%a8%e9%80%8f%e6%98%8e%e5%8c%96.md"&gt;促進對話的方法：內在透明化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e4%ba%ba%e5%80%91%e7%94%a8%e8%a1%8c%e5%8b%95%e5%9c%a8%e5%b0%8d%e8%a9%b1.md"&gt;行動科學到開放式對話：人們用行動在對話&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e5%b0%8d%e8%a9%b1%e6%9c%ac%e8%ba%ab%e5%b0%b1%e6%98%af%e8%a1%8c%e5%8b%95.md"&gt;對話本身就是行動&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://silvertranslation.blogspot.com/2015/05/blog-post.html"&gt;開放式對話真實性準則&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e7%ad%86%e8%a8%98.md"&gt;講座筆記｜創傷知情與兒少服務工作坊筆記&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e5%bf%83%e5%be%97.md"&gt;講座心得｜創傷知情與兒少服務工作坊&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;家庭動力&#34;&gt;【家庭動力】&lt;/h4&gt;
+&lt;h4 id="家庭動力"&gt;【家庭動力】&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;家庭動力就是說，我們每個人在家裡面都會有一個位子，你都會因為這個位子跟別人互動，因而產生一種動力、互動模式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;動力就代表是流動的&lt;/strong&gt;，像夫妻互動有時會加入小孩的互動；伴侶之間很常吵架，但又不想分開，然後可能有人決定懷孕，用婚姻的方式把伴侶留下，但伴侶不一定想要被留下，又出去找別的家庭，媽媽只好跟小孩一直念，變成所謂的&lt;strong&gt;情緒伴侶&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;他還有可能做一些事情，&lt;strong&gt;父母吵架時可能小孩就會出現問題，因為當他出現問題時，爸媽就會合作不吵架，所以他犧牲自己，聯合次要敵人打擊主要敵人，這樣的人我們就稱為代罪羔羊&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;家族治療很常有一句slogan，「&lt;strong&gt;愛加上焦慮就是控制&lt;/strong&gt;。」&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;我們的工作就是幫他看到他還有愛，為什麼想控制、會恨，其實都還是有在乎&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;figure class=&#34;post-figure&#34;&gt;&lt;picture&gt;
-  &lt;source
-    srcset=&#34;https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_f2aec659b9df2487.webp 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_382679e6f3e3ff2b.webp 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_bd5845ea07fab30.webp 920w&#34;
-    sizes=&#34;(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)&#34;
-    type=&#34;image/webp&#34;&gt;
-  &lt;img
-    loading=&#34;lazy&#34;
-    decoding=&#34;async&#34;
-    fetchpriority=&#34;auto&#34;
-    src=&#34;https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_aeff023332657e54.jpg&#34;
-    srcset=&#34;https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_6684f1c8adb551f3.jpg 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_ee7e669f5b9b30ae.jpg 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_aeff023332657e54.jpg 920w&#34;
-    alt=&#34;article image&#34;
-    width=&#34;920&#34;
-    height=&#34;690&#34;
-    sizes=&#34;(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)&#34;
-    class=&#34;post-content-image&#34;&gt;
+&lt;p&gt;&lt;figure class="post-figure"&gt;&lt;picture&gt;
+&lt;source
+srcset="https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_f2aec659b9df2487.webp 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_382679e6f3e3ff2b.webp 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_bd5845ea07fab30.webp 920w"
+sizes="(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
+type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+fetchpriority="auto"
+src="https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_aeff023332657e54.jpg"
+srcset="https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_6684f1c8adb551f3.jpg 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_ee7e669f5b9b30ae.jpg 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0013_hu_aeff023332657e54.jpg 920w"
+alt="article image"
+width="920"
+height="690"
+sizes="(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
+class="post-content-image"&gt;
 &lt;/picture&gt;
-
-  &lt;/figure&gt;&lt;/p&gt;
-&lt;h4 id=&#34;精神疾病是文化建構的&#34;&gt;【精神疾病是文化建構的】&lt;/h4&gt;
+&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id="精神疾病是文化建構的"&gt;【精神疾病是文化建構的】&lt;/h4&gt;
 &lt;p&gt;也許真的有腦中的狀況，可是我們不是只有看到腦中的狀況，雖然有身體的部分但是一定也有文化的部分，同時受到歷史文化、生物學所形塑。&lt;/p&gt;
 &lt;p&gt;看精神醫療歷史就知道，&lt;strong&gt;有時候是病，有時候不是病，他不是百分之百絕對，是流動的&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;舉例：如果有一天，因為現在是3C世界，如果有人手腳不好，會不會被視為3C失用症？&lt;/p&gt;
 &lt;p&gt;開放式對話不只要看生理的部分，還要看這個人在文化中、關係中受苦的部分是什麼&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;生病會受苦，但蠻多是來自關係的受苦，我們做的就是編織關係&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;技術重要還是態度重要&#34;&gt;【技術重要還是態度重要？】&lt;/h4&gt;
-&lt;p&gt;&lt;figure class=&#34;post-figure&#34;&gt;&lt;picture&gt;
-  &lt;source
-    srcset=&#34;https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_441a3eda03a84f74.webp 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_a30029cd16a8f2f.webp 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_9526c8d8a179110a.webp 920w&#34;
-    sizes=&#34;(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)&#34;
-    type=&#34;image/webp&#34;&gt;
-  &lt;img
-    loading=&#34;lazy&#34;
-    decoding=&#34;async&#34;
-    fetchpriority=&#34;auto&#34;
-    src=&#34;https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_d85f9876c806e626.jpg&#34;
-    srcset=&#34;https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_2e62739cb28fc4bc.jpg 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_a3e2be240cc345d6.jpg 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_d85f9876c806e626.jpg 920w&#34;
-    alt=&#34;article image&#34;
-    width=&#34;920&#34;
-    height=&#34;690&#34;
-    sizes=&#34;(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)&#34;
-    class=&#34;post-content-image&#34;&gt;
+&lt;h4 id="技術重要還是態度重要"&gt;【技術重要還是態度重要？】&lt;/h4&gt;
+&lt;p&gt;&lt;figure class="post-figure"&gt;&lt;picture&gt;
+&lt;source
+srcset="https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_441a3eda03a84f74.webp 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_a30029cd16a8f2f.webp 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_9526c8d8a179110a.webp 920w"
+sizes="(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
+type="image/webp"&gt;
+&lt;img
+loading="lazy"
+decoding="async"
+fetchpriority="auto"
+src="https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_d85f9876c806e626.jpg"
+srcset="https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_2e62739cb28fc4bc.jpg 360w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_a3e2be240cc345d6.jpg 640w, https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A02/0014_hu_d85f9876c806e626.jpg 920w"
+alt="article image"
+width="920"
+height="690"
+sizes="(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
+class="post-content-image"&gt;
 &lt;/picture&gt;
-
-  &lt;/figure&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>開放式對話進階工作坊Day1</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A01/</link>
-      <pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A01/</guid>
-      <description>&lt;h5 id=&#34;講座名稱開放式對話進階工作坊&#34;&gt;講座名稱：開放式對話進階工作坊&lt;/h5&gt;
-&lt;h5 id=&#34;日期2020年11月14-15日&#34;&gt;日期：2020年11月14-15日&lt;/h5&gt;
-&lt;h5 id=&#34;主辦單位荷光性諮商中心&#34;&gt;主辦單位：荷光性諮商中心&lt;/h5&gt;
-&lt;h5 id=&#34;講師郝柏瑋&#34;&gt;講師：郝柏瑋&lt;/h5&gt;
+&lt;/figure&gt;&lt;/p&gt;</description></item><item><title>開放式對話進階工作坊Day1</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A01/</link><pubDate>Sat, 14 Nov 2020 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A01/</guid><description>&lt;h5 id="講座名稱開放式對話進階工作坊"&gt;講座名稱：開放式對話進階工作坊&lt;/h5&gt;
+&lt;h5 id="日期2020年11月14-15日"&gt;日期：2020年11月14-15日&lt;/h5&gt;
+&lt;h5 id="主辦單位荷光性諮商中心"&gt;主辦單位：荷光性諮商中心&lt;/h5&gt;
+&lt;h5 id="講師郝柏瑋"&gt;講師：郝柏瑋&lt;/h5&gt;
 &lt;hr&gt;
-&lt;h4 id=&#34;相關文章&#34;&gt;相關文章：&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9801.md&#34;&gt;開放式對話（Open Dialogue）課後筆記Part1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9802.md&#34;&gt;開放式對話（Open Dialogue）課後筆記Part2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a01.md&#34;&gt;開放式對話進階工作坊Day1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a02.md&#34;&gt;開放式對話進階工作坊Day 2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e6%9b%b8%e6%91%98/%e9%96%8b%e6%94%be%e5%b0%8d%e8%a9%b1%e6%9c%9f%e5%be%85%e5%b0%8d%e8%a9%b1.md&#34;&gt;書摘｜《開放對話・期待對話：尊重他者當下的他異性》&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e8%82%af%e8%aa%8d%e6%af%8f%e4%b8%80%e7%a8%ae%e8%81%b2%e9%9f%b3%e7%9a%84%e5%ad%98%e5%9c%a8.md&#34;&gt;開放式對話：肯認每一種聲音的存在&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e5%85%a7%e5%9c%a8%e9%80%8f%e6%98%8e%e5%8c%96.md&#34;&gt;促進對話的方法：內在透明化&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e4%ba%ba%e5%80%91%e7%94%a8%e8%a1%8c%e5%8b%95%e5%9c%a8%e5%b0%8d%e8%a9%b1.md&#34;&gt;行動科學到開放式對話：人們用行動在對話&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;%e5%b0%8d%e8%a9%b1%e6%9c%ac%e8%ba%ab%e5%b0%b1%e6%98%af%e8%a1%8c%e5%8b%95.md&#34;&gt;對話本身就是行動&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://silvertranslation.blogspot.com/2015/05/blog-post.html&#34;&gt;開放式對話真實性準則&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e7%ad%86%e8%a8%98.md&#34;&gt;講座筆記｜創傷知情與兒少服務工作坊筆記&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e5%bf%83%e5%be%97.md&#34;&gt;講座心得｜創傷知情與兒少服務工作坊&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id="相關文章"&gt;相關文章：&lt;/h4&gt;
+&lt;p&gt;&lt;a href="%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9801.md"&gt;開放式對話（Open Dialogue）課後筆記Part1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e8%aa%b2%e5%be%8c%e7%ad%86%e8%a8%9802.md"&gt;開放式對話（Open Dialogue）課後筆記Part2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a01.md"&gt;開放式對話進階工作坊Day1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a02.md"&gt;開放式對話進階工作坊Day 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e6%9b%b8%e6%91%98/%e9%96%8b%e6%94%be%e5%b0%8d%e8%a9%b1%e6%9c%9f%e5%be%85%e5%b0%8d%e8%a9%b1.md"&gt;書摘｜《開放對話・期待對話：尊重他者當下的他異性》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e8%82%af%e8%aa%8d%e6%af%8f%e4%b8%80%e7%a8%ae%e8%81%b2%e9%9f%b3%e7%9a%84%e5%ad%98%e5%9c%a8.md"&gt;開放式對話：肯認每一種聲音的存在&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e5%85%a7%e5%9c%a8%e9%80%8f%e6%98%8e%e5%8c%96.md"&gt;促進對話的方法：內在透明化&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e4%ba%ba%e5%80%91%e7%94%a8%e8%a1%8c%e5%8b%95%e5%9c%a8%e5%b0%8d%e8%a9%b1.md"&gt;行動科學到開放式對話：人們用行動在對話&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="%e5%b0%8d%e8%a9%b1%e6%9c%ac%e8%ba%ab%e5%b0%b1%e6%98%af%e8%a1%8c%e5%8b%95.md"&gt;對話本身就是行動&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://silvertranslation.blogspot.com/2015/05/blog-post.html"&gt;開放式對話真實性準則&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e7%ad%86%e8%a8%98.md"&gt;講座筆記｜創傷知情與兒少服務工作坊筆記&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="../%e9%82%81%e5%90%91%e5%8a%a9%e4%ba%ba%e5%b7%a5%e4%bd%9c/%e5%89%b5%e5%82%b7%e7%9f%a5%e6%83%85%e5%b7%a5%e4%bd%9c%e5%9d%8a%e5%bf%83%e5%be%97.md"&gt;講座心得｜創傷知情與兒少服務工作坊&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;帶你聽到嶄新音樂的人很重要&#34;&gt;【帶你聽到嶄新音樂的人很重要】&lt;/h2&gt;
-&lt;h4 id=&#34;練習&#34;&gt;練習：&lt;/h4&gt;
+&lt;h2 id="帶你聽到嶄新音樂的人很重要"&gt;【帶你聽到嶄新音樂的人很重要】&lt;/h2&gt;
+&lt;h4 id="練習"&gt;練習：&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;第一階段：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -786,18 +393,18 @@
 &lt;li&gt;&lt;strong&gt;第二階段：可以用非口語形式，可以用哼的&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;第三階段：找出那首歌給他聽&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;討論&#34;&gt;討論&lt;/h4&gt;
+&lt;h4 id="討論"&gt;討論&lt;/h4&gt;
 &lt;p&gt;Q：對Ｂ來說，你覺得這三個差別是什麼？喜歡第二或第三階段？&lt;/p&gt;
 &lt;p&gt;A：這裡很多精神醫療的夥伴，像是吃藥其實是一個經驗，要安排時間、練習吞藥的經驗。當精神科跟你說吃藥很重要，但病人不一定懂，就像告訴對方很重要的事，但Ｂ聽不懂一樣。&lt;/p&gt;
 &lt;p&gt;第二種比較多的表達，加上肢體、非口語，有加入自己的創作，有自己的聲音，更貼近你想要傳達給他的東西。第三種是直接秀給他看，人類經驗中很難有東西可以直接給他除非心電感應。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;重點是，在傳達的時候不是只有知識，還有人的部分&lt;/strong&gt;。帶你聽見嶄新音樂的人很重要，如果有人只帶你一直聽舊音樂，那就不會想要去聽新的音樂。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;開放式對話十二項真實準則&#34;&gt;【開放式對話十二項真實準則】&lt;/h2&gt;
-&lt;h3 id=&#34;一團隊會議需有兩位以上的治療師出席&#34;&gt;一、團隊會議需有兩位以上的治療師出席&lt;/h3&gt;
-&lt;h3 id=&#34;二家庭及社群網絡的參與&#34;&gt;二、家庭及社群網絡的參與&lt;/h3&gt;
+&lt;h2 id="開放式對話十二項真實準則"&gt;【開放式對話十二項真實準則】&lt;/h2&gt;
+&lt;h3 id="一團隊會議需有兩位以上的治療師出席"&gt;一、團隊會議需有兩位以上的治療師出席&lt;/h3&gt;
+&lt;h3 id="二家庭及社群網絡的參與"&gt;二、家庭及社群網絡的參與&lt;/h3&gt;
 &lt;p&gt;對方如果只有一個人一定不會豐富，所以一定會邀請身邊的人參加，就算不能來也會問說「如果他在這邊聽到，你覺得他會想說什麼」或是另外寫書信傳達。如果這首歌他是主Key， 如果缺席，還是會邀請他傳達。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;三使用開放式問句&#34;&gt;三、使用開放式問句&lt;/h3&gt;
+&lt;h3 id="三使用開放式問句"&gt;三、使用開放式問句&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;「你現在是不是很激躁」Ｖ.Ｓ「你可不可以跟我分享你現在經歷了什麼」&lt;/li&gt;
 &lt;/ul&gt;
@@ -807,7 +414,7 @@
 &lt;/ul&gt;
 &lt;p&gt;提供選項但不一定要它一定要接受，這是一個態度的問題  把選項端到面前而不是強迫選。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;四回應當事人的話語&#34;&gt;四、回應當事人的話語&lt;/h3&gt;
+&lt;h3 id="四回應當事人的話語"&gt;四、回應當事人的話語&lt;/h3&gt;
 &lt;p&gt;回應就是用身心來告訴他。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;第一個，重複他所說的話，捕捉他說話的內容&lt;/strong&gt;。&lt;/li&gt;
@@ -819,7 +426,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;- 第三個，注意自己的非口語訊息&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;練習-1&#34;&gt;練習：&lt;/h5&gt;
+&lt;h5 id="練習-1"&gt;練習：&lt;/h5&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Ａ跟B分享自己的困擾 三到五分鐘&lt;/p&gt;
@@ -834,12 +441,12 @@
 &lt;p&gt;一起聽剛剛的錄音，聽音調、速度、頻率，內容不用 &lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;討論-1&#34;&gt;討論&lt;/h4&gt;
+&lt;h4 id="討論-1"&gt;討論&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Q：有沒有注意到第一輪沒有注意到的細節？或是「覺得這個才是重點」的？&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h5 id=&#34;練習二&#34;&gt;練習二：&lt;/h5&gt;
+&lt;h5 id="練習二"&gt;練習二：&lt;/h5&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Ｂ講故事Ａ聽，不用錄音。&lt;/p&gt;
@@ -849,7 +456,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;這次Ｂ不用把故事講完，講到當Ａ腦中閃過一個畫面，把腦中的意象分享給B，講故事的人想看看這個意象畫面是否跟自己的故事有關。&lt;/p&gt;
-&lt;h4 id=&#34;心得&#34;&gt;心得：&lt;/h4&gt;
+&lt;h4 id="心得"&gt;心得：&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;分享畫面會強烈被同理的感覺&lt;/p&gt;
@@ -864,42 +471,4 @@
 &lt;p&gt;對於文字語言的定義比較狹窄，對於畫面的全是可以很寬廣，有很多空間&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;例如：意象是光、黑暗、道路，在一個很暗的空間前進。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>對話工作如潛水</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%B0%8D%E8%A9%B1%E5%B7%A5%E4%BD%9C%E5%A6%82%E6%BD%9B%E6%B0%B4/</link>
-      <pubDate>Mon, 02 Nov 2020 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%B0%8D%E8%A9%B1%E5%B7%A5%E4%BD%9C%E5%A6%82%E6%BD%9B%E6%B0%B4/</guid>
-      <description>儘管講義上的助人技巧寫得很理想，但實際上面臨活生生的人時，那些專有名詞並不能提供多少幫助，畢竟也沒有人喜歡被生硬的專有名詞或話術填塞。後來發現，用自己原有的自然態度，保持真誠、保持好奇就可以有穩定的作用，當下的狀態並不會特別意識到要使用何種技巧或是話術。</description>
-    </item>
-    <item>
-      <title>開放式對話（Open Dialogue）課後筆記Part2</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9802/</link>
-      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9802/</guid>
-      <description>對助人工作者來說，開放式對話可以協助創造出更多的空間，為工作者和當事人雙方創造空間。在學習覺察身體感覺時，我發現身體不只會受到對方情緒影響，也會受到自身而來的情緒影響，光是分辨兩種影響就需要耗費不少心力，處理情緒時更需要時間和空間。在面對巨量情緒時，開放式對話擴展了因情緒受限的框架，或者應該說是把情緒用更扁平、貼近的方式拓展開來，從而賦予更大的自由和空間。</description>
-    </item>
-    <item>
-      <title>開放式對話（Open Dialogue）課後筆記Part1</title>
-      <link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9801/</link>
-      <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9801/</guid>
-      <description>開放式對話（Open Dialogue）是來自芬蘭的服務模式，由Jaakko Seikkula創立，服務對象為思覺失調患者，當事人的症狀除了大家熟知的妄想、幻聽、幻覺之外，在生活中也可能碰到問題，像是有些人無法依照氣溫選擇自己的穿著；有些人以前有興趣的事，現在失去興趣，變得不願意出門。思覺失調在精神醫療領域中可以說是最棘手的病症，而開放式對話嘗試使用不同傳統精神醫療模式的方法創造能夠幫助思覺失調患者康復的環境。</description>
-    </item>
-    <item>
-      <title>北監酒駕班後記：關於集體創作的觀察</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E5%BE%8C%E8%A8%98/</link>
-      <pubDate>Fri, 26 Jun 2020 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E5%BE%8C%E8%A8%98/</guid>
-      <description>集體創作的歌曲為何特別有價值呢？比起個人創作，**集體創作讓每個人參與其中，歌曲成為每個人共同連結的象徵，由大家共同創作的作品不只是個人而是屬於「大家」的。</description>
-    </item>
-    <item>
-      <title>北監酒駕班觀察心得</title>
-      <link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E8%A7%80%E5%AF%9F%E5%BF%83%E5%BE%97/</link>
-      <pubDate>Wed, 30 Oct 2019 10:07:47 +0800</pubDate>
-      <guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E8%A7%80%E5%AF%9F%E5%BF%83%E5%BE%97/</guid>
-      <description>過去我對於酒駕的問題，單純地以為只要制定罰則、加重刑罰就會有所改善，然而實際進入監獄、參與酒駕班之後，我才瞭解到酒駕的背後其實是酒精成癮的問題。酒駕只是酒癮者遇到的問題其中一環，儘管罰則提高、吊銷駕照，他的生活依舊很難改變，因為酒癮才是最根本的問題。只要酒癮沒有改善的話，他仍然可能再次被關，但酒癮者需要的不是監禁，而是幫助他解決成癮問題。</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;例如：意象是光、黑暗、道路，在一個很暗的空間前進。&lt;/p&gt;</description></item><item><title>對話工作如潛水</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%B0%8D%E8%A9%B1%E5%B7%A5%E4%BD%9C%E5%A6%82%E6%BD%9B%E6%B0%B4/</link><pubDate>Mon, 02 Nov 2020 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%B0%8D%E8%A9%B1%E5%B7%A5%E4%BD%9C%E5%A6%82%E6%BD%9B%E6%B0%B4/</guid><description>儘管講義上的助人技巧寫得很理想，但實際上面臨活生生的人時，那些專有名詞並不能提供多少幫助，畢竟也沒有人喜歡被生硬的專有名詞或話術填塞。後來發現，用自己原有的自然態度，保持真誠、保持好奇就可以有穩定的作用，當下的狀態並不會特別意識到要使用何種技巧或是話術。</description></item><item><title>開放式對話（Open Dialogue）課後筆記Part2</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9802/</link><pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9802/</guid><description>對助人工作者來說，開放式對話可以協助創造出更多的空間，為工作者和當事人雙方創造空間。在學習覺察身體感覺時，我發現身體不只會受到對方情緒影響，也會受到自身而來的情緒影響，光是分辨兩種影響就需要耗費不少心力，處理情緒時更需要時間和空間。在面對巨量情緒時，開放式對話擴展了因情緒受限的框架，或者應該說是把情緒用更扁平、貼近的方式拓展開來，從而賦予更大的自由和空間。</description></item><item><title>開放式對話（Open Dialogue）課後筆記Part1</title><link>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9801/</link><pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate><guid>https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%AA%B2%E5%BE%8C%E7%AD%86%E8%A8%9801/</guid><description>開放式對話（Open Dialogue）是來自芬蘭的服務模式，由Jaakko Seikkula創立，服務對象為思覺失調患者，當事人的症狀除了大家熟知的妄想、幻聽、幻覺之外，在生活中也可能碰到問題，像是有些人無法依照氣溫選擇自己的穿著；有些人以前有興趣的事，現在失去興趣，變得不願意出門。思覺失調在精神醫療領域中可以說是最棘手的病症，而開放式對話嘗試使用不同傳統精神醫療模式的方法創造能夠幫助思覺失調患者康復的環境。</description></item><item><title>北監酒駕班後記：關於集體創作的觀察</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E5%BE%8C%E8%A8%98/</link><pubDate>Fri, 26 Jun 2020 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E5%BE%8C%E8%A8%98/</guid><description>集體創作的歌曲為何特別有價值呢？比起個人創作，**集體創作讓每個人參與其中，歌曲成為每個人共同連結的象徵，由大家共同創作的作品不只是個人而是屬於「大家」的。</description></item><item><title>北監酒駕班觀察心得</title><link>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E8%A7%80%E5%AF%9F%E5%BF%83%E5%BE%97/</link><pubDate>Wed, 30 Oct 2019 10:07:47 +0800</pubDate><guid>https://listenriver.com/blog/%E9%82%81%E5%90%91%E5%8A%A9%E4%BA%BA%E5%B7%A5%E4%BD%9C/%E5%8C%97%E7%9B%A3%E9%85%92%E9%A7%95%E7%8F%AD%E8%A7%80%E5%AF%9F%E5%BF%83%E5%BE%97/</guid><description>過去我對於酒駕的問題，單純地以為只要制定罰則、加重刑罰就會有所改善，然而實際進入監獄、參與酒駕班之後，我才瞭解到酒駕的背後其實是酒精成癮的問題。酒駕只是酒癮者遇到的問題其中一環，儘管罰則提高、吊銷駕照，他的生活依舊很難改變，因為酒癮才是最根本的問題。只要酒癮沒有改善的話，他仍然可能再次被關，但酒癮者需要的不是監禁，而是幫助他解決成癮問題。</description></item></channel></rss>

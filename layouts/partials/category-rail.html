@@ -1,6 +1,7 @@
 {{- $items := .items -}}
 {{- $id := .id | default "category-rail" -}}
 {{- $class := .class | default "" -}}
+{{- $cardPartial := .cardPartial | default "category-card.html" -}}
 <div class="category-rail-shell {{ $class }}">
   <div class="category-rail-controls" aria-hidden="true">
     <button class="category-rail-arrow" type="button" data-category-rail-prev="{{ $id }}" aria-label="向左瀏覽分類">
@@ -12,7 +13,7 @@
   </div>
   <div id="{{ $id }}" class="category-rail" data-category-rail tabindex="0" aria-label="分類卡片橫向列表">
     {{- range $items -}}
-      {{- partial "category-card.html" (dict "item" .) -}}
+      {{- partial $cardPartial (dict "item" .) -}}
     {{- end -}}
   </div>
 </div>

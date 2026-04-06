@@ -1,0 +1,216 @@
+{{- $plural := .Data.Plural -}}
+{{- $pages := .RegularPages.ByDate.Reverse -}}
+{{- $hasPages := gt (len $pages) 0 -}}
+
+{{- if and (eq $plural "categories") (not $hasPages) -}}
+  {{- $categoryItems := partial "category-data.html" . -}}
+  {{- $tagItems := partial "home-tag-data.html" . -}}
+  <header class="page-header taxonomy-landing-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <span class="taxonomy-page-kicker">Topics</span>
+    <h1>{{ .Title }}</h1>
+    <div class="post-description taxonomy-page-description">
+      {{- if .Description -}}
+        {{ .Description | markdownify }}
+      {{- else -}}
+        依主分類與熱門標籤一起瀏覽站內文章，從主題脈絡與關鍵字兩種方式找到想讀的內容。
+      {{- end -}}
+    </div>
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content taxonomy-page-content">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  <section class="taxonomy-landing-section" aria-labelledby="categories-entry-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Categories</span>
+        <h2 id="categories-entry-title" class="home-section-title">從主分類進入閱讀路徑</h2>
+      </div>
+      <p class="taxonomy-section-note">每個分類整理一條主要主題線，適合先建立閱讀方向。</p>
+    </div>
+    {{- partial "category-rail.html" (dict "items" $categoryItems "id" "categories-landing-rail" "class" "category-rail-shell--landing") -}}
+  </section>
+
+  {{- if gt (len $tagItems) 0 }}
+  <section class="taxonomy-landing-section" aria-labelledby="tags-entry-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Tags</span>
+        <h2 id="tags-entry-title" class="home-section-title">再用熱門標籤細看切入點</h2>
+      </div>
+      <p class="taxonomy-section-note">標籤會跨越不同分類，適合用來追一條更細的關鍵字線索。</p>
+    </div>
+    {{- partial "category-rail.html" (dict "items" (first 12 $tagItems) "id" "tags-landing-rail" "class" "category-rail-shell--landing" "cardPartial" "home-tag-card.html") -}}
+  </section>
+  {{- end }}
+
+{{- else if and (eq $plural "categories") $hasPages -}}
+  {{- $featured := first 3 $pages -}}
+  <header class="page-header taxonomy-term-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <span class="taxonomy-page-kicker">Category</span>
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description taxonomy-page-description">
+      {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content taxonomy-page-content">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  {{- if gt (len $featured) 0 }}
+  <section class="taxonomy-featured" aria-labelledby="taxonomy-featured-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Featured</span>
+        <h2 id="taxonomy-featured-title" class="home-section-title">先從這些文章開始</h2>
+      </div>
+      <p class="taxonomy-section-note">這個分類目前收錄 {{ len $pages }} 篇文章。</p>
+    </div>
+    <div class="taxonomy-featured-grid">
+      {{- range $featured -}}
+        {{- partial "article-card.html" (dict "page" .) -}}
+      {{- end -}}
+    </div>
+  </section>
+  {{- end }}
+
+  <section class="taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Archive</span>
+        <h2 id="taxonomy-article-list-title" class="home-section-title">全部文章</h2>
+      </div>
+    </div>
+    {{- range $pages -}}
+      {{- partial "article-card.html" (dict "page" . "class" "post-entry category-entry") -}}
+    {{- end -}}
+  </section>
+
+{{- else if and (eq $plural "tags") (not $hasPages) -}}
+  {{- $tagItems := partial "home-tag-data.html" . -}}
+  <header class="page-header taxonomy-landing-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <span class="taxonomy-page-kicker">Tags</span>
+    <h1>{{ .Title }}</h1>
+    <div class="post-description taxonomy-page-description">
+      {{- if .Description -}}
+        {{ .Description | markdownify }}
+      {{- else -}}
+        從熱門標籤快速找到同一條關鍵字脈絡下的文章，也可以往下查看全部標籤。
+      {{- end -}}
+    </div>
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content taxonomy-page-content">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  {{- if gt (len $tagItems) 0 }}
+  <section class="taxonomy-landing-section" aria-labelledby="popular-tags-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Popular</span>
+        <h2 id="popular-tags-title" class="home-section-title">熱門標籤</h2>
+      </div>
+      <p class="taxonomy-section-note">先從最常出現的標籤開始逛。</p>
+    </div>
+    {{- partial "category-rail.html" (dict "items" (first 12 $tagItems) "id" "popular-tags-rail" "class" "category-rail-shell--landing" "cardPartial" "home-tag-card.html") -}}
+  </section>
+  {{- end }}
+
+  <section class="taxonomy-landing-section" aria-labelledby="all-tags-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">A-Z</span>
+        <h2 id="all-tags-title" class="home-section-title">全部標籤</h2>
+      </div>
+    </div>
+    <ul class="terms-tags">
+      {{- range .Data.Terms.Alphabetical }}
+      <li>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup><strong><sup>{{ .Count }}</sup></strong></sup></a>
+      </li>
+      {{- end }}
+    </ul>
+  </section>
+
+{{- else if and (eq $plural "tags") $hasPages -}}
+  {{- $featured := first 3 $pages -}}
+  <header class="page-header taxonomy-term-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <span class="taxonomy-page-kicker">Tag</span>
+    <h1>#{{ .Title }}</h1>
+    <div class="post-description taxonomy-page-description">
+      {{- if .Description -}}
+        {{ .Description | markdownify }}
+      {{- else -}}
+        共有 {{ len $pages }} 篇文章使用這個標籤，適合沿著同一個關鍵字持續閱讀。
+      {{- end -}}
+    </div>
+  </header>
+
+  {{- if gt (len $featured) 0 }}
+  <section class="taxonomy-featured" aria-labelledby="taxonomy-featured-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Featured</span>
+        <h2 id="taxonomy-featured-title" class="home-section-title">先看這幾篇</h2>
+      </div>
+      <p class="taxonomy-section-note">這個標籤目前收錄 {{ len $pages }} 篇文章。</p>
+    </div>
+    <div class="taxonomy-featured-grid">
+      {{- range $featured -}}
+        {{- partial "article-card.html" (dict "page" .) -}}
+      {{- end -}}
+    </div>
+  </section>
+  {{- end }}
+
+  <section class="taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
+    <div class="home-section-heading taxonomy-section-heading">
+      <div>
+        <span class="home-section-kicker">Archive</span>
+        <h2 id="taxonomy-article-list-title" class="home-section-title">全部文章</h2>
+      </div>
+    </div>
+    {{- range $pages -}}
+      {{- partial "article-card.html" (dict "page" . "class" "post-entry category-entry") -}}
+    {{- end -}}
+  </section>
+
+{{- else -}}
+  <header class="page-header">
+    {{- partial "breadcrumbs.html" . -}}
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+      {{ .Description | markdownify }}
+    </div>
+    {{- end }}
+  </header>
+  {{- if $hasPages -}}
+    {{- range $pages -}}
+      {{- partial "article-card.html" (dict "page" .) -}}
+    {{- end -}}
+  {{- else -}}
+    <ul class="terms-tags">
+      {{- range .Data.Terms.Alphabetical }}
+      <li>
+        <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup><strong><sup>{{ .Count }}</sup></strong></sup></a>
+      </li>
+      {{- end }}
+    </ul>
+  {{- end -}}
+{{- end -}}
