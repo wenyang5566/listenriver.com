@@ -1,6 +1,11 @@
-{{ define "main" }}
-<header class="page-header">
+﻿{{ define "main" }}
+{{- $clubhousePages := where site.RegularPages "Params.tags" "intersect" (slice "會所") -}}
+{{- $clubhousePages = sort $clubhousePages "Date" "desc" -}}
+{{- $groupOrder := slice "社會工作" "閱讀筆記" "自我成長" "電影筆記" "日常書寫" -}}
+
+<header class="page-header clubhouse-page-header">
   {{- partial "breadcrumbs.html" . }}
+  <span class="clubhouse-page-kicker">Special Project</span>
   <h1>{{ .Title }}</h1>
   {{- if .Description }}
   <div class="post-description">
@@ -10,33 +15,86 @@
 </header>
 
 {{- if .Content }}
-<div class="post-content">
+<div class="post-content clubhouse-page-intro">
   {{ .Content }}
 </div>
 {{- end }}
 
-{{- $clubhousePages := where site.RegularPages "Params.tags" "intersect" (slice "會所") -}}
-{{- $clubhousePages = sort $clubhousePages "Date" "desc" -}}
-
-<section class="post-content">
-  <h2>會所相關文章</h2>
-  <p>以下文章皆來自 tag「會所」，作為會所專題的延伸閱讀。</p>
-</section>
-
-{{- range $clubhousePages }}
-<article class="post-entry">
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">{{ .Title }}</h2>
-  </header>
-  {{- if (ne (.Param "hideSummary") true) }}
-  <div class="entry-content">
-    <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+{{- with index $clubhousePages 0 }}
+<section class="clubhouse-highlight" aria-labelledby="clubhouse-highlight-title">
+  <div class="clubhouse-highlight__copy">
+    <span class="clubhouse-highlight__kicker">Latest</span>
+    <h2 id="clubhouse-highlight-title" class="clubhouse-highlight__title">{{ .Title }}</h2>
+    <p class="clubhouse-highlight__summary">{{ .Summary | plainify | htmlUnescape }}</p>
+    <a href="{{ .RelPermalink }}" class="clubhouse-highlight__action">閱讀這篇</a>
   </div>
-  {{- end }}
-  <footer class="entry-footer">
-    {{- partial "post_meta.html" . -}}
-  </footer>
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}"></a>
-</article>
+</section>
 {{- end }}
+
+<section class="clubhouse-groups" aria-labelledby="clubhouse-groups-title">
+  <div class="home-section-heading">
+    <div>
+      <span class="home-section-kicker">Curated Reading</span>
+      <h2 id="clubhouse-groups-title" class="home-section-title">依主題脈絡分組閱讀</h2>
+    </div>
+  </div>
+
+  {{- range $groupOrder }}
+    {{- $groupName := . -}}
+    {{- $groupPages := slice -}}
+    {{- range $clubhousePages }}
+      {{- if in (.Params.categories | default (slice)) $groupName -}}
+        {{- $groupPages = $groupPages | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if gt (len $groupPages) 0 }}
+    <section class="clubhouse-group" aria-labelledby="clubhouse-group-{{ $groupName | urlize }}">
+      <div class="clubhouse-group__header">
+        <h3 id="clubhouse-group-{{ $groupName | urlize }}" class="clubhouse-group__title">{{ $groupName }}</h3>
+        <span class="clubhouse-group__count">{{ len $groupPages }} 篇</span>
+      </div>
+      <div class="clubhouse-group__list">
+        {{- range $groupPages }}
+        <a class="clubhouse-group__item" href="{{ .RelPermalink }}">
+          <span class="clubhouse-group__date">{{ .Date.Format "2006.01.02" }}</span>
+          <span class="clubhouse-group__item-title">{{ .Title }}</span>
+          <span class="clubhouse-group__summary">{{ .Summary | plainify | htmlUnescape | truncate 90 }}</span>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  {{- end }}
+
+  {{- $otherPages := slice -}}
+  {{- range $clubhousePages }}
+    {{- $page := . -}}
+    {{- $matched := false -}}
+    {{- range $groupOrder }}
+      {{- if in ($page.Params.categories | default (slice)) . -}}
+        {{- $matched = true -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if not $matched -}}
+      {{- $otherPages = $otherPages | append $page -}}
+    {{- end -}}
+  {{- end }}
+  {{- if gt (len $otherPages) 0 }}
+  <section class="clubhouse-group" aria-labelledby="clubhouse-group-other">
+    <div class="clubhouse-group__header">
+      <h3 id="clubhouse-group-other" class="clubhouse-group__title">其他延伸</h3>
+      <span class="clubhouse-group__count">{{ len $otherPages }} 篇</span>
+    </div>
+    <div class="clubhouse-group__list">
+      {{- range $otherPages }}
+      <a class="clubhouse-group__item" href="{{ .RelPermalink }}">
+        <span class="clubhouse-group__date">{{ .Date.Format "2006.01.02" }}</span>
+        <span class="clubhouse-group__item-title">{{ .Title }}</span>
+        <span class="clubhouse-group__summary">{{ .Summary | plainify | htmlUnescape | truncate 90 }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </section>
+  {{- end }}
+</section>
 {{ end }}

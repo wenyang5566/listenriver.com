@@ -1,59 +1,43 @@
-<div class="salon-hero">
+﻿<section class="salon-hero">
   <div class="salon-hero-inner">
-    <div class="salon-hero-lockup">
-      <span class="salon-hero-mark" aria-hidden="true"></span>
-      <div class="salon-hero-copy">
-        <div class="salon-hero-headline">
-          <h1 class="salon-hero-title">聆聽的河流</h1>
-          <span class="salon-hero-divider" aria-hidden="true"></span>
-          <p class="salon-hero-topics">閱讀・書寫・心理・電影</p>
-        </div>
-        <p class="salon-hero-subtitle">以閱讀、書寫、心理與電影，慢慢整理情緒與世界的流向。</p>
+    <div class="salon-hero-copy">
+      <span class="salon-hero-kicker">閱讀與社會工作書寫</span>
+      <h1 class="salon-hero-title">聆聽的河流</h1>
+      <p class="salon-hero-topics">閱讀・書寫・心理・社會工作</p>
+      <p class="salon-hero-subtitle">從社會工作實務出發，連結閱讀、心理與日常經驗，整理那些關於受苦、關係與復元的思考。</p>
+      <div class="salon-hero-actions">
+        <a href="{{ "/tags/" | relURL }}" class="salon-hero-action salon-hero-action-primary">先看主題</a>
+        <a href="{{ "/clubhouse/" | relURL }}" class="salon-hero-action">走進 Clubhouse</a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="salon-channel-info">
+<section class="salon-channel-info">
   <div class="salon-channel-left">
-    <a href="/about/">
+    <a href="{{ "/about/" | relURL }}">
       {{- if .Site.Params.avatar }}
-      <img src="{{ .Site.Params.avatar }}" alt="avatar" class="salon-avatar">
+      <img src="{{ .Site.Params.avatar }}" alt="文揚 Wen-Yang" class="salon-avatar">
       {{- else }}
       <div class="salon-avatar-placeholder">{{ substr .Site.Title 0 1 }}</div>
       {{- end }}
     </a>
     <div class="salon-channel-meta">
-      <div class="salon-channel-kicker">編輯選集</div>
+      <div class="salon-channel-kicker">Writer & Social Worker</div>
       <div class="salon-channel-name">{{ .Site.Params.salonAuthor | default .Site.Title }}</div>
-      <div class="salon-channel-subtitle">{{ .Site.Title }}</div>
-      <div class="salon-social-icons">
-        {{- with .Site.Params.salonEmail }}
-        <a href="mailto:{{ . }}" class="salon-social-icon" title="Email">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        </a>
-        {{- end }}
-        {{- with .Site.Params.salonFacebook }}
-        <a href="{{ . }}" class="salon-social-icon" title="Facebook" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-        {{- end }}
-        {{- with .Site.Params.salonGravatar }}
-        {{- $hash := . | md5 }}
-        <a href="https://gravatar.com/{{ $hash }}" class="salon-social-icon" title="Gravatar" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
-        </a>
-        {{- end }}
-      </div>
+      <div class="salon-channel-subtitle">以書寫整理助人工作、親密關係與創傷知情的現場感</div>
     </div>
   </div>
   <div class="salon-channel-main">
-  {{- with .Site.Params.salonDescription }}
-  <div class="salon-channel-desc">{{ . }}</div>
-  {{- end }}
-    <div class="salon-channel-actions">
-      <a href="/blog/" class="salon-channel-action salon-channel-action-primary">開始閱讀</a>
-      <a href="/about/" class="salon-channel-action">關於作者</a>
+    {{- with .Site.Params.salonDescription }}
+    <div class="salon-channel-desc">{{ . }}</div>
+    {{- end }}
+    <div class="salon-channel-tags" aria-label="主題摘要">
+      <span>會所</span>
+      <span>助人工作</span>
+      <span>親密關係</span>
+      <span>創傷知情</span>
+      <span>一行禪師</span>
     </div>
   </div>
-</div>
+</section>

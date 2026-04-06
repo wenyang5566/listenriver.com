@@ -1,4 +1,4 @@
-{{- define "main" }}
+﻿{{- define "main" }}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" -}}
 {{- $paginator := .Paginate $pages -}}
@@ -8,61 +8,93 @@
   {{- partial "hero-banner.html" . -}}
 
   {{- $categoryCards := slice
-    (dict "title" "閱讀" "description" "書籍、講座與思想整理" "url" "/categories/閱讀筆記/")
-    (dict "title" "電影" "description" "電影與影像作品筆記" "url" "/categories/電影筆記/")
-    (dict "title" "社會工作" "description" "助人實務、復元與會所書寫" "url" "/categories/社會工作/")
-    (dict "title" "自我成長" "description" "親密關係、自我理解與反思" "url" "/categories/自我成長/")
-    (dict "title" "日常書寫" "description" "生活片段、靈感與碎片思考" "url" "/categories/日常書寫/")
+    (dict "title" "閱讀筆記" "eyebrow" "Reading" "description" "書籍、思想與講座整理，保留慢讀後的餘韻。" "name" "閱讀筆記" "url" "/categories/閱讀筆記/")
+    (dict "title" "電影筆記" "eyebrow" "Cinema" "description" "從影像、敘事與角色之間，靠近生命的紋理。" "name" "電影筆記" "url" "/categories/電影筆記/")
+    (dict "title" "社會工作" "eyebrow" "Practice" "description" "助人實務、制度反思與精神復元現場書寫。" "name" "社會工作" "url" "/categories/社會工作/")
+    (dict "title" "自我成長" "eyebrow" "Growth" "description" "關係、受苦與自我理解，回到成為自己的過程。" "name" "自我成長" "url" "/categories/自我成長/")
+    (dict "title" "日常書寫" "eyebrow" "Daily Notes" "description" "把片刻感受留下來，讓生活的細節繼續發聲。" "name" "日常書寫" "url" "/categories/日常書寫/")
   -}}
   {{- $topicCards := slice
-    (dict "title" "會所" "description" "精神復元與社區支持實踐" "url" "/tags/會所/")
-    (dict "title" "助人工作" "description" "助人關係、方法與界線" "url" "/tags/助人工作/")
-    (dict "title" "親密關係" "description" "關係、靠近與自我理解" "url" "/tags/親密關係/")
-    (dict "title" "成為一個人" "description" "一系列關於成長與存在的書寫" "url" "/tags/成為一個人/")
-    (dict "title" "創傷知情" "description" "在理解受苦中靠近實務" "url" "/tags/創傷知情/")
-    (dict "title" "一行禪師" "description" "正念、生活與閱讀筆記" "url" "/tags/一行禪師/")
+    (dict "title" "會所" "description" "精神復元、夥伴關係與社群支持的現場。" "tag" "會所" "url" "/tags/會所/")
+    (dict "title" "助人工作" "description" "把陪伴、界線與方法放回真實關係裡思考。" "tag" "助人工作" "url" "/tags/助人工作/")
+    (dict "title" "親密關係" "description" "在靠近、拉扯與理解之間，重新認識關係。" "tag" "親密關係" "url" "/tags/親密關係/")
+    (dict "title" "成為一個人" "description" "沿著 Rogers 的提問，練習成為自己。" "tag" "成為一個人" "url" "/tags/成為一個人/")
+    (dict "title" "創傷知情" "description" "在理解受苦之前，先學會不急著定義他人。" "tag" "創傷知情" "url" "/tags/創傷知情/")
+    (dict "title" "一行禪師" "description" "把正念、相即與日常生活放在同一條閱讀路徑。" "tag" "一行禪師" "url" "/tags/一行禪師/")
   -}}
+  {{- $clubhousePages := where site.RegularPages "Params.tags" "intersect" (slice "會所") -}}
+  {{- $clubhousePages = first 3 (sort $clubhousePages "Date" "desc") -}}
 
-  <div class="home-card-sections">
-    <section class="home-card-section home-card-section-categories" aria-labelledby="home-categories-title">
-      <div class="home-card-section-header">
-        <h2 id="home-categories-title" class="home-card-section-title">分類</h2>
+  <div class="home-flow">
+    <section class="home-topic-rail-section" aria-labelledby="home-topics-title">
+      <div class="home-section-heading">
+        <div>
+          <span class="home-section-kicker">Topics</span>
+          <h2 id="home-topics-title" class="home-section-title">從主題進入站內閱讀</h2>
+        </div>
+      </div>
+      <div class="home-topic-rail" role="list" aria-label="主題入口">
+        {{- range $topicCards }}
+        {{- $term := index $.Site.Taxonomies.tags .tag -}}
+        <a class="home-topic-pill" href="{{ .url | relURL }}" role="listitem">
+          <span class="home-topic-pill__title">{{ .title }}</span>
+          <span class="home-topic-pill__description">{{ .description }}</span>
+          <span class="home-topic-pill__meta">
+            <span>Tag</span>
+            <span>{{ if $term }}{{ len $term.Pages }}{{ else }}0{{ end }} 篇</span>
+          </span>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+
+    <section class="home-card-section" aria-labelledby="home-categories-title">
+      <div class="home-section-heading">
+        <div>
+          <span class="home-section-kicker">Categories</span>
+          <h2 id="home-categories-title" class="home-section-title">依分類安排閱讀路徑</h2>
+        </div>
+        <a class="home-section-link" href="{{ "/categories/" | relURL }}">查看全部分類</a>
       </div>
       <div class="home-card-grid home-card-grid-categories">
         {{- range $categoryCards }}
+        {{- $term := index $.Site.Taxonomies.categories .name -}}
         <a class="home-card home-card-taxonomy" href="{{ .url | relURL }}">
-          <span class="home-card-kicker">Category</span>
+          <span class="home-card-kicker">{{ .eyebrow }}</span>
           <h3 class="home-card-title">{{ .title }}</h3>
           <p class="home-card-description">{{ .description }}</p>
+          <span class="home-card-meta">{{ if $term }}{{ len $term.Pages }}{{ else }}0{{ end }} 篇文章</span>
         </a>
         {{- end }}
       </div>
     </section>
 
-    <section class="home-card-section home-card-section-topics" aria-labelledby="home-topics-title">
-      <div class="home-card-section-header">
-        <h2 id="home-topics-title" class="home-card-section-title">主題文章</h2>
-      </div>
-      <div class="home-card-grid home-card-grid-topics">
-        {{- range $topicCards }}
-        <a class="home-card home-card-topic" href="{{ .url | relURL }}">
-          <span class="home-card-kicker">Tag</span>
-          <h3 class="home-card-title">{{ .title }}</h3>
-          <p class="home-card-description">{{ .description }}</p>
-        </a>
-        {{- end }}
-      </div>
-    </section>
-
-    <section class="home-card-section home-card-section-featured" aria-labelledby="home-clubhouse-title">
-      <a class="home-feature-card" href="{{ "/clubhouse/" | relURL }}">
-        <div class="home-feature-card-copy">
-          <span class="home-feature-card-kicker">Special Project</span>
-          <h2 id="home-clubhouse-title" class="home-feature-card-title">Clubhouse 專題</h2>
-          <p class="home-feature-card-description">精神復元、會所模式與社會工作實踐的持續書寫</p>
+    <section class="home-clubhouse-section" aria-labelledby="home-clubhouse-title">
+      <div class="home-section-heading">
+        <div>
+          <span class="home-section-kicker">Special Project</span>
+          <h2 id="home-clubhouse-title" class="home-section-title">Clubhouse 專題</h2>
         </div>
-        <span class="home-feature-card-action">進入專題</span>
-      </a>
+      </div>
+      <div class="home-clubhouse-grid">
+        <a class="home-feature-card" href="{{ "/clubhouse/" | relURL }}">
+          <div class="home-feature-card-copy">
+            <span class="home-feature-card-kicker">會所專題</span>
+            <h3 class="home-feature-card-title">從精神復元與夥伴關係，進入會所的工作現場</h3>
+            <p class="home-feature-card-description">把會所相關文章整理成專題頁，依主題脈絡分組閱讀，快速找到工作日誌、模式理解與延伸思考。</p>
+          </div>
+          <span class="home-feature-card-action">進入專題</span>
+        </a>
+
+        <div class="home-clubhouse-list">
+          {{- range $clubhousePages }}
+          <a class="home-clubhouse-item" href="{{ .RelPermalink }}">
+            <span class="home-clubhouse-item__date">{{ .Date.Format "2006.01.02" }}</span>
+            <span class="home-clubhouse-item__title">{{ .Title }}</span>
+          </a>
+          {{- end }}
+        </div>
+      </div>
     </section>
   </div>
 {{- end }}
@@ -124,92 +156,5 @@
     {{- end }}
   </nav>
 </footer>
-{{- end }}
-
-{{- if false }}
-  {{- partial "hero-banner.html" . -}}
-
-  {{- $defaultCover := .Site.Params.salonDefaultCover }}
-  {{- $categoryOrder := .Site.Params.salonCategoryOrder }}
-  {{- $allCats := $.Site.Taxonomies.categories }}
-
-  <div class="salon-home">
-    {{- range $catName := $categoryOrder }}
-      {{- $cat := index $allCats $catName }}
-      {{- if $cat }}
-        {{- $posts := $cat.Pages }}
-        {{- if gt (len $posts) 0 }}
-        <section class="salon-section">
-          <div class="salon-section-header">
-            <h2 class="salon-section-title">{{ $catName }}</h2>
-            <a href="{{ $cat.Page.RelPermalink }}" class="salon-section-more">查看全部 →</a>
-          </div>
-          <div class="salon-carousel-wrapper">
-            <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
-            <div class="salon-carousel" data-carousel>
-              {{- range $posts }}
-              {{- $img := "" }}
-              {{- $coverImage := .Params.cover.image | default "cover.*" }}
-              {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) }}
-              {{- $res := .Resources.GetMatch (printf "%s.*" $coverStem) }}
-              {{- $cardWebpSm := "" }}
-              {{- $cardWebpLg := "" }}
-              {{- $cardFallbackSm := "" }}
-              {{- $cardFallbackLg := "" }}
-              {{- if not $res }}
-                {{- $res = .Resources.GetMatch $coverImage }}
-              {{- end }}
-              {{- if $res }}
-                {{- $cardWebpSm = $res.Fill "280x224 webp q72" }}
-                {{- $cardWebpLg = $res.Fill "420x336 webp q72" }}
-                {{- $cardFallbackSm = $res.Fill "280x224 jpg q72" }}
-                {{- $cardFallbackLg = $res.Fill "420x336 jpg q72" }}
-              {{- end }}
-              {{- if and (not $res) (.Params.cover.image) }}
-                {{- $img = .Params.cover.image }}
-              {{- else if $defaultCover }}
-                {{- $img = $defaultCover }}
-              {{- end }}
-              <a href="{{ .RelPermalink }}" class="salon-card">
-                <div class="salon-card-img">
-                  {{- if $res }}
-                  <picture>
-                    <source
-                      type="image/webp"
-                      srcset="{{ $cardWebpSm.RelPermalink }} 280w, {{ $cardWebpLg.RelPermalink }} 420w"
-                      sizes="(max-width: 600px) 76vw, 280px">
-                    <img
-                      src="{{ $cardFallbackLg.RelPermalink }}"
-                      srcset="{{ $cardFallbackSm.RelPermalink }} 280w, {{ $cardFallbackLg.RelPermalink }} 420w"
-                      sizes="(max-width: 600px) 76vw, 280px"
-                      alt="{{ .Title }}"
-                      loading="lazy"
-                      decoding="async"
-                      width="{{ $cardFallbackLg.Width }}"
-                      height="{{ $cardFallbackLg.Height }}">
-                  </picture>
-                  {{- else if $img }}
-                  <img src="{{ $img }}" alt="{{ .Title }}" loading="lazy" decoding="async">
-                  {{- else }}
-                  <div class="salon-card-img-placeholder"></div>
-                  {{- end }}
-                </div>
-                <div class="salon-card-body">
-                  <div class="salon-card-title">{{ .Title }}</div>
-                  {{- if .Summary }}
-                  <div class="salon-card-excerpt">{{ .Summary | plainify | truncate 60 }}</div>
-                  {{- end }}
-                  <div class="salon-card-date">{{ .Date.Format "2006/01/02" }}</div>
-                </div>
-              </a>
-              {{- end }}
-            </div>
-            <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
-          </div>
-        </section>
-        {{- end }}
-      {{- end }}
-    {{- end }}
-  </div>
 {{- end }}
 {{- end }}
