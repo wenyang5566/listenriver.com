@@ -228,7 +228,7 @@
   });
 
   function getRailStep(rail) {
-    const firstCard = rail.querySelector('.category-card');
+    const firstCard = rail.querySelector('.category-card, .home-tag-card, .category-rail > *');
     if (!firstCard) {
       return Math.max(rail.clientWidth * 0.8, 280);
     }

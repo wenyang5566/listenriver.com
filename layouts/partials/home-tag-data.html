@@ -1,0 +1,32 @@
+{{- $items := slice -}}
+{{- $tagNames := site.Params.homeTagNames | default (slice) -}}
+
+{{- if gt (len $tagNames) 0 -}}
+  {{- range $name := $tagNames -}}
+    {{- $termPage := site.GetPage (printf "/tags/%s" $name) -}}
+    {{- $term := index site.Taxonomies.tags $name -}}
+    {{- if and $termPage $term -}}
+      {{- $pages := sort $term.Pages "Date" "desc" -}}
+      {{- $sample := index $pages 0 -}}
+      {{- $items = $items | append (dict
+        "name" $name
+        "page" $termPage
+        "count" (len $term.Pages)
+        "sample" $sample
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- range first 6 site.Taxonomies.tags.ByCount -}}
+    {{- $samplePages := sort .Pages "Date" "desc" -}}
+    {{- $sample := index $samplePages 0 -}}
+    {{- $items = $items | append (dict
+      "name" .Term
+      "page" .Page
+      "count" .Count
+      "sample" $sample
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $items -}}
