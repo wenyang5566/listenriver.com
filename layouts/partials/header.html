@@ -1,4 +1,11 @@
 ﻿{{- $brandTitle := .Site.Title | default "Listen River" -}}
+{{- $mainNavItems := slice
+  (dict "url" ("/" | relLangURL) "label" "首頁")
+  (dict "url" ("/blog/" | relLangURL) "label" "最新文章")
+  (dict "url" ("/clubhouse/" | relLangURL) "label" "Clubhouse")
+  (dict "url" ("/categories/" | relLangURL) "label" "分類總覽")
+  (dict "url" ("/about/" | relLangURL) "label" "關於我")
+-}}
 
 <header id="site-header" class="site-header">
   <div class="header-top-shell">
@@ -43,10 +50,9 @@
 
   <nav class="header-nav-shell" aria-label="主選單">
     <div class="header-nav header-nav-groups">
-      <a href="{{ "/" | relLangURL }}" class="nav-chip nav-chip-home">Home</a>
-      <a href="{{ "/categories/" | relLangURL }}" class="nav-chip nav-chip-more">Categories</a>
-      <a href="{{ "/about/" | relLangURL }}" class="nav-chip nav-chip-more">About</a>
-      <a href="{{ "/search/" | relLangURL }}" class="nav-chip nav-chip-more">Search</a>
+      {{- range $index, $item := $mainNavItems -}}
+      <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}">{{ $item.label }}</a>
+      {{- end -}}
     </div>
   </nav>
 
@@ -66,52 +72,13 @@
     </div>
 
     <div class="mobile-nav-primary mobile-nav-primary--simple">
-      <a href="{{ "/" | relLangURL }}" class="mobile-nav-primary-link">Home</a>
-      <a href="{{ "/categories/" | relLangURL }}" class="mobile-nav-primary-link">Categories</a>
-      <a href="{{ "/about/" | relLangURL }}" class="mobile-nav-primary-link">About</a>
-      <a href="{{ "/search/" | relLangURL }}" class="mobile-nav-primary-link">Search</a>
+      {{- range $mainNavItems -}}
+      <a href="{{ .url }}" class="mobile-nav-primary-link">{{ .label }}</a>
+      {{- end -}}
     </div>
   </aside>
 
   <div class="mobile-reading-progress" aria-hidden="true">
     <span class="mobile-reading-progress-bar" data-reading-progress></span>
   </div>
-
-  <nav class="mobile-bottom-bar{{ if .IsPage }} mobile-bottom-bar--article{{ end }}" aria-label="手機快捷操作">
-    {{- if .IsPage }}
-      <a href="{{ "/" | relLangURL }}" class="mobile-bottom-link mobile-bottom-link--article" aria-label="回首頁">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
-        <span class="mobile-bottom-link__label">首頁</span>
-      </a>
-      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-mobile-back data-fallback-url="{{ "/categories/" | relLangURL }}" aria-label="回上一頁">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
-        <span class="mobile-bottom-link__label">上一頁</span>
-      </button>
-      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-mobile-toc-shortcut aria-label="開啟目錄">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14"></path><path d="M5 12h10"></path><path d="M5 17h14"></path></svg>
-        <span class="mobile-bottom-link__label">目錄</span>
-      </button>
-      <button class="mobile-bottom-link mobile-bottom-link-button mobile-bottom-link--article" type="button" data-scroll-top aria-label="回到頂部">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
-        <span class="mobile-bottom-link__label">頂部</span>
-      </button>
-    {{- else }}
-    <a href="{{ "/" | relLangURL }}" class="mobile-bottom-link{{ if .IsHome }} is-active{{ end }}" aria-label="回首頁">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"></path><path d="M5.5 9.5V21h13V9.5"></path></svg>
-      <span>首頁</span>
-    </a>
-    <a href="{{ "/categories/" | relLangURL }}" class="mobile-bottom-link{{ if eq .Data.Plural "categories" }} is-active{{ end }}" aria-label="分類總覽">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h7v5H4z"></path><path d="M13 6h7v5h-7z"></path><path d="M4 13h7v5H4z"></path><path d="M13 13h7v5h-7z"></path></svg>
-      <span>分類</span>
-    </a>
-    <a href="{{ "/search/" | relLangURL }}" class="mobile-bottom-link{{ if eq .Layout "search" }} is-active{{ end }}" aria-label="搜尋">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
-      <span>搜尋</span>
-    </a>
-    <button class="mobile-bottom-link mobile-bottom-link-button" type="button" data-scroll-top aria-label="回到頂部">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"></path></svg>
-      <span>頂部</span>
-    </button>
-    {{- end }}
-  </nav>
 </header>
