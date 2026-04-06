@@ -1,4 +1,132 @@
-{{ define "main" }}
+{{- define "main" }}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" -}}
+{{- $paginator := .Paginate $pages -}}
+{{- $showHomeIntro := eq $paginator.PageNumber 1 -}}
+
+{{- if $showHomeIntro }}
+  {{- partial "hero-banner.html" . -}}
+
+  {{- $categoryCards := slice
+    (dict "title" "閱讀" "description" "書籍、講座與思想整理" "url" "/categories/閱讀筆記/")
+    (dict "title" "電影" "description" "電影與影像作品筆記" "url" "/categories/電影筆記/")
+    (dict "title" "社會工作" "description" "助人實務、復元與會所書寫" "url" "/categories/社會工作/")
+    (dict "title" "自我成長" "description" "親密關係、自我理解與反思" "url" "/categories/自我成長/")
+    (dict "title" "日常書寫" "description" "生活片段、靈感與碎片思考" "url" "/categories/日常書寫/")
+  -}}
+  {{- $topicCards := slice
+    (dict "title" "會所" "description" "精神復元與社區支持實踐" "url" "/tags/會所/")
+    (dict "title" "助人工作" "description" "助人關係、方法與界線" "url" "/tags/助人工作/")
+    (dict "title" "親密關係" "description" "關係、靠近與自我理解" "url" "/tags/親密關係/")
+    (dict "title" "成為一個人" "description" "一系列關於成長與存在的書寫" "url" "/tags/成為一個人/")
+    (dict "title" "創傷知情" "description" "在理解受苦中靠近實務" "url" "/tags/創傷知情/")
+    (dict "title" "一行禪師" "description" "正念、生活與閱讀筆記" "url" "/tags/一行禪師/")
+  -}}
+
+  <div class="home-card-sections">
+    <section class="home-card-section home-card-section-categories" aria-labelledby="home-categories-title">
+      <div class="home-card-section-header">
+        <h2 id="home-categories-title" class="home-card-section-title">分類</h2>
+      </div>
+      <div class="home-card-grid home-card-grid-categories">
+        {{- range $categoryCards }}
+        <a class="home-card home-card-taxonomy" href="{{ .url | relURL }}">
+          <span class="home-card-kicker">Category</span>
+          <h3 class="home-card-title">{{ .title }}</h3>
+          <p class="home-card-description">{{ .description }}</p>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+
+    <section class="home-card-section home-card-section-topics" aria-labelledby="home-topics-title">
+      <div class="home-card-section-header">
+        <h2 id="home-topics-title" class="home-card-section-title">我關心的題目</h2>
+      </div>
+      <div class="home-card-grid home-card-grid-topics">
+        {{- range $topicCards }}
+        <a class="home-card home-card-topic" href="{{ .url | relURL }}">
+          <span class="home-card-kicker">Tag</span>
+          <h3 class="home-card-title">{{ .title }}</h3>
+          <p class="home-card-description">{{ .description }}</p>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+
+    <section class="home-card-section home-card-section-featured" aria-labelledby="home-clubhouse-title">
+      <a class="home-feature-card" href="{{ "/clubhouse/" | relURL }}">
+        <div class="home-feature-card-copy">
+          <span class="home-feature-card-kicker">Special Project</span>
+          <h2 id="home-clubhouse-title" class="home-feature-card-title">Clubhouse 專題</h2>
+          <p class="home-feature-card-description">精神復元、會所模式與社會工作實踐的持續書寫</p>
+        </div>
+        <span class="home-feature-card-action">進入專題</span>
+      </a>
+    </section>
+  </div>
+{{- end }}
+
+{{- range $index, $page := $paginator.Pages }}
+  {{- $class := "post-entry" -}}
+  {{- $userPreferred := or site.Params.disableSpecial1stPost site.Params.homeInfoParams -}}
+  {{- if and (eq $paginator.PageNumber 1) (eq $index 0) (not $userPreferred) -}}
+    {{- $class = "first-entry" -}}
+  {{- end -}}
+
+  <article class="{{ $class }}">
+    {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
+    {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) -}}
+    <header class="entry-header">
+      <h2 class="entry-hint-parent">
+        {{- .Title -}}
+        {{- if .Draft }}
+        <span class="entry-hint" title="Draft">
+          <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" fill="currentColor">
+            <path d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+          </svg>
+        </span>
+        {{- end }}
+      </h2>
+    </header>
+    {{- if ne (.Param "hideSummary") true }}
+    <div class="entry-content">
+      <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <footer class="entry-footer">
+      {{- partial "post_meta.html" . -}}
+    </footer>
+    {{- end }}
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .RelPermalink }}"></a>
+  </article>
+{{- end }}
+
+{{- if gt $paginator.TotalPages 1 }}
+<footer class="page-footer">
+  <nav class="pagination">
+    {{- if $paginator.HasPrev }}
+    <a class="prev" href="{{ $paginator.Prev.URL | relURL }}">
+      竄&nbsp;{{ i18n "prev_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
+      {{- end }}
+    </a>
+    {{- end }}
+    {{- if $paginator.HasNext }}
+    <a class="next" href="{{ $paginator.Next.URL | relURL }}">
+      {{- i18n "next_page" }}&nbsp;
+      {{- if (.Param "ShowPageNums") }}
+      {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
+      {{- end }}&nbsp;罈
+    </a>
+    {{- end }}
+  </nav>
+</footer>
+{{- end }}
+
+{{- if false }}
   {{- partial "hero-banner.html" . -}}
 
   {{- $defaultCover := .Site.Params.salonDefaultCover }}
@@ -83,4 +211,5 @@
       {{- end }}
     {{- end }}
   </div>
-{{ end }}
+{{- end }}
+{{- end }}
