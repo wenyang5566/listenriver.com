@@ -1,10 +1,10 @@
 ﻿{{- define "main" -}}
-{{- $allPages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $homeSection := site.GetPage "section" "blog" -}}
+{{- $allPages := slice -}}
+{{- with $homeSection -}}
+  {{- $allPages = .RegularPagesRecursive -}}
+{{- end -}}
 {{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" -}}
-{{- $categoryItems := partial "category-data.html" . -}}
-{{- $clubhousePages := where $allPages "Params.tags" "intersect" (slice "會所") -}}
-{{- $clubhousePages = sort $clubhousePages "Date" "desc" -}}
-{{- $clubhousePages = first 4 $clubhousePages -}}
 {{- $featuredLimit := site.Params.homeFeaturedLimit | default 4 -}}
 {{- $manualFeatured := where $allPages "Params.featured" true -}}
 {{- $featuredPages := first $featuredLimit $manualFeatured -}}
@@ -22,57 +22,17 @@
   {{- partial "hero-banner.html" . -}}
 
   <div class="home-flow">
-    <section class="home-featured-section" aria-labelledby="home-topics-title">
+    <section class="home-featured-section home-featured-section--plain" aria-labelledby="home-featured-title">
       <div class="home-section-heading">
         <div>
-          <span class="home-section-kicker">主題入口</span>
-          <h2 id="home-topics-title" class="home-section-title">主題入口</h2>
-          <p class="home-section-intro">先從代表性主題文章進站，再依你的閱讀節奏往下延伸。</p>
+          <h2 id="home-featured-title" class="home-section-title">精選文章</h2>
         </div>
+        <a class="home-section-link" href="{{ "/blog/" | relURL }}">查看全部 →</a>
       </div>
       <div class="taxonomy-featured-grid">
         {{- range $featuredPages -}}
           {{- partial "article-card.html" (dict "page" . "class" "post-entry home-featured-entry") -}}
         {{- end -}}
-      </div>
-    </section>
-
-    <section class="home-card-section" aria-labelledby="home-categories-title">
-      <div class="home-section-heading">
-        <div>
-          <span class="home-section-kicker">分類</span>
-          <h2 id="home-categories-title" class="home-section-title">分類</h2>
-          <p class="home-section-intro">從五條主要內容路徑挑一條進入，快速找到你想深讀的方向。</p>
-        </div>
-        <a class="home-section-link" href="{{ "/categories/" | relURL }}">查看全部分類</a>
-      </div>
-      {{- partial "category-rail.html" (dict "items" $categoryItems "id" "home-category-rail") -}}
-    </section>
-
-    <section class="home-featured-section" aria-labelledby="home-clubhouse-title">
-      <div class="home-section-heading">
-        <div>
-          <span class="home-section-kicker">專題企劃</span>
-          <h2 id="home-clubhouse-title" class="home-section-title">Clubhouse 專題</h2>
-          <p class="home-section-intro">聚焦會所實務與觀察，整理可連續閱讀的專題脈絡。</p>
-        </div>
-        <a class="home-section-link" href="{{ "/clubhouse/" | relURL }}">前往專題頁</a>
-      </div>
-      {{- if gt (len $clubhousePages) 0 -}}
-      <div class="taxonomy-featured-grid home-clubhouse-grid">
-        {{- range $clubhousePages -}}
-          {{- partial "article-card.html" (dict "page" . "class" "post-entry home-featured-entry home-clubhouse-item") -}}
-        {{- end -}}
-      </div>
-      {{- end -}}
-    </section>
-
-    <section class="home-latest-section" aria-labelledby="home-latest-title">
-      <div class="home-section-heading">
-        <div>
-          <span class="home-section-kicker">最新文章</span>
-          <h2 id="home-latest-title" class="home-section-title">最新文章</h2>
-        </div>
       </div>
     </section>
   </div>

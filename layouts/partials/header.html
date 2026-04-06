@@ -9,12 +9,14 @@
 
 <header id="site-header" class="site-header">
   <div class="header-top-shell">
-    <div class="header-top">
-      <a href="{{ "/" | relLangURL }}" class="header-brand-text" aria-label="回到首頁">
-        <span class="header-brand-text__title">聆聽的河流</span>
-        <span class="header-brand-text__subtitle">閱讀・書寫・心理・社會工作</span>
-      </a>
-
+    <div class="header-top header-top--nav">
+      <nav class="header-nav-shell" aria-label="主選單">
+        <div class="header-nav header-nav-groups">
+          {{- range $index, $item := $mainNavItems -}}
+          <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}">{{ $item.label }}</a>
+          {{- end -}}
+        </div>
+      </nav>
       <div class="header-side header-side-right">
         <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -47,14 +49,6 @@
       </div>
     </div>
   </div>
-
-  <nav class="header-nav-shell" aria-label="主選單">
-    <div class="header-nav header-nav-groups">
-      {{- range $index, $item := $mainNavItems -}}
-      <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}">{{ $item.label }}</a>
-      {{- end -}}
-    </div>
-  </nav>
 
   <div class="mobile-nav-backdrop" data-mobile-nav-close hidden></div>
   <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="手機選單" aria-hidden="true" inert>
