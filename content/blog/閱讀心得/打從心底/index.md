@@ -9,12 +9,13 @@ type: post
 cover:
   image: 打從心底.jpg
   alt: "閱讀心得｜《打從心底》"
+
 categories:
   - 閱讀筆記
 tags:
   - 閱讀心得
+  - 閱讀
 ---
-
 謝謝 @amelia.su 借我這本少女般的書《打從心底》，看完之後會在心中冒出微微的暖流、一點能量。
 ⁡
 

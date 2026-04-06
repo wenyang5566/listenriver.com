@@ -6,7 +6,9 @@
   {{- $robots = "noindex, nofollow" -}}
 {{- else if eq .Params.robotsNoIndex true -}}
   {{- $robots = "noindex, nofollow" -}}
-{{- else if or (eq .Section "tags") (eq .Section "topics") -}}
+{{- else if eq .Section "tags" -}}
+  {{- $robots = "noindex, follow" -}}
+{{- else if or (eq .Layout "search") (eq .RelPermalink "/search/") -}}
   {{- $robots = "noindex, follow" -}}
 {{- else if in .RelPermalink "/page/" -}}
   {{- $robots = "noindex, follow" -}}

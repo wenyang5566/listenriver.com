@@ -6,12 +6,13 @@ draft: false
 aliases:
   - /blog/講座筆記/20211221般若心經短講/
 type: post
+
 categories:
-  - 社會工作
+  - 閱讀筆記
 tags:
   - 講座筆記
+  - 講座
 ---
-
 ## 短講連結
 
 https://reurl.cc/3Y57z8

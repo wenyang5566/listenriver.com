@@ -8,6 +8,7 @@ type: post
 cover:
   image: 見佛殺佛.jpg
   alt: "書摘｜《見佛殺佛》"
+
 categories:
   - 閱讀筆記
 tags:
@@ -15,7 +16,6 @@ tags:
   - 一行禪師
   - 正念
 ---
-
 ## 閱讀心得
 
 [閱讀心得｜《見佛殺佛》](../閱讀心得/見佛殺佛.md)

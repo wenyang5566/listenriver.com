@@ -9,10 +9,12 @@ type: post
 cover:
   image: 擁抱陰影.jpg
   alt: "閱讀心得｜《擁抱陰影》：從對立走向相對"
+
 categories:
   - 閱讀筆記
 tags:
   - 閱讀心得
+  - 閱讀
 ---
 ## 書摘
 

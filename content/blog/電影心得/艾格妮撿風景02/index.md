@@ -9,13 +9,14 @@ type: post
 cover:
   image: 撿風景.jpg
   alt: "《艾格妮撿風景 The Gleaner and I》02"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
   - 艾格妮撿風景
+  - 電影
 ---
-
 延續[《艾格妮撿風景 The Gleaner and I》01](艾格妮撿風景01.md)，再看一遍《艾格妮撿風景 The Gleaner and I》還是冒出很多想法，撿拾的意義除了是重新定義價值之外，也是回到主觀現實經驗的一種直接接觸。
 ⁡
 ![](/images/電影/撿風景2.jpg)

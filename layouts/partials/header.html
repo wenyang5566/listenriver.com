@@ -2,11 +2,11 @@
 {{- $brandTitle := .Site.Title | default "Listen River" -}}
 {{- $allCats := .Site.Taxonomies.categories -}}
 {{- $groups := slice
-  (dict "title" "閱讀&筆記" "url" "" "items" (slice "日常書寫" "書摘" "講座心得" "講座筆記" "閱讀心得" "電影心得"))
-  (dict "title" "自我成長" "url" "/categories/自我成長/" "items" (slice "親密關係" "成為一個人" "一行禪師"))
-  (dict "title" "邁向助人工作" "url" "/categories/邁向助人工作/" "items" (slice "開放式對話" "創傷知情" "家族治療" "受苦的倒影" "建制民族誌"))
-  (dict "title" "會所模式" "url" "/categories/會所模式/" "items" (slice "會所實習" "會所工作日誌" "會所工作手冊"))
-  (dict "title" "Projects" "url" "" "items" (slice "精選文章" "素描" "聆聽疼痛計畫"))
+  (dict "title" "閱讀筆記" "url" "/categories/閱讀筆記/" "items" (slice "閱讀筆記"))
+  (dict "title" "電影筆記" "url" "/categories/電影筆記/" "items" (slice "電影筆記"))
+  (dict "title" "社會工作" "url" "/categories/社會工作/" "items" (slice "社會工作"))
+  (dict "title" "自我成長" "url" "/categories/自我成長/" "items" (slice "自我成長"))
+  (dict "title" "日常書寫" "url" "/categories/日常書寫/" "items" (slice "日常書寫"))
 -}}
 
 <header id="site-header" class="site-header">
@@ -47,6 +47,9 @@
         <a href="{{ "/categories/" | relLangURL }}" class="header-icon-link" aria-label="全部分類">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h10"></path></svg>
         </a>
+        <a href="{{ "/clubhouse/" | relLangURL }}" class="header-icon-link" aria-label="會所專題">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"></path><path d="M5 7h14"></path><path d="M5 17h14"></path></svg>
+        </a>
         <a href="{{ "/blog/" | relLangURL }}" class="header-cta">進入文章</a>
       </div>
     </div>
@@ -58,11 +61,7 @@
       {{- range $groups }}
         <div class="nav-group">
           <div class="nav-chip nav-group-chip">
-            {{- if .url }}
-              <a href="{{ .url | relLangURL }}" class="nav-group-link-main">{{ .title }}</a>
-            {{- else }}
-              <span class="nav-group-link-main nav-group-link-main-static">{{ .title }}</span>
-            {{- end }}
+            <a href="{{ .url | relLangURL }}" class="nav-group-link-main">{{ .title }}</a>
             <button class="nav-group-trigger" type="button" aria-label="{{ .title }} 子分類" aria-expanded="false" aria-haspopup="true">
               <svg class="nav-chip-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
             </button>
@@ -82,6 +81,7 @@
           </div>
         </div>
       {{- end }}
+      <a href="{{ "/clubhouse/" | relLangURL }}" class="nav-chip nav-chip-more">會所專題</a>
       <a href="{{ "/categories/" | relLangURL }}" class="nav-chip nav-chip-more">全部分類</a>
     </div>
   </nav>
@@ -104,6 +104,7 @@
     <div class="mobile-nav-primary">
       <a href="{{ "/" | relLangURL }}" class="mobile-nav-primary-link">首頁</a>
       <a href="{{ "/blog/" | relLangURL }}" class="mobile-nav-primary-link">最新文章</a>
+      <a href="{{ "/clubhouse/" | relLangURL }}" class="mobile-nav-primary-link">會所專題</a>
       <a href="{{ "/categories/" | relLangURL }}" class="mobile-nav-primary-link">全部分類</a>
       <a href="{{ "/about/" | relLangURL }}" class="mobile-nav-primary-link">關於我</a>
     </div>
@@ -125,12 +126,10 @@
             <svg class="mobile-nav-group-chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5 10 12.5 15 7.5"></path></svg>
           </button>
           <div class="mobile-nav-group-panel">
-            {{- if .url }}
-              <a href="{{ .url | relLangURL }}" class="mobile-nav-sub-link mobile-nav-sub-link-parent">
-                <span>{{ .title }}</span>
-                <span class="mobile-nav-sub-count">{{ $groupCount }}</span>
-              </a>
-            {{- end }}
+            <a href="{{ .url | relLangURL }}" class="mobile-nav-sub-link mobile-nav-sub-link-parent">
+              <span>{{ .title }}</span>
+              <span class="mobile-nav-sub-count">{{ $groupCount }}</span>
+            </a>
             {{- range .items }}
               {{- $cat := index $allCats . }}
               {{- if $cat }}

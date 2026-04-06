@@ -9,13 +9,13 @@ type: post
 cover:
   image: 障礙政治.jpg
   alt: "書摘｜《障礙政治》"
+
 categories:
   - 閱讀筆記
 tags:
   - 書摘
   - 障礙政治
 ---
-
 ## 閱讀心得
 
 [閱讀心得｜《障礙政治》](../閱讀心得/障礙政治.md)

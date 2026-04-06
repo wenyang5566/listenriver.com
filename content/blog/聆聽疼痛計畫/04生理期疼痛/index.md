@@ -6,12 +6,12 @@ draft: false
 aliases:
   - /blog/聆聽疼痛計畫/生理期疼痛/
 type: post
+
 categories:
   - 社會工作
 tags:
   - 聆聽疼痛計畫
 ---
-
 >「**下輩子想當一個不會痛的女生**。」
 ​
 

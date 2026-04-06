@@ -7,13 +7,14 @@ type: post
 cover:
   image: 瑪莉娜.jpg
   alt: "《瑪莉娜的512小時》"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
   - 正念
+  - 電影
 ---
-
 >「**唯有在靜中，才能辨識動**。」
 ⁡
 

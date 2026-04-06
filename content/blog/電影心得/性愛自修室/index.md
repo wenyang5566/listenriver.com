@@ -7,12 +7,13 @@ type: post
 cover:
   image: SexEducation.jpg
   alt: "《性愛自修室 Sex Education》"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
+  - 電影
 ---
-
 《Sex Education》真的是很棒的校園劇，談論人際關係、親密關係、性別教育、情感教育等，對於一個人的成長是很完整的影集。
 ⁡
 

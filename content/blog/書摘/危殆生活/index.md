@@ -9,12 +9,12 @@ type: post
 cover:
   image: 危殆生活1.jpg
   alt: "書摘｜《危殆生活》"
+
 categories:
   - 閱讀筆記
 tags:
   - 書摘
 ---
-
 ## 閱讀心得
 
 [閱讀心得｜《危殆生活》：豐而危殆的連帶](../閱讀心得/危殆生活.md)

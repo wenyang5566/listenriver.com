@@ -9,6 +9,7 @@ type: post
 cover:
   image: 擁抱陰影.jpg
   alt: "書摘｜《擁抱陰影》"
+
 categories:
   - 閱讀筆記
 tags:

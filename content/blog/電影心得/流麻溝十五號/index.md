@@ -7,12 +7,13 @@ type: post
 cover:
   image: 流麻溝十五號.jpg
   alt: "《流麻溝十五號》"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
+  - 電影
 ---
-
 流麻溝十五號召喚了什麼？
 
 

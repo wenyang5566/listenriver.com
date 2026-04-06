@@ -1,0 +1,24 @@
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {{- range .Site.Pages }}
+    {{- $rel := .RelPermalink -}}
+    {{- $include := false -}}
+    {{- if eq $rel "/" -}}
+      {{- $include = true -}}
+    {{- else if or (eq $rel "/about/") (eq $rel "/blog/") (eq $rel "/clubhouse/") (eq $rel "/categories/") -}}
+      {{- $include = true -}}
+    {{- else if and .IsPage (hasPrefix $rel "/blog/") -}}
+      {{- $include = true -}}
+    {{- else if and (hasPrefix $rel "/categories/") (not (in $rel "/page/")) -}}
+      {{- $include = true -}}
+    {{- end -}}
+    {{- if $include }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}</lastmod>
+    {{- end }}
+  </url>
+    {{- end }}
+  {{- end }}
+</urlset>

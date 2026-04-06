@@ -9,14 +9,14 @@ type: post
 cover:
   image: 艾格妮撿風景.png
   alt: "《艾格妮撿風景 The Gleaner and I》01"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
   - 艾格妮撿風景
+  - 電影
 ---
-
-
 ## 艾格妮撿風景 The Gleaner and I
 
 前陣子因為工作的關係，認識了留法藝術家Shake，和她聊起了法國無家者的狀況，她提到法國有許多的「撿拾者」並推薦我看這部紀錄片。

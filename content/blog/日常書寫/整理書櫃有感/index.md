@@ -9,9 +9,8 @@ type: post
 cover:
   image: 整理書櫃有感.jpg
   alt: "整理書櫃有感"
+
 categories:
-  - 日常書寫
-tags:
   - 日常書寫
 ---
 今天整理書櫃發現，書本的意義變得不太一樣了。  

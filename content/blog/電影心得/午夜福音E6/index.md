@@ -7,13 +7,14 @@ type: post
 cover:
   image: 午夜福音6.jpg
   alt: "《午夜福音》EP6"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
   - 午夜福音
+  - 電影
 ---
-
 關於冥想，也關於聆聽的提醒：
 ⁡
 

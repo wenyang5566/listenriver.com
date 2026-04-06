@@ -6,6 +6,4 @@ draft: false
 description: "this is meta description"
 # type
 type : "blog"
-categories:
-  - 日常書寫
 ---

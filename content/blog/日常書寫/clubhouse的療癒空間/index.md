@@ -9,12 +9,10 @@ type: post
 cover:
   image: clubhouse的療癒空間.png
   alt: "Clubhouse的療癒空間：從獨白轉為對話，在對話中產生共鳴"
+
 categories:
   - 日常書寫
-tags:
-  - 日常書寫
 ---
-
 今天（2/8）聽了一下午柏偉開的房間，我發現categories平台創造了豐富的連結以及具有療癒作用的空間，我也**見證了一場充滿意義的對話，感受到「對話精神」如何藉由categories實踐**。
 
 ---

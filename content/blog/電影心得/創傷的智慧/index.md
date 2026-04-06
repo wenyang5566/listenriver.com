@@ -7,14 +7,14 @@ type: post
 cover:
   image: 創傷的智慧.jpg
   alt: "《創傷的智慧The Wisdom of Trauma》"
+
 categories:
   - 電影筆記
-  - 社會工作
 tags:
   - 電影心得
   - 創傷知情
+  - 電影
 ---
-
 📌紀錄片觀看連結（限時觀看至8/2）：(https://wisdomoftrauma.com/movie/)
 
 看完之後對創傷又有更多認識，裡面還談到創傷與成癮的關係、無家者，最讓人好奇的是迷幻藥治療！

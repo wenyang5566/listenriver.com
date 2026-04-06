@@ -6,12 +6,12 @@ draft: false
 aliases:
   - /blog/閱讀書摘/修身與齊家/
 type: post
+
 categories:
   - 閱讀筆記
 tags:
   - 書摘
 ---
-
 ## 閱讀心得
 
 [閱讀心得｜《修身與齊家》：誠者自成也](../閱讀心得/修身與齊家.md)

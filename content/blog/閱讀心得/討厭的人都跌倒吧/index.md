@@ -9,12 +9,13 @@ type: post
 cover:
   image: 討厭的人都跌倒吧.jpg
   alt: "閱讀心得｜《討厭的人都跌倒吧》"
+
 categories:
   - 閱讀筆記
 tags:
   - 閱讀心得
+  - 閱讀
 ---
-
 第一次買繪本就買到非常讚的繪本！
 ⁡
 

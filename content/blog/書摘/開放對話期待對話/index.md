@@ -7,9 +7,9 @@ aliases:
   - /blog/閱讀書摘/開放對話-期待對話/
   - /blog/閱讀書摘/開放對話期待對話/
 type: post
+
 categories:
   - 閱讀筆記
-  - 社會工作
 tags:
   - 書摘
   - 開放式對話

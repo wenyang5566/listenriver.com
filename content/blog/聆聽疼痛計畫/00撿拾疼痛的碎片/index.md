@@ -6,12 +6,12 @@ draft: false
 aliases:
   - /blog/聆聽疼痛計畫/聆聽疼痛計畫撿拾疼痛的碎片/
 type: post
+
 categories:
   - 社會工作
 tags:
   - 聆聽疼痛計畫
 ---
-
 >「**關於疼痛我們注定不會有共同語言，它既無法否認又無法確認**。」
 ​
 

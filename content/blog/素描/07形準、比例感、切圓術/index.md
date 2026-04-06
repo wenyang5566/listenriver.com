@@ -9,12 +9,12 @@ type: post
 cover:
   image: 素描7.jpg
   alt: "素描課07：形準、比例感、切圓術"
+
 categories:
   - 日常書寫
 tags:
   - 素描
 ---
-
 ### 素描課第七堂：形準、比例感、切圓術
 
 

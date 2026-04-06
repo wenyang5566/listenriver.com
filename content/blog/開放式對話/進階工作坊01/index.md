@@ -9,6 +9,7 @@ type: post
 cover:
   image: 0001.jpg
   alt: "開放式對話進階工作坊Day1"
+
 categories:
   - 社會工作
 tags:

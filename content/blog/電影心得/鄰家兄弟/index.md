@@ -7,12 +7,13 @@ type: post
 cover:
   image: 鄰家兄弟.JPG
   alt: "《鄰家兄弟 Paddleton》電影心得"
+
 categories:
   - 電影筆記
 tags:
   - 電影心得
+  - 電影
 ---
-
 看完《鄰家兄弟 Paddleton》這部關於安樂死的電影，感覺挺平靜的，完全不同於《一路玩到掛 The Bucket List》那種瘋狂冒險，而是用一種平淡卻深刻的方式談死亡。故事是關於Andy陪伴Michael進行安樂死的過程，中間呈現出「**當事人與陪伴者**」雙方複雜的張力。
 ⁡
 

@@ -9,12 +9,13 @@ type: post
 cover:
   image: 沒用的東西.jpg
   alt: "閱讀心得｜《沒用的東西》"
+
 categories:
   - 閱讀筆記
 tags:
   - 閱讀心得
+  - 閱讀
 ---
-
 讀過的詩不多，目前為止最喜歡的就是廖瞇的《沒用的東西》。
 
 

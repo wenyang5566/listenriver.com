@@ -9,13 +9,12 @@ type: post
 cover:
   image: 如何看待暴力.jpg
   alt: "如何看待暴力？"
+
 categories:
   - 日常書寫
 tags:
-  - 日常書寫
   - 電影心得
 ---
-
 Sex education 第二季有個場景是在廢棄的回收廠把東西砸爛，發洩憤怒的情緒，讓人看了也很舒壓。
 ⁡
 

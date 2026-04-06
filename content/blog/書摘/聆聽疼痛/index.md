@@ -10,13 +10,13 @@ type: post
 cover:
   image: 聆聽疼痛.jpg
   alt: "書摘｜《聆聽疼痛》"
+
 categories:
   - 閱讀筆記
 tags:
   - 書摘
   - 聆聽疼痛
 ---
-
 ## 閱讀心得
 
 [閱讀心得｜《聆聽疼痛》](../閱讀心得/聆聽疼痛.md)

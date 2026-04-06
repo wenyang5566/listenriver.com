@@ -9,12 +9,12 @@ type: post
 cover:
   image: 素描2.jpg
   alt: "素描02：負形"
+
 categories:
   - 日常書寫
 tags:
   - 素描
 ---
-
 ### 素描第二堂：負形
 ⁡
 

@@ -9,13 +9,14 @@ type: post
 cover:
   image: 無痛思維.jpg
   alt: "閱讀心得｜《無痛思維》"
+
 categories:
   - 閱讀筆記
 tags:
   - 閱讀心得
   - 聆聽疼痛
+  - 閱讀
 ---
-
 ## 書摘
 
 [書摘｜《無痛思維》](../書摘/無痛思維.md)

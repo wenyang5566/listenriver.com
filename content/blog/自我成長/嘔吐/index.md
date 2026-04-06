@@ -10,14 +10,13 @@ type: post
 cover:
   image: 嘔吐.jpg
   alt: "嘔吐"
+
 categories:
   - 自我成長
 tags:
-  - 自我成長
   - 正念
   - 凝視與穿越
 ---
-
 意外看到一個影片介紹《嘔吐》這本書和歌，發現我好像可以理解Roquentin嘔吐的原因。
 ⁡
 

@@ -9,13 +9,13 @@ type: post
 cover:
   image: 開放式對話課後筆記14.jpg
   alt: "開放式對話（Open Dialogue）課後筆記Part2"
+
 categories:
   - 社會工作
 tags:
   - 開放式對話
   - 講座筆記
 ---
-
 ##### 講座名稱：開放式對話實體演練
 
 ##### 日期：2020年5月16日
