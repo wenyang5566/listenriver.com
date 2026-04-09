@@ -1,11 +1,6 @@
 ﻿{{- $brandTitle := .Site.Title | default "Listen River" -}}
-{{- $mainNavItems := slice
-  (dict "url" ("/" | relLangURL) "label" "首頁")
-  (dict "url" ("/blog/" | relLangURL) "label" "最新文章")
-  (dict "url" ("/clubhouse/" | relLangURL) "label" "Clubhouse")
-  (dict "url" ("/categories/" | relLangURL) "label" "主題總覽")
-  (dict "url" ("/about/" | relLangURL) "label" "關於我")
--}}
+{{- $mainNavItems := partial "site-nav-items.html" . -}}
+{{- $searchUrl := "/search/" | relLangURL -}}
 
 <header id="site-header" class="site-header">
   <div class="header-top-shell">
@@ -13,7 +8,19 @@
       <nav class="header-nav-shell" aria-label="主選單">
         <div class="header-nav header-nav-groups">
           {{- range $index, $item := $mainNavItems -}}
-          <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}">{{ $item.label }}</a>
+          {{- $isActive := false -}}
+          {{- if and (eq $item.key "home") $.IsHome -}}
+            {{- $isActive = true -}}
+          {{- else if and (eq $item.key "categories") (eq $.Data.Plural "categories") -}}
+            {{- $isActive = true -}}
+          {{- else if and (eq $item.key "tags") (eq $.Data.Plural "tags") -}}
+            {{- $isActive = true -}}
+          {{- else if and (eq $item.key "clubhouse") (eq $.RelPermalink ("/clubhouse/" | relLangURL)) -}}
+            {{- $isActive = true -}}
+          {{- else if and (eq $item.key "about") (eq $.RelPermalink ("/about/" | relLangURL)) -}}
+            {{- $isActive = true -}}
+          {{- end -}}
+          <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}{{ if $isActive }} is-active{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>{{- if eq $item.key "home" -}}首頁{{- else if eq $item.key "categories" -}}分類總覽{{- else if eq $item.key "tags" -}}主題總覽{{- else if eq $item.key "clubhouse" -}}會所專題{{- else if eq $item.key "about" -}}關於我{{- end -}}</a>
           {{- end -}}
         </div>
       </nav>
@@ -43,8 +50,8 @@
           </svg>
         </button>
         {{- end }}
-        <a href="{{ "/search/" | relLangURL }}" class="header-icon-link" aria-label="搜尋">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <a href="{{ $searchUrl }}" class="header-icon-link" aria-label="搜尋" title="搜尋">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
         </a>
       </div>
     </div>
@@ -67,8 +74,9 @@
 
     <div class="mobile-nav-primary mobile-nav-primary--simple">
       {{- range $mainNavItems -}}
-      <a href="{{ .url }}" class="mobile-nav-primary-link">{{ .label }}</a>
+      <a href="{{ .url }}" class="mobile-nav-primary-link">{{- if eq .key "home" -}}首頁{{- else if eq .key "categories" -}}分類總覽{{- else if eq .key "tags" -}}主題總覽{{- else if eq .key "clubhouse" -}}會所專題{{- else if eq .key "about" -}}關於我{{- end -}}</a>
       {{- end -}}
+      <a href="{{ $searchUrl }}" class="mobile-nav-primary-link mobile-nav-primary-link-search">搜尋</a>
     </div>
   </aside>
 

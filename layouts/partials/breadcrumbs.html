@@ -1,0 +1,35 @@
+﻿{{- if (.Param "ShowBreadCrumbs") -}}
+  {{- $crumbs := slice (dict "url" ("" | absLangURL) "label" "key:home") -}}
+  {{- $current := partial "page-label.html" . -}}
+
+  {{- if .IsHome -}}
+    {{- $current = "" -}}
+  {{- else if and (eq .Kind "taxonomy") (eq .Data.Plural "categories") -}}
+    {{- $current = "key:categories" -}}
+  {{- else if and (eq .Kind "term") (eq .Data.Plural "categories") -}}
+    {{- $crumbs = $crumbs | append (dict "url" ("/categories/" | absLangURL) "label" "key:categories") -}}
+    {{- $current = .Title -}}
+  {{- else if and (eq .Kind "taxonomy") (eq .Data.Plural "tags") -}}
+    {{- $current = "key:tags" -}}
+  {{- else if and (eq .Kind "term") (eq .Data.Plural "tags") -}}
+    {{- $crumbs = $crumbs | append (dict "url" ("/tags/" | absLangURL) "label" "key:tags") -}}
+    {{- $current = .Title -}}
+  {{- else -}}
+    {{- range .Ancestors.Reverse -}}
+      {{- if not .IsHome -}}
+        {{- $crumbs = $crumbs | append (dict "url" .Permalink "label" (partial "page-label.html" .)) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    {{- range $index, $crumb := $crumbs -}}
+      {{- if gt $index 0 -}}<span class="breadcrumbs-separator" aria-hidden="true">/</span>{{- end -}}
+      <a href="{{ $crumb.url }}">{{- if eq $crumb.label "key:home" -}}首頁{{- else if eq $crumb.label "key:categories" -}}分類總覽{{- else if eq $crumb.label "key:tags" -}}主題總覽{{- else if eq $crumb.label "key:clubhouse" -}}會所專題{{- else if eq $crumb.label "key:about" -}}關於我{{- else -}}{{ $crumb.label }}{{- end -}}</a>
+    {{- end -}}
+    {{- if ne $current "" -}}
+      <span class="breadcrumbs-separator" aria-hidden="true">/</span>
+      <span aria-current="page">{{- if eq $current "key:home" -}}首頁{{- else if eq $current "key:categories" -}}分類總覽{{- else if eq $current "key:tags" -}}主題總覽{{- else if eq $current "key:clubhouse" -}}會所專題{{- else if eq $current "key:about" -}}關於我{{- else -}}{{ $current }}{{- end -}}</span>
+    {{- end -}}
+  </nav>
+{{- end -}}

@@ -4414,3 +4414,36 @@ body:not(.list) .main {
     height: 190px;
   }
 }
+
+.nav-chip.is-active {
+  background: rgba(111, 202, 209, 0.16);
+  color: var(--primary);
+}
+
+.mobile-nav-primary-link-search {
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.breadcrumbs-separator {
+  color: var(--secondary);
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.search-pagefind-shell {
+  margin-top: 1rem;
+}
+
+.searchbox-fallback {
+  display: none;
+}

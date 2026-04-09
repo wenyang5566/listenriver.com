@@ -1,0 +1,54 @@
+﻿{{- define "main" -}}
+{{- $pagefindInstalled := or (fileExists "static/pagefind/pagefind-ui.js") (fileExists "public/pagefind/pagefind-ui.js") -}}
+
+<header class="page-header search-page-header">
+  {{- partial "breadcrumbs.html" . -}}
+  <span class="taxonomy-page-kicker">Search</span>
+  <h1>搜尋</h1>
+  <div class="post-description taxonomy-page-description">
+    {{- if .Description -}}
+      {{ .Description | markdownify }}
+    {{- else -}}
+      搜尋站內文章、分類與主題標籤。
+    {{- end -}}
+  </div>
+</header>
+
+{{- if $pagefindInstalled -}}
+<div class="search-pagefind-shell">
+  <div id="pagefind-search"></div>
+</div>
+<div id="searchbox" class="searchbox-fallback" hidden aria-hidden="true">
+  <input id="searchInput" tabindex="-1" aria-label="search" type="search" autocomplete="off" maxlength="64">
+  <ul id="searchResults" aria-label="search results"></ul>
+</div>
+<link rel="stylesheet" href="{{ "/pagefind/pagefind-ui.css" | relLangURL }}">
+<script src="{{ "/pagefind/pagefind-ui.js" | relLangURL }}" defer></script>
+<script defer>
+  window.addEventListener("DOMContentLoaded", function () {
+    if (window.PagefindUI) {
+      new window.PagefindUI({
+        element: "#pagefind-search",
+        showSubResults: true,
+        autofocus: true,
+        resetStyles: false,
+        translations: {
+          placeholder: "搜尋文章、分類、主題",
+          clear_search: "清除",
+          load_more: "載入更多",
+          search_label: "搜尋",
+          filters_label: "篩選",
+          zero_results: "找不到相關內容",
+          many_results: "[COUNT] 筆結果"
+        }
+      });
+    }
+  });
+</script>
+{{- else -}}
+<div id="searchbox">
+  <input id="searchInput" autofocus placeholder="{{ .Params.placeholder | default "搜尋文章、分類、主題" }}" aria-label="search" type="search" autocomplete="off" maxlength="64">
+  <ul id="searchResults" aria-label="search results"></ul>
+</div>
+{{- end -}}
+{{- end -}}

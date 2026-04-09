@@ -5,13 +5,15 @@
 
 <header class="page-header clubhouse-page-header">
   {{- partial "breadcrumbs.html" . }}
-  <span class="clubhouse-page-kicker">Special Project</span>
-  <h1>{{ .Title }}</h1>
-  {{- if .Description }}
+  <span class="clubhouse-page-kicker">Clubhouse</span>
+  <h1>會所專題</h1>
   <div class="post-description">
-    {{ .Description | markdownify }}
+    {{- if .Description -}}
+      {{ .Description | markdownify }}
+    {{- else -}}
+      以會所經驗為主軸，整理工作現場、閱讀脈絡與復元相關書寫。
+    {{- end -}}
   </div>
-  {{- end }}
 </header>
 
 {{- if .Content }}
@@ -35,7 +37,7 @@
   <div class="home-section-heading">
     <div>
       <span class="home-section-kicker">Curated Reading</span>
-      <h2 id="clubhouse-groups-title" class="home-section-title">依主題脈絡分組閱讀</h2>
+      <h2 id="clubhouse-groups-title" class="home-section-title">依分類脈絡分組閱讀</h2>
     </div>
   </div>
 

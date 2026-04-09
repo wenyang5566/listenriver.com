@@ -1,0 +1,13 @@
+﻿{{- $label := .LinkTitle | default .Title -}}
+{{- if .IsHome -}}
+  {{- $label = "key:home" -}}
+{{- else if eq .RelPermalink ("/categories/" | relLangURL) -}}
+  {{- $label = "key:categories" -}}
+{{- else if eq .RelPermalink ("/tags/" | relLangURL) -}}
+  {{- $label = "key:tags" -}}
+{{- else if eq .RelPermalink ("/clubhouse/" | relLangURL) -}}
+  {{- $label = "key:clubhouse" -}}
+{{- else if eq .RelPermalink ("/about/" | relLangURL) -}}
+  {{- $label = "key:about" -}}
+{{- end -}}
+{{- return $label -}}
