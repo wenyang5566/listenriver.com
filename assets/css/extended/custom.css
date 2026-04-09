@@ -1009,6 +1009,7 @@ body.mobile-nav-locked {
 [data-theme="dark"] .header-icon-button:hover,
 [data-theme="dark"] .nav-chip:hover,
 [data-theme="dark"] .mobile-nav-primary-link:hover,
+[data-theme="dark"] .mobile-nav-tag-link:hover,
 [data-theme="dark"] .mobile-nav-sub-link:hover,
 [data-theme="dark"] .mobile-bottom-link.is-active,
 [data-theme="dark"] .mobile-bottom-link.is-available,
@@ -4424,6 +4425,86 @@ body:not(.list) .main {
   background: rgba(15, 23, 42, 0.06);
 }
 
+.mobile-nav-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.mobile-nav-tag-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  min-height: 36px;
+  padding: 0 0.82rem;
+  border-radius: 999px;
+  background: rgba(111, 202, 209, 0.12);
+  color: var(--primary);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mobile-nav-tag-link__count {
+  color: var(--secondary);
+  font-size: 0.75rem;
+}
+
+.salon-home {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.salon-section {
+  display: grid;
+  gap: 1rem;
+}
+
+.salon-section-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.salon-section-more {
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+.home-category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-category-grid .category-card__link {
+  min-height: 210px;
+}
+
+.home-tag-rail-shell {
+  gap: 1rem;
+}
+
+.salon-card-excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .home-category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .salon-home {
+    gap: 2rem;
+  }
+}
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -4446,4 +4527,31 @@ body:not(.list) .main {
 
 .searchbox-fallback {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .salon-section-header {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .home-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .salon-home {
+    gap: 1.6rem;
+  }
+
+  .salon-section {
+    gap: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-category-grid {
+    grid-template-columns: 1fr;
+  }
 }

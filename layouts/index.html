@@ -7,31 +7,24 @@
 {{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" -}}
 {{- $featuredLimit := site.Params.homeFeaturedLimit | default 4 -}}
 {{- $latestLimit := site.Params.homeLatestLimit | default 8 -}}
+{{- $popularTagItems := partial "home-tag-data.html" . -}}
+{{- $categoryItems := partial "home-axis-data-clean.html" . -}}
 {{- $manualFeatured := where $allPages "Params.featured" true -}}
 {{- $featuredPages := first $featuredLimit $manualFeatured -}}
 {{- if eq (len $featuredPages) 0 -}}
   {{- $featuredPages = first $featuredLimit $allPages -}}
 {{- end -}}
 {{- $latestPages := first $latestLimit $allPages -}}
-{{- $clubhousePages := slice -}}
-{{- range $allPages -}}
-  {{- $tags := .Params.tags | default (slice) -}}
-  {{- if or (in .Title "Clubhouse") (in .File.Path "會所模式/") (gt (len (intersect $tags (slice "會所工作日誌" "會所"))) 0) -}}
-    {{- $clubhousePages = $clubhousePages | append . -}}
-  {{- end -}}
-{{- end -}}
-{{- $clubhousePages = first 8 (sort $clubhousePages "Date" "desc") -}}
 {{- $paginator := .Paginate $allPages -}}
 
 {{- if eq $paginator.PageNumber 1 -}}
-  {{- $axes := site.Params.homeTagAxes | default (slice) -}}
   {{- partial "hero-banner.html" . -}}
 
   <div class="salon-home">
     <section class="salon-section">
       <div class="salon-section-header">
         <h2 class="salon-section-title">精選文章</h2>
-        <a href="{{ "/blog/" | relURL }}" class="salon-section-more">查看全部 →</a>
+        <a href="{{ "/blog/" | relURL }}" class="salon-section-more">查看全部</a>
       </div>
       <div class="salon-carousel-wrapper">
         <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
@@ -44,63 +37,34 @@
       </div>
     </section>
 
-    {{- range $axis := $axes -}}
-      {{- $axisTitle := index $axis "title" -}}
-      {{- $axisTags := index $axis "tags" | default (slice) -}}
-      {{- $primaryTag := index $axis "primaryTag" | default "" -}}
-      {{- $axisPages := slice -}}
-      {{- range $allPages -}}
-        {{- $pageTags := .Params.tags | default (slice) -}}
-        {{- if gt (len (intersect $pageTags $axisTags)) 0 -}}
-          {{- $axisPages = $axisPages | append . -}}
+    {{- if gt (len $categoryItems) 0 -}}
+    <section class="salon-section salon-section--categories">
+      <div class="salon-section-header">
+        <h2 class="salon-section-title">五大主分類入口</h2>
+        <a href="{{ "/categories/" | relURL }}" class="salon-section-more">進入分類</a>
+      </div>
+      <div class="home-category-grid">
+        {{- range $categoryItems -}}
+          {{- partial "home-category-card-clean.html" (dict "item" .) -}}
         {{- end -}}
-      {{- end -}}
-      {{- $axisPages = first 8 (sort $axisPages "Date" "desc") -}}
-      {{- if gt (len $axisPages) 0 -}}
-        {{- $moreUrl := "/tags/" | relURL -}}
-        {{- with site.GetPage (printf "/tags/%s" $primaryTag) -}}
-          {{- $moreUrl = .RelPermalink -}}
-        {{- end -}}
-        <section class="salon-section">
-          <div class="salon-section-header">
-            <h2 class="salon-section-title">{{ $axisTitle }}</h2>
-            <a href="{{ $moreUrl }}" class="salon-section-more">查看全部 →</a>
-          </div>
-          <div class="salon-carousel-wrapper">
-            <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
-            <div class="salon-carousel" data-carousel>
-              {{- range $axisPages -}}
-                {{- partialCached "salon-card.html" (dict "page" .) .RelPermalink -}}
-              {{- end -}}
-            </div>
-            <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
-          </div>
-        </section>
-      {{- end -}}
+      </div>
+    </section>
     {{- end -}}
 
-    {{- if gt (len $clubhousePages) 0 -}}
-    <section class="salon-section">
+    {{- if gt (len $popularTagItems) 0 -}}
+    <section class="salon-section salon-section--tags">
       <div class="salon-section-header">
-        <h2 class="salon-section-title">Clubhouse</h2>
-        <a href="{{ "/clubhouse/" | relURL }}" class="salon-section-more">查看全部 →</a>
+        <h2 class="salon-section-title">熱門 tags</h2>
+        <a href="{{ "/tags/" | relURL }}" class="salon-section-more">查看主題</a>
       </div>
-      <div class="salon-carousel-wrapper">
-        <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
-        <div class="salon-carousel" data-carousel>
-          {{- range $clubhousePages -}}
-            {{- partialCached "salon-card.html" (dict "page" .) .RelPermalink -}}
-          {{- end -}}
-        </div>
-        <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
-      </div>
+      {{- partial "category-rail.html" (dict "items" $popularTagItems "id" "home-popular-tags" "class" "home-tag-rail-shell" "cardPartial" "home-popular-tag-card-clean.html") -}}
     </section>
     {{- end -}}
 
     <section class="salon-section">
       <div class="salon-section-header">
         <h2 class="salon-section-title">最新文章</h2>
-        <a href="{{ "/blog/" | relURL }}" class="salon-section-more">查看全部 →</a>
+        <a href="{{ "/blog/" | relURL }}" class="salon-section-more">查看全部</a>
       </div>
       <div class="salon-carousel-wrapper">
         <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>

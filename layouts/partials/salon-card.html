@@ -49,7 +49,7 @@
   <div class="salon-card-body">
     <div class="salon-card-title">{{ $page.Title }}</div>
     {{- if $page.Summary -}}
-    <div class="salon-card-excerpt">{{ $page.Summary | plainify | truncate 60 }}</div>
+    <div class="salon-card-excerpt">{{ $page.Summary | plainify | truncate 42 }}</div>
     {{- end -}}
     <div class="salon-card-date">{{ $page.Date.Format "2006/01/02" }}</div>
   </div>

@@ -1,0 +1,21 @@
+{{- $item := .item -}}
+{{- $page := $item.page -}}
+{{- $sample := $item.sample -}}
+{{- if and $page $sample -}}
+<article class="category-card home-tag-card">
+  <a class="home-tag-card__link" href="{{ $page.RelPermalink }}">
+    <div class="home-tag-card__media">
+      {{- partialCached "cover.html" (dict "cxt" $sample "IsSingle" false "isHidden" false) $sample.RelPermalink false false ($sample.Params.cover.image | default "") -}}
+    </div>
+    <div class="home-tag-card__body">
+      <span class="home-tag-card__eyebrow">Tag</span>
+      <h3 class="home-tag-card__title">#{{ $item.name }}</h3>
+      <p class="home-tag-card__description">{{ $sample.Title }}</p>
+      <div class="home-tag-card__meta">
+        <span>{{ $item.count }} posts</span>
+        <span>Open topic</span>
+      </div>
+    </div>
+  </a>
+</article>
+{{- end -}}

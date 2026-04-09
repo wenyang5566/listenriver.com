@@ -1,0 +1,35 @@
+{{- $items := slice -}}
+{{- $order := site.Params.salonCategoryOrder | default (slice) -}}
+{{- $axes := site.Params.homeTagAxes | default (slice) -}}
+
+{{- range $index, $name := $order -}}
+  {{- $categoryPage := site.GetPage (printf "/categories/%s" $name) -}}
+  {{- $categoryTerm := index site.Taxonomies.categories $name -}}
+  {{- $axis := index $axes $index -}}
+  {{- $primaryTag := "" -}}
+  {{- if $axis -}}
+    {{- $primaryTag = index $axis "primaryTag" | default "" -}}
+  {{- end -}}
+  {{- $tagPage := false -}}
+  {{- if $primaryTag -}}
+    {{- $tagPage = site.GetPage (printf "/tags/%s" $primaryTag) -}}
+  {{- end -}}
+  {{- $targetPage := $categoryPage | default $tagPage -}}
+  {{- $count := 0 -}}
+  {{- if $categoryTerm -}}
+    {{- $count = len $categoryTerm.Pages -}}
+  {{- else if and $primaryTag (index site.Taxonomies.tags $primaryTag) -}}
+    {{- $count = len (index site.Taxonomies.tags $primaryTag).Pages -}}
+  {{- end -}}
+  {{- if $targetPage -}}
+    {{- $items = $items | append (dict
+      "name" $name
+      "title" $name
+      "page" $targetPage
+      "count" $count
+      "description" ($targetPage.Description | default $targetPage.Summary | plainify)
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $items -}}

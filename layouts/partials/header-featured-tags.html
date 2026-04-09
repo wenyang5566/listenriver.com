@@ -1,0 +1,28 @@
+{{- $items := slice -}}
+{{- $configured := site.Params.headerFeaturedTags | default (slice) -}}
+{{- $tagNames := $configured -}}
+
+{{- if eq (len $tagNames) 0 -}}
+  {{- range site.Params.homeTagAxes | default (slice) -}}
+    {{- $primaryTag := index . "primaryTag" -}}
+    {{- if and $primaryTag (not (in $tagNames $primaryTag)) -}}
+      {{- $tagNames = $tagNames | append $primaryTag -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- range first 6 $tagNames -}}
+  {{- $term := index site.Taxonomies.tags . -}}
+  {{- if $term -}}
+    {{- $pages := sort $term.Pages "Date" "desc" -}}
+    {{- $sample := index $pages 0 -}}
+    {{- $items = $items | append (dict
+      "name" .
+      "page" $term.Page
+      "count" (len $term.Pages)
+      "sample" $sample
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $items -}}

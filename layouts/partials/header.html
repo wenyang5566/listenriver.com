@@ -1,5 +1,6 @@
 ﻿{{- $brandTitle := .Site.Title | default "Listen River" -}}
 {{- $mainNavItems := partial "site-nav-items.html" . -}}
+{{- $featuredTags := partial "header-featured-tags.html" . -}}
 {{- $searchUrl := "/search/" | relLangURL -}}
 
 <header id="site-header" class="site-header">
@@ -21,6 +22,31 @@
             {{- $isActive = true -}}
           {{- end -}}
           <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}{{ if $isActive }} is-active{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>{{- if eq $item.key "home" -}}首頁{{- else if eq $item.key "categories" -}}分類總覽{{- else if eq $item.key "tags" -}}主題總覽{{- else if eq $item.key "clubhouse" -}}會所專題{{- else if eq $item.key "about" -}}關於我{{- end -}}</a>
+          {{- end -}}
+          {{- if gt (len $featuredTags) 0 -}}
+          <div class="nav-group">
+            <button class="nav-chip nav-chip-more nav-group-trigger" type="button" aria-expanded="false" aria-haspopup="true">
+              重要主題
+              <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div class="nav-group-menu">
+              <div class="nav-group-menu-inner">
+                {{- range $featuredTags -}}
+                <a class="nav-group-link" href="{{ .page.RelPermalink }}">
+                  <span class="nav-group-link-copy">
+                    <span class="nav-group-link-label">#{{ .name }}</span>
+                    {{- with .sample -}}
+                    <span class="nav-group-link-description">{{ .Title }}</span>
+                    {{- end -}}
+                  </span>
+                  <span class="nav-group-link-count">{{ .count }}</span>
+                </a>
+                {{- end -}}
+              </div>
+            </div>
+          </div>
           {{- end -}}
         </div>
       </nav>
@@ -78,6 +104,26 @@
       {{- end -}}
       <a href="{{ $searchUrl }}" class="mobile-nav-primary-link mobile-nav-primary-link-search">搜尋</a>
     </div>
+
+    {{- if gt (len $featuredTags) 0 -}}
+    <div class="mobile-nav-groups">
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
+          <span>重要主題</span>
+          <svg class="mobile-nav-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </button>
+        <div class="mobile-nav-group-panel">
+          <div class="mobile-nav-tag-list">
+            {{- range $featuredTags -}}
+            <a href="{{ .page.RelPermalink }}" class="mobile-nav-tag-link">#{{ .name }}<span class="mobile-nav-tag-link__count">{{ .count }}</span></a>
+            {{- end -}}
+          </div>
+        </div>
+      </div>
+    </div>
+    {{- end -}}
   </aside>
 
   <div class="mobile-reading-progress" aria-hidden="true">

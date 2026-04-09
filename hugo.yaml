@@ -96,6 +96,21 @@ params:
         - 日常書寫
         - 講座心得
         - 講座筆記
+  headerFeaturedTags:
+    - 閱讀心得
+    - 會所模式
+    - 開放式對話
+    - 成為一個人
+    - 病痛經驗
+  homeTagNames:
+    - 閱讀心得
+    - 會所模式
+    - 開放式對話
+    - 成為一個人
+    - 病痛經驗
+    - 助人工作
+    - 電影心得
+    - 自我成長
 
   avatar: /images/profile.jpg
   name: 文揚 Wen-Yang
