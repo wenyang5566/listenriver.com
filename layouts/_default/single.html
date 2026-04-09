@@ -27,7 +27,7 @@
   </header>
 
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
-  {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+  {{- partialCached "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) .RelPermalink true $isHidden (.Params.cover.image | default "") }}
 
   {{- if (.Param "ShowToc") }}
     {{- partial "toc.html" . }}

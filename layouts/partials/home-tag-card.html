@@ -5,7 +5,7 @@
 <article class="category-card home-tag-card">
   <a class="home-tag-card__link" href="{{ $page.RelPermalink }}">
     <div class="home-tag-card__media">
-      {{- partial "cover.html" (dict "cxt" $sample "IsSingle" false "isHidden" false) -}}
+      {{- partialCached "cover.html" (dict "cxt" $sample "IsSingle" false "isHidden" false) $sample.RelPermalink false false ($sample.Params.cover.image | default "") -}}
     </div>
     <div class="home-tag-card__body">
       <span class="home-tag-card__eyebrow">Tag</span>

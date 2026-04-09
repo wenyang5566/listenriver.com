@@ -20,11 +20,26 @@ Configure the Pages project with:
 - Build output directory: `public`
 - Environment variable: `HUGO_VERSION=0.155.2`
 
+Repository expectations:
+
+- Commit source files only
+- Do not commit `public/`
+- Do not commit `resources/_gen/`
+- Do not commit local cache directories such as `.hugo_cache/`
+- Let Pages generate `public/sitemap.xml` and the rest of the site output during deployment
+
 Recommended checks:
 
 - The repository connected to Pages is this repo
 - `main` is the only production branch unless you intentionally use branch previews
 - Submodules are available because the site depends on `themes/PaperMod`
+- The repo should not depend on prebuilt local output checked into version control
+
+For local Windows builds, prefer the helper script below when Hugo cannot write to the default user cache directory:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\hugo-build-local.ps1
+```
 
 ## Cloudflare Worker
 
@@ -90,6 +105,7 @@ That script keeps the originals outside deployment and reduces oversized page bu
 
 ## Release Checklist
 
+- Run `powershell -ExecutionPolicy Bypass -File .\scripts\cleanup-generated.ps1` if generated output or caches have piled up
 - Confirm `git status` is clean except for intentional files
 - Run `powershell -ExecutionPolicy Bypass -File .\scripts\audit-aliases.ps1`
 - Run `hugo --destination public-build-check`

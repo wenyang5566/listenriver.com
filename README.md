@@ -17,6 +17,7 @@ This repository follows a source-only deployment model.
 
 - Commit source files only
 - Do not commit `public/` output
+- Do not commit `resources/_gen/` or local Hugo cache directories
 - Let Cloudflare Pages build the site from `main`
 - Let GitHub Actions validate builds before or alongside deployment
 
@@ -35,6 +36,18 @@ Build the site:
 
 ```powershell
 hugo --gc --minify
+```
+
+Build the site with a workspace-local absolute cache directory:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\hugo-build-local.ps1
+```
+
+Clean generated output and local caches:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\cleanup-generated.ps1
 ```
 
 Build to a temporary verification directory:
@@ -75,6 +88,8 @@ Cloudflare Pages should be configured to:
 - Run build command: `hugo --gc --minify`
 - Publish directory: `public`
 - Use environment variable: `HUGO_VERSION=0.155.2`
+
+Cloudflare Pages generates `sitemap.xml`, RSS, JSON, and the rest of the deployable output inside `public/` during the build, so those files should not be committed to the repository.
 
 Detailed deployment guidance:
 

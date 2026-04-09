@@ -37,7 +37,7 @@
         <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
         <div class="salon-carousel" data-carousel>
           {{- range $featuredPages -}}
-            {{- partial "salon-card.html" (dict "page" .) -}}
+            {{- partialCached "salon-card.html" (dict "page" .) .RelPermalink -}}
           {{- end -}}
         </div>
         <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
@@ -70,7 +70,7 @@
             <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
             <div class="salon-carousel" data-carousel>
               {{- range $axisPages -}}
-                {{- partial "salon-card.html" (dict "page" .) -}}
+                {{- partialCached "salon-card.html" (dict "page" .) .RelPermalink -}}
               {{- end -}}
             </div>
             <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
@@ -89,7 +89,7 @@
         <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
         <div class="salon-carousel" data-carousel>
           {{- range $clubhousePages -}}
-            {{- partial "salon-card.html" (dict "page" .) -}}
+            {{- partialCached "salon-card.html" (dict "page" .) .RelPermalink -}}
           {{- end -}}
         </div>
         <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>
@@ -106,7 +106,7 @@
         <button class="carousel-btn carousel-btn-prev" aria-label="上一組文章">&#8249;</button>
         <div class="salon-carousel" data-carousel>
           {{- range $latestPages -}}
-            {{- partial "salon-card.html" (dict "page" .) -}}
+            {{- partialCached "salon-card.html" (dict "page" .) .RelPermalink -}}
           {{- end -}}
         </div>
         <button class="carousel-btn carousel-btn-next" aria-label="下一組文章">&#8250;</button>

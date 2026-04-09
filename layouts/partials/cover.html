@@ -33,15 +33,17 @@
     {{- end -}}
 
     {{- if $cover -}}
-      {{- partial "optimized-image.html" (dict
+      {{- $widths := cond $.IsSingle (slice 480 760 960 1280 1600) (slice 240 360 480 720) -}}
+      {{- $sizes := cond $.IsSingle "(min-width: 1280px) 760px, (min-width: 900px) 68vw, calc(100vw - 36px)" "(min-width: 768px) 360px, 100vw" -}}
+      {{- partialCached "optimized-image.html" (dict
         "resource" $cover
         "alt" $alt
         "loading" $loading
-        "sizes" (cond $.IsSingle "(min-width: 1280px) 760px, (min-width: 900px) 68vw, calc(100vw - 36px)" "(min-width: 768px) 360px, 100vw")
+        "sizes" $sizes
         "maxWidth" 1600
-        "widths" (cond $.IsSingle (slice 480 760 960 1280 1600) (slice 240 360 480 720))
+        "widths" $widths
         "fetchpriority" (cond $.IsSingle "high" "auto")
-      ) -}}
+      ) $cover.RelPermalink $alt $loading $sizes 1600 (delimit $widths "-") (cond $.IsSingle "high" "auto") -}}
     {{- else -}}
       <img loading="{{ $loading }}" src="{{ $coverImage | relURL }}" alt="{{ $alt }}">
     {{- end -}}

@@ -2,7 +2,7 @@
 {{- $class := .class | default "post-entry" -}}
 <article class="{{ $class }}">
   {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
-  {{- partial "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) -}}
+  {{- partialCached "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) $page.RelPermalink false $isHidden ($page.Params.cover.image | default "") -}}
   <header class="entry-header">
     <h2 class="entry-hint-parent">
       {{- $page.Title -}}

@@ -1,10 +1,13 @@
 /.obsidian/
 /public/
 /resources/_gen/
+/.hugo_cache/
 /.hugo_build.lock
-/.obsidian/
 /.tmp_hugo_check/
 /.tmp_hugo_cache/
+/hugo-build.log
+/.tmp_hugo_profile/
+/public-build-check/
 /old_data/
 /old_images/
 /old_partial/

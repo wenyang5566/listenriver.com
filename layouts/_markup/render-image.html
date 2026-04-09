@@ -24,16 +24,18 @@
 {{- end -}}
 
 {{- if $resource -}}
+  {{- $widths := slice 360 640 920 -}}
+  {{- $sizes := "(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)" -}}
   <figure class="post-figure">
-    {{- partial "optimized-image.html" (dict
+    {{- partialCached "optimized-image.html" (dict
       "resource" $resource
       "alt" $alt
       "loading" "lazy"
-      "sizes" "(min-width: 1280px) 640px, (min-width: 900px) 56vw, calc(100vw - 36px)"
+      "sizes" $sizes
       "maxWidth" 920
-      "widths" (slice 360 640 920)
+      "widths" $widths
       "class" "post-content-image"
-    ) -}}
+    ) $resource.RelPermalink $alt "lazy" $sizes 920 (delimit $widths "-") "post-content-image" -}}
     {{- with .Title }}
       <figcaption>{{ . }}</figcaption>
     {{- end }}
