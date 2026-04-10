@@ -14,7 +14,8 @@ services:
 
 languages:
   zh-tw:
-    baseURL: "https://listenriver.com/"
+    # Keep baseURL only at the site root. In Hugo 0.155.x on Windows,
+    # a language-specific baseURL can make `hugo server` return 404 for every route.
     languageCode: "zh-tw"
     languageName: "繁體中文"
     weight: 1
@@ -165,3 +166,11 @@ menu:
 taxonomies:
   category: "categories"
   tag: "tags"
+
+# Work around a Hugo 0.155.x server regression on Windows where the embedded
+# dev server injects a catch-all 404 redirect for every route.
+server:
+  redirects:
+    - from: /__hugo_server_not_found__
+      to: /404.html
+      status: 404
