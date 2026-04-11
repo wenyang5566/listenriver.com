@@ -2,52 +2,86 @@
 {{- $mainNavItems := partial "site-nav-items.html" . -}}
 {{- $featuredTags := partial "header-featured-tags.html" . -}}
 {{- $searchUrl := "/search/" | relLangURL -}}
+{{- $aboutUrl := "/about/" | relLangURL -}}
+{{- $tagsUrl := "/tags/" | relLangURL -}}
+{{- $desktopHeader := site.Params.desktopHeader | default dict -}}
+{{- $desktopCategories := slice -}}
+{{- range (index $desktopHeader "categories" | default (site.Params.salonCategoryOrder | default (slice))) -}}
+  {{- with index site.Taxonomies.categories . -}}
+    {{- with .Page -}}
+      {{- $desktopCategories = $desktopCategories | append (dict "name" .LinkTitle "url" .RelPermalink) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $desktopTopics := slice -}}
+{{- range (index $desktopHeader "topics" | default (slice)) -}}
+  {{- $topicName := index . "name" -}}
+  {{- $topicUrl := index . "url" -}}
+  {{- if not $topicUrl -}}
+    {{- with index site.Taxonomies.tags $topicName -}}
+      {{- with .Page -}}
+        {{- $topicUrl = .RelPermalink -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if and $topicName $topicUrl -}}
+    {{- $desktopTopics = $desktopTopics | append (dict "name" $topicName "url" $topicUrl) -}}
+  {{- end -}}
+{{- end -}}
+{{- $isHome := .IsHome -}}
+{{- $isCategoriesSection := eq .Data.Plural "categories" -}}
+{{- $isTagsSection := eq .Data.Plural "tags" -}}
+{{- $isAboutPage := eq .RelPermalink $aboutUrl -}}
+{{- $isSearchPage := eq .RelPermalink $searchUrl -}}
+{{- $isTopicSection := or $isTagsSection (eq .RelPermalink ("/clubhouse/" | relLangURL)) -}}
 
 <header id="site-header" class="site-header">
   <div class="header-top-shell">
     <div class="header-top header-top--nav">
-      <nav class="header-nav-shell" aria-label="主選單">
-        <div class="header-nav header-nav-groups">
-          {{- range $index, $item := $mainNavItems -}}
-          {{- $isActive := false -}}
-          {{- if and (eq $item.key "home") $.IsHome -}}
-            {{- $isActive = true -}}
-          {{- else if and (eq $item.key "categories") (eq $.Data.Plural "categories") -}}
-            {{- $isActive = true -}}
-          {{- else if and (eq $item.key "tags") (eq $.Data.Plural "tags") -}}
-            {{- $isActive = true -}}
-          {{- else if and (eq $item.key "clubhouse") (eq $.RelPermalink ("/clubhouse/" | relLangURL)) -}}
-            {{- $isActive = true -}}
-          {{- else if and (eq $item.key "about") (eq $.RelPermalink ("/about/" | relLangURL)) -}}
-            {{- $isActive = true -}}
-          {{- end -}}
-          <a href="{{ $item.url }}" class="nav-chip {{ if eq $index 0 }}nav-chip-home{{ else }}nav-chip-more{{ end }}{{ if $isActive }} is-active{{ end }}"{{ if $isActive }} aria-current="page"{{ end }}>{{- if eq $item.key "home" -}}首頁{{- else if eq $item.key "categories" -}}分類總覽{{- else if eq $item.key "tags" -}}主題總覽{{- else if eq $item.key "clubhouse" -}}會所專題{{- else if eq $item.key "about" -}}關於我{{- end -}}</a>
-          {{- end -}}
-          {{- if gt (len $featuredTags) 0 -}}
-          <div class="nav-group">
-            <button class="nav-chip nav-chip-more nav-group-trigger" type="button" aria-expanded="false" aria-haspopup="true">
-              重要主題
+      <nav class="header-nav-shell header-nav-shell--desktop" aria-label="主選單">
+        <div class="header-nav header-nav-groups desktop-nav">
+          <a href="{{ "/" | relLangURL }}" class="nav-chip nav-chip-home{{ if $isHome }} is-active{{ end }}"{{ if $isHome }} aria-current="page"{{ end }}>首頁</a>
+
+          <div class="nav-group nav-group--desktop">
+            <button class="nav-chip nav-chip-more nav-group-trigger{{ if $isCategoriesSection }} is-active{{ end }}" type="button" aria-expanded="false" aria-haspopup="true">
+              分類
               <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
-            <div class="nav-group-menu">
-              <div class="nav-group-menu-inner">
-                {{- range $featuredTags -}}
-                <a class="nav-group-link" href="{{ .page.RelPermalink }}">
-                  <span class="nav-group-link-copy">
-                    <span class="nav-group-link-label">#{{ .name }}</span>
-                    {{- with .sample -}}
-                    <span class="nav-group-link-description">{{ .Title }}</span>
-                    {{- end -}}
-                  </span>
-                  <span class="nav-group-link-count">{{ .count }}</span>
-                </a>
+            <div class="nav-group-menu nav-group-menu--desktop">
+              <div class="nav-group-menu-inner nav-group-menu-inner--simple">
+                <a class="nav-group-link nav-group-link--simple{{ if $isCategoriesSection }} is-active{{ end }}" href="/categories/"{{ if $isCategoriesSection }} aria-current="page"{{ end }}>分類總覽</a>
+                <span class="nav-group-divider" aria-hidden="true"></span>
+                {{- range $desktopCategories -}}
+                {{- $isCurrentCategory := eq $.RelPermalink .url -}}
+                <a class="nav-group-link nav-group-link--simple{{ if $isCurrentCategory }} is-active{{ end }}" href="{{ .url }}"{{ if $isCurrentCategory }} aria-current="page"{{ end }}>{{ .name }}</a>
                 {{- end -}}
               </div>
             </div>
           </div>
-          {{- end -}}
+
+          <div class="nav-group nav-group--desktop">
+            <button class="nav-chip nav-chip-more nav-group-trigger{{ if $isTopicSection }} is-active{{ end }}" type="button" aria-expanded="false" aria-haspopup="true">
+              主題
+              <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div class="nav-group-menu nav-group-menu--desktop">
+              <div class="nav-group-menu-inner nav-group-menu-inner--simple">
+                <a class="nav-group-link nav-group-link--simple{{ if $isTagsSection }} is-active{{ end }}" href="{{ $tagsUrl }}"{{ if $isTagsSection }} aria-current="page"{{ end }}>主題總覽</a>
+                <span class="nav-group-divider" aria-hidden="true"></span>
+                {{- range $desktopTopics -}}
+                {{- $isCurrentTopic := eq $.RelPermalink .url -}}
+                <a class="nav-group-link nav-group-link--simple{{ if $isCurrentTopic }} is-active{{ end }}" href="{{ .url }}"{{ if $isCurrentTopic }} aria-current="page"{{ end }}>{{ .name }}</a>
+                {{- end -}}
+                <a class="nav-group-link nav-group-link--simple nav-group-link--more" href="{{ $tagsUrl }}">更多主題 →</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="{{ $aboutUrl }}" class="nav-chip nav-chip-more{{ if $isAboutPage }} is-active{{ end }}"{{ if $isAboutPage }} aria-current="page"{{ end }}>關於</a>
         </div>
       </nav>
       <div class="header-side header-side-right">
@@ -76,7 +110,7 @@
           </svg>
         </button>
         {{- end }}
-        <a href="{{ $searchUrl }}" class="header-icon-link" aria-label="搜尋" title="搜尋">
+        <a href="{{ $searchUrl }}" class="header-icon-link header-search-icon{{ if $isSearchPage }} is-active{{ end }}" aria-label="搜尋" title="搜尋"{{ if $isSearchPage }} aria-current="page"{{ end }}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
         </a>
       </div>

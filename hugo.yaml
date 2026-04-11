@@ -103,6 +103,20 @@ params:
     - 開放式對話
     - 成為一個人
     - 病痛經驗
+  desktopHeader:
+    categories:
+      - 閱讀筆記
+      - 電影筆記
+      - 社會工作
+      - 自我成長
+      - 日常書寫
+    topics:
+      - name: 閱讀心得
+      - name: 會所模式
+        url: /clubhouse/
+      - name: 成為一個人
+      - name: 開放式對話
+      - name: 自我成長
   homeTagNames:
     - 閱讀心得
     - 會所模式
