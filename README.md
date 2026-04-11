@@ -44,6 +44,16 @@ Build the site with a workspace-local absolute cache directory:
 powershell -ExecutionPolicy Bypass -File .\scripts\hugo-build-local.ps1
 ```
 
+Run a local preview without `hugo server`:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\hugo-preview-local.ps1
+```
+
+This uses `hugo --watch` to rebuild into `public-preview/` and serves that
+folder on `http://127.0.0.1:1313/` with Python's built-in static server.
+Use this when `hugo server` returns `Page Not Found` locally.
+
 Clean generated output and local caches:
 
 ```powershell

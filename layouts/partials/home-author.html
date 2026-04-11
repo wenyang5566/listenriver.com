@@ -1,0 +1,16 @@
+{{- $avatar := site.Params.avatar | default site.Params.salonDefaultCover -}}
+{{- $name := site.Params.name | default site.Params.author | default site.Title -}}
+{{- $description := site.Params.salonDescription | default site.Params.description -}}
+<section class="home-discovery-section home-author-section" aria-labelledby="home-author-title">
+  <div class="home-author-card">
+    <a class="home-author-card__avatar" href="{{ "/about/" | relURL }}" aria-hidden="true" tabindex="-1">
+      <img src="{{ $avatar | relURL }}" alt="{{ $name }}" loading="lazy" decoding="async">
+    </a>
+    <div class="home-author-card__body">
+      <p class="home-discovery-section__eyebrow">About the Author</p>
+      <h2 id="home-author-title" class="home-author-card__title">{{ $name }}</h2>
+      <p class="home-author-card__description">{{ $description }}</p>
+    </div>
+    <a class="home-author-card__link" href="{{ "/about/" | relURL }}">認識作者</a>
+  </div>
+</section>

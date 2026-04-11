@@ -1,0 +1,28 @@
+{{- $items := .items | default (slice) -}}
+{{- if gt (len $items) 0 -}}
+<section class="home-discovery-section" aria-labelledby="home-topics-title">
+  <div class="home-discovery-section__header">
+    <div>
+      <p class="home-discovery-section__eyebrow">Explore Topics</p>
+      <h2 id="home-topics-title" class="home-discovery-section__title">探索主題</h2>
+    </div>
+    <a href="{{ "/categories/" | relURL }}" class="home-discovery-section__more">瀏覽分類</a>
+  </div>
+  <div class="home-topics-grid">
+    {{- range $items -}}
+      {{- $page := .page -}}
+      {{- if $page -}}
+      <article class="home-topic-card">
+        <a class="home-topic-card__link" href="{{ $page.RelPermalink }}">
+          <h3 class="home-topic-card__title">{{ .title | default $page.Title }}</h3>
+          <div class="home-topic-card__meta">
+            <span>{{ .count }} 篇文章</span>
+            <span>前往分類</span>
+          </div>
+        </a>
+      </article>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}
