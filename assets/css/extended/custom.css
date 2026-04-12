@@ -4824,38 +4824,38 @@ body:not(.list) .main {
 }
 
 .home-discovery-section-clubhouse {
-  overflow: hidden;
+  overflow: visible;
+}
+
+.home-clubhouse-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  gap: 0;
 }
 
 .home-clubhouse-slider {
-  position: relative;
-  padding-right: 5rem;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .home-discovery .home-clubhouse-scroll {
   display: flex;
-  gap: 0.8rem;
+  gap: 0.9rem;
   overflow-x: auto;
   padding: 0 0 0.35rem;
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scroll-snap-type: x proximity;
 }
 
 .home-clubhouse-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.home-clubhouse-scroll::-webkit-scrollbar-thumb {
-  background: rgba(17, 24, 39, 0.18);
-  border-radius: 999px;
+  display: none;
 }
 
 .home-clubhouse-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -4866,17 +4866,27 @@ body:not(.list) .main {
   font-size: 1.65rem;
   line-height: 1;
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-  transform: translateY(-50%);
   cursor: pointer;
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
+.home-clubhouse-arrow svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
 .home-clubhouse-arrow--prev {
-  right: 3.2rem;
+  position: absolute;
+  left: -3.1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .home-clubhouse-arrow--next {
-  right: 0.35rem;
+  position: absolute;
+  right: -3.1rem;
+  top: 50%;
   opacity: 1;
   transform: translateY(-50%) scale(1);
 }
@@ -4893,10 +4903,10 @@ body:not(.list) .main {
 }
 
 .home-discovery .home-clubhouse-card {
-  flex: 0 0 208px;
+  flex: 0 0 222px;
   display: grid;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 16px;
   scroll-snap-align: start;
   border: 1px solid rgba(17, 24, 39, 0.07);
   background: var(--entry);
@@ -4909,7 +4919,7 @@ body:not(.list) .main {
 
 .home-discovery .home-clubhouse-card__media .entry-cover {
   margin: 0;
-  aspect-ratio: 16 / 11.5;
+  aspect-ratio: 16 / 11.2;
   background: rgba(17, 24, 39, 0.04);
 }
 
@@ -4921,8 +4931,8 @@ body:not(.list) .main {
 
 .home-discovery .home-clubhouse-card__body {
   display: grid;
-  gap: 0.38rem;
-  padding: 0.58rem 0.58rem 0.64rem;
+  gap: 0.44rem;
+  padding: 0.7rem 0.72rem 0.78rem;
 }
 
 .home-discovery .home-clubhouse-card__tag {
@@ -4938,12 +4948,14 @@ body:not(.list) .main {
 
 .home-discovery .home-clubhouse-card__title {
   margin: 0;
-  font-size: 0.78rem;
-  line-height: 1.28;
+  font-size: 0.84rem;
+  line-height: 1.34;
 }
 
 .home-clubhouse-card__excerpt {
   display: -webkit-box;
+  font-size: 0.82rem;
+  line-height: 1.56;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -5170,8 +5182,9 @@ body:not(.list) .main {
     display: none;
   }
 
-  .home-clubhouse-slider {
-    padding: 0;
+  .home-clubhouse-carousel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
   }
 
   .home-discovery .home-clubhouse-scroll {

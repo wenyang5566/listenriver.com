@@ -866,7 +866,9 @@
       const card = rail.querySelector('.home-clubhouse-card');
       if (!card) return rail.clientWidth * 0.8;
       const gap = Number.parseFloat(window.getComputedStyle(rail).gap || '0');
-      return card.getBoundingClientRect().width + gap;
+      const cardStep = card.getBoundingClientRect().width + gap;
+      const visibleCards = window.innerWidth >= 1200 ? 2 : window.innerWidth >= 768 ? 1.5 : 1;
+      return Math.min(rail.clientWidth * 0.9, cardStep * visibleCards);
     }
 
     function syncButtons() {
