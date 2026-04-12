@@ -1,9 +1,10 @@
 {{- $publisherType := site.Params.schema.publisherType | default "Organization" | title -}}
-{{- $siteURL := site.Home.RelPermalink | absURL -}}
+{{- $siteBase := cond (hasPrefix site.BaseURL "http") (site.BaseURL | strings.TrimRight "/") "https://listenriver.com" -}}
+{{- $siteURL := printf "%s/" $siteBase -}}
 {{- $siteName := site.Title | strings.TrimSpace -}}
 {{- $siteDescription := site.Params.description | default site.Title | strings.TrimSpace -}}
 {{- $favicon := site.Params.assets.favicon | default "favicon.ico" | absURL -}}
-{{- $pageURL := .RelPermalink | absURL -}}
+{{- $pageURL := printf "%s%s" $siteBase .RelPermalink -}}
 {{- $langCode := .Language.Lang | default site.Language.Lang | default "zh-tw" -}}
 {{- $authorName := site.Params.author | default site.Params.name | default $siteName -}}
 {{- $currentName := .LinkTitle | default .Title | default .Name | strings.TrimSpace -}}
@@ -67,7 +68,7 @@
         "@type" "ListItem"
         "position" (add (len $items) 1)
         "name" $ancestorName
-        "item" (.RelPermalink | absURL)
+        "item" (printf "%s%s" $siteBase .RelPermalink)
       ) -}}
     {{- end -}}
   {{- end -}}
@@ -75,7 +76,6 @@
     "@type" "ListItem"
     "position" (add (len $items) 1)
     "name" $currentName
-    "item" $pageURL
   ) -}}
   {{- $breadcrumbSchema := dict
     "@context" "https://schema.org"
