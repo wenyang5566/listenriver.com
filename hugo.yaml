@@ -2,7 +2,7 @@
 languageCode: "zh-tw"
 defaultContentLanguage: "zh-tw"
 defaultContentLanguageInSubdir: false
-title: "聆聽的河流｜閱讀・書寫・心理・社會工作"
+title: "聆聽的河流｜閱讀・書寫・心理・社工"
 theme: "PaperMod"
 enableRobotsTXT: true
 ignoreLogs:
@@ -47,17 +47,17 @@ params:
 
   homeInfoParams:
     Title: "聆聽的河流"
-    Content: "閱讀・書寫・心理・社會工作"
+    Content: "閱讀・書寫・心理・社工"
   homeFeaturedLimit: 4
   articleRelatedLimit: 4
   articleInternalLinksLimit: 3
 
   author: "文揚 Wen-Yang"
-  description: "聆聽的河流｜閱讀・書寫・心理・社會工作"
+  description: "聆聽的河流｜閱讀・書寫・心理・社工"
   images:
     - "/images/og-default.png"
   socialDefaultImage: "/images/og-default.png"
-  socialDefaultImageAlt: "聆聽的河流｜閱讀・書寫・心理・社會工作"
+  socialDefaultImageAlt: "聆聽的河流｜閱讀・書寫・心理・社工"
 
   salonBanner: /images/logo_ver3.png
   salonDefaultCover: /images/mao_3.png
@@ -109,8 +109,8 @@ params:
       - 閱讀與筆記
       - 日常書寫
       - 自我成長
-      - 工作者反思
       - 病痛經驗
+      - 工作者反思
     topics:
       - name: 閱讀心得
       - name: 會所模式

@@ -15,7 +15,6 @@
       <nav class="header-nav-shell header-nav-shell--desktop" aria-label="主選單">
         <div class="header-nav header-nav-groups desktop-nav">
           <a href="{{ "/" | relLangURL }}" class="nav-chip nav-chip-home{{ if $isHome }} is-active{{ end }}"{{ if $isHome }} aria-current="page"{{ end }}>首頁</a>
-          <span class="nav-section-label">分類：</span>
 
           {{- range $item := $headerCategoryItems -}}
           {{- $currentTag := "" -}}
@@ -59,8 +58,6 @@
           <a href="{{ $item.url }}" class="nav-chip nav-chip-more{{ if $isActiveItem }} is-active{{ end }}"{{ if $isActiveItem }} aria-current="page"{{ end }}>{{ $item.name }}</a>
           {{- end -}}
           {{- end -}}
-
-          <a href="{{ $aboutUrl }}" class="nav-chip nav-chip-more{{ if $isAboutPage }} is-active{{ end }}"{{ if $isAboutPage }} aria-current="page"{{ end }}>關於</a>
         </div>
       </nav>
       <div class="header-side header-side-right">

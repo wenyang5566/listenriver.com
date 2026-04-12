@@ -37,10 +37,27 @@
 {{- end -}}
 
 {{- with site.GetPage "/clubhouse" -}}
+  {{- $featuredTags := slice -}}
+  {{- range $entry := $featuredCategories -}}
+    {{- if eq (index $entry "name") "會所模式" -}}
+      {{- range (index $entry "tags" | default (slice)) -}}
+        {{- $tagName := . -}}
+        {{- with index site.Taxonomies.tags $tagName -}}
+          {{- with .Page -}}
+            {{- $featuredTags = $featuredTags | append (dict
+              "name" .LinkTitle
+              "url" .RelPermalink
+              "count" (len (index site.Taxonomies.tags $tagName).Pages)
+            ) -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
   {{- $items = $items | append (dict
     "name" "會所模式"
     "url" .RelPermalink
-    "featuredTags" (slice)
+    "featuredTags" $featuredTags
   ) -}}
 {{- end -}}
 
