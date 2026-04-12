@@ -372,6 +372,14 @@
   gap: 18px;
 }
 
+.nav-section-label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
 .nav-group {
   position: relative;
   flex: 0 0 auto;
@@ -4183,6 +4191,33 @@ body:not(.list) .main {
     min-height: 42px;
     padding: 0 1rem;
     border-radius: 12px;
+  }
+
+  .desktop-nav .nav-group-chip {
+    gap: 0.1rem;
+    padding-right: 0.2rem;
+  }
+
+  .desktop-nav .nav-group-link-main {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 0.8rem 0 0.95rem;
+    border-radius: 12px;
+  }
+
+  .desktop-nav .nav-group-link-main.is-active {
+    color: var(--primary);
+  }
+
+  .desktop-nav .nav-group-trigger--split {
+    min-height: 42px;
+    padding: 0 0.65rem 0 0.45rem;
+  }
+
+  .desktop-nav .nav-section-label {
+    min-height: 42px;
+    padding-right: 0.2rem;
   }
 
   .desktop-nav .nav-group-menu--desktop {

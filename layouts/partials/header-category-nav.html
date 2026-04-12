@@ -1,0 +1,47 @@
+{{- $items := slice -}}
+{{- $featuredMapping := index site.Data "featured-tags" -}}
+{{- $featuredCategories := index $featuredMapping "categories" | default (slice) -}}
+{{- $categoryOrder := index site.Params.desktopHeader "categories" | default (slice "閱讀與筆記" "日常書寫" "自我成長" "工作者反思" "病痛經驗") -}}
+
+{{- range $categoryName := $categoryOrder -}}
+  {{- $categoryPage := "" -}}
+  {{- with index site.Taxonomies.categories $categoryName -}}
+    {{- with .Page -}}
+      {{- $categoryPage = . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $categoryPage -}}
+    {{- $featuredTags := slice -}}
+    {{- range $entry := $featuredCategories -}}
+      {{- if eq (index $entry "name") $categoryName -}}
+        {{- range (index $entry "tags" | default (slice)) -}}
+          {{- $tagName := . -}}
+          {{- with index site.Taxonomies.tags $tagName -}}
+            {{- with .Page -}}
+              {{- $featuredTags = $featuredTags | append (dict
+                "name" .LinkTitle
+                "url" .RelPermalink
+                "count" (len (index site.Taxonomies.tags $tagName).Pages)
+              ) -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $items = $items | append (dict
+      "name" $categoryPage.LinkTitle
+      "url" $categoryPage.RelPermalink
+      "featuredTags" $featuredTags
+    ) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with site.GetPage "/clubhouse" -}}
+  {{- $items = $items | append (dict
+    "name" "會所模式"
+    "url" .RelPermalink
+    "featuredTags" (slice)
+  ) -}}
+{{- end -}}
+
+{{- return $items -}}

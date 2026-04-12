@@ -107,10 +107,10 @@ params:
   desktopHeader:
     categories:
       - 閱讀與筆記
+      - 日常書寫
+      - 自我成長
       - 工作者反思
       - 病痛經驗
-      - 自我成長
-      - 日常書寫
     topics:
       - name: 閱讀心得
       - name: 會所模式
