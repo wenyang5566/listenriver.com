@@ -9,7 +9,7 @@ cover:
   alt: "《創傷的智慧The Wisdom of Trauma》"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 創傷知情

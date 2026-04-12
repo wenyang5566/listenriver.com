@@ -9,7 +9,7 @@ cover:
   alt: "《無人知曉的夏日清晨 Nobody knows》"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 是枝裕和

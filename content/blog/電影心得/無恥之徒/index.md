@@ -11,7 +11,7 @@ cover:
   alt: "美劇《無恥之徒 Shameless》心得：人人都是無恥之徒"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 無恥之徒

@@ -11,7 +11,7 @@ cover:
   alt: "關於自我揭露"
 
 categories:
-  - 日常書寫
+  - 病痛經驗
 tags:
   - 病痛經驗
 ---

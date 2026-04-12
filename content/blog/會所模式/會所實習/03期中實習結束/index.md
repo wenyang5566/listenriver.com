@@ -11,7 +11,7 @@ cover:
   alt: "期中實習結束"
 
 categories:
-  - 社會工作
+  - 工作者反思
 tags:
   - 會所實習
   - 會所模式

@@ -11,7 +11,7 @@ cover:
   alt: "開放式對話進階工作坊Day 2"
 
 categories:
-  - 社會工作
+  - 工作者反思
 tags:
   - 開放式對話
   - 講座筆記

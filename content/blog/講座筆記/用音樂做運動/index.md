@@ -11,7 +11,7 @@ cover:
   alt: "用音樂做運動"
 
 categories:
-  - 閱讀筆記
+  - 閱讀與筆記
 tags:
   - 講座筆記
   - 講座

@@ -11,7 +11,7 @@ cover:
   alt: "《艾格妮撿風景 The Gleaner and I》01"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 艾格妮撿風景

@@ -8,7 +8,7 @@ aliases:
 type: post
 
 categories:
-  - 閱讀筆記
+  - 閱讀與筆記
 tags:
   - 講座筆記
   - 講座

@@ -9,7 +9,7 @@ cover:
   alt: "《紐約大國民：珍雅各》Citizen Jane: Battle for the City"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 電影

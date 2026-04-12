@@ -11,7 +11,7 @@ cover:
   alt: "定期回診"
 
 categories:
-  - 日常書寫
+  - 病痛經驗
 tags:
   - 病痛經驗
 ---

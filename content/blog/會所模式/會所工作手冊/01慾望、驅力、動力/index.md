@@ -8,7 +8,7 @@ aliases:
 type: post
 
 categories:
-  - 社會工作
+  - 工作者反思
 tags:
   - 會所實習
   - 會所模式

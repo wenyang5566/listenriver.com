@@ -62,29 +62,30 @@ params:
   salonBanner: /images/logo_ver3.png
   salonDefaultCover: /images/mao_3.png
   salonCategoryOrder:
-    - 閱讀筆記
-    - 電影筆記
-    - 社會工作
+    - 閱讀與筆記
+    - 工作者反思
+    - 病痛經驗
     - 自我成長
     - 日常書寫
   homeTagAxes:
-    - title: 閱讀筆記
+    - title: 閱讀與筆記
       primaryTag: 閱讀心得
       tags:
         - 閱讀心得
         - 書摘
         - 閱讀
-    - title: 電影筆記
-      primaryTag: 電影心得
-      tags:
         - 電影心得
-        - 電影
-    - title: 社會工作
+    - title: 工作者反思
       primaryTag: 助人工作
       tags:
         - 助人工作
         - 邁向助人工作
         - 會所工作日誌
+    - title: 病痛經驗
+      primaryTag: 病痛經驗
+      tags:
+        - 病痛經驗
+        - 聆聽疼痛計畫
     - title: 自我成長
       primaryTag: 自我成長
       tags:
@@ -105,9 +106,9 @@ params:
     - 病痛經驗
   desktopHeader:
     categories:
-      - 閱讀筆記
-      - 電影筆記
-      - 社會工作
+      - 閱讀與筆記
+      - 工作者反思
+      - 病痛經驗
       - 自我成長
       - 日常書寫
     topics:

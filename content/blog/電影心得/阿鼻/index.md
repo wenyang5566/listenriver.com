@@ -9,7 +9,7 @@ cover:
   alt: "《阿鼻》"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影
 ---

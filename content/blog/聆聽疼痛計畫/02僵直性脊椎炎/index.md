@@ -8,7 +8,7 @@ aliases:
 type: post
 
 categories:
-  - 社會工作
+  - 病痛經驗
 tags:
   - 聆聽疼痛計畫
 ---

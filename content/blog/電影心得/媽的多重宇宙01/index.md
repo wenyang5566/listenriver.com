@@ -11,7 +11,7 @@ cover:
   alt: "《媽的多重宇宙 EEAAO》01"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 媽的多重宇宙

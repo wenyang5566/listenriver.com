@@ -11,7 +11,7 @@ cover:
   alt: "書摘｜《危殆生活》"
 
 categories:
-  - 閱讀筆記
+  - 閱讀與筆記
 tags:
   - 書摘
 ---

@@ -11,7 +11,7 @@ cover:
   alt: "疼痛的意義是襯托生命"
 
 categories:
-  - 日常書寫
+  - 病痛經驗
 tags:
   - 病痛經驗
 ---

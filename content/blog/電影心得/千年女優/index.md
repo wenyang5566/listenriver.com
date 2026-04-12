@@ -11,7 +11,7 @@ cover:
   alt: "《千年女優》"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 電影

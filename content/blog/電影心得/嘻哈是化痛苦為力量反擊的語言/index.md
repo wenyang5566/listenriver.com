@@ -11,7 +11,7 @@ cover:
   alt: "《Rhythm+Flow》：嘻哈是化痛苦為力量反擊的語言"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 電影

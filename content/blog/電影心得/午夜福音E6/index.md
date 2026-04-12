@@ -9,7 +9,7 @@ cover:
   alt: "《午夜福音》EP6"
 
 categories:
-  - 電影筆記
+  - 閱讀與筆記
 tags:
   - 電影心得
   - 午夜福音
