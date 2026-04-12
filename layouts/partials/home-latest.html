@@ -17,6 +17,9 @@
       </a>
       <div class="home-latest-item__body">
         <div class="home-latest-item__meta">
+          {{- with index (.Params.categories | default (slice)) 0 -}}
+          <span>{{ . }}</span>
+          {{- end -}}
           <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
           {{- if site.Params.ShowReadingTime -}}
           <span>{{ .ReadingTime }} 分鐘閱讀</span>
@@ -25,6 +28,7 @@
         <h3 class="home-latest-item__title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
+        <p class="home-latest-item__excerpt">{{ .Summary | plainify | htmlUnescape | truncate 120 }}</p>
       </div>
     </article>
     {{- end -}}

@@ -9,14 +9,17 @@
     <a href="{{ "/blog/" | relURL }}" class="home-discovery-section__more">查看全部</a>
   </div>
   <div class="home-featured-grid">
-    {{- range $pages -}}
-    <article class="home-post-card">
+    {{- with index $pages 0 -}}
+    <article class="home-post-card home-post-card--featured">
       <a class="home-post-card__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
         {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
         {{- partialCached "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) .RelPermalink false $isHidden (.Params.cover.image | default "") -}}
       </a>
       <div class="home-post-card__body">
         <div class="home-post-card__meta">
+          {{- with index (.Params.categories | default (slice)) 0 -}}
+          <span>{{ . }}</span>
+          {{- end -}}
           <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
           {{- if site.Params.ShowReadingTime -}}
           <span>{{ .ReadingTime }} 分鐘閱讀</span>
@@ -25,8 +28,34 @@
         <h3 class="home-post-card__title">
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
         </h3>
+        <p class="home-post-card__excerpt">{{ .Summary | plainify | htmlUnescape | truncate 118 }}</p>
       </div>
     </article>
+    {{- end -}}
+
+    {{- if gt (len $pages) 1 -}}
+    <div class="home-featured-stack">
+      {{- range after 1 $pages -}}
+      <article class="home-post-card home-post-card--compact">
+        <a class="home-post-card__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+          {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
+          {{- partialCached "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) .RelPermalink false $isHidden (.Params.cover.image | default "") -}}
+        </a>
+        <div class="home-post-card__body">
+          <div class="home-post-card__meta">
+            {{- with index (.Params.categories | default (slice)) 0 -}}
+            <span>{{ . }}</span>
+            {{- end -}}
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
+          </div>
+          <h3 class="home-post-card__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <p class="home-post-card__excerpt">{{ .Summary | plainify | htmlUnescape | truncate 66 }}</p>
+        </div>
+      </article>
+      {{- end -}}
+    </div>
     {{- end -}}
   </div>
 </section>

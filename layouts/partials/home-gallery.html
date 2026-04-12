@@ -1,0 +1,42 @@
+{{- $galleryFiles := readDir "static/images/home/gallery" -}}
+{{- $slides := slice -}}
+{{- range sort $galleryFiles "Name" "asc" -}}
+  {{- if and (not .IsDir) (eq (lower (path.Ext .Name)) ".webp") -}}
+    {{- $slides = $slides | append .Name -}}
+  {{- end -}}
+{{- end -}}
+{{- if gt (len $slides) 0 -}}
+<section class="home-discovery-section home-gallery-section" aria-label="首頁圖集">
+  <div class="home-gallery-slider" data-gallery-slider>
+    <button class="home-gallery-arrow home-gallery-arrow--prev" type="button" data-gallery-prev aria-label="上一張">
+      <span aria-hidden="true">‹</span>
+    </button>
+    <div class="home-gallery-viewport">
+      <div class="home-gallery-track" data-gallery-track>
+        {{- range $index, $file := $slides -}}
+        <div class="home-gallery-slide">
+          <img
+            src="{{ printf "/images/home/gallery/%s" $file | relURL }}"
+            alt="{{ printf "首頁圖集 %d" (add $index 1) }}"
+            loading="lazy"
+            decoding="async">
+        </div>
+        {{- end -}}
+      </div>
+    </div>
+    <button class="home-gallery-arrow home-gallery-arrow--next" type="button" data-gallery-next aria-label="下一張">
+      <span aria-hidden="true">›</span>
+    </button>
+  </div>
+  <div class="home-gallery-dots" data-gallery-dots>
+    {{- range $index, $_ := $slides -}}
+    <button
+      class="home-gallery-dot{{ if eq $index 0 }} is-active{{ end }}"
+      type="button"
+      data-gallery-dot="{{ $index }}"
+      aria-label="{{ printf "切換到第 %d 張" (add $index 1) }}">
+    </button>
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}

@@ -804,4 +804,88 @@
       setActive(firstHeading.id);
     }
   }
+
+  document.querySelectorAll('[data-gallery-slider]').forEach((slider) => {
+    const track = slider.querySelector('[data-gallery-track]');
+    const prev = slider.querySelector('[data-gallery-prev]');
+    const next = slider.querySelector('[data-gallery-next]');
+    const dotsContainer = slider.parentElement?.querySelector('[data-gallery-dots]');
+    const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('[data-gallery-dot]')) : [];
+    const total = track ? track.children.length : 0;
+    let index = 0;
+
+    if (!track || !prev || !next || total < 2 || dots.length !== total) {
+      return;
+    }
+
+    function renderGallery() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, dotIndex) => {
+        const active = dotIndex === index;
+        dot.classList.toggle('is-active', active);
+        if (active) {
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.removeAttribute('aria-current');
+        }
+      });
+    }
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      renderGallery();
+    });
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % total;
+      renderGallery();
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const nextIndex = Number(dot.getAttribute('data-gallery-dot'));
+        if (Number.isNaN(nextIndex)) return;
+        index = nextIndex;
+        renderGallery();
+      });
+    });
+
+    renderGallery();
+  });
+
+  document.querySelectorAll('[data-clubhouse-slider]').forEach((slider) => {
+    const rail = slider.querySelector('[data-home-clubhouse-scroll]');
+    const prev = slider.querySelector('[data-clubhouse-prev]');
+    const next = slider.querySelector('[data-clubhouse-next]');
+
+    if (!rail || !prev || !next) {
+      return;
+    }
+
+    function getStep() {
+      const card = rail.querySelector('.home-clubhouse-card');
+      if (!card) return rail.clientWidth * 0.8;
+      const gap = Number.parseFloat(window.getComputedStyle(rail).gap || '0');
+      return card.getBoundingClientRect().width + gap;
+    }
+
+    function syncButtons() {
+      const atStart = rail.scrollLeft <= 4;
+      const atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4;
+      prev.classList.toggle('is-disabled', atStart);
+      next.classList.toggle('is-at-end', atEnd);
+    }
+
+    prev.addEventListener('click', () => {
+      rail.scrollBy({ left: -getStep(), behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      rail.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+
+    rail.addEventListener('scroll', syncButtons, { passive: true });
+    window.addEventListener('resize', syncButtons);
+    syncButtons();
+  });
 })();

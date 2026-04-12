@@ -1,0 +1,42 @@
+{{- $pages := .pages | default (slice) -}}
+{{- if gt (len $pages) 0 -}}
+<section class="home-discovery-section home-discovery-section-clubhouse" aria-labelledby="home-clubhouse-title">
+  <div class="home-discovery-section__header">
+    <div>
+      <p class="home-discovery-section__eyebrow">Clubhouse Special</p>
+      <h2 id="home-clubhouse-title" class="home-discovery-section__title">會所專題</h2>
+    </div>
+    <a href="{{ "/clubhouse/" | relURL }}" class="home-discovery-section__more">進入專題頁</a>
+  </div>
+
+  <div class="home-clubhouse-slider" data-clubhouse-slider>
+    <div class="home-clubhouse-scroll" data-home-clubhouse-scroll>
+      {{- range $pages -}}
+        {{- $label := index (.Params.categories | default (slice)) 0 | default (index (.Params.tags | default (slice)) 0) | default "會所" -}}
+      <article class="home-clubhouse-card">
+        <a class="home-clubhouse-card__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+          {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
+          {{- partialCached "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) .RelPermalink false $isHidden (.Params.cover.image | default "") -}}
+        </a>
+        <div class="home-clubhouse-card__body">
+          <div class="home-clubhouse-card__meta">
+            <span class="home-clubhouse-card__tag">{{ $label }}</span>
+            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
+          </div>
+          <h3 class="home-clubhouse-card__title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h3>
+          <p class="home-clubhouse-card__excerpt">{{ .Summary | plainify | htmlUnescape | truncate 92 }}</p>
+        </div>
+      </article>
+      {{- end -}}
+    </div>
+    <button class="home-clubhouse-arrow home-clubhouse-arrow--prev" type="button" data-clubhouse-prev aria-label="向左瀏覽會所專題">
+      <span aria-hidden="true">‹</span>
+    </button>
+    <button class="home-clubhouse-arrow home-clubhouse-arrow--next" type="button" data-clubhouse-next aria-label="向右瀏覽會所專題">
+      <span aria-hidden="true">›</span>
+    </button>
+  </div>
+</section>
+{{- end -}}
