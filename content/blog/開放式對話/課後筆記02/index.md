@@ -11,7 +11,7 @@ cover:
   alt: "開放式對話（Open Dialogue）課後筆記Part2"
 
 categories:
-  - 工作者反思
+  - 助人工作
 tags:
   - 開放式對話
   - 講座筆記

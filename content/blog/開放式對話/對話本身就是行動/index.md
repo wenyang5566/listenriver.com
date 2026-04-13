@@ -6,7 +6,7 @@ draft: false
 type: post
 
 categories:
-  - 工作者反思
+  - 助人工作
 tags:
   - 開放式對話
 ---

@@ -1,3 +1,12 @@
+/categories/工作者反思 /categories/助人工作/ 301
+/categories/工作者反思/ /categories/助人工作/ 301
+/blog/邁向助人工作 /blog/助人工作/ 301
+/blog/邁向助人工作/ /blog/助人工作/ 301
+/blog/邁向助人工作/* /blog/助人工作/:splat 301
+/tags/邁向助人工作 /tags/助人工作/ 301
+/tags/邁向助人工作/ /tags/助人工作/ 301
+/categories/會所模式 /clubhouse/ 301
+/categories/會所模式/ /clubhouse/ 301
 /tags/閱讀書摘/ /tags/書摘/ 301
 /categories/閱讀書摘/:splat /categories/書摘/:splat 301
 /:path.html /:path/ 301

@@ -1,4 +1,4 @@
-﻿baseURL: "https://listenriver.com/"
+baseURL: "https://listenriver.com/"
 languageCode: "zh-tw"
 defaultContentLanguage: "zh-tw"
 defaultContentLanguageInSubdir: false
@@ -63,7 +63,7 @@ params:
   salonDefaultCover: /images/mao_3.png
   salonCategoryOrder:
     - 閱讀與筆記
-    - 工作者反思
+    - 助人工作
     - 病痛經驗
     - 自我成長
     - 日常書寫
@@ -75,11 +75,10 @@ params:
         - 書摘
         - 閱讀
         - 電影心得
-    - title: 工作者反思
+    - title: 助人工作
       primaryTag: 助人工作
       tags:
         - 助人工作
-        - 邁向助人工作
         - 會所工作日誌
     - title: 病痛經驗
       primaryTag: 病痛經驗
@@ -110,7 +109,7 @@ params:
       - 日常書寫
       - 自我成長
       - 病痛經驗
-      - 工作者反思
+      - 助人工作
     topics:
       - name: 閱讀心得
       - name: 會所模式

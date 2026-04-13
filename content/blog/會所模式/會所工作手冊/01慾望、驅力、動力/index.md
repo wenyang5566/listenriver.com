@@ -8,7 +8,7 @@ aliases:
 type: post
 
 categories:
-  - 工作者反思
+  - 助人工作
 tags:
   - 會所實習
   - 會所工作手冊

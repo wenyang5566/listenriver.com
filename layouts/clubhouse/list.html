@@ -1,7 +1,7 @@
-﻿{{ define "main" }}
+{{ define "main" }}
 {{- $clubhousePages := where site.RegularPages "Params.tags" "intersect" (slice "會所") -}}
 {{- $clubhousePages = sort $clubhousePages "Date" "desc" -}}
-{{- $groupOrder := slice "工作者反思" "閱讀與筆記" "病痛經驗" "自我成長" "日常書寫" -}}
+{{- $groupOrder := slice "助人工作" "閱讀與筆記" "病痛經驗" "自我成長" "日常書寫" -}}
 
 <header class="page-header clubhouse-page-header">
   {{- partial "breadcrumbs.html" . }}

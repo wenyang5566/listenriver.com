@@ -11,7 +11,7 @@ cover:
   alt: "開放式對話進階工作坊Day1"
 
 categories:
-  - 工作者反思
+  - 助人工作
 tags:
   - 開放式對話
   - 講座筆記

@@ -11,7 +11,7 @@ cover:
   alt: "初入會所的觀察"
 
 categories:
-  - 工作者反思
+  - 助人工作
 tags:
   - 會所實習
   - 會所模式
