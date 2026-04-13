@@ -1,6 +1,6 @@
 ---
 title: "分類總覽"
-description: "ListenRiver 的五大主分類：閱讀與筆記、日常書寫、自我成長、助人工作、病痛經驗。"
+description: "聆聽的河流五大主分類：閱讀與筆記、日常書寫、自我成長、助人工作、病痛經驗。"
 keywords:
   - ListenRiver 分類
   - 閱讀與筆記

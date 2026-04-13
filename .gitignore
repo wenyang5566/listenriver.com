@@ -1,4 +1,7 @@
 /.obsidian/
 /public/
 /resources/_gen/
+/.tmp_hugo_check/
+/.tmp_hugo_check_paginated/
+/.tmp_hugo_check_sidebar_static/
 *.base
