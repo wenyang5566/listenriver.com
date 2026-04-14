@@ -1,0 +1,96 @@
+categoryCards:
+  - key: reading-notes
+    accent: reading
+    index: "01"
+    en: Reading & Notes
+    title: 閱讀與筆記
+    page: /categories/閱讀與筆記/
+    source:
+      kind: category
+      name: 閱讀與筆記
+    description: 從書摘、閱讀心得到電影筆記，沿著作品與思想慢慢整理閱讀之後留下的痕跡。
+    tags:
+      - 書摘
+      - 閱讀心得
+      - 電影心得
+  - key: helping-practice
+    accent: practice
+    index: "02"
+    en: Helping Practice
+    title: 助人工作
+    page: /categories/助人工作/
+    source:
+      kind: category
+      name: 助人工作
+    description: 記錄社會工作、陪伴與對話現場，把助人實務中的困惑、學習與方法慢慢寫下來。
+    tags:
+      - 助人工作
+      - 開放式對話
+      - 創傷知情
+  - key: illness-pain
+    accent: pain
+    index: "03"
+    en: Illness & Pain
+    title: 病痛經驗
+    page: /categories/病痛經驗/
+    source:
+      kind: category
+      name: 病痛經驗
+    description: 沿著疼痛、疾病與照護經驗回到身體，書寫受苦如何改變理解自己與世界的方式。
+    tags:
+      - 病痛經驗
+      - 聆聽疼痛計畫
+      - 正念的河流
+  - key: self-growth
+    accent: growth
+    index: "04"
+    en: Self Growth
+    title: 自我成長
+    page: /categories/自我成長/
+    source:
+      kind: category
+      name: 自我成長
+    description: 關於理解自己、辨認情緒與慢慢成為一個人的練習，收納那些向內走的思索。
+    tags:
+      - 成為一個人
+      - 自我成長
+      - 正念的河流
+  - key: daily-writing
+    accent: daily
+    index: "05"
+    en: Daily Writing
+    title: 日常書寫
+    page: /categories/日常書寫/
+    source:
+      kind: category
+      name: 日常書寫
+    description: 日常的感受、觀察與短篇書寫，讓零碎經驗也能有位置，慢慢形成自己的生活檔案。
+    tags:
+      - 日常書寫
+      - 講座筆記
+      - 素描
+  - key: clubhouse-model
+    accent: clubhouse
+    index: "06"
+    en: Clubhouse Model
+    title: 會所模式
+    page: /clubhouse/
+    source:
+      kind: tag
+      name: 會所模式
+    description: 以會所實習、工作日誌與工作手冊為主軸，整理復元導向實務中的現場觀察與方法。
+    tags:
+      - 會所工作日誌
+      - 會所實習
+      - 會所工作手冊
+
+hotTags:
+  - 電影心得
+  - 書摘
+  - 閱讀心得
+  - 成為一個人
+  - 助人工作
+  - 開放式對話
+  - 病痛經驗
+  - 創傷知情
+  - 正念的河流

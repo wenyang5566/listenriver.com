@@ -1,0 +1,35 @@
+{{- $page := .page -}}
+{{- $fallback := .fallback | default (site.Params.salonDefaultCover | relURL) -}}
+{{- $alt := $page.Params.cover.alt | default $page.Params.cover.caption | default $page.Title | plainify -}}
+{{- $coverImage := $page.Params.cover.image -}}
+{{- $result := dict
+  "src" $fallback
+  "alt" $alt
+-}}
+
+{{- if $coverImage -}}
+  {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) -}}
+  {{- $pageBundleCover := $page.Resources.GetMatch (printf "%s.*" $coverStem) -}}
+  {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s.*" $coverStem) -}}
+  {{- if not $pageBundleCover -}}
+    {{- $pageBundleCover = $page.Resources.GetMatch (printf "*%s*" $coverImage) -}}
+  {{- end -}}
+  {{- if not $globalResourcesCover -}}
+    {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
+  {{- end -}}
+  {{- $cover := or $pageBundleCover $globalResourcesCover -}}
+  {{- $src := $fallback -}}
+  {{- if $cover -}}
+    {{- $src = $cover.RelPermalink -}}
+  {{- else if or (hasPrefix $coverImage "http://") (hasPrefix $coverImage "https://") -}}
+    {{- $src = $coverImage -}}
+  {{- else -}}
+    {{- $src = $coverImage | relURL -}}
+  {{- end -}}
+  {{- $result = dict
+    "src" $src
+    "alt" $alt
+  -}}
+{{- end -}}
+
+{{- $result | jsonify -}}
