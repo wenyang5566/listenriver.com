@@ -1,17 +1,21 @@
 ﻿{{- define "main" -}}
 {{- $homeSection := site.GetPage "section" "blog" -}}
+{{- $clubhouseSection := site.GetPage "section" "clubhouse" -}}
 {{- $allPages := slice -}}
+{{- $clubhousePages := slice -}}
 {{- with $homeSection -}}
   {{- $allPages = sort .RegularPagesRecursive "Date" "desc" -}}
+{{- end -}}
+{{- $clubhouseLimit := 8 -}}
+{{- with $clubhouseSection -}}
+  {{- $clubhousePages = first $clubhouseLimit (sort .RegularPagesRecursive "Date" "desc") -}}
 {{- end -}}
 {{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" -}}
 {{- $featuredLimit := site.Params.homeFeaturedLimit | default 4 -}}
 {{- $latestLimit := 6 -}}
-{{- $clubhouseLimit := 8 -}}
 {{- $categoryItems := partial "home-axis-data-clean.html" . -}}
 {{- $featuredPages := first $featuredLimit (where $allPages "Params.featured" true) -}}
 {{- $latestPages := first $latestLimit $allPages -}}
-{{- $clubhousePages := first $clubhouseLimit (sort (where $allPages "Params.tags" "intersect" (slice "會所")) "Date" "desc") -}}
 {{- $paginator := .Paginate $allPages -}}
 
 {{- if eq $paginator.PageNumber 1 -}}

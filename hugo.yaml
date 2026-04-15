@@ -44,6 +44,7 @@ params:
   env: production
   mainSections:
     - blog
+    - clubhouse
 
   homeInfoParams:
     Title: "聆聽的河流"

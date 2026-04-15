@@ -64,18 +64,22 @@
   {{- range .Ancestors.Reverse -}}
     {{- if not .IsHome -}}
       {{- $ancestorName := .LinkTitle | default .Title | default .Name | strings.TrimSpace -}}
-      {{- $items = $items | append (dict
-        "@type" "ListItem"
-        "position" (add (len $items) 1)
-        "name" $ancestorName
-        "item" (printf "%s%s" $siteBase .RelPermalink)
-      ) -}}
+      {{- $ancestorURL := printf "%s%s" $siteBase .RelPermalink -}}
+      {{- if ne $ancestorURL $siteBase -}}
+        {{- $items = $items | append (dict
+          "@type" "ListItem"
+          "position" (add (len $items) 1)
+          "name" $ancestorName
+          "item" $ancestorURL
+        ) -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
   {{- $items = $items | append (dict
     "@type" "ListItem"
     "position" (add (len $items) 1)
     "name" $currentName
+    "item" $pageURL
   ) -}}
   {{- $breadcrumbSchema := dict
     "@context" "https://schema.org"
