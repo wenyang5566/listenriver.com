@@ -26,6 +26,33 @@ jobs:
       - name: Build site
         run: hugo --gc --minify
 
+      - name: Validate sitemap URLs
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          import re
+          import sys
+
+          sitemap_path = pathlib.Path("public/sitemap.xml")
+          text = sitemap_path.read_text(encoding="utf-8")
+          locs = re.findall(r"<loc>([^<]+)</loc>", text)
+
+          if not locs:
+              print(f"No <loc> entries found in {sitemap_path}")
+              sys.exit(1)
+
+          bad = [url for url in locs if not url.startswith("https://listenriver.com/")]
+          if bad:
+              print("Invalid sitemap URLs found:")
+              for url in bad[:20]:
+                  print(f" - {url}")
+              if len(bad) > 20:
+                  print(f" - ... and {len(bad) - 20} more")
+              sys.exit(1)
+
+          print(f"Validated {len(locs)} sitemap URLs in {sitemap_path}")
+          PY
+
   worker-check:
     runs-on: ubuntu-latest
 
