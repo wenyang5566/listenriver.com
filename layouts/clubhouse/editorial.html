@@ -1,0 +1,576 @@
+{{ define "main" }}
+{{- $clubhousePages := sort .RegularPagesRecursive "Date" "desc" -}}
+{{- $featured := first 3 $clubhousePages -}}
+{{- $sectionPages := .Sections.ByTitle -}}
+{{- $topicItems := slice -}}
+{{- range site.Taxonomies.tags.ByCount -}}
+  {{- $relatedPages := where $clubhousePages "Params.tags" "intersect" (slice .Term) -}}
+  {{- if gt (len $relatedPages) 0 -}}
+    {{- $topicItems = $topicItems | append (dict "name" .Term "count" (len $relatedPages) "page" .Page) -}}
+  {{- end -}}
+{{- end -}}
+{{- $heroTopics := first 8 $topicItems -}}
+{{- $sidebarTopics := first 10 $topicItems -}}
+{{- $paginator := .Paginate $clubhousePages 8 -}}
+{{- $pagedPages := $paginator.Pages -}}
+{{- $yearGroups := $pagedPages.GroupByDate "2006" -}}
+
+<style>
+  .clubhouse-taxonomy-shell {
+    --taxonomy-surface: #fffdf9;
+    --taxonomy-surface-soft: #f2ebe1;
+    --taxonomy-line: rgba(93, 77, 59, 0.16);
+    --taxonomy-text: #201d1a;
+    --taxonomy-text-soft: #6f675f;
+    --taxonomy-text-faint: #978d82;
+    --taxonomy-accent: #0f6e56;
+    margin-top: 0.5rem;
+    color: var(--taxonomy-text);
+  }
+  .clubhouse-taxonomy-shell .page-header,
+  .clubhouse-taxonomy-shell .post-content {
+    margin-bottom: 0;
+  }
+  .clubhouse-taxonomy-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 18rem;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .clubhouse-taxonomy-primary {
+    background: var(--taxonomy-surface);
+    border: 1px solid var(--taxonomy-line);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .clubhouse-taxonomy-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 100%;
+    padding: 1.5rem 1.5rem 1.4rem;
+    background: linear-gradient(180deg, rgba(255, 252, 246, 0.98) 0%, rgba(246, 239, 230, 0.92) 100%);
+  }
+  .clubhouse-taxonomy-hero__eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem 0.8rem;
+    color: var(--taxonomy-accent);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .clubhouse-taxonomy-hero__eyebrow-count {
+    color: var(--taxonomy-text-faint);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+  }
+  .clubhouse-taxonomy-hero h1 {
+    margin: 0;
+    font-size: clamp(1.95rem, 3.4vw, 2.75rem);
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+  .clubhouse-taxonomy-hero__description,
+  .clubhouse-taxonomy-hero__content {
+    color: var(--taxonomy-text-soft);
+    font-size: 0.96rem;
+    line-height: 1.86;
+  }
+  .clubhouse-taxonomy-hero__description > *:first-child,
+  .clubhouse-taxonomy-hero__content > *:first-child {
+    margin-top: 0;
+  }
+  .clubhouse-taxonomy-hero__description > *:last-child,
+  .clubhouse-taxonomy-hero__content > *:last-child {
+    margin-bottom: 0;
+  }
+  .clubhouse-taxonomy-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: auto;
+    padding-top: 0.35rem;
+  }
+  .clubhouse-taxonomy-topics__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.38rem 0.72rem;
+    border: 1px solid rgba(15, 110, 86, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--taxonomy-text-soft);
+    font-size: 0.76rem;
+    line-height: 1.2;
+  }
+  .clubhouse-taxonomy-topics__count {
+    color: var(--taxonomy-text-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .clubhouse-taxonomy-sidebar {
+    display: grid;
+    gap: 1rem;
+  }
+  .clubhouse-sidebar-panel {
+    padding: 1.05rem 1rem;
+    border: 1px solid var(--taxonomy-line);
+    border-radius: 22px;
+    background: var(--taxonomy-surface);
+  }
+  .clubhouse-sidebar-panel__eyebrow {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--taxonomy-text-soft);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .clubhouse-sidebar-panel h3 {
+    margin: 0 0 0.35rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  .clubhouse-sidebar-panel p {
+    margin: 0 0 0.55rem;
+    color: var(--taxonomy-text-faint);
+    font-size: 0.76rem;
+    line-height: 1.65;
+  }
+  .clubhouse-sidebar-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .clubhouse-sidebar-links li {
+    border-top: 1px solid var(--taxonomy-line);
+  }
+  .clubhouse-sidebar-links li:first-child {
+    border-top: 0;
+  }
+  .clubhouse-sidebar-links a {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.55rem;
+    padding: 0.58rem 0;
+    color: inherit;
+    text-decoration: none;
+  }
+  .clubhouse-sidebar-links a:hover .clubhouse-sidebar-links__label {
+    color: var(--taxonomy-accent);
+  }
+  .clubhouse-sidebar-links__label {
+    color: var(--taxonomy-text-soft);
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+  .clubhouse-sidebar-links__count {
+    flex-shrink: 0;
+    color: var(--taxonomy-text-faint);
+    font-size: 0.7rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .clubhouse-taxonomy-main {
+    margin-top: 1.6rem;
+  }
+  .clubhouse-taxonomy-section + .clubhouse-taxonomy-section {
+    margin-top: 2.4rem;
+  }
+  .clubhouse-taxonomy-section__heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: 1rem;
+  }
+  .clubhouse-taxonomy-section__eyebrow {
+    display: block;
+    color: var(--taxonomy-text-faint);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .clubhouse-taxonomy-section__heading h2 {
+    margin: 0;
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+  .clubhouse-taxonomy-section__note {
+    max-width: 31rem;
+    margin: 0;
+    color: var(--taxonomy-text-faint);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    text-align: right;
+  }
+  .clubhouse-featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .clubhouse-feature-card,
+  .clubhouse-story-card {
+    overflow: hidden;
+    border: 1px solid var(--taxonomy-line);
+    border-radius: 22px;
+    background: var(--taxonomy-surface);
+  }
+  .clubhouse-feature-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .clubhouse-feature-card__media,
+  .clubhouse-story-card__media {
+    display: block;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(244, 238, 229, 0.96), rgba(236, 229, 219, 0.92));
+  }
+  .clubhouse-feature-card__media {
+    aspect-ratio: 16 / 10;
+  }
+  .clubhouse-story-card__media {
+    width: 10.5rem;
+    flex-shrink: 0;
+    min-height: 100%;
+  }
+  .clubhouse-feature-card__media img,
+  .clubhouse-story-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .clubhouse-feature-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.55rem;
+    padding: 1rem 1rem 1.05rem;
+  }
+  .clubhouse-feature-card__topic {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.28rem 0.58rem;
+    border-radius: 999px;
+    background: var(--taxonomy-surface-soft);
+    color: var(--taxonomy-text-soft);
+    font-size: 0.72rem;
+    line-height: 1.2;
+  }
+  .clubhouse-feature-card__title,
+  .clubhouse-story-card__title {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  .clubhouse-feature-card__title a,
+  .clubhouse-story-card__title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .clubhouse-feature-card__title a:hover,
+  .clubhouse-story-card__title a:hover {
+    color: var(--taxonomy-accent);
+  }
+  .clubhouse-feature-card__excerpt,
+  .clubhouse-story-card__excerpt {
+    color: var(--taxonomy-text-soft);
+    font-size: 0.82rem;
+    line-height: 1.75;
+  }
+  .clubhouse-feature-card__meta,
+  .clubhouse-story-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.8rem;
+    margin-top: auto;
+    color: var(--taxonomy-text-faint);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+  .clubhouse-story-year {
+    margin: 1.4rem 0 0.75rem;
+    color: var(--taxonomy-text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .clubhouse-story-list {
+    display: grid;
+    gap: 0.9rem;
+  }
+  .clubhouse-story-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  .clubhouse-story-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.95rem 1rem;
+    min-width: 0;
+  }
+  .clubhouse-story-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.15rem;
+  }
+  .clubhouse-story-card__tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.28rem 0.58rem;
+    border-radius: 999px;
+    border: 1px solid var(--taxonomy-line);
+    background: var(--taxonomy-surface-soft);
+    color: var(--taxonomy-text-soft);
+    text-decoration: none;
+    font-size: 0.72rem;
+    line-height: 1.1;
+  }
+  .clubhouse-story-card__tag:hover {
+    color: var(--taxonomy-accent);
+    border-color: rgba(15, 110, 86, 0.22);
+  }
+  .clubhouse-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.35rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--taxonomy-line);
+  }
+  .clubhouse-pagination__meta {
+    color: var(--taxonomy-text-faint);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+  .clubhouse-pagination__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .clubhouse-pagination__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.2rem;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--taxonomy-line);
+    border-radius: 999px;
+    background: var(--taxonomy-surface);
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
+  .clubhouse-pagination__link.is-current {
+    border-color: rgba(15, 110, 86, 0.26);
+    background: rgba(15, 110, 86, 0.08);
+    color: var(--taxonomy-accent);
+    font-weight: 600;
+  }
+  @media (max-width: 980px) {
+    .clubhouse-taxonomy-top {
+      grid-template-columns: 1fr;
+    }
+    .clubhouse-taxonomy-section__heading {
+      align-items: start;
+      flex-direction: column;
+    }
+    .clubhouse-taxonomy-section__note {
+      text-align: left;
+    }
+    .clubhouse-pagination {
+      align-items: center;
+      flex-direction: column;
+    }
+    .clubhouse-pagination__links {
+      justify-content: center;
+    }
+  }
+  @media (max-width: 820px) {
+    .clubhouse-featured-grid {
+      grid-template-columns: 1fr;
+    }
+    .clubhouse-story-card {
+      grid-template-columns: 1fr;
+    }
+    .clubhouse-story-card__media {
+      width: 100%;
+      min-height: 10.5rem;
+      aspect-ratio: 16 / 9;
+    }
+  }
+</style>
+
+<div class="clubhouse-taxonomy-shell">
+  <div class="clubhouse-taxonomy-top">
+    <div class="clubhouse-taxonomy-primary">
+      <header class="page-header clubhouse-taxonomy-hero">
+        {{- partial "breadcrumbs.html" . -}}
+        <div class="clubhouse-taxonomy-hero__eyebrow">
+          <span>Clubhouse</span>
+          <span class="clubhouse-taxonomy-hero__eyebrow-count">{{ len $clubhousePages }} 篇文章</span>
+        </div>
+        <h1>{{ .Title }}</h1>
+        <div class="clubhouse-taxonomy-hero__description">
+          {{- if .Description -}}
+            {{ .Description | markdownify }}
+          {{- end -}}
+        </div>
+        {{- if .Content }}
+        <div class="clubhouse-taxonomy-hero__content">
+          {{ .Content }}
+        </div>
+        {{- end }}
+        {{- if gt (len $heroTopics) 0 }}
+        <div class="clubhouse-taxonomy-topics" aria-label="{{ .Title }} 相關主題">
+          {{- range $heroTopics -}}
+            <span class="clubhouse-taxonomy-topics__item">
+              <span>#{{ .name }}</span>
+              <span class="clubhouse-taxonomy-topics__count">{{ .count }}</span>
+            </span>
+          {{- end -}}
+        </div>
+        {{- end }}
+      </header>
+    </div>
+
+    <aside class="clubhouse-taxonomy-sidebar">
+      <section class="clubhouse-sidebar-panel" aria-labelledby="clubhouse-reading-map-title">
+        <span class="clubhouse-sidebar-panel__eyebrow">Reading Map</span>
+        <h3 id="clubhouse-reading-map-title">會所專題分區</h3>
+        <p>沿著這個專題底下的不同分區切換閱讀路徑。</p>
+        <ul class="clubhouse-sidebar-links">
+          {{- range $sectionPages -}}
+            <li>
+              <a href="{{ .RelPermalink }}">
+                <span class="clubhouse-sidebar-links__label">{{ .Title }}</span>
+                <span class="clubhouse-sidebar-links__count">{{ len .RegularPagesRecursive }}</span>
+              </a>
+            </li>
+          {{- end -}}
+        </ul>
+      </section>
+
+      {{- if gt (len $sidebarTopics) 0 }}
+      <section class="clubhouse-sidebar-panel" aria-labelledby="clubhouse-topic-index-title">
+        <span class="clubhouse-sidebar-panel__eyebrow">Topic Index</span>
+        <h3 id="clubhouse-topic-index-title">{{ .Title }}相關主題</h3>
+        <p>從標籤切入更細的閱讀線索。</p>
+        <ul class="clubhouse-sidebar-links">
+          {{- range $sidebarTopics -}}
+            <li>
+              <a href="{{ .page.RelPermalink }}">
+                <span class="clubhouse-sidebar-links__label">#{{ .name }}</span>
+                <span class="clubhouse-sidebar-links__count">{{ .count }}</span>
+              </a>
+            </li>
+          {{- end -}}
+        </ul>
+      </section>
+      {{- end }}
+    </aside>
+  </div>
+
+  <main class="clubhouse-taxonomy-main">
+    {{- if gt (len $featured) 0 }}
+    <section class="clubhouse-taxonomy-section" aria-labelledby="clubhouse-featured-title">
+      <div class="clubhouse-taxonomy-section__heading">
+        <div>
+          <span class="clubhouse-taxonomy-section__eyebrow">Recommended Reading</span>
+          <h2 id="clubhouse-featured-title">先讀這幾篇</h2>
+        </div>
+        <p class="clubhouse-taxonomy-section__note">先從近期代表文章進入這個專題，再沿著分區與標籤繼續閱讀。</p>
+      </div>
+      <div class="clubhouse-featured-grid">
+        {{- range $featured -}}
+          {{- $cover := partial "get-page-cover-resource.html" (dict "page" .) | transform.Unmarshal -}}
+          {{- $excerpt := .Description | default (.Summary | plainify | htmlUnescape) -}}
+          {{- $firstTag := index (.Params.tags | default (slice)) 0 -}}
+          <article class="clubhouse-feature-card">
+            <a class="clubhouse-feature-card__media" href="{{ .RelPermalink }}" aria-label="閱讀 {{ .Title | plainify }}">
+              <img src="{{ $cover.src }}" alt="{{ $cover.alt }}" loading="lazy" decoding="async">
+            </a>
+            <div class="clubhouse-feature-card__body">
+              {{- with $firstTag }}<span class="clubhouse-feature-card__topic">#{{ . }}</span>{{- end }}
+              <h3 class="clubhouse-feature-card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              {{- with $excerpt }}<div class="clubhouse-feature-card__excerpt">{{ . | plainify | htmlUnescape | truncate 88 }}</div>{{- end }}
+              <div class="clubhouse-feature-card__meta">
+                <span>{{ .Date.Format "2006.01.02" }}</span>
+                {{- if (.Param "ShowReadingTime") -}}<span>{{ .ReadingTime }} 分鐘閱讀</span>{{- end -}}
+              </div>
+            </div>
+          </article>
+        {{- end -}}
+      </div>
+    </section>
+    {{- end }}
+
+    <section class="clubhouse-taxonomy-section" aria-labelledby="clubhouse-article-list-title">
+      <div class="clubhouse-taxonomy-section__heading">
+        <div>
+          <span class="clubhouse-taxonomy-section__eyebrow">All Articles</span>
+          <h2 id="clubhouse-article-list-title">全部文章</h2>
+        </div>
+        <p class="clubhouse-taxonomy-section__note">依年份與時間排序瀏覽這個專題中的文章，每頁顯示 {{ len $pagedPages }} 篇。</p>
+      </div>
+      {{- range $group := $yearGroups -}}
+        <div class="clubhouse-story-year">{{ $group.Key }} <span class="clubhouse-taxonomy-topics__count">{{ len $group.Pages }} 篇</span></div>
+        <div class="clubhouse-story-list">
+          {{- range $page := $group.Pages -}}
+            {{- $cover := partial "get-page-cover-resource.html" (dict "page" $page) | transform.Unmarshal -}}
+            {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
+            {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
+            <article class="clubhouse-story-card">
+              <a class="clubhouse-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
+                <img src="{{ $cover.src }}" alt="{{ $cover.alt }}" loading="lazy" decoding="async">
+              </a>
+              <div class="clubhouse-story-card__body">
+                <div class="clubhouse-story-card__meta">
+                  <span>{{ $page.Date.Format "01.02" }}</span>
+                  {{- if ($page.Param "ShowReadingTime") -}}<span>{{ $page.ReadingTime }} 分鐘</span>{{- end -}}
+                </div>
+                <h3 class="clubhouse-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+                {{- with $excerpt }}<div class="clubhouse-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 108 }}</div>{{- end }}
+                {{- if gt (len $tags) 0 }}
+                <div class="clubhouse-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
+                  {{- range $tags -}}
+                    {{- with site.GetPage (printf "/tags/%s" .) -}}
+                      <a class="clubhouse-story-card__tag" href="{{ .RelPermalink }}">#{{ .Title }}</a>
+                    {{- end -}}
+                  {{- end -}}
+                </div>
+                {{- end }}
+              </div>
+            </article>
+          {{- end -}}
+        </div>
+      {{- end -}}
+      {{- if gt $paginator.TotalPages 1 }}
+      <nav class="clubhouse-pagination" aria-label="會所專題文章分頁">
+        <div class="clubhouse-pagination__meta">第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 頁，共 {{ len $clubhousePages }} 篇文章</div>
+        <div class="clubhouse-pagination__links">
+          {{- with $paginator.Prev }}<a class="clubhouse-pagination__link" href="{{ .URL }}">上一頁</a>{{- end }}
+          {{- range $paginator.Pagers -}}
+            {{- if eq .PageNumber $paginator.PageNumber -}}
+              <span class="clubhouse-pagination__link is-current">{{ .PageNumber }}</span>
+            {{- else -}}
+              <a class="clubhouse-pagination__link" href="{{ .URL }}">{{ .PageNumber }}</a>
+            {{- end -}}
+          {{- end }}
+          {{- with $paginator.Next }}<a class="clubhouse-pagination__link" href="{{ .URL }}">下一頁</a>{{- end }}
+        </div>
+      </nav>
+      {{- end }}
+    </section>
+  </main>
+</div>
+{{ end }}

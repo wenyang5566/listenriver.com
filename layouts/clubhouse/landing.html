@@ -1,0 +1,456 @@
+{{ define "main" }}
+{{- $clubhousePages := sort .RegularPagesRecursive "Date" "desc" -}}
+{{- $fallbackImage := site.Params.salonDefaultCover | relURL -}}
+{{- $latestPage := index $clubhousePages 0 -}}
+{{- $latestCover := dict "src" $fallbackImage "alt" .Title -}}
+{{- if $latestPage -}}
+  {{- $latestCover = partial "get-page-cover-resource.html" (dict "page" $latestPage "fallback" $fallbackImage) | transform.Unmarshal -}}
+{{- end -}}
+{{- $sectionPaths := slice "/clubhouse/會所工作手冊" "/clubhouse/會所工作日誌" "/clubhouse/會所實習" -}}
+{{- $groupCards := slice -}}
+{{- range $sectionPaths -}}
+  {{- with site.GetPage . -}}
+    {{- $sectionPages := sort .RegularPagesRecursive "Date" "desc" -}}
+    {{- if gt (len $sectionPages) 0 -}}
+      {{- $lead := index $sectionPages 0 -}}
+      {{- $cover := partial "get-page-cover-resource.html" (dict "page" $lead "fallback" $fallbackImage) | transform.Unmarshal -}}
+      {{- $groupCards = $groupCards | append (dict "page" . "pages" $sectionPages "lead" $lead "cover" $cover) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $otherPages := slice -}}
+{{- range $clubhousePages -}}
+  {{- $page := . -}}
+  {{- $matched := false -}}
+  {{- range $groupCards -}}
+    {{- if eq $page.CurrentSection.RelPermalink .page.RelPermalink -}}
+      {{- $matched = true -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $matched -}}
+    {{- $otherPages = $otherPages | append $page -}}
+  {{- end -}}
+{{- end -}}
+
+<style>
+  .clubhouse-landing-shell {
+    --clubhouse-line: rgba(109, 93, 76, 0.18);
+    --clubhouse-line-strong: rgba(109, 93, 76, 0.28);
+    --clubhouse-surface: #fffdfa;
+    --clubhouse-surface-soft: #f8f4ee;
+    --clubhouse-text: #1f1b17;
+    --clubhouse-text-soft: #6f665d;
+    --clubhouse-text-faint: #9a9085;
+    --clubhouse-accent: #7b4a5f;
+    color: var(--clubhouse-text);
+    margin-top: 0.75rem;
+  }
+  .clubhouse-landing-shell .page-header,
+  .clubhouse-landing-shell .post-content {
+    margin-bottom: 0;
+  }
+  .clubhouse-landing-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 2rem;
+    padding-bottom: 2.2rem;
+    border-bottom: 1px solid var(--clubhouse-line);
+    margin-bottom: 1.6rem;
+  }
+  .clubhouse-landing-hero .breadcrumbs {
+    margin-bottom: 0.75rem;
+  }
+  .clubhouse-landing-hero__kicker {
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    color: var(--clubhouse-accent);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .clubhouse-landing-hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+  .clubhouse-landing-hero .post-description {
+    max-width: 38rem;
+    margin-top: 1rem;
+    color: var(--clubhouse-text-soft);
+    font-size: 0.98rem;
+    line-height: 1.85;
+  }
+  .clubhouse-landing-hero .post-description > *:first-child,
+  .clubhouse-landing-intro > *:first-child {
+    margin-top: 0;
+  }
+  .clubhouse-landing-hero .post-description > *:last-child,
+  .clubhouse-landing-intro > *:last-child {
+    margin-bottom: 0;
+  }
+  .clubhouse-landing-hero__stat {
+    text-align: right;
+    min-width: 8rem;
+  }
+  .clubhouse-landing-hero__stat-number {
+    display: block;
+    font-size: clamp(2.3rem, 4vw, 3.35rem);
+    line-height: 1;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+  .clubhouse-landing-hero__stat-label {
+    display: block;
+    margin-top: 0.45rem;
+    color: var(--clubhouse-text-faint);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .clubhouse-landing-intro {
+    padding: 1.15rem 1.25rem;
+    border: 1px solid var(--clubhouse-line);
+    border-radius: 22px;
+    background: var(--clubhouse-surface);
+    color: var(--clubhouse-text-soft);
+    line-height: 1.85;
+    margin-bottom: 2.75rem;
+  }
+  .clubhouse-landing-section + .clubhouse-landing-section {
+    margin-top: 3rem;
+  }
+  .clubhouse-landing-section__head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .clubhouse-landing-section__eyebrow,
+  .clubhouse-landing-section__note {
+    white-space: nowrap;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .clubhouse-landing-section__eyebrow {
+    color: var(--clubhouse-text-faint);
+  }
+  .clubhouse-landing-section__note {
+    color: var(--clubhouse-text-soft);
+    letter-spacing: 0.08em;
+    text-transform: none;
+  }
+  .clubhouse-landing-section__line {
+    flex: 1;
+    height: 1px;
+    background: var(--clubhouse-line);
+  }
+  .clubhouse-landing-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid var(--clubhouse-line);
+    border-radius: 24px;
+    background: var(--clubhouse-surface);
+  }
+  .clubhouse-landing-feature__media,
+  .clubhouse-landing-group-card__media {
+    display: block;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(244, 238, 229, 0.96), rgba(236, 229, 219, 0.92));
+  }
+  .clubhouse-landing-feature__media {
+    aspect-ratio: 16 / 11;
+  }
+  .clubhouse-landing-group-card__media {
+    aspect-ratio: 16 / 10;
+    border-bottom: 1px solid var(--clubhouse-line);
+  }
+  .clubhouse-landing-feature__media img,
+  .clubhouse-landing-group-card__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .clubhouse-landing-feature__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.35rem 1.4rem;
+  }
+  .clubhouse-landing-feature__kicker {
+    margin-bottom: 0.65rem;
+    color: var(--clubhouse-accent);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .clubhouse-landing-feature__title {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+    line-height: 1.3;
+  }
+  .clubhouse-landing-feature__title a,
+  .clubhouse-landing-group-card__title a,
+  .clubhouse-landing-group-card__lead-title,
+  .clubhouse-landing-group-card__item-title,
+  .clubhouse-landing-other__item-title {
+    color: inherit;
+    text-decoration: none;
+  }
+  .clubhouse-landing-feature__summary {
+    margin: 0.85rem 0 0;
+    color: var(--clubhouse-text-soft);
+    font-size: 0.92rem;
+    line-height: 1.82;
+  }
+  .clubhouse-landing-feature__action {
+    align-self: flex-start;
+    margin-top: 1rem;
+    color: var(--clubhouse-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--clubhouse-line-strong);
+    padding-bottom: 0.18rem;
+  }
+  .clubhouse-landing-group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .clubhouse-landing-group-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--clubhouse-line);
+    border-radius: 22px;
+    background: var(--clubhouse-surface);
+  }
+  .clubhouse-landing-group-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1rem 1.05rem 1.05rem;
+  }
+  .clubhouse-landing-group-card__header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .clubhouse-landing-group-card__title {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+  .clubhouse-landing-group-card__count {
+    flex-shrink: 0;
+    color: var(--clubhouse-text-faint);
+    font-size: 0.76rem;
+  }
+  .clubhouse-landing-group-card__lead {
+    display: block;
+    padding: 0.85rem 0 0.95rem;
+    border-top: 1px solid var(--clubhouse-line);
+    border-bottom: 1px solid var(--clubhouse-line);
+    color: inherit;
+    text-decoration: none;
+  }
+  .clubhouse-landing-group-card__lead-date,
+  .clubhouse-landing-group-card__item-date,
+  .clubhouse-landing-other__item-date {
+    display: block;
+    color: var(--clubhouse-text-faint);
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+  .clubhouse-landing-group-card__lead-title,
+  .clubhouse-landing-other__item-title {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+  .clubhouse-landing-group-card__lead-summary,
+  .clubhouse-landing-group-card__item-summary,
+  .clubhouse-landing-other__item-summary {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--clubhouse-text-soft);
+    font-size: 0.8rem;
+    line-height: 1.7;
+  }
+  .clubhouse-landing-group-card__list {
+    display: grid;
+    gap: 0.75rem;
+    padding-top: 0.95rem;
+  }
+  .clubhouse-landing-group-card__item,
+  .clubhouse-landing-other__item {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .clubhouse-landing-group-card__item-title {
+    display: block;
+    margin-top: 0.28rem;
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+  .clubhouse-landing-other-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.95rem;
+  }
+  .clubhouse-landing-other__item {
+    padding: 1rem 1.05rem;
+    border: 1px solid var(--clubhouse-line);
+    border-radius: 18px;
+    background: var(--clubhouse-surface);
+  }
+  @media (max-width: 980px) {
+    .clubhouse-landing-hero,
+    .clubhouse-landing-feature,
+    .clubhouse-landing-group-grid,
+    .clubhouse-landing-other-grid {
+      grid-template-columns: 1fr;
+    }
+    .clubhouse-landing-hero__stat {
+      text-align: left;
+    }
+  }
+  @media (max-width: 640px) {
+    .clubhouse-landing-shell {
+      margin-top: 0.25rem;
+    }
+    .clubhouse-landing-section__head {
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.9rem;
+    }
+    .clubhouse-landing-section__line {
+      order: 3;
+      width: 100%;
+      flex-basis: 100%;
+    }
+    .clubhouse-landing-intro,
+    .clubhouse-landing-feature__body,
+    .clubhouse-landing-group-card__body,
+    .clubhouse-landing-other__item {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+</style>
+
+<div class="clubhouse-landing-shell">
+  <header class="page-header clubhouse-landing-hero">
+    <div>
+      {{- partial "breadcrumbs.html" . -}}
+      <span class="clubhouse-landing-hero__kicker">Clubhouse</span>
+      <h1>{{ .Title }}</h1>
+      <div class="post-description">
+        {{- if .Description -}}
+          {{ .Description | markdownify }}
+        {{- end -}}
+      </div>
+    </div>
+    <div class="clubhouse-landing-hero__stat" aria-label="總文章數">
+      <span class="clubhouse-landing-hero__stat-number">{{ len $clubhousePages }}</span>
+      <span class="clubhouse-landing-hero__stat-label">Posts</span>
+    </div>
+  </header>
+
+  {{- if .Content }}
+  <div class="post-content clubhouse-landing-intro">
+    {{ .Content }}
+  </div>
+  {{- end }}
+
+  {{- with $latestPage }}
+  <section class="clubhouse-landing-section" aria-labelledby="clubhouse-highlight-title">
+    <div class="clubhouse-landing-section__head">
+      <span class="clubhouse-landing-section__eyebrow">Latest</span>
+      <span class="clubhouse-landing-section__line"></span>
+      <span class="clubhouse-landing-section__note">最新文章</span>
+    </div>
+    <article class="clubhouse-landing-feature">
+      <a class="clubhouse-landing-feature__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
+        <img src="{{ $latestCover.src }}" alt="{{ $latestCover.alt }}" loading="eager" decoding="async">
+      </a>
+      <div class="clubhouse-landing-feature__body">
+        <span class="clubhouse-landing-feature__kicker">Latest</span>
+        <h2 id="clubhouse-highlight-title" class="clubhouse-landing-feature__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="clubhouse-landing-feature__summary">{{ .Summary | plainify | htmlUnescape }}</p>
+        <a href="{{ .RelPermalink }}" class="clubhouse-landing-feature__action">閱讀這篇</a>
+      </div>
+    </article>
+  </section>
+  {{- end }}
+
+  <section class="clubhouse-landing-section" aria-labelledby="clubhouse-groups-title">
+    <div class="clubhouse-landing-section__head">
+      <span class="clubhouse-landing-section__eyebrow">Curated Reading</span>
+      <span class="clubhouse-landing-section__line"></span>
+      <span class="clubhouse-landing-section__note">依分類脈絡分組閱讀</span>
+    </div>
+    <h2 id="clubhouse-groups-title" class="sr-only">依分類脈絡分組閱讀</h2>
+    <div class="clubhouse-landing-group-grid">
+      {{- range $groupCards -}}
+      <article class="clubhouse-landing-group-card">
+        <a class="clubhouse-landing-group-card__media" href="{{ .page.RelPermalink }}" aria-hidden="true" tabindex="-1">
+          <img src="{{ .cover.src }}" alt="{{ .cover.alt }}" loading="lazy" decoding="async">
+        </a>
+        <div class="clubhouse-landing-group-card__body">
+          <div class="clubhouse-landing-group-card__header">
+            <h3 class="clubhouse-landing-group-card__title"><a href="{{ .page.RelPermalink }}">{{ .page.Title }}</a></h3>
+            <span class="clubhouse-landing-group-card__count">{{ len .pages }} 篇</span>
+          </div>
+          {{- with .lead }}
+          <a class="clubhouse-landing-group-card__lead" href="{{ .RelPermalink }}">
+            <span class="clubhouse-landing-group-card__lead-date">{{ .Date.Format "2006.01.02" }}</span>
+            <span class="clubhouse-landing-group-card__lead-title">{{ .Title }}</span>
+            <span class="clubhouse-landing-group-card__lead-summary">{{ .Summary | plainify | htmlUnescape | truncate 110 }}</span>
+          </a>
+          {{- end }}
+          <div class="clubhouse-landing-group-card__list">
+            {{- range first 3 .pages }}
+            <a class="clubhouse-landing-group-card__item" href="{{ .RelPermalink }}">
+              <span class="clubhouse-landing-group-card__item-date">{{ .Date.Format "2006.01.02" }}</span>
+              <span class="clubhouse-landing-group-card__item-title">{{ .Title }}</span>
+              <span class="clubhouse-landing-group-card__item-summary">{{ .Summary | plainify | htmlUnescape | truncate 72 }}</span>
+            </a>
+            {{- end }}
+          </div>
+        </div>
+      </article>
+      {{- end -}}
+    </div>
+  </section>
+
+  {{- if gt (len $otherPages) 0 }}
+  <section class="clubhouse-landing-section" aria-labelledby="clubhouse-other-title">
+    <div class="clubhouse-landing-section__head">
+      <span class="clubhouse-landing-section__eyebrow">Archive</span>
+      <span class="clubhouse-landing-section__line"></span>
+      <span class="clubhouse-landing-section__note">其他延伸</span>
+    </div>
+    <h2 id="clubhouse-other-title" class="sr-only">其他延伸</h2>
+    <div class="clubhouse-landing-other-grid">
+      {{- range $otherPages -}}
+      <a class="clubhouse-landing-other__item" href="{{ .RelPermalink }}">
+        <span class="clubhouse-landing-other__item-date">{{ .Date.Format "2006.01.02" }}</span>
+        <span class="clubhouse-landing-other__item-title">{{ .Title }}</span>
+        <span class="clubhouse-landing-other__item-summary">{{ .Summary | plainify | htmlUnescape | truncate 90 }}</span>
+      </a>
+      {{- end -}}
+    </div>
+  </section>
+  {{- end }}
+</div>
+{{ end }}

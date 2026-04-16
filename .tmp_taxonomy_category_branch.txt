@@ -1,0 +1,769 @@
+{{- else if and (eq $plural "categories") $hasPages -}}
+  {{- $featured := first 3 $pages -}}
+  {{- $categoryItems := partial "category-data.html" . -}}
+  {{- $topicItems := slice -}}
+  {{- range site.Taxonomies.tags.ByCount -}}
+    {{- $relatedPages := where $pages "Params.tags" "intersect" (slice .Term) -}}
+    {{- if gt (len $relatedPages) 0 -}}
+      {{- $topicItems = $topicItems | append (dict
+        "name" .Term
+        "count" (len $relatedPages)
+        "page" .Page
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $heroTopics := first 8 $topicItems -}}
+  {{- $sidebarTopics := first 10 $topicItems -}}
+  {{- $paginator := .Paginate $pages 8 -}}
+  {{- $pagedPages := $paginator.Pages -}}
+  {{- $yearGroups := $pagedPages.GroupByDate "2006" -}}
+  <style>
+    .taxonomy-category-shell {
+      --taxonomy-bg: #f7f2ea;
+      --taxonomy-surface: #fffdf9;
+      --taxonomy-surface-soft: #f2ebe1;
+      --taxonomy-line: rgba(93, 77, 59, 0.16);
+      --taxonomy-text: #201d1a;
+      --taxonomy-text-soft: #6f675f;
+      --taxonomy-text-faint: #978d82;
+      --taxonomy-accent: #0f6e56;
+      margin-top: 0.5rem;
+      color: var(--taxonomy-text);
+    }
+    .taxonomy-category-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 7.75rem;
+      gap: 3rem;
+      align-items: stretch;
+      margin-bottom: 1.35rem;
+    }
+    .taxonomy-category-primary {
+      min-width: 0;
+      height: 100%;
+    }
+    .taxonomy-category-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      min-width: 0;
+    }
+    .taxonomy-category-shell .page-header,
+    .taxonomy-category-shell .post-content,
+    .taxonomy-category-shell .taxonomy-page-content {
+      margin-bottom: 0;
+    }
+    .taxonomy-category-hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 100%;
+      padding: 1.15rem 1.35rem 1.2rem;
+      border: 1px solid var(--taxonomy-line);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(15, 110, 86, 0.1), transparent 28%),
+        linear-gradient(180deg, rgba(255, 253, 249, 0.98), rgba(244, 237, 228, 0.96));
+      box-shadow: 0 16px 30px rgba(67, 49, 27, 0.04);
+      margin-bottom: 0;
+    }
+    .taxonomy-category-hero .breadcrumbs {
+      margin-bottom: 0.75rem;
+    }
+    .taxonomy-category-hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-bottom: 1.1rem;
+      color: var(--taxonomy-accent);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .taxonomy-category-hero__eyebrow-count {
+      color: var(--taxonomy-text-faint);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    .taxonomy-category-hero h1 {
+      margin: 0;
+      max-width: 16ch;
+      font-size: clamp(2.15rem, 3.35vw, 2.95rem);
+      line-height: 1.02;
+      letter-spacing: -0.03em;
+      text-wrap: balance;
+    }
+    .taxonomy-category-hero__description {
+      max-width: 42rem;
+      margin-top: 1.2rem;
+      color: var(--taxonomy-text-soft);
+      font-size: 1rem;
+      line-height: 1.82;
+    }
+    .taxonomy-category-hero__description > *:first-child,
+    .taxonomy-category-hero__content > *:first-child {
+      margin-top: 0;
+    }
+    .taxonomy-category-hero__description > *:last-child,
+    .taxonomy-category-hero__content > *:last-child {
+      margin-bottom: 0;
+    }
+    .taxonomy-category-hero__description p + p,
+    .taxonomy-category-hero__content p + p {
+      margin-top: 0.9rem;
+    }
+    .taxonomy-category-hero__content {
+      max-width: 40rem;
+      margin-top: 1.15rem;
+      padding-top: 1.05rem;
+      border-top: 1px solid var(--taxonomy-line);
+      color: var(--taxonomy-text-soft);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+    .taxonomy-category-hero__content ul,
+    .taxonomy-category-hero__content ol {
+      margin: 0.8rem 0 0;
+      padding-left: 1.2rem;
+    }
+    .taxonomy-category-hero__content li + li {
+      margin-top: 0.35rem;
+    }
+    .taxonomy-category-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: auto;
+      padding-top: 1.25rem;
+    }
+    .taxonomy-category-topics__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--taxonomy-line);
+      background: var(--taxonomy-surface);
+      color: var(--taxonomy-text-soft);
+      font-size: 0.82rem;
+      line-height: 1.1;
+    }
+    .taxonomy-category-topics__item.is-static {
+      pointer-events: none;
+    }
+    .taxonomy-category-topics__count {
+      color: var(--taxonomy-text-faint);
+      font-size: 0.72rem;
+    }
+    .taxonomy-category-main {
+      min-width: 0;
+    }
+    .taxonomy-category-section {
+      margin-bottom: 2rem;
+    }
+    .taxonomy-category-section__heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .taxonomy-category-section__eyebrow {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--taxonomy-text-soft);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .taxonomy-category-section__heading h2 {
+      margin: 0;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
+      line-height: 1.2;
+    }
+    .taxonomy-category-section__note {
+      max-width: 24rem;
+      color: var(--taxonomy-text-faint);
+      font-size: 0.82rem;
+      line-height: 1.7;
+      text-align: right;
+    }
+    .taxonomy-featured-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+    .taxonomy-feature-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--taxonomy-line);
+      border-radius: 24px;
+      background: var(--taxonomy-surface);
+      box-shadow: 0 16px 30px rgba(67, 49, 27, 0.05);
+    }
+    .taxonomy-feature-card__media {
+      display: block;
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(15, 110, 86, 0.13), rgba(15, 110, 86, 0.02)),
+        linear-gradient(180deg, #dfd5ca, #f3ece4);
+    }
+    .taxonomy-feature-card__media picture,
+    .taxonomy-feature-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .taxonomy-feature-card__media img {
+      object-fit: cover;
+    }
+    .taxonomy-card-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      color: var(--taxonomy-text-faint);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .taxonomy-feature-card__body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 0.95rem 1rem 1rem;
+    }
+    .taxonomy-feature-card__topic {
+      align-self: start;
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      background: var(--taxonomy-surface-soft);
+      color: var(--taxonomy-text-soft);
+      font-size: 0.72rem;
+      line-height: 1.1;
+    }
+    .taxonomy-feature-card__title {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.42;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .taxonomy-feature-card__title a,
+    .taxonomy-story-card__title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .taxonomy-feature-card__title a:hover,
+    .taxonomy-story-card__title a:hover {
+      color: var(--taxonomy-accent);
+    }
+    .taxonomy-feature-card__excerpt,
+    .taxonomy-story-card__excerpt {
+      color: var(--taxonomy-text-soft);
+      font-size: 0.88rem;
+      line-height: 1.75;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .taxonomy-feature-card__excerpt {
+      -webkit-line-clamp: 3;
+    }
+    .taxonomy-feature-card__meta,
+    .taxonomy-story-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      color: var(--taxonomy-text-faint);
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
+    .taxonomy-story-list {
+      display: grid;
+      gap: 0.85rem;
+    }
+    .taxonomy-pagination {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.9rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--taxonomy-line);
+    }
+    .taxonomy-pagination__meta {
+      color: var(--taxonomy-text-faint);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .taxonomy-pagination__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .taxonomy-pagination__link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.3rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--taxonomy-line);
+      border-radius: 999px;
+      background: var(--taxonomy-surface);
+      color: var(--taxonomy-text-soft);
+      font-size: 0.78rem;
+      line-height: 1;
+      text-decoration: none;
+    }
+    .taxonomy-pagination__link:hover {
+      border-color: rgba(15, 110, 86, 0.35);
+      color: var(--taxonomy-accent);
+    }
+    .taxonomy-pagination__link.is-current {
+      border-color: rgba(15, 110, 86, 0.2);
+      background: var(--taxonomy-surface-soft);
+      color: var(--taxonomy-text);
+      pointer-events: none;
+    }
+    .taxonomy-story-year {
+      margin: 1.5rem 0 0.85rem;
+      color: var(--taxonomy-text-soft);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .taxonomy-story-card {
+      display: grid;
+      grid-template-columns: 13rem minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--taxonomy-line);
+      border-radius: 22px;
+      background: var(--taxonomy-surface);
+      box-shadow: 0 16px 30px rgba(67, 49, 27, 0.05);
+    }
+    .taxonomy-story-card__media {
+      position: relative;
+      min-height: 100%;
+      aspect-ratio: 1 / 1;
+      background:
+        radial-gradient(circle at top left, rgba(15, 110, 86, 0.16), transparent 40%),
+        linear-gradient(180deg, #ddd4ca, #f4ede5);
+    }
+    .taxonomy-story-card__media picture,
+    .taxonomy-story-card__media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .taxonomy-story-card__media img {
+      object-fit: cover;
+    }
+    .taxonomy-story-card__body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      min-width: 0;
+      padding: 0.95rem 1rem 1rem;
+    }
+    .taxonomy-story-card__title {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.42;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .taxonomy-story-card__excerpt {
+      -webkit-line-clamp: 3;
+      font-size: 0.84rem;
+      line-height: 1.68;
+    }
+    .taxonomy-story-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+      padding-top: 0.2rem;
+    }
+    .taxonomy-story-card__tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.65rem;
+      border: 1px solid var(--taxonomy-line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--taxonomy-text-soft);
+      font-size: 0.72rem;
+      line-height: 1.1;
+      text-decoration: none;
+    }
+    .taxonomy-story-card__tag:hover {
+      border-color: rgba(15, 110, 86, 0.35);
+      color: var(--taxonomy-accent);
+    }
+    .taxonomy-sidebar-panel {
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+    .taxonomy-sidebar-panel + .taxonomy-sidebar-panel {
+      margin-top: 0;
+      padding-top: 0.55rem;
+      border-top: 0;
+    }
+    .taxonomy-sidebar-panel__eyebrow {
+      display: block;
+      margin-bottom: 0.35rem;
+      color: var(--taxonomy-text-soft);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .taxonomy-sidebar-panel h3 {
+      margin: 0 0 0.35rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+    .taxonomy-sidebar-panel p {
+      margin: 0 0 0.55rem;
+      color: var(--taxonomy-text-faint);
+      font-size: 0.76rem;
+      line-height: 1.65;
+    }
+    .taxonomy-sidebar-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .taxonomy-sidebar-links li {
+      border-top: 1px solid var(--taxonomy-line);
+    }
+    .taxonomy-sidebar-links li:first-child {
+      border-top: 0;
+    }
+    .taxonomy-sidebar-links a {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.55rem;
+      padding: 0.58rem 0;
+      color: inherit;
+      text-decoration: none;
+    }
+    .taxonomy-sidebar-links a:hover .taxonomy-sidebar-links__label {
+      color: var(--taxonomy-accent);
+    }
+    .taxonomy-sidebar-links__label {
+      color: var(--taxonomy-text-soft);
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+    .taxonomy-sidebar-links__count {
+      flex-shrink: 0;
+      color: var(--taxonomy-text-faint);
+      font-size: 0.7rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    @media (max-width: 980px) {
+      .taxonomy-category-top {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+      .taxonomy-category-primary {
+        height: auto;
+      }
+      .taxonomy-category-hero {
+        height: auto;
+      }
+      .taxonomy-category-section__heading {
+        align-items: start;
+        flex-direction: column;
+      }
+      .taxonomy-category-section__note {
+        text-align: left;
+      }
+      .taxonomy-pagination {
+        align-items: center;
+        flex-direction: column;
+      }
+      .taxonomy-pagination__links {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 820px) {
+      .taxonomy-featured-grid {
+        grid-template-columns: 1fr;
+      }
+      .taxonomy-story-card {
+        grid-template-columns: 1fr;
+      }
+      .taxonomy-story-card__media {
+        min-height: 10.5rem;
+        aspect-ratio: 16 / 9;
+      }
+    }
+  </style>
+
+  <div class="taxonomy-category-shell">
+    <div class="taxonomy-category-top">
+      <div class="taxonomy-category-primary">
+        <header class="page-header taxonomy-category-hero">
+          {{- partial "breadcrumbs.html" . -}}
+          <div class="taxonomy-category-hero__eyebrow">
+            <span>Category</span>
+            <span class="taxonomy-category-hero__eyebrow-count">{{ len $pages }} 篇文章</span>
+          </div>
+          <h1>{{ .Title }}</h1>
+          <div class="taxonomy-category-hero__description">
+            {{- if .Description -}}
+              {{ .Description | markdownify }}
+            {{- else -}}
+              這個分類目前收錄 {{ len $pages }} 篇文章，依時間排序展開。
+            {{- end -}}
+          </div>
+          {{- if .Content }}
+          <div class="taxonomy-category-hero__content">
+            {{ .Content }}
+          </div>
+          {{- end }}
+          {{- if gt (len $heroTopics) 0 }}
+          <div class="taxonomy-category-topics" aria-label="{{ .Title }} 相關主題">
+            {{- range $heroTopics -}}
+              <span class="taxonomy-category-topics__item is-static">
+                <span>#{{ .name }}</span>
+                <span class="taxonomy-category-topics__count">{{ .count }}</span>
+              </span>
+            {{- end -}}
+          </div>
+          {{- end }}
+        </header>
+      </div>
+
+      <aside class="taxonomy-category-sidebar">
+        <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-category-map-title">
+          <span class="taxonomy-sidebar-panel__eyebrow">Reading Map</span>
+          <h3 id="taxonomy-category-map-title">其他主分類</h3>
+          <p>沿著站內五大分類切換閱讀路徑。</p>
+          <ul class="taxonomy-sidebar-links">
+            {{- range $item := $categoryItems -}}
+              {{- with $item.page -}}
+              <li>
+                <a href="{{ .RelPermalink }}"{{ if eq .Title $.Title }} aria-current="page"{{ end }}>
+                  <span class="taxonomy-sidebar-links__label">{{ .Title }}</span>
+                  <span class="taxonomy-sidebar-links__count">{{ $item.count }}</span>
+                </a>
+              </li>
+              {{- end -}}
+            {{- end -}}
+          </ul>
+        </section>
+
+        {{- if gt (len $sidebarTopics) 0 }}
+        <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-topic-index-title">
+          <span class="taxonomy-sidebar-panel__eyebrow">Topic Index</span>
+          <h3 id="taxonomy-topic-index-title">{{ .Title }}相關主題</h3>
+          <p>從標籤切入更細的閱讀線索。</p>
+          <ul class="taxonomy-sidebar-links">
+            {{- range $sidebarTopics -}}
+              <li>
+                <a href="{{ .page.RelPermalink }}">
+                  <span class="taxonomy-sidebar-links__label">#{{ .name }}</span>
+                  <span class="taxonomy-sidebar-links__count">{{ .count }}</span>
+                </a>
+              </li>
+            {{- end -}}
+          </ul>
+        </section>
+        {{- end }}
+      </aside>
+    </div>
+
+    <main class="taxonomy-category-main">
+        {{- if gt (len $featured) 0 }}
+        <section class="taxonomy-category-section taxonomy-featured" aria-labelledby="taxonomy-featured-title">
+          <div class="taxonomy-category-section__heading">
+            <div>
+              <span class="taxonomy-category-section__eyebrow">Recommended Reading</span>
+              <h2 id="taxonomy-featured-title">先讀這幾篇</h2>
+            </div>
+            <p class="taxonomy-category-section__note">從這個分類中挑出近期值得先看的文章，作為進入主題的起點。</p>
+          </div>
+          <div class="taxonomy-featured-grid">
+            {{- range $idx, $page := $featured -}}
+              {{- $imageLoading := cond (eq $idx 0) "eager" "lazy" -}}
+              {{- $imageFetchPriority := cond (eq $idx 0) "high" "auto" -}}
+              {{- $coverImage := $page.Params.cover.image -}}
+              {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) -}}
+              {{- $pageBundleCover := $page.Resources.GetMatch (printf "%s.*" $coverStem) -}}
+              {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s.*" $coverStem) -}}
+              {{- if and (not $pageBundleCover) $coverImage -}}
+                {{- $pageBundleCover = $page.Resources.GetMatch (printf "*%s*" $coverImage) -}}
+              {{- end -}}
+              {{- if and (not $globalResourcesCover) $coverImage -}}
+                {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
+              {{- end -}}
+              {{- $cover := or $pageBundleCover $globalResourcesCover -}}
+              {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
+              {{- $firstTag := index ($page.Params.tags | default (slice)) 0 -}}
+              <article class="taxonomy-feature-card">
+                <a class="taxonomy-feature-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
+                  {{- if $cover -}}
+                    {{- partialCached "optimized-image.html" (dict
+                      "resource" $cover
+                      "alt" ($page.Params.cover.alt | default $page.Title | plainify)
+                      "loading" $imageLoading
+                      "sizes" "(min-width: 1180px) 21rem, (min-width: 820px) calc((100vw - 8rem) / 3), calc(100vw - 5rem)"
+                      "maxWidth" 960
+                      "widths" (slice 360 540 720 960)
+                      "fetchpriority" $imageFetchPriority
+                      "class" "taxonomy-feature-card__image"
+                    ) $cover.RelPermalink ($page.Params.cover.alt | default $page.Title | plainify) $imageLoading "(min-width: 1180px) 21rem, (min-width: 820px) calc((100vw - 8rem) / 3), calc(100vw - 5rem)" 960 "360-540-720-960" $imageFetchPriority "taxonomy-feature-card__image" -}}
+                  {{- else if $coverImage -}}
+                    <img
+                      class="taxonomy-feature-card__image"
+                      src="{{ $coverImage | relURL }}"
+                      alt="{{ $page.Params.cover.alt | default $page.Title | plainify }}"
+                      loading="{{ $imageLoading }}"
+                      decoding="async"
+                      fetchpriority="{{ $imageFetchPriority }}">
+                  {{- else -}}
+                    <span class="taxonomy-card-placeholder">No Image</span>
+                  {{- end -}}
+                </a>
+                <div class="taxonomy-feature-card__body">
+                  {{- with $firstTag }}
+                    <span class="taxonomy-feature-card__topic">#{{ . }}</span>
+                  {{- end }}
+                  <h3 class="taxonomy-feature-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+                  {{- with $excerpt }}
+                    <div class="taxonomy-feature-card__excerpt">{{ . | plainify | htmlUnescape | truncate 88 }}</div>
+                  {{- end }}
+                  <div class="taxonomy-feature-card__meta">
+                    <span>{{ $page.Date.Format "2006.01.02" }}</span>
+                    {{- if ($page.Param "ShowReadingTime") -}}
+                      <span>{{ $page.ReadingTime }} 分鐘閱讀</span>
+                    {{- end -}}
+                  </div>
+                </div>
+              </article>
+            {{- end -}}
+          </div>
+        </section>
+        {{- end }}
+
+        <section class="taxonomy-category-section taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
+          <div class="taxonomy-category-section__heading">
+            <div>
+              <span class="taxonomy-category-section__eyebrow">All Articles</span>
+              <h2 id="taxonomy-article-list-title">全部文章</h2>
+            </div>
+            <p class="taxonomy-category-section__note">依年份與時間排序瀏覽這個分類中的文章，每頁顯示 {{ len $pagedPages }} 篇。</p>
+          </div>
+          {{- range $group := $yearGroups -}}
+            <div class="taxonomy-story-year">{{ $group.Key }} <span class="taxonomy-category-topics__count">{{ len $group.Pages }} 篇</span></div>
+            <div class="taxonomy-story-list">
+              {{- range $page := $group.Pages -}}
+                {{- $coverImage := $page.Params.cover.image -}}
+                {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) -}}
+                {{- $pageBundleCover := $page.Resources.GetMatch (printf "%s.*" $coverStem) -}}
+                {{- $globalResourcesCover := (resources.ByType "image").GetMatch (printf "*%s.*" $coverStem) -}}
+                {{- if and (not $pageBundleCover) $coverImage -}}
+                  {{- $pageBundleCover = $page.Resources.GetMatch (printf "*%s*" $coverImage) -}}
+                {{- end -}}
+                {{- if and (not $globalResourcesCover) $coverImage -}}
+                  {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
+                {{- end -}}
+                {{- $cover := or $pageBundleCover $globalResourcesCover -}}
+                {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
+                {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
+                <article class="taxonomy-story-card">
+                  <a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
+                    {{- if $cover -}}
+                      {{- partialCached "optimized-image.html" (dict
+                        "resource" $cover
+                        "alt" ($page.Params.cover.alt | default $page.Title | plainify)
+                        "loading" "lazy"
+                        "sizes" "(min-width: 980px) 10.5rem, (min-width: 820px) 28vw, 100vw"
+                        "maxWidth" 640
+                        "widths" (slice 240 360 480 640)
+                        "fetchpriority" "auto"
+                        "class" "taxonomy-story-card__image"
+                      ) $cover.RelPermalink ($page.Params.cover.alt | default $page.Title | plainify) "lazy" "(min-width: 980px) 10.5rem, (min-width: 820px) 28vw, 100vw" 640 "240-360-480-640" "auto" "taxonomy-story-card__image" -}}
+                    {{- else if $coverImage -}}
+                      <img
+                        class="taxonomy-story-card__image"
+                        src="{{ $coverImage | relURL }}"
+                        alt="{{ $page.Params.cover.alt | default $page.Title | plainify }}"
+                        loading="lazy"
+                        decoding="async">
+                    {{- else -}}
+                      <span class="taxonomy-card-placeholder">No Image</span>
+                    {{- end -}}
+                  </a>
+                  <div class="taxonomy-story-card__body">
+                    <div class="taxonomy-story-card__meta">
+                      <span>{{ $page.Date.Format "01.02" }}</span>
+                      {{- if ($page.Param "ShowReadingTime") -}}
+                        <span>{{ $page.ReadingTime }} 分鐘</span>
+                      {{- end -}}
+                    </div>
+                    <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+                    {{- with $excerpt }}
+                      <div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 108 }}</div>
+                    {{- end }}
+                    {{- if gt (len $tags) 0 }}
+                    <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
+                      {{- range $tags -}}
+                        {{- with site.GetPage (printf "/tags/%s" .) -}}
+                          <a class="taxonomy-story-card__tag" href="{{ .RelPermalink }}">#{{ .Title }}</a>
+                        {{- end -}}
+                      {{- end -}}
+                    </div>
+                    {{- end }}
+                  </div>
+                </article>
+              {{- end -}}
+            </div>
+          {{- end -}}
+          {{- if gt $paginator.TotalPages 1 }}
+          <nav class="taxonomy-pagination" aria-label="分類文章分頁">
+            <div class="taxonomy-pagination__meta">第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 頁，共 {{ len $pages }} 篇文章</div>
+            <div class="taxonomy-pagination__links">
+              {{- with $paginator.Prev }}
+                <a class="taxonomy-pagination__link" href="{{ .URL }}">上一頁</a>
+              {{- end }}
+              {{- range $paginator.Pagers }}
+                {{- if eq .PageNumber $paginator.PageNumber }}
+                  <span class="taxonomy-pagination__link is-current">{{ .PageNumber }}</span>
+                {{- else }}
+                  <a class="taxonomy-pagination__link" href="{{ .URL }}">{{ .PageNumber }}</a>
+                {{- end }}
+              {{- end }}
+              {{- with $paginator.Next }}
+                <a class="taxonomy-pagination__link" href="{{ .URL }}">下一頁</a>
+              {{- end }}
+            </div>
+          </nav>
+          {{- end }}
+        </section>
+    </main>
+  </div>
