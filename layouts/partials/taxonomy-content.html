@@ -1003,6 +1003,52 @@
       font-weight: 500;
       line-height: 1.4;
     }
+    [data-theme="dark"] .taxonomy-category-shell {
+      --taxonomy-bg: #121315;
+      --taxonomy-surface: #181a1f;
+      --taxonomy-surface-soft: #20232a;
+      --taxonomy-line: rgba(229, 221, 209, 0.12);
+      --taxonomy-text: #f1ece3;
+      --taxonomy-text-soft: #c9c0b4;
+      --taxonomy-text-faint: #9f978c;
+      --taxonomy-accent: #9cc9b8;
+    }
+    [data-theme="dark"] .taxonomy-category-hero {
+      background:
+        radial-gradient(circle at top right, rgba(156, 201, 184, 0.14), transparent 30%),
+        linear-gradient(180deg, rgba(29, 31, 36, 0.98), rgba(24, 26, 31, 0.96));
+      box-shadow: none;
+    }
+    [data-theme="dark"] .taxonomy-category-topics__item,
+    [data-theme="dark"] .taxonomy-feature-card,
+    [data-theme="dark"] .taxonomy-story-card,
+    [data-theme="dark"] .taxonomy-pagination__link {
+      box-shadow: none;
+    }
+    [data-theme="dark"] .taxonomy-feature-card,
+    [data-theme="dark"] .taxonomy-story-card {
+      background: var(--taxonomy-surface);
+    }
+    [data-theme="dark"] .taxonomy-feature-card__media {
+      background:
+        linear-gradient(135deg, rgba(156, 201, 184, 0.16), rgba(156, 201, 184, 0.03)),
+        linear-gradient(180deg, #2c3138, #22262d);
+    }
+    [data-theme="dark"] .taxonomy-story-card__media {
+      background:
+        radial-gradient(circle at top left, rgba(156, 201, 184, 0.16), transparent 40%),
+        linear-gradient(180deg, #2b3037, #22262d);
+    }
+    [data-theme="dark"] .taxonomy-story-card__tag {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    [data-theme="dark"] .taxonomy-pagination__link.is-current {
+      background: rgba(156, 201, 184, 0.12);
+      color: var(--taxonomy-text);
+    }
+    [data-theme="dark"] .taxonomy-card-placeholder {
+      background: linear-gradient(180deg, #262a31, #1f232a);
+    }
     @media (max-width: 980px) {
       .taxonomy-category-top {
         grid-template-columns: 1fr;
