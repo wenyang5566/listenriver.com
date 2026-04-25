@@ -146,6 +146,12 @@
       });
     });
 
+    mobileDrawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        setMobileNavOpen(false);
+      });
+    });
+
     mobileNavGroups.forEach((group) => {
       const trigger = group.querySelector('.mobile-nav-group-trigger');
       if (!trigger) return;
@@ -186,6 +192,24 @@
       });
     });
   });
+
+  if (scrollTopButtons.length) {
+    const updateScrollTopButtons = () => {
+      const doc = document.documentElement;
+      const totalScrollable = Math.max(doc.scrollHeight - window.innerHeight, 1);
+      const progress = window.scrollY / totalScrollable;
+      const visible = progress > 0.3;
+
+      scrollTopButtons.forEach((button) => {
+        button.classList.toggle('is-visible', visible);
+        button.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      });
+    };
+
+    updateScrollTopButtons();
+    window.addEventListener('scroll', updateScrollTopButtons, { passive: true });
+    window.addEventListener('resize', updateScrollTopButtons, { passive: true });
+  }
 
   mobileBackButtons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -889,5 +913,15 @@
     rail.addEventListener('scroll', syncButtons, { passive: true });
     window.addEventListener('resize', syncButtons);
     syncButtons();
+  });
+
+  document.querySelectorAll('[data-mobile-clubhouse-toggle]').forEach((button) => {
+    const section = button.closest('.home-discovery-section-clubhouse');
+    if (!section) return;
+
+    button.addEventListener('click', () => {
+      section.classList.add('is-expanded');
+      button.setAttribute('aria-expanded', 'true');
+    });
   });
 })();

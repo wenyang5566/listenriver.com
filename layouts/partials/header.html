@@ -1,6 +1,5 @@
 {{- $brandTitle := .Site.Title | default "Listen River" -}}
 {{- $mainNavItems := partial "site-nav-items.html" . -}}
-{{- $featuredTags := partial "header-featured-tags.html" . -}}
 {{- $headerCategoryItems := partial "header-category-nav.html" . -}}
 {{- $searchUrl := "/search/" | relLangURL -}}
 {{- $aboutUrl := "/about/" | relLangURL -}}
@@ -12,7 +11,7 @@
 <header id="site-header" class="site-header">
   <div class="header-top-shell">
     <div class="header-top header-top--nav">
-      <nav class="header-nav-shell header-nav-shell--desktop" aria-label="主選單">
+      <nav class="header-nav-shell header-nav-shell--desktop" aria-label="網站主導覽">
         <div class="header-nav header-nav-groups desktop-nav">
           <a href="{{ "/" | relLangURL }}" class="nav-chip nav-chip-home{{ if $isHome }} is-active{{ end }}"{{ if $isHome }} aria-current="page"{{ end }}>首頁</a>
 
@@ -34,7 +33,7 @@
           <div class="nav-group nav-group--desktop nav-group--category">
             <div class="nav-group-chip nav-chip nav-chip-more{{ if $isActiveItem }} is-active{{ end }}">
               <a href="{{ $item.url }}" class="nav-group-link-main{{ if $isCurrentCategory }} is-active{{ end }}"{{ if $isCurrentCategory }} aria-current="page"{{ end }}>{{ $item.name }}</a>
-              <button class="nav-group-trigger nav-group-trigger--split" type="button" aria-label="展開 {{ $item.name }} 子選單" aria-expanded="false" aria-haspopup="true">
+              <button class="nav-group-trigger nav-group-trigger--split" type="button" aria-label="展開 {{ $item.name }} 子主題" aria-expanded="false" aria-haspopup="true">
                 <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="m6 9 6 6 6-6"></path>
                 </svg>
@@ -60,6 +59,7 @@
           {{- end -}}
         </div>
       </nav>
+
       <div class="header-side header-side-right">
         <button class="header-icon-button header-mobile-menu-toggle" type="button" aria-label="開啟選單" aria-controls="mobile-nav-drawer" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -68,8 +68,9 @@
             <path d="M4 17h16"></path>
           </svg>
         </button>
+
         {{- if not site.Params.disableThemeToggle }}
-        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換夜間模式 (Alt + T)" aria-label="切換夜間模式">
+        <button id="theme-toggle" class="header-icon-button" accesskey="t" title="切換明暗模式 (Alt + T)" aria-label="切換明暗模式">
           <svg id="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -86,8 +87,12 @@
           </svg>
         </button>
         {{- end }}
+
         <a href="{{ $searchUrl }}" class="header-icon-link header-search-icon{{ if $isSearchPage }} is-active{{ end }}" aria-label="搜尋" title="搜尋"{{ if $isSearchPage }} aria-current="page"{{ end }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m20 20-3.5-3.5"></path>
+          </svg>
         </a>
       </div>
     </div>
@@ -108,32 +113,19 @@
       </button>
     </div>
 
+    <a href="{{ $searchUrl }}" class="mobile-nav-search-entry" aria-label="前往搜尋頁面">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m20 20-3.5-3.5"></path>
+      </svg>
+      <span>搜尋站內文章、分類與主題</span>
+    </a>
+
     <div class="mobile-nav-primary mobile-nav-primary--simple">
       {{- range $mainNavItems -}}
       <a href="{{ .url }}" class="mobile-nav-primary-link">{{- if eq .key "home" -}}首頁{{- else if eq .key "categories" -}}分類總覽{{- else if eq .key "tags" -}}主題總覽{{- else if eq .key "clubhouse" -}}會所模式{{- else if eq .key "about" -}}關於我{{- end -}}</a>
       {{- end -}}
-      <a href="{{ $searchUrl }}" class="mobile-nav-primary-link mobile-nav-primary-link-search">搜尋</a>
     </div>
-
-    {{- if gt (len $featuredTags) 0 -}}
-    <div class="mobile-nav-groups">
-      <div class="mobile-nav-group">
-        <button class="mobile-nav-group-trigger" type="button" aria-expanded="false">
-          <span>重要主題</span>
-          <svg class="mobile-nav-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </button>
-        <div class="mobile-nav-group-panel">
-          <div class="mobile-nav-tag-list">
-            {{- range $featuredTags -}}
-            <a href="{{ .page.RelPermalink }}" class="mobile-nav-tag-link">#{{ .name }}<span class="mobile-nav-tag-link__count">{{ .count }}</span></a>
-            {{- end -}}
-          </div>
-        </div>
-      </div>
-    </div>
-    {{- end -}}
   </aside>
 
   <div class="mobile-reading-progress" aria-hidden="true">

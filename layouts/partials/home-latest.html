@@ -6,29 +6,29 @@
       <p class="home-discovery-section__eyebrow">Latest Posts</p>
       <h2 id="home-latest-title" class="home-discovery-section__title">最新文章</h2>
     </div>
-    <a href="{{ "/blog/" | relURL }}" class="home-discovery-section__more">查看全部</a>
+    <a href="{{ "/blog/" | relURL }}" class="home-discovery-section__more">全部文章</a>
   </div>
   <div class="home-latest-grid">
-    {{- range $pages -}}
-    <article class="home-latest-item">
-      <a class="home-latest-item__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-        {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
-        {{- partialCached "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) .RelPermalink false $isHidden (.Params.cover.image | default "") -}}
+    {{- range $index, $page := $pages -}}
+    <article class="home-latest-item{{ if ge $index 3 }} home-latest-item--mobile-extra{{ end }}">
+      <a class="home-latest-item__media" href="{{ $page.RelPermalink }}" aria-hidden="true" tabindex="-1">
+        {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
+        {{- partialCached "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) $page.RelPermalink false $isHidden ($page.Params.cover.image | default "") -}}
       </a>
       <div class="home-latest-item__body">
         <div class="home-latest-item__meta">
-          {{- with index (.Params.categories | default (slice)) 0 -}}
+          {{- with index ($page.Params.categories | default (slice)) 0 -}}
           <span>{{ . }}</span>
           {{- end -}}
-          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
+          <time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $page.Date.Format "2006.01.02" }}</time>
           {{- if site.Params.ShowReadingTime -}}
-          <span>{{ .ReadingTime }} 分鐘閱讀</span>
+          <span>{{ $page.ReadingTime }} 分鐘閱讀</span>
           {{- end -}}
         </div>
         <h3 class="home-latest-item__title">
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
         </h3>
-        <p class="home-latest-item__excerpt">{{ .Summary | plainify | htmlUnescape | truncate 120 }}</p>
+        <p class="home-latest-item__excerpt">{{ $page.Summary | plainify | htmlUnescape | truncate 120 }}</p>
       </div>
     </article>
     {{- end -}}

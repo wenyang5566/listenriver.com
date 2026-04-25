@@ -4,45 +4,47 @@
   <div class="home-discovery-section__header">
     <div>
       <p class="home-discovery-section__eyebrow">Clubhouse Model</p>
-      <h2 id="home-clubhouse-title" class="home-discovery-section__title">會所模式</h2>
+      <h2 id="home-clubhouse-title" class="home-discovery-section__title">會所專題</h2>
     </div>
-    <a href="{{ "/clubhouse/" | relURL }}" class="home-discovery-section__more">進入專題頁</a>
+    <a href="{{ "/clubhouse/" | relURL }}" class="home-discovery-section__more">查看更多</a>
   </div>
 
   <div class="home-clubhouse-carousel" data-clubhouse-slider>
-    <button class="home-clubhouse-arrow home-clubhouse-arrow--prev" type="button" data-clubhouse-prev aria-label="向左瀏覽會所模式">
+    <button class="home-clubhouse-arrow home-clubhouse-arrow--prev" type="button" data-clubhouse-prev aria-label="向左瀏覽會所專題">
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
         <path d="M11.75 4.5L6.25 10l5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </button>
     <div class="home-clubhouse-slider">
       <div class="home-clubhouse-scroll" data-home-clubhouse-scroll>
-        {{- range $pages -}}
-          {{- $label := index (.Params.categories | default (slice)) 0 | default (index (.Params.tags | default (slice)) 0) | default "會所" -}}
-        <article class="home-clubhouse-card">
-          <a class="home-clubhouse-card__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
-            {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
-            {{- partialCached "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) .RelPermalink false $isHidden (.Params.cover.image | default "") -}}
+        {{- range $index, $page := $pages -}}
+          {{- $label := index ($page.Params.categories | default (slice)) 0 | default (index ($page.Params.tags | default (slice)) 0) | default "會所" -}}
+        <article class="home-clubhouse-card{{ if ge $index 3 }} home-clubhouse-card--mobile-extra{{ end }}">
+          <a class="home-clubhouse-card__media" href="{{ $page.RelPermalink }}" aria-hidden="true" tabindex="-1">
+            {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
+            {{- partialCached "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden) $page.RelPermalink false $isHidden ($page.Params.cover.image | default "") -}}
           </a>
           <div class="home-clubhouse-card__body">
             <div class="home-clubhouse-card__meta">
               <span class="home-clubhouse-card__tag">{{ $label }}</span>
-              <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006.01.02" }}</time>
+              <time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $page.Date.Format "2006.01.02" }}</time>
             </div>
             <h3 class="home-clubhouse-card__title">
-              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+              <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
             </h3>
-            <p class="home-clubhouse-card__excerpt">{{ .Summary | plainify | htmlUnescape | truncate 92 }}</p>
+            <p class="home-clubhouse-card__excerpt">{{ $page.Summary | plainify | htmlUnescape | truncate 92 }}</p>
           </div>
         </article>
         {{- end -}}
       </div>
     </div>
-    <button class="home-clubhouse-arrow home-clubhouse-arrow--next" type="button" data-clubhouse-next aria-label="向右瀏覽會所模式">
+    <button class="home-clubhouse-arrow home-clubhouse-arrow--next" type="button" data-clubhouse-next aria-label="向右瀏覽會所專題">
       <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
         <path d="M8.25 4.5L13.75 10l-5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
       </svg>
     </button>
   </div>
+
+  <button class="home-mobile-more-button" type="button" data-mobile-clubhouse-toggle aria-expanded="false">查看更多會所專題</button>
 </section>
 {{- end -}}

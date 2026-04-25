@@ -22,6 +22,9 @@
   {{- end }}
   {{- if not ($page.Param "hideMeta") }}
   <footer class="entry-footer">
+    {{- with index ($page.Params.categories | default (slice)) 0 -}}
+    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/" class="entry-kicker">{{ . }}</a>
+    {{- end -}}
     {{- partial "post_meta.html" $page -}}
   </footer>
   {{- end }}

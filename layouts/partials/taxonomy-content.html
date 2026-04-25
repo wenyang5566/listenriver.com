@@ -1151,10 +1151,13 @@
           {{- if gt (len $heroTopics) 0 }}
           <div class="taxonomy-category-topics" aria-label="{{ .Title }} 相關主題">
             {{- range $heroTopics -}}
-              <span class="taxonomy-category-topics__item is-static">
-                <span>#{{ .name }}</span>
-                <span class="taxonomy-category-topics__count">{{ .count }}</span>
-              </span>
+              {{- $topicCount := .count -}}
+              {{- with .page -}}
+              <a class="taxonomy-category-topics__item" href="{{ .RelPermalink }}">
+                <span>#{{ .Title }}</span>
+                <span class="taxonomy-category-topics__count">{{ $topicCount }}</span>
+              </a>
+              {{- end -}}
             {{- end -}}
           </div>
           {{- end }}
