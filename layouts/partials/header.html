@@ -45,10 +45,32 @@
                 <span class="nav-group-divider" aria-hidden="true"></span>
                 {{- range $tag := $item.featuredTags -}}
                 {{- $isCurrentTag := eq $.RelPermalink $tag.url -}}
+                {{- if gt (len ($tag.featuredTags | default (slice))) 0 -}}
+                <div class="nav-group-link nav-group-link--simple nav-group-link--nested{{ if $isCurrentTag }} is-active{{ end }}">
+                  <a class="nav-group-link-nested-main" href="{{ $tag.url }}"{{ if $isCurrentTag }} aria-current="page"{{ end }}>{{ $tag.name }}</a>
+                  <button class="nav-group-link-nested-trigger" type="button" aria-label="展開 {{ $tag.name }} 子主題" aria-expanded="false" aria-haspopup="true">
+                    <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="m6 9 6 6 6-6"></path>
+                    </svg>
+                  </button>
+                  <div class="nav-group-submenu">
+                    <div class="nav-group-submenu-inner">
+                      {{- range $nestedTag := $tag.featuredTags -}}
+                      {{- $isCurrentNestedTag := eq $.RelPermalink $nestedTag.url -}}
+                      <a class="nav-group-link nav-group-link--simple{{ if $isCurrentNestedTag }} is-active{{ end }}" href="{{ $nestedTag.url }}"{{ if $isCurrentNestedTag }} aria-current="page"{{ end }}>
+                        <span>{{ $nestedTag.name }}</span>
+                        <span class="nav-group-link-count">{{ $nestedTag.count }}</span>
+                      </a>
+                      {{- end -}}
+                    </div>
+                  </div>
+                </div>
+                {{- else -}}
                 <a class="nav-group-link nav-group-link--simple{{ if $isCurrentTag }} is-active{{ end }}" href="{{ $tag.url }}"{{ if $isCurrentTag }} aria-current="page"{{ end }}>
                   <span>{{ $tag.name }}</span>
                   <span class="nav-group-link-count">{{ $tag.count }}</span>
                 </a>
+                {{- end -}}
                 {{- end -}}
               </div>
             </div>
