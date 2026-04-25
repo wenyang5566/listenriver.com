@@ -1,12 +1,12 @@
 ---
-title: 20260304會所工作日誌11_敘事的見證
+title: 會所工作日誌11_敘事的見證
 date: 2026-03-04
 description:
 draft: false
 type: post
 cover:
   image: 會所工作日誌11.jpg
-  alt: "20260304會所工作日誌11_敘事的見證"
+  alt: "會所工作日誌11_敘事的見證"
 
 categories:
   - 助人工作
