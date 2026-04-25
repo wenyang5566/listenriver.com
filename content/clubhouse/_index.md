@@ -1,5 +1,5 @@
 ---
-title: "會所專題"
+title: "會所模式"
 description: "以會所為核心，整理復元理念、會所介紹與社會工作實踐相關文章。"
 robotsNoIndex: false
 layout: categorylike

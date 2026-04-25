@@ -10,7 +10,7 @@
   </div>
   <div class="home-featured-grid">
     {{- with index $pages 0 -}}
-    <article class="home-post-card home-post-card--featured">
+    <article class="home-post-card home-post-card--featured home-post-card--featured-lead">
       <a class="home-post-card__media" href="{{ .RelPermalink }}" aria-hidden="true" tabindex="-1">
         {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false -}}
         {{- partialCached "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) .RelPermalink false $isHidden (.Params.cover.image | default "") -}}

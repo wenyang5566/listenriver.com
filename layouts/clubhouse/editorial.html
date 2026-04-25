@@ -446,7 +446,7 @@
     <aside class="clubhouse-taxonomy-sidebar">
       <section class="clubhouse-sidebar-panel" aria-labelledby="clubhouse-reading-map-title">
         <span class="clubhouse-sidebar-panel__eyebrow">Reading Map</span>
-        <h3 id="clubhouse-reading-map-title">會所專題分區</h3>
+        <h3 id="clubhouse-reading-map-title">會所模式分區</h3>
         <p>沿著這個專題底下的不同分區切換閱讀路徑。</p>
         <ul class="clubhouse-sidebar-links">
           {{- range $sectionPages -}}
@@ -555,7 +555,7 @@
         </div>
       {{- end -}}
       {{- if gt $paginator.TotalPages 1 }}
-      <nav class="clubhouse-pagination" aria-label="會所專題文章分頁">
+      <nav class="clubhouse-pagination" aria-label="會所模式文章分頁">
         <div class="clubhouse-pagination__meta">第 {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }} 頁，共 {{ len $clubhousePages }} 篇文章</div>
         <div class="clubhouse-pagination__links">
           {{- with $paginator.Prev }}<a class="clubhouse-pagination__link" href="{{ .URL }}">上一頁</a>{{- end }}

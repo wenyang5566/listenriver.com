@@ -199,6 +199,7 @@
       text-decoration: none;
     }
     .taxonomy-landing-card {
+      position: relative;
       display: flex;
       flex-direction: column;
       min-width: 0;
@@ -218,12 +219,19 @@
     .taxonomy-landing-hot-card__media {
       display: block;
       position: relative;
+      z-index: 0;
       overflow: hidden;
       background:
         linear-gradient(180deg, rgba(244, 238, 229, 0.96), rgba(236, 229, 219, 0.92));
     }
+    .taxonomy-landing-card__stretched-link {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      border-radius: 22px;
+    }
     .taxonomy-landing-card__media {
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 8.6;
       border-bottom: 1px solid var(--taxonomy-landing-line);
     }
     .taxonomy-landing-hot-card__media {
@@ -247,22 +255,34 @@
       transform: scale(1.035);
     }
     .taxonomy-landing-card__body {
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
       display: flex;
       flex: 1;
       flex-direction: column;
       gap: 0.45rem;
-      padding: 1.05rem 1.1rem 1.1rem;
+      padding: 0.92rem 0.95rem 0.95rem;
+    }
+    .taxonomy-landing-card__topline {
+      display: flex;
+      align-items: baseline;
+      gap: 0.52rem;
+      min-width: 0;
     }
     .taxonomy-landing-card__index {
+      flex: 0 0 auto;
       color: var(--taxonomy-landing-text-faint);
       font-size: 0.68rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
     .taxonomy-landing-card__label {
+      min-width: 0;
       font-size: 0.68rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .taxonomy-landing-card__title {
       margin: 0;
@@ -273,19 +293,26 @@
     .taxonomy-landing-card__description {
       flex: 1;
       color: var(--taxonomy-landing-text-soft);
-      font-size: 0.84rem;
-      line-height: 1.75;
+      font-size: 0.81rem;
+      line-height: 1.65;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .taxonomy-landing-card__description p {
       margin: 0;
     }
     .taxonomy-landing-card__tags {
+      pointer-events: auto;
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
       margin-top: 0.15rem;
     }
     .taxonomy-landing-card__tag {
+      position: relative;
+      z-index: 3;
       display: inline-flex;
       align-items: center;
       padding: 0.28rem 0.6rem;
@@ -295,14 +322,21 @@
       color: var(--taxonomy-landing-text-soft);
       font-size: 0.72rem;
       line-height: 1.1;
+      text-decoration: none;
+      transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+    }
+    .taxonomy-landing-card__tag:hover {
+      border-color: var(--taxonomy-landing-line-strong);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--taxonomy-landing-text);
     }
     .taxonomy-landing-card__footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 0.8rem;
-      margin-top: 0.7rem;
-      padding-top: 0.8rem;
+      margin-top: 0.5rem;
+      padding-top: 0.65rem;
       border-top: 1px solid var(--taxonomy-landing-line);
       color: var(--taxonomy-landing-text-faint);
       font-size: 0.76rem;
@@ -445,19 +479,22 @@
       <div class="taxonomy-landing-category-grid">
         {{- range $idx, $card := $categoryCards -}}
           {{- if $card.entryURL -}}
-          <a class="taxonomy-landing-card taxonomy-landing-card--{{ $card.accent }}" href="{{ $card.entryURL }}" aria-label="進入 {{ $card.title }}">
+          <article class="taxonomy-landing-card taxonomy-landing-card--{{ $card.accent }}">
+            <a class="taxonomy-landing-card__stretched-link" href="{{ $card.entryURL }}" aria-label="進入 {{ $card.title }}"></a>
             <div class="taxonomy-landing-card__media">
               <img src="{{ $card.cover.src }}" alt="{{ $card.cover.alt }}" loading="{{ cond (lt $idx 3) "eager" "lazy" }}" decoding="async">
             </div>
             <div class="taxonomy-landing-card__body">
-              <span class="taxonomy-landing-card__index">{{ $card.index }}</span>
-              <span class="taxonomy-landing-card__label">{{ $card.en }}</span>
+              <div class="taxonomy-landing-card__topline">
+                <span class="taxonomy-landing-card__index">{{ $card.index }}</span>
+                <span class="taxonomy-landing-card__label">{{ $card.en }}</span>
+              </div>
               <h2 class="taxonomy-landing-card__title">{{ $card.title }}</h2>
               <div class="taxonomy-landing-card__description"><p>{{ $card.description }}</p></div>
               {{- with $card.tags }}
               <div class="taxonomy-landing-card__tags" aria-label="{{ $card.title }} 代表標籤">
                 {{- range first 3 . -}}
-                  <span class="taxonomy-landing-card__tag">#{{ . }}</span>
+                  <a class="taxonomy-landing-card__tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}" aria-label="查看標籤 {{ . }}">#{{ . }}</a>
                 {{- end -}}
               </div>
               {{- end }}
@@ -466,7 +503,7 @@
                 <span class="taxonomy-landing-card__arrow" aria-hidden="true">→</span>
               </div>
             </div>
-          </a>
+          </article>
           {{- end -}}
         {{- end -}}
       </div>

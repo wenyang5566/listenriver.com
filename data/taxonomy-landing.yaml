@@ -8,7 +8,7 @@ categoryCards:
     source:
       kind: category
       name: 閱讀與筆記
-    description: 從書摘、閱讀心得到電影筆記，沿著作品與思想慢慢整理閱讀之後留下的痕跡。
+    description: 從書摘到電影筆記，整理閱讀之後留下的痕跡。
     tags:
       - 書摘
       - 閱讀心得
@@ -22,7 +22,7 @@ categoryCards:
     source:
       kind: category
       name: 助人工作
-    description: 記錄社會工作、陪伴與對話現場，把助人實務中的困惑、學習與方法慢慢寫下來。
+    description: 記錄社會工作與對話現場，寫下助人實務的困惑與學習。
     tags:
       - 助人工作
       - 開放式對話
@@ -36,7 +36,7 @@ categoryCards:
     source:
       kind: category
       name: 病痛經驗
-    description: 沿著疼痛、疾病與照護經驗回到身體，書寫受苦如何改變理解自己與世界的方式。
+    description: 從疼痛與照護經驗回到身體，書寫受苦如何改變自己。
     tags:
       - 病痛經驗
       - 聆聽疼痛計畫
@@ -50,7 +50,7 @@ categoryCards:
     source:
       kind: category
       name: 自我成長
-    description: 關於理解自己、辨認情緒與慢慢成為一個人的練習，收納那些向內走的思索。
+    description: 關於理解自己、辨認情緒，以及慢慢成為一個人的練習。
     tags:
       - 成為一個人
       - 自我成長
@@ -64,7 +64,7 @@ categoryCards:
     source:
       kind: category
       name: 日常書寫
-    description: 日常的感受、觀察與短篇書寫，讓零碎經驗也能有位置，慢慢形成自己的生活檔案。
+    description: 收納日常感受與觀察，讓零碎經驗慢慢形成生活檔案。
     tags:
       - 日常書寫
       - 講座筆記
@@ -78,7 +78,7 @@ categoryCards:
     source:
       kind: tag
       name: 會所模式
-    description: 以會所實習、工作日誌與工作手冊為主軸，整理復元導向實務中的現場觀察與方法。
+    description: 以實習、日誌與手冊為主軸，整理會所實務的觀察與方法。
     tags:
       - 會所工作日誌
       - 會所實習

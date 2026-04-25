@@ -1,6 +1,49 @@
-{{- $items := .items | default (slice) -}}
-{{- if gt (len $items) 0 -}}
-<section class="home-discovery-section" aria-labelledby="home-topics-title">
+{{- $landing := index site.Data "taxonomy-landing" | default site.Data.taxonomyLanding | default dict -}}
+{{- $cardConfigs := index $landing "categoryCards" | default (slice) -}}
+{{- $fallbackImage := site.Params.salonDefaultCover | relURL -}}
+{{- $categoryCards := slice -}}
+
+{{- range $cardConfigs -}}
+  {{- $source := .source | default dict -}}
+  {{- $sourceKind := index $source "kind" -}}
+  {{- $sourceName := index $source "name" -}}
+  {{- $entryPath := .page | default "" -}}
+  {{- $entryURL := $entryPath | relLangURL -}}
+  {{- $sourcePages := slice -}}
+
+  {{- if eq $sourceKind "category" -}}
+    {{- range site.RegularPages -}}
+      {{- if in (.Params.categories | default (slice)) $sourceName -}}
+        {{- $sourcePages = $sourcePages | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $sourcePages = $sourcePages.ByDate.Reverse -}}
+  {{- else if eq $sourceKind "tag" -}}
+    {{- range site.RegularPages -}}
+      {{- if in (.Params.tags | default (slice)) $sourceName -}}
+        {{- $sourcePages = $sourcePages | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $sourcePages = $sourcePages.ByDate.Reverse -}}
+  {{- end -}}
+
+  {{- $latestPage := index $sourcePages 0 -}}
+  {{- $postCount := len $sourcePages -}}
+  {{- $cover := dict "src" $fallbackImage "alt" (.title | default $sourceName) -}}
+  {{- if $latestPage -}}
+    {{- $cover = partial "get-page-cover-resource.html" (dict "page" $latestPage "fallback" $fallbackImage) | transform.Unmarshal -}}
+  {{- end -}}
+
+  {{- $categoryCards = $categoryCards | append (merge . (dict
+    "entryURL" $entryURL
+    "latestPage" $latestPage
+    "postCount" $postCount
+    "cover" $cover
+  )) -}}
+{{- end -}}
+
+{{- if gt (len $categoryCards) 0 -}}
+<section class="home-discovery-section home-discovery-section--topics" aria-labelledby="home-topics-title">
   <div class="home-discovery-section__header">
     <div>
       <p class="home-discovery-section__eyebrow">Explore Topics</p>
@@ -8,18 +51,33 @@
     </div>
     <a href="{{ "/categories/" | relURL }}" class="home-discovery-section__more">瀏覽分類</a>
   </div>
-  <div class="home-topics-grid">
-    {{- range $items -}}
-      {{- $page := .page -}}
-      {{- if $page -}}
-      <article class="home-topic-card">
-        <a class="home-topic-card__link" href="{{ $page.RelPermalink }}">
-          <h3 class="home-topic-card__title">{{ .title | default $page.Title }}</h3>
-          <div class="home-topic-card__meta">
-            <span>{{ .count }} 篇文章</span>
-            <span>前往分類</span>
+  <div class="home-topics-grid taxonomy-landing-category-grid">
+    {{- range $idx, $card := $categoryCards -}}
+      {{- if $card.entryURL -}}
+      <article class="taxonomy-landing-card taxonomy-landing-card--{{ $card.accent }}">
+        <a class="taxonomy-landing-card__stretched-link" href="{{ $card.entryURL }}" aria-label="進入 {{ $card.title }}"></a>
+        <div class="taxonomy-landing-card__media">
+          <img src="{{ $card.cover.src }}" alt="{{ $card.cover.alt }}" loading="{{ cond (lt $idx 3) "eager" "lazy" }}" decoding="async">
+        </div>
+        <div class="taxonomy-landing-card__body">
+          <div class="taxonomy-landing-card__topline">
+            <span class="taxonomy-landing-card__index">{{ $card.index }}</span>
+            <span class="taxonomy-landing-card__label">{{ $card.en }}</span>
           </div>
-        </a>
+          <h3 class="taxonomy-landing-card__title">{{ $card.title }}</h3>
+          <div class="taxonomy-landing-card__description"><p>{{ $card.description }}</p></div>
+          {{- with $card.tags }}
+          <div class="taxonomy-landing-card__tags" aria-label="{{ $card.title }} 代表標籤">
+            {{- range first 3 . -}}
+              <a class="taxonomy-landing-card__tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}" aria-label="查看標籤 {{ . }}">#{{ . }}</a>
+            {{- end -}}
+          </div>
+          {{- end }}
+          <div class="taxonomy-landing-card__footer">
+            <span>{{ $card.postCount }} 篇文章</span>
+            <span class="taxonomy-landing-card__arrow" aria-hidden="true">→</span>
+          </div>
+        </div>
       </article>
       {{- end -}}
     {{- end -}}

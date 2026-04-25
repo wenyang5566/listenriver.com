@@ -110,7 +110,7 @@
 
     <div class="mobile-nav-primary mobile-nav-primary--simple">
       {{- range $mainNavItems -}}
-      <a href="{{ .url }}" class="mobile-nav-primary-link">{{- if eq .key "home" -}}首頁{{- else if eq .key "categories" -}}分類總覽{{- else if eq .key "tags" -}}主題總覽{{- else if eq .key "clubhouse" -}}會所專題{{- else if eq .key "about" -}}關於我{{- end -}}</a>
+      <a href="{{ .url }}" class="mobile-nav-primary-link">{{- if eq .key "home" -}}首頁{{- else if eq .key "categories" -}}分類總覽{{- else if eq .key "tags" -}}主題總覽{{- else if eq .key "clubhouse" -}}會所模式{{- else if eq .key "about" -}}關於我{{- end -}}</a>
       {{- end -}}
       <a href="{{ $searchUrl }}" class="mobile-nav-primary-link mobile-nav-primary-link-search">搜尋</a>
     </div>
