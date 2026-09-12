@@ -9,10 +9,12 @@
       {{- $include = true -}}
     {{- else if and .IsPage (hasPrefix $rel "/blog/") -}}
       {{- $include = true -}}
+    {{- else if and (or .IsPage .IsSection) (hasPrefix $rel "/clubhouse/") -}}
+      {{- $include = true -}}
     {{- else if and (hasPrefix $rel "/categories/") (not (in $rel "/page/")) -}}
       {{- $include = true -}}
     {{- end -}}
-    {{- if $include }}
+    {{- if and $include (ne .Params.robotsNoIndex true) }}
   <url>
     <loc>{{ .Permalink }}</loc>
     {{- if not .Lastmod.IsZero }}

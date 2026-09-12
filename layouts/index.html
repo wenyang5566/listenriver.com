@@ -12,8 +12,6 @@
 {{- end -}}
 {{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" -}}
 {{- $latestLimit := 6 -}}
-{{- $categoryItems := partial "home-axis-data-clean.html" . -}}
-{{- $featuredPages := where $allPages "Params.featured" true -}}
 {{- $latestPages := first $latestLimit $allPages -}}
 {{- $paginator := .Paginate $allPages -}}
 
@@ -23,7 +21,7 @@
   <div class="home-discovery">
     {{- partial "featured-banner.html" . -}}
     {{- partial "home-mobile-topics.html" . -}}
-    {{- partial "home-topics.html" (dict "items" $categoryItems) -}}
+    {{- partial "home-topics.html" . -}}
     {{- partial "home-clubhouse.html" (dict "pages" $clubhousePages) -}}
     {{- partial "home-latest.html" (dict "pages" $latestPages) -}}
     {{- partial "home-author.html" . -}}

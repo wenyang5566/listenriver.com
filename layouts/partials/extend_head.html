@@ -1,4 +1,5 @@
 <link rel="icon" type="image/png" href="{{ "/images/favicon.png" | relURL }}">
-{{- $customJsVersion := readFile "static/js/custom.js" | sha256 -}}
-{{- $customJs := readFile "static/js/custom.js" | resources.FromString (printf "assets/js/custom.%s.js" $customJsVersion) | resources.Minify | fingerprint -}}
+{{- $customJsSource := readFile "static/js/custom.js" -}}
+{{- $customJsVersion := $customJsSource | sha256 -}}
+{{- $customJs := $customJsSource | resources.FromString (printf "assets/js/custom.%s.js" $customJsVersion) | resources.Minify | fingerprint -}}
 <script src="{{ $customJs.RelPermalink }}" integrity="{{ $customJs.Data.Integrity }}" crossorigin="anonymous" defer></script>

@@ -1,4 +1,4 @@
-{{- $landing := index site.Data "taxonomy-landing" | default site.Data.taxonomyLanding | default dict -}}
+{{- $landing := index hugo.Data "taxonomy-landing" | default hugo.Data.taxonomyLanding | default dict -}}
 {{- $cardConfigs := index $landing "categoryCards" | default (slice) -}}
 {{- $fallbackImage := site.Params.salonDefaultCover | relURL -}}
 {{- $items := slice -}}
