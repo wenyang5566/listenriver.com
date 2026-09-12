@@ -2278,8 +2278,8 @@ body.mobile-nav-locked {
 .post-single .post-content .post-content-image {
   width: 100%;
   height: auto;
-  border-radius: 18px;
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  border-radius: 6px;
+  box-shadow: none;
   transition: transform 0.24s ease, box-shadow 0.24s ease, filter 0.24s ease;
 }
 
@@ -2296,7 +2296,7 @@ body.mobile-nav-locked {
 .post-single > .entry-cover:hover img.is-zoomable,
 .post-single > .entry-cover:focus-within img.is-zoomable {
   transform: translateY(-2px);
-  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.12);
+  box-shadow: none;
   filter: saturate(1.02);
 }
 
@@ -2339,7 +2339,7 @@ body.mobile-nav-locked {
 
 .post-single .post-content .entry-cover img,
 .post-single .entry-cover img {
-  border-radius: 20px;
+  border-radius: 6px;
 }
 
 .post-single > .entry-cover {
@@ -9265,11 +9265,11 @@ html {
 
 @media (max-width: 768px) {
   :root {
-    --article-phone-gutter: clamp(37px, 9vw, 52px);
+    --article-phone-gutter: clamp(32px, 8vw, 46px);
     --article-media-gutter: 14px;
     --article-phone-font-size: 19.25px;
-    --article-phone-line-height: 1.86;
-    --article-phone-paragraph-gap: 1.48em;
+    --article-phone-line-height: 1.82;
+    --article-phone-paragraph-gap: 1.35em;
   }
 
   .post-single {
@@ -9468,11 +9468,12 @@ html {
 
   .post-single .post-content > blockquote {
     max-width: 100%;
-    margin: 2.15rem 0;
-    padding: 0.32rem 0 0.32rem 1rem !important;
-    border-left-width: 4px;
+    margin: 1.7rem 0;
+    padding: 0.2rem 0 0.2rem 0.9rem !important;
+    border-left-width: 3px;
     border-left-color: rgba(111, 202, 209, 0.82);
-    line-height: 2.04;
+    font-size: 0.91em;
+    line-height: 1.82;
     color: #30343a;
   }
 
@@ -9550,11 +9551,20 @@ html {
   .post-single .entry-cover img {
     width: 100%;
     max-width: 100%;
-    border-radius: 12px;
+    border-radius: 6px;
   }
 
   .post-single .post-content .post-content-image {
     box-shadow: none;
+  }
+
+  .post-single .post-content .post-figure:hover .post-content-image.is-zoomable,
+  .post-single .post-content .post-figure:focus-within .post-content-image.is-zoomable,
+  .post-single > .entry-cover:hover img.is-zoomable,
+  .post-single > .entry-cover:focus-within img.is-zoomable {
+    transform: none;
+    box-shadow: none;
+    filter: none;
   }
 
   .post-single .post-content .post-figure figcaption {
@@ -9572,11 +9582,11 @@ html {
 
 @media (max-width: 390px) {
   :root {
-    --article-phone-gutter: 34px;
+    --article-phone-gutter: 30px;
     --article-media-gutter: 12px;
     --article-phone-font-size: 18.75px;
-    --article-phone-line-height: 1.86;
-    --article-phone-paragraph-gap: 1.45em;
+    --article-phone-line-height: 1.82;
+    --article-phone-paragraph-gap: 1.32em;
   }
 }
 
@@ -9588,12 +9598,12 @@ html {
 
   html[data-reading-size="normal"] {
     --article-phone-font-size: 19.25px;
-    --article-phone-line-height: 1.86;
+    --article-phone-line-height: 1.82;
   }
 
   html[data-reading-size="large"] {
     --article-phone-font-size: 20.5px;
-    --article-phone-line-height: 1.9;
+    --article-phone-line-height: 1.86;
   }
 }
 
