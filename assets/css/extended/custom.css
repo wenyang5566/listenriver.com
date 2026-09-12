@@ -1187,7 +1187,7 @@ body.mobile-nav-locked {
   justify-content: center;
   gap: 3px;
   cursor: pointer;
-  transition: min-height 180ms ease, gap 180ms ease, background 160ms ease, color 160ms ease;
+  transition: background 160ms ease, color 160ms ease;
 }
 
 .mobile-reading-toolbar__item:hover,
@@ -1221,8 +1221,6 @@ body.mobile-nav-locked {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transform: translateY(0) scale(1);
-  transition: transform 180ms ease;
 }
 
 .mobile-reading-toolbar__icon svg {
@@ -8681,21 +8679,6 @@ body:not(.list):has(.post-single) {
 
   .mobile-reading-toolbar.is-compact {
     transform: translate3d(0, 0, 0);
-  }
-
-  .mobile-reading-toolbar.is-compact .mobile-reading-toolbar__item {
-    gap: 0;
-  }
-
-  .mobile-reading-toolbar.is-compact .mobile-reading-toolbar__label {
-    max-height: 0;
-    opacity: 0;
-    transform: translateY(2px);
-    overflow: hidden;
-  }
-
-  .mobile-reading-toolbar.is-compact .mobile-reading-toolbar__icon {
-    transform: translateY(5px) scale(0.96);
   }
 
   .mobile-reading-toolbar.is-hidden {
