@@ -8,16 +8,10 @@
     <span class="mobile-reading-toolbar__label">上一頁</span>
   </button>
 
-  <a class="mobile-reading-toolbar__item" href="{{ "/categories/" | relLangURL }}" aria-label="探索主題">
-    <span class="mobile-reading-toolbar__icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 6.5h16"></path>
-        <path d="M6.5 12h11"></path>
-        <path d="M9 17.5h6"></path>
-      </svg>
-    </span>
-    <span class="mobile-reading-toolbar__label">探索主題</span>
-  </a>
+  <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-size aria-label="調整文章字級，目前為標準">
+    <span class="mobile-reading-toolbar__icon mobile-reading-toolbar__icon--text" aria-hidden="true">Aa</span>
+    <span class="mobile-reading-toolbar__label">字級</span>
+  </button>
 
   <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-related aria-label="跳到延伸閱讀">
     <span class="mobile-reading-toolbar__icon" aria-hidden="true">
@@ -50,6 +44,7 @@
     if (!toolbar) return;
 
     const backButton = toolbar.querySelector('[data-mobile-reading-back]');
+    const sizeButton = toolbar.querySelector('[data-mobile-reading-size]');
     const relatedButton = toolbar.querySelector('[data-mobile-reading-related]');
     const shareButton = toolbar.querySelector('[data-mobile-reading-share]');
     const toast = toolbar.querySelector('[data-mobile-reading-toast]');
@@ -68,6 +63,31 @@
     const revealFullDistance = 72;
     const compactMinDuration = 700;
     const revealCompactMinDuration = 450;
+    const readingSizeKey = 'listenriver-reading-size';
+    const readingSizes = ['normal', 'large', 'small'];
+    const readingSizeLabels = { small: '小', normal: '標準', large: '大' };
+
+    function getSavedReadingSize() {
+      try {
+        const saved = window.localStorage.getItem(readingSizeKey);
+        return ['small', 'normal', 'large'].includes(saved) ? saved : 'normal';
+      } catch (error) {
+        return 'normal';
+      }
+    }
+
+    function applyReadingSize(size, persist) {
+      document.documentElement.dataset.readingSize = size;
+      if (sizeButton) {
+        sizeButton.setAttribute('aria-label', '調整文章字級，目前為' + readingSizeLabels[size]);
+        sizeButton.setAttribute('data-reading-size-current', size);
+      }
+      if (persist) {
+        try {
+          window.localStorage.setItem(readingSizeKey, size);
+        } catch (error) {}
+      }
+    }
 
     function setToolbarMode(mode) {
       toolbarMode = mode;
@@ -168,6 +188,17 @@
       });
     }
 
+    if (sizeButton) {
+      applyReadingSize(getSavedReadingSize(), false);
+      sizeButton.addEventListener('click', function () {
+        showToolbar();
+        const current = document.documentElement.dataset.readingSize || 'normal';
+        const next = readingSizes[(readingSizes.indexOf(current) + 1) % readingSizes.length];
+        applyReadingSize(next, true);
+        showToast('字級：' + readingSizeLabels[next]);
+      });
+    }
+
     if (relatedButton) {
       const relatedTarget = document.getElementById('related-posts');
       if (!relatedTarget) {
@@ -188,9 +219,10 @@
       }
     }
 
-    function showToast() {
+    function showToast(message) {
       if (!toast) return;
       showToolbar();
+      toast.textContent = message || '已複製連結';
       toast.classList.add('is-visible');
       window.setTimeout(function () {
         toast.classList.remove('is-visible');
@@ -200,7 +232,7 @@
     function copyUrl() {
       const url = window.location.href;
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        return navigator.clipboard.writeText(url).then(showToast);
+        return navigator.clipboard.writeText(url).then(function () { showToast('已複製連結'); });
       }
       const input = document.createElement('input');
       input.value = url;
@@ -211,7 +243,7 @@
       input.select();
       try {
         document.execCommand('copy');
-        showToast();
+        showToast('已複製連結');
       } finally {
         document.body.removeChild(input);
       }

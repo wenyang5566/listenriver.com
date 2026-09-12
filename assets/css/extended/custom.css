@@ -1216,8 +1216,8 @@ body.mobile-nav-locked {
 }
 
 .mobile-reading-toolbar__icon {
-  width: 18px;
-  height: 18px;
+  width: 21px;
+  height: 21px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1226,21 +1226,24 @@ body.mobile-nav-locked {
 }
 
 .mobile-reading-toolbar__icon svg {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
   display: block;
 }
 
-.mobile-reading-toolbar__label {
-  max-width: 100%;
-  max-height: 1rem;
-  font-size: 0.68rem;
+.mobile-reading-toolbar__icon--text {
+  width: 28px;
+  min-width: 28px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1;
+  letter-spacing: -0.03em;
   white-space: nowrap;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 150ms ease, transform 180ms ease, max-height 180ms ease;
+}
+
+.mobile-reading-toolbar__label {
+  display: none;
 }
 
 .mobile-reading-toolbar__toast {
@@ -9308,6 +9311,13 @@ html {
     padding-right: var(--article-mobile-gutter) !important;
   }
 
+  .post-single > [data-pagefind-ignore] > .post-tags {
+    width: 100%;
+    max-width: 100%;
+    padding-left: var(--article-mobile-gutter) !important;
+    padding-right: var(--article-mobile-gutter) !important;
+  }
+
   body:not(.list) .main:has(.post-single) {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -9584,6 +9594,29 @@ html {
     --article-phone-font-size: 18.75px;
     --article-phone-line-height: 1.86;
     --article-phone-paragraph-gap: 1.45em;
+  }
+}
+
+@media (max-width: 768px) {
+  html[data-reading-size="small"] {
+    --article-phone-font-size: 17.5px;
+    --article-phone-line-height: 1.82;
+  }
+
+  html[data-reading-size="normal"] {
+    --article-phone-font-size: 19.25px;
+    --article-phone-line-height: 1.86;
+  }
+
+  html[data-reading-size="large"] {
+    --article-phone-font-size: 20.5px;
+    --article-phone-line-height: 1.9;
+  }
+}
+
+@media (max-width: 390px) {
+  html[data-reading-size="normal"] {
+    --article-phone-font-size: 18.75px;
   }
 }
 
