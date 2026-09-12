@@ -39,6 +39,42 @@ test.describe('desktop article layout', () => {
   });
 });
 
+test.describe('mobile article layout', () => {
+  test.use({ viewport: { width: 390, height: 844 } });
+
+  test('keeps long titles readable and section dividers compact', async ({ page }) => {
+    await page.goto('/blog/成為自己/最大的自由是承擔/');
+
+    const title = page.locator('.post-single .post-title');
+    const divider = page.locator('.post-single .post-content > hr').first();
+    await expect(title).toBeVisible();
+    await expect(divider).toBeVisible();
+
+    const titleMetrics = await title.evaluate((element) => {
+      const style = window.getComputedStyle(element);
+      return {
+        fontSize: Number.parseFloat(style.fontSize),
+        overflowWrap: style.overflowWrap,
+        clientWidth: element.clientWidth,
+        scrollWidth: element.scrollWidth,
+      };
+    });
+    const dividerMetrics = await divider.evaluate((element) => {
+      const style = window.getComputedStyle(element);
+      return {
+        marginTop: Number.parseFloat(style.marginTop),
+        marginBottom: Number.parseFloat(style.marginBottom),
+      };
+    });
+
+    expect(titleMetrics.fontSize).toBeLessThanOrEqual(30.5);
+    expect(titleMetrics.overflowWrap).toBe('normal');
+    expect(titleMetrics.scrollWidth).toBeLessThanOrEqual(titleMetrics.clientWidth);
+    expect(dividerMetrics.marginTop).toBe(36);
+    expect(dividerMetrics.marginBottom).toBe(36);
+  });
+});
+
 test.describe('desktop taxonomy layout', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
