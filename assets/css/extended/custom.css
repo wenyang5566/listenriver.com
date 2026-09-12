@@ -9327,12 +9327,12 @@ html {
   .post-single .post-title {
     max-width: 100%;
     margin-bottom: 1.25rem;
-    font-size: clamp(2rem, 8.8vw, 2.3rem);
+    font-size: clamp(1.75rem, 7.2vw, 1.9rem);
     font-weight: 800;
     line-height: 1.24;
     letter-spacing: 0;
     text-wrap: pretty;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     word-break: auto-phrase;
     line-break: strict;
   }
@@ -9497,8 +9497,8 @@ html {
 
   .post-single .post-content > hr {
     height: 1px;
-    margin-top: 3.35rem;
-    margin-bottom: 3.35rem;
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
     background: rgba(17, 24, 39, 0.14);
   }
 
