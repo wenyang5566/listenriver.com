@@ -1,5 +1,5 @@
 {{- $items := slice -}}
-{{- $featuredMapping := index site.Data "featured-tags" -}}
+{{- $featuredMapping := index hugo.Data "featured-tags" -}}
 {{- $featuredCategories := index $featuredMapping "categories" | default (slice) -}}
 {{- $categoryOrder := index site.Params.desktopHeader "categories" | default (slice "閱讀與筆記" "日常書寫" "成為自己" "助人工作" "病痛經驗") -}}
 

@@ -3,7 +3,7 @@
 {{- $hasPages := gt (len $pages) 0 -}}
 
 {{- if and (eq $plural "categories") (not $hasPages) -}}
-  {{- $landing := index site.Data "taxonomy-landing" | default site.Data.taxonomyLanding | default dict -}}
+  {{- $landing := index hugo.Data "taxonomy-landing" | default hugo.Data.taxonomyLanding | default dict -}}
   {{- $cardConfigs := index $landing "categoryCards" | default (slice) -}}
   {{- $hotTagNames := index $landing "hotTags" | default (slice) -}}
   {{- $fallbackImage := site.Params.salonDefaultCover | relURL -}}
