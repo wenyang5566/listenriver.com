@@ -8,6 +8,7 @@
 /categories/會所模式 /clubhouse/ 301
 /categories/會所模式/ /clubhouse/ 301
 /tags/閱讀書摘/ /tags/書摘/ 301
+/tags/閱讀/ /tags/閱讀心得/ 301
 /categories/閱讀書摘/:splat /categories/書摘/:splat 301
 /blog/會所模式/* /clubhouse/:splat 301
 /blog/閱讀心得/閱讀心得英雄之旅個體化找回自己的碎片/ /blog/閱讀心得/英雄之旅/ 301
