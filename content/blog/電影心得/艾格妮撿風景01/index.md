@@ -94,4 +94,4 @@ https://m.bilibili.com/video/av8366738
 ---
 ### 第二次觀影心得
 
-[《艾格妮撿風景 The Gleaner and I》02](艾格妮撿風景02.md)
+[《艾格妮撿風景 The Gleaner and I》02](/blog/電影心得/艾格妮撿風景02/)

@@ -76,7 +76,7 @@ tags:
 ---
 ### 參考資料
 
-1. [第一次心得](/blog/電影心得/你我的解放相同/index)
+1. [第一次心得](/blog/電影心得/你我的解放相同/)
 2. [你我的解放相同](https://giloo.ist/zh-TW/topics/32217)
 3. [親緣與受苦：從沉默經驗探問罕見疾病家庭的親緣困境與超越可能](https://buddhism.lib.ntu.edu.tw/search/search_detail.jsp?seq=673593&comefrom=authorinfo)
-4. [書摘｜《開放對話・期待對話：尊重他者當下的他異性》](content/blog/書摘/開放對話期待對話/index|書摘｜《開放對話・期待對話：尊重他者當下的他異性》)
+4. [書摘｜《開放對話・期待對話：尊重他者當下的他異性》](/blog/書摘/開放對話期待對話/)
