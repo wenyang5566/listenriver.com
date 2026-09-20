@@ -6,6 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "check:urls": "python scripts/url-guard.py check --site public",
     "build": "hugo --minify && npm run clean:pagefind && pagefind --site public && npm run check:pagefind-output",
     "clean:pagefind": "node scripts/clean-pagefind.mjs",
     "check:pagefind-output": "node scripts/check-pagefind-output.mjs",

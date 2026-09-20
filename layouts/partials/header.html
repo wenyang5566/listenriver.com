@@ -1,6 +1,6 @@
 {{- $brandTitle := "聆聽的河流" -}}
 {{- $brandSubtitle := "閱讀・書寫・心理・社工" -}}
-{{- $navItems := partial "site-nav-items.html" . -}}
+{{- $navItems := where (partial "site-nav-items.html" .) "key" "ne" "home" -}}
 {{- $desktopNavItems := $navItems -}}
 {{- $searchUrl := "/search/" | relLangURL -}}
 {{- $isSearchPage := eq .RelPermalink $searchUrl -}}
@@ -25,6 +25,15 @@
       </form>
 
       <div class="header-side header-side-right personal-header__actions">
+        <a class="header-icon-button header-home-link" href="{{ "/" | relLangURL }}" aria-label="首頁" title="首頁"{{ if .IsHome }} aria-current="page"{{ end }}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h5v-7h4v7h5V9"></path></svg>
+        </a>
+        <a class="header-icon-button header-about-link" href="{{ "/about/" | relLangURL }}" aria-label="關於作者" title="關於作者"{{ if eq .RelPermalink ("/about/" | relLangURL) }} aria-current="page"{{ end }}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
+          </svg>
+        </a>
         <button class="header-icon-button header-search-toggle{{ if $isSearchPage }} is-active{{ end }}" type="button" aria-label="展開搜尋" aria-controls="header-search-input" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="11" cy="11" r="7"></circle>
@@ -67,6 +76,9 @@
       {{- range $desktopNavItems -}}
       {{- $isCurrent := or (eq $.RelPermalink .url) (in ($.Params.categories | default (slice)) .label) -}}
       {{- range (.children | default (slice)) -}}
+        {{- range (.children | default (slice)) -}}
+          {{- if eq $.RelPermalink .url -}}{{- $isCurrent = true -}}{{- end -}}
+        {{- end -}}
         {{- if eq $.RelPermalink .url -}}
           {{- $isCurrent = true -}}
         {{- end -}}
@@ -74,35 +86,44 @@
       {{- if gt (len (.children | default (slice))) 0 -}}
       <div class="nav-group personal-header__nav-group">
         <div class="personal-header__nav-combo{{ if $isCurrent }} is-active{{ end }}">
-          <a href="{{ .url }}" class="personal-header__nav-link personal-header__nav-link-main{{ if $isCurrent }} is-active{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }}>{{ .label }}</a>
+          <a href="{{ .url }}" class="personal-header__nav-link personal-header__nav-link-main{{ if $isCurrent }} is-active{{ end }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>{{ .label }}</a>
           <button class="nav-group-trigger personal-header__nav-trigger" type="button" aria-label="展開 {{ .label }} 子題" aria-expanded="false" aria-haspopup="true">
             <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6"></path>
             </svg>
           </button>
         </div>
-        <div class="nav-group-menu personal-header__dropdown">
+        <div class="nav-group-menu personal-header__dropdown{{ if eq .key "helping" }} personal-header__dropdown--helping{{ end }}">
           <div class="nav-group-menu-inner personal-header__dropdown-inner">
             <a class="personal-header__dropdown-title" href="{{ .url }}">{{ .label }}</a>
             <span class="nav-group-divider" aria-hidden="true"></span>
             {{- range .children -}}
+            {{- if .children -}}
+              {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "nav-group-link personal-header__dropdown-link") -}}
+            {{- else -}}
+            {{- if .groupStart -}}<span class="nav-group-divider header-clubhouse-divider" aria-hidden="true"></span>{{- end -}}
             {{- $isChildCurrent := eq $.RelPermalink .url -}}
             {{- $childCount := 0 -}}
             {{- with index site.Taxonomies.tags .label -}}
               {{- $childCount = len .Pages -}}
             {{- end -}}
-            <a class="nav-group-link personal-header__dropdown-link{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
+            <a class="nav-group-link personal-header__dropdown-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
               <span>{{ .label }}</span>
               {{- if gt $childCount 0 -}}
               <span class="personal-header__dropdown-count" aria-label="{{ $childCount }} 篇文章">{{ $childCount }}</span>
               {{- end -}}
             </a>
             {{- end -}}
+            {{- end -}}
           </div>
         </div>
       </div>
       {{- else -}}
-      <a href="{{ .url }}" class="nav-chip personal-header__nav-link personal-header__nav-link--{{ .key }}{{ if $isCurrent }} is-active{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }}>{{ .label }}</a>
+      <a href="{{ .url }}" class="nav-chip personal-header__nav-link personal-header__nav-link--{{ .key }}{{ if $isCurrent }} is-active{{ end }}"{{ if eq .key "home" }} aria-label="首頁" title="首頁"{{ end }}{{ if $isCurrent }} aria-current="page"{{ end }}>
+        {{- if eq .key "home" -}}
+        <svg class="header-home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h5v-7h4v7h5V9"></path></svg>
+        {{- else -}}{{ .label }}{{- end -}}
+      </a>
       {{- end -}}
       {{- end -}}
     </nav>
@@ -137,6 +158,9 @@
       {{- if gt (len $children) 0 -}}
       {{- $isCurrent := or (eq $.RelPermalink .url) (in ($.Params.categories | default (slice)) .label) -}}
       {{- range $children -}}
+        {{- range (.children | default (slice)) -}}
+          {{- if eq $.RelPermalink .url -}}{{- $isCurrent = true -}}{{- end -}}
+        {{- end -}}
         {{- if eq $.RelPermalink .url -}}
           {{- $isCurrent = true -}}
         {{- end -}}
@@ -164,23 +188,30 @@
             {{- end -}}
           </a>
           {{- range $children -}}
+          {{- if .children -}}
+            {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "mobile-nav-sub-link") -}}
+          {{- else -}}
+          {{- if .groupStart -}}<span class="mobile-nav-clubhouse-divider" aria-hidden="true"></span>{{- end -}}
           {{- $isChildCurrent := eq $.RelPermalink .url -}}
           {{- $childCount := 0 -}}
           {{- with index site.Taxonomies.tags .label -}}
             {{- $childCount = len .Pages -}}
           {{- end -}}
-          <a class="mobile-nav-sub-link{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
+          <a class="mobile-nav-sub-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
             <span>{{ .label }}</span>
             {{- if gt $childCount 0 -}}
             <span class="mobile-nav-sub-count">{{ $childCount }}</span>
             {{- end -}}
           </a>
           {{- end -}}
+          {{- end -}}
         </div>
       </section>
       {{- else -}}
       {{- $isCurrent := eq $.RelPermalink .url -}}
-      <a href="{{ .url }}" class="mobile-nav-primary-link{{ if $isCurrent }} is-active{{ end }}"{{ if $isCurrent }} aria-current="page"{{ end }}>{{ .label }}</a>
+      <a href="{{ .url }}" class="mobile-nav-primary-link{{ if $isCurrent }} is-active{{ end }}"{{ if eq .key "home" }} aria-label="首頁" title="首頁"{{ end }}{{ if $isCurrent }} aria-current="page"{{ end }}>
+        {{- if eq .key "home" -}}<svg class="header-home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h5v-7h4v7h5V9"></path></svg>{{- else -}}{{ .label }}{{- end -}}
+      </a>
       {{- end -}}
       {{- end -}}
     </div>
