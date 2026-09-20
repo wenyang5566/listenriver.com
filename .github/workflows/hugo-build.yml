@@ -35,6 +35,11 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Protect pre-migration URLs
+        run: |
+          python3 -m unittest discover -s tests -p test_url_guard.py
+          python3 scripts/url-guard.py check --site public
+
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 

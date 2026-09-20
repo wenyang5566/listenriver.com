@@ -66,6 +66,7 @@
       group.classList.remove('is-open');
       const button = group.querySelector('.nav-group-trigger');
       if (button) button.setAttribute('aria-expanded', 'false');
+      group.querySelectorAll('.header-submenu').forEach(submenu => { submenu.open = false; });
     });
   }
 
@@ -82,6 +83,37 @@
         button.setAttribute('aria-expanded', 'true');
       }
     });
+  });
+
+  // Desktop flyouts use native details for keyboard/click support; mobile stays inline.
+  document.querySelectorAll('.desktop-nav .header-submenu').forEach(submenu => {
+    const panel = submenu.querySelector('.header-submenu__links');
+    let closeTimer;
+    function positionFlyout() {
+      if (!submenu.open || !window.matchMedia('(min-width: 861px)').matches) return;
+      submenu.style.removeProperty('--submenu-top');
+      const anchor = submenu.getBoundingClientRect();
+      submenu.classList.toggle('header-submenu--left', anchor.right + 16 + 260 > window.innerWidth - 12);
+      const box = panel.getBoundingClientRect();
+      const offset = Math.max(12 - anchor.top, Math.min(0, window.innerHeight - 12 - box.bottom));
+      submenu.style.setProperty('--submenu-top', `${offset}px`);
+    }
+    submenu.addEventListener('pointerenter', event => {
+      window.clearTimeout(closeTimer);
+      if (event.pointerType !== 'mouse') return;
+      submenu.open = true;
+      positionFlyout();
+    });
+    submenu.addEventListener('pointerleave', () => {
+      closeTimer = window.setTimeout(() => {
+        if (!submenu.contains(document.activeElement)) submenu.open = false;
+      }, 180);
+    });
+    submenu.addEventListener('focusout', event => {
+      if (!submenu.contains(event.relatedTarget) && !submenu.matches(':hover')) submenu.open = false;
+    });
+    submenu.addEventListener('toggle', positionFlyout);
+    window.addEventListener('resize', positionFlyout);
   });
 
   const themeToggle = document.getElementById('theme-toggle');

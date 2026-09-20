@@ -1,0 +1,22 @@
+{{- $item := .item -}}
+{{- $page := .page -}}
+{{- $linkClass := .linkClass -}}
+{{- $current := eq $page.RelPermalink $item.url -}}
+{{- range $item.children -}}
+  {{- if eq $page.RelPermalink .url -}}{{- $current = true -}}{{- end -}}
+{{- end -}}
+<details class="header-submenu{{ if $current }} is-active{{ end }}">
+  <summary class="header-submenu__trigger">
+    <span>{{ $item.label }}</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+  </summary>
+  <div class="header-submenu__links">
+    <a class="{{ $linkClass }}{{ if eq $page.RelPermalink $item.url }} is-active{{ end }}" href="{{ $item.url }}"{{ if eq $page.RelPermalink $item.url }} aria-current="page"{{ end }}><span>{{ $item.label }}總覽</span></a>
+    {{- range $item.children -}}
+    <a class="{{ $linkClass }}{{ if eq $page.RelPermalink .url }} is-active{{ end }}" href="{{ .url }}"{{ if eq $page.RelPermalink .url }} aria-current="page"{{ end }}>
+      <span>{{ .label }}</span>
+      {{- with index site.Taxonomies.tags .label -}}<span class="personal-header__dropdown-count">{{ len .Pages }}</span>{{- end -}}
+    </a>
+    {{- end -}}
+  </div>
+</details>
