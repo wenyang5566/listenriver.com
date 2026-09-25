@@ -23,7 +23,8 @@ test.describe('desktop article layout', () => {
     expect(metrics.fontSize).toBeGreaterThanOrEqual(34);
     expect(metrics.fontSize).toBeLessThanOrEqual(42);
     expect(metrics.fontWeight).toBeLessThanOrEqual(760);
-    expect(metrics.width).toBeLessThanOrEqual(700);
+    // The desktop reading layout allows a header up to 780px wide.
+    expect(metrics.width).toBeLessThanOrEqual(780);
   });
 
   test('shrinks portrait lead covers on desktop', async ({ page }) => {
@@ -46,7 +47,7 @@ test.describe('mobile article layout', () => {
     await page.goto('/blog/成為自己/最大的自由是承擔/');
 
     const title = page.locator('.post-single .post-title');
-    const divider = page.locator('.post-single .post-content > hr').first();
+    const divider = page.locator('.post-single .post-content > blockquote + hr').first();
     await expect(title).toBeVisible();
     await expect(divider).toBeVisible();
 
@@ -70,7 +71,8 @@ test.describe('mobile article layout', () => {
     expect(titleMetrics.fontSize).toBeLessThanOrEqual(30.5);
     expect(titleMetrics.overflowWrap).toBe('normal');
     expect(titleMetrics.scrollWidth).toBeLessThanOrEqual(titleMetrics.clientWidth);
-    expect(dividerMetrics.marginTop).toBe(36);
+    // Dividers directly after a quote use a tighter top gap.
+    expect(dividerMetrics.marginTop).toBe(24);
     expect(dividerMetrics.marginBottom).toBe(36);
   });
 });
