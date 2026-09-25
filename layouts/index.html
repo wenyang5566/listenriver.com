@@ -1,11 +1,7 @@
 ﻿{{- define "main" -}}
-{{- $homeSection := site.GetPage "section" "blog" -}}
 {{- $clubhouseSection := site.GetPage "section" "clubhouse" -}}
-{{- $allPages := slice -}}
+{{- $allPages := partial "article-pages.html" . -}}
 {{- $clubhousePages := slice -}}
-{{- with $homeSection -}}
-  {{- $allPages = sort .RegularPagesRecursive "Date" "desc" -}}
-{{- end -}}
 {{- $clubhouseLimit := 8 -}}
 {{- with $clubhouseSection -}}
   {{- $clubhousePages = first $clubhouseLimit (sort .RegularPagesRecursive "Date" "desc") -}}

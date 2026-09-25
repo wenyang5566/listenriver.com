@@ -40,6 +40,10 @@
 
 {{- $pages := union .RegularPages .Sections }}
 
+{{- if and (eq .Kind "section") (eq .RelPermalink ("/blog/" | relLangURL)) }}
+{{- $pages = partial "article-pages.html" . }}
+{{- end }}
+
 {{- if .IsHome }}
 {{- $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true"  }}

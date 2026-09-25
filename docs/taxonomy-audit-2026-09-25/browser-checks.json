@@ -1,0 +1,5786 @@
+[
+  {
+    "width": 1440,
+    "name": "home",
+    "path": "/",
+    "title": "聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "聆聽的河流"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "查看全部 →",
+        "href": "/blog/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "成為自己\n最大的自由是承擔，最大的神蹟是人的超越性\n2022.09.15 · 2 分鐘閱讀",
+        "href": "/blog/成為自己/最大的自由是承擔/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n20210830看見本質的眼睛\n2021.08.30 · 3 分鐘閱讀",
+        "href": "/blog/成為自己/看見本質的眼睛/",
+        "class": "feat-card"
+      },
+      {
+        "text": "閱讀與筆記\n《夏日大作戰》｜電影心得\n2026.04.18 · 2 分鐘閱讀",
+        "href": "/blog/電影心得/夏日大作戰/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n反省個體化\n2022.05.01 · 2 分鐘閱讀",
+        "href": "/blog/成為自己/反省個體化/",
+        "class": "feat-card"
+      },
+      {
+        "text": "病痛經驗\n定期回診\n2026.03.22 · 1 分鐘閱讀",
+        "href": "/blog/病痛經驗/定期回診/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n慢讀漫談Podcast：空間、關係與自我存在\n2021.11.02 · 6 分鐘閱讀",
+        "href": "/blog/成為自己/慢讀漫談/",
+        "class": "feat-card"
+      },
+      {
+        "text": "助人工作\n會所工作日誌13_初次社區宣導\n2026.03.22 · 1 分鐘閱讀",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n人是有機的存在\n2022.11.17 · 3 分鐘閱讀",
+        "href": "/blog/成為自己/人是有機的存在/",
+        "class": "feat-card"
+      },
+      {
+        "text": "瀏覽分類",
+        "href": "/categories/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#書摘",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#閱讀心得",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#講座筆記",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#素描",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#成為一個人",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#正念的河流",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#病痛經驗",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#聆聽疼痛計畫",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/助人工作/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#助人工作",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#開放式對話",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#會所工作日誌",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#會所實習",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "查看更多",
+        "href": "/clubhouse/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "全部文章",
+        "href": "/blog/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "",
+        "href": "/blog/電影心得/綠洲/",
+        "class": "home-latest-item__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/成為自己/正念的意義就在手中/",
+        "class": "home-latest-item__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/電影心得/夏日大作戰/",
+        "class": "home-latest-item__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/病痛經驗/定期回診/",
+        "class": "home-latest-item__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "home-latest-item__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "home-latest-item__link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "home-author-card__avatar"
+      },
+      {
+        "text": "",
+        "href": "mailto:wenyang5566@email.com",
+        "class": "home-author-card__social-link"
+      },
+      {
+        "text": "",
+        "href": "https://www.facebook.com/profile.php?id=100000266878039",
+        "class": "home-author-card__social-link"
+      },
+      {
+        "text": "",
+        "href": "https://gravatar.com/enthusiastically4d7178ae68",
+        "class": "home-author-card__social-link"
+      },
+      {
+        "text": "開始閱讀",
+        "href": "/blog/",
+        "class": "home-author-card__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "LISTEN RIVER\n\n聆聽的河流\n\n閱讀｜書寫｜心理｜社工\n\n一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。\n\nFEATURED POSTS\n\n精選文章\n查看全部 →\n‹\n成為自己\n最大的自由是承擔，最大的神蹟是人的超越性\n2022.09.15 · 2 分鐘閱讀\n成為自己\n20210830看見本質的眼睛\n2021.08.30 · 3 分鐘閱讀\n閱讀與筆記\n《夏日大作戰》｜電影心得\n2026.04.18 · 2 分鐘閱讀\n成為自己\n反省個體化\n2022.05.01 · 2 分鐘閱讀\n病痛經驗\n定期回診\n2026.03.22 · 1 分鐘閱讀\n成為自己\n慢讀漫談Podcast：空間、關係與自我存在\n2021.11.02 · 6 分鐘閱讀\n助人工作\n會所工作日誌13_初次社區宣導\n2026.03.22 · 1 分鐘閱讀\n成為自己\n人是有機的存在\n2022.11.17 · 3 分鐘閱讀\n›\n\nEXPLORE TOPICS\n\n探索主題\n瀏覽分類\n01\nREADING & NOTES\n閱讀與筆記\n\n從書摘到電影筆記，整理閱讀之後留下的痕跡。\n\n#書摘\n#閱讀心得\n91 篇文章\n→\n02\nDAILY WRITING\n日常書寫\n\n收納日常感受與觀察，讓零碎經驗慢慢形成生活檔案。\n\n#講座筆記\n#素描\n26 篇文章\n→\n03\nBECOMING SELF\n成為自己\n\n關於理解自己、辨認情緒、內在連結，以及慢慢回到自己的練習。\n\n#成為一個人\n#正念的河流\n27 篇文章\n→\n04\nILLNESS & PAIN\n病痛經驗\n\n從疼痛與照護經驗回到身體，書寫受苦如何改變自己。\n\n#病痛經驗\n#聆聽疼痛計畫\n27 篇文章\n→\n05\nHELPING PRACTICE\n助人工作\n\n記錄社會工作與對話現場，寫下助人實務的困惑與學習。\n\n#助人工作\n#開放式對話\n56 篇文章\n→\n06\nCLUBHOUSE MODEL\n會所模式\n\n以實習、日誌與手冊為主軸，整理會所實務的觀察與方法。\n\n#會所工作日誌\n#會所實習\n30 篇文章\n→\n\nCLUBHOUSE MODEL\n\n會所模式\n查看更多\n助人工作\n沉住氣的重要\n2026.08.19\n·\n3 分鐘閱讀\n\n今天團督檢討偷竊事件的處理，我很誠實地說，沒想到那麼信任的會員會偷竊，覺得很生氣受傷，所以一直威脅要報警。其實我本來就打算往很嚴重的方向處理，因為真的好過分，忍不住就覺得好生氣，氣不過 …\n\n助人工作\n身心狀態留下的痕跡\n2026.07.23\n·\n2 分鐘閱讀\n\n這兩次舞蹈治療都跟Natasha一起討論會員的動作分析，覺得收穫良多。 ⁡ 原來從一個人走路的姿勢、施力的方式、重心的轉移都可以反映身心狀態，光是從腳就可以發現很多線索，從腳開始影響全 …\n\n助人工作\n以靜制動：對話是一連串的反應\n2026.05.23\n·\n3 分鐘閱讀\n\n無論是在對負面教材上的學習經驗，或是在較大張力的情境中，我開始學習到「以靜制動」的重要性 過去我自認是一個積極敏感的人，面對問題就想積極解決，至少在工作上付出的熱情與動力蠻多的。但這次 …\n\n助人工作\n保持真誠好奇、找出盲點、默默推進\n2026.05.15\n·\n2 分鐘閱讀\n\n這兩週花了四次職場輔導時間，在會員Z打掃前後聊天、會談。我覺得有更深入了解他未整合的自我內心、矛盾，以及上次談到的身體盔甲。回家花了一點時間，寫了快三千字的紀錄。\n\n助人工作\n將言語視為符號\n2026.05.08\n·\n2 分鐘閱讀\n\n今天找到時間跟會員Z談行動計劃。我的話題從盤點他來會所多久、年齡開始，並且從disease跟illness差別切入，表示會所是希望讓會員自己可以為自己做決定、負責任，讓最真實的那個自己 …\n\n助人工作\n你想要什麼樣的支持\n2026.04.16\n·\n3 分鐘閱讀\n\nㄧ、背景 會員F最近錄取全聯的工作，預計五月開始要從過渡性職場轉銜到全聯。有觀察到這週會員F的狀態比較活潑、給力、積極，明顯跟之前的狀態不同。 二、從出餐觀察到會員狀態不同 這週一起出 …\n\n助人工作\n認真回應會員動力\n2026.04.08\n·\n3 分鐘閱讀\n\nㄧ、認真看心理學影片 早上餐飲部因為只剩會員Z一位會員，考量到他最近動力比較斷斷續續，常常說要回家看心理學（松明心理學）。 於是，我提議就來看心理學影片。我們一起看了昨天會員Z看的影片 …\n\n助人工作\n強迫症、重複檢查的意義、安全感\n2026.04.02\n·\n3 分鐘閱讀\n\n接續上次生命敘事的整理，後來會員們順利在心衛中心分享。小插曲是在結尾的時候，強迫症的那位會員O衝出來，用很強硬的方式一定要講，儘管事情她沒有報名，也說好沒有人會聽她說，她依然重複唸了兩 …\n\n最新文章\n\n最新文章\n全部文章\n閱讀與筆記\n2026.05.17\n6 分鐘閱讀\n《綠洲》：對話關係帶來的超越性\n\n四年前，在阿勇的推薦片單你我的解放相同 裡第一次看了《綠洲》，當下看完覺得充滿情緒起伏又好難以評論，或許是感受到身處社會邊緣的無力感，我看見關係變得單純純粹，只是兩個彼此互相靠近的主體，僅此而已。\n\n成為自己\n2026.04.23\n6 分鐘閱讀\n正念的意義就在手中\n\n今天上課畫的作品，是我對正念意義的詮釋： 從自己手的線條開始，手中可掌握的是此時此刻，無法掌握的是彼時彼刻，而我在穿越其中 指尖的縫隙並非缺失，而是互補的空間，如同觸碰水一樣，手與水並非主體/背景關係，而是互為主體的流動\n\n閱讀與筆記\n2026.04.18\n2 分鐘閱讀\n《夏日大作戰》｜電影心得\n\n再次看《夏日大作戰》，覺得它很好地描繪出家族作為一種「社群（community）」的力量與圖像。 一、老奶奶的支持 陣內家族的人們從事各行各業，為了準備老奶奶的壽宴而聚集。\n\n病痛經驗\n2026.03.22\n1 分鐘閱讀\n定期回診\n\n定期的回診漸漸從痛苦、很「病」、很「異常」轉變為習慣，一種檢視自身健康狀態的觀點。 很少聽到醫生說好很多，過去往往都是打完類固醇就接著約下次回診、付錢、領藥這些程序。\n\n日常書寫\n2026.03.08\n1 分鐘閱讀\n整理書櫃有感\n\n今天整理書櫃發現，書本的意義變得不太一樣了。 生活在科技發達的時代，隨手上網或詢問AI就可以馬上獲取知識解答，不像是過去要好好了解一件事，通過閱讀的方式細細品嚐，知識變得像速食一樣，吃多了就發現味道都一樣，速成、解答、滿足困惑，直達問題核心 …\n\n日常書寫\n2026.02.23\n3 分鐘閱讀\n網頁架設學習歷程\n\n生日這天過得如日常般幸福，但很想分享個人網站作為成果發表。我終於順利把網站從wenyang0223.github.io搬家到 http://listenriver.com ，並且建立Waline 的留言板還有毛生按讚按鈕。\n\nABOUT THE AUTHOR\n\n文揚 Wen-Yang\n\n聆聽的河流｜閱讀・書寫・心理・社工\n\n一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。\n\n開始閱讀\n‹\n›",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "menu",
+    "links": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/"
+      },
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "",
+        "href": "/about/"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "name": "categories",
+    "path": "/categories/",
+    "title": "分類總覽 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "聆聽的河流 / 六大主題分類"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#書摘",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#閱讀心得",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/助人工作/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#助人工作",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#開放式對話",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#病痛經驗",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#聆聽疼痛計畫",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#成為一個人",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#正念的河流",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#講座筆記",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#素描",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#會所工作日誌",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#會所實習",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#電影心得\n32 篇文章",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#書摘\n28 篇文章",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#閱讀心得\n27 篇文章",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#成為一個人\n14 篇文章",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#助人工作\n18 篇文章",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#開放式對話\n9 篇文章",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#病痛經驗\n5 篇文章",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#創傷知情\n5 篇文章",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#正念的河流\n21 篇文章",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#電影心得\n32",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#電影\n30",
+        "href": "/tags/電影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#書摘\n28",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#閱讀心得\n27",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#正念的河流\n21",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#成為一個人\n14",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛計畫\n12",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#蟹足腫病痛\n11",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座筆記\n9",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#一行禪師\n6",
+        "href": "/tags/一行禪師/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#凝視與穿越\n5",
+        "href": "/tags/凝視與穿越/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#午夜福音\n5",
+        "href": "/tags/午夜福音/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#病痛經驗\n5",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#詩的語言\n5",
+        "href": "/tags/詩的語言/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#是枝裕和\n4",
+        "href": "/tags/是枝裕和/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作手冊\n4",
+        "href": "/tags/會所工作手冊/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#現象學\n4",
+        "href": "/tags/現象學/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛\n4",
+        "href": "/tags/聆聽疼痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座\n4",
+        "href": "/tags/講座/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#建制民族誌\n3",
+        "href": "/tags/建制民族誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係\n3",
+        "href": "/tags/親密關係/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座心得\n3",
+        "href": "/tags/講座心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#受苦的倒影\n2",
+        "href": "/tags/受苦的倒影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#媽的多重宇宙\n2",
+        "href": "/tags/媽的多重宇宙/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#艾格妮撿風景\n2",
+        "href": "/tags/艾格妮撿風景/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#障礙政治\n2",
+        "href": "/tags/障礙政治/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#Shamless\n1",
+        "href": "/tags/shamless/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家庭會傷人\n1",
+        "href": "/tags/家庭會傷人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#無恥之徒\n1",
+        "href": "/tags/無恥之徒/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係暴力\n1",
+        "href": "/tags/親密關係暴力/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#非暴力溝通\n1",
+        "href": "/tags/非暴力溝通/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n分類總覽\nCATEGORIES · 分類總覽\n聆聽的河流 / 六大主題分類\n\n站內文章先依主分類整理，讓每一篇文字先回到自己的主題脈絡；進入分類後，也可以再沿著標籤繼續往更細的閱讀線索走下去。\n\n196\nPOSTS\nCATEGORIES\n六個主要入口\n分類入口\n01\nREADING & NOTES\n閱讀與筆記\n\n從書摘到電影筆記，整理閱讀之後留下的痕跡。\n\n#書摘\n#閱讀心得\n91 篇文章\n→\n02\nHELPING PRACTICE\n助人工作\n\n記錄社會工作與對話現場，寫下助人實務的困惑與學習。\n\n#助人工作\n#開放式對話\n56 篇文章\n→\n03\nILLNESS & PAIN\n病痛經驗\n\n從疼痛與照護經驗回到身體，書寫受苦如何改變自己。\n\n#病痛經驗\n#聆聽疼痛計畫\n27 篇文章\n→\n04\nBECOMING SELF\n成為自己\n\n關於理解自己、辨認情緒、內在連結，以及慢慢回到自己的練習。\n\n#成為一個人\n#正念的河流\n27 篇文章\n→\n05\nDAILY WRITING\n日常書寫\n\n收納日常感受與觀察，讓零碎經驗慢慢形成生活檔案。\n\n#講座筆記\n#素描\n26 篇文章\n→\n06\nCLUBHOUSE MODEL\n會所模式\n\n以實習、日誌與手冊為主軸，整理會所實務的觀察與方法。\n\n#會所工作日誌\n#會所實習\n30 篇文章\n→\nHOT TAGS\n手動策展的主題入口\nHot Tags\n#電影心得\n32 篇文章\n#書摘\n28 篇文章\n#閱讀心得\n27 篇文章\n#成為一個人\n14 篇文章\n#助人工作\n18 篇文章\n#開放式對話\n9 篇文章\n#病痛經驗\n5 篇文章\n#創傷知情\n5 篇文章\n#正念的河流\n21 篇文章\nALL TAGS\n依文章數量排序\nAll Tags\n#電影心得\n32\n#會所模式\n30\n#電影\n30\n#書摘\n28\n#閱讀心得\n27\n#正念的河流\n21\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n14\n#素描\n13\n#聆聽疼痛計畫\n12\n#蟹足腫病痛\n11\n#講座筆記\n9\n#開放式對話\n9\n#家族治療\n7\n#會所實習\n7\n#一行禪師\n6\n#凝視與穿越\n5\n#創傷知情\n5\n#午夜福音\n5\n#病痛經驗\n5\n#詩的語言\n5\n#是枝裕和\n4\n#會所工作手冊\n4\n#現象學\n4\n#聆聽疼痛\n4\n#講座\n4\n#建制民族誌\n3\n#親密關係\n3\n#講座心得\n3\n#受苦的倒影\n2\n#媽的多重宇宙\n2\n#艾格妮撿風景\n2\n#障礙政治\n2\n#Shamless\n1\n#人間出口\n1\n#家庭會傷人\n1\n#時間\n1\n#無恥之徒\n1\n#親密關係暴力\n1\n#非暴力溝通\n1",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "daily",
+    "path": "/categories/日常書寫/",
+    "title": "日常書寫 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "日常書寫"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "分類總覽",
+        "href": "https://listenriver.com/categories/",
+        "class": ""
+      },
+      {
+        "text": "如何理解時間的存在",
+        "href": "/blog/日常書寫/如何理解時間的存在/",
+        "class": ""
+      },
+      {
+        "text": "整理書櫃有感",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": ""
+      },
+      {
+        "text": "一種抵達經驗的方式",
+        "href": "/blog/日常書寫/一種抵達經驗的方式/",
+        "class": ""
+      },
+      {
+        "text": "#電影心得\n1",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#正念的河流\n1",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#現象學\n1",
+        "href": "/tags/現象學/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#講座心得\n1",
+        "href": "/tags/講座心得/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "閱讀與筆記\n91",
+        "href": "/categories/閱讀與筆記/",
+        "class": ""
+      },
+      {
+        "text": "助人工作\n56",
+        "href": "/categories/助人工作/",
+        "class": ""
+      },
+      {
+        "text": "病痛經驗\n27",
+        "href": "/categories/病痛經驗/",
+        "class": ""
+      },
+      {
+        "text": "成為自己\n27",
+        "href": "/categories/成為自己/",
+        "class": ""
+      },
+      {
+        "text": "日常書寫\n26",
+        "href": "/categories/日常書寫/",
+        "class": ""
+      },
+      {
+        "text": "#電影心得\n1",
+        "href": "/tags/電影心得/",
+        "class": ""
+      },
+      {
+        "text": "#正念的河流\n1",
+        "href": "/tags/正念的河流/",
+        "class": ""
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": ""
+      },
+      {
+        "text": "#現象學\n1",
+        "href": "/tags/現象學/",
+        "class": ""
+      },
+      {
+        "text": "#講座心得\n1",
+        "href": "/tags/講座心得/",
+        "class": ""
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": ""
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "整理書櫃有感",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "網頁架設學習歷程",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "蜷縮、停滯、暗之惡魔",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "整理書櫃有感",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "網頁架設學習歷程",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "蜷縮、停滯、暗之惡魔",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/13實在感/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/13實在感/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描13：實在感",
+        "href": "/blog/素描/13實在感/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/12人臉/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/12人臉/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描12：人臉",
+        "href": "/blog/素描/12人臉/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/11補捉場景/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/11補捉場景/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描11：場景、參考線、定位點",
+        "href": "/blog/素描/11補捉場景/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/10編織的素描/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/10編織的素描/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描10：排線、調子、線條作為語法",
+        "href": "/blog/素描/10編織的素描/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/09捏陶的素描/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/09捏陶的素描/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描09：成型素描、土的素描、雕塑的素描",
+        "href": "/blog/素描/09捏陶的素描/",
+        "class": ""
+      },
+      {
+        "text": "2",
+        "href": "/categories/日常書寫/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "3",
+        "href": "/categories/日常書寫/page/3/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "4",
+        "href": "/categories/日常書寫/page/4/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "下一頁",
+        "href": "/categories/日常書寫/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n分類總覽\n/\n日常書寫\nCATEGORY\n26 篇文章\n日常書寫\n從生活觀察到偶然的情緒碎片，保存那些不一定被分類完成的日常時刻。\n\n日常書寫收下的是生活裡還在流動的部分。它比閱讀與筆記更貼近個人經驗，也比自我成長更保留未完成感。\n\n建議先從以下文章開始：\n\n如何理解時間的存在\n整理書櫃有感\n一種抵達經驗的方式\n#電影心得\n1\n#正念的河流\n1\n#素描\n13\n#現象學\n1\n#講座心得\n1\n#人間出口\n1\n#時間\n1\n閱讀地圖\n其他主分類\n\n沿著站內五大分類切換閱讀路徑。\n\n閱讀與筆記\n91\n助人工作\n56\n病痛經驗\n27\n成為自己\n27\n日常書寫\n26\nTOPIC INDEX\n日常書寫相關主題\n\n從標籤切入更細的閱讀線索。\n\n#電影心得\n1\n#正念的河流\n1\n#素描\n13\n#現象學\n1\n#講座心得\n1\n#人間出口\n1\n#時間\n1\n推薦閱讀\n先讀這幾篇\n\n從這個分類中挑出近期值得先看的文章，作為進入主題的起點。\n\n整理書櫃有感\n生活在科技發達的時代，隨手上網或詢問AI就可以馬上獲取知識解答，不像是過去要好好了解一件事，通過閱讀的方式細細品嚐，知識變得像速食一樣，吃多了就發現味道都一樣，速成、解答、滿足 …\n2026.03.08\n1 分鐘閱讀\n網頁架設學習歷程\n生日這天過得如日常般幸福，但很想分享個人網站作為成果發表。我終於順利把網站從wenyang0223.github.io搬家到 http://listenriver.com ，並 …\n2026.02.23\n3 分鐘閱讀\n蜷縮、停滯、暗之惡魔\n黑暗中，我覺得自己處於社交退縮的狀態，疤痕的療效一直碰到瓶頸，我感到徬徨無助，與人見面還是感到有些壓力或不自在，於是就這樣封閉自己？我覺得這當然不是什麼健康的作法，可是我該怎麼 …\n2024.08.30\n1 分鐘閱讀\n全部文章\n全部文章\n\n依年份與時間排序瀏覽這個分類中的文章，每頁顯示 8 篇。\n\n2026 2 篇\n03.08\n1 分鐘\n整理書櫃有感\n生活在科技發達的時代，隨手上網或詢問AI就可以馬上獲取知識解答，不像是過去要好好了解一件事，通過閱讀的方式細細品嚐，知識變得像速食一樣，吃多了就發現味道都一樣，速成、解答、滿足困惑，直達問題核心。從什麼時候開始，知識獲取的成本很低，已經低到 …\n02.23\n3 分鐘\n網頁架設學習歷程\n生日這天過得如日常般幸福，但很想分享個人網站作為成果發表。我終於順利把網站從wenyang0223.github.io搬家到 http://listenriver.com ，並且建立Waline 的留言板還有毛生按讚按鈕。\n2024 1 篇\n08.30\n1 分鐘\n蜷縮、停滯、暗之惡魔\n黑暗中，我覺得自己處於社交退縮的狀態，疤痕的療效一直碰到瓶頸，我感到徬徨無助，與人見面還是感到有些壓力或不自在，於是就這樣封閉自己？我覺得這當然不是什麼健康的作法，可是我該怎麼辦....好像必須跨越那道檻，鼓起自信心。\n2022 5 篇\n12.07\n2 分鐘\n素描13：實在感\n建立物體的實在感，對我來說更像是存在感，排線一層一層加深的過程很像在創造一個東西，感受到存在感、重量感的出現。\n09.21\n2 分鐘\n素描12：人臉\n今天的課程就是運用所學去建構複雜的場景，先不看場景的細部，而是先捕捉幾條輔助的參考線，切分出幾個區域，抓到形準。即使沒有完全畫得一模一樣，但捕捉到物與物之間和諧的關係，我想這應該也是塞尚的啟示吧\n09.07\n2 分鐘\n素描11：場景、參考線、定位點\n今天的課程就是運用所學去建構複雜的場景，先不看場景的細部，而是先捕捉幾條輔助的參考線，切分出幾個區域，抓到形準。即使沒有完全畫得一模一樣，但捕捉到物與物之間和諧的關係，我想這應該也是塞尚的啟示吧\n09.03\n2 分鐘\n素描10：排線、調子、線條作為語法\n延續上次捏陶的素描，這次則是「編織的素描」。老師要我們用學會用線條的方式去建立一個面，不同的線條方向可以編織出的各種密度的面，以「織度」來呈現明暗深淺，建立整體的調子。老師說，如果繪畫是一種語言的話，那麼線條就是語法，線條會塑造不同的感受， …\n08.17\n1 分鐘\n素描09：成型素描、土的素描、雕塑的素描\n比起一般直接從外面找出「型」的方法，老師要我們想像自己像在雕塑一樣，首先捏土，自由地把對物體的感受、形體化為線條；接著再慢慢雕塑，找到整個體積感和「型」。老師說，這需要發揮想像力，就如在捏陶一樣，遠離自己的「面」對往外推，感受到裡頭的形狀， …\n第 1 / 4 頁，共 26 篇文章\n1\n2\n3\n4\n下一頁",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "helping",
+    "path": "/categories/助人工作/",
+    "title": "助人工作 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "助人工作"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "分類總覽",
+        "href": "https://listenriver.com/categories/",
+        "class": ""
+      },
+      {
+        "text": "創傷知情工作坊心得",
+        "href": "/blog/助人工作/創傷知情工作坊心得/",
+        "class": ""
+      },
+      {
+        "text": "同步聽打培訓",
+        "href": "/blog/助人工作/同步聽打培訓/",
+        "class": ""
+      },
+      {
+        "text": "會所工作日誌 01 工作一個月",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": ""
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#成為一個人\n2",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#蟹足腫病痛\n1",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#講座筆記\n5",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#開放式對話\n8",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "閱讀與筆記\n91",
+        "href": "/categories/閱讀與筆記/",
+        "class": ""
+      },
+      {
+        "text": "助人工作\n56",
+        "href": "/categories/助人工作/",
+        "class": ""
+      },
+      {
+        "text": "病痛經驗\n27",
+        "href": "/categories/病痛經驗/",
+        "class": ""
+      },
+      {
+        "text": "成為自己\n27",
+        "href": "/categories/成為自己/",
+        "class": ""
+      },
+      {
+        "text": "日常書寫\n26",
+        "href": "/categories/日常書寫/",
+        "class": ""
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": ""
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": ""
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": ""
+      },
+      {
+        "text": "#成為一個人\n2",
+        "href": "/tags/成為一個人/",
+        "class": ""
+      },
+      {
+        "text": "#蟹足腫病痛\n1",
+        "href": "/tags/蟹足腫病痛/",
+        "class": ""
+      },
+      {
+        "text": "#講座筆記\n5",
+        "href": "/tags/講座筆記/",
+        "class": ""
+      },
+      {
+        "text": "#開放式對話\n8",
+        "href": "/tags/開放式對話/",
+        "class": ""
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": ""
+      },
+      {
+        "text": "#創傷知情\n2",
+        "href": "/tags/創傷知情/",
+        "class": ""
+      },
+      {
+        "text": "#會所工作手冊\n4",
+        "href": "/tags/會所工作手冊/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作手冊05_沉住氣的重要",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作日誌19_身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作手冊04_以靜制動",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊05_沉住氣的重要",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌19_身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊04_以靜制動",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌18_保持真誠好奇、找出盲點、默默推進",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌16_你想要什麼樣的支持",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌15_認真回應會員動力",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌14_強迫症、重複檢查的意義、安全感",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": ""
+      },
+      {
+        "text": "2",
+        "href": "/categories/助人工作/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "3",
+        "href": "/categories/助人工作/page/3/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "4",
+        "href": "/categories/助人工作/page/4/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "5",
+        "href": "/categories/助人工作/page/5/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "6",
+        "href": "/categories/助人工作/page/6/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "7",
+        "href": "/categories/助人工作/page/7/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "下一頁",
+        "href": "/categories/助人工作/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n分類總覽\n/\n助人工作\nCATEGORY\n56 篇文章\n助人工作\n助人工作的實踐與反思，涵蓋會所、創傷知情、開放式對話與制度現場中的工作經驗。\n\n助人工作收攏的是實務現場與制度經驗裡留下來的思考。這裡把助人工作、會所經驗與反身性書寫重新放進同一條閱讀路徑。\n\n建議先從以下文章開始：\n\n創傷知情工作坊心得\n同步聽打培訓\n會所工作日誌 01 工作一個月\n#會所模式\n30\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n2\n#蟹足腫病痛\n1\n#講座筆記\n5\n#開放式對話\n8\n#會所實習\n7\n閱讀地圖\n其他主分類\n\n沿著站內五大分類切換閱讀路徑。\n\n閱讀與筆記\n91\n助人工作\n56\n病痛經驗\n27\n成為自己\n27\n日常書寫\n26\nTOPIC INDEX\n助人工作相關主題\n\n從標籤切入更細的閱讀線索。\n\n#會所模式\n30\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n2\n#蟹足腫病痛\n1\n#講座筆記\n5\n#開放式對話\n8\n#會所實習\n7\n#創傷知情\n2\n#會所工作手冊\n4\n推薦閱讀\n先讀這幾篇\n\n從這個分類中挑出近期值得先看的文章，作為進入主題的起點。\n\n#會所工作手冊\n會所工作手冊05_沉住氣的重要\n當我拿出真誠跟會員建立關係互動、不斷強調我們彼此的相同之處時，創造了信任關係。可是走到某一天，發現會員始終有他的習性、他的家庭、文化、階級等，你會知道彼此仍然有不同的地方，仍然 …\n2026.08.19\n3 分鐘閱讀\n#會所模式\n會所工作日誌19_身心狀態留下的痕跡\n套一句票亮昨天說的，我們都是能量體，會留下「能量的痕跡」。身心狀態亦是如此，身體狀態是心理留下的痕跡，心理狀態是身體留下的痕跡，兩者是緊密一體的，彼此互相影響，甚至存在代償的關 …\n2026.07.23\n2 分鐘閱讀\n#會所工作手冊\n會所工作手冊04_以靜制動\n人與人之間總是在一連串反應中發生，我反應你的反應、你又反應，接連不斷下去。對我來說，以靜制動意味著先看清楚自己的反應、先看清楚現場，先不急著去反應和行動，觀察更清楚再行動也行。 …\n2026.05.23\n3 分鐘閱讀\n全部文章\n全部文章\n\n依年份與時間排序瀏覽這個分類中的文章，每頁顯示 8 篇。\n\n2026 8 篇\n08.19\n3 分鐘\n會所工作手冊05_沉住氣的重要\n當我拿出真誠跟會員建立關係互動、不斷強調我們彼此的相同之處時，創造了信任關係。可是走到某一天，發現會員始終有他的習性、他的家庭、文化、階級等，你會知道彼此仍然有不同的地方，仍然很不一樣。我想我是一時很難接受那個不一樣，忽然因為那個反差而感到 …\n07.23\n2 分鐘\n會所工作日誌19_身心狀態留下的痕跡\n套一句票亮昨天說的，我們都是能量體，會留下「能量的痕跡」。身心狀態亦是如此，身體狀態是心理留下的痕跡，心理狀態是身體留下的痕跡，兩者是緊密一體的，彼此互相影響，甚至存在代償的關係。身心應該一起被檢視。\n05.23\n3 分鐘\n會所工作手冊04_以靜制動\n人與人之間總是在一連串反應中發生，我反應你的反應、你又反應，接連不斷下去。對我來說，以靜制動意味著先看清楚自己的反應、先看清楚現場，先不急著去反應和行動，觀察更清楚再行動也行。快有快的效果，慢有慢的效果。\n05.15\n2 分鐘\n會所工作日誌18_保持真誠好奇、找出盲點、默默推進\n我發現其實我在聊天或會談之前，內心並沒有太多預設，而是真的如《成為一個人》所說，保持真誠好奇，往下追問，似乎自然浮現出會談的方向。\n05.08\n2 分鐘\n會所工作手冊\n會員Z內在感受是複雜抽象的，心理學語言只是一種符號或他所認為接近的狀態，但要提醒彼此並不是100%準確，因此，要把會員Z的言語當作符號，去拼湊背後的意義，我們應該如此去理解Z。心理學對於他有很重要的意義，是那些尚未成形、尚無法用自己語言表達 …\n04.16\n3 分鐘\n會所工作日誌16_你想要什麼樣的支持\n不知不覺和會員F工作了九個月左右，他就從玉子燒達人、過渡性職場到現在要去就業，中間也經歷許多有意義的對話，建立了我認為很真誠的夥伴關係。我們可以互相看見彼此、他可以提出對於被支持的想像、而我也能回應他說「你想要什麼樣的支持呢？」 我想這是 …\n04.08\n3 分鐘\n會所工作日誌15_認真回應會員動力\n我覺得在會所工作需要有一定的創意發想，也要真的重視會員的動力，必要時就認真回應他，他不會讓你失望的。不同於傳統社工與個案的關係，會所的設計鋪墊出「夥伴關係」的基底，讓我們得以建立更真誠的關係質地/品質。在此條件下，職員更可以發揮創意，用各種 …\n04.02\n3 分鐘\n會所工作日誌14_強迫症、重複檢查的意義、安全感\n儘管我們都無法確定真正的答案，但我覺得這樣的連結是回應她的病痛經驗，將原本被病理化的症狀，還原為她的生命敘事，試著從另一種的角度去看待強迫症，並賦予意義。被貼上強迫症標籤的人特別辛苦，重複的行為與強迫的意念，經常把人簡化為一個扁平的人。聆聽 …\n第 1 / 7 頁，共 56 篇文章\n1\n2\n3\n4\n5\n6\n7\n下一頁",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "clubhouse",
+    "path": "/clubhouse/",
+    "title": "會所模式 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "會所模式"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main is-active"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "會所工作手冊\n4",
+        "href": "/clubhouse/會所工作手冊/",
+        "class": ""
+      },
+      {
+        "text": "會所工作日誌\n19",
+        "href": "/clubhouse/會所工作日誌/",
+        "class": ""
+      },
+      {
+        "text": "會所實習\n7",
+        "href": "/clubhouse/會所實習/",
+        "class": ""
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": ""
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": ""
+      },
+      {
+        "text": "#成為一個人\n2",
+        "href": "/tags/成為一個人/",
+        "class": ""
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": ""
+      },
+      {
+        "text": "#會所工作手冊\n4",
+        "href": "/tags/會所工作手冊/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所實習01_初入會所的觀察",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作手冊01_慾望、驅力、動力",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所實習02_幻聽與疼痛是不可見的受苦",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/06如實/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/06如實/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習06_如實",
+        "href": "/clubhouse/會所實習/06如實/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/05與會員h訂計畫/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/05與會員h訂計畫/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習05_與會員H訂計畫",
+        "href": "/clubhouse/會所實習/05與會員h訂計畫/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/04承認無知真誠表達與夥伴關係/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/04承認無知真誠表達與夥伴關係/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習04_承認無知、真誠表達與夥伴關係",
+        "href": "/clubhouse/會所實習/04承認無知真誠表達與夥伴關係/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/03期中實習結束/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/03期中實習結束/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習03_期中實習結束",
+        "href": "/clubhouse/會所實習/03期中實習結束/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/02為自己做決定即是成為自己/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/02為自己做決定即是成為自己/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊02_為自己做決定即是成為自己",
+        "href": "/clubhouse/會所工作手冊/02為自己做決定即是成為自己/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習02_幻聽與疼痛是不可見的受苦",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊01_慾望、驅力、動力",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習01_初入會所的觀察",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": ""
+      },
+      {
+        "text": "2",
+        "href": "/clubhouse/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "3",
+        "href": "/clubhouse/page/3/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "4",
+        "href": "/clubhouse/page/4/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "下一頁",
+        "href": "/clubhouse/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n會所模式\nCATEGORY\n30 篇文章\n會所模式\n以會所為核心，整理復元理念、會所介紹與社會工作實踐相關文章。\n會所介紹\n\n會所（Clubhouse）是一種以夥伴關係、工作日與社群參與為核心的精神障礙者社區復元模式。它不只是一套服務方法，也是一種重新理解支持與關係的方式。\n\n復元概念\n\n在這個專題裡，復元不是單純回到生病前的狀態，而是在人與人之間，重新建立主體性、參與感與生活節奏。\n\n社會工作實踐\n\n以下文章皆來自站內 tag「會所」，涵蓋會所實習、工作日誌、模式理解與現場反思，方便集中閱讀與延伸探索。\n\n#會所模式\n30\n#會所工作日誌\n19\n#成為一個人\n2\n#會所實習\n7\n#會所工作手冊\n4\n閱讀地圖\n其他主分類\n\n沿著站內五大分類切換閱讀路徑。\n\n會所工作手冊\n4\n會所工作日誌\n19\n會所實習\n7\nTOPIC INDEX\n會所模式相關主題\n\n從標籤切入更細的閱讀線索。\n\n#會所模式\n30\n#會所工作日誌\n19\n#成為一個人\n2\n#會所實習\n7\n#會所工作手冊\n4\n推薦閱讀\n先讀這幾篇\n\n從這個分類中挑出近期值得先看的文章，作為進入主題的起點。\n\n#會所實習\n會所實習01_初入會所的觀察\n會所營造的團體動力、夥伴協作關係都有深奧的智慧和意義，這些意義指出了人際關係、情緒、界線、能力、超越性、民主、參與等重要議題，並且也更根本地指出，作為一個助人工作者該如何建立助 …\n2023.03.14\n3 分鐘閱讀\n#會所工作手冊\n會所工作手冊01_慾望、驅力、動力\n在人與人的關係中，慾望也是必須被看見的。人際關係一不小心就淪為他者化的獨白，為了追求平等的對話關係，除了尊重他異性之外，肯認自己的慾望也是一個關鍵。究竟內心深處想要的是什麼？帶 …\n2023.03.25\n3 分鐘閱讀\n#會所實習\n會所實習02_幻聽與疼痛是不可見的受苦\n這讓我感到有點豁然開朗，似乎真的能夠這樣說的通。也就是說，幻聽和疼痛真的有類似的特性，同樣的不可見、難以描述、依賴語言、需要向這個世界證明、一種內在的受苦經驗，把我過去對疼痛的 …\n2023.05.16\n3 分鐘閱讀\n全部文章\n全部文章\n\n依年份與時間排序瀏覽這個分類中的文章，每頁顯示 8 篇。\n\n2023 8 篇\n07.24\n2 分鐘\n會所實習06_如實\n會所的開放、平等與夥伴關心，很能用「真實性」與「透明性」去看，可以更瞭解「如實」的重要性何在，在這樣「如實」下打造的環境，讓會員可以更「如其所是」地存在，這也是我所看見的會所。不只是職員與會員之間的如實表達，職員自己與自己的內在對話也要如實 …\n07.16\n5 分鐘\n會所實習05_與會員H訂計畫\n讓我覺得很難過的是：我覺得有一種困難是，就是會員H的應對上這些困難，影響人際關係跟工作，他的障礙要花這麼多時間才能理解、被梳理出來，不像其他的障別，障礙很明確可見，這是要花很多心力才能勉強描繪出那個精神世界造成的影響，背後是可能是創傷、壓力 …\n07.14\n5 分鐘\n會所實習04_承認無知、真誠表達與夥伴關係\n這裡存在一種心情是「我真的聽不懂，聽不懂就是聽不懂，不用不懂裝懂」這樣的心情是一種坦然面對自身「無知」或承認自己理解能力有限的過程。挑戰一般人對於助人工作者必須「知」的預設。承認自己的無能、無知是有難度的，然而也有很大的好處，也就是讓我們可 …\n07.05\n4 分鐘\n會所實習03_期中實習結束\n實習真的對我來說是跨出另一大步，朝向助人工作的目標前進。這幾年，我努力以「非本科系」的身份，試圖爬進助人工作領域，靠著閱讀、反思、各種珍貴的經驗與人脈……我覺得自己突破重重關卡，好不容易獲得了某個實質的「證明」，告訴自己也告訴這個世界，自己 …\n05.27\n5 分鐘\n會所工作手冊02_為自己做決定即是成為自己\n在向陽實習的期間，我瞭解到讓會員主動做決定的重要性，工作者的角色除了要觀察會員的動力之外，也要順著他的動力，引導當事人可以主動做出決定。從這個角度來說，所謂的「案主自決」並非字面意思那麼簡單，或是把責任直接丟給案主，而是一個複雜的互動過程， …\n05.16\n3 分鐘\n會所實習02_幻聽與疼痛是不可見的受苦\n這讓我感到有點豁然開朗，似乎真的能夠這樣說的通。也就是說，幻聽和疼痛真的有類似的特性，同樣的不可見、難以描述、依賴語言、需要向這個世界證明、一種內在的受苦經驗，把我過去對疼痛的理解和瞭解統統用上，這讓我感覺更瞭解幻聽了，也拉近與會員J的距離 …\n03.25\n3 分鐘\n會所工作手冊01_慾望、驅力、動力\n在人與人的關係中，慾望也是必須被看見的。人際關係一不小心就淪為他者化的獨白，為了追求平等的對話關係，除了尊重他異性之外，肯認自己的慾望也是一個關鍵。究竟內心深處想要的是什麼？帶動動力的意義也包括要帶動「奪權」的慾望，奪回屬於自己的權力，這是 …\n03.14\n3 分鐘\n會所實習01_初入會所的觀察\n會所營造的團體動力、夥伴協作關係都有深奧的智慧和意義，這些意義指出了人際關係、情緒、界線、能力、超越性、民主、參與等重要議題，並且也更根本地指出，作為一個助人工作者該如何建立助人關係、以何種方式存在於受苦主體身旁，與主體為伴。\n第 1 / 4 頁，共 30 篇文章\n1\n2\n3\n4\n下一頁",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "journal",
+    "path": "/clubhouse/會所工作日誌/",
+    "title": "會所工作日誌 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "會所工作日誌"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "會所模式",
+        "href": "https://listenriver.com/clubhouse/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌19_身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌18_保持真誠好奇、找出盲點、默默推進",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌16_你想要什麼樣的支持",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌15_認真回應會員動力",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌14_強迫症、重複檢查的意義、安全感",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌13_初次社區宣導",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌12_餐飲部當然不只是料理",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/11敘事的見證/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/11敘事的見證/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌11_敘事的見證",
+        "href": "/clubhouse/會所工作日誌/11敘事的見證/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/10料理是行動是對話/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/10料理是行動是對話/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌10_料理是行動、是對話",
+        "href": "/clubhouse/會所工作日誌/10料理是行動是對話/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/09不敢說借過的會員/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/09不敢說借過的會員/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌09_不敢說借過的會員",
+        "href": "/clubhouse/會所工作日誌/09不敢說借過的會員/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/08推動會員帶開會與導覽部門/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/08推動會員帶開會與導覽部門/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌08_推動會員帶開會與導覽部門",
+        "href": "/clubhouse/會所工作日誌/08推動會員帶開會與導覽部門/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/07白板溝通/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/07白板溝通/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌07_白板溝通",
+        "href": "/clubhouse/會所工作日誌/07白板溝通/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/06複雜用藥下改變如何發生/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/06複雜用藥下改變如何發生/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌06_複雜用藥下，改變如何發生??",
+        "href": "/clubhouse/會所工作日誌/06複雜用藥下改變如何發生/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/05兩週就業訓練反思/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/05兩週就業訓練反思/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌05_就業訓練反思",
+        "href": "/clubhouse/會所工作日誌/05兩週就業訓練反思/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/04就業前準備/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/04就業前準備/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌04_就業前準備",
+        "href": "/clubhouse/會所工作日誌/04就業前準備/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/03回顧會員f來會所的學習/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/03回顧會員f來會所的學習/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌03_回顧會員F來會所的學習",
+        "href": "/clubhouse/會所工作日誌/03回顧會員f來會所的學習/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/02緊握垃圾的力道/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/02緊握垃圾的力道/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌02_緊握垃圾的力道",
+        "href": "/clubhouse/會所工作日誌/02緊握垃圾的力道/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌01_工作一個月",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": ""
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n會所模式\n/\n會所工作日誌\nCLUBHOUSE\n會所工作日誌\nSECTION READING\n本區文章\n會所工作日誌\n19 篇\n07.23\n2 分鐘\n會所工作日誌19_身心狀態留下的痕跡\n套一句票亮昨天說的，我們都是能量體，會留下「能量的痕跡」。身心狀態亦是如此，身體狀態是心理留下的痕跡，心理狀態是身體留下的痕跡，兩者是緊密一體的，彼此互相影響，甚至存在代償的關係。身心應該一起被檢視。\n05.15\n2 分鐘\n會所工作日誌18_保持真誠好奇、找出盲點、默默推進\n我發現其實我在聊天或會談之前，內心並沒有太多預設，而是真的如《成為一個人》所說，保持真誠好奇，往下追問，似乎自然浮現出會談的方向。\n05.08\n2 分鐘\n會所工作手冊\n會員Z內在感受是複雜抽象的，心理學語言只是一種符號或他所認為接近的狀態，但要提醒彼此並不是100%準確，因此，要把會員Z的言語當作符號，去拼湊背後的意義，我們應該如此去理解Z。心理學對於他有很重要的意義，是那些尚未成形、尚無法用自己語言表達 …\n04.16\n3 分鐘\n會所工作日誌16_你想要什麼樣的支持\n不知不覺和會員F工作了九個月左右，他就從玉子燒達人、過渡性職場到現在要去就業，中間也經歷許多有意義的對話，建立了我認為很真誠的夥伴關係。我們可以互相看見彼此、他可以提出對於被支持的想像、而我也能回應他說「你想要什麼樣的支持呢？」 我想這是 …\n04.08\n3 分鐘\n會所工作日誌15_認真回應會員動力\n我覺得在會所工作需要有一定的創意發想，也要真的重視會員的動力，必要時就認真回應他，他不會讓你失望的。不同於傳統社工與個案的關係，會所的設計鋪墊出「夥伴關係」的基底，讓我們得以建立更真誠的關係質地/品質。在此條件下，職員更可以發揮創意，用各種 …\n04.02\n3 分鐘\n會所工作日誌14_強迫症、重複檢查的意義、安全感\n儘管我們都無法確定真正的答案，但我覺得這樣的連結是回應她的病痛經驗，將原本被病理化的症狀，還原為她的生命敘事，試著從另一種的角度去看待強迫症，並賦予意義。被貼上強迫症標籤的人特別辛苦，重複的行為與強迫的意念，經常把人簡化為一個扁平的人。聆聽 …\n03.22\n1 分鐘\n會所工作日誌13_初次社區宣導\n看見會員從準備到順利上台發表，真的好感動哦，像是成果發表一樣，展現出平常累積厚實的關係基底所延伸出來的成長與進步，其中也蘊含工作者的工作方法與信念，而且能夠用對話的方式呈現真是太棒了。\n03.09\n1 分鐘\n會所工作日誌12_餐飲部當然不只是料理\n料理的意義，我很喜歡從《迷宮飯》所描繪的意象去講，吃飯聯繫了所有人，是滿足生命基本需求、是與大地連結、是自己動手做、是與人分工合作、是與人聊天分食，是鑲嵌於日常生活與人際關係當中，不可或缺的一環。餐飲部當然不只是料理而已！\n03.04\n1 分鐘\n會所工作日誌11_敘事的見證\n為了對外的宣導活動，就開始以團體的形式來整理大家的生命敘事，剛好參與的會員都是日出席的人，形成一個信任感足夠的團體，好棒的氛圍 前一天就計劃好，把桌子搬到活動室內，可以安定住大家，不然在外面太容易分心、太多干擾的因素。實際上進行團體時，最容 …\n02.13\n3 分鐘\n會所工作日誌10_料理是行動、是對話\n回到餐飲部，這次紅燒獅子頭的成功經驗讓我覺得很有成就感。除此之外，發揮創意把多的香菜拿去煎蛋感覺也超棒。很喜歡《迷宮飯》裡面，先西對於烹飪的堅持，可以用創意發想的方式去組合新的料理。可以深切體會料理這件事為何成為會所的部門之一，料理需要人們 …\n11.18\n2 分鐘\n會所工作日誌09_不敢說借過的會員\n綜合那天發生的兩件事，其實本質上都非常類似，反映出會員J不敢與人太過靠近的慣性，長期下來形成僵化的行為模式。我覺得他在會所要練的的確就是練習與人好好的互動，平時都太過急躁，要用自己的方式跟人家互動，讓人不得不配合。\n11.11\n1 分鐘\n會所工作日誌08_推動會員帶開會與導覽部門\n工作至今四個多月，日復一日帶開會給會員看，終於推動會員可以帶開會、導覽部門，真是讓人感動！！ 這位會員平常都會說要社工帶、社工有唸心理學所以就要讓社工做，但那天我觀察到他的眼神比較有動力，就順勢推動讓他來開會，我覺得很有成就感！\n10.22\n1 分鐘\n會所工作日誌07_白板溝通\n寫論文時一直覺得自己想寫病痛的議題不符合社會工作的範疇，現在回想起來，覺得慢性病痛其實也是許多會員的生命經驗，那種抽象、主觀、旁人難以理解的受苦經驗，與慢性疼痛有本質上的相似。現在才覺得，我的論文描繪出一種慢性病痛的重要性與價值，事實上那些 …\n10.01\n2 分鐘\n會所工作日誌06_複雜用藥下，改變如何發生??\n昨天帶出門的會員，在返家途中昏倒，讓我有些自責。昏倒雖然據說是常常發生的，但事後才知道她最近沒有穩定服藥，可能有點關聯。 今天跟著同事帶會員去家訪，好好監督她把藥排好，才發現她竟然吃那麼多種藥！\n09.26\n3 分鐘\n會所工作日誌05_就業訓練反思\n前天9/26是職場評估的日子，從決定接下職場，到實際面試評估，約只有兩週的時間，當時內部討論兩位會員比較有機會，會員J和會員F。最終的結果是，會員F成功面試錄取了工作！\n09.16\n1 分鐘\n會所工作日誌04_就業前準備\n為了9/26的職場評估，開始了兩位會員的訓練。 兩位會員個性正好相反，會員J很急躁、缺乏耐心，但手腳速度快；會員F則是過於細心仔細而速度過慢。那天正好一紅一藍的衣服搭配！\n09.11\n1 分鐘\n會所工作日誌03_回顧會員F來會所的學習\n會員F一直都是懶懶散散的狀態，感覺這個人沒什麼慾望、沒什麼動力。積極各種方式激起他的動力他也只是會心一笑。 為了準備隔天大學生的參訪，今天整理他來會所的經歷。他一樣說當初來會所就是來「殺時間」，\n09.10\n3 分鐘\n會所工作日誌02_緊握垃圾的力道\n會員J是一個非常急躁、脾氣不好的人，平常會透過剪紙、寫字或泡泡紙來紓壓，但一邊碎碎念，那天在路上看到泡泡紙他甚至直接衝過去撿起來按。是個常常處於生氣狀態，也在到處發洩情緒的人。\n08.29\n4 分鐘\n會所工作日誌01_工作一個月\n雖然我有一些想法和靈感，覺得應該這麼做，但我也很難站在全知的角度說服其他人「這麼做絕對正確」。我只能帶著實驗精神不斷嘗試與行動，發生錯誤或失敗就再次修正行動。",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "tags",
+    "path": "/tags/",
+    "title": "標籤總覽 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "主題總覽"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "TAG\n#閱讀心得\n\n閱讀心得｜《障礙政治》\n\n27 篇文章\n滑動閱讀",
+        "href": "/tags/閱讀心得/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#會所模式\n\n會所工作手冊05_沉住氣的重要\n\n30 篇文章\n滑動閱讀",
+        "href": "/tags/會所模式/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#開放式對話\n\n對話本身就是行動\n\n9 篇文章\n滑動閱讀",
+        "href": "/tags/開放式對話/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#成為一個人\n\n真實做自己的自由：在凝視中看見的仍是自己\n\n14 篇文章\n滑動閱讀",
+        "href": "/tags/成為一個人/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#病痛經驗\n\n定期回診\n\n5 篇文章\n滑動閱讀",
+        "href": "/tags/病痛經驗/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#助人工作\n\n過道、渡者、苦難工作者\n\n18 篇文章\n滑動閱讀",
+        "href": "/tags/助人工作/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#電影心得\n\n《綠洲》電影心得\n\n32 篇文章\n滑動閱讀",
+        "href": "/tags/電影心得/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#正念的河流\n\n正念的意義就在手中\n\n21 篇文章\n滑動閱讀",
+        "href": "/tags/正念的河流/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "#電影心得\n32",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#電影\n30",
+        "href": "/tags/電影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#書摘\n28",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#閱讀心得\n27",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#正念的河流\n21",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#成為一個人\n14",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛計畫\n12",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#蟹足腫病痛\n11",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座筆記\n9",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#一行禪師\n6",
+        "href": "/tags/一行禪師/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#凝視與穿越\n5",
+        "href": "/tags/凝視與穿越/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#午夜福音\n5",
+        "href": "/tags/午夜福音/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#病痛經驗\n5",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#詩的語言\n5",
+        "href": "/tags/詩的語言/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#是枝裕和\n4",
+        "href": "/tags/是枝裕和/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作手冊\n4",
+        "href": "/tags/會所工作手冊/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#現象學\n4",
+        "href": "/tags/現象學/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛\n4",
+        "href": "/tags/聆聽疼痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座\n4",
+        "href": "/tags/講座/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#建制民族誌\n3",
+        "href": "/tags/建制民族誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係\n3",
+        "href": "/tags/親密關係/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座心得\n3",
+        "href": "/tags/講座心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#受苦的倒影\n2",
+        "href": "/tags/受苦的倒影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#媽的多重宇宙\n2",
+        "href": "/tags/媽的多重宇宙/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#艾格妮撿風景\n2",
+        "href": "/tags/艾格妮撿風景/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#障礙政治\n2",
+        "href": "/tags/障礙政治/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#Shamless\n1",
+        "href": "/tags/shamless/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家庭會傷人\n1",
+        "href": "/tags/家庭會傷人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#無恥之徒\n1",
+        "href": "/tags/無恥之徒/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係暴力\n1",
+        "href": "/tags/親密關係暴力/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#非暴力溝通\n1",
+        "href": "/tags/非暴力溝通/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n主題總覽\nTAGS\n主題總覽\n用熱門標籤與全部關鍵字索引，快速找到同一條主題線上的文章。\n\n這裡整理站內常用的標籤。分類用來建立閱讀脈絡，標籤則用來追蹤更細的主題與關鍵字。\n\nPOPULAR\n常用主題\n\n先看站內最常出現的主題標籤，快速掌握內容重心。\n\n←\n→\nTAG\n#閱讀心得\n\n閱讀心得｜《障礙政治》\n\n27 篇文章\n滑動閱讀\nTAG\n#會所模式\n\n會所工作手冊05_沉住氣的重要\n\n30 篇文章\n滑動閱讀\nTAG\n#開放式對話\n\n對話本身就是行動\n\n9 篇文章\n滑動閱讀\nTAG\n#成為一個人\n\n真實做自己的自由：在凝視中看見的仍是自己\n\n14 篇文章\n滑動閱讀\nTAG\n#病痛經驗\n\n定期回診\n\n5 篇文章\n滑動閱讀\nTAG\n#助人工作\n\n過道、渡者、苦難工作者\n\n18 篇文章\n滑動閱讀\nTAG\n#電影心得\n\n《綠洲》電影心得\n\n32 篇文章\n滑動閱讀\nTAG\n#正念的河流\n\n正念的意義就在手中\n\n21 篇文章\n滑動閱讀\nBY COUNT\n全部主題\n\n依文章數量排序，快速看見站內最常延伸的閱讀線索。\n\n#電影心得\n32\n#會所模式\n30\n#電影\n30\n#書摘\n28\n#閱讀心得\n27\n#正念的河流\n21\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n14\n#素描\n13\n#聆聽疼痛計畫\n12\n#蟹足腫病痛\n11\n#講座筆記\n9\n#開放式對話\n9\n#家族治療\n7\n#會所實習\n7\n#一行禪師\n6\n#凝視與穿越\n5\n#創傷知情\n5\n#午夜福音\n5\n#病痛經驗\n5\n#詩的語言\n5\n#是枝裕和\n4\n#會所工作手冊\n4\n#現象學\n4\n#聆聽疼痛\n4\n#講座\n4\n#建制民族誌\n3\n#親密關係\n3\n#講座心得\n3\n#受苦的倒影\n2\n#媽的多重宇宙\n2\n#艾格妮撿風景\n2\n#障礙政治\n2\n#Shamless\n1\n#人間出口\n1\n#家庭會傷人\n1\n#時間\n1\n#無恥之徒\n1\n#親密關係暴力\n1\n#非暴力溝通\n1",
+    "filters": 0
+  },
+  {
+    "width": 1440,
+    "name": "search",
+    "path": "/search/?q=會所工作日誌",
+    "title": "搜尋 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "搜尋"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流\n閱讀・書寫・心理・社工",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "閱讀與筆記",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/書摘/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/閱讀心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座筆記/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/講座心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/電影心得/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "日常書寫",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/素描/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/詩的語言/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "成為自己",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/親密關係/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/成為一個人/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/正念的河流/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "病痛經驗",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__nav-link personal-header__nav-link-main"
+      },
+      {
+        "text": "助人工作",
+        "href": "/categories/助人工作/",
+        "class": "personal-header__dropdown-title"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "nav-group-link personal-header__dropdown-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n搜尋\nSEARCH\n搜尋\n搜尋站內文章、分類與主題標籤。\n清除\n\n9 筆結果\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . .\n\n. . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n\n載入更多",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "home",
+    "path": "/",
+    "title": "聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "聆聽的河流"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "查看全部 →",
+        "href": "/blog/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "成為自己\n最大的自由是承擔，最大的神蹟是人的超越性\n2022.09.15 · 2 分鐘閱讀",
+        "href": "/blog/成為自己/最大的自由是承擔/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n20210830看見本質的眼睛\n2021.08.30 · 3 分鐘閱讀",
+        "href": "/blog/成為自己/看見本質的眼睛/",
+        "class": "feat-card"
+      },
+      {
+        "text": "閱讀與筆記\n《夏日大作戰》｜電影心得\n2026.04.18 · 2 分鐘閱讀",
+        "href": "/blog/電影心得/夏日大作戰/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n反省個體化\n2022.05.01 · 2 分鐘閱讀",
+        "href": "/blog/成為自己/反省個體化/",
+        "class": "feat-card"
+      },
+      {
+        "text": "病痛經驗\n定期回診\n2026.03.22 · 1 分鐘閱讀",
+        "href": "/blog/病痛經驗/定期回診/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n慢讀漫談Podcast：空間、關係與自我存在\n2021.11.02 · 6 分鐘閱讀",
+        "href": "/blog/成為自己/慢讀漫談/",
+        "class": "feat-card"
+      },
+      {
+        "text": "助人工作\n會所工作日誌13_初次社區宣導\n2026.03.22 · 1 分鐘閱讀",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "feat-card"
+      },
+      {
+        "text": "成為自己\n人是有機的存在\n2022.11.17 · 3 分鐘閱讀",
+        "href": "/blog/成為自己/人是有機的存在/",
+        "class": "feat-card"
+      },
+      {
+        "text": "瀏覽分類",
+        "href": "/categories/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "",
+        "href": "/categories/助人工作/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "查看更多",
+        "href": "/clubhouse/",
+        "class": "home-discovery-section__more"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "home-clubhouse-card__link"
+      },
+      {
+        "text": "全部文章 →",
+        "href": "/blog/",
+        "class": ""
+      },
+      {
+        "text": "閱讀與筆記\n《綠洲》：對話關係帶來的超越性\n2026.05.17 · 6 分鐘",
+        "href": "/blog/電影心得/綠洲/",
+        "class": "latest-card"
+      },
+      {
+        "text": "成為自己\n正念的意義就在手中\n2026.04.23 · 6 分鐘",
+        "href": "/blog/成為自己/正念的意義就在手中/",
+        "class": "latest-card"
+      },
+      {
+        "text": "閱讀與筆記\n《夏日大作戰》｜電影心得\n2026.04.18 · 2 分鐘",
+        "href": "/blog/電影心得/夏日大作戰/",
+        "class": "latest-card"
+      },
+      {
+        "text": "病痛經驗\n定期回診\n2026.03.22 · 1 分鐘",
+        "href": "/blog/病痛經驗/定期回診/",
+        "class": "latest-card"
+      },
+      {
+        "text": "日常書寫\n整理書櫃有感\n2026.03.08 · 1 分鐘",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "latest-card"
+      },
+      {
+        "text": "日常書寫\n網頁架設學習歷程\n2026.02.23 · 3 分鐘",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "latest-card"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "home-author-card__avatar"
+      },
+      {
+        "text": "",
+        "href": "mailto:wenyang5566@email.com",
+        "class": "home-author-card__social-link"
+      },
+      {
+        "text": "",
+        "href": "https://www.facebook.com/profile.php?id=100000266878039",
+        "class": "home-author-card__social-link"
+      },
+      {
+        "text": "",
+        "href": "https://gravatar.com/enthusiastically4d7178ae68",
+        "class": "home-author-card__social-link"
+      },
+      {
+        "text": "開始閱讀",
+        "href": "/blog/",
+        "class": "home-author-card__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "LISTEN RIVER\n\n聆聽的河流\n\n閱讀｜書寫｜心理｜社工\n\n一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。\n\nFEATURED POSTS\n\n精選文章\n查看全部 →\n成為自己\n最大的自由是承擔，最大的神蹟是人的超越性\n2022.09.15 · 2 分鐘閱讀\n成為自己\n20210830看見本質的眼睛\n2021.08.30 · 3 分鐘閱讀\n閱讀與筆記\n《夏日大作戰》｜電影心得\n2026.04.18 · 2 分鐘閱讀\n成為自己\n反省個體化\n2022.05.01 · 2 分鐘閱讀\n病痛經驗\n定期回診\n2026.03.22 · 1 分鐘閱讀\n成為自己\n慢讀漫談Podcast：空間、關係與自我存在\n2021.11.02 · 6 分鐘閱讀\n助人工作\n會所工作日誌13_初次社區宣導\n2026.03.22 · 1 分鐘閱讀\n成為自己\n人是有機的存在\n2022.11.17 · 3 分鐘閱讀\n\nEXPLORE TOPICS\n\n探索主題\n瀏覽分類\n閱讀與筆記\n91 篇文章\n日常書寫\n26 篇文章\n成為自己\n27 篇文章\n病痛經驗\n27 篇文章\n助人工作\n56 篇文章\n會所模式\n30 篇文章\n\nCLUBHOUSE MODEL\n\n會所模式\n查看更多\n助人工作\n沉住氣的重要\n2026.08.19\n·\n3 分鐘閱讀\n助人工作\n身心狀態留下的痕跡\n2026.07.23\n·\n2 分鐘閱讀\n助人工作\n以靜制動：對話是一連串的反應\n2026.05.23\n·\n3 分鐘閱讀\n助人工作\n保持真誠好奇、找出盲點、默默推進\n2026.05.15\n·\n2 分鐘閱讀\n助人工作\n將言語視為符號\n2026.05.08\n·\n2 分鐘閱讀\n助人工作\n你想要什麼樣的支持\n2026.04.16\n·\n3 分鐘閱讀\n助人工作\n認真回應會員動力\n2026.04.08\n·\n3 分鐘閱讀\n助人工作\n強迫症、重複檢查的意義、安全感\n2026.04.02\n·\n3 分鐘閱讀\n查看更多會所模式\n最新文章\nLATEST ARTICLES\n全部文章 →\n閱讀與筆記\n《綠洲》：對話關係帶來的超越性\n2026.05.17 · 6 分鐘\n成為自己\n正念的意義就在手中\n2026.04.23 · 6 分鐘\n閱讀與筆記\n《夏日大作戰》｜電影心得\n2026.04.18 · 2 分鐘\n病痛經驗\n定期回診\n2026.03.22 · 1 分鐘\n日常書寫\n整理書櫃有感\n2026.03.08 · 1 分鐘\n日常書寫\n網頁架設學習歷程\n2026.02.23 · 3 分鐘\n\nABOUT THE AUTHOR\n\n文揚 Wen-Yang\n\n聆聽的河流｜閱讀・書寫・心理・社工\n\n一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。\n\n開始閱讀\n‹\n›",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "menu",
+    "links": [
+      {
+        "text": "聆聽的河流",
+        "href": "/"
+      },
+      {
+        "text": "",
+        "href": "/"
+      },
+      {
+        "text": "",
+        "href": "/about/"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "name": "categories",
+    "path": "/categories/",
+    "title": "分類總覽 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "聆聽的河流 / 六大主題分類"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/categories/閱讀與筆記/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#書摘",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#閱讀心得",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#電影心得",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/助人工作/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#助人工作",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#開放式對話",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#創傷知情",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/病痛經驗/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#病痛經驗",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#聆聽疼痛計畫",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#正念的河流",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/成為自己/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#成為一個人",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#正念的河流",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#親密關係",
+        "href": "/tags/親密關係/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/categories/日常書寫/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#講座筆記",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#素描",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/",
+        "class": "taxonomy-landing-card__stretched-link"
+      },
+      {
+        "text": "#會所工作日誌",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#會所實習",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#會所工作手冊",
+        "href": "/tags/會所工作手冊/",
+        "class": "taxonomy-landing-card__tag"
+      },
+      {
+        "text": "#電影心得\n32 篇文章",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#書摘\n28 篇文章",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#閱讀心得\n27 篇文章",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#成為一個人\n14 篇文章",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#助人工作\n18 篇文章",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#開放式對話\n9 篇文章",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#病痛經驗\n5 篇文章",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#創傷知情\n5 篇文章",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#正念的河流\n21 篇文章",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-hot-card"
+      },
+      {
+        "text": "#電影心得\n32",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#電影\n30",
+        "href": "/tags/電影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#書摘\n28",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#閱讀心得\n27",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#正念的河流\n21",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#成為一個人\n14",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛計畫\n12",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#蟹足腫病痛\n11",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座筆記\n9",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#一行禪師\n6",
+        "href": "/tags/一行禪師/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#凝視與穿越\n5",
+        "href": "/tags/凝視與穿越/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#午夜福音\n5",
+        "href": "/tags/午夜福音/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#病痛經驗\n5",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#詩的語言\n5",
+        "href": "/tags/詩的語言/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#是枝裕和\n4",
+        "href": "/tags/是枝裕和/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作手冊\n4",
+        "href": "/tags/會所工作手冊/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#現象學\n4",
+        "href": "/tags/現象學/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛\n4",
+        "href": "/tags/聆聽疼痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座\n4",
+        "href": "/tags/講座/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#建制民族誌\n3",
+        "href": "/tags/建制民族誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係\n3",
+        "href": "/tags/親密關係/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座心得\n3",
+        "href": "/tags/講座心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#受苦的倒影\n2",
+        "href": "/tags/受苦的倒影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#媽的多重宇宙\n2",
+        "href": "/tags/媽的多重宇宙/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#艾格妮撿風景\n2",
+        "href": "/tags/艾格妮撿風景/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#障礙政治\n2",
+        "href": "/tags/障礙政治/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#Shamless\n1",
+        "href": "/tags/shamless/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家庭會傷人\n1",
+        "href": "/tags/家庭會傷人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#無恥之徒\n1",
+        "href": "/tags/無恥之徒/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係暴力\n1",
+        "href": "/tags/親密關係暴力/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#非暴力溝通\n1",
+        "href": "/tags/非暴力溝通/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n分類總覽\nCATEGORIES · 分類總覽\n聆聽的河流 / 六大主題分類\n\n站內文章先依主分類整理，讓每一篇文字先回到自己的主題脈絡；進入分類後，也可以再沿著標籤繼續往更細的閱讀線索走下去。\n\n196\nPOSTS\nCATEGORIES\n六個主要入口\n分類入口\n01\nREADING & NOTES\n閱讀與筆記\n\n從書摘到電影筆記，整理閱讀之後留下的痕跡。\n\n#書摘\n#閱讀心得\n#電影心得\n91 篇文章\n→\n02\nHELPING PRACTICE\n助人工作\n\n記錄社會工作與對話現場，寫下助人實務的困惑與學習。\n\n#助人工作\n#開放式對話\n#創傷知情\n56 篇文章\n→\n03\nILLNESS & PAIN\n病痛經驗\n\n從疼痛與照護經驗回到身體，書寫受苦如何改變自己。\n\n#病痛經驗\n#聆聽疼痛計畫\n#正念的河流\n27 篇文章\n→\n04\nBECOMING SELF\n成為自己\n\n關於理解自己、辨認情緒、內在連結，以及慢慢回到自己的練習。\n\n#成為一個人\n#正念的河流\n#親密關係\n27 篇文章\n→\n05\nDAILY WRITING\n日常書寫\n\n收納日常感受與觀察，讓零碎經驗慢慢形成生活檔案。\n\n#講座筆記\n#素描\n26 篇文章\n→\n06\nCLUBHOUSE MODEL\n會所模式\n\n以實習、日誌與手冊為主軸，整理會所實務的觀察與方法。\n\n#會所工作日誌\n#會所實習\n#會所工作手冊\n30 篇文章\n→\nHOT TAGS\n手動策展的主題入口\nHot Tags\n#電影心得\n32 篇文章\n#書摘\n28 篇文章\n#閱讀心得\n27 篇文章\n#成為一個人\n14 篇文章\n#助人工作\n18 篇文章\n#開放式對話\n9 篇文章\n#病痛經驗\n5 篇文章\n#創傷知情\n5 篇文章\n#正念的河流\n21 篇文章\nALL TAGS\n依文章數量排序\nAll Tags\n#電影心得\n32\n#會所模式\n30\n#電影\n30\n#書摘\n28\n#閱讀心得\n27\n#正念的河流\n21\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n14\n#素描\n13\n#聆聽疼痛計畫\n12\n#蟹足腫病痛\n11\n#講座筆記\n9\n#開放式對話\n9\n#家族治療\n7\n#會所實習\n7\n#一行禪師\n6\n#凝視與穿越\n5\n#創傷知情\n5\n#午夜福音\n5\n#病痛經驗\n5\n#詩的語言\n5\n#是枝裕和\n4\n#會所工作手冊\n4\n#現象學\n4\n#聆聽疼痛\n4\n#講座\n4\n#建制民族誌\n3\n#親密關係\n3\n#講座心得\n3\n#受苦的倒影\n2\n#媽的多重宇宙\n2\n#艾格妮撿風景\n2\n#障礙政治\n2\n#Shamless\n1\n#人間出口\n1\n#家庭會傷人\n1\n#時間\n1\n#無恥之徒\n1\n#親密關係暴力\n1\n#非暴力溝通\n1",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "daily",
+    "path": "/categories/日常書寫/",
+    "title": "日常書寫 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "日常書寫"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "分類總覽",
+        "href": "https://listenriver.com/categories/",
+        "class": ""
+      },
+      {
+        "text": "#電影心得\n1",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#正念的河流\n1",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#現象學\n1",
+        "href": "/tags/現象學/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#講座心得\n1",
+        "href": "/tags/講座心得/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "閱讀與筆記\n91",
+        "href": "/categories/閱讀與筆記/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "助人工作\n56",
+        "href": "/categories/助人工作/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "病痛經驗\n27",
+        "href": "/categories/病痛經驗/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "成為自己\n27",
+        "href": "/categories/成為自己/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "日常書寫\n26",
+        "href": "/categories/日常書寫/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "整理書櫃有感",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "網頁架設學習歷程",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "蜷縮、停滯、暗之惡魔",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "整理書櫃有感",
+        "href": "/blog/日常書寫/整理書櫃有感/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "網頁架設學習歷程",
+        "href": "/blog/日常書寫/網頁架設學習歷程/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "蜷縮、停滯、暗之惡魔",
+        "href": "/blog/日常書寫/蜷縮停滯暗之惡魔/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/13實在感/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/13實在感/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描13：實在感",
+        "href": "/blog/素描/13實在感/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/12人臉/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/12人臉/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描12：人臉",
+        "href": "/blog/素描/12人臉/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/11補捉場景/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/11補捉場景/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描11：場景、參考線、定位點",
+        "href": "/blog/素描/11補捉場景/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/10編織的素描/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/10編織的素描/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描10：排線、調子、線條作為語法",
+        "href": "/blog/素描/10編織的素描/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/09捏陶的素描/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/blog/素描/09捏陶的素描/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "素描09：成型素描、土的素描、雕塑的素描",
+        "href": "/blog/素描/09捏陶的素描/",
+        "class": ""
+      },
+      {
+        "text": "2",
+        "href": "/categories/日常書寫/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "3",
+        "href": "/categories/日常書寫/page/3/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "4",
+        "href": "/categories/日常書寫/page/4/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "下一頁",
+        "href": "/categories/日常書寫/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n分類總覽\n/\n日常書寫\nCATEGORY\n26 篇文章\n日常書寫\n從生活觀察到偶然的情緒碎片，保存那些不一定被分類完成的日常時刻。\n#電影心得\n1\n#正念的河流\n1\n#素描\n13\n#現象學\n1\n#講座心得\n1\n#人間出口\n1\n#時間\n1\n閱讀地圖\n閱讀與筆記\n91\n助人工作\n56\n病痛經驗\n27\n成為自己\n27\n日常書寫\n26\n推薦閱讀\n先讀這幾篇\n\n從這個分類中挑出近期值得先看的文章，作為進入主題的起點。\n\n整理書櫃有感\n生活在科技發達的時代，隨手上網或詢問AI就可以馬上獲取知識解答，不像是過去要好好了解一件事，通過閱讀的方式細細品嚐，知識變得像速食一樣，吃多了就發現味道都一樣，速成、解答、滿足 …\n2026.03.08\n1 分鐘閱讀\n網頁架設學習歷程\n生日這天過得如日常般幸福，但很想分享個人網站作為成果發表。我終於順利把網站從wenyang0223.github.io搬家到 http://listenriver.com ，並 …\n2026.02.23\n3 分鐘閱讀\n蜷縮、停滯、暗之惡魔\n黑暗中，我覺得自己處於社交退縮的狀態，疤痕的療效一直碰到瓶頸，我感到徬徨無助，與人見面還是感到有些壓力或不自在，於是就這樣封閉自己？我覺得這當然不是什麼健康的作法，可是我該怎麼 …\n2024.08.30\n1 分鐘閱讀\n全部文章\n全部文章\n\n依年份與時間排序瀏覽這個分類中的文章，每頁顯示 8 篇。\n\n2026 2 篇\n03.08\n1 分鐘\n整理書櫃有感\n02.23\n3 分鐘\n網頁架設學習歷程\n2024 1 篇\n08.30\n1 分鐘\n蜷縮、停滯、暗之惡魔\n2022 5 篇\n12.07\n2 分鐘\n素描13：實在感\n09.21\n2 分鐘\n素描12：人臉\n09.07\n2 分鐘\n素描11：場景、參考線、定位點\n09.03\n2 分鐘\n素描10：排線、調子、線條作為語法\n08.17\n1 分鐘\n素描09：成型素描、土的素描、雕塑的素描\n第 1 / 4 頁，共 26 篇文章\n1\n2\n3\n4\n下一頁",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "helping",
+    "path": "/categories/助人工作/",
+    "title": "助人工作 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "助人工作"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "分類總覽",
+        "href": "https://listenriver.com/categories/",
+        "class": ""
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#成為一個人\n2",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#蟹足腫病痛\n1",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#講座筆記\n5",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#開放式對話\n8",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-category-topics__item"
+      },
+      {
+        "text": "閱讀與筆記\n91",
+        "href": "/categories/閱讀與筆記/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "助人工作\n56",
+        "href": "/categories/助人工作/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "病痛經驗\n27",
+        "href": "/categories/病痛經驗/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "成為自己\n27",
+        "href": "/categories/成為自己/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "日常書寫\n26",
+        "href": "/categories/日常書寫/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作手冊05_沉住氣的重要",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作日誌19_身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作手冊04_以靜制動",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊05_沉住氣的重要",
+        "href": "/clubhouse/會所工作手冊/05忍不住氣不過沉住氣/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌19_身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊04_以靜制動",
+        "href": "/clubhouse/會所工作手冊/04以靜制動/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌18_保持真誠好奇、找出盲點、默默推進",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌16_你想要什麼樣的支持",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌15_認真回應會員動力",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌14_強迫症、重複檢查的意義、安全感",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": ""
+      },
+      {
+        "text": "2",
+        "href": "/categories/助人工作/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "3",
+        "href": "/categories/助人工作/page/3/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "4",
+        "href": "/categories/助人工作/page/4/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "5",
+        "href": "/categories/助人工作/page/5/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "6",
+        "href": "/categories/助人工作/page/6/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "7",
+        "href": "/categories/助人工作/page/7/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "下一頁",
+        "href": "/categories/助人工作/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n分類總覽\n/\n助人工作\nCATEGORY\n56 篇文章\n助人工作\n助人工作的實踐與反思，涵蓋會所、創傷知情、開放式對話與制度現場中的工作經驗。\n#會所模式\n30\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n2\n#蟹足腫病痛\n1\n#講座筆記\n5\n#開放式對話\n8\n#會所實習\n7\n閱讀地圖\n閱讀與筆記\n91\n助人工作\n56\n病痛經驗\n27\n成為自己\n27\n日常書寫\n26\n推薦閱讀\n先讀這幾篇\n\n從這個分類中挑出近期值得先看的文章，作為進入主題的起點。\n\n#會所工作手冊\n會所工作手冊05_沉住氣的重要\n當我拿出真誠跟會員建立關係互動、不斷強調我們彼此的相同之處時，創造了信任關係。可是走到某一天，發現會員始終有他的習性、他的家庭、文化、階級等，你會知道彼此仍然有不同的地方，仍然 …\n2026.08.19\n3 分鐘閱讀\n#會所模式\n會所工作日誌19_身心狀態留下的痕跡\n套一句票亮昨天說的，我們都是能量體，會留下「能量的痕跡」。身心狀態亦是如此，身體狀態是心理留下的痕跡，心理狀態是身體留下的痕跡，兩者是緊密一體的，彼此互相影響，甚至存在代償的關 …\n2026.07.23\n2 分鐘閱讀\n#會所工作手冊\n會所工作手冊04_以靜制動\n人與人之間總是在一連串反應中發生，我反應你的反應、你又反應，接連不斷下去。對我來說，以靜制動意味著先看清楚自己的反應、先看清楚現場，先不急著去反應和行動，觀察更清楚再行動也行。 …\n2026.05.23\n3 分鐘閱讀\n全部文章\n全部文章\n\n依年份與時間排序瀏覽這個分類中的文章，每頁顯示 8 篇。\n\n2026 8 篇\n08.19\n3 分鐘\n會所工作手冊05_沉住氣的重要\n07.23\n2 分鐘\n會所工作日誌19_身心狀態留下的痕跡\n05.23\n3 分鐘\n會所工作手冊04_以靜制動\n05.15\n2 分鐘\n會所工作日誌18_保持真誠好奇、找出盲點、默默推進\n05.08\n2 分鐘\n會所工作手冊\n04.16\n3 分鐘\n會所工作日誌16_你想要什麼樣的支持\n04.08\n3 分鐘\n會所工作日誌15_認真回應會員動力\n04.02\n3 分鐘\n會所工作日誌14_強迫症、重複檢查的意義、安全感\n第 1 / 7 頁，共 56 篇文章\n1\n2\n3\n4\n5\n6\n7\n下一頁",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "clubhouse",
+    "path": "/clubhouse/",
+    "title": "會所模式 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "會所模式"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "助人工作（all）\n56",
+        "href": "/categories/助人工作/",
+        "class": "mobile-nav-sub-link mobile-nav-sub-link-parent"
+      },
+      {
+        "text": "開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "mobile-nav-sub-link"
+      },
+      {
+        "text": "創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "mobile-nav-sub-link"
+      },
+      {
+        "text": "家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "mobile-nav-sub-link"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "會所工作手冊\n4",
+        "href": "/clubhouse/會所工作手冊/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "會所工作日誌\n19",
+        "href": "/clubhouse/會所工作日誌/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "會所實習\n7",
+        "href": "/clubhouse/會所實習/",
+        "class": "taxonomy-category-mobile-map__item"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所實習01_初入會所的觀察",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所工作手冊01_慾望、驅力、動力",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-feature-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-feature-card__media"
+      },
+      {
+        "text": "會所實習02_幻聽與疼痛是不可見的受苦",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/06如實/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/06如實/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習06_如實",
+        "href": "/clubhouse/會所實習/06如實/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/05與會員h訂計畫/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/05與會員h訂計畫/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習05_與會員H訂計畫",
+        "href": "/clubhouse/會所實習/05與會員h訂計畫/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/04承認無知真誠表達與夥伴關係/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/04承認無知真誠表達與夥伴關係/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習04_承認無知、真誠表達與夥伴關係",
+        "href": "/clubhouse/會所實習/04承認無知真誠表達與夥伴關係/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/03期中實習結束/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/03期中實習結束/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習03_期中實習結束",
+        "href": "/clubhouse/會所實習/03期中實習結束/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/02為自己做決定即是成為自己/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/02為自己做決定即是成為自己/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊02_為自己做決定即是成為自己",
+        "href": "/clubhouse/會所工作手冊/02為自己做決定即是成為自己/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習02_幻聽與疼痛是不可見的受苦",
+        "href": "/clubhouse/會所實習/02幻聽與疼痛是不可見的受苦/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊01_慾望、驅力、動力",
+        "href": "/clubhouse/會所工作手冊/01慾望驅力動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所實習01_初入會所的觀察",
+        "href": "/clubhouse/會所實習/01初入會所的觀察/",
+        "class": ""
+      },
+      {
+        "text": "2",
+        "href": "/clubhouse/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "3",
+        "href": "/clubhouse/page/3/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "4",
+        "href": "/clubhouse/page/4/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "下一頁",
+        "href": "/clubhouse/page/2/",
+        "class": "taxonomy-pagination__link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n會所模式\nCATEGORY\n30 篇文章\n會所模式\n以會所為核心，整理復元理念、會所介紹與社會工作實踐相關文章。\n#會所模式\n30\n#會所工作日誌\n19\n#成為一個人\n2\n#會所實習\n7\n#會所工作手冊\n4\n閱讀地圖\n會所工作手冊\n4\n會所工作日誌\n19\n會所實習\n7\n推薦閱讀\n先讀這幾篇\n\n從這個分類中挑出近期值得先看的文章，作為進入主題的起點。\n\n#會所實習\n會所實習01_初入會所的觀察\n會所營造的團體動力、夥伴協作關係都有深奧的智慧和意義，這些意義指出了人際關係、情緒、界線、能力、超越性、民主、參與等重要議題，並且也更根本地指出，作為一個助人工作者該如何建立助 …\n2023.03.14\n3 分鐘閱讀\n#會所工作手冊\n會所工作手冊01_慾望、驅力、動力\n在人與人的關係中，慾望也是必須被看見的。人際關係一不小心就淪為他者化的獨白，為了追求平等的對話關係，除了尊重他異性之外，肯認自己的慾望也是一個關鍵。究竟內心深處想要的是什麼？帶 …\n2023.03.25\n3 分鐘閱讀\n#會所實習\n會所實習02_幻聽與疼痛是不可見的受苦\n這讓我感到有點豁然開朗，似乎真的能夠這樣說的通。也就是說，幻聽和疼痛真的有類似的特性，同樣的不可見、難以描述、依賴語言、需要向這個世界證明、一種內在的受苦經驗，把我過去對疼痛的 …\n2023.05.16\n3 分鐘閱讀\n全部文章\n全部文章\n\n依年份與時間排序瀏覽這個分類中的文章，每頁顯示 8 篇。\n\n2023 8 篇\n07.24\n2 分鐘\n會所實習06_如實\n07.16\n5 分鐘\n會所實習05_與會員H訂計畫\n07.14\n5 分鐘\n會所實習04_承認無知、真誠表達與夥伴關係\n07.05\n4 分鐘\n會所實習03_期中實習結束\n05.27\n5 分鐘\n會所工作手冊02_為自己做決定即是成為自己\n05.16\n3 分鐘\n會所實習02_幻聽與疼痛是不可見的受苦\n03.25\n3 分鐘\n會所工作手冊01_慾望、驅力、動力\n03.14\n3 分鐘\n會所實習01_初入會所的觀察\n第 1 / 4 頁，共 30 篇文章\n1\n2\n3\n4\n下一頁",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "journal",
+    "path": "/clubhouse/會所工作日誌/",
+    "title": "會所工作日誌 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "會所工作日誌"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "會所模式",
+        "href": "https://listenriver.com/clubhouse/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌19_身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌18_保持真誠好奇、找出盲點、默默推進",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作手冊",
+        "href": "/clubhouse/會所工作日誌/17將言語視為符號/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌16_你想要什麼樣的支持",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌15_認真回應會員動力",
+        "href": "/clubhouse/會所工作日誌/15認真回應會員動力/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌14_強迫症、重複檢查的意義、安全感",
+        "href": "/clubhouse/會所工作日誌/14強迫症的意義/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌13_初次社區宣導",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌12_餐飲部當然不只是料理",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/11敘事的見證/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/11敘事的見證/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌11_敘事的見證",
+        "href": "/clubhouse/會所工作日誌/11敘事的見證/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/10料理是行動是對話/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/10料理是行動是對話/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌10_料理是行動、是對話",
+        "href": "/clubhouse/會所工作日誌/10料理是行動是對話/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/09不敢說借過的會員/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/09不敢說借過的會員/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌09_不敢說借過的會員",
+        "href": "/clubhouse/會所工作日誌/09不敢說借過的會員/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/08推動會員帶開會與導覽部門/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/08推動會員帶開會與導覽部門/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌08_推動會員帶開會與導覽部門",
+        "href": "/clubhouse/會所工作日誌/08推動會員帶開會與導覽部門/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/07白板溝通/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/07白板溝通/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌07_白板溝通",
+        "href": "/clubhouse/會所工作日誌/07白板溝通/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/06複雜用藥下改變如何發生/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/06複雜用藥下改變如何發生/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌06_複雜用藥下，改變如何發生??",
+        "href": "/clubhouse/會所工作日誌/06複雜用藥下改變如何發生/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/05兩週就業訓練反思/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/05兩週就業訓練反思/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌05_就業訓練反思",
+        "href": "/clubhouse/會所工作日誌/05兩週就業訓練反思/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/04就業前準備/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/04就業前準備/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌04_就業前準備",
+        "href": "/clubhouse/會所工作日誌/04就業前準備/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/03回顧會員f來會所的學習/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/03回顧會員f來會所的學習/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌03_回顧會員F來會所的學習",
+        "href": "/clubhouse/會所工作日誌/03回顧會員f來會所的學習/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/02緊握垃圾的力道/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/02緊握垃圾的力道/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌02_緊握垃圾的力道",
+        "href": "/clubhouse/會所工作日誌/02緊握垃圾的力道/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": "taxonomy-story-card__link"
+      },
+      {
+        "text": "",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": "taxonomy-story-card__media"
+      },
+      {
+        "text": "會所工作日誌01_工作一個月",
+        "href": "/clubhouse/會所工作日誌/01工作一個月/",
+        "class": ""
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n會所模式\n/\n會所工作日誌\nCLUBHOUSE\n會所工作日誌\nSECTION READING\n本區文章\n會所工作日誌\n19 篇\n07.23\n2 分鐘\n會所工作日誌19_身心狀態留下的痕跡\n05.15\n2 分鐘\n會所工作日誌18_保持真誠好奇、找出盲點、默默推進\n05.08\n2 分鐘\n會所工作手冊\n04.16\n3 分鐘\n會所工作日誌16_你想要什麼樣的支持\n04.08\n3 分鐘\n會所工作日誌15_認真回應會員動力\n04.02\n3 分鐘\n會所工作日誌14_強迫症、重複檢查的意義、安全感\n03.22\n1 分鐘\n會所工作日誌13_初次社區宣導\n03.09\n1 分鐘\n會所工作日誌12_餐飲部當然不只是料理\n03.04\n1 分鐘\n會所工作日誌11_敘事的見證\n02.13\n3 分鐘\n會所工作日誌10_料理是行動、是對話\n11.18\n2 分鐘\n會所工作日誌09_不敢說借過的會員\n11.11\n1 分鐘\n會所工作日誌08_推動會員帶開會與導覽部門\n10.22\n1 分鐘\n會所工作日誌07_白板溝通\n10.01\n2 分鐘\n會所工作日誌06_複雜用藥下，改變如何發生??\n09.26\n3 分鐘\n會所工作日誌05_就業訓練反思\n09.16\n1 分鐘\n會所工作日誌04_就業前準備\n09.11\n1 分鐘\n會所工作日誌03_回顧會員F來會所的學習\n09.10\n3 分鐘\n會所工作日誌02_緊握垃圾的力道\n08.29\n4 分鐘\n會所工作日誌01_工作一個月",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "tags",
+    "path": "/tags/",
+    "title": "標籤總覽 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "主題總覽"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "TAG\n#閱讀心得\n\n閱讀心得｜《障礙政治》\n\n27 篇文章\n滑動閱讀",
+        "href": "/tags/閱讀心得/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#會所模式\n\n會所工作手冊05_沉住氣的重要\n\n30 篇文章\n滑動閱讀",
+        "href": "/tags/會所模式/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#開放式對話\n\n對話本身就是行動\n\n9 篇文章\n滑動閱讀",
+        "href": "/tags/開放式對話/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#成為一個人\n\n真實做自己的自由：在凝視中看見的仍是自己\n\n14 篇文章\n滑動閱讀",
+        "href": "/tags/成為一個人/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#病痛經驗\n\n定期回診\n\n5 篇文章\n滑動閱讀",
+        "href": "/tags/病痛經驗/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#助人工作\n\n過道、渡者、苦難工作者\n\n18 篇文章\n滑動閱讀",
+        "href": "/tags/助人工作/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#電影心得\n\n《綠洲》電影心得\n\n32 篇文章\n滑動閱讀",
+        "href": "/tags/電影心得/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "TAG\n#正念的河流\n\n正念的意義就在手中\n\n21 篇文章\n滑動閱讀",
+        "href": "/tags/正念的河流/",
+        "class": "home-tag-card__link"
+      },
+      {
+        "text": "#電影心得\n32",
+        "href": "/tags/電影心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所模式\n30",
+        "href": "/tags/會所模式/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#電影\n30",
+        "href": "/tags/電影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#書摘\n28",
+        "href": "/tags/書摘/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#閱讀心得\n27",
+        "href": "/tags/閱讀心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#正念的河流\n21",
+        "href": "/tags/正念的河流/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作日誌\n19",
+        "href": "/tags/會所工作日誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#助人工作\n18",
+        "href": "/tags/助人工作/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#成為一個人\n14",
+        "href": "/tags/成為一個人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#素描\n13",
+        "href": "/tags/素描/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛計畫\n12",
+        "href": "/tags/聆聽疼痛計畫/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#蟹足腫病痛\n11",
+        "href": "/tags/蟹足腫病痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座筆記\n9",
+        "href": "/tags/講座筆記/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#開放式對話\n9",
+        "href": "/tags/開放式對話/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家族治療\n7",
+        "href": "/tags/家族治療/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所實習\n7",
+        "href": "/tags/會所實習/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#一行禪師\n6",
+        "href": "/tags/一行禪師/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#凝視與穿越\n5",
+        "href": "/tags/凝視與穿越/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#創傷知情\n5",
+        "href": "/tags/創傷知情/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#午夜福音\n5",
+        "href": "/tags/午夜福音/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#病痛經驗\n5",
+        "href": "/tags/病痛經驗/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#詩的語言\n5",
+        "href": "/tags/詩的語言/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#是枝裕和\n4",
+        "href": "/tags/是枝裕和/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#會所工作手冊\n4",
+        "href": "/tags/會所工作手冊/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#現象學\n4",
+        "href": "/tags/現象學/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#聆聽疼痛\n4",
+        "href": "/tags/聆聽疼痛/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座\n4",
+        "href": "/tags/講座/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#建制民族誌\n3",
+        "href": "/tags/建制民族誌/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係\n3",
+        "href": "/tags/親密關係/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#講座心得\n3",
+        "href": "/tags/講座心得/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#受苦的倒影\n2",
+        "href": "/tags/受苦的倒影/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#媽的多重宇宙\n2",
+        "href": "/tags/媽的多重宇宙/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#艾格妮撿風景\n2",
+        "href": "/tags/艾格妮撿風景/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#障礙政治\n2",
+        "href": "/tags/障礙政治/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#Shamless\n1",
+        "href": "/tags/shamless/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#人間出口\n1",
+        "href": "/tags/人間出口/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#家庭會傷人\n1",
+        "href": "/tags/家庭會傷人/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#時間\n1",
+        "href": "/tags/時間/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#無恥之徒\n1",
+        "href": "/tags/無恥之徒/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#親密關係暴力\n1",
+        "href": "/tags/親密關係暴力/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "#非暴力溝通\n1",
+        "href": "/tags/非暴力溝通/",
+        "class": "taxonomy-landing-tag-link"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n主題總覽\nTAGS\n主題總覽\n用熱門標籤與全部關鍵字索引，快速找到同一條主題線上的文章。\n\n這裡整理站內常用的標籤。分類用來建立閱讀脈絡，標籤則用來追蹤更細的主題與關鍵字。\n\nPOPULAR\n常用主題\n\n先看站內最常出現的主題標籤，快速掌握內容重心。\n\nTAG\n#閱讀心得\n\n閱讀心得｜《障礙政治》\n\n27 篇文章\n滑動閱讀\nTAG\n#會所模式\n\n會所工作手冊05_沉住氣的重要\n\n30 篇文章\n滑動閱讀\nTAG\n#開放式對話\n\n對話本身就是行動\n\n9 篇文章\n滑動閱讀\nTAG\n#成為一個人\n\n真實做自己的自由：在凝視中看見的仍是自己\n\n14 篇文章\n滑動閱讀\nTAG\n#病痛經驗\n\n定期回診\n\n5 篇文章\n滑動閱讀\nTAG\n#助人工作\n\n過道、渡者、苦難工作者\n\n18 篇文章\n滑動閱讀\nTAG\n#電影心得\n\n《綠洲》電影心得\n\n32 篇文章\n滑動閱讀\nTAG\n#正念的河流\n\n正念的意義就在手中\n\n21 篇文章\n滑動閱讀\nBY COUNT\n全部主題\n\n依文章數量排序，快速看見站內最常延伸的閱讀線索。\n\n#電影心得\n32\n#會所模式\n30\n#電影\n30\n#書摘\n28\n#閱讀心得\n27\n#正念的河流\n21\n#會所工作日誌\n19\n#助人工作\n18\n#成為一個人\n14\n#素描\n13\n#聆聽疼痛計畫\n12\n#蟹足腫病痛\n11\n#講座筆記\n9\n#開放式對話\n9\n#家族治療\n7\n#會所實習\n7\n#一行禪師\n6\n#凝視與穿越\n5\n#創傷知情\n5\n#午夜福音\n5\n#病痛經驗\n5\n#詩的語言\n5\n#是枝裕和\n4\n#會所工作手冊\n4\n#現象學\n4\n#聆聽疼痛\n4\n#講座\n4\n#建制民族誌\n3\n#親密關係\n3\n#講座心得\n3\n#受苦的倒影\n2\n#媽的多重宇宙\n2\n#艾格妮撿風景\n2\n#障礙政治\n2\n#Shamless\n1\n#人間出口\n1\n#家庭會傷人\n1\n#時間\n1\n#無恥之徒\n1\n#親密關係暴力\n1\n#非暴力溝通\n1",
+    "filters": 0
+  },
+  {
+    "width": 390,
+    "name": "search",
+    "path": "/search/?q=會所工作日誌",
+    "title": "搜尋 | 聆聽的河流｜閱讀・書寫・心理・社工",
+    "h1": [
+      "搜尋"
+    ],
+    "overflow": false,
+    "visibleLinks": [
+      {
+        "text": "聆聽的河流",
+        "href": "/",
+        "class": "header-brand header-brand-text personal-header__brand"
+      },
+      {
+        "text": "",
+        "href": "/",
+        "class": "header-icon-button header-home-link"
+      },
+      {
+        "text": "",
+        "href": "/about/",
+        "class": "header-icon-button header-about-link"
+      },
+      {
+        "text": "搜尋站內文章、分類與主題",
+        "href": "/search/",
+        "class": "mobile-nav-search-entry"
+      },
+      {
+        "text": "首頁",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "你想要什麼樣的支持",
+        "href": "/clubhouse/會所工作日誌/16你想要什麼樣的支持/",
+        "class": "pagefind-ui__result-link svelte-j9e30"
+      },
+      {
+        "text": "身心狀態留下的痕跡",
+        "href": "/clubhouse/會所工作日誌/19身心狀態留下的痕跡/",
+        "class": "pagefind-ui__result-link svelte-j9e30"
+      },
+      {
+        "text": "初次社區宣導",
+        "href": "/clubhouse/會所工作日誌/13初次社區宣導/",
+        "class": "pagefind-ui__result-link svelte-j9e30"
+      },
+      {
+        "text": "餐飲部當然不只是料理",
+        "href": "/clubhouse/會所工作日誌/12餐飲部當然不只是料理/",
+        "class": "pagefind-ui__result-link svelte-j9e30"
+      },
+      {
+        "text": "保持真誠好奇、找出盲點、默默推進",
+        "href": "/clubhouse/會所工作日誌/18保持真誠好奇/",
+        "class": "pagefind-ui__result-link svelte-j9e30"
+      },
+      {
+        "text": "聆聽的河流｜閱讀・書寫・心理・社工",
+        "href": "https://listenriver.com/",
+        "class": ""
+      },
+      {
+        "text": "Hugo",
+        "href": "https://gohugo.io/",
+        "class": ""
+      },
+      {
+        "text": "PaperMod",
+        "href": "https://github.com/adityatelange/hugo-PaperMod/",
+        "class": ""
+      },
+      {
+        "text": "",
+        "href": "#top",
+        "class": "top-link"
+      }
+    ],
+    "mainText": "首頁\n/\n搜尋\nSEARCH\n搜尋\n搜尋站內文章、分類與主題標籤。\n清除\n\n9 筆結果\n\n你想要什麼樣的支持\n\n助人工作 會所工作日誌 16 #會所模式 #會所工作日誌. 你想要什麼樣的支持. 2026年04\n\n身心狀態留下的痕跡\n\n助人工作 會所工作日誌 19 #會所模式 #會所工作日誌. 身心狀態留下的痕跡. 2026年07\n\n初次社區宣導\n\n助人工作 會所工作日誌 13 #會所模式 #會所工作日誌. 初次社區宣導. 2026年03月22\n\n餐飲部當然不只是料理\n\n助人工作 會所工作日誌 12 #會所模式 #會所工作日誌. 餐飲部當然不只是料理. 2026年\n\n保持真誠好奇、找出盲點、默默推進\n\n助人工作 會所工作日誌 18 #會所模式 #會所工作日誌. 保持真誠好奇、找出盲點、默默推\n\n載入更多",
+    "filters": 0
+  }
+]

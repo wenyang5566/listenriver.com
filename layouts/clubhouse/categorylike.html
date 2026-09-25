@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{- $pages := sort .RegularPagesRecursive "Date" "desc" | collections.Reverse -}}
+{{- $pages := sort .RegularPagesRecursive "Date" "desc" -}}
 {{- $featured := first 3 $pages -}}
 {{- $sectionItems := slice -}}
 {{- range .Sections.ByTitle -}}

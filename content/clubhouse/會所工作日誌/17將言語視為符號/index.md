@@ -1,5 +1,5 @@
 ---
-title: 會所工作手冊
+title: 會所工作日誌17_將言語視為符號
 displayTitle: 將言語視為符號
 seriesLabel: 會所工作日誌 17
 date: 2026-05-08

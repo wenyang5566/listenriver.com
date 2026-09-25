@@ -1,0 +1,2 @@
+{{- /* One published article collection for the archive, latest posts, and total. */ -}}
+{{- return (where site.RegularPages "Section" "in" (slice "blog" "clubhouse")).ByDate.Reverse -}}

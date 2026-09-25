@@ -7,7 +7,7 @@
   {{- $cardConfigs := index $landing "categoryCards" | default (slice) -}}
   {{- $hotTagNames := index $landing "hotTags" | default (slice) -}}
   {{- $fallbackImage := site.Params.salonDefaultCover | relURL -}}
-  {{- $totalPosts := len (where site.RegularPages "Section" "blog") -}}
+  {{- $totalPosts := len (partial "article-pages.html" .) -}}
   {{- $categoryCards := slice -}}
 
   {{- range $cardConfigs -}}
