@@ -8,7 +8,7 @@ categoryCards:
     source:
       kind: category
       name: 閱讀與筆記
-    description: 從書摘到電影筆記，整理閱讀之後留下的痕跡。
+    description: 讀書、看電影、聽講座，我把喜歡的段落和自己的心得留下來，也想和你分享。
     tags:
       - 書摘
       - 閱讀心得
@@ -25,7 +25,7 @@ categoryCards:
     cover:
       src: /blog/助人工作/受苦的倒影/《受苦的倒影》新書講座.jpg
       alt: 《受苦的倒影》新書講座現場
-    description: 記錄社會工作與對話現場，寫下助人實務的困惑與學習。
+    description: 我還在學習怎麼理解一個人、怎麼陪伴，把課堂與工作裡的嘗試和困惑寫下來。
     tags:
       - 助人工作
       - 開放式對話
@@ -42,7 +42,7 @@ categoryCards:
     cover:
       src: /blog/病痛經驗/定期回診/定期回診.jpg
       alt: 定期回診藥單
-    description: 從疼痛與照護經驗回到身體，書寫受苦如何改變自己。
+    description: 我試著說出自己的疼痛，也想聽聽別人怎麼經歷。寫下病痛、回診，和難以說清楚的感受。
     tags:
       - 病痛經驗
       - 聆聽疼痛計畫
@@ -56,7 +56,7 @@ categoryCards:
     source:
       kind: category
       name: 成為自己
-    description: 關於理解自己、辨認情緒、內在連結，以及慢慢回到自己的練習。
+    description: 想與人靠近，也想好好成為自己。我把情緒、關係與選擇裡的拉扯，慢慢寫下來。
     tags:
       - 成為一個人
       - 正念的河流
@@ -70,7 +70,7 @@ categoryCards:
     source:
       kind: category
       name: 日常書寫
-    description: 收納日常感受與觀察，讓零碎經驗慢慢形成生活檔案。
+    description: 生活裡有些事情，讓我忽然想寫點什麼。心情、靈感，還有畫畫時想到的事，都留在這裡。
     tags:
       - 講座筆記
       - 素描
@@ -83,7 +83,7 @@ categoryCards:
     source:
       kind: tag
       name: 會所模式
-    description: 以實習、日誌與手冊為主軸，整理會所實務的觀察與方法。
+    description: 在會所，我和會員一起做事，也重新理解助人關係。從實習到工作的紀錄，都放在這裡。
     tags:
       - 會所工作日誌
       - 會所實習

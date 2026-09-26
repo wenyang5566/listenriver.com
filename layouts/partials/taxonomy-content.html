@@ -490,14 +490,14 @@
       <div>
         {{- partial "breadcrumbs.html" . -}}
         <span class="taxonomy-landing-hero__eyebrow">Categories · 分類總覽</span>
-        <h1>聆聽的河流 / 六大主題分類</h1>
+        <h1>聆聽的河流 / 分類總覽</h1>
         <div class="taxonomy-landing-hero__description">
-          <p>站內文章先依主分類整理，讓每一篇文字先回到自己的主題脈絡；進入分類後，也可以再沿著標籤繼續往更細的閱讀線索走下去。</p>
+          {{ .Content }}
         </div>
       </div>
       <div class="taxonomy-landing-hero__stat" aria-label="總文章數">
         <span class="taxonomy-landing-hero__stat-number">{{ $totalPosts }}</span>
-        <span class="taxonomy-landing-hero__stat-label">Posts</span>
+        <span class="taxonomy-landing-hero__stat-label">全站文章（含會所）</span>
       </div>
     </header>
 
@@ -505,7 +505,7 @@
       <div class="taxonomy-landing-section__head">
         <span class="taxonomy-landing-section__eyebrow">Categories</span>
         <span class="taxonomy-landing-section__line"></span>
-        <span class="taxonomy-landing-section__title-note">六個主要入口</span>
+        <span class="taxonomy-landing-section__title-note">五個書寫方向與會所專區</span>
       </div>
       <div id="taxonomy-landing-categories-title" class="sr-only">分類入口</div>
       <div class="taxonomy-landing-category-grid">
@@ -546,7 +546,7 @@
       <div class="taxonomy-landing-section__head">
         <span class="taxonomy-landing-section__eyebrow">Hot Tags</span>
         <span class="taxonomy-landing-section__line"></span>
-        <span class="taxonomy-landing-section__title-note">手動策展的主題入口</span>
+        <span class="taxonomy-landing-section__title-note">沿著主題，跨分類閱讀</span>
       </div>
       <div id="taxonomy-landing-hot-tags-title" class="sr-only">Hot Tags</div>
       <div class="taxonomy-landing-hot-grid">
@@ -1334,7 +1334,7 @@
         line-height: 1.75;
       }
       .taxonomy-category-hero__content {
-        display: none;
+        display: block;
       }
       .taxonomy-category-topics {
         flex-wrap: nowrap;
@@ -1586,13 +1586,14 @@
           </div>
           {{- end }}
           {{- if gt (len $heroTopics) 0 }}
-          <div class="taxonomy-category-topics" aria-label="{{ .Title }} 相關主題">
+          <div class="taxonomy-category-hero__description"><p>標籤旁是本類篇數；點入後可讀全站同標籤的文章。</p></div>
+          <div class="taxonomy-category-topics" aria-label="{{ .Title }} 跨分類延伸標籤，本類篇數">
             {{- range $heroTopics -}}
               {{- $topicCount := .count -}}
               {{- with .page -}}
               <a class="taxonomy-category-topics__item" href="{{ .RelPermalink }}">
                 <span>#{{ .Title }}</span>
-                <span class="taxonomy-category-topics__count">{{ $topicCount }}</span>
+                <span class="taxonomy-category-topics__count">本類 {{ $topicCount }}</span>
               </a>
               {{- end -}}
             {{- end -}}
@@ -1618,7 +1619,7 @@
         <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-category-map-title">
           <span class="taxonomy-sidebar-panel__eyebrow">閱讀地圖</span>
           <h3 id="taxonomy-category-map-title">其他主分類</h3>
-          <p>沿著站內五大分類切換閱讀路徑。</p>
+          <p>換一個書寫方向，讀讀其他經驗。</p>
           <ul class="taxonomy-sidebar-links">
             {{- range $item := $categoryItems -}}
               {{- with $item.page -}}
@@ -1637,7 +1638,7 @@
         <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-topic-index-title">
           <span class="taxonomy-sidebar-panel__eyebrow">Topic Index</span>
           <h3 id="taxonomy-topic-index-title">{{ .Title }}相關主題</h3>
-          <p>從標籤切入更細的閱讀線索。</p>
+          <p>數字是本類篇數；點入標籤可讀到全站相關文章。</p>
           <ul class="taxonomy-sidebar-links">
             {{- range $sidebarTopics -}}
               <li>
@@ -1661,7 +1662,7 @@
             <div>
               <span class="taxonomy-series-panel__eyebrow">Series</span>
               <h2 id="taxonomy-series-title">{{ .Title }}</h2>
-              <p>整理疼痛訪談、投稿與計畫成果，作為病痛經驗中的專題入口；個人病痛、蟹足腫與回診書寫則保留在下方主列表。</p>
+              <p>從聆聽自己的疼痛，到聆聽他人的經驗。這裡整理計畫的訪談、投稿與成果；我的病痛與就醫書寫，則列在下方。</p>
             </div>
             <a class="taxonomy-series-panel__link" href="{{ .RelPermalink }}">
               <span>閱讀系列</span>
@@ -1676,10 +1677,10 @@
         <section class="taxonomy-category-section taxonomy-featured" aria-labelledby="taxonomy-featured-title">
           <div class="taxonomy-category-section__heading">
             <div>
-              <span class="taxonomy-category-section__eyebrow">推薦閱讀</span>
-              <h2 id="taxonomy-featured-title">先讀這幾篇</h2>
+              <span class="taxonomy-category-section__eyebrow">最近更新</span>
+              <h2 id="taxonomy-featured-title">{{ if $isPainCategory }}最近的個人書寫{{ else }}最近的文章{{ end }}</h2>
             </div>
-            <p class="taxonomy-category-section__note">從這個分類中挑出近期值得先看的文章，作為進入主題的起點。</p>
+            <p class="taxonomy-category-section__note">{{ if $isPainCategory }}依日期列出最近的個人病痛書寫。{{ else }}依日期列出這個分類最近的文章。{{ end }}</p>
           </div>
           <div class="taxonomy-featured-grid">
             {{- range $idx, $page := $featured -}}
@@ -1754,10 +1755,10 @@
         <section class="taxonomy-category-section taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
           <div class="taxonomy-category-section__heading">
             <div>
-              <span class="taxonomy-category-section__eyebrow">全部文章</span>
-              <h2 id="taxonomy-article-list-title">全部文章</h2>
+              <span class="taxonomy-category-section__eyebrow">按時間閱讀</span>
+              <h2 id="taxonomy-article-list-title">{{ if $isPainCategory }}個人病痛書寫{{ else }}全部文章{{ end }}</h2>
             </div>
-            <p class="taxonomy-category-section__note">依年份與時間排序瀏覽這個分類中的文章，每頁顯示 {{ len $pagedPages }} 篇。</p>
+            <p class="taxonomy-category-section__note">{{ if $isPainCategory }}個人書寫共 {{ len $primaryPages }} 篇；另有上方聆聽疼痛計畫 {{ len $seriesPages }} 篇。{{ else }}這個分類共 {{ len $primaryPages }} 篇。{{ end }}依日期由新到舊排列。</p>
           </div>
           {{- range $group := $yearGroups -}}
             <div class="taxonomy-story-year">{{ $group.Key }} <span class="taxonomy-category-topics__count">{{ len $group.Pages }} 篇</span></div>
@@ -2025,10 +2026,10 @@
       <section class="taxonomy-tag-section taxonomy-featured" aria-labelledby="taxonomy-featured-title">
         <div class="taxonomy-category-section__heading">
           <div>
-            <span class="taxonomy-category-section__eyebrow">推薦閱讀</span>
-            <h2 id="taxonomy-featured-title">先讀這幾篇</h2>
+            <span class="taxonomy-category-section__eyebrow">最近更新</span>
+            <h2 id="taxonomy-featured-title">最近的文章</h2>
           </div>
-          <p class="taxonomy-category-section__note">先用代表文章快速理解這個主題的閱讀方向。</p>
+          <p class="taxonomy-category-section__note">依日期列出這個標籤最近的文章。</p>
         </div>
         <div class="taxonomy-featured-grid">
           {{- range $idx, $page := $featured -}}

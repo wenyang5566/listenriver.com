@@ -675,7 +675,7 @@
       line-height: 1.75;
     }
     .taxonomy-category-hero__content {
-      display: none;
+      display: block;
     }
     .taxonomy-category-topics {
       flex-wrap: nowrap;
@@ -955,8 +955,8 @@
     <aside class="taxonomy-category-sidebar">
       <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-category-map-title">
         <span class="taxonomy-sidebar-panel__eyebrow">閱讀地圖</span>
-        <h3 id="taxonomy-category-map-title">其他主分類</h3>
-        <p>沿著站內五大分類切換閱讀路徑。</p>
+        <h3 id="taxonomy-category-map-title">會所裡的書寫</h3>
+        <p>從實習、工作日誌或手冊開始閱讀。</p>
         <ul class="taxonomy-sidebar-links">
           {{- range $item := $sectionItems -}}
             {{- with $item.page -}}
@@ -996,10 +996,10 @@
       <section class="taxonomy-category-section taxonomy-featured" aria-labelledby="taxonomy-featured-title">
         <div class="taxonomy-category-section__heading">
           <div>
-            <span class="taxonomy-category-section__eyebrow">推薦閱讀</span>
-            <h2 id="taxonomy-featured-title">先讀這幾篇</h2>
+            <span class="taxonomy-category-section__eyebrow">最近更新</span>
+            <h2 id="taxonomy-featured-title">最近的文章</h2>
           </div>
-          <p class="taxonomy-category-section__note">從這個分類中挑出近期值得先看的文章，作為進入主題的起點。</p>
+          <p class="taxonomy-category-section__note">依日期列出這個分區最近的文章。</p>
         </div>
         <div class="taxonomy-featured-grid">
           {{- range $idx, $page := $featured -}}
