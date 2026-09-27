@@ -13,8 +13,29 @@
 </header>
 
 <div class="search-pagefind-shell">
+  <section id="search-series" aria-labelledby="search-series-title" hidden>
+    <h2 id="search-series-title">完整系列入口</h2>
+    <p>找整個系列，可以從目錄閱讀全部文章。下方另列全文搜尋結果。</p>
+    <ul>
+      {{- $landing := index hugo.Data "taxonomy-landing" -}}
+      {{- range $name, $path := index $landing "topicDestinations" -}}
+        {{- with site.GetPage $path -}}
+        <li data-series-name="{{ $name }}" hidden><a href="{{ .RelPermalink }}">{{ $name }}（{{ len .RegularPages }} 篇）</a></li>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </section>
   <div id="pagefind-search"></div>
 </div>
+<style>
+  #search-series[hidden], #search-series li[hidden] { display: none !important; }
+  #search-series { margin-bottom: 24px; padding: 16px; border: 1px solid var(--border); border-radius: 12px; }
+  #search-series h2 { font-size: 1.15rem; margin: 0 0 8px; }
+  #search-series p { font-size: .9rem; margin: 0 0 12px; }
+  #search-series ul { list-style: none; margin: 0; padding: 0; }
+  #search-series li + li { margin-top: 8px; }
+  #search-series a { text-decoration: underline; text-underline-offset: 3px; }
+</style>
 <link rel="stylesheet" href="{{ "/pagefind/pagefind-ui.css" | relLangURL }}">
 <script src="{{ "/pagefind/pagefind-ui.js" | relLangURL }}" defer></script>
 <script defer>
@@ -42,7 +63,20 @@
     const searchParams = new URLSearchParams(window.location.search);
     const initialQuery = (searchParams.get("q") || "").trim();
     const searchRoot = document.querySelector("#pagefind-search");
+    const seriesRoot = document.querySelector("#search-series");
     let syncTimer;
+
+    function updateSeries(query) {
+      const normalized = query.replace(/\s+/g, "");
+      let matches = 0;
+      seriesRoot.querySelectorAll("[data-series-name]").forEach(function (entry) {
+        const name = entry.dataset.seriesName;
+        const match = normalized.length >= 2 && (name.includes(normalized) || normalized.includes(name));
+        entry.hidden = !match;
+        if (match) matches += 1;
+      });
+      seriesRoot.hidden = matches === 0;
+    }
 
     function findPagefindInput() {
       return searchRoot ? searchRoot.querySelector(".pagefind-ui__search-input, input[type='search'], input[type='text']") : null;
@@ -68,6 +102,7 @@
     }
 
     function scheduleUrlSync(input) {
+      updateSeries(input.value.trim());
       window.clearTimeout(syncTimer);
       syncTimer = window.setTimeout(function () {
         updateSearchUrl(input.value.trim());
@@ -87,6 +122,7 @@
 
       if (initialQuery) {
         submitQuery(input, initialQuery);
+        updateSeries(initialQuery);
       }
 
       input.addEventListener("input", function () {

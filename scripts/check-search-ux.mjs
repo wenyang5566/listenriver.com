@@ -286,6 +286,35 @@ async function checkEmptyHeaderSearch(browser, origin) {
   await page.close();
 }
 
+async function checkSeriesEntries(browser, origin) {
+  for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 }]) {
+    const page = await createSearchTestPage(browser, viewport);
+    for (const name of ["會所工作日誌", "會所實習", "會所工作手冊"]) {
+      const target = new URL("/search/", origin);
+      target.searchParams.set("q", name);
+      await page.goto(target.toString());
+      const entry = page.locator("#search-series li:visible");
+      await entry.waitFor({ state: "visible" });
+      if (await entry.count() !== 1) fail(`Expected one series entry for ${name}.`);
+      const href = await entry.locator("a").getAttribute("href");
+      if (decodeURI(href) !== `/clubhouse/${name}/`) fail(`Wrong series destination for ${name}.`);
+      if (!(await entry.innerText()).match(/（[1-9][0-9]* 篇）/)) fail(`Missing series count for ${name}.`);
+      const response = await page.request.get(new URL(href, origin).toString());
+      if (response.status() !== 200) fail(`Series destination failed for ${name}.`);
+    }
+    const input = page.locator(".pagefind-ui__search-input");
+    await input.fill("英雄");
+    await page.locator("#search-series").waitFor({ state: "hidden" });
+    await input.fill("會所");
+    await page.locator("#search-series").waitFor({ state: "visible" });
+    if (await page.locator("#search-series li:visible").count() !== 3) fail("Expected all three clubhouse series.");
+    await page.locator(".pagefind-ui__search-clear").click();
+    await page.locator("#search-series").waitFor({ state: "hidden" });
+    await page.close();
+  }
+  checks.push({ flow: "complete-series-entries", viewports: ["desktop", "mobile"], passed: true });
+}
+
 const localServer = externalTarget ? null : await startStaticServer();
 const origin = localServer?.origin || new URL(externalTarget).origin;
 const target = externalTarget || toSearchTarget(origin);
@@ -297,6 +326,7 @@ try {
   await checkHeaderSearch(browser, origin);
   await checkSearchUrlSync(browser, target);
   await checkEmptyHeaderSearch(browser, origin);
+  await checkSeriesEntries(browser, origin);
 } finally {
   await browser.close();
   await localServer?.close();
