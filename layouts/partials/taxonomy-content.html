@@ -544,11 +544,11 @@
     {{- if gt (len $hotTags) 0 }}
     <section class="taxonomy-landing-section" aria-labelledby="taxonomy-landing-hot-tags-title">
       <div class="taxonomy-landing-section__head">
-        <span class="taxonomy-landing-section__eyebrow">Hot Tags</span>
+        <span class="taxonomy-landing-section__eyebrow">Selected Topics</span>
         <span class="taxonomy-landing-section__line"></span>
-        <span class="taxonomy-landing-section__title-note">沿著主題，跨分類閱讀</span>
+        <span class="taxonomy-landing-section__title-note">沿著精選主題，跨分類閱讀</span>
       </div>
-      <div id="taxonomy-landing-hot-tags-title" class="sr-only">Hot Tags</div>
+      <div id="taxonomy-landing-hot-tags-title" class="sr-only">精選主題</div>
       <div class="taxonomy-landing-hot-grid">
         {{- range $tag := $hotTags -}}
           {{- if $tag.url -}}

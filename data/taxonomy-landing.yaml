@@ -44,9 +44,8 @@ categoryCards:
       alt: 定期回診藥單
     description: 我試著說出自己的疼痛，也想聽聽別人怎麼經歷。寫下病痛、回診，和難以說清楚的感受。
     tags:
-      - 病痛經驗
       - 聆聽疼痛計畫
-      - 正念的河流
+      - 蟹足腫病痛
   - key: becoming-self
     accent: growth
     index: "04"
@@ -72,7 +71,6 @@ categoryCards:
       name: 日常書寫
     description: 生活裡有些事情，讓我忽然想寫點什麼。心情、靈感，還有畫畫時想到的事，都留在這裡。
     tags:
-      - 講座筆記
       - 素描
   - key: clubhouse-model
     accent: clubhouse
