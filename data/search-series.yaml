@@ -1,0 +1,6 @@
+# Pagefind 1.5.2 indexes traditional Chinese body text and metadata differently.
+# These reviewed terms match the browser's word segmentation for series queries.
+# Keep this scoped to the three verified clubhouse series; do not split all text.
+會所實習: 會所 實習
+會所工作日誌: 會所 工作 日誌
+會所工作手冊: 會所 工作 手冊

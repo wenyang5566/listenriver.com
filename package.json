@@ -6,6 +6,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "check:reading-live": "node scripts/check-reading-live.mjs",
     "check:urls": "python scripts/url-guard.py check --site public --moves docs/reading-notes-url-moves.json",
     "build": "hugo --minify && npm run clean:pagefind && pagefind --site public && npm run check:pagefind-output",
     "clean:pagefind": "node scripts/clean-pagefind.mjs",

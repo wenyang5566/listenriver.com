@@ -1,6 +1,6 @@
 {{- define "main" }}
 
-<article class="post-single">
+<article class="post-single"{{ with index (index hugo.Data "search-series" | default dict) .CurrentSection.Title }} data-pagefind-meta="series[data-search-series]" data-search-series="{{ . }}"{{ end }}>
   <header class="post-header">
     {{ partial "breadcrumbs.html" . }}
 

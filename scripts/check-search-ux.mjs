@@ -315,6 +315,36 @@ async function checkSeriesEntries(browser, origin) {
   checks.push({ flow: "complete-series-entries", viewports: ["desktop", "mobile"], passed: true });
 }
 
+async function checkSeriesRecall(browser, origin) {
+  const page = await createSearchTestPage(browser, { width: 1280, height: 900 });
+  try {
+    await page.goto(new URL('/search/', origin).toString());
+    const report = await page.evaluate(async () => {
+      const pagefind = await import('/pagefind/pagefind.js');
+      // Compare against every indexed article, not just result totals or a few examples.
+      const all = await pagefind.search(null);
+      const pages = await Promise.all(all.results.map(result => result.data()));
+      const reports = [];
+      for (const name of ['會所實習', '會所工作日誌', '會所工作手冊']) {
+        const prefix = `/clubhouse/${name}/`;
+        const expected = pages.map(page => decodeURI(page.url)).filter(url => url.startsWith(prefix));
+        const response = await pagefind.search(name);
+        const found = new Set(await Promise.all(response.results.map(async result => decodeURI((await result.data()).url))));
+        reports.push({ name, expected: expected.length, results: response.results.length,
+          missing: expected.filter(url => !found.has(url)) });
+      }
+      return reports;
+    });
+    for (const series of report) {
+      if (!series.expected) fail(`No indexed articles found for ${series.name}.`);
+      if (series.missing.length) fail(`${series.name}: missing articles: ${series.missing.join(', ')}`);
+    }
+    checks.push({ flow: 'complete-series-search-recall', series: report });
+  } finally {
+    await page.close();
+  }
+}
+
 const localServer = externalTarget ? null : await startStaticServer();
 const origin = localServer?.origin || new URL(externalTarget).origin;
 const target = externalTarget || toSearchTarget(origin);
@@ -327,6 +357,7 @@ try {
   await checkSearchUrlSync(browser, target);
   await checkEmptyHeaderSearch(browser, origin);
   await checkSeriesEntries(browser, origin);
+  await checkSeriesRecall(browser, origin);
 } finally {
   await browser.close();
   await localServer?.close();
