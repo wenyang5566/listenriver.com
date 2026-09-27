@@ -126,7 +126,7 @@
           {{- with $card.tags }}
           <div class="taxonomy-landing-card__tags" aria-label="{{ $card.title }} 代表標籤">
             {{- range first 3 . -}}
-              <a class="taxonomy-landing-card__tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}" aria-label="查看標籤 {{ . }}">#{{ . }}</a>
+              <a class="taxonomy-landing-card__tag" href="{{ partial "topic-entry-url.html" . }}" aria-label="延伸閱讀：{{ . }}">#{{ . }}</a>
             {{- end -}}
           </div>
           {{- end }}

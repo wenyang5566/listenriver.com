@@ -54,6 +54,17 @@ class UrlGuardTests(unittest.TestCase):
     def test_encoding(self):
         self.assertEqual(guard.route('https://listenriver.com/%E6%96%87%E7%AB%A0/'), '/文章/')
 
+    def test_reviewed_feed_move_requires_existing_destination(self):
+        new = copy.deepcopy(self.old)
+        source = '/tags/topic/index.xml'
+        target = '/tags/new/index.xml'
+        new['pages'][target] = new['pages'].pop(source)
+        new['redirect_rules'] = [f'{source} {target} 301']
+        self.assertEqual(guard.check(self.old, new, {source: target})[0], [])
+        self.assertTrue(guard.check(self.old, new, {})[0])
+        del new['pages'][target]
+        self.assertTrue(guard.check(self.old, new, {source: target})[0])
+
 
 if __name__ == '__main__':
     unittest.main()

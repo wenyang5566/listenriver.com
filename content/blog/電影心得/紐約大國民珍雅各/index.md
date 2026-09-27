@@ -9,7 +9,7 @@ cover:
   alt: "《紐約大國民：珍雅各》"
 
 categories:
-  - 閱讀與筆記
+  - 閱讀筆記
 tags:
   - 電影心得
   - 電影

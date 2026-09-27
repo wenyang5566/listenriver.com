@@ -9,7 +9,7 @@ cover:
   alt: "《午夜福音》E3"
 
 categories:
-  - 閱讀與筆記
+  - 閱讀筆記
 tags:
   - 電影心得
   - 午夜福音

@@ -9,7 +9,7 @@ cover:
   alt: "《性愛自修室 Sex Education》"
 
 categories:
-  - 閱讀與筆記
+  - 閱讀筆記
 tags:
   - 電影心得
   - 電影

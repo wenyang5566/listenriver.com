@@ -9,7 +9,7 @@ cover:
   alt: "《流麻溝十五號》"
 
 categories:
-  - 閱讀與筆記
+  - 閱讀筆記
 tags:
   - 電影心得
   - 電影

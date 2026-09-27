@@ -9,7 +9,7 @@ cover:
   alt: "《鄰家兄弟 Paddleton》電影心得"
 
 categories:
-  - 閱讀與筆記
+  - 閱讀筆記
 tags:
   - 電影心得
   - 電影

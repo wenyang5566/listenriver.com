@@ -1,0 +1,4 @@
+{{- $landing := index hugo.Data "taxonomy-landing" | default dict -}}
+{{- $destinations := index $landing "topicDestinations" | default dict -}}
+{{- $path := index $destinations . | default (printf "/tags/%s/" (. | urlize)) -}}
+{{- return ($path | relLangURL) -}}

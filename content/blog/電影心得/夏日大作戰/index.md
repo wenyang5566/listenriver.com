@@ -9,7 +9,7 @@ cover:
   image: 夏日大作戰.jpg
   alt: "夏日大作戰"
 categories:
-  - 閱讀與筆記
+  - 閱讀筆記
 tags:
   - 電影心得
 ---

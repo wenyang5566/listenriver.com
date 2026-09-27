@@ -3,11 +3,11 @@ categoryCards:
     accent: reading
     index: "01"
     en: Reading & Notes
-    title: 閱讀與筆記
-    page: /categories/閱讀與筆記/
+    title: 閱讀筆記
+    page: /categories/閱讀筆記/
     source:
       kind: category
-      name: 閱讀與筆記
+      name: 閱讀筆記
     description: 讀書、看電影、聽講座，我把喜歡的段落和自己的心得留下來，也想和你分享。
     tags:
       - 書摘
@@ -87,13 +87,16 @@ categoryCards:
       - 會所實習
       - 會所工作手冊
 
-hotTags:
-  - 電影心得
-  - 書摘
-  - 閱讀心得
-  - 成為一個人
-  - 助人工作
-  - 開放式對話
-  - 病痛經驗
-  - 創傷知情
+selectedTopics:
   - 正念的河流
+  - 成為一個人
+  - 開放式對話
+  - 家族治療
+  - 創傷知情
+  - 親密關係
+
+# Series entry links share the same article sets as the corresponding tags.
+topicDestinations:
+  會所工作日誌: /clubhouse/會所工作日誌/
+  會所實習: /clubhouse/會所實習/
+  會所工作手冊: /clubhouse/會所工作手冊/
