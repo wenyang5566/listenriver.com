@@ -5,7 +5,7 @@
 {{- if and (eq $plural "categories") (not $hasPages) -}}
   {{- $landing := index hugo.Data "taxonomy-landing" | default hugo.Data.taxonomyLanding | default dict -}}
   {{- $cardConfigs := index $landing "categoryCards" | default (slice) -}}
-  {{- $hotTagNames := index $landing "hotTags" | default (slice) -}}
+  {{- $hotTagNames := index $landing "selectedTopics" | default (slice) -}}
   {{- $fallbackImage := site.Params.salonDefaultCover | relURL -}}
   {{- $totalPosts := len (partial "article-pages.html" .) -}}
   {{- $categoryCards := slice -}}
@@ -526,7 +526,7 @@
               {{- with $card.tags }}
               <div class="taxonomy-landing-card__tags" aria-label="{{ $card.title }} 代表標籤">
                 {{- range first 3 . -}}
-                  <a class="taxonomy-landing-card__tag" href="{{ (printf "/tags/%s/" (. | urlize)) | relLangURL }}" aria-label="查看標籤 {{ . }}">#{{ . }}</a>
+                  <a class="taxonomy-landing-card__tag" href="{{ partial "topic-entry-url.html" . }}" aria-label="延伸閱讀：{{ . }}">#{{ . }}</a>
                 {{- end -}}
               </div>
               {{- end }}
@@ -546,7 +546,7 @@
       <div class="taxonomy-landing-section__head">
         <span class="taxonomy-landing-section__eyebrow">Selected Topics</span>
         <span class="taxonomy-landing-section__line"></span>
-        <span class="taxonomy-landing-section__title-note">沿著精選主題，跨分類閱讀</span>
+        <span class="taxonomy-landing-section__title-note">沿著精選主題，跨分類閱讀（篇數為全站合計）</span>
       </div>
       <div id="taxonomy-landing-hot-tags-title" class="sr-only">精選主題</div>
       <div class="taxonomy-landing-hot-grid">
