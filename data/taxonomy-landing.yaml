@@ -3,11 +3,11 @@ categoryCards:
     accent: reading
     index: "01"
     en: Reading & Notes
-    title: 閱讀與筆記
-    page: /categories/閱讀與筆記/
+    title: 閱讀筆記
+    page: /categories/閱讀筆記/
     source:
       kind: category
-      name: 閱讀與筆記
+      name: 閱讀筆記
     description: 讀書、看電影、聽講座，我把喜歡的段落和自己的心得留下來，也想和你分享。
     tags:
       - 書摘

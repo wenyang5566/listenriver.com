@@ -127,7 +127,11 @@ def check(old, new, moves):
             failures.append(f'{url}: expected {expected}; got {actual or error}')
         elif url in moves and error is None:
             target = new['pages'].get(expected)
-            if not target or target['redirect'] or target['canonical'] != expected:
+            # XML feeds have no HTML canonical element; existence and resolution
+            # still have to match the explicitly reviewed feed destination.
+            canonical_ok = target and (target['canonical'] == expected or
+                                       (expected.endswith('.xml') and target['canonical'] is None))
+            if not target or target['redirect'] or not canonical_ok:
                 failures.append(f'Migration target must be a canonical page: {expected}')
     for source, target in moves.items():
         if source not in old['pages']:

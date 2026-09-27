@@ -1,10 +1,9 @@
 categories:
-  - name: 閱讀與筆記
+  - name: 閱讀筆記
     tags:
       - 書摘
       - 閱讀心得
       - 講座筆記
-      - 講座心得
       - 電影心得
   - name: 日常書寫
     tags:
@@ -18,7 +17,6 @@ categories:
     tags:
       - 開放式對話
       - 創傷知情
-      - 家族治療
   - name: 病痛經驗
     tags:
       - 聆聽疼痛計畫

@@ -20,7 +20,7 @@
         {{- range $index, $page := $pages -}}
           {{- $label := index ($page.Params.categories | default (slice)) 0 | default (index ($page.Params.tags | default (slice)) 0) | default "會所" -}}
           {{- $labelClass := "tag-general" -}}
-          {{- if eq $label "閱讀與筆記" -}}
+          {{- if eq $label "閱讀筆記" -}}
             {{- $labelClass = "tag-reading" -}}
           {{- else if eq $label "日常書寫" -}}
             {{- $labelClass = "tag-daily" -}}

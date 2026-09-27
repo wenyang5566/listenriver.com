@@ -13,7 +13,7 @@
     {{- $displayTitle := $page.Params.displayTitle | default $page.Title | default $page.File.TranslationBaseName -}}
     {{- $category := index ($page.Params.categories | default (slice)) 0 | default "" -}}
     {{- $categoryClass := "" -}}
-    {{- if eq $category "閱讀與筆記" -}}
+    {{- if eq $category "閱讀筆記" -}}
       {{- $categoryClass = "tag-reading" -}}
     {{- else if eq $category "日常書寫" -}}
       {{- $categoryClass = "tag-daily" -}}
@@ -61,7 +61,7 @@
     {{- $displayTitle := .Params.displayTitle | default .Title | default .File.TranslationBaseName -}}
     {{- $category := index (.Params.categories | default (slice)) 0 | default "" -}}
     {{- $categoryClass := "" -}}
-    {{- if eq $category "閱讀與筆記" -}}
+    {{- if eq $category "閱讀筆記" -}}
       {{- $categoryClass = "tag-reading" -}}
     {{- else if eq $category "日常書寫" -}}
       {{- $categoryClass = "tag-daily" -}}

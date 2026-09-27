@@ -65,13 +65,13 @@ params:
   salonBanner: /images/logo_ver3.png
   salonDefaultCover: /images/mao_3.png
   salonCategoryOrder:
-    - 閱讀與筆記
+    - 閱讀筆記
     - 助人工作
     - 病痛經驗
     - 成為自己
     - 日常書寫
   homeTagAxes:
-    - title: 閱讀與筆記
+    - title: 閱讀筆記
       primaryTag: 閱讀心得
       tags:
         - 閱讀心得
@@ -107,7 +107,7 @@ params:
     - 病痛經驗
   desktopHeader:
     categories:
-      - 閱讀與筆記
+      - 閱讀筆記
       - 日常書寫
       - 成為自己
       - 病痛經驗
