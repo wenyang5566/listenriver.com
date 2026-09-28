@@ -13,7 +13,6 @@ categories:
 tags:
   - 電影心得
   - 創傷知情
-  - 電影
 ---
 📌紀錄片觀看連結（限時觀看至8/2）：(https://wisdomoftrauma.com/movie/)
 

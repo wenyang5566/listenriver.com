@@ -1,3 +1,37 @@
+# Tag consolidation, 2026-09-28. Merged pagination returns to the collection entry.
+/tags/shamless /tags/無恥之徒/ 301
+/tags/shamless/ /tags/無恥之徒/ 301
+/tags/shamless/index.html /tags/無恥之徒/ 301
+/tags/shamless/index.xml /tags/無恥之徒/index.xml 301
+/tags/shamless/page/1 /tags/無恥之徒/ 301
+/tags/shamless/page/1/ /tags/無恥之徒/ 301
+/tags/shamless/page/1/index.html /tags/無恥之徒/ 301
+/tags/Shamless /tags/無恥之徒/ 301
+/tags/Shamless/ /tags/無恥之徒/ 301
+/tags/Shamless/index.html /tags/無恥之徒/ 301
+/tags/Shamless/index.xml /tags/無恥之徒/index.xml 301
+/tags/Shamless/page/1 /tags/無恥之徒/ 301
+/tags/Shamless/page/1/ /tags/無恥之徒/ 301
+/tags/Shamless/page/1/index.html /tags/無恥之徒/ 301
+/tags/電影 /tags/電影心得/ 301
+/tags/電影/ /tags/電影心得/ 301
+/tags/電影/index.html /tags/電影心得/ 301
+/tags/電影/index.xml /tags/電影心得/index.xml 301
+/tags/電影/page/1 /tags/電影心得/ 301
+/tags/電影/page/1/ /tags/電影心得/ 301
+/tags/電影/page/1/index.html /tags/電影心得/ 301
+/tags/電影/page/2 /tags/電影心得/ 301
+/tags/電影/page/2/ /tags/電影心得/ 301
+/tags/電影/page/2/index.html /tags/電影心得/ 301
+/tags/電影/page/3 /tags/電影心得/ 301
+/tags/電影/page/3/ /tags/電影心得/ 301
+/tags/電影/page/3/index.html /tags/電影心得/ 301
+/tags/閱讀 /tags/閱讀心得/ 301
+/tags/閱讀/index.html /tags/閱讀心得/ 301
+/tags/閱讀/index.xml /tags/閱讀心得/index.xml 301
+/tags/閱讀/page/1 /tags/閱讀心得/ 301
+/tags/閱讀/page/1/ /tags/閱讀心得/ 301
+/tags/閱讀/page/1/index.html /tags/閱讀心得/ 301
 # Reading category migration, 2026-09-27. Exact routes include RSS and all existing pagination.
 /categories/閱讀與筆記 /categories/閱讀筆記/ 301
 /categories/閱讀與筆記/ /categories/閱讀筆記/ 301

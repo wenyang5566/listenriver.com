@@ -15,7 +15,6 @@ categories:
 tags:
   - 電影心得
   - 艾格妮撿風景
-  - 電影
 ---
 ## 艾格妮撿風景 The Gleaner and I
 

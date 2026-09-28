@@ -15,8 +15,6 @@ categories:
 tags:
   - 電影心得
   - 無恥之徒
-  - Shamless
-  - 電影
 ---
 最近終於把Shameless全部看完，這實在是一部被低估的美劇。
 
