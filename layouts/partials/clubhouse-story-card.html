@@ -50,7 +50,7 @@
         <span>{{ partial "reading-time.html" $page }} 分鐘</span>
       {{- end }}
     </div>
-    <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+    <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Params.displayTitle | default $page.Title }}</a></h3>
     {{- with $excerpt }}
       <div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>
     {{- end }}
@@ -58,7 +58,7 @@
     <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
       {{- range $tags }}
         {{- with site.GetPage (printf "/tags/%s" .) }}
-          <a class="taxonomy-story-card__tag" href="{{ partial "term-entry-url.html" . }}">#{{ .Title }}</a>
+          <a class="taxonomy-story-card__tag" href="{{ partial "term-entry-url.html" . }}" aria-label="{{ .Title }}">#{{ partial "clubhouse-label.html" (dict "name" .Title "context" $page) }}</a>
         {{- end }}
       {{- end }}
     </div>

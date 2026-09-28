@@ -1,0 +1,6 @@
+{{- $label := .name -}}
+{{- if eq .context.Section "clubhouse" -}}
+  {{- $labels := index hugo.Data "clubhouse-series" | default dict -}}
+  {{- $label = index $labels $label | default $label -}}
+{{- end -}}
+{{- return $label -}}

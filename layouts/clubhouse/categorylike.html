@@ -942,7 +942,7 @@
             {{- range $item := $sectionItems -}}
               {{- with $item.page -}}
               <a class="taxonomy-category-mobile-map__item" href="{{ .RelPermalink }}"{{ if eq .Title $.Title }} aria-current="page"{{ end }}>
-                <span>{{ .Title }}</span>
+                <span>{{ partial "clubhouse-label.html" (dict "name" .Title "context" $) }}</span>
                 <span class="taxonomy-category-mobile-map__count">{{ $item.count }}</span>
               </a>
               {{- end -}}
@@ -962,7 +962,7 @@
             {{- with $item.page -}}
             <li>
               <a href="{{ .RelPermalink }}">
-                <span class="taxonomy-sidebar-links__label">{{ .Title }}</span>
+                <span class="taxonomy-sidebar-links__label">{{ partial "clubhouse-label.html" (dict "name" .Title "context" $) }}</span>
                 <span class="taxonomy-sidebar-links__count">{{ $item.count }}</span>
               </a>
             </li>
@@ -1017,7 +1017,7 @@
             {{- end -}}
             {{- $cover := or $pageBundleCover $globalResourcesCover -}}
             {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
-            {{- $firstTag := index ($page.Params.tags | default (slice)) 0 -}}
+            {{- $firstTag := index (partial "article-card-tags.html" $page) 0 -}}
             <article class="taxonomy-feature-card">
               <a class="taxonomy-feature-card__link" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}"></a>
               <a class="taxonomy-feature-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
@@ -1052,9 +1052,9 @@
               </a>
               <div class="taxonomy-feature-card__body">
                 {{- with $firstTag }}
-                  <span class="taxonomy-feature-card__topic">#{{ . }}</span>
+                  <span class="taxonomy-feature-card__topic">{{ partial "clubhouse-label.html" (dict "name" . "context" $) }}</span>
                 {{- end }}
-                <h3 class="taxonomy-feature-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+                <h3 class="taxonomy-feature-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Params.displayTitle | default $page.Title }}</a></h3>
                 {{- with $excerpt }}
                   <div class="taxonomy-feature-card__excerpt">{{ . | plainify | htmlUnescape | truncate 88 }}</div>
                 {{- end }}
@@ -1133,7 +1133,7 @@
                       <span>{{ partial "reading-time.html" $page }} 分鐘</span>
                     {{- end -}}
                   </div>
-                  <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+                  <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Params.displayTitle | default $page.Title }}</a></h3>
                   {{- with $excerpt }}
                     <div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>
                   {{- end }}
@@ -1141,7 +1141,7 @@
                   <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
                     {{- range $tags -}}
                       {{- with site.GetPage (printf "/tags/%s" .) -}}
-                        <a class="taxonomy-story-card__tag" href="{{ partial "term-entry-url.html" . }}">#{{ .Title }}</a>
+                        <a class="taxonomy-story-card__tag" href="{{ partial "term-entry-url.html" . }}" aria-label="{{ .Title }}">{{ partial "clubhouse-label.html" (dict "name" .Title "context" $) }}</a>
                       {{- end -}}
                     {{- end -}}
                   </div>

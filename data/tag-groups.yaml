@@ -1,0 +1,21 @@
+# Reading entry groups, not new Hugo taxonomies. Each tag has one primary role.
+# Category-name tags remain available in the complete index during review.
+categoryOrder: [閱讀筆記, 日常書寫, 成為自己, 病痛經驗, 助人工作]
+legacyCategoryTags: [助人工作, 病痛經驗]
+groups:
+  - id: topics
+    title: 主題與方法
+    description: 沿著關心的問題、觀點或方法，跨分類繼續閱讀。
+    tags: [會所模式, 正念的河流, 成為一個人, 蟹足腫病痛, 開放式對話, 家族治療, 創傷知情, 凝視與穿越, 現象學, 建制民族誌, 親密關係, 時間, 非暴力溝通, 親密關係暴力]
+  - id: series
+    title: 系列與計畫
+    description: 從連續篇章或創作計畫的入口開始閱讀。
+    tags: [會所工作日誌, 會所實習, 會所工作手冊, 素描, 聆聽疼痛計畫]
+  - id: formats
+    title: 內容形式
+    description: 依書摘、心得、筆記等文章形式找內容。
+    tags: [書摘, 閱讀心得, 電影心得, 電影, 講座筆記, 講座心得, 講座, 詩的語言]
+  - id: works
+    title: 作品與人物
+    description: 找同一部作品、作者或人物的相關書寫。
+    tags: [一行禪師, 午夜福音, 是枝裕和, 聆聽疼痛, 媽的多重宇宙, 艾格妮撿風景, 障礙政治, 受苦的倒影, 無恥之徒, Shamless, 家庭會傷人, 人間出口]

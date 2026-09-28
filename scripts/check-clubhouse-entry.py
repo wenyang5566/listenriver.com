@@ -20,7 +20,8 @@ class Links(HTMLParser):
         if tag == 'a':
             attrs = dict(attrs)
             self.current = {'href': unquote(urlsplit(attrs.get('href', '')).path),
-                            'classes': attrs.get('class', '').split(), 'text': ''}
+                            'classes': attrs.get('class', '').split(),
+                            'label': attrs.get('aria-label', ''), 'text': ''}
 
     def handle_data(self, text):
         if self.current is not None:
@@ -59,7 +60,7 @@ def check(site):
         for link in Links(page.read_text(encoding='utf-8')).links:
             if not any(c in link['classes'] for c in ('taxonomy-story-card__tag', 'clubhouse-story-card__tag')):
                 continue
-            name = link['text'].strip('# ')
+            name = (link['label'] or link['text']).strip('# ')
             if name in DESTINATIONS:
                 assert link['href'] == DESTINATIONS[name], f'Card goes to duplicate tag listing: {page}'
                 assert name != '會所模式', f'Redundant clubhouse topic on card: {page}'

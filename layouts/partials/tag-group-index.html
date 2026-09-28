@@ -1,0 +1,25 @@
+{{- $config := index hugo.Data "tag-groups" -}}
+<section class="taxonomy-landing-section taxonomy-tags-index" aria-labelledby="browse-categories-title" data-reading-group="categories">
+  <h2 id="browse-categories-title" class="home-section-title">五大分類</h2>
+  <p>先選主要閱讀方向，再沿主題、系列、形式或作品延伸。</p>
+  <div class="taxonomy-landing-tag-grid">
+    {{- range $config.categoryOrder -}}
+      {{- with index site.Taxonomies.categories . -}}
+      <a class="taxonomy-landing-tag-link" href="{{ .Page.RelPermalink }}"><span class="taxonomy-landing-tag-link__name">{{ .Page.Title }}</span><span class="taxonomy-landing-tag-link__count">{{ .Count }} 篇</span></a>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+{{- range $config.groups -}}
+<section class="taxonomy-landing-section taxonomy-tags-index" aria-labelledby="browse-{{ .id }}-title" data-tag-group="{{ .id }}" data-reading-group="{{ .id }}">
+  <h2 id="browse-{{ .id }}-title" class="home-section-title">{{ .title }}</h2>
+  <p>{{ .description }}</p>
+  <div class="taxonomy-landing-tag-grid">
+    {{- range .tags -}}
+      {{- with index site.Taxonomies.tags (. | lower) -}}
+      <a class="taxonomy-landing-tag-link" href="{{ partial "term-entry-url.html" .Page }}" data-tag-name="{{ .Page.Title }}"><span class="taxonomy-landing-tag-link__name">{{ .Page.Title }}</span><span class="taxonomy-landing-tag-link__count">{{ .Count }} 篇</span></a>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}

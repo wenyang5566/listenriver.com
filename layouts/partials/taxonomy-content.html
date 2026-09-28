@@ -1857,7 +1857,6 @@
   </div>
 
 {{- else if and (eq $plural "tags") (not $hasPages) -}}
-  {{- $tagItems := partial "home-tag-data.html" . -}}
   <header class="page-header taxonomy-landing-header">
     {{- partial "breadcrumbs.html" . -}}
     <span class="taxonomy-page-kicker">Tags</span>
@@ -1877,37 +1876,27 @@
   </div>
   {{- end }}
 
-  {{- if gt (len $tagItems) 0 }}
-  <section class="taxonomy-landing-section" aria-labelledby="popular-tags-title">
-    <div class="home-section-heading taxonomy-section-heading">
-      <div>
-        <span class="home-section-kicker">Popular</span>
-        <h2 id="popular-tags-title" class="home-section-title">常用主題</h2>
-      </div>
-      <p class="taxonomy-section-note">先看站內最常出現的主題標籤，快速掌握內容重心。</p>
-    </div>
-    {{- partial "category-rail.html" (dict "items" (first 12 $tagItems) "id" "popular-tags-rail" "class" "category-rail-shell--landing" "cardPartial" "home-tag-card.html") -}}
-  </section>
-  {{- end }}
+  {{- partial "tag-group-index.html" . -}}
 
   <section class="taxonomy-landing-section taxonomy-tags-index" aria-labelledby="all-tags-title">
     <div class="home-section-heading taxonomy-section-heading">
       <div>
         <span class="home-section-kicker">By Count</span>
-        <h2 id="all-tags-title" class="home-section-title">全部主題</h2>
+        <h2 id="all-tags-title" class="home-section-title">全部標籤</h2>
       </div>
-      <p class="taxonomy-section-note">依文章數量排序，快速看見站內最常延伸的閱讀線索。</p>
+      <p class="taxonomy-section-note">依篇數排列的完整索引，也能找到較少使用的標籤。</p>
     </div>
-    <div class="taxonomy-landing-tag-shell">
+    <details class="taxonomy-landing-tag-shell">
+      <summary>展開全部 {{ len site.Taxonomies.tags }} 個標籤</summary>
       <div class="taxonomy-landing-tag-grid">
         {{- range site.Taxonomies.tags.ByCount }}
-        <a class="taxonomy-landing-tag-link" href="{{ .Page.RelPermalink }}">
+        <a class="taxonomy-landing-tag-link" href="{{ partial "term-entry-url.html" .Page }}">
           <span class="taxonomy-landing-tag-link__name">#{{ .Page.Title }}</span>
           <span class="taxonomy-landing-tag-link__count">{{ .Count }}</span>
         </a>
         {{- end }}
       </div>
-    </div>
+    </details>
   </section>
 
 {{- else if and (eq $plural "tags") $hasPages -}}
