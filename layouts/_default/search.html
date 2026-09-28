@@ -19,8 +19,10 @@
     <ul>
       {{- $landing := index hugo.Data "taxonomy-landing" -}}
       {{- range $name, $path := index $landing "topicDestinations" -}}
+        {{- if index (index hugo.Data "search-series" | default dict) $name -}}
         {{- with site.GetPage $path -}}
         <li data-series-name="{{ $name }}" hidden><a href="{{ .RelPermalink }}">{{ $name }}（{{ len .RegularPages }} 篇）</a></li>
+        {{- end -}}
         {{- end -}}
       {{- end -}}
     </ul>

@@ -5,7 +5,7 @@
 {{- $topicItems := slice -}}
 {{- range site.Taxonomies.tags.ByCount -}}
   {{- $relatedPages := where $clubhousePages "Params.tags" "intersect" (slice .Term) -}}
-  {{- if gt (len $relatedPages) 0 -}}
+  {{- if and (gt (len $relatedPages) 0) (not (in (slice "會所模式" "會所實習" "會所工作日誌" "會所工作手冊") .Term)) -}}
     {{- $topicItems = $topicItems | append (dict "name" .Term "count" (len $relatedPages) "page" .Page) -}}
   {{- end -}}
 {{- end -}}
@@ -528,7 +528,7 @@
           {{- range $page := $group.Pages -}}
             {{- $cover := partial "get-page-cover-resource.html" (dict "page" $page) | transform.Unmarshal -}}
             {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
-            {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
+            {{- $tags := partial "article-card-tags.html" $page -}}
             <article class="clubhouse-story-card">
               <a class="clubhouse-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
                 <img src="{{ $cover.src }}" alt="{{ $cover.alt }}" loading="lazy" decoding="async">
@@ -544,7 +544,7 @@
                 <div class="clubhouse-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
                   {{- range $tags -}}
                     {{- with site.GetPage (printf "/tags/%s" .) -}}
-                      <a class="clubhouse-story-card__tag" href="{{ .RelPermalink }}">#{{ .Title }}</a>
+                      <a class="clubhouse-story-card__tag" href="{{ partial "term-entry-url.html" . }}">#{{ .Title }}</a>
                     {{- end -}}
                   {{- end -}}
                 </div>

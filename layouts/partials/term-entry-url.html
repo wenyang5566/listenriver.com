@@ -1,0 +1,5 @@
+{{/* Use curated destinations only; preserve the actual URL of every other term. */}}
+{{- $destinations := index (index hugo.Data "taxonomy-landing" | default dict) "topicDestinations" | default dict -}}
+{{- $url := .RelPermalink -}}
+{{- with index $destinations .Title -}}{{- $url = . | relLangURL -}}{{- end -}}
+{{- return $url -}}

@@ -5,9 +5,15 @@
     {{- $links = $links | append (dict "title" (printf "More in %s" .LinkTitle) "url" .RelPermalink "meta" "Category") -}}
   {{- end -}}
 {{- end -}}
+{{- if and (eq .Section "clubhouse") (index (index hugo.Data "search-series" | default dict) .CurrentSection.Title) (lt (len $links) $limit) -}}
+  {{- $links = $links | append (dict "title" (printf "繼續閱讀：%s" .CurrentSection.Title) "url" (partial "topic-entry-url.html" .CurrentSection.Title) "meta" "系列") -}}
+{{- end -}}
 {{- range (.GetTerms "tags") -}}
-  {{- if lt (len $links) $limit -}}
-    {{- $links = $links | append (dict "title" (printf "Explore tag: %s" .LinkTitle) "url" .RelPermalink "meta" "Tag") -}}
+  {{- $url := partial "term-entry-url.html" . -}}
+  {{- $exists := false -}}
+  {{- range $links -}}{{- if eq .url $url -}}{{- $exists = true -}}{{- end -}}{{- end -}}
+  {{- if and (not $exists) (lt (len $links) $limit) -}}
+    {{- $links = $links | append (dict "title" (printf "Explore tag: %s" .LinkTitle) "url" $url "meta" "Tag") -}}
   {{- end -}}
 {{- end -}}
 {{- if lt (len $links) $limit -}}

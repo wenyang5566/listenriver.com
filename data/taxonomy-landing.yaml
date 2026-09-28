@@ -97,6 +97,7 @@ selectedTopics:
 
 # Series entry links share the same article sets as the corresponding tags.
 topicDestinations:
+  會所模式: /clubhouse/
   會所工作日誌: /clubhouse/會所工作日誌/
   會所實習: /clubhouse/會所實習/
   會所工作手冊: /clubhouse/會所工作手冊/

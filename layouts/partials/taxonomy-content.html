@@ -1776,7 +1776,7 @@
                 {{- end -}}
                 {{- $cover := or $pageBundleCover $globalResourcesCover -}}
                 {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
-                {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
+                {{- $tags := partial "article-card-tags.html" $page -}}
                 <article class="taxonomy-story-card">
                   <a class="taxonomy-story-card__link" href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title | plainify }}"></a>
                   <a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
@@ -1822,7 +1822,7 @@
                     <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
                       {{- range $tags -}}
                         {{- with site.GetPage (printf "/tags/%s" .) -}}
-                          <a class="taxonomy-story-card__tag" href="{{ .RelPermalink }}">#{{ .Title }}</a>
+                          <a class="taxonomy-story-card__tag" href="{{ partial "term-entry-url.html" . }}">#{{ .Title }}</a>
                         {{- end -}}
                       {{- end -}}
                     </div>
@@ -2125,7 +2125,7 @@
           {{- end -}}
           {{- $cover := or $pageBundleCover $globalResourcesCover -}}
           {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
-          {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
+          {{- $tags := partial "article-card-tags.html" $page -}}
           <article class="taxonomy-story-card">
             <a class="taxonomy-story-card__link" href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title | plainify }}"></a>
             <a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
@@ -2171,7 +2171,7 @@
               <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
                 {{- range $tags -}}
                   {{- with site.GetPage (printf "/tags/%s" .) -}}
-                    <a class="taxonomy-story-card__tag" href="{{ .RelPermalink }}">#{{ .Title }}</a>
+                    <a class="taxonomy-story-card__tag" href="{{ partial "term-entry-url.html" . }}">#{{ .Title }}</a>
                   {{- end -}}
                 {{- end -}}
               </div>

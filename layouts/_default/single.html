@@ -6,21 +6,31 @@
 
     {{- $categories := first 1 (.GetTerms "categories") -}}
     {{- $tags := .GetTerms "tags" -}}
+    {{- $clubhouseSeries := "" -}}
+    {{- if and (eq .Section "clubhouse") (index (index hugo.Data "search-series" | default dict) .CurrentSection.Title) -}}
+      {{- $clubhouseSeries = .CurrentSection.Title -}}
+      {{- $tags = where $tags "Title" "ne" $clubhouseSeries -}}
+    {{- end -}}
     {{- $seriesLabel := .Params.seriesLabel -}}
     {{- if and (not $seriesLabel) (findRE `^會所工作日誌[0-9]+_` .Title) -}}
       {{- $seriesNumber := replaceRE `^會所工作日誌([0-9]+)_.*$` "$1" .Title -}}
       {{- $seriesLabel = printf "會所工作日誌 %s" $seriesNumber -}}
     {{- end -}}
+    {{- $seriesLabel = $seriesLabel | default $clubhouseSeries -}}
     {{- if or $seriesLabel (or (gt (len $categories) 0) (gt (len $tags) 0)) }}
     <div class="post-header-taxonomy" aria-label="文章分類與主題">
       {{- range $categories }}
       <a class="post-header-chip post-header-chip--category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       {{- end }}
       {{- with $seriesLabel }}
+      {{- if $clubhouseSeries }}
+      <a class="post-header-chip post-header-chip--series" href="{{ partial "topic-entry-url.html" $clubhouseSeries }}">{{ . }}</a>
+      {{- else }}
       <span class="post-header-chip post-header-chip--series">{{ . }}</span>
       {{- end }}
+      {{- end }}
       {{- range $tags }}
-      <a class="post-header-chip post-header-chip--tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+      <a class="post-header-chip post-header-chip--tag" href="{{ partial "term-entry-url.html" . }}">#{{ .LinkTitle }}</a>
       {{- end }}
     </div>
     {{- end }}
@@ -65,10 +75,9 @@
     {{- end }}
   </div>
   <div data-pagefind-ignore>
-    {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     <ul class="post-tags">
-      {{- range ($.GetTerms $tags) }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- range $tags }}
+      <li><a href="{{ partial "term-entry-url.html" . }}">{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
     {{- partial "post_interactions_v2.html" . -}}

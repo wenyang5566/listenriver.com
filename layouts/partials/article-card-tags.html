@@ -1,0 +1,14 @@
+{{/* Keep the series visible; omit the shared topic on clubhouse article cards. */}}
+{{- $tags := .Params.tags | default (slice) -}}
+{{- if eq .Section "clubhouse" -}}
+  {{- $series := .CurrentSection.Title -}}
+  {{- $ordered := slice -}}
+  {{- if in $tags $series -}}{{- $ordered = $ordered | append $series -}}{{- end -}}
+  {{- range $tags -}}
+    {{- if and (ne . "會所模式") (ne . $series) -}}
+      {{- $ordered = $ordered | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $tags = $ordered -}}
+{{- end -}}
+{{- return (first 2 $tags) -}}
