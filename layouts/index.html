@@ -1,11 +1,5 @@
 ﻿{{- define "main" -}}
-{{- $clubhouseSection := site.GetPage "section" "clubhouse" -}}
 {{- $allPages := partial "article-pages.html" . -}}
-{{- $clubhousePages := slice -}}
-{{- $clubhouseLimit := 8 -}}
-{{- with $clubhouseSection -}}
-  {{- $clubhousePages = first $clubhouseLimit (sort .RegularPagesRecursive "Date" "desc") -}}
-{{- end -}}
 {{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" -}}
 {{- $latestLimit := 6 -}}
 {{- $latestPages := first $latestLimit $allPages -}}
@@ -18,7 +12,6 @@
     {{- partial "featured-banner.html" . -}}
     {{- partial "home-mobile-topics.html" . -}}
     {{- partial "home-topics.html" . -}}
-    {{- partial "home-clubhouse.html" (dict "pages" $clubhousePages) -}}
     {{- partial "home-latest.html" (dict "pages" $latestPages) -}}
     {{- partial "home-author.html" . -}}
     {{- partial "home-gallery.html" . -}}
