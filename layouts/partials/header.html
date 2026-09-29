@@ -163,17 +163,15 @@
         {{- if hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL) -}}{{- $isCurrent = true -}}{{- end -}}
       {{- end -}}
       <section class="mobile-nav-group{{ if $isCurrent }} is-open is-current{{ end }}">
-          <button class="mobile-nav-group-trigger" type="button" aria-label="展開 {{ .label }} 子題" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
-            <span class="header-mobile-category-label"><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</span>
+        <div class="mobile-nav-category-row">
+          <a class="mobile-nav-category-link" href="{{ .url }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
+          <button class="mobile-nav-group-trigger" type="button" aria-label="展開或收合 {{ .label }} 子題" aria-controls="mobile-nav-panel-{{ .key }}" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
             <svg class="mobile-nav-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6"></path>
             </svg>
           </button>
-        <div class="mobile-nav-group-panel">
-          <a class="mobile-nav-sub-link mobile-nav-sub-link-parent{{ if eq $.RelPermalink .url }} is-active{{ end }}" href="{{ .url }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>
-            <span>{{ .label }} (全部)</span>
-            {{- partial "header-nav-count.html" . -}}
-          </a>
+        </div>
+        <div id="mobile-nav-panel-{{ .key }}" class="mobile-nav-group-panel">
           {{- range $children -}}
           {{- if .children -}}
             {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "mobile-nav-sub-link" "mobile" true) -}}

@@ -30,11 +30,6 @@
 .personal-header .header-submenu__trigger > svg { margin: 0 14px; flex-shrink: 0; }
 .personal-header .personal-header__nav-link-main { gap: 6px; }
 .personal-header .personal-header__dropdown-title { display: flex; justify-content: space-between; gap: 12px; }
-.personal-header .header-mobile-category-label {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 .personal-header .personal-header__dropdown-count {
   font-size: 0.75rem;
 }
@@ -168,18 +163,41 @@
     height: 44px;
     min-height: 44px;
   }
-  .personal-header .mobile-nav-group-panel { padding-left: 12px; }
+  .personal-header .mobile-nav-category-row { display: flex; align-items: center; gap: 8px; min-height: 56px; }
+  .personal-header .mobile-nav-category-link { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; min-height: 52px; font-weight: 760; color: var(--primary); }
+  .personal-header .mobile-nav-category-row .mobile-nav-group-trigger {
+    width: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: rgba(111, 202, 209, 0.08);
+  }
+  .personal-header .mobile-nav-category-row .mobile-nav-group-chevron { margin: 0; }
+  .personal-header .mobile-nav-group.is-open > .mobile-nav-category-row .mobile-nav-group-chevron { transform: rotate(180deg); }
+  .personal-header .mobile-nav-group-panel {
+    margin: 4px 0 10px;
+    padding: 8px;
+    border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+    border-radius: 8px;
+    background: rgba(111, 202, 209, 0.04);
+  }
   .personal-header .mobile-nav-group-panel .header-submenu { margin-left: 0; margin-right: 0; }
   .personal-header .mobile-nav-sub-link { min-height: 44px; }
-  .personal-header .mobile-nav-sub-link-parent {
-    font-weight: 700;
-    background: rgba(15, 23, 42, 0.025);
-    border: 0;
+  .personal-header .mobile-nav-drawer .header-submenu__trigger > svg {
+    width: 44px;
+    height: 44px;
+    padding: 14px;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: rgba(111, 202, 209, 0.08);
   }
-  [data-theme="dark"] .personal-header .mobile-nav-sub-link-parent {
-    background: rgba(255, 255, 255, 0.025);
-  }
-  .personal-header .mobile-nav-group.is-current > .mobile-nav-group-trigger {
+  .personal-header .mobile-nav-group.is-current > .mobile-nav-category-row .mobile-nav-category-link {
     color: var(--primary);
     box-shadow: inset 3px 0 var(--brand-primary);
     padding-left: 10px;

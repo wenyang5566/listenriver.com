@@ -6,18 +6,11 @@
   {{- if hasPrefix $page.RelPermalink .url -}}{{- $current = true -}}{{- end -}}
 {{- end -}}
 <details class="header-submenu{{ if $current }} is-active{{ end }}"{{ if and .mobile $current }} open{{ end }}>
-  <summary class="header-submenu__trigger">
-    {{- if .mobile -}}
-    <span class="header-submenu__link"><span>{{ $item.label }}</span>{{ partial "header-nav-count.html" $item }}</span>
-    {{- else -}}
+  <summary class="header-submenu__trigger"{{ if .mobile }} aria-label="展開或收合 {{ $item.label }} 子題"{{ end }}>
     <a class="header-submenu__link" href="{{ $item.url }}"{{ if eq $page.RelPermalink $item.url }} aria-current="page"{{ end }}><span>{{ $item.label }}</span>{{ partial "header-nav-count.html" $item }}</a>
-    {{- end -}}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
   </summary>
   <div class="header-submenu__links">
-    {{- if .mobile -}}
-    <a class="{{ $linkClass }} mobile-nav-sub-link-parent{{ if eq $page.RelPermalink $item.url }} is-active{{ end }}" href="{{ $item.url }}"{{ if eq $page.RelPermalink $item.url }} aria-current="page"{{ end }}><span>{{ $item.label }} (全部)</span>{{ partial "header-nav-count.html" $item }}</a>
-    {{- end -}}
     {{- range $item.children -}}
     {{- $childCurrent := false -}}
     {{- $childExact := false -}}
