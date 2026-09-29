@@ -1,0 +1,25 @@
+
+> listenriver.com@1.0.0 test:e2e
+> playwright test --config=.tmp/cleanup-playwright.config.mjs --reporter=line
+
+(node:41696) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Running 5 tests using 1 worker
+
+
+
+[1A[2K(node:38920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K(node:38920) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+
+[1A[2K(node:38920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+[1A[2K[1/5] [chromium] › tests\article-layout.spec.js:7:3 › desktop article layout › keeps the article title visually restrained
+[1A[2K[2/5] [chromium] › tests\article-layout.spec.js:30:3 › desktop article layout › shrinks portrait lead covers on desktop
+[1A[2K[3/5] [chromium] › tests\article-layout.spec.js:46:3 › mobile article layout › keeps long titles readable and section dividers compact
+[1A[2K[4/5] [chromium] › tests\article-layout.spec.js:83:3 › desktop taxonomy layout › uses stable vertical cards for tag featured articles
+[1A[2K[5/5] [chromium] › tests\article-layout.spec.js:104:3 › desktop taxonomy layout › uses category-style story cards for tag archive articles
+[1A[2K  5 passed (4.4s)

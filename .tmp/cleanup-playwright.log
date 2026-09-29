@@ -1,0 +1,72 @@
+
+> listenriver.com@1.0.0 test:e2e
+> playwright test --config=.tmp/cleanup-playwright.config.mjs --reporter=line
+
+(node:55540) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[1A[2K[WebServer] WARN  deprecated: project config key languageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use locale instead.
+[WebServer] WARN  deprecated: project config key languages.zh-tw.languageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use languages.zh-tw.locale instead.
+[WebServer] WARN  deprecated: project config key languages.zh-tw.languageName was deprecated in Hugo v0.158.0 and will be removed in a future release. Use languages.zh-tw.label instead.
+[1A[2K[WebServer] WARN  deprecated: .Language.LanguageDirection was deprecated in Hugo v0.158.0 and will be removed in a future release. Use .Language.Direction instead.
+
+
+[1A[2K[WebServer] WARN  deprecated: .Language.LanguageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use .Language.Locale instead.
+
+Running 5 tests using 5 workers
+
+[1A[2K(node:26244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+
+[1A[2K(node:26244) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:26244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+
+[1A[2K(node:48756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K(node:48756) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+
+[1A[2K(node:48756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:24168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:20416) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1A[2K(node:30072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K(node:24168) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:24168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K(node:20416) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K[1/5] [chromium] › tests\article-layout.spec.js:7:3 › desktop article layout › keeps the article title visually restrained
+[1A[2K[2/5] [chromium] › tests\article-layout.spec.js:46:3 › mobile article layout › keeps long titles readable and section dividers compact
+[1A[2K(node:20416) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+
+[1A[2K(node:30072) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+
+[1A[2K(node:30072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[1A[2K[3/5] [chromium] › tests\article-layout.spec.js:83:3 › desktop taxonomy layout › uses stable vertical cards for tag featured articles
+[1A[2K[4/5] [chromium] › tests\article-layout.spec.js:104:3 › desktop taxonomy layout › uses category-style story cards for tag archive articles
+[1A[2K[5/5] [chromium] › tests\article-layout.spec.js:30:3 › desktop article layout › shrinks portrait lead covers on desktop

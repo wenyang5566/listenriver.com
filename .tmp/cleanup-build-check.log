@@ -1,0 +1,20 @@
+WARN  deprecated: project config key languageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use locale instead.
+WARN  deprecated: project config key languages.zh-tw.languageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use languages.zh-tw.locale instead.
+WARN  deprecated: project config key languages.zh-tw.languageName was deprecated in Hugo v0.158.0 and will be removed in a future release. Use languages.zh-tw.label instead.
+Start building sites … 
+hugo v0.166.0-78400b4de8adc99273d3e674ed6c4d14c3bdf669 windows/amd64 BuildDate=2026-09-09T14:45:02Z VendorInfo=gohugoio
+
+WARN  deprecated: .Language.LanguageDirection was deprecated in Hugo v0.158.0 and will be removed in a future release. Use .Language.Direction instead.
+WARN  deprecated: .Language.LanguageCode was deprecated in Hugo v0.158.0 and will be removed in a future release. Use .Language.Locale instead.
+
+                  │ ZH - TW 
+──────────────────┼─────────
+ Pages            │     340 
+ Paginator pages  │      90 
+ Non-page files   │     556 
+ Static files     │      31 
+ Processed images │    4558 
+ Aliases          │     241 
+ Cleaned          │       0 
+
+Total in 91394 ms

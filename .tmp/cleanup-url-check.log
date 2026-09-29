@@ -1,0 +1,4 @@
+Checked 639 baseline routes; 0 regressions; 3 pre-existing resolution issues
+BASELINE ISSUE: /404.html missing output: /404/
+BASELINE ISSUE: /blog/�ڦV�U�H�u�@ missing output: /blog/�U�H�u�@/
+BASELINE ISSUE: /blog/�ڦV�U�H�u�@/ missing output: /blog/�U�H�u�@/
