@@ -86,7 +86,7 @@
       {{- if gt (len (.children | default (slice))) 0 -}}
       <div class="nav-group personal-header__nav-group">
         <div class="personal-header__nav-combo{{ if $isCurrent }} is-active{{ end }}">
-          <a href="{{ .url }}" class="personal-header__nav-link personal-header__nav-link-main{{ if $isCurrent }} is-active{{ end }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>{{ .label }}</a>
+          <a href="{{ .url }}" class="personal-header__nav-link personal-header__nav-link-main{{ if $isCurrent }} is-active{{ end }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
           <button class="nav-group-trigger personal-header__nav-trigger" type="button" aria-label="展開 {{ .label }} 子題" aria-expanded="false" aria-haspopup="true">
             <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6"></path>
@@ -95,7 +95,7 @@
         </div>
         <div class="nav-group-menu personal-header__dropdown{{ if eq .key "helping" }} personal-header__dropdown--helping{{ end }}">
           <div class="nav-group-menu-inner personal-header__dropdown-inner">
-            <a class="personal-header__dropdown-title" href="{{ .url }}">{{ .label }}</a>
+            <a class="personal-header__dropdown-title" href="{{ .url }}"><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
             <span class="nav-group-divider" aria-hidden="true"></span>
             {{- range .children -}}
             {{- if .children -}}
@@ -103,15 +103,9 @@
             {{- else -}}
             {{- if .groupStart -}}<span class="nav-group-divider header-clubhouse-divider" aria-hidden="true"></span>{{- end -}}
             {{- $isChildCurrent := eq $.RelPermalink .url -}}
-            {{- $childCount := 0 -}}
-            {{- with index site.Taxonomies.tags .label -}}
-              {{- $childCount = len .Pages -}}
-            {{- end -}}
             <a class="nav-group-link personal-header__dropdown-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
               <span>{{ .label }}</span>
-              {{- if gt $childCount 0 -}}
-              <span class="personal-header__dropdown-count" aria-label="{{ $childCount }} 篇文章">{{ $childCount }}</span>
-              {{- end -}}
+              {{- partial "header-nav-count.html" . -}}
             </a>
             {{- end -}}
             {{- end -}}
@@ -165,43 +159,28 @@
           {{- $isCurrent = true -}}
         {{- end -}}
       {{- end -}}
-      {{- $categoryCount := 0 -}}
-      {{- with index site.Taxonomies.categories .label -}}
-        {{- $categoryCount = len .Pages -}}
-      {{- else -}}
-        {{- if eq .key "clubhouse" -}}
-          {{- $categoryCount = len (where site.RegularPages "Section" "clubhouse") -}}
-        {{- end -}}
+      {{- if eq .key "helping" -}}
+        {{- if hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL) -}}{{- $isCurrent = true -}}{{- end -}}
       {{- end -}}
-      <section class="mobile-nav-group{{ if $isCurrent }} is-open{{ end }}">
-        <button class="mobile-nav-group-trigger" type="button" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
-          <span>{{ .label }}</span>
-          <svg class="mobile-nav-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m6 9 6 6 6-6"></path>
-          </svg>
-        </button>
-        <div class="mobile-nav-group-panel">
-          <a class="mobile-nav-sub-link mobile-nav-sub-link-parent{{ if eq $.RelPermalink .url }} is-active{{ end }}" href="{{ .url }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}>
-            <span>{{ .label }}（all）</span>
-            {{- if gt $categoryCount 0 -}}
-            <span class="mobile-nav-sub-count">{{ $categoryCount }}</span>
-            {{- end -}}
-          </a>
+      <section class="mobile-nav-group{{ if $isCurrent }} is-open is-current{{ end }}">
+        <div class="mobile-nav-category-row">
+          <a class="mobile-nav-category-link" href="{{ .url }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
+          <button class="mobile-nav-group-trigger" type="button" aria-label="展開或收合 {{ .label }} 子題" aria-controls="mobile-nav-panel-{{ .key }}" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
+            <svg class="mobile-nav-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </button>
+        </div>
+        <div id="mobile-nav-panel-{{ .key }}" class="mobile-nav-group-panel">
           {{- range $children -}}
           {{- if .children -}}
-            {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "mobile-nav-sub-link") -}}
+            {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "mobile-nav-sub-link" "mobile" true) -}}
           {{- else -}}
           {{- if .groupStart -}}<span class="mobile-nav-clubhouse-divider" aria-hidden="true"></span>{{- end -}}
           {{- $isChildCurrent := eq $.RelPermalink .url -}}
-          {{- $childCount := 0 -}}
-          {{- with index site.Taxonomies.tags .label -}}
-            {{- $childCount = len .Pages -}}
-          {{- end -}}
           <a class="mobile-nav-sub-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
             <span>{{ .label }}</span>
-            {{- if gt $childCount 0 -}}
-            <span class="mobile-nav-sub-count">{{ $childCount }}</span>
-            {{- end -}}
+            {{- partial "header-nav-count.html" . -}}
           </a>
           {{- end -}}
           {{- end -}}
