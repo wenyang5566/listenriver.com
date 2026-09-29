@@ -1,0 +1,50 @@
+[
+  {
+    "width": 390,
+    "theme": "light",
+    "overflow": false,
+    "sections": [
+      "feat-banner-title",
+      "home-topics-title",
+      "home-latest-mobile-title",
+      "home-author-title",
+      "home-discovery-section home-gallery-section"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "overflow": false,
+    "sections": [
+      "feat-banner-title",
+      "home-topics-title",
+      "home-latest-mobile-title",
+      "home-author-title",
+      "home-discovery-section home-gallery-section"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "overflow": false,
+    "sections": [
+      "feat-banner-title",
+      "home-topics-title",
+      "home-latest-title",
+      "home-author-title",
+      "home-discovery-section home-gallery-section"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "overflow": false,
+    "sections": [
+      "feat-banner-title",
+      "home-topics-title",
+      "home-latest-title",
+      "home-author-title",
+      "home-discovery-section home-gallery-section"
+    ]
+  }
+]
