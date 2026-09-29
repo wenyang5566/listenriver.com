@@ -1,0 +1,5 @@
+{{- with site.GetPage .url -}}
+  {{- $pages := .RegularPages -}}
+  {{- if eq .Kind "section" -}}{{- $pages = .RegularPagesRecursive -}}{{- end -}}
+  <span class="personal-header__dropdown-count" aria-label="{{ len $pages }} 篇文章">{{ len $pages }}</span>
+{{- end -}}
