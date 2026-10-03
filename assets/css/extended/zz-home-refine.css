@@ -1,11 +1,11 @@
 /* Homepage reading palette for the design preview branch. */
 body.list:has(.home-refine) {
-  --reading-paper: #f7ecdc;
-  --reading-surface: #f4e5ce;
-  --reading-surface-soft: #ead6b7;
-  --reading-line: #d6bea1;
+  --reading-paper: #f6f3ed;
+  --reading-surface: #faf8f3;
+  --reading-surface-soft: #ede9e1;
+  --reading-line: #ded8ce;
   --reading-accent: #986148;
-  --reading-muted: #746454;
+  --reading-muted: #6e6860;
   --reading-ink: #3e4b50;
   --river-blue: #64899b;
   --river-mist: #7e9db0;
@@ -26,7 +26,7 @@ body.list:has(.home-refine) {
 body.list:has(.home-refine) .main { background: var(--theme); }
 body:has(.home-refine) .personal-header,
 body:has(.home-refine) .personal-header .header-top-shell,
-body:has(.home-refine) .personal-header .header-nav-shell { background: #f7ecdc; }
+body:has(.home-refine) .personal-header .header-nav-shell { background: var(--reading-paper); }
 body:has(.home-refine) .personal-header .header-brand-text__title {
   background: var(--river-sage);
   color: #fffdf5;
@@ -55,7 +55,7 @@ body:has(.home-refine) .salon-hero--flow::before {
   right: -6%;
   top: -60%;
   border-radius: 50%;
-  background: rgba(94, 137, 153, .32);
+  background: radial-gradient(ellipse at center, rgba(94, 137, 153, .26) 0%, rgba(94, 137, 153, .14) 45%, rgba(94, 137, 153, .04) 63%, rgba(94, 137, 153, 0) 72%);
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow::after {
@@ -174,7 +174,7 @@ html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
     radial-gradient(ellipse at 80% 30%, rgba(123, 156, 172, .18), transparent 48%),
     linear-gradient(125deg, #293034, #303a40 55%, #3b4c54);
 }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: rgba(159, 186, 195, .14); }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: radial-gradient(ellipse at center, rgba(159, 186, 195, .14) 0%, rgba(159, 186, 195, .08) 45%, rgba(159, 186, 195, .025) 63%, rgba(159, 186, 195, 0) 72%); }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { background: linear-gradient(90deg, rgba(41, 48, 52, .68), rgba(41, 48, 52, .25) 44%, transparent 75%); }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { text-shadow: none; }
 html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { opacity: .42; }
