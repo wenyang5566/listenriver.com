@@ -6217,12 +6217,6 @@ body:not(.list) .main .salon-hero {
     margin-inline: auto;
     padding-block: clamp(1.25rem, 2vw, 1.8rem);
     padding-inline: clamp(1.25rem, 2.5vw, 2.25rem);
-    border-radius: 32px;
-    background: rgba(255, 254, 251, 0.72);
-  }
-
-  [data-theme="dark"] .home-discovery {
-    background: rgba(255, 255, 255, 0.035);
   }
 }
 
@@ -9789,11 +9783,15 @@ html {
     width: min(100%, 68rem);
     max-width: none;
     padding: clamp(1.25rem, 2vw, 1.8rem) clamp(1.25rem, 2.5vw, 2.25rem) !important;
+  }
+
+  body.list .main:has(.blog-archive-list),
+  body.list .main:has(.taxonomy-category-shell),
+  body.list .main:has(.taxonomy-tag-shell) {
     border-radius: 28px;
     background: rgba(255, 254, 251, 0.72);
   }
 
-  [data-theme="dark"] body.list .main:has(.home-discovery),
   [data-theme="dark"] body.list .main:has(.blog-archive-list),
   [data-theme="dark"] body.list .main:has(.taxonomy-category-shell),
   [data-theme="dark"] body.list .main:has(.taxonomy-tag-shell) {
