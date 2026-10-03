@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" fill="none">
+  <defs>
+    <linearGradient id="reveal"><stop stop-color="white" stop-opacity="0"/><stop offset=".28" stop-color="white" stop-opacity=".7"/><stop offset=".7" stop-color="white"/></linearGradient>
+    <linearGradient id="mist" x1="268" y1="25" x2="563" y2="412" gradientUnits="userSpaceOnUse"><stop stop-color="#c0cbc7"/><stop offset="1" stop-color="#86a3aa"/></linearGradient>
+    <linearGradient id="clay" x1="700" y1="50" x2="562" y2="412" gradientUnits="userSpaceOnUse"><stop stop-color="#dcac92"/><stop offset="1" stop-color="#c78367"/></linearGradient>
+    <linearGradient id="blue" x1="632" y1="301" x2="710" y2="460" gradientUnits="userSpaceOnUse"><stop stop-color="#688b93"/><stop offset="1" stop-color="#456875"/></linearGradient>
+    <mask id="fade"><path fill="url(#reveal)" d="M0 0h760v440H0z"/></mask>
+  </defs>
+  <g mask="url(#fade)">
+    <path fill="#e2d6bf" opacity=".7" d="M174 460C121 316 146 167 260 82 352 13 501-28 648-40L809-30 801 462Z"/>
+    <path fill="url(#mist)" d="M358-54C224 47 214 176 274 300 304 362 372 413 418 469L823 454 824-62Z"/>
+    <path fill="url(#clay)" d="M710-58C615 25 584 113 625 213 663 309 659 373 573 461L812 463 821-63Z"/>
+    <path fill="#f0e5d1" opacity=".85" d="M218 452C294 331 390 288 467 305 542 322 590 377 606 459Z"/>
+    <path fill="url(#blue)" d="M351 472C420 408 507 390 584 365 662 340 717 304 803 295L818 476Z"/>
+  </g>
+</svg>

@@ -32,30 +32,27 @@ body:has(.home-refine) .personal-header .header-brand-text__title {
   color: #fffdf5;
 }
 body:has(.home-refine) .salon-hero--flow {
-  --hero-ink: #344e5c;
-  --hero-accent: #9f654e;
-  --hero-secondary: #62666a;
-  --hero-current: #527986;
-  --hero-far: #bd8169;
-  --hero-ribbon: #c9b18b;
-  --hero-thread: #78949f;
+  --hero-ink: #304b55;
+  --hero-accent: #a15d43;
+  --hero-secondary: #65635c;
+  --hero-current: #547d85;
+  --hero-far: #b8795d;
+  --hero-ribbon: #bca57b;
+  --hero-thread: #8da6ac;
+  --hero-pigments: url('/images/hero/mineral-paper.svg');
   min-height: 360px;
-  border-color: rgba(142, 139, 128, .18);
-  background:
-    radial-gradient(ellipse at 87% 96%, rgba(234, 210, 196, .38), transparent 43%),
-    radial-gradient(ellipse at 85% 18%, rgba(140, 169, 181, .15), transparent 40%),
-    linear-gradient(110deg, #faf3e7 0%, #f5eddf 60%, #eee8dc 100%);
+  border-color: rgba(138, 120, 93, .18);
+  background: linear-gradient(105deg, #f9f3e8 0%, #f4ebdc 58%, #ece1ce 100%);
 }
 body:has(.home-refine) .salon-hero--flow::before {
   content: "";
   position: absolute;
   z-index: 0;
-  width: clamp(320px, 42vw, 620px);
-  aspect-ratio: 1;
-  right: -6%;
-  top: -60%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(94, 137, 153, .26) 0%, rgba(94, 137, 153, .14) 45%, rgba(94, 137, 153, .04) 63%, rgba(94, 137, 153, 0) 72%);
+  width: 58%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--hero-pigments) right center / auto 100% no-repeat;
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow::after {
@@ -63,7 +60,10 @@ body:has(.home-refine) .salon-hero--flow::after {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background: linear-gradient(90deg, rgba(250, 243, 231, .82), rgba(250, 243, 231, .48) 42%, transparent 74%);
+  background: url('/images/hero/paper-grain.svg') repeat;
+  background-size: 192px 192px;
+  opacity: .32;
+  mix-blend-mode: multiply;
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow .salon-hero-inner {
@@ -129,7 +129,12 @@ body.list:has(.home-refine) .home-latest-item:focus-within { border-color: var(-
 @media (max-width: 768px) {
   body:has(.home-refine) .salon-hero--flow,
   body:has(.home-refine) .salon-hero--flow .salon-hero-inner { min-height: 280px; }
-  body:has(.home-refine) .salon-hero--flow::before { right: -45%; top: -50%; }
+  body:has(.home-refine) .salon-hero--flow::before {
+    width: 100%;
+    right: -40%;
+    opacity: .4;
+    mask-image: linear-gradient(90deg, transparent, #000 55%);
+  }
   body:has(.home-refine) .salon-hero--flow .salon-hero-inner { padding: 2.1rem 1.35rem; }
   body:has(.home-refine) .salon-hero-title { font-size: clamp(2.35rem, 10vw, 3.1rem); }
   body:has(.home-refine) .salon-hero-topics { margin-top: .8rem; font-size: .87rem; }
@@ -168,14 +173,11 @@ html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
   --hero-far: #cf9b81;
   --hero-ribbon: #c8b592;
   --hero-thread: #b0c5cc;
+  --hero-pigments: url('/images/hero/mineral-paper-dark.svg');
   border-color: rgba(157, 179, 188, .24);
-  background:
-    radial-gradient(ellipse at 87% 96%, rgba(178, 141, 118, .2), transparent 43%),
-    radial-gradient(ellipse at 80% 30%, rgba(123, 156, 172, .18), transparent 48%),
-    linear-gradient(125deg, #293034, #303a40 55%, #3b4c54);
+  background: linear-gradient(105deg, #292e2f 0%, #303737 58%, #3a4240 100%);
 }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: radial-gradient(ellipse at center, rgba(159, 186, 195, .14) 0%, rgba(159, 186, 195, .08) 45%, rgba(159, 186, 195, .025) 63%, rgba(159, 186, 195, 0) 72%); }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { background: linear-gradient(90deg, rgba(41, 48, 52, .68), rgba(41, 48, 52, .25) 44%, transparent 75%); }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { opacity: .16; mix-blend-mode: screen; }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { text-shadow: none; }
 html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { opacity: .42; }
 html[data-theme="dark"] body.list:has(.home-refine) .home-discovery-section--topics {
