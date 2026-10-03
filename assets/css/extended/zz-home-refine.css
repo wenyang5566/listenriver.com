@@ -76,8 +76,6 @@ body:has(.home-refine) .river-lines--near { opacity: .42; }
 body:has(.home-refine) .river-lines--far { color: var(--river-sand); opacity: .28; }
 body:has(.home-refine) .river-ribbon { stroke: var(--river-ochre); }
 body:has(.home-refine) .river-lines--far .river-thread { stroke: var(--river-clay); opacity: .38; }
-body:has(.home-refine) .river-control { color: #486163; }
-body:has(.home-refine) .river-pause { accent-color: #627d89; }
 @media (min-width: 1100px) {
   body.list .home-refine { background: rgba(255, 253, 247, .78); }
 }
@@ -127,5 +125,4 @@ html[data-theme="dark"] body:has(.home-refine) .river-surface { color: #afcbdc; 
 html[data-theme="dark"] body:has(.home-refine) .river-lines--far { color: #bbc6ae; }
 html[data-theme="dark"] body:has(.home-refine) .river-ribbon { stroke: #d0b69c; }
 html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { stroke: #d19a7b; opacity: .42; }
-html[data-theme="dark"] body:has(.home-refine) .river-control { color: #d4e4da; }
 html[data-theme="dark"] body.list .home-refine { background: rgba(255, 247, 230, .035); }
