@@ -1,4 +1,4 @@
-/* Homepage preview palette; enabled only by the local readingPreview setting. */
+/* Homepage reading palette for the design preview branch. */
 body.list:has(.home-refine) {
   --reading-paper: #f8f0e4;
   --reading-surface: #fffbf3;
