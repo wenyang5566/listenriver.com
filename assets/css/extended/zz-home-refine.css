@@ -32,19 +32,19 @@ body:has(.home-refine) .personal-header .header-brand-text__title {
   color: #fffdf5;
 }
 body:has(.home-refine) .salon-hero--flow {
-  --hero-ink: #59453f;
-  --hero-accent: #965641;
-  --hero-secondary: #735c51;
-  --hero-current: #a06555;
-  --hero-far: #b69663;
-  --hero-ribbon: #d5aa68;
-  --hero-thread: #9e7980;
+  --hero-ink: #344e5c;
+  --hero-accent: #9f654e;
+  --hero-secondary: #62666a;
+  --hero-current: #527986;
+  --hero-far: #bd8169;
+  --hero-ribbon: #c9b18b;
+  --hero-thread: #78949f;
   min-height: 360px;
-  border-color: rgba(155, 103, 78, .18);
+  border-color: rgba(142, 139, 128, .18);
   background:
-    radial-gradient(ellipse at 87% 96%, rgba(224, 163, 107, .38), transparent 43%),
-    radial-gradient(ellipse at 85% 18%, rgba(190, 125, 119, .15), transparent 40%),
-    linear-gradient(110deg, #faf1e6 0%, #f2ddc8 60%, #e5bda4 100%);
+    radial-gradient(ellipse at 87% 96%, rgba(234, 210, 196, .38), transparent 43%),
+    radial-gradient(ellipse at 85% 18%, rgba(140, 169, 181, .15), transparent 40%),
+    linear-gradient(110deg, #faf3e7 0%, #f5eddf 60%, #eee8dc 100%);
 }
 body:has(.home-refine) .salon-hero--flow::before {
   content: "";
@@ -55,7 +55,7 @@ body:has(.home-refine) .salon-hero--flow::before {
   right: -6%;
   top: -60%;
   border-radius: 50%;
-  background: rgba(165, 102, 105, .16);
+  background: rgba(94, 137, 153, .32);
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow::after {
@@ -63,7 +63,7 @@ body:has(.home-refine) .salon-hero--flow::after {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background: linear-gradient(90deg, rgba(250, 241, 230, .82), rgba(250, 241, 230, .48) 42%, transparent 74%);
+  background: linear-gradient(90deg, rgba(250, 243, 231, .82), rgba(250, 243, 231, .48) 42%, transparent 74%);
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow .salon-hero-inner {
@@ -161,21 +161,21 @@ html[data-theme="dark"] body:has(.home-refine) .personal-header .header-top-shel
 html[data-theme="dark"] body:has(.home-refine) .personal-header .header-nav-shell { background: #2c2e2b; }
 html[data-theme="dark"] body:has(.home-refine) .personal-header .header-brand-text__title { background: #526d7a; color: #fffdf5; }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
-  --hero-ink: #f4e6d6;
-  --hero-accent: #e3b294;
-  --hero-secondary: #d4bcac;
-  --hero-current: #cd9b85;
-  --hero-far: #c2a47a;
-  --hero-ribbon: #d8b579;
-  --hero-thread: #c79ba4;
-  border-color: rgba(206, 156, 128, .24);
+  --hero-ink: #f4ebdc;
+  --hero-accent: #dca88e;
+  --hero-secondary: #c3c7c5;
+  --hero-current: #a2bec8;
+  --hero-far: #cf9b81;
+  --hero-ribbon: #c8b592;
+  --hero-thread: #b0c5cc;
+  border-color: rgba(157, 179, 188, .24);
   background:
-    radial-gradient(ellipse at 87% 96%, rgba(194, 135, 84, .2), transparent 43%),
-    radial-gradient(ellipse at 80% 30%, rgba(172, 110, 124, .18), transparent 48%),
-    linear-gradient(125deg, #302a2b, #3b2f30 55%, #59413a);
+    radial-gradient(ellipse at 87% 96%, rgba(178, 141, 118, .2), transparent 43%),
+    radial-gradient(ellipse at 80% 30%, rgba(123, 156, 172, .18), transparent 48%),
+    linear-gradient(125deg, #293034, #303a40 55%, #3b4c54);
 }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: rgba(191, 138, 150, .14); }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { background: linear-gradient(90deg, rgba(48, 42, 43, .68), rgba(48, 42, 43, .25) 44%, transparent 75%); }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: rgba(159, 186, 195, .14); }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { background: linear-gradient(90deg, rgba(41, 48, 52, .68), rgba(41, 48, 52, .25) 44%, transparent 75%); }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { text-shadow: none; }
 html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { opacity: .42; }
 html[data-theme="dark"] body.list:has(.home-refine) .home-discovery-section--topics {
