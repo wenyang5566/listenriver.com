@@ -32,12 +32,19 @@ body:has(.home-refine) .personal-header .header-brand-text__title {
   color: #fffdf5;
 }
 body:has(.home-refine) .salon-hero--flow {
+  --hero-ink: #59453f;
+  --hero-accent: #965641;
+  --hero-secondary: #735c51;
+  --hero-current: #a06555;
+  --hero-far: #b69663;
+  --hero-ribbon: #d5aa68;
+  --hero-thread: #9e7980;
   min-height: 360px;
-  border-color: rgba(124, 130, 130, .18);
+  border-color: rgba(155, 103, 78, .18);
   background:
-    radial-gradient(ellipse at 87% 96%, rgba(226, 173, 93, .38), transparent 43%),
-    radial-gradient(ellipse at 85% 18%, rgba(144, 169, 183, .15), transparent 40%),
-    linear-gradient(110deg, #fcf2df 0%, #f8e8cb 60%, #eedab6 100%);
+    radial-gradient(ellipse at 87% 96%, rgba(224, 163, 107, .38), transparent 43%),
+    radial-gradient(ellipse at 85% 18%, rgba(190, 125, 119, .15), transparent 40%),
+    linear-gradient(110deg, #faf1e6 0%, #f2ddc8 60%, #e5bda4 100%);
 }
 body:has(.home-refine) .salon-hero--flow::before {
   content: "";
@@ -48,7 +55,7 @@ body:has(.home-refine) .salon-hero--flow::before {
   right: -6%;
   top: -60%;
   border-radius: 50%;
-  background: rgba(126, 157, 176, .16);
+  background: rgba(165, 102, 105, .16);
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow::after {
@@ -56,7 +63,7 @@ body:has(.home-refine) .salon-hero--flow::after {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255, 248, 233, .82), rgba(255, 248, 233, .48) 42%, transparent 74%);
+  background: linear-gradient(90deg, rgba(250, 241, 230, .82), rgba(250, 241, 230, .48) 42%, transparent 74%);
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow .salon-hero-inner {
@@ -66,22 +73,22 @@ body:has(.home-refine) .salon-hero--flow .salon-hero-inner {
 }
 body:has(.home-refine) .salon-hero-headline { display: block; }
 body:has(.home-refine) .salon-hero-title {
-  color: var(--reading-ink);
+  color: var(--hero-ink);
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   font-size: clamp(3.2rem, 5.4vw, 5.7rem);
   font-weight: 600;
   line-height: 1.13;
   letter-spacing: -.055em;
 }
-body:has(.home-refine) .salon-hero-kicker { color: var(--reading-accent); letter-spacing: .2em; }
-body:has(.home-refine) .salon-hero-topics { margin-top: 1.15rem; color: #46535b; font-size: 1.05rem; }
+body:has(.home-refine) .salon-hero-kicker { color: var(--hero-accent); letter-spacing: .2em; }
+body:has(.home-refine) .salon-hero-topics { margin-top: 1.15rem; color: var(--hero-ink); font-size: 1.05rem; }
 body:has(.home-refine) .salon-hero-bottom { margin-top: .9rem; }
-body:has(.home-refine) .salon-hero-bottom .salon-channel-desc { max-width: 37rem; color: #696762; }
-body:has(.home-refine) .river-surface { color: var(--river-blue); }
+body:has(.home-refine) .salon-hero-bottom .salon-channel-desc { max-width: 37rem; color: var(--hero-secondary); }
+body:has(.home-refine) .river-surface { color: var(--hero-current); }
 body:has(.home-refine) .river-lines--near { opacity: .42; }
-body:has(.home-refine) .river-lines--far { color: var(--river-sand); opacity: .28; }
-body:has(.home-refine) .river-ribbon { stroke: var(--river-ochre); }
-body:has(.home-refine) .river-lines--far .river-thread { stroke: var(--river-clay); opacity: .38; }
+body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .28; }
+body:has(.home-refine) .river-ribbon { stroke: var(--hero-ribbon); }
+body:has(.home-refine) .river-lines--far .river-thread { stroke: var(--hero-thread); opacity: .38; }
 
 /* Shared surfaces keep homepage cards warm in both themes. */
 body.list:has(.home-refine) .home-discovery-section--topics {
@@ -154,22 +161,23 @@ html[data-theme="dark"] body:has(.home-refine) .personal-header .header-top-shel
 html[data-theme="dark"] body:has(.home-refine) .personal-header .header-nav-shell { background: #2c2e2b; }
 html[data-theme="dark"] body:has(.home-refine) .personal-header .header-brand-text__title { background: #526d7a; color: #fffdf5; }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
-  border-color: rgba(179, 198, 209, .24);
+  --hero-ink: #f4e6d6;
+  --hero-accent: #e3b294;
+  --hero-secondary: #d4bcac;
+  --hero-current: #cd9b85;
+  --hero-far: #c2a47a;
+  --hero-ribbon: #d8b579;
+  --hero-thread: #c79ba4;
+  border-color: rgba(206, 156, 128, .24);
   background:
-    radial-gradient(ellipse at 87% 96%, rgba(188, 139, 77, .2), transparent 43%),
-    radial-gradient(ellipse at 80% 30%, rgba(120, 154, 176, .18), transparent 48%),
-    linear-gradient(125deg, #2c2e2c, #363b3a 55%, #50534b);
+    radial-gradient(ellipse at 87% 96%, rgba(194, 135, 84, .2), transparent 43%),
+    radial-gradient(ellipse at 80% 30%, rgba(172, 110, 124, .18), transparent 48%),
+    linear-gradient(125deg, #302a2b, #3b2f30 55%, #59413a);
 }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: rgba(160, 184, 201, .14); }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { background: linear-gradient(90deg, rgba(39, 47, 54, .68), rgba(39, 47, 54, .25) 44%, transparent 75%); }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { color: #f5eada; text-shadow: none; }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero-kicker { color: var(--reading-accent); }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero-topics { color: #e8e6de; }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero-bottom .salon-channel-desc { color: #d4ddd5; }
-html[data-theme="dark"] body:has(.home-refine) .river-surface { color: #afcbdc; }
-html[data-theme="dark"] body:has(.home-refine) .river-lines--far { color: #bbc6ae; }
-html[data-theme="dark"] body:has(.home-refine) .river-ribbon { stroke: #d0b69c; }
-html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { stroke: #d19a7b; opacity: .42; }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::before { background: rgba(191, 138, 150, .14); }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { background: linear-gradient(90deg, rgba(48, 42, 43, .68), rgba(48, 42, 43, .25) 44%, transparent 75%); }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { text-shadow: none; }
+html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { opacity: .42; }
 html[data-theme="dark"] body.list:has(.home-refine) .home-discovery-section--topics {
   --taxonomy-landing-reading: #a6bfcb;
   --taxonomy-landing-practice: #b0c0a5;
