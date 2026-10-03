@@ -1,4 +1,18 @@
-﻿<section class="salon-hero">
+<section class="salon-hero salon-hero--flow">
+  <input class="river-pause" id="river-pause" type="checkbox">
+  <label class="river-control" for="river-pause">暫停水紋</label>
+  <div class="river-surface" aria-hidden="true">
+    <svg class="river-lines river-lines--near" viewBox="0 0 1440 360" preserveAspectRatio="none" focusable="false">
+      <path class="river-current" d="M-160 230 C160 390 390 70 720 180 S1210 360 1600 80"/>
+      <path class="river-ribbon" d="M-160 286 C160 446 390 126 720 236 S1210 416 1600 136"/>
+      <path class="river-thread" d="M-160 340 C160 500 390 180 720 290 S1210 470 1600 190"/>
+    </svg>
+    <svg class="river-lines river-lines--far" viewBox="0 0 1440 360" preserveAspectRatio="none" focusable="false">
+      <path d="M-160 110 C240 -40 600 290 940 160 S1320 40 1600 100"/>
+      <path class="river-thread" d="M-160 175 C240 25 600 355 940 225 S1320 105 1600 165"/>
+      <path class="river-current" d="M-160 250 C240 100 600 430 940 300 S1320 180 1600 240"/>
+    </svg>
+  </div>
   <div class="salon-hero-inner">
     <div class="salon-hero-lockup">
       <span class="salon-hero-mark" aria-hidden="true"></span>
