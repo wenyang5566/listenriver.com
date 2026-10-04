@@ -42,17 +42,17 @@ body:has(.home-refine) .salon-hero--flow {
   --hero-pigments: url('/images/hero/mineral-paper.svg');
   min-height: 360px;
   border-color: rgba(149, 112, 94, .16);
-  background: radial-gradient(ellipse at 24% 18%, #fcf8f0 0%, transparent 68%), linear-gradient(110deg, #f5eee3 0%, #f1e7dc 62%, #e9dace 100%);
+  background: radial-gradient(ellipse at 24% 18%, #fdfaf3 0%, transparent 68%), linear-gradient(110deg, #f7f1e8 0%, #f5eee5 62%, #f0e8de 100%);
 }
 body:has(.home-refine) .salon-hero--flow::before {
   content: "";
   position: absolute;
   z-index: 0;
-  width: 58%;
+  width: 100%;
   right: 0;
   top: 0;
   bottom: 0;
-  background: var(--hero-pigments) right center / auto 100% no-repeat;
+  background: var(--hero-pigments) center / 100% 100% no-repeat;
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow::after {
@@ -62,7 +62,7 @@ body:has(.home-refine) .salon-hero--flow::after {
   inset: 0;
   background: url('/images/hero/paper-grain.svg') repeat;
   background-size: 192px 192px;
-  opacity: .46;
+  opacity: .23;
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -85,8 +85,8 @@ body:has(.home-refine) .salon-hero-topics { margin-top: 1.15rem; color: var(--he
 body:has(.home-refine) .salon-hero-bottom { margin-top: .9rem; }
 body:has(.home-refine) .salon-hero-bottom .salon-channel-desc { max-width: 37rem; color: var(--hero-secondary); }
 body:has(.home-refine) .river-surface { color: var(--hero-current); }
-body:has(.home-refine) .river-lines--near { opacity: .42; }
-body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .28; }
+body:has(.home-refine) .river-lines--near { opacity: .3; }
+body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .19; }
 body:has(.home-refine) .river-ribbon { stroke: var(--hero-ribbon); }
 body:has(.home-refine) .river-lines--far .river-thread { stroke: var(--hero-thread); opacity: .38; }
 
@@ -131,9 +131,8 @@ body.list:has(.home-refine) .home-latest-item:focus-within { border-color: var(-
   body:has(.home-refine) .salon-hero--flow .salon-hero-inner { min-height: 280px; }
   body:has(.home-refine) .salon-hero--flow::before {
     width: 100%;
-    right: -40%;
-    opacity: .4;
-    mask-image: linear-gradient(90deg, transparent, #000 55%);
+    right: 0;
+    opacity: .7;
   }
   body:has(.home-refine) .salon-hero--flow .salon-hero-inner { padding: 2.1rem 1.35rem; }
   body:has(.home-refine) .salon-hero-title { font-size: clamp(2.35rem, 10vw, 3.1rem); }
@@ -177,7 +176,7 @@ html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
   border-color: rgba(157, 179, 188, .24);
   background: linear-gradient(105deg, #302e2c 0%, #393330 58%, #443b35 100%);
 }
-html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { opacity: .16; mix-blend-mode: screen; }
+html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { opacity: .12; mix-blend-mode: screen; }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { text-shadow: none; }
 html[data-theme="dark"] body:has(.home-refine) .river-lines--far .river-thread { opacity: .42; }
 html[data-theme="dark"] body.list:has(.home-refine) .home-discovery-section--topics {
