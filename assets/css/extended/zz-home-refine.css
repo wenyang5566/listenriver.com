@@ -32,15 +32,15 @@ body:has(.home-refine) .personal-header .header-brand-text__title {
   color: #fffdf5;
 }
 body:has(.home-refine) .salon-hero--flow {
-  --hero-ink: #39494c;
-  --hero-accent: #984f3d;
+  --hero-ink: #354e55;
+  --hero-accent: #976b55;
   --hero-secondary: #68615c;
   --hero-current: #697f83;
   --hero-far: #af6c56;
   --hero-ribbon: #c2957e;
   --hero-thread: #97aaa9;
-  --hero-pigments: url('/images/hero/mineral-paper.svg');
-  min-height: 360px;
+  --hero-pigments: url('/images/hero/river-listening.svg');
+  min-height: 420px;
   border-color: rgba(149, 112, 94, .16);
   background: radial-gradient(ellipse at 24% 18%, #fdfaf3 0%, transparent 68%), linear-gradient(110deg, #f7f1e8 0%, #f5eee5 62%, #f0e8de 100%);
 }
@@ -67,7 +67,7 @@ body:has(.home-refine) .salon-hero--flow::after {
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow .salon-hero-inner {
-  min-height: 360px;
+  min-height: 420px;
   align-items: center;
   padding: 3rem clamp(2rem, 5vw, 5rem);
 }
@@ -85,8 +85,8 @@ body:has(.home-refine) .salon-hero-topics { margin-top: 1.15rem; color: var(--he
 body:has(.home-refine) .salon-hero-bottom { margin-top: .9rem; }
 body:has(.home-refine) .salon-hero-bottom .salon-channel-desc { max-width: 37rem; color: var(--hero-secondary); }
 body:has(.home-refine) .river-surface { color: var(--hero-current); }
-body:has(.home-refine) .river-lines--near { opacity: .3; }
-body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .19; }
+body:has(.home-refine) .river-lines--near { opacity: .16; }
+body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .10; }
 body:has(.home-refine) .river-ribbon { stroke: var(--hero-ribbon); }
 body:has(.home-refine) .river-lines--far .river-thread { stroke: var(--hero-thread); opacity: .38; }
 
@@ -172,7 +172,7 @@ html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
   --hero-far: #cf9b81;
   --hero-ribbon: #c8b592;
   --hero-thread: #b0c5cc;
-  --hero-pigments: url('/images/hero/mineral-paper-dark.svg');
+  --hero-pigments: url('/images/hero/river-listening-dark.svg');
   border-color: rgba(157, 179, 188, .24);
   background: linear-gradient(105deg, #302e2c 0%, #393330 58%, #443b35 100%);
 }
