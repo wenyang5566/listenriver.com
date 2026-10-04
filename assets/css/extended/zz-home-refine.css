@@ -32,17 +32,17 @@ body:has(.home-refine) .personal-header .header-brand-text__title {
   color: #fffdf5;
 }
 body:has(.home-refine) .salon-hero--flow {
-  --hero-ink: #304b55;
-  --hero-accent: #a15d43;
-  --hero-secondary: #65635c;
-  --hero-current: #547d85;
-  --hero-far: #b8795d;
-  --hero-ribbon: #bca57b;
-  --hero-thread: #8da6ac;
+  --hero-ink: #39494c;
+  --hero-accent: #984f3d;
+  --hero-secondary: #68615c;
+  --hero-current: #697f83;
+  --hero-far: #af6c56;
+  --hero-ribbon: #c2957e;
+  --hero-thread: #97aaa9;
   --hero-pigments: url('/images/hero/mineral-paper.svg');
   min-height: 360px;
-  border-color: rgba(138, 120, 93, .18);
-  background: linear-gradient(105deg, #f9f3e8 0%, #f4ebdc 58%, #ece1ce 100%);
+  border-color: rgba(149, 112, 94, .16);
+  background: radial-gradient(ellipse at 24% 18%, #fcf8f0 0%, transparent 68%), linear-gradient(110deg, #f5eee3 0%, #f1e7dc 62%, #e9dace 100%);
 }
 body:has(.home-refine) .salon-hero--flow::before {
   content: "";
@@ -62,7 +62,7 @@ body:has(.home-refine) .salon-hero--flow::after {
   inset: 0;
   background: url('/images/hero/paper-grain.svg') repeat;
   background-size: 192px 192px;
-  opacity: .32;
+  opacity: .46;
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -166,16 +166,16 @@ html[data-theme="dark"] body:has(.home-refine) .personal-header .header-top-shel
 html[data-theme="dark"] body:has(.home-refine) .personal-header .header-nav-shell { background: #2c2e2b; }
 html[data-theme="dark"] body:has(.home-refine) .personal-header .header-brand-text__title { background: #526d7a; color: #fffdf5; }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
-  --hero-ink: #f4ebdc;
-  --hero-accent: #dca88e;
-  --hero-secondary: #c3c7c5;
+  --hero-ink: #f6ece0;
+  --hero-accent: #e2ab90;
+  --hero-secondary: #cec2b8;
   --hero-current: #a2bec8;
   --hero-far: #cf9b81;
   --hero-ribbon: #c8b592;
   --hero-thread: #b0c5cc;
   --hero-pigments: url('/images/hero/mineral-paper-dark.svg');
   border-color: rgba(157, 179, 188, .24);
-  background: linear-gradient(105deg, #292e2f 0%, #303737 58%, #3a4240 100%);
+  background: linear-gradient(105deg, #302e2c 0%, #393330 58%, #443b35 100%);
 }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow::after { opacity: .16; mix-blend-mode: screen; }
 html[data-theme="dark"] body:has(.home-refine) .salon-hero-title { text-shadow: none; }
