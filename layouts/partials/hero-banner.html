@@ -1,6 +1,41 @@
 <section class="salon-hero salon-hero--flow">
   <div class="river-surface" aria-hidden="true">
     <svg class="river-lines river-lines--near" viewBox="0 0 1440 360" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="river-wash-color" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="var(--hero-wash, #668a91)" stop-opacity="0"/>
+          <stop offset=".38" stop-color="var(--hero-wash, #668a91)" stop-opacity=".25"/>
+          <stop offset=".78" stop-color="var(--hero-wash, #668a91)" stop-opacity=".85"/>
+          <stop offset="1" stop-color="var(--hero-wash, #668a91)" stop-opacity=".5"/>
+        </linearGradient>
+        <path id="river-wash-course" d="M-160 230 C160 390 390 70 720 180 S1210 360 1600 80"/>
+      </defs>
+      <g class="river-wash" stroke="url(#river-wash-color)" fill="none" stroke-linecap="round">
+        <use href="#river-wash-course" stroke-width="184" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="177" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="170" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="163" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="156" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="149" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="142" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="135" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="128" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="121" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="114" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="107" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="100" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="93" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="86" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="79" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="72" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="65" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="58" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="51" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="44" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="37" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="30" opacity=".014"/>
+        <use href="#river-wash-course" stroke-width="23" opacity=".014"/>
+      </g>
       <path class="river-current" d="M-160 230 C160 390 390 70 720 180 S1210 360 1600 80"/>
       <path class="river-ribbon" d="M-160 286 C160 446 390 126 720 236 S1210 416 1600 136"/>
       <path class="river-thread" d="M-160 340 C160 500 390 180 720 290 S1210 470 1600 190"/>

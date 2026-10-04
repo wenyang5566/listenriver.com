@@ -39,10 +39,12 @@ body:has(.home-refine) .salon-hero--flow {
   --hero-far: #af6c56;
   --hero-ribbon: #c2957e;
   --hero-thread: #97aaa9;
-  --hero-pigments: url('/images/hero/river-listening.svg');
-  min-height: 420px;
+  --hero-wash: #668a91;
+  --hero-haze-cool: rgba(101, 135, 141, .14);
+  --hero-haze-warm: rgba(184, 126, 101, .19);
+  min-height: 380px;
   border-color: rgba(149, 112, 94, .16);
-  background: radial-gradient(ellipse at 24% 18%, #fdfaf3 0%, transparent 68%), linear-gradient(110deg, #f7f1e8 0%, #f5eee5 62%, #f0e8de 100%);
+  background: linear-gradient(110deg, #f0e9df 0%, #eae1d5 65%, #e5dace 100%);
 }
 body:has(.home-refine) .salon-hero--flow::before {
   content: "";
@@ -52,7 +54,7 @@ body:has(.home-refine) .salon-hero--flow::before {
   right: 0;
   top: 0;
   bottom: 0;
-  background: var(--hero-pigments) center / 100% 100% no-repeat;
+  background: radial-gradient(ellipse at 76% 8%, var(--hero-haze-warm), transparent 65%), radial-gradient(ellipse at 100% 86%, var(--hero-haze-cool), transparent 70%);
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow::after {
@@ -67,7 +69,7 @@ body:has(.home-refine) .salon-hero--flow::after {
   pointer-events: none;
 }
 body:has(.home-refine) .salon-hero--flow .salon-hero-inner {
-  min-height: 420px;
+  min-height: 380px;
   align-items: center;
   padding: 3rem clamp(2rem, 5vw, 5rem);
 }
@@ -85,8 +87,11 @@ body:has(.home-refine) .salon-hero-topics { margin-top: 1.15rem; color: var(--he
 body:has(.home-refine) .salon-hero-bottom { margin-top: .9rem; }
 body:has(.home-refine) .salon-hero-bottom .salon-channel-desc { max-width: 37rem; color: var(--hero-secondary); }
 body:has(.home-refine) .river-surface { color: var(--hero-current); }
-body:has(.home-refine) .river-lines--near { opacity: .16; }
-body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .10; }
+body:has(.home-refine) .river-lines--near { opacity: 1; }
+body:has(.home-refine) .river-lines--near > path { opacity: .24; }
+body:has(.home-refine) .river-lines--near > .river-thread { opacity: .13; }
+body:has(.home-refine) .river-lines--near > .river-ribbon { opacity: .055; }
+body:has(.home-refine) .river-lines--far { color: var(--hero-far); opacity: .13; }
 body:has(.home-refine) .river-ribbon { stroke: var(--hero-ribbon); }
 body:has(.home-refine) .river-lines--far .river-thread { stroke: var(--hero-thread); opacity: .38; }
 
@@ -172,7 +177,9 @@ html[data-theme="dark"] body:has(.home-refine) .salon-hero--flow {
   --hero-far: #cf9b81;
   --hero-ribbon: #c8b592;
   --hero-thread: #b0c5cc;
-  --hero-pigments: url('/images/hero/river-listening-dark.svg');
+  --hero-wash: #87a4aa;
+  --hero-haze-cool: rgba(107, 143, 151, .12);
+  --hero-haze-warm: rgba(180, 123, 96, .12);
   border-color: rgba(157, 179, 188, .24);
   background: linear-gradient(105deg, #302e2c 0%, #393330 58%, #443b35 100%);
 }
