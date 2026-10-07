@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 {{- $theme := site.Params.defaultTheme | default "auto" }}
+{{- if and .IsHome (eq $theme "auto") }}{{ $theme = "light" }}{{ end }}
 {{- if eq $theme "dark" }}
 <html lang="{{ site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}" data-theme="dark">
 {{- else if eq $theme "light" }}
@@ -22,7 +23,8 @@
 <body id="top">
 {{- end }}
     {{- if .IsHome -}}
-        {{ partial "river-header.html" . }}
+        <a class="river-skip" href="#river-content">跳至閱讀內容</a>
+        {{ partial "header.html" . }}
     {{- else -}}
         {{ partialCached "header.html" . .Page }}
     {{- end -}}

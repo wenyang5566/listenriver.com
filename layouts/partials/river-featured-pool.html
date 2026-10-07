@@ -1,0 +1,6 @@
+{{- $pool := slice -}}
+{{- with .lead -}}{{- $pool = $pool | append . -}}{{- end -}}
+{{- range (where .pages "Params.featured" true).ByDate.Reverse -}}
+  {{- if and (lt (len $pool) 6) (not (in $pool .)) -}}{{- $pool = $pool | append . -}}{{- end -}}
+{{- end -}}
+{{- return $pool -}}

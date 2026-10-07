@@ -5,11 +5,12 @@
 {{- $searchUrl := "/search/" | relLangURL -}}
 {{- $isSearchPage := eq .RelPermalink $searchUrl -}}
 
-<header id="site-header" class="site-header personal-header">
+<header id="site-header" class="site-header personal-header publication-header">
   <div class="header-top-shell">
     <div class="header-top personal-header__top">
-      <a class="header-brand header-brand-text personal-header__brand" href="{{ "/" | relLangURL }}" aria-label="回到首頁">
-        <span class="header-brand-text__title">{{ $brandTitle }}</span>
+      <a class="header-brand header-brand-text personal-header__brand" href="{{ "/" | relLangURL }}" aria-label="聆聽的河流，回到首頁" title="聆聽的河流">
+        {{ partial "listen-mark.html" . }}
+        {{ if not .IsHome }}<span class="header-brand-text__title">{{ $brandTitle }}</span>{{ end }}
         <span class="header-brand-text__subtitle">{{ $brandSubtitle }}</span>
       </a>
 
@@ -25,14 +26,11 @@
       </form>
 
       <div class="header-side header-side-right personal-header__actions">
-        <a class="header-icon-button header-home-link" href="{{ "/" | relLangURL }}" aria-label="首頁" title="首頁"{{ if .IsHome }} aria-current="page"{{ end }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h5v-7h4v7h5V9"></path></svg>
+        <a class="header-icon-button publication-home" href="{{ "/" | relLangURL }}" aria-label="首頁" title="首頁"{{ if .IsHome }} aria-current="page"{{ end }}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v11h5v-6h4v6h5V9"/></svg>
         </a>
-        <a class="header-icon-button header-about-link" href="{{ "/about/" | relLangURL }}" aria-label="關於作者" title="關於作者"{{ if eq .RelPermalink ("/about/" | relLangURL) }} aria-current="page"{{ end }}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="8" r="4"></circle>
-            <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
-          </svg>
+        <a class="header-icon-button header-about-link publication-about" href="{{ "/about/" | relLangURL }}" aria-label="關於文揚" title="關於文揚"{{ if eq .RelPermalink ("/about/" | relLangURL) }} aria-current="page"{{ end }}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>
         </a>
         <button class="header-icon-button header-search-toggle{{ if $isSearchPage }} is-active{{ end }}" type="button" aria-label="展開搜尋" aria-controls="header-search-input" aria-expanded="false">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -147,6 +145,7 @@
     </a>
 
     <div class="mobile-nav-menu" aria-label="手機版網站導覽">
+      <a href="{{ "/about/" | relLangURL }}" class="mobile-nav-primary-link">關於文揚</a>
       {{- range $navItems -}}
       {{- $children := .children | default (slice) -}}
       {{- if gt (len $children) 0 -}}
