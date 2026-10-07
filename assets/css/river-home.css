@@ -406,9 +406,9 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-feature-slide[hidden], .river-feature-controls[hidden] { display: none; }
 .river-feature-slides { position: relative; overflow: hidden; min-height: 400px; touch-action: pan-y pinch-zoom; }
 .river-feature-ghost { position: absolute; inset: 0; pointer-events: none; }
-.river-wordmark-water { color: var(--river-ink); }
-.river-wordmark-water path { stroke-dasharray: 240; animation: river-wordmark-arrive 1.6s ease-out both; }
-@keyframes river-wordmark-arrive { from { stroke-dashoffset: 240; } to { stroke-dashoffset: 0; } }
+.river-wordmark-water { color: var(--river-rust); }
+.river-wordmark-water path { stroke-dasharray: 1; animation: river-wordmark-arrive 1.6s ease-out both; }
+@keyframes river-wordmark-arrive { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @media (prefers-reduced-motion: reduce) { .river-wordmark-water path { animation: none; } }
 :is(.river-feature-slide, .river-feature-ghost) .river-lead-copy h3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 :is(.river-feature-slide, .river-feature-ghost) .river-lead-copy > p { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }

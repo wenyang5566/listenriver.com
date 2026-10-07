@@ -22,7 +22,7 @@
 
         header.classList.toggle('is-scrolled', y > scrolledOffset);
 
-        if (y <= scrolledOffset || isInteractionOpen) {
+        if (document.body.classList.contains('river-home') || y <= scrolledOffset || isInteractionOpen) {
           header.classList.remove('nav--hidden');
           mobileHideTravel = 0;
           mobileRevealTravel = 0;

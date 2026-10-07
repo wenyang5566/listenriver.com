@@ -37,3 +37,14 @@
   .publication-header .publication-about, .publication-header .publication-home, .publication-search-label { display: none; }
  .publication-header .mobile-nav-drawer { background: var(--pub-paper); color: var(--pub-ink); }
 }
+@media (max-width: 768px) {
+ body.river-home { overflow-x: clip; }
+ .publication-header .personal-header__actions { position: static; width: auto !important; max-width: none !important; flex: 0 0 auto !important; gap: 2px; }
+ .publication-header .personal-header__top { gap: 8px; }
+ .publication-header .personal-header__brand { flex: 0 1 auto; }
+}
+@media (max-width: 360px) {
+ .publication-header .personal-header__top { padding-inline: 12px; }
+ .publication-header.personal-header .header-brand-text__title { font-size: 16px; letter-spacing: .02em; }
+ .river-home .publication-mark { width: 30px; height: 36px; }
+}

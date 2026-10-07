@@ -142,6 +142,20 @@ for (const width of [320, 390, 768, 1440]) {
       background: getComputedStyle(document.body).backgroundColor,
     }));
     expect(layout).toEqual({overflow: false, paddingTop: '0px', background: 'rgb(255, 250, 242)'});
+    await expect(page.locator('.publication-header .header-brand-text__title')).toHaveText('聆聽的河流');
+    if (width <= 768) {
+      await page.evaluate(() => window.scrollTo(0, 900));
+      const header = page.locator('#site-header');
+      await expect.poll(async () => Math.round((await header.boundingBox()).y)).toBe(0);
+      await expect(header).not.toHaveClass(/nav--hidden/);
+      const brand = await header.locator('.personal-header__brand').boundingBox();
+      const actions = await header.locator('.personal-header__actions').boundingBox();
+      expect(brand.x + brand.width).toBeLessThanOrEqual(actions.x);
+      await page.locator('.header-mobile-menu-toggle').click();
+      await expect(header).toHaveClass(/mobile-nav-open/);
+      await page.keyboard.press('Escape');
+      await expect(header).not.toHaveClass(/mobile-nav-open/);
+    }
     await page.locator('#theme-toggle').focus();
     await page.keyboard.press('Enter');
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');

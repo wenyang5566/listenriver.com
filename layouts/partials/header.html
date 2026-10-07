@@ -10,7 +10,7 @@
     <div class="header-top personal-header__top">
       <a class="header-brand header-brand-text personal-header__brand" href="{{ "/" | relLangURL }}" aria-label="聆聽的河流，回到首頁" title="聆聽的河流">
         {{ partial "listen-mark.html" . }}
-        {{ if not .IsHome }}<span class="header-brand-text__title">{{ $brandTitle }}</span>{{ end }}
+        <span class="header-brand-text__title">{{ $brandTitle }}</span>
         <span class="header-brand-text__subtitle">{{ $brandSubtitle }}</span>
       </a>
 
