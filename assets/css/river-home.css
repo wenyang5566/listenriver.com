@@ -401,7 +401,7 @@ body[data-river-motion] .river-hero-stream :is(.river-water, .river-bank) { anim
 body[data-river-motion] .river-hero-stream .river-current-traces { animation-duration: 24s; }
 .river-lead-copy > p { font-size: 16px; line-height: 1.85; }
 .river-topic-index svg { width: 18px; height: 18px; }
-.river-opening-description .river-wordmark-title { width: min(100%, 520px); max-width: none; margin-bottom: 10px; }
+.river-opening-description .river-wordmark-title { width: min(100%, 560px); max-width: none; margin-bottom: 6px; }
 .river-publication-wordmark { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--river-font); color: var(--river-ink); }
 .river-feature-slide[hidden], .river-feature-controls[hidden] { display: none; }
 .river-feature-slides { position: relative; overflow: hidden; min-height: 400px; touch-action: pan-y pinch-zoom; }

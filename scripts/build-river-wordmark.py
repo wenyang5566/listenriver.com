@@ -19,14 +19,30 @@ class RiverPen(BasePen):
     def point(self, p):
         x, y = p
         x, y = x * .08, 84 - y * .08
+        if self.index < 2 and x < 36:
+            # Open the ear radical gently, echoing the header's listening contour.
+            envelope = max(0, math.sin((y - 14) / 78 * math.pi))
+            x += 4.4 * envelope * (x - 20) / 20
+            y += 1.4 * math.sin(x / 36 * math.pi)
         if self.index >= 3:
-            # Bend the vertical stems and ease horizontal strokes into a current.
-            x += 2.6 * math.sin((y - 10) / 72 * math.pi)
-            y += 1.8 * math.sin(x / 80 * math.pi * 1.3)
+            # The stems bend as riverbanks; horizontal strokes follow the current.
+            x += 5.4 * math.sin((y - 12) / 72 * math.pi)
+            y += 3.2 * math.sin(x / 80 * math.pi * 1.3)
         return round(x + self.index * 84, 2), round(y, 2)
 
     def _moveTo(self, p): self.output.moveTo(self.point(p))
-    def _lineTo(self, p): self.output.lineTo(self.point(p))
+    def _lineTo(self, p):
+        start = self._getCurrentPoint()
+        if self.index == 2:
+            self.output.lineTo(self.point(p))
+            return
+        # Convert straight font segments to true curves. Moving only their end
+        # points would skew the characters without giving their strokes flow.
+        points = [self.point(tuple(start[j] + (p[j] - start[j]) * t for j in (0, 1))) for t in (0, 1/3, 2/3, 1)]
+        a, b, c, d = points
+        first = tuple(round((-5*a[j] + 18*b[j] - 9*c[j] + 2*d[j])/6, 2) for j in (0, 1))
+        second = tuple(round((2*a[j] - 9*b[j] + 18*c[j] - 5*d[j])/6, 2) for j in (0, 1))
+        self.output.curveTo(first, second, d)
     def _curveToOne(self, a, b, c): self.output.curveTo(self.point(a), self.point(b), self.point(c))
     def _qCurveToOne(self, a, b): self.output.qCurveTo(self.point(a), self.point(b))
     def _closePath(self): self.output.closePath()
@@ -47,8 +63,8 @@ markup = '''{{- /* Lettering derived from OFL Noto Sans TC; see static/fonts/OFL
 ''' + '\n'.join(paths) + '''
   </g>
   <g class="river-wordmark-water" stroke="currentColor" stroke-linecap="round">
-    <path d="M400 82C414 92 430 94 448 86S468 79 478 82" stroke-width="3.2"/>
-    <path d="M373 84C386 95 404 106 425 102S459 89 478 93" stroke-width="1.15" opacity=".55"/>
+    <path d="M400 82C414 91 429 94 446 87S467 78 478 82" stroke-width="3.2"/>
+    <path d="M374 84C388 96 407 105 427 101S459 88 478 93" stroke-width="1.15" opacity=".55"/>
   </g>
 </svg></h1>
 '''
