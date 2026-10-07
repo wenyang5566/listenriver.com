@@ -1,0 +1,62 @@
+{{- /* Hyphenated data keys must be accessed with index. */ -}}
+{{- $editorial := index hugo.Data "river-home" -}}
+<div class="river-journal">
+  <section class="river-compact-hero" aria-labelledby="river-publication-title">
+    <div class="river-hero-stream" aria-hidden="true">
+      <svg viewBox="0 0 1440 300" preserveAspectRatio="none" fill="none">
+        <g class="river-water"><path d="M-180 230C130 345 375 15 730 142S1200 350 1610 100"/><path d="M-180 264C145 375 395 47 744 173S1240 378 1630 129"/></g>
+        <g class="river-bank"><path d="M-140 44C220-45 563 266 931 139S1300-10 1620 55"/><path d="M-140 94C230 5 573 306 940 186S1310 36 1620 105"/></g>
+        <g class="river-current-traces"><path d="M-180 230C130 345 375 15 730 142S1200 350 1610 100"/></g>
+      </svg>
+    </div>
+    <div class="river-hero-copy"><span class="river-kicker">LISTEN RIVER</span><h1 id="river-publication-title">聆聽的河流</h1><p class="river-hero-topics">閱讀・書寫・心理・電影</p><p class="river-hero-description">一個關於精神疾病、閱讀、復元、助人工作與日常生活觀察的書寫空間。</p></div>
+    <button class="river-motion-toggle" type="button" aria-pressed="false" hidden>暫停河流動態</button>
+  </section>
+
+  <section class="river-selection" aria-labelledby="river-selection-title">
+    <div class="river-section-label"><h2 id="river-selection-title">本期選讀</h2><span>FEATURED / 01</span></div>
+    <div class="river-selection-grid">
+      {{- with site.GetPage $editorial.lead.page -}}
+      <article class="river-lead">
+        <a href="{{ .RelPermalink }}" class="river-lead-link">
+          <div class="river-photo river-lead-photo">{{ partial "river-thumbnail.html" (dict "page" . "lead" true) }}<span class="river-photo-caption">關於對話，也關於在一起。</span></div>
+          <div class="river-lead-copy"><span class="river-kicker">{{ $editorial.lead.label }}</span><h3>{{ $editorial.lead.title }}</h3><p>{{ $editorial.lead.note }}</p><span class="river-read">讀這篇文章 <span aria-hidden="true">↗</span></span></div>
+        </a>
+      </article>
+      {{- end -}}
+      <div class="river-side-stories">
+        {{- range $i, $item := $editorial.selected -}}
+        {{- with site.GetPage $item.page -}}
+        <article class="river-story"><a href="{{ .RelPermalink }}"><div class="river-photo river-story-photo">{{ partial "river-thumbnail.html" (dict "page" .) }}</div><div class="river-story-copy"><div class="river-story-top"><span class="river-kicker">{{ $item.label }}</span><span class="river-story-number">0{{ add $i 2 }}</span></div><h3>{{ $item.title }}</h3><p>{{ $item.note }}</p><span class="river-read">{{ partial "reading-time.html" . }} 分鐘閱讀 <span aria-hidden="true">↗</span></span></div></a></article>
+        {{- end -}}
+        {{- end -}}
+        <a class="river-margin-note" href="{{ "/about/" | relURL }}"><span>寫字，也是在練習陪伴。</span><span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="river-recent" aria-labelledby="river-recent-title">
+    <div class="river-section-heading"><div><span class="river-kicker">NOTES ALONG THE WAY / 02</span><h2 id="river-recent-title">最近，寫下的事</h2></div><a class="river-text-link" href="{{ "/blog/" | relURL }}">全部 {{ len .pages }} 篇文章 <span aria-hidden="true">↗</span></a></div>
+    <div class="river-recent-list">
+    {{- range .latest -}}
+      <article><a class="river-recent-row" href="{{ .RelPermalink }}"><div class="river-photo river-recent-photo">{{ partial "river-thumbnail.html" (dict "page" . "small" true) }}</div><div class="river-recent-copy"><div class="river-recent-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span class="river-recent-category">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3><span class="river-recent-time">{{ partial "reading-time.html" . }} 分鐘閱讀</span></div><span class="river-recent-arrow" aria-hidden="true">↗</span></a></article>
+    {{- end -}}
+    </div>
+  </section>
+
+  <section class="river-topics" aria-labelledby="river-topics-title">
+    <div class="river-section-heading"><div><span class="river-kicker">FIND YOUR OWN CURRENT / 03</span><h2 id="river-topics-title">此刻，你想靠近什麼？</h2></div><p>從一本書、一段關係，或一個還沒有答案的提問開始。</p></div>
+    <div class="river-topic-grid">
+      {{- range (index hugo.Data "taxonomy-landing").categoryCards -}}
+      <a class="river-topic river-topic--{{ .accent }}" href="{{ .page | relURL }}"><span class="river-topic-index">{{ .index }}</span><div><h3>{{ .title }}</h3><p>{{ .description }}</p></div><span class="river-topic-arrow" aria-hidden="true">↗</span></a>
+      {{- end -}}
+    </div>
+  </section>
+
+  <section class="river-letter" aria-labelledby="river-letter-title">
+    <div class="river-letter-art" aria-hidden="true"><span>人與人之間，<br>有一條聆聽的河流。</span></div>
+    <div class="river-letter-copy"><span class="river-kicker">ABOUT</span><h2 id="river-letter-title">簡介</h2><p>聆聽是一條河流，寬廣又深邃，可以容納，亦可接在地上，深入各式各樣的生命經驗，不被聽見的聲音、不被看見的風景與角落；聆聽是柔軟且堅實的，是創造連結的必要媒介，人與人之間的理解，不可缺少聆聽。</p><div class="river-letter-links"><a class="river-text-link" href="{{ "/about/" | relURL }}">多認識我一點 ↗</a>{{ with site.Params.salonFacebook }}<a class="river-text-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">在 Facebook 交流 ↗</a>{{ end }}</div></div>
+  </section>
+  {{ partial "home-gallery.html" .page }}
+  <div class="river-endnote"><span>聆聽的河流</span><p>謝謝你，在這裡停留。</p><a href="{{ "/index.xml" | relURL }}">訂閱 RSS ↗</a></div>
+</div>

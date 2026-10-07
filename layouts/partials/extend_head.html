@@ -1,4 +1,12 @@
 <link rel="icon" type="image/png" href="{{ "/images/favicon.png" | relURL }}">
+{{- if .IsHome -}}
+<link rel="preload" href="{{ "/fonts/river-sans.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+{{- $riverCSS := resources.Get "css/river-home.css" | resources.Minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $riverCSS.RelPermalink }}" integrity="{{ $riverCSS.Data.Integrity }}" crossorigin="anonymous">
+{{- $riverJS := resources.Get "js/river-home.js" | resources.Minify | fingerprint -}}
+<script src="{{ $riverJS.RelPermalink }}" integrity="{{ $riverJS.Data.Integrity }}" crossorigin="anonymous" defer></script>
+<noscript><style>.river-home .river-header #theme-toggle { display: none; }</style></noscript>
+{{- end -}}
 {{- $customJsSource := readFile "static/js/custom.js" -}}
 {{- $customJsVersion := $customJsSource | sha256 -}}
 {{- $customJs := $customJsSource | resources.FromString (printf "assets/js/custom.%s.js" $customJsVersion) | resources.Minify | fingerprint -}}

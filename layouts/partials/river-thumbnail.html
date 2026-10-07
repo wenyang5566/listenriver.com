@@ -1,0 +1,27 @@
+{{- $page := .page -}}
+{{- $image := $page.Params.cover.image | default "" -}}
+{{- $resource := false -}}
+{{- with $image -}}
+  {{- $stem := replaceRE "\\.[^.]+$" "" (path.Base .) -}}
+  {{- $resource = ($page.Resources.ByType "image").GetMatch (printf "%s.*" $stem) -}}
+{{- end -}}
+{{- if not $resource -}}{{- $resource = $page.Resources.GetMatch "cover.*" -}}{{- end -}}
+{{- $sizes := "(max-width: 600px) 100px, 140px" -}}
+{{- $widths := slice 120 240 360 -}}
+{{- $maxWidth := 360 -}}
+{{- $loading := "lazy" -}}
+{{- if .lead -}}
+  {{- $sizes = "(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 720px" -}}
+  {{- $widths = slice 360 540 720 1080 -}}
+  {{- $maxWidth = 1080 -}}
+  {{- $loading = "eager" -}}
+{{- else if .small -}}
+  {{- $sizes = "(max-width: 600px) 88px, 112px" -}}
+{{- end -}}
+{{- if $resource -}}
+  {{ partial "optimized-image.html" (dict "resource" $resource "alt" "" "loading" $loading "sizes" $sizes "widths" $widths "maxWidth" $maxWidth) }}
+{{- else if $image -}}
+  <img src="{{ $image | relURL }}" alt="" loading="{{ $loading }}" decoding="async">
+{{- else -}}
+  <span class="river-photo-fallback" aria-hidden="true">{{ partial "river-lines.html" . }}</span>
+{{- end -}}
