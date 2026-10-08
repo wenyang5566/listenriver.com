@@ -395,21 +395,33 @@ body[data-river-motion="paused"] :is(.river-water, .river-bank, .river-current-t
 .river-opening-description { max-width: min(760px, 73%); padding-right: 24px; }
 .river-opening-description h1 { font-family: var(--river-font); color: var(--river-ink); font-size: clamp(52px, 4.7vw, 68px); font-weight: 500; line-height: 1.2; letter-spacing: .07em; margin: 0 0 16px; white-space: nowrap; }
 .river-opening-description > p { font-size: 16px; line-height: 1.9; color: var(--river-muted); margin: 0; text-wrap: pretty; }
-.river-opening-description .river-opening-subtitle { font-size: 18px; font-weight: 400; line-height: 1.6; color: var(--river-ink); margin: 0; letter-spacing: .06em; }
+.river-opening-description .river-opening-subtitle { font-size: 18px; font-weight: 400; line-height: 1.6; color: var(--river-muted); margin: 0; padding-left: 28%; letter-spacing: .06em; white-space: nowrap; }
 .river-opening-description { padding-block: 9px; }
 body[data-river-motion] .river-hero-stream :is(.river-water, .river-bank) { animation: none; }
 body[data-river-motion] .river-hero-stream .river-current-traces { animation-duration: 24s; }
 .river-lead-copy > p { font-size: 16px; line-height: 1.85; }
 .river-topic-index svg { width: 18px; height: 18px; }
-.river-opening-description .river-wordmark-title { width: min(100%, 560px); max-width: none; margin-bottom: 6px; }
-.river-publication-wordmark { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--river-font); color: var(--river-ink); }
+.river-brand-lockup { width: min(100%, 560px); }
+.river-opening-description .river-wordmark-title { --brand-clay: #b97760; --brand-river: #4e898a; aspect-ratio: 522 / 112; width: 100%; max-width: none; margin-bottom: 6px; line-height: 0; }
+[data-theme="dark"] .river-opening-description .river-wordmark-title { --brand-clay: #dfa78e; --brand-river: #8bb2b5; }
+.river-identity-mark { position: absolute; left: 0; top: 16%; display: block; width: 24%; height: auto; }
+.river-publication-wordmark { position: absolute; right: 0; top: 0; display: block; width: 72%; height: 100%; min-width: 0; overflow: visible; color: var(--river-ink); }
 .river-feature-slide[hidden], .river-feature-controls[hidden] { display: none; }
 .river-feature-slides { position: relative; overflow: hidden; min-height: 400px; touch-action: pan-y pinch-zoom; }
 .river-feature-ghost { position: absolute; inset: 0; pointer-events: none; }
-.river-wordmark-water { color: var(--river-rust); }
-.river-wordmark-water path { stroke-dasharray: 1; animation: river-wordmark-arrive 1.6s ease-out both; }
+.river-opening-description .river-wordmark-title { position: relative; }
+.river-brand-flow { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.river-wordmark-water { color: var(--brand-river); }
+.river-wordmark-water path { stroke-dasharray: 1; animation: river-wordmark-arrive 2s cubic-bezier(.22,.61,.36,1) both; }
+.river-brand-ribbon { fill: var(--brand-river); clip-path: inset(0 0 0 0); animation: river-brand-reveal 2s cubic-bezier(.22,.61,.36,1) both; }
+@keyframes river-brand-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+.river-wordmark-water .river-brand-branch { animation-delay: .65s; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .river-brand-branch { transform-origin: 292px 106px; transition: transform 1.2s cubic-bezier(.22,.61,.36,1); }
+  .river-wordmark-title:hover .river-brand-branch { transform: rotate(-2deg); }
+}
 @keyframes river-wordmark-arrive { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
-@media (prefers-reduced-motion: reduce) { .river-wordmark-water path { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .river-wordmark-water path, .river-brand-ribbon { animation: none; } }
 :is(.river-feature-slide, .river-feature-ghost) .river-lead-copy h3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 :is(.river-feature-slide, .river-feature-ghost) .river-lead-copy > p { display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
 .river-feature-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 12px; }
@@ -461,12 +473,12 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 @media (max-width: 600px) {
   .river-feature-slides { min-height: 550px; }
   .river-feature-controls { justify-content: center; margin-top: 18px; }
-  .river-opening-description .river-wordmark-title { width: min(100%, 330px); }
+  .river-brand-lockup { width: min(100%, 330px); }
   .river-editorial-opening { min-height: 224px; padding: 30px 0 90px; }
   .river-opening-description { max-width: none; padding-right: 0; }
-  .river-opening-description h1 { font-size: clamp(38px, 10.5vw, 52px); max-width: none; line-height: 1.2; letter-spacing: .05em; margin-bottom: 12px; }
+  .river-opening-description h1 { font-size: clamp(38px, 10.5vw, 52px); max-width: none; letter-spacing: .05em; margin-bottom: 12px; }
   .river-lead-copy > p { font-size: 15px; }
-  .river-opening-description .river-opening-subtitle { font-size: 15px; letter-spacing: .025em; }
+  .river-opening-description .river-opening-subtitle { font-size: clamp(14px, 3.85vw, 15px); letter-spacing: .025em; line-height: 24px; }
   .river-opening-description > p { font-size: 16px; max-width: 330px; }
   .river-journal .river-letter p { font-size: 16px; line-height: 1.95; }
   .river-editorial-opening .river-hero-stream { top: 104px; left: -50%; right: -20%; opacity: .6; }

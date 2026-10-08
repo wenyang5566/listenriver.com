@@ -38,15 +38,10 @@ for index, character in enumerate('聆聽的河流'):
     paths.append(f'    <path d="{pen.getCommands()}"/>')
 markup = '''{{- /* Lettering derived from OFL Noto Sans TC; see static/fonts/OFL-NotoSansTC.txt.
        Rebuild with scripts/build-river-wordmark.py. Text alternative remains the h1. */ -}}
-<h1 class="river-wordmark-title"><span class="sr-only">聆聽的河流</span><svg class="river-publication-wordmark" viewBox="-42 0 522 112" fill="none" aria-hidden="true">
+<h1 class="river-wordmark-title"><span class="sr-only">聆聽的河流</span>{{ partial "brand-logo.html" (dict "class" "river-identity-mark") }}<svg class="river-publication-wordmark" viewBox="0 0 420 112" fill="none" aria-hidden="true" focusable="false">
   <g class="river-wordmark-lettering" fill="currentColor">
 ''' + '\n'.join(paths) + '''
   </g>
-  <g class="river-wordmark-water" stroke="currentColor" stroke-linecap="round">
-    <path pathLength="1" class="river-wordmark-ear" d="M-34 44C-36 30-28 20-18 21c12 1 17 14 12 25-3 6-8 8-11 13-2 5-4 8-9 8-5 0-8-4-8-8" stroke-width="2.1"/>
-    <path pathLength="1" d="M-25 40c-1-7 2-12 8-11 8 1 10 10 5 15-4 4-11 3-11 9 0 5 6 7 13 5C-10 70 19 85 43 91S96 94 130 98 184 91 220 93 270 103 309 96 351 91 387 98 433 101 477 88" stroke-width="1.4"/>
-    <path pathLength="1" d="M259 104C295 109 313 101 337 103S378 112 402 106 444 103 477 99" stroke-width="1" opacity=".45"/>
-  </g>
-</svg></h1>
+</svg>{{ partial "river-brand-flow.html" . }}</h1>
 '''
 Path('layouts/partials/river-wordmark.html').write_text(markup, encoding='utf-8')

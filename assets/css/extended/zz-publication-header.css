@@ -5,8 +5,9 @@
 .publication-header .personal-header__top, .publication-header .personal-header__nav { max-width: 1280px; margin-inline: auto; padding-inline: 48px; }
 .publication-header .personal-header__top { min-height: 82px; }
 .publication-header .personal-header__brand { gap: 10px; color: var(--pub-accent); }
-.publication-mark { width: 34px; height: 38px; flex-shrink: 0; }
-.river-home .publication-mark { width: 43px; height: 46px; }
+.publication-mark { --brand-clay: #b97760; --brand-river: #4e898a; width: 38px; height: 38px; flex-shrink: 0; }
+[data-theme="dark"] .publication-mark { --brand-clay: #dfa78e; --brand-river: #8bb2b5; }
+.river-home .publication-mark { width: 43px; height: 43px; }
 .publication-header .personal-header__brand { min-width: 44px; min-height: 44px; }
 .publication-header.personal-header .header-brand-text__title, .publication-header .personal-header__brand:hover .header-brand-text__title { background: transparent; color: var(--pub-accent); border-radius: 0; padding: 0; font-size: 22px; font-weight: 500; letter-spacing: .06em; }
 .publication-header .header-brand-text__subtitle { display: none; }
@@ -30,8 +31,8 @@
 @media (max-width: 640px) {
  .publication-header .personal-header__top { padding-inline: 20px; min-height: 70px; }
  .publication-header.personal-header .header-brand-text__title { font-size: 17px; }
- .publication-mark { width: 28px; height: 32px; }
- .river-home .publication-mark { width: 36px; height: 40px; }
+ .publication-mark { width: 32px; height: 32px; }
+ .river-home .publication-mark { width: 36px; height: 36px; }
  .publication-header .personal-header__brand { gap: 7px; }
  .publication-header .personal-header__actions { gap: 2px; }
   .publication-header .publication-about, .publication-header .publication-home, .publication-search-label { display: none; }
@@ -46,5 +47,5 @@
 @media (max-width: 360px) {
  .publication-header .personal-header__top { padding-inline: 12px; }
  .publication-header.personal-header .header-brand-text__title { font-size: 16px; letter-spacing: .02em; }
- .river-home .publication-mark { width: 30px; height: 36px; }
+ .river-home .publication-mark { width: 30px; height: 30px; }
 }

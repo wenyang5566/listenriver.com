@@ -1,0 +1,7 @@
+{{- /* Keep the approved SVG as the single source of geometry. Decorative next to the brand text. */ -}}
+{{- $logo := readFile "static/images/brand/listenriver-logo.svg" -}}
+{{- $logo = replaceRE `<title[^>]*>[^<]*</title>` "" $logo -}}
+{{- $logo = replaceRE `<svg[^>]*>` (printf `<svg class="%s" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false">` .class) $logo -}}
+{{- $logo = replace $logo `stroke="#b97760"` `stroke="var(--brand-clay, #b97760)"` -}}
+{{- $logo = replace $logo `stroke="#4e898a"` `stroke="var(--brand-river, #4e898a)"` -}}
+{{- $logo | safeHTML -}}
