@@ -390,12 +390,30 @@ body[data-river-motion="paused"] :is(.river-water, .river-bank, .river-current-t
 /* One opening composition: the river leads directly into the featured photograph. */
 .river-selection { border-top: 0; padding-top: 0; }
 .river-editorial-opening { position: relative; isolation: isolate; min-height: 230px; padding: 44px 0 46px; }
-.river-editorial-opening .river-hero-stream { inset: 65px 0 -45px; mask-image: linear-gradient(90deg, transparent 15%, #000 70%), linear-gradient(180deg, transparent, #000 24%, #000 78%, transparent); mask-composite: intersect; }
-.river-editorial-opening .river-hero-pool { opacity: .035; }
+.river-editorial-opening .river-hero-stream { inset: 0; mask-image: linear-gradient(90deg, transparent 34%, #000 67%), linear-gradient(180deg, transparent 18%, #000 48%, #000 88%, transparent); mask-composite: intersect; }
+.river-editorial-opening .river-hero-stream .river-landscape-mobile { display: none; }
+.river-editorial-opening .river-hero-pool { fill: #4e898a; opacity: .045; }
+.river-editorial-opening .river-water { stroke: #4e898a; stroke-width: 1.35; opacity: .38; }
+.river-editorial-opening .river-water path + path { stroke-width: 1.1; opacity: .5; }
+.river-editorial-opening .river-bank { stroke: #b97760; stroke-width: 1.1; opacity: .24; }
+.river-editorial-opening .river-landscape-curl { opacity: .65; }
+.river-editorial-opening .river-ripples { stroke-width: 1; opacity: .45; }
+.river-landscape-desktop .river-ripples { stroke: url(#river-ripple-desktop); }
+.river-landscape-mobile .river-ripples { stroke: url(#river-ripple-mobile); }
+.river-ripple-stop { stop-color: #4e898a; }
+[data-theme="dark"] .river-ripple-stop { stop-color: #8bb2b5; }
+.river-editorial-opening .river-current-traces { stroke: #4e898a; stroke-width: 1.5; stroke-dasharray: 22 580; opacity: .42; }
+[data-theme="dark"] .river-editorial-opening :is(.river-water, .river-current-traces) { stroke: #8bb2b5; }
+[data-theme="dark"] .river-editorial-opening .river-bank { stroke: #dfa78e; }
+[data-theme="dark"] .river-editorial-opening .river-hero-pool { fill: #8bb2b5; }
 .river-opening-description { max-width: min(760px, 73%); padding-right: 24px; }
 .river-opening-description h1 { font-family: var(--river-font); color: var(--river-ink); font-size: clamp(52px, 4.7vw, 68px); font-weight: 500; line-height: 1.2; letter-spacing: .07em; margin: 0 0 16px; white-space: nowrap; }
 .river-opening-description > p { font-size: 16px; line-height: 1.9; color: var(--river-muted); margin: 0; text-wrap: pretty; }
-.river-opening-description .river-opening-subtitle { font-size: 18px; font-weight: 400; line-height: 1.6; color: var(--river-muted); margin: 0; padding-left: 28%; letter-spacing: .06em; white-space: nowrap; }
+.river-opening-description .river-opening-subtitle { font-size: 17px; font-weight: 400; line-height: 28.8px; color: var(--river-muted); margin: 0; padding-left: 24.8%; letter-spacing: .035em; white-space: nowrap; }
+@media (min-width: 901px) {
+  /* Optical inset: first glyph starts at x=3.38 in the 420-unit SVG (75.2% wide). */
+  .river-opening-description .river-opening-subtitle { width: calc(75.2% - .605%); margin-left: calc(25.405% + 1px); padding-left: 0; text-align: left; transform: translateY(-3px); }
+}
 .river-opening-description { padding-block: 9px; }
 body[data-river-motion] .river-hero-stream :is(.river-water, .river-bank) { animation: none; }
 body[data-river-motion] .river-hero-stream .river-current-traces { animation-duration: 24s; }
@@ -405,19 +423,40 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-opening-description .river-wordmark-title { --brand-clay: #b97760; --brand-river: #4e898a; aspect-ratio: 522 / 112; width: 100%; max-width: none; margin-bottom: 6px; line-height: 0; }
 [data-theme="dark"] .river-opening-description .river-wordmark-title { --brand-clay: #dfa78e; --brand-river: #8bb2b5; }
 .river-identity-mark { position: absolute; left: 0; top: 16%; display: block; width: 24%; height: auto; }
-.river-publication-wordmark { position: absolute; right: 0; top: 0; display: block; width: 72%; height: 100%; min-width: 0; overflow: visible; color: var(--river-ink); }
+/* Hero illustration treatment; the header and approved logo files retain their original strokes. */
+.river-identity-mark path { stroke-width: 2; }
+.river-identity-mark path:last-child { stroke-width: 1.6; }
+.river-publication-wordmark { position: absolute; right: 0; top: 0; display: block; width: 75.2%; height: 100%; min-width: 0; overflow: visible; color: var(--river-ink); }
+@media (min-width: 901px) {
+  .river-publication-wordmark { transform: translateX(-9px); }
+  .river-brand-ribbon--mobile { display: none; }
+}
+.river-brand-ribbon--desktop { display: none; }
+@media (min-width: 901px) {
+  .river-brand-ribbon--desktop { display: block; }
+}
 .river-feature-slide[hidden], .river-feature-controls[hidden] { display: none; }
 .river-feature-slides { position: relative; overflow: hidden; min-height: 400px; touch-action: pan-y pinch-zoom; }
 .river-feature-ghost { position: absolute; inset: 0; pointer-events: none; }
 .river-opening-description .river-wordmark-title { position: relative; }
 .river-brand-flow { position: absolute; inset: 0; display: block; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.river-brand-air { color: var(--brand-clay); opacity: .65; }
+.river-brand-growth { color: #748d72; }
+[data-theme="dark"] .river-brand-growth { color: #a7b99a; }
 .river-wordmark-water { color: var(--brand-river); }
 .river-wordmark-water path { stroke-dasharray: 1; animation: river-wordmark-arrive 2s cubic-bezier(.22,.61,.36,1) both; }
 .river-brand-ribbon { fill: var(--brand-river); clip-path: inset(0 0 0 0); animation: river-brand-reveal 2s cubic-bezier(.22,.61,.36,1) both; }
 @keyframes river-brand-reveal { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 .river-wordmark-water .river-brand-branch { animation-delay: .65s; }
+.river-wordmark-water .river-brand-air { animation-delay: .25s; }
+.river-wordmark-water .river-brand-return { animation-delay: 1s; opacity: .52; }
+.river-brand-return--desktop { display: none; }
+@media (min-width: 901px) {
+  .river-brand-return--desktop { display: block; }
+  .river-brand-return--mobile { display: none; }
+}
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .river-brand-branch { transform-origin: 292px 106px; transition: transform 1.2s cubic-bezier(.22,.61,.36,1); }
+  .river-brand-branch { transform-origin: 150px 0px; transition: transform 1.2s cubic-bezier(.22,.61,.36,1); }
   .river-wordmark-title:hover .river-brand-branch { transform: rotate(-2deg); }
 }
 @keyframes river-wordmark-arrive { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
@@ -481,7 +520,9 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-opening-description .river-opening-subtitle { font-size: clamp(14px, 3.85vw, 15px); letter-spacing: .025em; line-height: 24px; }
   .river-opening-description > p { font-size: 16px; max-width: 330px; }
   .river-journal .river-letter p { font-size: 16px; line-height: 1.95; }
-  .river-editorial-opening .river-hero-stream { top: 104px; left: -50%; right: -20%; opacity: .6; }
+  .river-editorial-opening .river-hero-stream { inset: 0; opacity: 1; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 94%, transparent), linear-gradient(180deg, transparent 36%, #000 65%, #000 96%, transparent); }
+  .river-editorial-opening .river-hero-stream .river-landscape-desktop { display: none; }
+  .river-editorial-opening .river-hero-stream .river-landscape-mobile { display: block; }
   .river-editorial-opening .river-rabbit { width: 118px; height: 77px; right: 8px; bottom: 6px; }
   .river-story a { grid-template-columns: 106px minmax(0, 1fr); gap: 18px; }
   .river-story h3 { font-size: 19px; }

@@ -21,4 +21,4 @@
 
 此 LOGO 可以作為網站 favicon。SVG 能直接作為現代瀏覽器的圖示來源。後續接入時可使用 /images/brand/listenriver-logo.svg，並輸出 32×32、16×16 PNG/ICO 作相容備援；16 px 必須實際檢視小弧間距，若需像素微調，另外保存 favicon 專用版，不覆蓋正式 LOGO。Apple touch icon 宜另製 180×180 並加適當背景與留白。
 
-2026-10-08 已在 `codex/hero-flow-evaluation` 本機工作樹接入共用頁首與首頁主標，沿用定稿幾何與明暗配色；字標下方河線為獨立裝飾，不修改 Logo 本體。整合紀錄見 [首頁 Logo 整合](../../home-logo-integration-2026-10-08.md)。尚未提交、更新遠端 PR 或部署；favicon 仍未替換。
+已在 `codex/hero-flow-evaluation` 接入共用頁首與首頁主標，初版保存本機 commit `1b338988`。2026-10-09 使用者確認 Hero 與 Logo 整體定稿，保存後續本機提交。正式頁首沿用定稿幾何與明暗配色；Hero 使用較輕的插畫線寬及獨立延伸河線，不覆寫正式 SVG。整合紀錄見 [首頁 Logo 整合](../../home-logo-integration-2026-10-08.md)。尚未更新遠端 PR 或部署；favicon 仍未替換。

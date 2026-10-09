@@ -110,10 +110,13 @@ test('featured autoplay waits five seconds and pauses for reading and reduced mo
   await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
 });
 
-test('river flows continuously and respects reduced motion changes', async ({ page }) => {
+for (const width of [390, 1440]) {
+test(`river flows continuously and respects reduced motion changes at ${width}px`, async ({ page }) => {
+  await page.setViewportSize({ width, height: 900 });
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
-  const traces = page.locator('.river-editorial-opening .river-current-traces');
+  const traces = page.locator('.river-editorial-opening .river-current-traces:visible');
+  await expect(traces).toHaveCount(1);
   await expect(page.locator('.river-motion-toggle')).toHaveCount(0);
   await expect(page.locator('body')).toHaveAttribute('data-river-motion', 'running');
   await expect(traces).toHaveCSS('animation-play-state', 'running');
@@ -125,6 +128,7 @@ test('river flows continuously and respects reduced motion changes', async ({ pa
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await expect(traces).toHaveCSS('animation-play-state', 'running');
 });
+}
 
 for (const width of [320, 390, 768, 1440]) {
   test(`journal fits ${width}px and supports keyboard theme switching`, async ({ page }) => {
