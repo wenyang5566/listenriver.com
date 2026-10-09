@@ -12,6 +12,7 @@
   data-comments-server-url="{{ $walineServerURL }}"
   data-post-title="{{ .Title | plainify | htmlEscape }}">
   <div class="post-interactions__panel" aria-live="polite">
+    {{- if ne .Params.disableShare true }}<button type="button" class="article-share-button" data-article-share hidden>分享</button>{{ end }}
     {{- if $commentsEnabled }}
     <button type="button" class="post-comment-button" data-post-comments-button aria-label="查看留言">
       <span class="post-comment-button__icon" aria-hidden="true">
@@ -20,6 +21,7 @@
         </svg>
       </span>
       <span class="post-comment-button__count" data-post-comments data-path="{{ .RelPermalink }}">--</span>
+      <span>留言</span>
     </button>
     {{- end }}
     <span class="post-stat post-stat--views">
@@ -38,7 +40,10 @@
         </svg>
       </span>
       <span class="post-like-button__count" data-post-likes>--</span>
+      <span>喜歡這篇文章</span>
     </button>
   </div>
 </section>
+{{- $endingScript := resources.Get "js/article-ending.js" | minify | fingerprint }}
+<script src="{{ $endingScript.RelPermalink }}" integrity="{{ $endingScript.Data.Integrity }}" defer></script>
 {{- end -}}
