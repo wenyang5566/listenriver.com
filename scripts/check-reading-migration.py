@@ -39,8 +39,13 @@ def check(site):
             expected[f'{OLD}/page/{number}{suffix}'] = target
     for source, target in expected.items():
         assert rules.get(source) == [target, '301'], f'Missing direct permanent redirect: {source}'
-        assert target in snapshot['pages'], f'Missing destination: {target}'
-        assert not snapshot['pages'][target]['redirect'], f'Redirect chain: {source}'
+        if target in snapshot['pages']:
+            assert not snapshot['pages'][target]['redirect'], f'Redirect chain: {source}'
+        else:
+            # Larger archive batches retire old pagination pages. Only accept
+            # an explicit permanent redirect to the current reading archive.
+            assert target.startswith(NEW + '/page/'), f'Missing destination: {target}'
+            assert rules.get(target) == [NEW + '/', '301'], f'Missing retired page redirect: {target}'
         assert guard.resolve(snapshot, source)[1] is None, f'Broken route: {source}'
 
     main = snapshot['pages'][NEW + '/']
