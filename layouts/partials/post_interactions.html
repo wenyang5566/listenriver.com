@@ -3,7 +3,7 @@
 <section
   class="post-interactions"
   data-post-interactions
-  data-post-path="{{ .RelPermalink }}"
+  data-post-path="{{ .Params.interactionKey | default .RelPermalink }}"
   data-api-base="{{ $apiBase }}"
   data-post-title="{{ .Title | plainify | htmlEscape }}">
   <div class="post-interactions__panel" aria-live="polite">

@@ -289,7 +289,7 @@ async function checkEmptyHeaderSearch(browser, origin) {
 async function checkSeriesEntries(browser, origin) {
   for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 }]) {
     const page = await createSearchTestPage(browser, viewport);
-    for (const [name, section] of [["工作日誌", "會所工作日誌"], ["實習紀錄", "會所實習"], ["工作手冊", "會所工作手冊"], ["會所工作日誌", "會所工作日誌"], ["會所實習", "會所實習"], ["會所工作手冊", "會所工作手冊"]]) {
+    for (const [name, section] of [["工作日誌", "工作日誌"], ["實習紀錄", "實習紀錄"], ["工作手冊", "工作手冊"], ["會所工作日誌", "工作日誌"], ["會所實習", "實習紀錄"], ["會所工作手冊", "工作手冊"]]) {
       const target = new URL("/search/", origin);
       target.searchParams.set("q", name);
       await page.goto(target.toString());

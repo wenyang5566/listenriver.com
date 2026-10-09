@@ -6,7 +6,7 @@
 {{- if $latestPage -}}
   {{- $latestCover = partial "get-page-cover-resource.html" (dict "page" $latestPage "fallback" $fallbackImage) | transform.Unmarshal -}}
 {{- end -}}
-{{- $sectionPaths := slice "/clubhouse/會所工作手冊" "/clubhouse/會所工作日誌" "/clubhouse/會所實習" -}}
+{{- $sectionPaths := slice "/clubhouse/工作手冊" "/clubhouse/工作日誌" "/clubhouse/實習紀錄" -}}
 {{- $groupCards := slice -}}
 {{- range $sectionPaths -}}
   {{- with site.GetPage . -}}

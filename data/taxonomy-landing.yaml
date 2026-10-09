@@ -97,6 +97,6 @@ selectedTopics:
 
 # Series entry links share the same article sets as the corresponding tags.
 topicDestinations:
-  工作日誌: /clubhouse/會所工作日誌/
-  實習紀錄: /clubhouse/會所實習/
-  工作手冊: /clubhouse/會所工作手冊/
+  工作日誌: /clubhouse/工作日誌/
+  實習紀錄: /clubhouse/實習紀錄/
+  工作手冊: /clubhouse/工作手冊/

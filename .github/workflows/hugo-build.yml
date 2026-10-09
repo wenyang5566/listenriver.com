@@ -40,6 +40,7 @@ jobs:
           python3 -m unittest discover -s tests -p test_url_guard.py
           python3 scripts/url-guard.py check --site public --moves docs/taxonomy-url-moves.json
           python3 scripts/check-reading-migration.py --site public
+          python3 scripts/check-clubhouse-folder-migration.py --site public
 
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium

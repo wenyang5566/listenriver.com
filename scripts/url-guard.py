@@ -1,7 +1,8 @@
 """Freeze/check Hugo page URLs before taxonomy work (Python standard library only).
 
 Always supply a NEW, clean Hugo build directory. This is an offline regression
-guard, not an HTTP/Cloudflare emulator. Existing _redirects rules are frozen;
+guard, not an HTTP/Cloudflare emulator. Existing _redirects rules are frozen
+except destinations changed by an explicitly reviewed canonical move;
 new exact 301/302 rules are supported, new wildcard rules require manual review.
 """
 import argparse
@@ -9,6 +10,7 @@ import json
 import re
 import sys
 from datetime import datetime, timezone
+from functools import lru_cache
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urljoin, urlsplit
@@ -57,6 +59,22 @@ def scan(site):
     return {'pages': pages, 'redirect_rules': rules}
 
 
+@lru_cache(maxsize=None)
+def redirect_pattern(source):
+    names = []
+    pattern = ''
+    for part in re.split(r'(\*|:[A-Za-z][A-Za-z0-9_]*)', source):
+        if part == '*':
+            names.append('splat')
+            pattern += '(.*)'
+        elif part.startswith(':'):
+            names.append(part[1:])
+            pattern += '([^/]+)'
+        else:
+            pattern += re.escape(unquote(part))
+    return re.compile(pattern), names
+
+
 def resolve(snapshot, url):
     visited = set()
     for _ in range(15):
@@ -70,18 +88,8 @@ def resolve(snapshot, url):
             if len(fields) != 3 or fields[2] not in ('301', '302', '303', '307', '308'):
                 return None, f'unsupported redirect rule: {rule}'
             source, dest, _ = fields
-            names = []
-            pattern = ''
-            for part in re.split(r'(\*|:[A-Za-z][A-Za-z0-9_]*)', source):
-                if part == '*':
-                    names.append('splat')
-                    pattern += '(.*)'
-                elif part.startswith(':'):
-                    names.append(part[1:])
-                    pattern += '([^/]+)'
-                else:
-                    pattern += re.escape(unquote(part))
-            match = re.fullmatch(pattern, url)
+            pattern, names = redirect_pattern(source)
+            match = pattern.fullmatch(url)
             if match:
                 for name, value in zip(names, match.groups()):
                     dest = dest.replace(':' + name, value)
@@ -104,7 +112,10 @@ def check(old, new, moves):
     failures = []
     for rule in old['redirect_rules']:
         if rule not in new['redirect_rules']:
-            failures.append(f'Historical redirect changed/removed; review required: {rule}')
+            source, destination, status = rule.split()
+            replacement = f'{source} {moves.get(route(destination), destination)} {status}'
+            if replacement not in new['redirect_rules']:
+                failures.append(f'Historical redirect changed/removed; review required: {rule}')
     for rule in new['redirect_rules']:
         if rule not in old['redirect_rules'] and re.search(r'\*|:[A-Za-z]', rule.split()[0]):
             failures.append(f'New wildcard redirect requires manual review: {rule}')

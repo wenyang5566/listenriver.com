@@ -6,7 +6,7 @@
 <section
   class="post-interactions"
   data-post-interactions
-  data-post-path="{{ .RelPermalink }}"
+  data-post-path="{{ .Params.interactionKey | default .RelPermalink }}"
   data-api-base="{{ $apiBase }}"
   data-comments-enabled="{{ if $commentsEnabled }}true{{ else }}false{{ end }}"
   data-comments-server-url="{{ $walineServerURL }}"
@@ -20,7 +20,7 @@
           <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.42 0-2.76-.35-3.94-.97L3 21l1.97-5.1A8.46 8.46 0 0 1 4 11.5 8.5 8.5 0 1 1 21 11.5Z"></path>
         </svg>
       </span>
-      <span class="post-comment-button__count" data-post-comments data-path="{{ .RelPermalink }}">--</span>
+      <span class="post-comment-button__count" data-post-comments data-path="{{ .Params.interactionKey | default .RelPermalink }}">--</span>
       <span>留言</span>
     </button>
     {{- end }}

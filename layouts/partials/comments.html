@@ -9,7 +9,7 @@
   data-comments-anchor
   data-waline-root
   data-server-url="{{ $serverURL }}"
-  data-path="{{ .RelPermalink }}"
+  data-path="{{ .Params.interactionKey | default .RelPermalink }}"
   data-lang="{{ $lang }}"
   data-placeholder="{{ index $locale "placeholder" | default "寫點什麼吧..." }}"
   data-nick="{{ index $locale "nick" | default "如何稱呼" }}"
