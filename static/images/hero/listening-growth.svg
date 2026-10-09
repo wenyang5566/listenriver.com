@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">聆聽，讓生命流動</title>
+  <desc id="desc">暖陶色耳朵承接青綠河流，支流蜷成蕨芽，耳後長出兩片葉子。</desc>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Ear silhouette stays legible when the currents are removed. -->
+    <path d="M116 310C92 299 86 275 91 241C95 214 83 182 91 146C99 108 121 82 150 86C188 91 207 126 196 168C188 200 166 215 164 249C162 278 141 320 116 310Z" fill="#c78c72" fill-opacity=".13"/>
+    <path d="M91 222C81 195 83 158 94 133C111 91 139 80 164 94C200 114 201 155 181 188C165 213 155 225 155 252C155 284 137 310 120 307C106 305 101 293 103 282" stroke="#b97760" stroke-width="5"/>
+    <path d="M117 177C112 153 124 126 143 128C164 130 172 155 159 172C150 184 136 187 131 203" stroke="#b97760" stroke-width="3.5"/>
+    <!-- A warm voice, with a single open curl. -->
+    <path d="M134 211C158 182 179 189 214 205C257 225 296 220 313 194C328 171 313 148 293 151C273 154 272 178 287 183C298 186 303 177 298 171" stroke="#b97760" stroke-width="4.5"/>
+    <!-- The main river leaves the listening fold and grows into space. -->
+    <path d="M127 227C150 224 160 238 178 268C207 319 257 326 302 298C342 274 367 247 413 252C466 257 501 289 554 274C592 264 618 237 612 214C607 193 582 189 570 206C557 225 575 240 586 232C592 228 591 220 585 219" stroke="#4e898a" stroke-width="7"/>
+    <path d="M181 277C218 322 260 322 305 297C353 271 368 248 413 252" stroke="#829d72" stroke-width="2.5"/>
+    <!-- One growing branch, one quiet tributary; their ends never touch. -->
+    <path d="M299 300C324 282 321 252 344 221C365 193 396 192 410 211C425 230 410 247 398 239C390 234 393 224 400 225" stroke="#718a68" stroke-width="5"/>
+    <path d="M348 216C358 192 363 163 384 153C407 143 425 162 415 177C409 187 397 183 398 176" stroke="#9dac81" stroke-width="3.5"/>
+    <path d="M175 246C235 265 283 265 323 236C349 217 349 186 331 181C319 177 311 190 318 198" stroke="#9db8b5" stroke-width="3.5"/>
+    <path d="M452 264C476 278 479 314 504 331C526 347 549 334 548 318C547 302 528 298 522 310C518 318 525 324 530 320" stroke="#b0bb96" stroke-width="3.5"/>
+    <!-- Leaves belong to the ear, rather than forming a separate emblem. -->
+    <path d="M91 186C70 174 58 153 54 127" stroke="#718a68" stroke-width="3"/>
+    <path d="M67 158C49 159 35 148 34 131C51 129 66 141 67 158Z" fill="#718a68" fill-opacity=".15" stroke="#718a68" stroke-width="2.5"/>
+    <path d="M62 147C56 132 59 115 71 105C83 120 80 138 62 147Z" fill="#9dac81" fill-opacity=".19" stroke="#718a68" stroke-width="2.5"/>
+    <path d="M43 138L65 156M69 117L63 140" stroke="#718a68" stroke-width="1.5"/>
+    <!-- A restrained echo of water; no enclosing oval or badge. -->
+    <path d="M220 347C318 325 457 324 589 303" stroke="#9db8b5" stroke-width="1.3" opacity=".45"/>
+    <path d="M258 360C346 344 443 340 502 334" stroke="#9db8b5" stroke-width="1" opacity=".3"/>
+  </g>
+</svg>

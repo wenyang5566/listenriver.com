@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title">
+  <title id="title">聆聽的河流：耳朵與新芽</title>
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 33C8 22 13 10 23 9C35 8 41 22 34 31C28 39 27 41 26 47C25 55 17 58 14 51" stroke="#b97760" stroke-width="3"/>
+    <path d="M18 27C17 20 22 16 27 20C31 24 27 29 23 31C19 34 22 38 28 43C36 50 45 49 53 42C58 37 56 31 52 32C48 33 48 38 52 38" stroke="#4e898a" stroke-width="3"/>
+    <path d="M34 46C38 40 37 34 42 28C46 23 51 25 50 29" stroke="#718a68" stroke-width="2.5"/>
+  </g>
+</svg>
