@@ -130,7 +130,7 @@ test(`river flows continuously and respects reduced motion changes at ${width}px
 });
 }
 
-for (const width of [320, 390, 768, 1440]) {
+for (const width of [320, 390, 768, 820, 1440]) {
   test(`journal fits ${width}px and supports keyboard theme switching`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.emulateMedia({ colorScheme: 'light', reducedMotion: 'reduce' });
@@ -147,7 +147,7 @@ for (const width of [320, 390, 768, 1440]) {
     }));
     expect(layout).toEqual({overflow: false, paddingTop: '0px', background: 'rgb(255, 250, 242)'});
     await expect(page.locator('.publication-header .header-brand-text__title')).toHaveText('聆聽的河流');
-    if (width <= 768) {
+    if (width <= 860) {
       await page.evaluate(() => window.scrollTo(0, 900));
       const header = page.locator('#site-header');
       await expect.poll(async () => Math.round((await header.boundingBox()).y)).toBe(0);
@@ -155,10 +155,19 @@ for (const width of [320, 390, 768, 1440]) {
       const brand = await header.locator('.personal-header__brand').boundingBox();
       const actions = await header.locator('.personal-header__actions').boundingBox();
       expect(brand.x + brand.width).toBeLessThanOrEqual(actions.x);
-      await page.locator('.header-mobile-menu-toggle').click();
+      const menuToggle = page.locator('.header-mobile-menu-toggle');
+      const menuBox = await menuToggle.boundingBox();
+      const scrollBeforeMenu = await page.evaluate(() => scrollY);
+      await page.mouse.click(menuBox.x + menuBox.width / 2, menuBox.y + menuBox.height / 2);
       await expect(header).toHaveClass(/mobile-nav-open/);
+      await expect.poll(async () => Math.round((await header.boundingBox()).y)).toBe(0);
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(scrollBeforeMenu);
+      await page.mouse.wheel(0, 400);
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(scrollBeforeMenu);
       await page.keyboard.press('Escape');
       await expect(header).not.toHaveClass(/mobile-nav-open/);
+      await expect(menuToggle).toBeFocused();
+      await expect.poll(() => page.evaluate(() => scrollY)).toBe(scrollBeforeMenu);
     }
     await page.locator('#theme-toggle').focus();
     await page.keyboard.press('Enter');

@@ -221,11 +221,11 @@
     if (open) {
       const firstFocusable = mobileDrawer.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
       window.requestAnimationFrame(() => {
-        (firstFocusable || mobileDrawer).focus?.();
+        (firstFocusable || mobileDrawer).focus?.({ preventScroll: true });
       });
     } else if (lastMobileMenuTrigger) {
       window.requestAnimationFrame(() => {
-        lastMobileMenuTrigger.focus();
+        lastMobileMenuTrigger.focus({ preventScroll: true });
       });
     }
   }
