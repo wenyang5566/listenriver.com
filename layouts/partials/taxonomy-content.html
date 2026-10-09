@@ -593,7 +593,7 @@
   {{- if eq .Title "閱讀筆記" -}}
     {{- $filterNames = slice "閱讀心得" "書摘" "電影心得" "講座筆記" -}}
   {{- else if and $isClubhouse (eq .Title "會所模式") -}}
-    {{- $filterNames = slice "會所工作日誌" "會所實習" "會所工作手冊" -}}
+    {{- $filterNames = slice "工作日誌" "實習紀錄" "工作手冊" -}}
   {{- else -}}
     {{- $filterCandidates := slice -}}
     {{- range site.Taxonomies.tags.ByCount -}}
@@ -1580,7 +1580,7 @@
           <h1>{{ .Title }}</h1>
           {{- if $isClubhouse }}
           <nav class="editorial-clubhouse-links" aria-label="會所模式分區">
-            {{- range slice "/clubhouse/" "/clubhouse/會所工作日誌/" "/clubhouse/會所實習/" "/clubhouse/會所工作手冊/" }}
+            {{- range slice "/clubhouse/" "/clubhouse/工作日誌/" "/clubhouse/實習紀錄/" "/clubhouse/工作手冊/" }}
               {{- with site.GetPage . }}<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}
             {{- end }}
           </nav>
@@ -1847,7 +1847,12 @@
                         <span>{{ partial "reading-time.html" $page }} 分鐘</span>
                       {{- end -}}
                     </div>
-                    <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+                    {{- $listTitle := $page.Title -}}
+                    {{- if and $isClubhouse (ne $.Title "會所模式") $page.Params.seriesLabel -}}
+                      {{- $number := replaceRE `^.* ([0-9]+)$` "$1" $page.Params.seriesLabel -}}
+                      {{- $listTitle = printf "%s｜%s" $number ($page.Params.displayTitle | default $page.Title) -}}
+                    {{- end -}}
+                    <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $listTitle }}</a></h3>
                     {{- if not $isEditorialCategory }}{{- with $excerpt }}
                       <div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>
                     {{- end }}{{- end }}

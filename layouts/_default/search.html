@@ -20,7 +20,8 @@
       {{- $landing := index hugo.Data "taxonomy-landing" -}}
       {{- range $name, $path := index $landing "topicDestinations" -}}
         {{- with site.GetPage $path -}}
-        <li data-series-name="{{ $name }}" hidden><a href="{{ .RelPermalink }}">{{ $name }}（{{ len .RegularPages }} 篇）</a></li>
+        {{- $oldNames := dict "工作日誌" "會所工作日誌" "實習紀錄" "會所實習" "工作手冊" "會所工作手冊" -}}
+        <li data-series-name="{{ $name }}" data-series-keywords="{{ index $oldNames $name }} 會所模式" hidden><a href="{{ .RelPermalink }}">{{ $name }}（{{ len .RegularPages }} 篇）</a></li>
         {{- end -}}
       {{- end -}}
     </ul>
@@ -71,7 +72,8 @@
       let matches = 0;
       seriesRoot.querySelectorAll("[data-series-name]").forEach(function (entry) {
         const name = entry.dataset.seriesName;
-        const match = normalized.length >= 2 && (name.includes(normalized) || normalized.includes(name));
+        const keywords = entry.dataset.seriesKeywords || "";
+        const match = normalized.length >= 2 && (name.includes(normalized) || normalized.includes(name) || keywords.includes(normalized));
         entry.hidden = !match;
         if (match) matches += 1;
       });

@@ -7,9 +7,8 @@
     {{- $categories := first 1 (.GetTerms "categories") -}}
     {{- $tags := .GetTerms "tags" -}}
     {{- $seriesLabel := .Params.seriesLabel -}}
-    {{- if and (not $seriesLabel) (findRE `^會所工作日誌[0-9]+_` .Title) -}}
-      {{- $seriesNumber := replaceRE `^會所工作日誌([0-9]+)_.*$` "$1" .Title -}}
-      {{- $seriesLabel = printf "會所工作日誌 %s" $seriesNumber -}}
+    {{- if and (not $seriesLabel) (findRE `^(工作日誌|實習紀錄|工作手冊) [0-9]+｜` .Title) -}}
+      {{- $seriesLabel = replaceRE `^((工作日誌|實習紀錄|工作手冊) [0-9]+)｜.*$` "$1" .Title -}}
     {{- end -}}
     {{- if or $seriesLabel (or (gt (len $categories) 0) (gt (len $tags) 0)) }}
     <div class="post-header-taxonomy" aria-label="文章分類與主題">

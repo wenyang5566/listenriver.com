@@ -473,12 +473,14 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 @media (max-width: 600px) {
   .river-feature-slides { min-height: 550px; }
   .river-feature-controls { justify-content: center; margin-top: 18px; }
-  .river-brand-lockup { width: min(100%, 330px); }
+  /* Center and scale the complete logo-and-title lockup on mobile. */
+  .river-brand-lockup { width: min(100%, 380px); margin-inline: auto; }
+  .river-publication-wordmark { transform: translateX(-8px); }
   .river-editorial-opening { min-height: 224px; padding: 30px 0 90px; }
   .river-opening-description { max-width: none; padding-right: 0; }
   .river-opening-description h1 { font-size: clamp(38px, 10.5vw, 52px); max-width: none; letter-spacing: .05em; margin-bottom: 12px; }
   .river-lead-copy > p { font-size: 15px; }
-  .river-opening-description .river-opening-subtitle { font-size: clamp(14px, 3.85vw, 15px); letter-spacing: .025em; line-height: 24px; }
+  .river-opening-description .river-opening-subtitle { width: 100%; margin-left: 0; font-size: clamp(12px, 3.75vw, 15px); letter-spacing: .025em; line-height: 24px; padding-left: 0; text-align: center; }
   .river-opening-description > p { font-size: 16px; max-width: 330px; }
   .river-journal .river-letter p { font-size: 16px; line-height: 1.95; }
   .river-editorial-opening .river-hero-stream { inset: 0; opacity: 1; mask-image: linear-gradient(90deg, transparent, #000 12%, #000 94%, transparent), linear-gradient(180deg, transparent 36%, #000 65%, #000 96%, transparent); }

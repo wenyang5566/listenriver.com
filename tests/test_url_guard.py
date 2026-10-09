@@ -10,6 +10,20 @@ spec.loader.exec_module(guard)
 
 
 class UrlGuardTests(unittest.TestCase):
+    def test_historical_redirect_can_follow_reviewed_canonical_move(self):
+        old = {'pages': {'/old/': {'canonical': '/old/', 'redirect': None}},
+               'redirect_rules': ['/legacy/ /old/ 301']}
+        new = {'pages': {'/new/': {'canonical': '/new/', 'redirect': None}},
+               'redirect_rules': ['/legacy/ /new/ 301', '/old/ /new/ 301']}
+        self.assertEqual(guard.check(old, new, {'/old/': '/new/'})[0], [])
+
+    def test_unreviewed_historical_redirect_change_is_rejected(self):
+        old = {'pages': {'/old/': {'canonical': '/old/', 'redirect': None}},
+               'redirect_rules': ['/legacy/ /old/ 301']}
+        new = copy.deepcopy(old)
+        new['redirect_rules'] = ['/legacy/ /elsewhere/ 301']
+        self.assertTrue(any('Historical redirect' in failure for failure in guard.check(old, new, {})[0]))
+
     def setUp(self):
         self.old = {'pages': {
             '/文章/': {'canonical': '/文章/', 'redirect': None},

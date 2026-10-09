@@ -1,6 +1,6 @@
 {{ define "main" }}
 {{- $clubhousePages := sort .RegularPagesRecursive "Date" "desc" -}}
-{{- $groupOrder := slice "會所工作手冊" "會所工作日誌" "會所實習" -}}
+{{- $groupOrder := slice "工作手冊" "工作日誌" "實習紀錄" -}}
 {{- $isRoot := eq .RelPermalink ("/clubhouse/" | relLangURL) -}}
 
 <header class="page-header clubhouse-page-header">
