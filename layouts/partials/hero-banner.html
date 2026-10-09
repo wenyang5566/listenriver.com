@@ -1,4 +1,31 @@
-﻿<section class="salon-hero">
+<section class="salon-hero salon-hero--flow">
+  <div class="river-surface" aria-hidden="true">
+    <svg class="river-lines river-lines--near" viewBox="0 0 1440 360" preserveAspectRatio="none" focusable="false">
+      <defs>
+        <linearGradient id="river-wash-color" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="var(--hero-wash, #668a91)" stop-opacity="0"/>
+          <stop offset=".38" stop-color="var(--hero-wash, #668a91)" stop-opacity=".25"/>
+          <stop offset=".78" stop-color="var(--hero-wash, #668a91)" stop-opacity=".85"/>
+          <stop offset="1" stop-color="var(--hero-wash, #668a91)" stop-opacity=".5"/>
+        </linearGradient>
+        <path id="river-wash-course" d="M-160 230 C160 390 390 70 720 180 S1210 360 1600 80"/>
+        <filter id="river-wash-soft" x="-20%" y="-100%" width="140%" height="300%" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="18"/>
+        </filter>
+      </defs>
+      <g class="river-wash" stroke="url(#river-wash-color)" fill="none" stroke-linecap="round">
+        <use href="#river-wash-course" stroke-width="100" opacity=".28" filter="url(#river-wash-soft)"/>
+      </g>
+      <path class="river-current" d="M-160 230 C160 390 390 70 720 180 S1210 360 1600 80"/>
+      <path class="river-ribbon" d="M-160 286 C160 446 390 126 720 236 S1210 416 1600 136"/>
+      <path class="river-thread" d="M-160 340 C160 500 390 180 720 290 S1210 470 1600 190"/>
+    </svg>
+    <svg class="river-lines river-lines--far" viewBox="0 0 1440 360" preserveAspectRatio="none" focusable="false">
+      <path d="M-160 110 C240 -40 600 290 940 160 S1320 40 1600 100"/>
+      <path class="river-thread" d="M-160 175 C240 25 600 355 940 225 S1320 105 1600 165"/>
+      <path class="river-current" d="M-160 250 C240 100 600 430 940 300 S1320 180 1600 240"/>
+    </svg>
+  </div>
   <div class="salon-hero-inner">
     <div class="salon-hero-lockup">
       <span class="salon-hero-mark" aria-hidden="true"></span>

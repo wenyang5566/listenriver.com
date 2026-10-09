@@ -22,7 +22,7 @@
 
         header.classList.toggle('is-scrolled', y > scrolledOffset);
 
-        if (y <= scrolledOffset || isInteractionOpen) {
+        if (document.body.classList.contains('river-home') || y <= scrolledOffset || isInteractionOpen) {
           header.classList.remove('nav--hidden');
           mobileHideTravel = 0;
           mobileRevealTravel = 0;
@@ -221,11 +221,11 @@
     if (open) {
       const firstFocusable = mobileDrawer.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
       window.requestAnimationFrame(() => {
-        (firstFocusable || mobileDrawer).focus?.();
+        (firstFocusable || mobileDrawer).focus?.({ preventScroll: true });
       });
     } else if (lastMobileMenuTrigger) {
       window.requestAnimationFrame(() => {
-        lastMobileMenuTrigger.focus();
+        lastMobileMenuTrigger.focus({ preventScroll: true });
       });
     }
   }

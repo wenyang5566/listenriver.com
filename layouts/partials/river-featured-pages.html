@@ -1,0 +1,9 @@
+{{- /* Build-time selection, newest featured articles first; fill empty slots from latest. */ -}}
+{{- $others := where .pages "RelPermalink" "ne" .lead.RelPermalink -}}
+{{- $selected := first 2 ((where $others "Params.featured" true).ByDate.Reverse) -}}
+{{- range $others -}}
+  {{- if and (lt (len $selected) 2) (not (in $selected .)) -}}
+    {{- $selected = $selected | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $selected -}}

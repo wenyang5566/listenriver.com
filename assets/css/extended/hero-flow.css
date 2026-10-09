@@ -1,0 +1,29 @@
+/* Only the decorative river layers move; the reading surface stays still. */
+.salon-hero--flow { position: relative; overflow: hidden; isolation: isolate; }
+.salon-hero--flow .salon-hero-mark { display: none; }
+.river-surface { position: absolute; inset: 0; overflow: hidden; pointer-events: none; color: #24717a; }
+.river-lines { position: absolute; width: 125%; height: 115%; left: -12%; top: 0; fill: none; stroke: currentColor; stroke-width: 1.8; opacity: .38; }
+.river-lines--far { opacity: .23; top: -15%; }
+.river-lines path { vector-effect: non-scaling-stroke; }
+.river-thread { stroke-width: .7; opacity: .65; }
+.river-current { stroke-width: 2.6; }
+.river-ribbon { stroke-width: 6; opacity: .22; }
+.salon-hero--flow .salon-hero-inner { position: relative; z-index: 1; padding-bottom: 3.2rem; }
+[data-theme="dark"] .river-surface { color: #a1e3dc; }
+@media (prefers-reduced-motion: no-preference) {
+  .river-lines--near { animation: river-drift 12s ease-in-out infinite alternate; animation-delay: -6s; }
+  .river-lines--far { animation: river-sway 17s ease-in-out infinite alternate; animation-delay: -8s; }
+}
+@keyframes river-drift {
+  from { transform: translate3d(-7%, -8%, 0) rotate(-4deg); }
+  to { transform: translate3d(7%, 10%, 0) rotate(4deg); }
+}
+@keyframes river-sway {
+  from { transform: translate3d(2%, 12%, 0) rotate(3deg); }
+  to { transform: translate3d(-2%, -12%, 0) rotate(-3deg); }
+}
+@media (max-width: 768px) {
+  .river-lines { width: 190%; left: -45%; opacity: .3; }
+  .river-lines--far { opacity: .18; }
+  .salon-hero--flow .salon-hero-inner { padding-bottom: 3rem; }
+}

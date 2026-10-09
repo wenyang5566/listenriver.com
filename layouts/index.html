@@ -6,16 +6,7 @@
 {{- $paginator := .Paginate $allPages -}}
 
 {{- if eq $paginator.PageNumber 1 -}}
-  {{- partial "hero-banner.html" . -}}
-
-  <div class="home-discovery">
-    {{- partial "featured-banner.html" . -}}
-    {{- partial "home-mobile-topics.html" . -}}
-    {{- partial "home-topics.html" . -}}
-    {{- partial "home-latest.html" (dict "pages" $latestPages) -}}
-    {{- partial "home-author.html" . -}}
-    {{- partial "home-gallery.html" . -}}
-  </div>
+  {{- partial "river-home.html" (dict "page" . "pages" $allPages "latest" $latestPages) -}}
 {{- else -}}
   {{- range $paginator.Pages -}}
     {{- partial "article-card.html" (dict "page" .) -}}

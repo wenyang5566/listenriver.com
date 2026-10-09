@@ -1,0 +1,16 @@
+<a class="river-skip" href="#river-content">跳至閱讀內容</a>
+<header class="river-header">
+  <a class="river-wordmark" href="{{ "/" | relURL }}" aria-label="聆聽的河流，首頁">
+    <svg viewBox="0 0 42 28" aria-hidden="true"><path d="M2 7c10-12 24 18 38 0M2 14c10-12 24 18 38 0M2 21c10-12 24 18 38 0"/></svg>
+    <span>聆聽的河流</span>
+  </a>
+  <nav aria-label="網站主導覽">
+    <a href="{{ "/blog/" | relURL }}">所有文章</a>
+    <a href="{{ "/categories/" | relURL }}">閱讀主題</a>
+    <a href="{{ "/about/" | relURL }}">關於文揚</a>
+    <a class="river-search" href="{{ "/search/" | relURL }}" aria-label="搜尋文章"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span>搜尋</span></a>
+    {{- if not site.Params.disableThemeToggle }}
+    <button id="theme-toggle" accesskey="t" type="button" aria-label="切換明暗模式"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor" stroke="none"/></svg></button>
+    {{- end }}
+  </nav>
+</header>
