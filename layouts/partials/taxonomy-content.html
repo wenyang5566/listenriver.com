@@ -1,5 +1,9 @@
-﻿{{- $plural := .Data.Plural -}}
+{{- $plural := .Data.Plural -}}
+{{- $isClubhouse := eq .Section "clubhouse" -}}
+{{- if $isClubhouse -}}{{- $plural = "categories" -}}{{- end -}}
 {{- $pages := .RegularPages.ByDate.Reverse -}}
+{{- if $isClubhouse -}}{{- $pages = .RegularPagesRecursive.ByDate.Reverse -}}{{- end -}}
+{{- $isEditorialCategory := eq $plural "categories" -}}
 {{- $hasPages := gt (len $pages) 0 -}}
 
 {{- if and (eq $plural "categories") (not $hasPages) -}}
@@ -485,15 +489,21 @@
     }
   </style>
 
-  <div class="taxonomy-landing-shell">
+  <div class="taxonomy-landing-shell editorial-directory">
     <header class="page-header taxonomy-landing-hero">
       <div>
         {{- partial "breadcrumbs.html" . -}}
         <span class="taxonomy-landing-hero__eyebrow">Categories · 分類總覽</span>
-        <h1>聆聽的河流 / 分類總覽</h1>
+        <h1>文章分類</h1>
         <div class="taxonomy-landing-hero__description">
-          {{ .Content }}
+          <p>五個書寫方向，與會所的實習和工作紀錄。從感興趣的地方，開始閱讀。</p>
         </div>
+        {{- with .Content }}
+        <details class="editorial-introduction">
+          <summary>關於這些書寫方向</summary>
+          <div class="editorial-introduction__content">{{ . }}</div>
+        </details>
+        {{- end }}
       </div>
       <div class="taxonomy-landing-hero__stat" aria-label="總文章數">
         <span class="taxonomy-landing-hero__stat-number">{{ $totalPosts }}</span>
@@ -523,13 +533,6 @@
               </div>
               <h2 class="taxonomy-landing-card__title">{{ $card.title }}</h2>
               <div class="taxonomy-landing-card__description"><p>{{ $card.description }}</p></div>
-              {{- with $card.tags }}
-              <div class="taxonomy-landing-card__tags" aria-label="{{ $card.title }} 代表標籤">
-                {{- range first 3 . -}}
-                  <a class="taxonomy-landing-card__tag" href="{{ partial "topic-entry-url.html" . }}" aria-label="延伸閱讀：{{ . }}">#{{ . }}</a>
-                {{- end -}}
-              </div>
-              {{- end }}
               <div class="taxonomy-landing-card__footer">
                 <span>{{ $card.postCount }} 篇文章</span>
                 <span class="taxonomy-landing-card__arrow" aria-hidden="true">→</span>
@@ -553,9 +556,6 @@
         {{- range $tag := $hotTags -}}
           {{- if $tag.url -}}
           <a class="taxonomy-landing-hot-card" href="{{ $tag.url }}" aria-label="查看標籤 {{ $tag.name }}">
-            <div class="taxonomy-landing-hot-card__media">
-              <img src="{{ $tag.cover.src }}" alt="{{ $tag.cover.alt }}" loading="lazy" decoding="async">
-            </div>
             <div class="taxonomy-landing-hot-card__body">
               <h2 class="taxonomy-landing-hot-card__title">#{{ $tag.name }}</h2>
               <div class="taxonomy-landing-hot-card__meta">{{ $tag.count }} 篇文章</div>
@@ -567,24 +567,10 @@
     </section>
     {{- end }}
 
-    <section class="taxonomy-landing-section" aria-labelledby="taxonomy-landing-all-tags-title">
-      <div class="taxonomy-landing-section__head">
-        <span class="taxonomy-landing-section__eyebrow">All Tags</span>
-        <span class="taxonomy-landing-section__line"></span>
-        <span class="taxonomy-landing-section__title-note">依文章數量排序</span>
-      </div>
-      <div id="taxonomy-landing-all-tags-title" class="sr-only">All Tags</div>
-      <div class="taxonomy-landing-tag-shell">
-        <div class="taxonomy-landing-tag-grid">
-          {{- range site.Taxonomies.tags.ByCount -}}
-          <a class="taxonomy-landing-tag-link" href="{{ .Page.RelPermalink }}">
-            <span class="taxonomy-landing-tag-link__name">#{{ .Page.Title }}</span>
-            <span class="taxonomy-landing-tag-link__count">{{ .Count }}</span>
-          </a>
-          {{- end -}}
-        </div>
-      </div>
-    </section>
+    <nav class="editorial-directory-footer" aria-label="更多閱讀入口">
+      <p>沿著更細的主題，跨分類閱讀。</p>
+      <a href="{{ "tags/" | relLangURL }}">瀏覽全部主題 <span aria-hidden="true">→</span></a>
+    </nav>
   </div>
 
 {{- else if and (eq $plural "categories") $hasPages -}}
@@ -603,6 +589,23 @@
     {{- end -}}
   {{- end -}}
   {{- $featured := first 3 $primaryPages -}}
+  {{- $filterNames := slice -}}
+  {{- if eq .Title "閱讀筆記" -}}
+    {{- $filterNames = slice "閱讀心得" "書摘" "電影心得" "講座筆記" -}}
+  {{- else if and $isClubhouse (eq .Title "會所模式") -}}
+    {{- $filterNames = slice "會所工作日誌" "會所實習" "會所工作手冊" -}}
+  {{- else -}}
+    {{- $filterCandidates := slice -}}
+    {{- range site.Taxonomies.tags.ByCount -}}
+      {{- $count := len (where $primaryPages "Params.tags" "intersect" (slice .Term)) -}}
+      {{- if and (ge $count 2) (lt $count (len $primaryPages)) -}}
+        {{- $filterCandidates = $filterCandidates | append (dict "name" .Term "count" $count) -}}
+      {{- end -}}
+    {{- end -}}
+    {{- range first 5 (sort $filterCandidates "count" "desc") -}}
+      {{- $filterNames = $filterNames | append .name -}}
+    {{- end -}}
+  {{- end -}}
   {{- $categoryItems := partial "category-data.html" . -}}
   {{- $topicItems := slice -}}
   {{- range site.Taxonomies.tags.ByCount -}}
@@ -617,7 +620,9 @@
   {{- end -}}
   {{- $heroTopics := first 8 $topicItems -}}
   {{- $sidebarTopics := first 10 $topicItems -}}
-  {{- $paginator := .Paginate $primaryPages 8 -}}
+  {{- $pageSize := 8 -}}
+  {{- if $isEditorialCategory -}}{{- $pageSize = 20 -}}{{- end -}}
+  {{- $paginator := .Paginate $primaryPages $pageSize -}}
   {{- $pagedPages := $paginator.Pages -}}
   {{- $yearGroups := $pagedPages.GroupByDate "2006" -}}
   <style>
@@ -1563,16 +1568,23 @@
     }
   </style>
 
-  <div class="taxonomy-category-shell">
+  <div class="taxonomy-category-shell{{ if $isEditorialCategory }} editorial-archive{{ end }}">
     <div class="taxonomy-category-top">
       <div class="taxonomy-category-primary">
         <header class="page-header taxonomy-category-hero">
           {{- partial "breadcrumbs.html" . -}}
           <div class="taxonomy-category-hero__eyebrow">
-            <span>Category</span>
+            <span>{{ if $isClubhouse }}Clubhouse{{ else }}Category{{ end }}</span>
             <span class="taxonomy-category-hero__eyebrow-count">{{ len $pages }} 篇文章</span>
           </div>
           <h1>{{ .Title }}</h1>
+          {{- if $isClubhouse }}
+          <nav class="editorial-clubhouse-links" aria-label="會所模式分區">
+            {{- range slice "/clubhouse/" "/clubhouse/會所工作日誌/" "/clubhouse/會所實習/" "/clubhouse/會所工作手冊/" }}
+              {{- with site.GetPage . }}<a href="{{ .RelPermalink }}"{{ if eq .RelPermalink $.RelPermalink }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}
+            {{- end }}
+          </nav>
+          {{- end }}
           <div class="taxonomy-category-hero__description">
             {{- if .Description -}}
               {{ .Description | markdownify }}
@@ -1581,11 +1593,18 @@
             {{- end -}}
           </div>
           {{- if .Content }}
+          {{- if $isEditorialCategory }}
+          <details class="editorial-introduction">
+            <summary>閱讀這個分類的介紹</summary>
+            <div class="taxonomy-category-hero__content editorial-introduction__content">{{ .Content }}</div>
+          </details>
+          {{- else }}
           <div class="taxonomy-category-hero__content">
             {{ .Content }}
           </div>
           {{- end }}
-          {{- if gt (len $heroTopics) 0 }}
+          {{- end }}
+          {{- if and (gt (len $heroTopics) 0) (not $isEditorialCategory) }}
           <div class="taxonomy-category-hero__description"><p>標籤旁是本類篇數；點入後可讀全站同標籤的文章。</p></div>
           <div class="taxonomy-category-topics" aria-label="{{ .Title }} 跨分類延伸標籤，本類篇數">
             {{- range $heroTopics -}}
@@ -1615,6 +1634,7 @@
         </header>
       </div>
 
+{{- if not $isEditorialCategory }}
       <aside class="taxonomy-category-sidebar">
         <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-category-map-title">
           <span class="taxonomy-sidebar-panel__eyebrow">閱讀地圖</span>
@@ -1652,6 +1672,7 @@
         </section>
         {{- end }}
       </aside>
+{{- end }}
     </div>
 
     <main class="taxonomy-category-main">
@@ -1673,7 +1694,7 @@
         {{- end -}}
         {{- end -}}
 
-        {{- if gt (len $featured) 0 }}
+        {{- if and (gt (len $featured) 0) (not $isEditorialCategory) }}
         <section class="taxonomy-category-section taxonomy-featured" aria-labelledby="taxonomy-featured-title">
           <div class="taxonomy-category-section__heading">
             <div>
@@ -1752,7 +1773,7 @@
         </section>
         {{- end }}
 
-        <section class="taxonomy-category-section taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
+        <section class="taxonomy-category-section taxonomy-article-list" aria-labelledby="taxonomy-article-list-title"{{ if $isEditorialCategory }} data-reading-archive data-total="{{ len $primaryPages }}" data-page="{{ $paginator.PageNumber }}"{{ with $paginator.Next }} data-next="{{ .URL }}"{{ end }}{{ end }}>
           <div class="taxonomy-category-section__heading">
             <div>
               <span class="taxonomy-category-section__eyebrow">按時間閱讀</span>
@@ -1760,6 +1781,18 @@
             </div>
             <p class="taxonomy-category-section__note">{{ if $isPainCategory }}個人書寫共 {{ len $primaryPages }} 篇；另有上方聆聽疼痛計畫 {{ len $seriesPages }} 篇。{{ else }}這個分類共 {{ len $primaryPages }} 篇。{{ end }}依日期由新到舊排列。</p>
           </div>
+          {{- if and $isEditorialCategory (eq $paginator.PageNumber 1) (gt (len $filterNames) 0) }}
+          <nav class="editorial-filters" aria-label="依文章類型篩選">
+            <a href="{{ .RelPermalink }}" data-reading-filter="" data-count="{{ len $primaryPages }}" aria-current="true">全部 <span>{{ len $primaryPages }}</span></a>
+            {{- range $filterNames }}
+              {{- $name := . }}
+              {{- $count := len (where $primaryPages "Params.tags" "intersect" (slice $name)) }}
+              {{- with site.GetPage (printf "/tags/%s" $name) }}
+              <a href="{{ .RelPermalink }}" data-reading-filter="{{ $name }}" data-count="{{ $count }}">{{ $name }} <span>{{ $count }}</span></a>
+              {{- end }}
+            {{- end }}
+          </nav>
+          {{- end }}
           {{- range $group := $yearGroups -}}
             <div class="taxonomy-story-year">{{ $group.Key }} <span class="taxonomy-category-topics__count">{{ len $group.Pages }} 篇</span></div>
             <div class="taxonomy-story-list">
@@ -1777,9 +1810,9 @@
                 {{- $cover := or $pageBundleCover $globalResourcesCover -}}
                 {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
                 {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
-                <article class="taxonomy-story-card">
+                <article{{ if $isEditorialCategory }} data-reading-tags="{{ $page.Params.tags | default (slice) | jsonify }}"{{ end }} class="taxonomy-story-card{{ if and $isEditorialCategory (not (or $cover $coverImage)) }} taxonomy-story-card--text{{ end }}">
                   <a class="taxonomy-story-card__link" href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title | plainify }}"></a>
-                  <a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
+                  {{- if or $cover $coverImage (not $isEditorialCategory) }}<a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
                     {{- if $cover -}}
                       {{- partialCached "optimized-image.html" (dict
                         "resource" $cover
@@ -1806,7 +1839,7 @@
                         loading="lazy"
                         decoding="async">
                     {{- end -}}
-                  </a>
+                  </a>{{- end }}
                   <div class="taxonomy-story-card__body">
                     <div class="taxonomy-story-card__meta">
                       <span>{{ $page.Date.Format "01.02" }}</span>
@@ -1815,9 +1848,9 @@
                       {{- end -}}
                     </div>
                     <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
-                    {{- with $excerpt }}
+                    {{- if not $isEditorialCategory }}{{- with $excerpt }}
                       <div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>
-                    {{- end }}
+                    {{- end }}{{- end }}
                     {{- if gt (len $tags) 0 }}
                     <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
                       {{- range $tags -}}
@@ -1828,7 +1861,8 @@
                     </div>
                     {{- end }}
                   </div>
-                </article>
+                {{- if $isEditorialCategory }}{{- with $excerpt }}<div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>{{- end }}{{- end }}
+</article>
               {{- end -}}
             </div>
           {{- end -}}
@@ -1853,11 +1887,55 @@
           </nav>
           {{- end }}
         </section>
+        {{- if and ($isEditorialCategory) (eq $paginator.PageNumber 1) }}
+          {{- $archiveScript := resources.Get "js/reading-archive.js" | minify | fingerprint }}
+          <script src="{{ $archiveScript.RelPermalink }}" integrity="{{ $archiveScript.Data.Integrity }}" defer></script>
+        {{- end }}
     </main>
+{{- if $isEditorialCategory }}
+      <aside class="taxonomy-category-sidebar">
+        <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-category-map-title">
+          <span class="taxonomy-sidebar-panel__eyebrow">閱讀地圖</span>
+          <h3 id="taxonomy-category-map-title">其他主分類</h3>
+          <p>換一個書寫方向，讀讀其他經驗。</p>
+          <ul class="taxonomy-sidebar-links">
+            {{- range $item := $categoryItems -}}
+              {{- with $item.page -}}
+              <li>
+                <a href="{{ .RelPermalink }}"{{ if eq .Title $.Title }} aria-current="page"{{ end }}>
+                  <span class="taxonomy-sidebar-links__label">{{ .Title }}</span>
+                  <span class="taxonomy-sidebar-links__count">{{ $item.count }}</span>
+                </a>
+              </li>
+              {{- end -}}
+            {{- end -}}
+          </ul>
+        </section>
+
+        {{- if gt (len $sidebarTopics) 0 }}
+        <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-topic-index-title">
+          <span class="taxonomy-sidebar-panel__eyebrow">Topic Index</span>
+          <h3 id="taxonomy-topic-index-title">{{ .Title }}相關主題</h3>
+          <p>數字是本類篇數；點入標籤可讀到全站相關文章。</p>
+          <ul class="taxonomy-sidebar-links">
+            {{- range $sidebarTopics -}}
+              <li>
+                <a href="{{ .page.RelPermalink }}">
+                  <span class="taxonomy-sidebar-links__label">#{{ .name }}</span>
+                  <span class="taxonomy-sidebar-links__count">{{ .count }}</span>
+                </a>
+              </li>
+            {{- end -}}
+          </ul>
+        </section>
+        {{- end }}
+      </aside>
+{{- end }}
   </div>
 
 {{- else if and (eq $plural "tags") (not $hasPages) -}}
-  {{- $tagItems := partial "home-tag-data.html" . -}}
+  {{- $tagItems := first 6 site.Taxonomies.tags.ByCount -}}
+  <div class="editorial-tag-directory">
   <header class="page-header taxonomy-landing-header">
     {{- partial "breadcrumbs.html" . -}}
     <span class="taxonomy-page-kicker">Tags</span>
@@ -1872,9 +1950,10 @@
   </header>
 
   {{- if .Content }}
-  <div class="post-content taxonomy-page-content">
-    {{ .Content }}
-  </div>
+  <details class="editorial-introduction">
+    <summary>關於主題索引</summary>
+    <div class="editorial-introduction__content">{{ .Content }}</div>
+  </details>
   {{- end }}
 
   {{- if gt (len $tagItems) 0 }}
@@ -1886,7 +1965,14 @@
       </div>
       <p class="taxonomy-section-note">先看站內最常出現的主題標籤，快速掌握內容重心。</p>
     </div>
-    {{- partial "category-rail.html" (dict "items" (first 12 $tagItems) "id" "popular-tags-rail" "class" "category-rail-shell--landing" "cardPartial" "home-tag-card.html") -}}
+    <ul class="editorial-popular-tags">
+      {{- range $tagItems }}
+      <li><a href="{{ .Page.RelPermalink }}">
+        <span class="editorial-popular-tags__name">{{ .Page.Title }}</span>
+        <span class="editorial-popular-tags__count">{{ .Count }} 篇</span>
+      </a></li>
+      {{- end }}
+    </ul>
   </section>
   {{- end }}
 
@@ -1909,6 +1995,7 @@
       </div>
     </div>
   </section>
+  </div>
 
 {{- else if and (eq $plural "tags") $hasPages -}}
   {{- $featured := first 3 $pages -}}
@@ -1940,7 +2027,8 @@
   {{- $pagedPages := $paginator.Pages -}}
   {{- $yearGroups := $pagedPages.GroupByDate "2006" -}}
 
-  <div class="taxonomy-tag-shell">
+  {{- $isEditorialTag := eq .Title "電影心得" -}}
+  <div class="taxonomy-tag-shell{{ if $isEditorialTag }} editorial-archive{{ end }}">
     <div class="taxonomy-tag-top">
       <div class="taxonomy-tag-primary">
         <header class="page-header taxonomy-tag-hero">
@@ -1957,7 +2045,7 @@
               <p>這個主題目前收錄 {{ len $pages }} 篇文章，可從不同分類交叉閱讀。</p>
             {{- end -}}
           </div>
-          {{- if gt (len $categoryItems) 0 }}
+          {{- if and (gt (len $categoryItems) 0) (not $isEditorialTag) }}
           <div class="taxonomy-tag-topics" aria-label="{{ .Title }} 相關分類">
             {{- range first 5 $categoryItems -}}
               <a class="taxonomy-tag-topics__item" href="{{ .page.RelPermalink }}">
@@ -1967,7 +2055,7 @@
             {{- end -}}
           </div>
           {{- end }}
-          {{- if gt (len $topicItems) 0 }}
+          {{- if and (gt (len $topicItems) 0) (not $isEditorialTag) }}
           <div class="taxonomy-tag-mobile-map" aria-label="{{ .Title }} 相關標籤">
             <span class="taxonomy-tag-mobile-map__eyebrow">Related Tags</span>
             <div class="taxonomy-tag-mobile-map__rail">
@@ -1983,6 +2071,7 @@
         </header>
       </div>
 
+{{- if not $isEditorialTag }}
       <aside class="taxonomy-tag-sidebar">
         {{- if gt (len $categoryItems) 0 }}
         <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-tag-category-map-title">
@@ -2019,10 +2108,11 @@
         </section>
         {{- end }}
       </aside>
+{{- end }}
     </div>
 
     <main class="taxonomy-tag-main">
-      {{- if gt (len $featured) 0 }}
+      {{- if and (gt (len $featured) 0) (not $isEditorialTag) }}
       <section class="taxonomy-tag-section taxonomy-featured" aria-labelledby="taxonomy-featured-title">
         <div class="taxonomy-category-section__heading">
           <div>
@@ -2104,10 +2194,10 @@
       <section class="taxonomy-tag-section taxonomy-article-list" aria-labelledby="taxonomy-article-list-title">
         <div class="taxonomy-category-section__heading">
           <div>
-            <span class="taxonomy-category-section__eyebrow">全部文章</span>
+            <span class="taxonomy-category-section__eyebrow">{{ if $isEditorialTag }}按時間閱讀{{ else }}全部文章{{ end }}</span>
             <h2 id="taxonomy-article-list-title">全部文章</h2>
           </div>
-          <p class="taxonomy-category-section__note">依年份與時間排序瀏覽這個主題中的文章，每頁顯示 {{ len $pagedPages }} 篇。</p>
+          <p class="taxonomy-category-section__note">{{ if $isEditorialTag }}依日期由新到舊排列。{{ else }}依年份與時間排序瀏覽這個主題中的文章，每頁顯示 {{ len $pagedPages }} 篇。{{ end }}</p>
         </div>
         {{- range $group := $yearGroups -}}
           <div class="taxonomy-story-year">{{ $group.Key }} <span class="taxonomy-category-topics__count">{{ len $group.Pages }} 篇</span></div>
@@ -2126,9 +2216,9 @@
           {{- $cover := or $pageBundleCover $globalResourcesCover -}}
           {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
           {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
-          <article class="taxonomy-story-card">
+          <article class="taxonomy-story-card{{ if and (in (slice "閱讀筆記" "電影心得") $.Title) (not (or $cover $coverImage)) }} taxonomy-story-card--text{{ end }}">
             <a class="taxonomy-story-card__link" href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title | plainify }}"></a>
-            <a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
+            {{- if or $cover $coverImage (not (in (slice "閱讀筆記" "電影心得") $.Title)) }}<a class="taxonomy-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">
               {{- if $cover -}}
                 {{- partialCached "optimized-image.html" (dict
                   "resource" $cover
@@ -2155,7 +2245,7 @@
                   loading="lazy"
                   decoding="async">
               {{- end -}}
-            </a>
+            </a>{{- end }}
             <div class="taxonomy-story-card__body">
               <div class="taxonomy-story-card__meta">
                 <span>{{ $page.Date.Format "01.02" }}</span>
@@ -2164,9 +2254,9 @@
                 {{- end -}}
               </div>
               <h3 class="taxonomy-story-card__title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
-              {{- with $excerpt }}
+              {{- if not (in (slice "閱讀筆記" "電影心得") $.Title) }}{{- with $excerpt }}
                 <div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>
-              {{- end }}
+              {{- end }}{{- end }}
               {{- if gt (len $tags) 0 }}
               <div class="taxonomy-story-card__tags" aria-label="{{ $page.Title }} 相關標籤">
                 {{- range $tags -}}
@@ -2177,7 +2267,8 @@
               </div>
               {{- end }}
             </div>
-          </article>
+          {{- if in (slice "閱讀筆記" "電影心得") $.Title }}{{- with $excerpt }}<div class="taxonomy-story-card__excerpt">{{ . | plainify | htmlUnescape | truncate 120 }}</div>{{- end }}{{- end }}
+</article>
           {{- end -}}
           </div>
         {{- end -}}
@@ -2203,6 +2294,44 @@
         {{- end }}
       </section>
     </main>
+{{- if $isEditorialTag }}
+      <aside class="taxonomy-tag-sidebar">
+        {{- if gt (len $categoryItems) 0 }}
+        <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-tag-category-map-title">
+          <span class="taxonomy-sidebar-panel__eyebrow">Category Map</span>
+          <h3 id="taxonomy-tag-category-map-title">相關分類</h3>
+          <p>從這個標籤回到較大的閱讀分類。</p>
+          <ul class="taxonomy-sidebar-links">
+            {{- range first 8 $categoryItems -}}
+              <li>
+                <a href="{{ .page.RelPermalink }}">
+                  <span class="taxonomy-sidebar-links__label">{{ .name }}</span>
+                  <span class="taxonomy-sidebar-links__count">{{ .count }}</span>
+                </a>
+              </li>
+            {{- end -}}
+          </ul>
+        </section>
+        {{- end }}
+        {{- if gt (len $topicItems) 0 }}
+        <section class="taxonomy-sidebar-panel" aria-labelledby="taxonomy-related-tags-title">
+          <span class="taxonomy-sidebar-panel__eyebrow">Related Tags</span>
+          <h3 id="taxonomy-related-tags-title">常一起出現</h3>
+          <p>沿著相近標籤延伸閱讀。</p>
+          <ul class="taxonomy-sidebar-links">
+            {{- range first 10 $topicItems -}}
+              <li>
+                <a href="{{ .page.RelPermalink }}">
+                  <span class="taxonomy-sidebar-links__label">#{{ .name }}</span>
+                  <span class="taxonomy-sidebar-links__count">{{ .count }}</span>
+                </a>
+              </li>
+            {{- end -}}
+          </ul>
+        </section>
+        {{- end }}
+      </aside>
+{{- end }}
   </div>
 
 {{- else -}}

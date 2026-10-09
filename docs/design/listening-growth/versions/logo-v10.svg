@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title">
+  <title id="title">聆聽的河流：柔順耳廓與河線</title>
+  <g stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 30C9 20 14 11 23 9C33 7 40 14 39 23C39 29 36 33 33 36M15 44C15 50 18 54 22 53C25 52 26 50 27 48" stroke="#b97760"/>
+    <path d="M20 27C19 22 22 18 26.5 19C32 20.3 33 26.5 28 31C22.5 35 23.5 40 32 44C41 48 48 44 55 40" stroke="#4e898a"/>
+  </g>
+</svg>

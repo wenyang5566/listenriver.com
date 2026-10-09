@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-labelledby="title">
+  <title id="title">聆聽的河流：耳朵與兩支細芽</title>
+  <g stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 31C8 19 15 9 26 9C39 9 44 23 37 34M14 46C14 54 24 58 28 49" stroke="#b97760"/>
+    <path d="M20 27C19 21 23 17 28 19C34 22 32 29 27 32C22 36 24 41 32 44C41 48 48 44 55 40" stroke="#4e898a"/>
+  <path d="M36 46C38 43 38 38 41 35C43 33 45 34 45 36" stroke="#718a68" stroke-width="1.8"/>
+    <path d="M45 46C47 43 47 40 50 38" stroke="#718a68" stroke-width="1.8"/>
+  </g>
+</svg>

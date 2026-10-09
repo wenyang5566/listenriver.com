@@ -64,19 +64,23 @@
       {{ $content }}
     {{- end }}
   </div>
-  <div data-pagefind-ignore>
+  <div class="article-ending" data-pagefind-ignore>
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+    {{- with ($.GetTerms $tags) }}
+    <div class="article-ending-topics">
+    <span class="article-ending-label">相關主題</span>
     <ul class="post-tags">
-      {{- range ($.GetTerms $tags) }}
-      <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+      {{- range . }}
+      <li><a href="{{ .Permalink }}">#{{ .LinkTitle }}</a></li>
       {{- end }}
     </ul>
+    </div>
+    {{- end }}
     {{- partial "post_interactions_v2.html" . -}}
+    {{- partial "post_related.html" . -}}
     {{- if (.Param "comments") }}
       {{- partial "comments.html" . }}
     {{- end }}
-    {{- partial "post_internal_links.html" . -}}
-    {{- partial "post_related.html" . -}}
   </div>
   {{- end }}
 
@@ -87,14 +91,6 @@
     <span>回頂端</span>
   </button>
 
-  <footer class="post-footer">
-    {{- if (.Param "ShowPostNavLinks") }}
-      {{- partial "post_sequence_nav.html" . }}
-    {{- end }}
-    {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
-      {{- partial "share_icons.html" . -}}
-    {{- end }}
-  </footer>
 </article>
 {{- partial "mobile-reading-toolbar.html" . -}}
 

@@ -1,52 +1,49 @@
-{{- $initialLimit := 4 -}}
-{{- $maxLimit := site.Params.articleRelatedLoadLimit | default 12 -}}
+{{- $initialLimit := 3 -}}
+{{- $maxLimit := 9 -}}
 {{- $related := slice -}}
-{{- $seen := slice .RelPermalink -}}
 {{- $pool := where site.RegularPages "RelPermalink" "ne" .RelPermalink -}}
-
-{{- with .Params.tags -}}
-  {{- $sameTag := where $pool "Params.tags" "intersect" . -}}
-  {{- range $sameTag.ByDate.Reverse -}}
-    {{- if and (lt (len $related) $maxLimit) (not (in $seen .RelPermalink)) -}}
-      {{- $related = $related | append . -}}
-      {{- $seen = $seen | append .RelPermalink -}}
+{{- $priority := slice -}}
+{{- $book := path.Base (path.Dir .File.Path) -}}
+{{- $bookTags := slice "閱讀心得" "書摘" -}}
+{{- if gt (len (intersect (.Params.tags | default (slice)) $bookTags)) 0 -}}
+  {{- range $pool.ByDate.Reverse -}}
+    {{- if and (eq (len $priority) 0) (eq (path.Base (path.Dir .File.Path)) $book) (gt (len (intersect (.Params.tags | default (slice)) $bookTags)) 0) -}}
+      {{- $priority = $priority | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- else if eq .Section "clubhouse" -}}
+  {{- $current := . -}}
+  {{- range .CurrentSection.RegularPages.ByDate -}}
+    {{- if and (eq (len $priority) 0) (.Date.After $current.Date) -}}
+      {{- $priority = $priority | append . -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
-
-{{- with .Params.categories -}}
-  {{- $sameCategory := where $pool "Params.categories" "intersect" . -}}
-  {{- range $sameCategory.ByDate.Reverse -}}
-    {{- if and (lt (len $related) $maxLimit) (not (in $seen .RelPermalink)) -}}
-      {{- $related = $related | append . -}}
-      {{- $seen = $seen | append .RelPermalink -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- with .Section -}}
-  {{- $sameSection := where $pool "Section" . -}}
-  {{- range $sameSection.ByDate.Reverse -}}
-    {{- if and (lt (len $related) $maxLimit) (not (in $seen .RelPermalink)) -}}
-      {{- $related = $related | append . -}}
-      {{- $seen = $seen | append .RelPermalink -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
-{{- range $pool.ByDate.Reverse -}}
-  {{- if and (lt (len $related) $maxLimit) (not (in $seen .RelPermalink)) -}}
+{{- $sameTags := where $pool "Params.tags" "intersect" (.Params.tags | default (slice)) -}}
+{{- $sameCategory := where $pool "Params.categories" "intersect" (.Params.categories | default (slice)) -}}
+{{- $sameSection := where $pool "Section" .Section -}}
+{{- $candidates := $priority -}}
+{{- $candidates = $candidates | append $sameTags.ByDate.Reverse -}}
+{{- $candidates = $candidates | append $sameCategory.ByDate.Reverse -}}
+{{- $candidates = $candidates | append $sameSection.ByDate.Reverse -}}
+{{- $candidates = $candidates | append $pool.ByDate.Reverse -}}
+{{- $seen := slice .RelPermalink -}}
+{{- $booksSeen := slice -}}
+{{- range $candidates -}}
+  {{- $candidateBook := path.Base (path.Dir .File.Path) -}}
+  {{- $candidateIsBook := gt (len (intersect (.Params.tags | default (slice)) $bookTags)) 0 -}}
+  {{- if and (lt (len $related) $maxLimit) (not (in $seen .RelPermalink)) (or (not $candidateIsBook) (not (in $booksSeen $candidateBook))) -}}
     {{- $related = $related | append . -}}
     {{- $seen = $seen | append .RelPermalink -}}
+    {{- if $candidateIsBook -}}{{- $booksSeen = $booksSeen | append $candidateBook -}}{{- end -}}
   {{- end -}}
 {{- end -}}
-
 {{- if gt (len $related) 0 -}}
 <section id="related-posts" class="post-relationship-section post-related-section" aria-labelledby="post-related-title" data-post-related>
   <div class="home-section-heading post-relationship-heading">
     <div>
-      <span class="home-section-kicker">Related</span>
-      <h2 id="post-related-title" class="home-section-title">&#24310;&#20280;&#38321;&#35712;</h2>
+      <span class="home-section-kicker">繼續閱讀</span>
+      <h2 id="post-related-title" class="home-section-title">接著讀</h2>
     </div>
   </div>
   <div class="post-related-list">
@@ -60,7 +57,7 @@
         <a class="post-related-card__link" href="{{ $page.RelPermalink }}" aria-label="&#38321;&#35712; {{ $displayTitle | plainify }}"></a>
         <div class="post-related-card__media" aria-hidden="true">
           {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
-          {{- $relatedSizes := "(min-width: 768px) 176px, 100vw" -}}
+          {{- $relatedSizes := "(max-width: 768px) 88px, 120px" -}}
           {{- $relatedWidths := slice 240 320 360 480 -}}
           {{- partialCached "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden "sizes" $relatedSizes "widths" $relatedWidths "maxWidth" 480) $page.RelPermalink false $isHidden ($page.Params.cover.image | default "") "lazy" "auto" $relatedSizes (delimit $relatedWidths "-") 480 -}}
         </div>
@@ -87,7 +84,7 @@
   {{- if gt (len $related) $initialLimit -}}
   <div class="post-related-actions">
     <button class="post-related-load-more" type="button" data-post-related-more data-step="{{ $initialLimit }}">
-      &#36617;&#20837;&#26356;&#22810;
+      查看更多文章
     </button>
   </div>
   <script>
