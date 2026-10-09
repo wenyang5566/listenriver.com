@@ -50,7 +50,7 @@
   </section>
 
   <section class="river-topics" aria-labelledby="river-topics-title">
-    <div class="river-section-heading"><div><span class="river-kicker">CATEGORIES / 03</span><h2 id="river-topics-title">文章分類</h2></div><p>依主題瀏覽文章。</p></div>
+    <div class="river-section-heading"><div><span class="river-kicker">CATEGORIES / 03</span><h2 id="river-topics-title">文章分類</h2></div><a class="river-text-link" href="{{ "/categories/" | relURL }}">查看分類總覽 <span aria-hidden="true">→</span></a></div>
     <div class="river-topic-grid">
       {{- range (index hugo.Data "taxonomy-landing").categoryCards -}}
       <a class="river-topic river-topic--{{ .accent }}" href="{{ .page | relURL }}"><span class="river-topic-index" aria-hidden="true">{{ partial "river-topic-icon.html" .accent }}</span><div><h3>{{ .title }}</h3><p>{{ .description }}</p></div><span class="river-topic-arrow" aria-hidden="true">↗</span></a>

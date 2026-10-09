@@ -1,47 +1,8 @@
-/* The river journal is scoped to the home document; article styles stay independent. */
-@font-face {
-  font-family: "River Sans";
-  src: url("/fonts/river-sans.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
+/* Homepage layout; journal tokens and font are shared in zzz-publication-site.css. */
 body.river-home {
-  --river-paper: #fffaf2;
-  --river-ink: #40352f;
-  --river-muted: #776254;
-  --river-rust: #b45239;
-  --river-green: #526a5a;
-  --river-blue: #668b90;
-  --river-sage: #b6c6b1;
-  --river-sand: #ddbd8e;
-  --river-rule: #e4d5c5;
-  --river-wash: #f8e8d7;
-  --river-opening-paper: #fff0df;
-  --river-font: "PingFang TC", "River Sans", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", sans-serif;
-  --theme: var(--river-paper);
-  --primary: var(--river-ink);
-  --secondary: var(--river-muted);
-  background: var(--river-paper);
-  color: var(--river-ink);
-  font-family: var(--river-font);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   padding: 0;
-}
-[data-theme="dark"] body.river-home {
-  --river-paper: #342c28;
-  --river-ink: #fff1df;
-  --river-muted: #d5bda6;
-  --river-rust: #f0b295;
-  --river-green: #b1c3a9;
-  --river-blue: #8bb2b5;
-  --river-sage: #71886b;
-  --river-sand: #aa8253;
-  --river-rule: #685346;
-  --river-wash: #49382e;
-  --river-opening-paper: #45352c;
-  background: var(--river-paper);
 }
 body.river-home .main { background: var(--river-paper); }
 .river-home .main { max-width: 1280px; padding: 0 48px; margin: 0 auto; min-height: 0; }

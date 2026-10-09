@@ -1,0 +1,245 @@
+/* Shared journal palette. Keep this after the legacy extended styles.
+   Body scope also outranks the taxonomy templates' inline component tokens. */
+@font-face {
+  font-family: "River Sans";
+  src: url("/fonts/river-sans.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+body.publication-site {
+  --river-paper: #fffaf2;
+  --river-ink: #40352f;
+  --river-muted: #776254;
+  --river-rust: #b45239;
+  --river-green: #526a5a;
+  --river-blue: #668b90;
+  --river-sage: #b6c6b1;
+  --river-sand: #ddbd8e;
+  --river-rule: #e4d5c5;
+  --river-wash: #f8e8d7;
+  --river-opening-paper: #fff0df;
+  --river-font: "PingFang TC", "River Sans", "Noto Sans TC", "Source Han Sans TC", "Microsoft JhengHei", sans-serif;
+  --theme: var(--river-paper);
+  --entry: var(--river-paper);
+  --primary: var(--river-ink);
+  --content: var(--river-ink);
+  --secondary: var(--river-muted);
+  --border: var(--river-rule);
+  --tertiary: var(--river-wash);
+  --code-bg: var(--river-wash);
+  --brand-primary: var(--river-rust);
+  --brand-dark: var(--river-rust);
+  --brand-light: var(--river-wash);
+  --brand-border: var(--river-rule);
+  background: var(--river-paper);
+  color: var(--river-ink);
+  font-family: var(--river-font);
+}
+[data-theme="dark"] body.publication-site {
+  --river-paper: #342c28;
+  --river-ink: #fff1df;
+  --river-muted: #d5bda6;
+  --river-rust: #f0b295;
+  --river-green: #b1c3a9;
+  --river-blue: #8bb2b5;
+  --river-sage: #71886b;
+  --river-sand: #aa8253;
+  --river-rule: #685346;
+  --river-wash: #49382e;
+  --river-opening-paper: #45352c;
+}
+body.publication-site .main { background: var(--river-paper); }
+body.publication-site :is(a, button, input, summary):focus-visible {
+  outline: 2px solid var(--river-rust);
+  outline-offset: 4px;
+}
+body.publication-site ::selection { background: var(--river-rust); color: var(--river-paper); }
+body.publication-site .footer { color: var(--river-muted); }
+body.publication-site .publication-header {
+  --pub-paper: var(--river-paper);
+  --pub-ink: var(--river-ink);
+  --pub-accent: var(--river-rust);
+  --pub-rule: var(--river-rule);
+}
+body.publication-site .about-card {
+  border-radius: 8px;
+  border-color: var(--river-rule);
+  background: var(--river-paper);
+  box-shadow: none;
+}
+body.publication-site .about-avatar-wrap { background: var(--river-wash); box-shadow: none; }
+body.publication-site .about-content a { color: var(--river-rust); border-color: var(--river-rule); }
+body.publication-site .search-pagefind-shell {
+  --pagefind-ui-primary: var(--river-rust);
+  --pagefind-ui-text: var(--river-ink);
+  --pagefind-ui-background: var(--river-paper);
+  --pagefind-ui-border: var(--river-rule);
+  --pagefind-ui-tag: var(--river-wash);
+  --pagefind-ui-font: var(--river-font);
+}
+body.publication-site .main:has(.taxonomy-landing-shell) { max-width: 1200px; }
+body.publication-site.list .main:has(:is(.taxonomy-category-shell, .taxonomy-tag-shell, .blog-archive-list)) {
+  background: var(--river-paper);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Preserve archive data and layouts; replace their independent visual palettes. */
+body.publication-site :is(.taxonomy-landing-shell, .taxonomy-category-shell, .taxonomy-tag-shell) {
+  --taxonomy-bg: var(--river-paper);
+  --taxonomy-surface: var(--river-paper);
+  --taxonomy-surface-soft: var(--river-wash);
+  --taxonomy-line: var(--river-rule);
+  --taxonomy-text: var(--river-ink);
+  --taxonomy-text-soft: var(--river-muted);
+  --taxonomy-text-faint: var(--river-muted);
+  --taxonomy-accent: var(--river-rust);
+  --taxonomy-landing-line: var(--river-rule);
+  --taxonomy-landing-line-strong: var(--river-rust);
+  --taxonomy-landing-surface: var(--river-paper);
+  --taxonomy-landing-surface-soft: var(--river-wash);
+  --taxonomy-landing-surface-muted: var(--river-wash);
+  --taxonomy-landing-text: var(--river-ink);
+  --taxonomy-landing-text-soft: var(--river-muted);
+  --taxonomy-landing-text-faint: var(--river-muted);
+  --taxonomy-landing-reading: var(--river-rust);
+  --taxonomy-landing-practice: var(--river-green);
+  --taxonomy-landing-pain: var(--river-rust);
+  --taxonomy-landing-growth: var(--river-green);
+  --taxonomy-landing-daily: var(--river-blue);
+  --taxonomy-landing-clubhouse: var(--river-blue);
+}
+body.publication-site :is(.taxonomy-category-hero, .taxonomy-tag-hero) {
+  padding: 1.5rem 0 2rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--river-rule);
+  border-radius: 0;
+  box-shadow: none;
+}
+body.publication-site :is(.taxonomy-category-shell, .taxonomy-tag-shell) :is(.taxonomy-feature-card,
+  .taxonomy-story-card, .taxonomy-feature-card__media, .taxonomy-story-card__media) {
+  background: var(--river-paper);
+  box-shadow: none;
+}
+body.publication-site :is(.taxonomy-landing-card, .taxonomy-feature-card, .taxonomy-story-card,
+  .taxonomy-tag-feature-card, .taxonomy-tag-story-card, .home-tag-card,
+  .post-entry, .category-entry, .post-related-card) {
+  background: var(--river-paper);
+  border-color: var(--river-rule);
+  border-radius: 8px;
+  box-shadow: none;
+}
+body.publication-site :is(.taxonomy-landing-card, .taxonomy-feature-card, .taxonomy-story-card,
+  .taxonomy-tag-feature-card, .taxonomy-tag-story-card, .home-tag-card,
+  .post-entry, .category-entry, .post-related-card):hover {
+  border-color: var(--river-rust);
+  box-shadow: none;
+  transform: none;
+}
+body.publication-site :is(.taxonomy-landing-card__media, .taxonomy-feature-card__media,
+  .taxonomy-story-card__media, .taxonomy-tag-feature-card__media, .taxonomy-tag-story-card__media,
+  .home-tag-card__media) { background: var(--river-wash); border-radius: 6px; }
+body.publication-site :is(.taxonomy-category-topics__item, .taxonomy-tag-topics__item,
+  .taxonomy-story-card__tag, .taxonomy-tag-story-card__tag, .taxonomy-pagination__link,
+  .taxonomy-landing-tag-link, .post-header-chip, .post-tags a) {
+  color: var(--river-rust);
+  background: var(--river-paper);
+  border-color: var(--river-rule);
+  border-radius: 6px;
+}
+body.publication-site :is(.taxonomy-landing-card__tag, .taxonomy-landing-topic-card,
+  .taxonomy-landing-tag-link, .taxonomy-sidebar-panel, .taxonomy-tag-sidebar-panel) {
+  color: var(--river-ink);
+  background: var(--river-paper);
+  border-color: var(--river-rule);
+  border-radius: 6px;
+  box-shadow: none;
+}
+body.publication-site :is(.taxonomy-pagination__link.is-current,
+  .taxonomy-landing-tag-link:hover, .post-header-chip:hover, .post-tags a:hover) {
+  color: var(--river-rust);
+  background: var(--river-wash);
+  border-color: var(--river-rust);
+}
+body.publication-site .taxonomy-tags-index .taxonomy-landing-tag-shell {
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--river-rule);
+  border-radius: 0;
+  padding-inline: 0;
+}
+body.publication-site :is(.taxonomy-page-kicker, .home-section-kicker, .home-tag-card__eyebrow) {
+  color: var(--river-rust);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding-inline: 0;
+}
+
+/* Article typography keeps the existing media, TOC and interaction structure. */
+body.publication-site .post-single {
+  --article-reading-font: var(--river-font);
+  --article-title-font: var(--river-font);
+  --article-text-width: 720px;
+}
+body.publication-site .post-single .post-title {
+  color: var(--river-ink);
+  font-family: var(--river-font);
+  font-size: clamp(32px, 3vw, 40px);
+  line-height: 1.5;
+  font-weight: 650;
+}
+body.publication-site .post-single .post-content {
+  color: var(--river-ink);
+  font-size: 18px;
+  line-height: 1.95;
+}
+body.publication-site .post-single :is(.post-meta-top, figcaption, .breadcrumbs) {
+  color: var(--river-muted);
+  border-color: var(--river-rule);
+}
+body.publication-site .post-single .post-content a { color: var(--river-rust); }
+body.publication-site .post-single .post-content > blockquote {
+  padding: 1rem 1.25rem;
+  background: var(--river-wash);
+  border-left: 2px solid var(--river-rust);
+  color: var(--river-ink);
+  border-radius: 0 6px 6px 0;
+}
+body.publication-site :is(.toc, .paginav, .post-interactions__panel, .post-comments,
+  .post-relationship-section, .post-related-card, .post-related-load-more) {
+  border-color: var(--river-rule);
+  box-shadow: none;
+}
+body.publication-site :is(.toc, .paginav) { background: var(--river-wash); border-radius: 6px; }
+body.publication-site :is(.post-like-button, .post-comment-button, .post-related-load-more,
+  .article-scroll-top, .mobile-bottom-bar) {
+  color: var(--river-rust);
+  background: var(--river-paper);
+  border-color: var(--river-rule);
+  box-shadow: none;
+}
+body.publication-site :is(.post-like-button, .post-comment-button, .post-related-load-more) { min-height: 44px; }
+body.publication-site :is(.floating-toc-toggle, .floating-toc-panel, .mobile-reading-toolbar,
+  .personal-header__search) {
+  background: var(--river-paper);
+  color: var(--river-ink);
+  border-color: var(--river-rule);
+  box-shadow: none;
+}
+body.publication-site :is(.floating-toc-toggle, .floating-toc-panel) { border-radius: 6px; }
+body.publication-site .floating-toc-body a.is-active { color: var(--river-rust); }
+@media (max-width: 768px) {
+  html { --article-phone-font-size: 17px; }
+  html[data-reading-size="small"] { --article-phone-font-size: 16px; }
+  html[data-reading-size="normal"] { --article-phone-font-size: 17px; }
+  html[data-reading-size="large"] { --article-phone-font-size: 19px; }
+  body.publication-site .post-single {
+    --article-mobile-gutter: 24px;
+    --article-media-outset: calc(var(--article-mobile-gutter) - var(--article-media-gutter));
+  }
+  body.publication-site .post-single .post-title { font-size: clamp(26px, 7vw, 30px); line-height: 1.5; }
+  body.publication-site .post-single .post-content { font-size: var(--article-phone-font-size); line-height: 1.95; }
+}
