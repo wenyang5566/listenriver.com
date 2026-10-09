@@ -1,5 +1,7 @@
 ---
-title: "會所工作日誌"
+title: "工作日誌"
+aliases:
+  - /tags/會所工作日誌/
 robotsNoIndex: true
 canonicalURL: "https://listenriver.com/clubhouse/會所工作日誌/"
 ---

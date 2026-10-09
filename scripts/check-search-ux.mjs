@@ -289,7 +289,7 @@ async function checkEmptyHeaderSearch(browser, origin) {
 async function checkSeriesEntries(browser, origin) {
   for (const viewport of [{ width: 1280, height: 900 }, { width: 390, height: 844 }]) {
     const page = await createSearchTestPage(browser, viewport);
-    for (const name of ["會所工作日誌", "會所實習", "會所工作手冊"]) {
+    for (const [name, section] of [["工作日誌", "會所工作日誌"], ["實習紀錄", "會所實習"], ["工作手冊", "會所工作手冊"], ["會所工作日誌", "會所工作日誌"], ["會所實習", "會所實習"], ["會所工作手冊", "會所工作手冊"]]) {
       const target = new URL("/search/", origin);
       target.searchParams.set("q", name);
       await page.goto(target.toString());
@@ -297,7 +297,7 @@ async function checkSeriesEntries(browser, origin) {
       await entry.waitFor({ state: "visible" });
       if (await entry.count() !== 1) fail(`Expected one series entry for ${name}.`);
       const href = await entry.locator("a").getAttribute("href");
-      if (decodeURI(href) !== `/clubhouse/${name}/`) fail(`Wrong series destination for ${name}.`);
+      if (decodeURI(href) !== `/clubhouse/${section}/`) fail(`Wrong series destination for ${name}.`);
       if (!(await entry.innerText()).match(/（[1-9][0-9]* 篇）/)) fail(`Missing series count for ${name}.`);
       const response = await page.request.get(new URL(href, origin).toString());
       if (response.status() !== 200) fail(`Series destination failed for ${name}.`);

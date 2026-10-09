@@ -593,7 +593,7 @@
   {{- if eq .Title "閱讀筆記" -}}
     {{- $filterNames = slice "閱讀心得" "書摘" "電影心得" "講座筆記" -}}
   {{- else if and $isClubhouse (eq .Title "會所模式") -}}
-    {{- $filterNames = slice "會所工作日誌" "會所實習" "會所工作手冊" -}}
+    {{- $filterNames = slice "工作日誌" "實習紀錄" "工作手冊" -}}
   {{- else -}}
     {{- $filterCandidates := slice -}}
     {{- range site.Taxonomies.tags.ByCount -}}

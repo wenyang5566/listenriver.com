@@ -12,7 +12,7 @@ cover:
 categories:
   - 助人工作
 tags:
-  - 會所工作手冊
+  - 工作手冊
   - 會所模式
 featured: true
 ---

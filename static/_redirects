@@ -111,3 +111,29 @@
 /clubhouse/page/4/ /clubhouse/ 301
 /clubhouse/page/4/index.html /clubhouse/ 301
 /:path.html /:path/ 301
+
+# Clubhouse tag rename, 2026-10-09. HTML keeps section canonical; RSS keeps tag feeds.
+/tags/會所工作日誌 /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/ /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/index.html /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/page/1 /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/page/1/ /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/page/1/index.html /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/page/2 /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/page/2/ /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/page/2/index.html /clubhouse/會所工作日誌/ 301
+/tags/會所工作日誌/index.xml /tags/工作日誌/index.xml 301
+/tags/會所實習 /clubhouse/會所實習/ 301
+/tags/會所實習/ /clubhouse/會所實習/ 301
+/tags/會所實習/index.html /clubhouse/會所實習/ 301
+/tags/會所實習/page/1 /clubhouse/會所實習/ 301
+/tags/會所實習/page/1/ /clubhouse/會所實習/ 301
+/tags/會所實習/page/1/index.html /clubhouse/會所實習/ 301
+/tags/會所實習/index.xml /tags/實習紀錄/index.xml 301
+/tags/會所工作手冊 /clubhouse/會所工作手冊/ 301
+/tags/會所工作手冊/ /clubhouse/會所工作手冊/ 301
+/tags/會所工作手冊/index.html /clubhouse/會所工作手冊/ 301
+/tags/會所工作手冊/page/1 /clubhouse/會所工作手冊/ 301
+/tags/會所工作手冊/page/1/ /clubhouse/會所工作手冊/ 301
+/tags/會所工作手冊/page/1/index.html /clubhouse/會所工作手冊/ 301
+/tags/會所工作手冊/index.xml /tags/工作手冊/index.xml 301

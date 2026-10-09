@@ -83,9 +83,9 @@ categoryCards:
       name: 會所模式
     description: 在會所，我和會員一起做事，也重新理解助人關係。從實習到工作的紀錄，都放在這裡。
     tags:
-      - 會所工作日誌
-      - 會所實習
-      - 會所工作手冊
+      - 工作日誌
+      - 實習紀錄
+      - 工作手冊
 
 selectedTopics:
   - 正念的河流
@@ -97,6 +97,6 @@ selectedTopics:
 
 # Series entry links share the same article sets as the corresponding tags.
 topicDestinations:
-  會所工作日誌: /clubhouse/會所工作日誌/
-  會所實習: /clubhouse/會所實習/
-  會所工作手冊: /clubhouse/會所工作手冊/
+  工作日誌: /clubhouse/會所工作日誌/
+  實習紀錄: /clubhouse/會所實習/
+  工作手冊: /clubhouse/會所工作手冊/
