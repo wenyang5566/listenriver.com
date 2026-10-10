@@ -15,6 +15,7 @@
   }
 
   function setNavigationHidden(hidden) {
+    setDesktopCompact(hidden || (!mobileHeaderMedia.matches && hideTravel >= 160));
     header?.classList.toggle('nav--hidden', hidden);
     if (header) header.inert = hidden;
     bottomBars.forEach(bar => {
@@ -26,6 +27,13 @@
       bar.classList.toggle('is-compact', hidden && mobileMedia.matches && isReadingBar && hideTravel >= 160 && !hideBar);
       bar.inert = hideBar;
     });
+  }
+
+  function setDesktopCompact(compact) {
+    const collapsed = !mobileHeaderMedia.matches && compact;
+    header?.classList.toggle('nav--compact', collapsed);
+    const categoryRow = header?.querySelector('.header-nav-shell');
+    if (categoryRow) categoryRow.inert = collapsed;
   }
 
   function revealNavigation() {
@@ -55,13 +63,14 @@
       ticking = false;
       return;
     } else if (diff > 0) {
-      if (mobileHeaderMedia.matches && performance.now() < revealProtectedUntil) {
+      if (performance.now() < revealProtectedUntil) {
         // Discard rebound movement; count fresh downward travel after protection.
         hideTravel = 0;
       } else {
         revealTravel = 0;
         hideTravel += diff;
-        if (hideTravel >= (mobileHeaderMedia.matches ? 80 : 48)) setNavigationHidden(true);
+        if (!mobileHeaderMedia.matches && hideTravel >= 160) setDesktopCompact(true);
+        if (hideTravel >= (mobileHeaderMedia.matches ? 80 : 400)) setNavigationHidden(true);
       }
     } else if (diff < 0) {
       const previousRevealTravel = revealTravel;
@@ -69,7 +78,17 @@
       hideTravel = 0;
       const stagedReveal = mobileMedia.matches && bottomBars.some(bar => bar.matches('[data-mobile-reading-toolbar]'));
       const headerHidden = header?.classList.contains('nav--hidden');
-      if (stagedReveal && headerHidden && revealTravel >= 160 && revealTravel < 480) {
+      if (!mobileHeaderMedia.matches) {
+        if (revealTravel >= 440) {
+          const wasCollapsed = headerHidden || header?.classList.contains('nav--compact');
+          setNavigationHidden(false);
+          if (wasCollapsed) revealProtectedUntil = performance.now() + 400;
+        } else if (revealTravel >= 160 && headerHidden) {
+          setNavigationHidden(false);
+          setDesktopCompact(true);
+          revealProtectedUntil = performance.now() + 400;
+        }
+      } else if (stagedReveal && headerHidden && revealTravel >= 160 && revealTravel < 480) {
         bottomBars.filter(bar => bar.matches('[data-mobile-reading-toolbar]')).forEach(bar => {
           bar.classList.remove('is-hidden');
           bar.classList.add('is-compact');
@@ -81,6 +100,7 @@
           revealProtectedUntil = performance.now() + 400;
         }
         setNavigationHidden(false);
+        setDesktopCompact(false);
       }
     }
     lastY = y;

@@ -1,6 +1,53 @@
 import { test, expect } from '@playwright/test';
 
 const paths = ['/', '/blog/', '/categories/', '/tags/', '/clubhouse/', '/about/', '/blog/電影心得/媽的多重宇宙01/'];
+test('desktop hides categories first and the whole header after sustained downward reading', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  const header = page.locator('#site-header');
+  const categories = header.locator('.header-nav-shell');
+  const moveTo = async y => {
+    await page.evaluate(async y => {
+      scrollTo(0, y);
+      await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    }, y);
+  };
+  await moveTo(159);
+  await expect(header).not.toHaveClass(/nav--compact/);
+  await moveTo(160);
+  await expect(header).toHaveClass(/nav--compact/);
+  await expect(header).not.toHaveClass(/nav--hidden/);
+  await expect(categories).toHaveAttribute('inert', '');
+  await expect(categories).toHaveCSS('opacity', '0');
+  await moveTo(399);
+  await expect(header).not.toHaveClass(/nav--hidden/);
+  await moveTo(400);
+  await expect(header).toHaveClass(/nav--hidden/);
+  await moveTo(1000);
+  await moveTo(968);
+  await expect(header).toHaveClass(/nav--hidden/);
+  await moveTo(840);
+  await expect(header).not.toHaveClass(/nav--hidden/);
+  await expect(header).toHaveClass(/nav--compact/);
+  await expect(categories).toHaveAttribute('inert', '');
+  await moveTo(900);
+  await expect(header).not.toHaveClass(/nav--hidden/);
+  await expect(header).toHaveClass(/nav--compact/);
+  await moveTo(620);
+  await expect(header).not.toHaveClass(/nav--hidden|nav--compact/);
+  await expect(categories).not.toHaveAttribute('inert', '');
+  await moveTo(750);
+  await expect(header).not.toHaveClass(/nav--compact/);
+  await page.waitForTimeout(450);
+  await moveTo(910);
+  await expect(header).toHaveClass(/nav--compact/);
+  await moveTo(750);
+  await expect(header).toHaveClass(/nav--compact/);
+  await moveTo(470);
+  await expect(header).not.toHaveClass(/nav--hidden|nav--compact/);
+});
+
 test('mobile header ignores rebound after revealing and requires fresh downward travel', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 900 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -63,6 +110,14 @@ for (const width of [390, 820, 1440]) {
           await expect(toolbar).not.toHaveClass(/is-hidden/);
           await expect(toolbar).toHaveClass(/is-compact/);
           await page.evaluate(() => window.scrollBy(0, -320));
+        }
+        if (width > 860) {
+          await expect(header).toHaveClass(/nav--hidden/);
+          await page.evaluate(() => window.scrollBy(0, -124));
+          await expect(header).not.toHaveClass(/nav--hidden/);
+          await expect(header).toHaveClass(/nav--compact/);
+          await page.evaluate(() => window.scrollBy(0, -280));
+          await expect(header).not.toHaveClass(/nav--compact/);
         }
         await expect(header).not.toHaveClass(/nav--hidden/);
         await expect.poll(() => header.evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(0);
