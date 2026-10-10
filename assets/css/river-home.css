@@ -471,7 +471,10 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-story h3 { font-size: 20px; }
 }
 @media (max-width: 600px) {
-  .river-feature-slides { min-height: 550px; }
+  /* Overlap slides in one grid cell to reserve the tallest article's natural height. */
+  .river-feature-slides { display: grid; min-height: 0; }
+  .river-feature-slide, .river-feature-slide[hidden] { display: block; grid-area: 1 / 1; min-width: 0; }
+  .river-feature-slide[hidden] { visibility: hidden; pointer-events: none; }
   .river-feature-controls { justify-content: center; margin-top: 18px; }
   /* Center and scale the complete logo-and-title lockup on mobile. */
   .river-brand-lockup { width: min(100%, 380px); margin-inline: auto; }
@@ -479,7 +482,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-editorial-opening { min-height: 224px; padding: 30px 0 90px; }
   .river-opening-description { max-width: none; padding-right: 0; }
   .river-opening-description h1 { font-size: clamp(38px, 10.5vw, 52px); max-width: none; letter-spacing: .05em; margin-bottom: 12px; }
-  .river-lead-copy > p { font-size: 15px; }
+  :is(.river-feature-slide, .river-feature-ghost) .river-lead-copy > p { font-size: 15px; -webkit-line-clamp: 3; }
   .river-opening-description .river-opening-subtitle { width: 100%; margin-left: 0; font-size: clamp(12px, 3.75vw, 15px); letter-spacing: .025em; line-height: 24px; padding-left: 0; text-align: center; }
   .river-opening-description > p { font-size: 16px; max-width: 330px; }
   .river-journal .river-letter p { font-size: 16px; line-height: 1.95; }
@@ -491,4 +494,9 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-story h3 { font-size: 19px; }
   .river-story p { font-size: 13px; }
   .river-recent { margin-top: 28px; padding-top: 24px; }
+  .river-topics { margin-top: 32px; }
+  .river-journal .river-letter { margin-top: 28px; }
+  .river-section-heading { margin-bottom: 20px; }
+  .river-section-heading h2 { margin-top: 6px; }
+  .river-section-heading > a { margin-top: 10px; }
 }
