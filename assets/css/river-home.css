@@ -446,6 +446,30 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-story .river-kicker, .river-lead-copy .river-kicker { font-size: 14px; font-weight: 500; letter-spacing: .04em; }
 .river-recent-category { font-size: 13px; }
 .river-letter-copy { max-width: 720px; }
+.river-author-identity { display: flex; align-items: center; gap: 28px; margin: 20px 0 24px; }
+.river-author-portrait { width: 140px; height: 140px; flex: none; object-fit: cover; border-radius: 14px; }
+.river-author-identity h2 { margin: 0 0 8px; }
+.river-journal .river-author .river-author-tagline { margin: 0; color: var(--river-muted); font-size: 16px; }
+.river-author-bio { max-width: 600px; }
+.river-author-identity > div { min-width: 0; }
+.river-journal .river-author-identity .river-author-bio { margin: 0; font-size: 16px; line-height: 1.9; }
+.river-author-message { margin-top: 32px; }
+.river-journal .river-author .river-author-river { color: var(--river-muted); font-size: 18px; line-height: 1.9; }
+.river-author-river strong { color: var(--river-ink); font-weight: 500; }
+.river-author .river-letter-links a + a { color: var(--river-muted) !important; border-color: var(--river-rule); }
+.river-about-stream .river-current-traces { animation: none; }
+.river-author .river-letter-links { gap: 24px; align-items: center; }
+@media (max-width: 600px) {
+  .river-author-identity { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 18px; margin: 18px 0 20px; align-items: start; }
+  .river-author-identity > div { display: contents; }
+  .river-author-identity h2 { align-self: center; }
+  .river-author-identity .river-author-bio { grid-column: 1 / -1; }
+  .river-author-message { margin-top: 24px; }
+  .river-author-portrait { width: 80px; height: 80px; border-radius: 10px; }
+  .river-author-identity h2 { font-size: 22px; line-height: 1.45; }
+  .river-journal .river-author .river-author-tagline { font-size: 14px; }
+  .river-journal .river-author .river-author-river { font-size: 16px; }
+}
 .river-journal .river-letter p { font-size: 18px; line-height: 1.95; }
 .river-recent { margin-top: 48px; padding-top: 26px; }
 .river-letter-links { gap: 14px; margin-top: 24px; }

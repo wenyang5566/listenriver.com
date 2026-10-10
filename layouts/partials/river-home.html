@@ -60,12 +60,23 @@
 
   <section class="river-letter" aria-labelledby="river-letter-title">
     <div class="river-hero-stream river-about-stream" aria-hidden="true">{{ partial "river-opening-art.html" . }}</div>
-<div class="river-letter-copy"><span class="river-kicker">ABOUT</span><h2 id="river-letter-title">簡介</h2><p>聆聽是一條河流，寬廣又深邃，可以容納，亦可接在地上，深入各式各樣的生命經驗，不被聽見的聲音、不被看見的風景與角落；</p><p>聆聽是柔軟且堅實的，是創造連結的必要媒介，人與人之間的理解，不可缺少聆聽。</p><div class="river-letter-links"><a class="river-social-link" href="{{ "/about/" | relURL }}" aria-label="關於文揚" title="關於文揚"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg><span class="river-social-caption" aria-hidden="true">關於文揚</span></a>{{ with site.Params.salonFacebook }}<a class="river-social-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="在 Facebook 交流（另開分頁）" title="在 Facebook 交流"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4A25 25 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v9Z"/></svg><span class="river-social-caption" aria-hidden="true">Facebook</span></a>{{ end }}</div></div>
+    <div class="river-letter-copy river-author">
+      <span class="river-kicker">關於作者</span>
+      <div class="river-author-identity">
+        <img class="river-author-portrait" src="{{ hugo.Data.author.portrait | relURL }}" alt="文揚的肖像" width="140" height="140" loading="lazy" decoding="async">
+        <div><h2 id="river-letter-title">{{ hugo.Data.author.name }}</h2><p class="river-author-bio">{{ hugo.Data.author.bio }}</p></div>
+      </div>
+      <div class="river-author-message">
+      <p class="river-author-river"><strong>聆聽是一條河流</strong>，寬廣又深邃，可以容納，亦可接在地上，深入各式各樣的生命經驗，不被聽見的聲音、不被看見的風景與角落；</p>
+      <p class="river-author-river">聆聽是柔軟且堅實的，是創造連結的必要媒介，人與人之間的理解，不可缺少聆聽。</p>
+      </div>
+      <div class="river-letter-links"><a class="river-text-link" href="{{ "/about/" | relURL }}">認識文揚 <span aria-hidden="true">→</span></a>{{ with site.Params.salonFacebook }}<a class="river-text-link" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開分頁）">Facebook <span aria-hidden="true">↗</span></a>{{ end }}</div>
+    </div>
   </section>
   {{ partial "home-gallery.html" .page }}
   <footer class="river-publication-footer" aria-label="網站頁尾">
     <div class="river-footer-navigation">
-      <nav aria-label="頁尾導覽"><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a><a href="{{ "/about/" | relURL }}">關於我</a></nav>
+      <nav aria-label="頁尾導覽"><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a><a href="{{ "/about/" | relURL }}">關於文揚</a></nav>
       {{ with site.Params.salonFacebook }}<a class="river-footer-social" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開分頁）" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4A25 25 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v9Z"/></svg></a>{{ end }}
     </div>
     <p class="river-footer-copyright">© {{ now.Year }} 聆聽的河流</p>

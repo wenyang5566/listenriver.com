@@ -6,12 +6,24 @@
 }
 
 .about-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 0 24px 2rem;
 }
+
+.about-river { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .3; }
+.about-river svg { width: 100%; height: 100%; }
+.about-river .river-water, .about-river .river-current-traces { stroke: var(--river-blue); stroke-width: 1.3; }
+.about-river .river-bank { stroke: var(--river-rust); stroke-width: 1; }
+.about-river .river-hero-pool { fill: var(--river-blue); opacity: .08; }
+.about-river .river-current-traces { animation: none; }
+body.publication-site .about-avatar-wrap { padding: 0; border-radius: 14px; background: transparent; }
+body.publication-site .about-avatar { border: 0; border-radius: 14px; }
 
 .about-hero-head {
   margin-bottom: 0.8rem;
