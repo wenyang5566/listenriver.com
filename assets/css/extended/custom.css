@@ -1061,8 +1061,8 @@ body.list .blog-archive-entry .entry-footer {
   display: block;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, #6fcad1 0%, #64e5ee 100%);
-  box-shadow: 0 0 18px rgba(100, 229, 238, 0.4);
+  background: var(--river-rust, #b45239);
+  box-shadow: none;
   transition: width 0.1s linear;
 }
 

@@ -50,6 +50,10 @@ body.publication-site {
   --river-opening-paper: #45352c;
 }
 body.publication-site .main { background: var(--river-paper); }
+body.publication-site .mobile-reading-progress-bar {
+  background: var(--river-rust);
+  box-shadow: none;
+}
 body.publication-site :is(a, button, input, summary):focus-visible {
   outline: 2px solid var(--river-rust);
   outline-offset: 4px;
