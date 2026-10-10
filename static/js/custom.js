@@ -2,10 +2,12 @@
   const header = document.getElementById('site-header');
   const bottomBars = [...document.querySelectorAll('.mobile-reading-toolbar, .mobile-bottom-bar')];
   const mobileMedia = window.matchMedia('(max-width: 768px)');
+  const mobileHeaderMedia = window.matchMedia('(max-width: 860px)');
   let lastY = scrollPosition();
   let hideTravel = 0;
   let revealTravel = 0;
   let ticking = false;
+  let revealProtectedUntil = 0;
 
   function scrollPosition() {
     const limit = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
@@ -13,6 +15,7 @@
   }
 
   function setNavigationHidden(hidden) {
+    setDesktopCompact(hidden || (!mobileHeaderMedia.matches && hideTravel >= 160));
     header?.classList.toggle('nav--hidden', hidden);
     if (header) header.inert = hidden;
     bottomBars.forEach(bar => {
@@ -26,8 +29,16 @@
     });
   }
 
+  function setDesktopCompact(compact) {
+    const collapsed = !mobileHeaderMedia.matches && compact;
+    header?.classList.toggle('nav--compact', collapsed);
+    const categoryRow = header?.querySelector('.header-nav-shell');
+    if (categoryRow) categoryRow.inert = collapsed;
+  }
+
   function revealNavigation() {
     hideTravel = revealTravel = 0;
+    revealProtectedUntil = 0;
     lastY = scrollPosition();
     setNavigationHidden(false);
   }
@@ -47,14 +58,50 @@
     header?.classList.toggle('is-scrolled', y > 8);
     if (y <= 120 || interactionOpen()) {
       revealNavigation();
+    } else if (mobileHeaderMedia.matches && Math.abs(diff) < 3) {
+      // Keep the anchor so slow intentional scrolling still accumulates.
+      ticking = false;
+      return;
     } else if (diff > 0) {
-      hideTravel += diff;
-      revealTravel = 0;
-      if (hideTravel >= 48) setNavigationHidden(true);
+      if (performance.now() < revealProtectedUntil) {
+        // Discard rebound movement; count fresh downward travel after protection.
+        hideTravel = 0;
+      } else {
+        revealTravel = 0;
+        hideTravel += diff;
+        if (!mobileHeaderMedia.matches && hideTravel >= 160) setDesktopCompact(true);
+        if (hideTravel >= (mobileHeaderMedia.matches ? 80 : 400)) setNavigationHidden(true);
+      }
     } else if (diff < 0) {
+      const previousRevealTravel = revealTravel;
       revealTravel -= diff;
       hideTravel = 0;
-      if (revealTravel >= 32) setNavigationHidden(false);
+      const stagedReveal = mobileMedia.matches && bottomBars.some(bar => bar.matches('[data-mobile-reading-toolbar]'));
+      const headerHidden = header?.classList.contains('nav--hidden');
+      if (!mobileHeaderMedia.matches) {
+        if (revealTravel >= 440) {
+          const wasCollapsed = headerHidden || header?.classList.contains('nav--compact');
+          setNavigationHidden(false);
+          if (wasCollapsed) revealProtectedUntil = performance.now() + 400;
+        } else if (revealTravel >= 160 && headerHidden) {
+          setNavigationHidden(false);
+          setDesktopCompact(true);
+          revealProtectedUntil = performance.now() + 400;
+        }
+      } else if (stagedReveal && headerHidden && revealTravel >= 160 && revealTravel < 480) {
+        bottomBars.filter(bar => bar.matches('[data-mobile-reading-toolbar]')).forEach(bar => {
+          bar.classList.remove('is-hidden');
+          bar.classList.add('is-compact');
+          bar.inert = false;
+        });
+        if (previousRevealTravel < 160) revealProtectedUntil = performance.now() + 400;
+      } else if (revealTravel >= (stagedReveal ? 480 : 32)) {
+        if (mobileHeaderMedia.matches && header?.classList.contains('nav--hidden')) {
+          revealProtectedUntil = performance.now() + 400;
+        }
+        setNavigationHidden(false);
+        setDesktopCompact(false);
+      }
     }
     lastY = y;
     ticking = false;
