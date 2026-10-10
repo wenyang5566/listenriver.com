@@ -13,7 +13,7 @@
     <span class="mobile-reading-toolbar__label">字級</span>
   </button>
 
-  <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-related aria-label="跳到接著讀">
+  <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-related aria-label="跳到更多文章">
     <span class="mobile-reading-toolbar__icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
         <path d="M5 5.5h10a4 4 0 0 1 4 4v9H9a4 4 0 0 1-4-4v-9Z"></path>
@@ -21,7 +21,7 @@
         <path d="M9 13h4"></path>
       </svg>
     </span>
-    <span class="mobile-reading-toolbar__label">接著讀</span>
+    <span class="mobile-reading-toolbar__label">更多文章</span>
   </button>
 
   <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-share aria-label="分享目前頁面">
@@ -48,21 +48,6 @@
     const relatedButton = toolbar.querySelector('[data-mobile-reading-related]');
     const shareButton = toolbar.querySelector('[data-mobile-reading-share]');
     const toast = toolbar.querySelector('[data-mobile-reading-toast]');
-    const mobileMedia = window.matchMedia('(max-width: 768px)');
-    let lastY = window.scrollY;
-    let ticking = false;
-    let hideTravel = 0;
-    let revealTravel = 0;
-    let toolbarMode = 'full';
-    let compactSince = 0;
-    let revealCompactSince = 0;
-    const alwaysVisibleOffset = 320;
-    const compactDistance = 72;
-    const hideDistance = 300;
-    const revealCompactDistance = 32;
-    const revealFullDistance = 72;
-    const compactMinDuration = 700;
-    const revealCompactMinDuration = 450;
     const readingSizeKey = 'listenriver-reading-size';
     const readingSizes = ['normal', 'large', 'small'];
     const readingSizeLabels = { small: '小', normal: '標準', large: '大' };
@@ -89,94 +74,9 @@
       }
     }
 
-    function setToolbarMode(mode) {
-      toolbarMode = mode;
-      if (mode === 'compact') {
-        compactSince = Date.now();
-      } else {
-        compactSince = 0;
-      }
-      if (mode !== 'compact') {
-        revealCompactSince = 0;
-      }
-      toolbar.classList.toggle('is-compact', mode === 'compact');
-      toolbar.classList.toggle('is-hidden', mode === 'hidden');
-    }
-
     function showToolbar() {
-      setToolbarMode('full');
+      document.dispatchEvent(new Event('navigation:reveal'));
     }
-
-    function compactToolbar() {
-      setToolbarMode('compact');
-    }
-
-    function revealCompactToolbar() {
-      setToolbarMode('compact');
-      revealCompactSince = Date.now();
-    }
-
-    function hideToolbar() {
-      setToolbarMode('hidden');
-    }
-
-    function resetScrollState() {
-      hideTravel = 0;
-      revealTravel = 0;
-      lastY = Math.max(window.scrollY, 0);
-      showToolbar();
-    }
-
-    function updateToolbarVisibility() {
-      if (!mobileMedia.matches) {
-        resetScrollState();
-        ticking = false;
-        return;
-      }
-
-      const y = Math.max(window.scrollY, 0);
-      const diff = y - lastY;
-
-      if (y <= alwaysVisibleOffset || document.activeElement && toolbar.contains(document.activeElement)) {
-        resetScrollState();
-        ticking = false;
-        return;
-      }
-
-      if (diff > 0) {
-        hideTravel += diff;
-        revealTravel = 0;
-        revealCompactSince = 0;
-        if (toolbarMode === 'full' && hideTravel >= compactDistance) {
-          compactToolbar();
-          hideTravel = 0;
-        } else if (toolbarMode === 'compact' && hideTravel >= hideDistance && Date.now() - compactSince >= compactMinDuration) {
-          hideToolbar();
-          hideTravel = 0;
-        }
-      } else if (diff < 0) {
-        revealTravel += Math.abs(diff);
-        hideTravel = 0;
-        if (toolbarMode === 'hidden' && revealTravel >= revealCompactDistance) {
-          revealCompactToolbar();
-          revealTravel = 0;
-        } else if (toolbarMode === 'compact' && revealTravel >= revealFullDistance && (!revealCompactSince || Date.now() - revealCompactSince >= revealCompactMinDuration)) {
-          showToolbar();
-          revealTravel = 0;
-        }
-      }
-
-      lastY = y;
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(updateToolbarVisibility);
-    }, { passive: true });
-
-    mobileMedia.addEventListener('change', resetScrollState);
 
     if (backButton) {
       backButton.addEventListener('click', function () {
@@ -264,6 +164,6 @@
       });
     }
 
-    resetScrollState();
+    showToolbar();
   })();
 </script>

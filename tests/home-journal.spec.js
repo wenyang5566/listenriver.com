@@ -150,6 +150,8 @@ for (const width of [320, 390, 768, 820, 1440]) {
     if (width <= 860) {
       await page.evaluate(() => window.scrollTo(0, 900));
       const header = page.locator('#site-header');
+      await expect(header).toHaveClass(/nav--hidden/);
+      await page.evaluate(() => window.scrollBy(0, -100));
       await expect.poll(async () => Math.round((await header.boundingBox()).y)).toBe(0);
       await expect(header).not.toHaveClass(/nav--hidden/);
       const brand = await header.locator('.personal-header__brand').boundingBox();
@@ -169,6 +171,8 @@ for (const width of [320, 390, 768, 820, 1440]) {
       await expect(menuToggle).toBeFocused();
       await expect.poll(() => page.evaluate(() => scrollY)).toBe(scrollBeforeMenu);
     }
+    await page.evaluate(() => window.scrollBy(0, -100));
+    await expect(page.locator('#site-header')).not.toHaveClass(/nav--hidden/);
     await page.locator('#theme-toggle').focus();
     await page.keyboard.press('Enter');
     await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');

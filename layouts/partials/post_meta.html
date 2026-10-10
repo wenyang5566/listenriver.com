@@ -15,7 +15,11 @@
 
 {{- if not (.Param "hideAuthor") -}}
   {{- with (partial "author.html" .) -}}
-    {{- $scratch.Add "meta" (slice (printf "<span class='post-meta-item post-meta-author'>%s</span>" .)) -}}
+    {{- if eq . site.Params.author -}}
+      {{- $scratch.Add "meta" (slice (printf "<a class='post-meta-item post-meta-author' href='%s'>%s</a>" ("/about/" | relLangURL) (. | htmlEscape))) -}}
+    {{- else -}}
+      {{- $scratch.Add "meta" (slice (printf "<span class='post-meta-item post-meta-author'>%s</span>" .)) -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 

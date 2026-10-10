@@ -446,6 +446,30 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-story .river-kicker, .river-lead-copy .river-kicker { font-size: 14px; font-weight: 500; letter-spacing: .04em; }
 .river-recent-category { font-size: 13px; }
 .river-letter-copy { max-width: 720px; }
+.river-author-identity { display: flex; align-items: center; gap: 28px; margin: 20px 0 24px; }
+.river-author-portrait { width: 140px; height: 140px; flex: none; object-fit: cover; border-radius: 14px; }
+.river-author-identity h2 { margin: 0 0 8px; }
+.river-journal .river-author .river-author-tagline { margin: 0; color: var(--river-muted); font-size: 16px; }
+.river-author-bio { max-width: 600px; }
+.river-author-identity > div { min-width: 0; }
+.river-journal .river-author-identity .river-author-bio { margin: 0; font-size: 16px; line-height: 1.9; }
+.river-author-message { margin-top: 32px; }
+.river-journal .river-author .river-author-river { color: var(--river-muted); font-size: 18px; line-height: 1.9; }
+.river-author-river strong { color: var(--river-ink); font-weight: 500; }
+.river-author .river-letter-links a + a { color: var(--river-muted) !important; border-color: var(--river-rule); }
+.river-about-stream .river-current-traces { animation: none; }
+.river-author .river-letter-links { gap: 24px; align-items: center; }
+@media (max-width: 600px) {
+  .river-author-identity { display: grid; grid-template-columns: 80px minmax(0, 1fr); gap: 18px; margin: 18px 0 20px; align-items: start; }
+  .river-author-identity > div { display: contents; }
+  .river-author-identity h2 { align-self: center; }
+  .river-author-identity .river-author-bio { grid-column: 1 / -1; }
+  .river-author-message { margin-top: 24px; }
+  .river-author-portrait { width: 80px; height: 80px; border-radius: 10px; }
+  .river-author-identity h2 { font-size: 22px; line-height: 1.45; }
+  .river-journal .river-author .river-author-tagline { font-size: 14px; }
+  .river-journal .river-author .river-author-river { font-size: 16px; }
+}
 .river-journal .river-letter p { font-size: 18px; line-height: 1.95; }
 .river-recent { margin-top: 48px; padding-top: 26px; }
 .river-letter-links { gap: 14px; margin-top: 24px; }
@@ -471,7 +495,10 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-story h3 { font-size: 20px; }
 }
 @media (max-width: 600px) {
-  .river-feature-slides { min-height: 550px; }
+  /* Overlap slides in one grid cell to reserve the tallest article's natural height. */
+  .river-feature-slides { display: grid; min-height: 0; }
+  .river-feature-slide, .river-feature-slide[hidden] { display: block; grid-area: 1 / 1; min-width: 0; }
+  .river-feature-slide[hidden] { visibility: hidden; pointer-events: none; }
   .river-feature-controls { justify-content: center; margin-top: 18px; }
   /* Center and scale the complete logo-and-title lockup on mobile. */
   .river-brand-lockup { width: min(100%, 380px); margin-inline: auto; }
@@ -479,7 +506,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-editorial-opening { min-height: 224px; padding: 30px 0 90px; }
   .river-opening-description { max-width: none; padding-right: 0; }
   .river-opening-description h1 { font-size: clamp(38px, 10.5vw, 52px); max-width: none; letter-spacing: .05em; margin-bottom: 12px; }
-  .river-lead-copy > p { font-size: 15px; }
+  :is(.river-feature-slide, .river-feature-ghost) .river-lead-copy > p { font-size: 15px; -webkit-line-clamp: 3; }
   .river-opening-description .river-opening-subtitle { width: 100%; margin-left: 0; font-size: clamp(12px, 3.75vw, 15px); letter-spacing: .025em; line-height: 24px; padding-left: 0; text-align: center; }
   .river-opening-description > p { font-size: 16px; max-width: 330px; }
   .river-journal .river-letter p { font-size: 16px; line-height: 1.95; }
@@ -491,4 +518,9 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-story h3 { font-size: 19px; }
   .river-story p { font-size: 13px; }
   .river-recent { margin-top: 28px; padding-top: 24px; }
+  .river-topics { margin-top: 32px; }
+  .river-journal .river-letter { margin-top: 28px; }
+  .river-section-heading { margin-bottom: 20px; }
+  .river-section-heading h2 { margin-top: 6px; }
+  .river-section-heading > a { margin-top: 10px; }
 }
