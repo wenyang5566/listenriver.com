@@ -1,0 +1,4 @@
+{{- $current := eq .page.RelPermalink .item.url -}}
+{{- $page := .page -}}
+{{- with site.GetPage .item.url -}}{{- $current = eq $page.RelPermalink .RelPermalink -}}{{- end -}}
+{{- return $current -}}

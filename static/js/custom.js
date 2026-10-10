@@ -80,53 +80,62 @@
   revealNavigation();
 
   const groups = document.querySelectorAll('.nav-group');
+  document.documentElement.classList.add('navigation-ready');
+
+  function setDesktopGroupOpen(group, open) {
+    group.classList.toggle('is-open', open);
+    group.querySelector('.nav-group-trigger')?.setAttribute('aria-expanded', String(open));
+    const panel = group.querySelector('.nav-group-menu');
+    if (panel) panel.inert = !open;
+  }
 
   function closeGroups() {
-    groups.forEach(group => {
-      group.classList.remove('is-open');
-      const button = group.querySelector('.nav-group-trigger');
-      if (button) button.setAttribute('aria-expanded', 'false');
-      group.querySelectorAll('.header-submenu').forEach(submenu => { submenu.open = false; });
-    });
+    groups.forEach(group => setDesktopGroupOpen(group, false));
   }
+  closeGroups();
 
   groups.forEach(group => {
     const button = group.querySelector('.nav-group-trigger');
     if (!button) return;
     let closeTimer;
-
+    let hoverOpened = false;
     group.addEventListener('pointerenter', event => {
-      window.clearTimeout(closeTimer);
-      if (event.pointerType !== 'mouse') return;
+      clearTimeout(closeTimer);
+      if (event.pointerType !== 'mouse' || group.classList.contains('is-open')) return;
       closeGroups();
-      group.classList.add('is-open');
-      button.setAttribute('aria-expanded', 'true');
+      hoverOpened = true;
+      setDesktopGroupOpen(group, true);
     });
     group.addEventListener('pointerleave', () => {
-      closeTimer = window.setTimeout(() => {
-        if (!group.contains(document.activeElement)) {
-          group.classList.remove('is-open');
-          button.setAttribute('aria-expanded', 'false');
-          group.querySelectorAll('.header-submenu').forEach(submenu => { submenu.open = false; });
-        }
+      closeTimer = setTimeout(() => {
+        if (!group.contains(document.activeElement)) setDesktopGroupOpen(group, false);
       }, 180);
     });
     group.addEventListener('focusout', event => {
-      if (!group.contains(event.relatedTarget) && !group.matches(':hover')) {
-        group.classList.remove('is-open');
-        button.setAttribute('aria-expanded', 'false');
-      }
+      if (!group.contains(event.relatedTarget) && !group.matches(':hover')) setDesktopGroupOpen(group, false);
     });
-
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      const willOpen = !group.classList.contains('is-open');
+    button.addEventListener('click', () => {
+      const open = hoverOpened || !group.classList.contains('is-open');
+      hoverOpened = false;
       closeGroups();
-      if (willOpen) {
-        group.classList.add('is-open');
-        button.setAttribute('aria-expanded', 'true');
+      setDesktopGroupOpen(group, open);
+    });
+    group.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        hoverOpened = false;
+        closeGroups();
+        button.focus();
+      } else if (event.key === 'ArrowDown' && event.target === button) {
+        event.preventDefault();
+        closeGroups();
+        setDesktopGroupOpen(group, true);
+        requestAnimationFrame(() => group.querySelector('.nav-group-menu a')?.focus());
       }
     });
+  });
+  document.addEventListener('click', event => {
+    if (!event.target.closest('.nav-group')) closeGroups();
   });
 
   // Desktop flyouts use native details for keyboard/click support; mobile stays inline.

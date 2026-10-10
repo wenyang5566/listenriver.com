@@ -2,6 +2,25 @@
 {{- $brandSubtitle := "閱讀・書寫・心理・社工" -}}
 {{- $navItems := where (partial "site-nav-items.html" .) "key" "ne" "home" -}}
 {{- $desktopNavItems := $navItems -}}
+{{- $mobileNavItems := slice -}}
+{{- $clubhouseItem := dict -}}
+{{- range $navItems -}}
+  {{- $item := . -}}
+  {{- if eq .key "helping" -}}
+    {{- $children := slice -}}
+    {{- range .children -}}
+      {{- if eq .url ("/clubhouse/" | relLangURL) -}}
+        {{- $clubhouseItem = merge . (dict "key" "clubhouse") -}}
+      {{- else -}}
+        {{- $children = $children | append . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $item = merge . (dict "children" $children) -}}
+  {{- end -}}
+  {{- $mobileNavItems = $mobileNavItems | append $item -}}
+{{- end -}}
+{{- with $clubhouseItem -}}{{- $mobileNavItems = $mobileNavItems | append . -}}{{- end -}}
+{{- $desktopNavItems = $mobileNavItems -}}
 {{- $searchUrl := "/search/" | relLangURL -}}
 {{- $isSearchPage := eq .RelPermalink $searchUrl -}}
 
@@ -72,36 +91,38 @@
   <div class="header-nav-shell personal-header__nav-shell">
     <nav class="header-nav desktop-nav personal-header__nav" aria-label="網站主導覽">
       {{- range $desktopNavItems -}}
-      {{- $isCurrent := or (eq $.RelPermalink .url) (in ($.Params.categories | default (slice)) .label) -}}
+      {{- $isCurrent := or ((partial "header-item-exact.html" (dict "item" . "page" $))) (in ($.Params.categories | default (slice)) .label) -}}
       {{- range (.children | default (slice)) -}}
         {{- range (.children | default (slice)) -}}
-          {{- if eq $.RelPermalink .url -}}{{- $isCurrent = true -}}{{- end -}}
+          {{- if (partial "header-item-exact.html" (dict "item" . "page" $)) -}}{{- $isCurrent = true -}}{{- end -}}
         {{- end -}}
-        {{- if eq $.RelPermalink .url -}}
+        {{- if (partial "header-item-exact.html" (dict "item" . "page" $)) -}}
           {{- $isCurrent = true -}}
         {{- end -}}
       {{- end -}}
       {{- if gt (len (.children | default (slice))) 0 -}}
+      {{- if eq .key "clubhouse" -}}{{- $isCurrent = hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL) -}}{{- end -}}
+      {{- if and (eq .key "helping") (hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL)) -}}{{- $isCurrent = false -}}{{- end -}}
       <div class="nav-group personal-header__nav-group">
         <div class="personal-header__nav-combo{{ if $isCurrent }} is-active{{ end }}">
-          <a href="{{ .url }}" class="personal-header__nav-link personal-header__nav-link-main{{ if $isCurrent }} is-active{{ end }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
-          <button class="nav-group-trigger personal-header__nav-trigger" type="button" aria-label="展開 {{ .label }} 子題" aria-expanded="false" aria-haspopup="true">
+          <button class="nav-group-trigger personal-header__nav-trigger" type="button" aria-label="展開 {{ .label }}" aria-controls="desktop-nav-panel-{{ .key }}" aria-expanded="false">
+            <span class="personal-header__nav-link personal-header__nav-link-main">{{ .label }}</span>
             <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6"></path>
             </svg>
           </button>
         </div>
-        <div class="nav-group-menu personal-header__dropdown{{ if eq .key "helping" }} personal-header__dropdown--helping{{ end }}">
+        <div id="desktop-nav-panel-{{ .key }}" class="nav-group-menu personal-header__dropdown">
           <div class="nav-group-menu-inner personal-header__dropdown-inner">
-            <a class="personal-header__dropdown-title" href="{{ .url }}"><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
+            <a class="personal-header__dropdown-title" href="{{ .url }}"{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} aria-current="page"{{ end }}><span>全部文章</span>{{ partial "header-nav-count.html" . }}</a>
             <span class="nav-group-divider" aria-hidden="true"></span>
             {{- range .children -}}
             {{- if .children -}}
               {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "nav-group-link personal-header__dropdown-link") -}}
             {{- else -}}
             {{- if .groupStart -}}<span class="nav-group-divider header-clubhouse-divider" aria-hidden="true"></span>{{- end -}}
-            {{- $isChildCurrent := eq $.RelPermalink .url -}}
-            <a class="nav-group-link personal-header__dropdown-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
+            {{- $isChildCurrent := partial "header-item-current.html" (dict "item" . "page" $) -}}
+            <a class="nav-group-link personal-header__dropdown-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} aria-current="page"{{ end }}>
               <span>{{ .label }}</span>
               {{- partial "header-nav-count.html" . -}}
             </a>
@@ -125,8 +146,8 @@
   <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="手機選單" aria-hidden="true" inert>
     <div class="mobile-nav-drawer-head">
       <div>
-        <div class="mobile-nav-eyebrow">導覽</div>
-        <div class="mobile-nav-title">{{ $brandTitle }}</div>
+        <div class="mobile-nav-eyebrow">目錄</div>
+        <div class="mobile-nav-title">從這裡開始閱讀</div>
       </div>
       <button class="header-icon-button mobile-nav-close" type="button" aria-label="關閉選單" data-mobile-nav-close>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -141,43 +162,42 @@
         <circle cx="11" cy="11" r="7"></circle>
         <path d="m20 20-3.5-3.5"></path>
       </svg>
-      <span>搜尋站內文章、分類與主題</span>
+      <span>搜尋文章或主題</span>
     </a>
 
     <div class="mobile-nav-menu" aria-label="手機版網站導覽">
-      <a href="{{ "/about/" | relLangURL }}" class="mobile-nav-primary-link">關於文揚</a>
-      {{- range $navItems -}}
+      {{- range $mobileNavItems -}}
       {{- $children := .children | default (slice) -}}
       {{- if gt (len $children) 0 -}}
-      {{- $isCurrent := or (eq $.RelPermalink .url) (in ($.Params.categories | default (slice)) .label) -}}
+      {{- $isCurrent := or ((partial "header-item-exact.html" (dict "item" . "page" $))) (in ($.Params.categories | default (slice)) .label) -}}
       {{- range $children -}}
         {{- range (.children | default (slice)) -}}
-          {{- if eq $.RelPermalink .url -}}{{- $isCurrent = true -}}{{- end -}}
+          {{- if (partial "header-item-exact.html" (dict "item" . "page" $)) -}}{{- $isCurrent = true -}}{{- end -}}
         {{- end -}}
-        {{- if eq $.RelPermalink .url -}}
+        {{- if (partial "header-item-exact.html" (dict "item" . "page" $)) -}}
           {{- $isCurrent = true -}}
         {{- end -}}
       {{- end -}}
-      {{- if eq .key "helping" -}}
+      {{- if eq .key "clubhouse" -}}
         {{- if hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL) -}}{{- $isCurrent = true -}}{{- end -}}
       {{- end -}}
+      {{- if and (eq .key "helping") (hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL)) -}}{{- $isCurrent = false -}}{{- end -}}
       <section class="mobile-nav-group{{ if $isCurrent }} is-open is-current{{ end }}">
         <div class="mobile-nav-category-row">
-          <a class="mobile-nav-category-link" href="{{ .url }}"{{ if eq $.RelPermalink .url }} aria-current="page"{{ end }}><span>{{ .label }}</span>{{ partial "header-nav-count.html" . }}</a>
-          <button class="mobile-nav-group-trigger" type="button" aria-label="展開或收合 {{ .label }} 子題" aria-controls="mobile-nav-panel-{{ .key }}" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
-            <svg class="mobile-nav-group-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m6 9 6 6 6-6"></path>
-            </svg>
+          <button class="mobile-nav-group-trigger" type="button" aria-label="展開或收合 {{ .label }} {{ if eq .key "clubhouse" }}系列{{ else }}子題{{ end }}" aria-controls="mobile-nav-panel-{{ .key }}" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
+            <span class="mobile-nav-category-link"><span>{{ .label }}</span></span>
+            <span class="mobile-nav-expand-symbol" aria-hidden="true"></span>
           </button>
         </div>
         <div id="mobile-nav-panel-{{ .key }}" class="mobile-nav-group-panel">
+          <a class="mobile-nav-sub-link mobile-nav-all-link{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} is-active{{ end }}" href="{{ .url }}"{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} aria-current="page"{{ end }}><span>全部文章</span>{{ partial "header-nav-count.html" . }}</a>
           {{- range $children -}}
           {{- if .children -}}
             {{- partial "header-submenu.html" (dict "item" . "page" $ "linkClass" "mobile-nav-sub-link" "mobile" true) -}}
           {{- else -}}
           {{- if .groupStart -}}<span class="mobile-nav-clubhouse-divider" aria-hidden="true"></span>{{- end -}}
-          {{- $isChildCurrent := eq $.RelPermalink .url -}}
-          <a class="mobile-nav-sub-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if $isChildCurrent }} aria-current="page"{{ end }}>
+          {{- $isChildCurrent := partial "header-item-current.html" (dict "item" . "page" $) -}}
+          <a class="mobile-nav-sub-link{{ if .groupStart }} header-clubhouse-heading{{ end }}{{ if $isChildCurrent }} is-active{{ end }}" href="{{ .url }}"{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} aria-current="page"{{ end }}>
             <span>{{ .label }}</span>
             {{- partial "header-nav-count.html" . -}}
           </a>
@@ -186,13 +206,18 @@
         </div>
       </section>
       {{- else -}}
-      {{- $isCurrent := eq $.RelPermalink .url -}}
+      {{- $isCurrent := (partial "header-item-exact.html" (dict "item" . "page" $)) -}}
       <a href="{{ .url }}" class="mobile-nav-primary-link{{ if $isCurrent }} is-active{{ end }}"{{ if eq .key "home" }} aria-label="首頁" title="首頁"{{ end }}{{ if $isCurrent }} aria-current="page"{{ end }}>
         {{- if eq .key "home" -}}<svg class="header-home-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7"></path><path d="M5 9v12h5v-7h4v7h5V9"></path></svg>{{- else -}}{{ .label }}{{- end -}}
       </a>
       {{- end -}}
       {{- end -}}
     </div>
+    <nav class="mobile-nav-secondary" aria-label="其他導覽">
+      <a href="{{ "/categories/" | relLangURL }}">分類總覽</a>
+      <a href="{{ "/tags/" | relLangURL }}">主題索引</a>
+      <a href="{{ "/about/" | relLangURL }}">關於文揚</a>
+    </nav>
   </aside>
 
 </header>

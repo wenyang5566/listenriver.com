@@ -1,0 +1,58 @@
+/* Mobile directory: separate page links from disclosure controls. */
+@media (max-width: 860px) {
+  html:has(body.mobile-nav-locked) { overflow: hidden; }
+  body.publication-site.mobile-nav-locked { overflow-x: clip; overflow-y: visible; }
+  /* The mobile header transform makes fixed descendants use its bounds. */
+  .publication-header .mobile-nav-backdrop {
+    top: var(--mobile-nav-top, 72px);
+    bottom: auto;
+    width: 100vw;
+    height: calc(100dvh - var(--mobile-nav-top, 72px));
+  }
+  .publication-header.personal-header .mobile-nav-drawer {
+    width: min(360px, 84vw);
+    padding-inline: 20px;
+    background: var(--pub-paper);
+    color: var(--pub-ink);
+    border-left: 1px solid var(--pub-rule);
+  }
+  .publication-header .mobile-nav-drawer-head { border-color: var(--pub-rule); }
+  .publication-header .mobile-nav-eyebrow { color: var(--pub-accent); font-size: 12px; letter-spacing: .12em; }
+  .publication-header .mobile-nav-title { font-family: "Noto Serif TC", "Songti TC", serif; font-size: 22px; font-weight: 600; color: var(--pub-ink); }
+  .publication-header .mobile-nav-search-entry {
+    min-height: 48px; margin: 18px 0 14px; padding: 12px 14px;
+    border: 1px solid var(--pub-rule); border-radius: 6px;
+    background: transparent; color: var(--pub-ink); font-size: 16px; font-weight: 500;
+  }
+  .publication-header .mobile-nav-menu { border: 0; padding: 0; gap: 0; }
+  .publication-header.personal-header .mobile-nav-drawer .mobile-nav-group { border: 0; border-bottom: 1px solid var(--pub-rule); border-radius: 0; background: transparent; }
+  .publication-header .mobile-nav-category-row { min-height: 62px; gap: 12px; }
+  .publication-header .mobile-nav-category-link { font-size: 19px; font-weight: 600; color: var(--pub-ink); gap: 10px; padding: 0; }
+  .publication-header .mobile-nav-category-link .personal-header__dropdown-count { font-size: 13px; font-weight: 400; color: var(--pub-ink); opacity: .65; }
+  .publication-header .mobile-nav-category-row .mobile-nav-group-trigger {
+    display: flex; width: 100%; min-width: 44px; min-height: 62px; flex: 1; padding: 0; justify-content: space-between; text-align: left;
+    border: 0; border-radius: 0; background: transparent;
+    font-size: 12px; font-weight: 400; color: var(--pub-ink);
+  }
+  .mobile-nav-expand-symbol { position: relative; width: 12px; height: 12px; }
+  .mobile-nav-expand-symbol::before, .mobile-nav-expand-symbol::after { content: ""; position: absolute; background: currentColor; }
+  .mobile-nav-expand-symbol::before { width: 12px; height: 1px; top: 5px; left: 0; }
+  .mobile-nav-expand-symbol::after { width: 1px; height: 12px; top: 0; left: 5px; transition: transform 220ms ease; }
+  .mobile-nav-group.is-open > .mobile-nav-category-row .mobile-nav-expand-symbol::after { transform: scaleY(0); }
+  .publication-header .mobile-nav-group-panel {
+    margin: 0 0 16px 2px; padding: 0 0 0 14px;
+    border: 0; border-left: 1px solid var(--brand-river, #4e898a);
+    border-radius: 0; background: transparent;
+  }
+  .publication-header.personal-header .mobile-nav-drawer .mobile-nav-sub-link { display: grid; grid-template-columns: minmax(0, 1fr) 32px 16px; gap: 12px; align-items: center; padding: 12px 4px; min-height: 48px; color: var(--pub-ink); font-size: 16px; font-weight: 400; }
+  .publication-header.personal-header .mobile-nav-drawer .mobile-nav-sub-link .personal-header__dropdown-count { color: var(--pub-ink); opacity: .65; font-size: 13px; font-weight: 400; }
+  .publication-header .mobile-nav-sub-link .personal-header__dropdown-count { text-align: right; }
+  .publication-header .mobile-nav-sub-link::after { content: "→"; grid-column: 3; color: var(--pub-accent); }
+  .publication-header .mobile-nav-group.is-current > .mobile-nav-category-row .mobile-nav-category-link { padding-left: 0; box-shadow: none; color: var(--pub-accent); }
+  .publication-header.personal-header .mobile-nav-drawer .mobile-nav-sub-link.is-active { color: var(--pub-accent); }
+  .publication-header .mobile-nav-secondary { display: flex; flex-wrap: wrap; gap: 8px 22px; padding-top: 22px; }
+  .publication-header .mobile-nav-secondary a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--pub-ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-expand-symbol::after { transition: none; }
+}

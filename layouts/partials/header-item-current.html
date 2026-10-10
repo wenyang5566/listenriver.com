@@ -1,0 +1,10 @@
+{{- $item := .item -}}
+{{- $page := .page -}}
+{{- $current := partial "header-item-exact.html" . -}}
+{{- if hasPrefix $item.url ("/tags/" | relLangURL) -}}
+  {{- $current = or $current (in ($page.Params.tags | default (slice)) $item.label) -}}
+{{- end -}}
+{{- with site.GetPage $item.url -}}
+  {{- if eq .Kind "section" -}}{{- $current = or $current ($page.IsDescendant .) -}}{{- end -}}
+{{- end -}}
+{{- return $current -}}
