@@ -1,0 +1,54 @@
+/* Header and the mobile reading bar share one scroll state and animation. */
+#site-header {
+  transition: transform 280ms cubic-bezier(.22, 1, .36, 1), opacity 280ms ease;
+}
+
+@media (max-width: 768px) {
+  .mobile-reading-toolbar__label {
+    display: block;
+    font-size: 11px;
+    line-height: 1.25;
+    white-space: nowrap;
+    max-height: 16px;
+    opacity: 1;
+    overflow: hidden;
+    transition: max-height 200ms ease, opacity 200ms ease;
+  }
+
+  .mobile-reading-toolbar.is-compact {
+    min-height: 56px;
+    padding-top: 3px;
+  }
+
+  .mobile-reading-toolbar.is-compact .mobile-reading-toolbar__item {
+    gap: 0;
+  }
+
+  .mobile-reading-toolbar.is-compact .mobile-reading-toolbar__label {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .mobile-reading-toolbar,
+  .mobile-bottom-bar {
+    transition: transform 280ms cubic-bezier(.22, 1, .36, 1), opacity 280ms ease;
+  }
+
+  .mobile-reading-toolbar.is-hidden,
+  .mobile-bottom-bar.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(100% + 24px + env(safe-area-inset-bottom, 0px)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #site-header,
+  .mobile-reading-toolbar,
+  .mobile-bottom-bar {
+    transition: none;
+  }
+  .mobile-reading-toolbar__label {
+    transition: none;
+  }
+}
