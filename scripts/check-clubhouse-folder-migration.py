@@ -3,8 +3,21 @@ import argparse
 import importlib.util
 import json
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote
+
+class InteractionAttributes(HTMLParser):
+    """Read HTML attributes regardless of minifier quoting choices."""
+    def __init__(self):
+        super().__init__()
+        self.values = {'data-post-path': [], 'data-path': []}
+
+    def handle_starttag(self, tag, attrs):
+        for name, value in attrs:
+            if name in self.values:
+                self.values[name].append(value)
+
 
 root = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('url_guard', root / 'scripts/url-guard.py')
@@ -32,8 +45,9 @@ for entry in manifest:
     output = args.site / entry['newURL'].lstrip('/') / 'index.html'
     rendered = output.read_text(encoding='utf-8')
     key = entry['interactionKey']
-    for attribute in ['data-post-path', 'data-path']:
-        values = re.findall(attribute + r'="([^"]+)"', rendered)
+    attributes = InteractionAttributes()
+    attributes.feed(rendered)
+    for attribute, values in attributes.values.items():
         assert values and all(value == key for value in values), (entry['newURL'], attribute, values)
     actual, error = guard.resolve(snapshot, entry['oldURL'])
     assert error is None and actual == entry['newURL'], (entry['oldURL'], actual, error)
