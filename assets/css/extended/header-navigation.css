@@ -140,8 +140,7 @@
 }
 
 /* Keep article text from showing through the expanded navigation. */
-[data-theme="light"] .personal-header .mobile-nav-drawer { background: #fffefd; }
-[data-theme="dark"] .personal-header .mobile-nav-drawer { background: #0d1117; }
+.personal-header .mobile-nav-drawer { background: var(--pub-paper, var(--theme)); }
 
 @media (max-width: 860px) {
   .personal-header .mobile-nav-drawer {

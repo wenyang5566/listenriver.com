@@ -48,9 +48,9 @@
  .publication-header .personal-header__brand { gap: 7px; }
  .publication-header .personal-header__actions { gap: 2px; }
   .publication-header .publication-about, .publication-header .publication-home, .publication-search-label { display: none; }
- .publication-header .mobile-nav-drawer { background: var(--pub-paper); color: var(--pub-ink); }
 }
 @media (max-width: 860px) {
+ .publication-header .mobile-nav-drawer { background: var(--pub-paper); color: var(--pub-ink); }
  body.river-home { overflow-x: clip; }
  /* Lock the root while keeping the body's sticky containing block intact. */
  html:has(body.river-home.mobile-nav-locked) { overflow: hidden; }
