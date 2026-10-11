@@ -73,11 +73,25 @@
 
 {{- /* order is important */}}
 {{- $core := (slice $theme_vars $reset $common $chroma_styles $chroma_mod $includes_all $media) | resources.Concat "assets/css/core.css" | resources.Minify }}
-{{- $extended := (resources.Match "css/extended/*.css") | resources.Concat "assets/css/extended.css" | resources.Minify }}
+{{- $extendedStyles := resources.Match "css/extended/*.css" -}}
+{{- $extendedName := "assets/css/extended.css" -}}
+{{- $stylesheetName := "assets/css/stylesheet.css" -}}
+{{- if .IsHome -}}
+  {{- /* These selectors belong to previous home layouts, articles and directories. */ -}}
+  {{- $excluded := slice "css/extended/home.css" "css/extended/zz-home-refine.css" "css/extended/zzzz-taxonomy-editorial.css" "css/extended/zzzzz-article-editorial.css" "css/extended/zzzzz-site-editorial.css" -}}
+  {{- $homeStyles := slice -}}
+  {{- range $extendedStyles -}}
+    {{- if not (in $excluded (strings.TrimPrefix "/" .Name)) -}}{{- $homeStyles = $homeStyles | append . -}}{{- end -}}
+  {{- end -}}
+  {{- $extendedStyles = $homeStyles -}}
+  {{- $extendedName = "assets/css/extended-home.css" -}}
+  {{- $stylesheetName = "assets/css/stylesheet-home.css" -}}
+{{- end -}}
+{{- $extended := $extendedStyles | resources.Concat $extendedName | resources.Minify }}
 
 {{- /* bundle all required css */}}
 {{- /* Add extended css after theme style */ -}}
-{{- $stylesheet := (slice $license_css $core $extended) | resources.Concat "assets/css/stylesheet.css"  }}
+{{- $stylesheet := (slice $license_css $core $extended) | resources.Concat $stylesheetName  }}
 
 {{- if not site.Params.assets.disableFingerprinting }}
 {{- $stylesheet := $stylesheet | fingerprint }}

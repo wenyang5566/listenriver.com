@@ -3,10 +3,10 @@ import { expect, test } from '@playwright/test';
 test('editorial selections, topic entrances and recent articles resolve', async ({ page, request }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toHaveCount(1);
-  expect((await request.get('/fonts/river-sans.woff2')).ok()).toBeTruthy();
+  expect((await request.get('/fonts/river-home.woff2')).ok()).toBeTruthy();
   expect(await page.evaluate(async () => {
     await document.fonts.ready;
-    return document.fonts.check('500 32px "River Sans"', '聆聽的河流');
+    return document.fonts.check('500 32px "River Home"', '聆聽的河流');
   })).toBeTruthy();
   await expect(page.locator('.river-lead')).toHaveCount(1);
   await expect(page.locator('.river-story')).toHaveCount(2);
@@ -58,6 +58,38 @@ test('featured pool supports manual navigation and changes opening on repeat vis
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.locator('[data-feature-prev]').click();
   await expect(page.locator('.river-feature-slide:visible')).toHaveCount(1);
+});
+
+test('homepage font loads its subset and fetches the original only for remainder characters', async ({ page }) => {
+  const fonts = [];
+  page.on('request', request => { if (request.url().endsWith('.woff2')) fonts.push(new URL(request.url()).pathname); });
+  await page.goto('/');
+  await page.evaluate(() => document.fonts.ready);
+  expect(fonts).toContain('/fonts/river-home.woff2');
+  expect(fonts).not.toContain('/fonts/river-sans.woff2');
+  await page.evaluate(() => {
+    const sample = document.createElement('span');
+    sample.textContent = '三';
+    sample.style.fontFamily = getComputedStyle(document.body).fontFamily;
+    document.body.append(sample);
+  });
+  await expect.poll(() => fonts.includes('/fonts/river-sans.woff2')).toBeTruthy();
+  await page.evaluate(() => document.fonts.ready);
+  expect(await page.evaluate(() => document.fonts.check('500 32px "River Remainder"', '三'))).toBeTruthy();
+});
+
+test('homepage analytics retains one page-view configuration with low download priority', async ({ page }) => {
+  await page.route('**/www.googletagmanager.com/**', route => route.fulfill({ contentType: 'application/javascript', body: '' }));
+  await page.goto('/');
+  await page.mouse.wheel(0, 1);
+  const loader = page.locator('script[src*="googletagmanager.com/gtag/js"]');
+  await expect(loader).toHaveCount(1);
+  await expect(loader).toHaveAttribute('fetchpriority', 'low');
+  await page.keyboard.press('ArrowDown');
+  await page.mouse.wheel(0, 1);
+  await expect(loader).toHaveCount(1);
+  const configurations = await page.evaluate(() => window.dataLayer.map(event => Array.from(event)).filter(event => event[0] === 'config'));
+  expect(configurations).toEqual([['config', 'G-P9L49HVNL4']]);
 });
 
 test('mobile featured images download only when selected', async ({ page }) => {
