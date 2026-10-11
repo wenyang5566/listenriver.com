@@ -63,7 +63,11 @@
     <div class="river-letter-copy river-author">
       <span class="river-kicker">關於作者</span>
       <div class="river-author-identity">
-        <img class="river-author-portrait" src="{{ hugo.Data.author.portrait | relURL }}" alt="文揚的肖像" width="140" height="140" loading="lazy" decoding="async">
+        {{- $portraitPath := strings.TrimPrefix "/" hugo.Data.author.portrait -}}
+        {{- $portrait := resources.FromString (printf "images/%s" (path.Base $portraitPath)) (readFile (printf "static/%s" $portraitPath)) -}}
+        {{- $portraitSmall := $portrait.Resize "160x webp q75" -}}
+        {{- $portraitLarge := $portrait.Resize "280x webp q75" -}}
+        <img class="river-author-portrait" src="{{ $portraitSmall.RelPermalink }}" srcset="{{ $portraitSmall.RelPermalink }} 160w, {{ $portraitLarge.RelPermalink }} 280w" sizes="(max-width: 600px) 80px, 140px" alt="文揚的肖像" width="140" height="140" loading="lazy" decoding="async">
         <div><h2 id="river-letter-title">{{ hugo.Data.author.name }}</h2><p class="river-author-bio">{{ hugo.Data.author.bio }}</p></div>
       </div>
       <div class="river-author-message">

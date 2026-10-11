@@ -12,7 +12,7 @@
   const counter = carousel.querySelector('.river-feature-counter');
   const toggle = carousel.querySelector('[data-feature-toggle]');
   if (slides.length < 2) return;
-  let current = 0, timer = null, visible = false, hovered = false, focused = false, stopped = false;
+  let current = 0, timer = null, visible = false, hovered = false, focused = false, stopped = false, engaged = false;
   let animations = [], ghost = null;
   const stopTransition = () => {
     animations.forEach(animation => animation.cancel());
@@ -36,6 +36,20 @@
       ghost.querySelector('a').classList.replace('river-lead-link', 'river-feature-ghost-link');
       frame.append(ghost);
     }
+    // A slide becoming visible must not wait for the lazy-load threshold.
+    const image = slides[next].querySelector("img");
+    if (image) {
+      image.loading = 'eager';
+      image.fetchPriority = 'high';
+      slides[next].querySelectorAll('[data-srcset], [data-src]').forEach(element => {
+        for (const attribute of ['srcset', 'src']) {
+          if (element.hasAttribute(`data-${attribute}`)) {
+            element.setAttribute(attribute, element.getAttribute(`data-${attribute}`));
+            element.removeAttribute(`data-${attribute}`);
+          }
+        }
+      });
+    }
     current = next;
     slides.forEach((slide, i) => { slide.hidden = i !== current; slide.inert = i !== current; });
     counter.textContent = `${String(current + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
@@ -50,9 +64,9 @@
   const schedule = () => {
     window.clearTimeout(timer);
     carousel.dataset.featurePlaying = 'false';
-    carousel.dataset.featureStopped = String(stopped || reducedMotion.matches);
-    const playing = visible && !hovered && !focused && !stopped && !reducedMotion.matches && !document.hidden;
-    toggle.setAttribute('aria-label', stopped || reducedMotion.matches ? '播放精選輪播' : '暫停精選輪播');
+    carousel.dataset.featureStopped = String(!engaged || stopped || reducedMotion.matches);
+    const playing = engaged && visible && !hovered && !focused && !stopped && !reducedMotion.matches && !document.hidden;
+    toggle.setAttribute('aria-label', !engaged || stopped || reducedMotion.matches ? '播放精選輪播' : '暫停精選輪播');
     counter.setAttribute('aria-live', playing ? 'off' : 'polite');
     if (!playing) return;
     // Restart both the progress line and the five-second timer together.
@@ -60,15 +74,31 @@
     carousel.dataset.featurePlaying = 'true';
     timer = window.setTimeout(() => { show(current + 1); schedule(); }, 5000);
   };
+  // Leave the opening still until the reader interacts. Automatic changes during
+  // loading interrupt reading and replace the browser's initial LCP candidate.
+  const engage = event => {
+    // The Play button handles its own first activation.
+    if (event?.target instanceof Element && event.target.closest("[data-feature-toggle]")) return;
+    if (engaged) return;
+    engaged = true;
+    ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(type => document.removeEventListener(type, engage));
+    schedule();
+  };
+  ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(type => document.addEventListener(type, engage, { passive: true }));
   const manual = direction => { stopped = true; show(current + direction, true, direction); schedule(); };
   let previous = '';
   try { previous = sessionStorage.getItem('river-last-feature') || ''; } catch {}
   const choices = slides.map((slide, i) => i).filter(i => slides[i].querySelector('a').getAttribute('href') !== previous);
-  show(choices[Math.floor(Math.random() * choices.length)], false);
+  // Keep the server-rendered, eagerly loaded cover on a first visit.
+  // Repeat visits still choose a different opening from the previous article.
+  show(previous ? choices[Math.floor(Math.random() * choices.length)] : 0, false);
   controls.hidden = false;
   carousel.querySelector('[data-feature-prev]').addEventListener('click', () => manual(-1));
   carousel.querySelector('[data-feature-next]').addEventListener('click', () => manual(1));
-  toggle.addEventListener('click', () => { stopped = !stopped; schedule(); });
+  toggle.addEventListener('click', () => {
+    if (!engaged) { stopped = false; engage(); }
+    else { stopped = !stopped; schedule(); }
+  });
   carousel.addEventListener('mouseenter', () => { hovered = true; schedule(); });
   carousel.addEventListener('mouseleave', () => { hovered = false; schedule(); });
   carousel.addEventListener('focusin', () => { focused = true; schedule(); });

@@ -20,9 +20,9 @@
   {{- $sizes = "(max-width: 600px) 88px, 112px" -}}
 {{- end -}}
 {{- if $resource -}}
-  {{ partial "optimized-image.html" (dict "resource" $resource "alt" "" "loading" $loading "sizes" $sizes "widths" $widths "maxWidth" $maxWidth) }}
+  {{ partial "optimized-image.html" (dict "resource" $resource "alt" "" "loading" $loading "sizes" $sizes "widths" $widths "maxWidth" $maxWidth "defer" .lazy) }}
 {{- else if $image -}}
-  <img src="{{ $image | relURL }}" alt="" loading="{{ $loading }}" decoding="async">
+  <img {{ if .lazy }}data-src{{ else }}src{{ end }}="{{ $image | relURL }}" alt="" loading="{{ $loading }}" decoding="async">
 {{- else -}}
   <span class="river-photo-fallback" aria-hidden="true">{{ partial "river-lines.html" . }}</span>
 {{- end -}}

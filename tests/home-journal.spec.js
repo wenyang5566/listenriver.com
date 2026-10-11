@@ -35,6 +35,9 @@ test('featured pool supports manual navigation and changes opening on repeat vis
   const total = await slides.count();
   expect(total).toBeGreaterThan(1);
   expect(total).toBeLessThanOrEqual(6);
+  await expect(slides.first()).toBeVisible();
+  await expect(slides.first().locator('img')).toHaveAttribute('loading', 'eager');
+  await expect(slides.first().locator('img')).toHaveAttribute('fetchpriority', 'high');
   const initial = await page.locator('.river-lead-link:visible').getAttribute('href');
   const seen = new Set();
   for (let i = 0; i < total; i++) {
@@ -46,6 +49,8 @@ test('featured pool supports manual navigation and changes opening on repeat vis
   await expect(page.locator('.river-lead-link:visible')).toHaveAttribute('href', initial);
   await page.reload();
   await expect(page.locator('.river-lead-link:visible')).not.toHaveAttribute('href', initial);
+  await expect(page.locator('.river-feature-slide:visible img')).toHaveAttribute('loading', 'eager');
+  await expect(page.locator('.river-feature-slide:visible img')).toHaveAttribute('fetchpriority', 'high');
   const beforeKey = await page.locator('.river-lead-link:visible').getAttribute('href');
   await page.locator('[data-feature-next]').focus();
   await page.keyboard.press('ArrowRight');
@@ -55,13 +60,52 @@ test('featured pool supports manual navigation and changes opening on repeat vis
   await expect(page.locator('.river-feature-slide:visible')).toHaveCount(1);
 });
 
-test('featured autoplay waits five seconds and pauses for reading and reduced motion', async ({ page }) => {
+test('mobile featured images download only when selected', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  const requests = [];
+  page.on('request', request => requests.push(new URL(request.url()).pathname));
+  await page.goto('/');
+  const hidden = page.locator('.river-feature-slide[hidden]');
+  const deferredPaths = await hidden.locator('source[data-srcset]').evaluateAll(elements =>
+    elements.flatMap(element => element.dataset.srcset.split(',').map(candidate =>
+      new URL(candidate.trim().split(/\s+/)[0], location.origin).pathname))
+  );
+  expect(deferredPaths.length).toBeGreaterThan(0);
+  for (const path of deferredPaths) expect(requests).not.toContain(path);
+  await page.locator('[data-feature-next]').click();
+  const image = page.locator('.river-feature-slide:visible img');
+  await expect(image).toHaveAttribute('loading', 'eager');
+  await expect.poll(() => image.evaluate(element => element.complete && element.naturalWidth > 0)).toBeTruthy();
+});
+
+for (const activation of ['pointer', 'keyboard']) {
+  test(`featured Play starts an idle carousel with ${activation}`, async ({ page }) => {
+    await page.goto('/');
+    const carousel = page.locator('.river-lead');
+    const play = page.locator('[data-feature-toggle]');
+    await expect(carousel).toHaveAttribute('data-feature-stopped', 'true');
+    await expect(play).toHaveAttribute('aria-label', '播放精選輪播');
+    if (activation === 'pointer') await play.click();
+    else { await play.focus(); await page.keyboard.press('Enter'); }
+    await play.evaluate(element => element.blur());
+    await page.mouse.move(0, 0);
+    await expect(carousel).toHaveAttribute('data-feature-stopped', 'false');
+    await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
+  });
+}
+
+test('featured autoplay waits for interaction, then five seconds, and pauses for reading and reduced motion', async ({ page }) => {
   await page.clock.install({ time: new Date('2026-10-07T00:00:00Z') });
   await page.clock.pauseAt(new Date('2026-10-07T00:00:01Z'));
   await page.goto('/');
   await page.locator('.river-lead').scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
   const carousel = page.locator('.river-lead');
+  await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
+  const opening = await page.locator('.river-lead-link:visible').getAttribute('href');
+  await page.clock.runFor(10000);
+  await expect(page.locator('.river-lead-link:visible')).toHaveAttribute('href', opening);
+  await page.mouse.wheel(0, 1);
   await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
   const link = page.locator('.river-lead-link:visible');
   const first = await link.getAttribute('href');

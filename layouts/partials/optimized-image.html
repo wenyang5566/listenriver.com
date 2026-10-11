@@ -17,7 +17,7 @@
     loading="{{ $loading }}"
     decoding="{{ $decoding }}"
     fetchpriority="{{ $fetchpriority }}"
-    src="{{ $resource.RelPermalink }}"
+    {{ if .defer }}data-src{{ else }}src{{ end }}="{{ $resource.RelPermalink }}"
     alt="{{ $alt }}"
     sizes="{{ $sizes }}"
     {{ with $class }}class="{{ . }}"{{ end }}>
@@ -30,7 +30,7 @@
     loading="{{ $loading }}"
     decoding="{{ $decoding }}"
     fetchpriority="{{ $fetchpriority }}"
-    src="{{ $resource.RelPermalink }}"
+    {{ if .defer }}data-src{{ else }}src{{ end }}="{{ $resource.RelPermalink }}"
     alt="{{ $alt }}"
     sizes="{{ $sizes }}"
     {{ with $class }}class="{{ . }}"{{ end }}>
@@ -69,15 +69,15 @@
 
 <picture>
   <source
-    srcset="{{ delimit $webpSrcset ", " }}"
+    {{ if .defer }}data-srcset{{ else }}srcset{{ end }}="{{ delimit $webpSrcset ", " }}"
     sizes="{{ $sizes }}"
     type="image/webp">
   <img
     loading="{{ $loading }}"
     decoding="{{ $decoding }}"
     fetchpriority="{{ $fetchpriority }}"
-    src="{{ $fallbackPrimary.RelPermalink }}"
-    srcset="{{ delimit $fallbackSrcset ", " }}"
+    {{ if .defer }}data-src{{ else }}src{{ end }}="{{ $fallbackPrimary.RelPermalink }}"
+    {{ if .defer }}data-srcset{{ else }}srcset{{ end }}="{{ delimit $fallbackSrcset ", " }}"
     alt="{{ $alt }}"
     width="{{ $fallbackPrimary.Width }}"
     height="{{ $fallbackPrimary.Height }}"
