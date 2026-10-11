@@ -33,7 +33,7 @@
       <div class="river-side-stories">
         {{- if $lead -}}
         {{- range $i, $article := partial "river-featured-pages.html" (dict "pages" (complement $pool $.pages) "lead" $lead) -}}
-        <article class="river-story"><a href="{{ .RelPermalink }}"><div class="river-photo river-story-photo">{{ partial "river-thumbnail.html" (dict "page" .) }}</div><div class="river-story-copy"><div class="river-story-top"><span class="river-kicker">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span><span class="river-story-number">0{{ add $i 2 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3><p>{{ .Description | default (.Summary | plainify) | truncate 65 }}</p><span class="river-read">{{ partial "reading-time.html" . }} 分鐘閱讀 <span aria-hidden="true">↗</span></span></div></a></article>
+        <article class="river-story"><a href="{{ .RelPermalink }}"><div class="river-photo river-story-photo">{{ partial "river-thumbnail.html" (dict "page" .) }}</div><div class="river-story-copy"><div class="river-story-top"><span class="river-kicker">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span><span class="river-story-number">0{{ add $i 2 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3><p>{{ .Description | default (.Summary | plainify) | truncate 65 }}</p></div></a></article>
         {{- end -}}
         {{- end -}}
       </div>
@@ -44,7 +44,7 @@
     <div class="river-section-heading"><div><span class="river-kicker">LATEST / 02</span><h2 id="river-recent-title">最新文章</h2></div><a class="river-text-link" href="{{ "/blog/" | relURL }}">全部 {{ len .pages }} 篇文章 <span aria-hidden="true">↗</span></a></div>
     <div class="river-recent-list">
     {{- range .latest -}}
-      <article><a class="river-recent-row" href="{{ .RelPermalink }}"><div class="river-photo river-recent-photo">{{ partial "river-thumbnail.html" (dict "page" . "small" true) }}</div><div class="river-recent-copy"><div class="river-recent-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span class="river-recent-category">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3><span class="river-recent-time">{{ partial "reading-time.html" . }} 分鐘閱讀</span></div><span class="river-recent-arrow" aria-hidden="true">↗</span></a></article>
+      <article><a class="river-recent-row" href="{{ .RelPermalink }}"><div class="river-photo river-recent-photo">{{ partial "river-thumbnail.html" (dict "page" . "small" true) }}</div><div class="river-recent-copy"><div class="river-recent-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span class="river-recent-category">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3></div><span class="river-recent-arrow" aria-hidden="true">↗</span></a></article>
     {{- end -}}
     </div>
   </section>

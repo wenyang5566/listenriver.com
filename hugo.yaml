@@ -151,7 +151,7 @@ params:
   profileMode.enabled: false
   comments: true
 
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
