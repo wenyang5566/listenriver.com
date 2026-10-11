@@ -143,7 +143,6 @@ body.list .blog-archive-entry .entry-footer {
 
 [data-theme="light"] .header-icon-link,
 [data-theme="light"] .header-icon-button,
-[data-theme="light"] .nav-group-menu-inner,
 [data-theme="light"] .dropdown,
 [data-theme="light"] .home-clubhouse-arrow,
 [data-theme="light"] .post-floating-tools {
@@ -2376,6 +2375,8 @@ body.mobile-nav-locked {
 .reader-lightbox.is-open {
   opacity: 1;
   visibility: visible;
+  /* Make controls focusable immediately; fade only the image overlay. */
+  transition: opacity 0.22s ease;
 }
 
 .reader-lightbox-backdrop {
@@ -8332,6 +8333,7 @@ body:not(.list):has(.post-single) {
 }
 
 .personal-header__dropdown-inner {
+  background: var(--pub-paper, var(--theme));
   gap: 0.2rem;
   padding: 1rem;
   border-radius: 8px;
@@ -8390,28 +8392,28 @@ body:not(.list):has(.post-single) {
 }
 
 [data-theme="dark"] .personal-header {
-  background: #0d1117;
+  background: var(--pub-paper, var(--theme));
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="dark"] .personal-header.is-scrolled {
-  background: rgba(13, 17, 23, 0.98);
+  background: var(--pub-paper, var(--theme));
   border-bottom-color: rgba(255, 255, 255, 0.16);
   box-shadow: none;
 }
 
 [data-theme="dark"] .personal-header .header-top-shell {
-  background: #0d1117;
+  background: var(--pub-paper, var(--theme));
   border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 
 [data-theme="dark"] .personal-header .header-nav-shell {
-  background: #0d1117;
+  background: var(--pub-paper, var(--theme));
 }
 
 [data-theme="dark"] .personal-header.is-scrolled .header-top-shell,
 [data-theme="dark"] .personal-header.is-scrolled .header-nav-shell {
-  background: rgba(13, 17, 23, 0.98);
+  background: var(--pub-paper, var(--theme));
 }
 
 [data-theme="dark"] .personal-header .header-icon-button,
@@ -8435,7 +8437,7 @@ body:not(.list):has(.post-single) {
 }
 
 [data-theme="dark"] .personal-header__dropdown-inner {
-  background: #111827;
+  background: var(--pub-paper, var(--theme));
   border-color: rgba(255, 255, 255, 0.08);
 }
 

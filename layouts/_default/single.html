@@ -1,7 +1,12 @@
 {{- define "main" }}
 
 <article class="post-single">
-  <header class="post-header">
+  <header class="post-header" data-pagefind-ignore>
+    <meta data-pagefind-meta="title[content]" content="{{ .Title }}">
+    <meta data-pagefind-meta="category[content]" content="{{ delimit (.Params.categories | default (slice)) "、" }}">
+    <meta data-pagefind-meta="tags[content]" content="{{ delimit (.Params.tags | default (slice)) "、" }}">
+    <meta data-pagefind-meta="series[content]" content="{{ .Params.seriesLabel | default "" }}">
+    <meta data-pagefind-meta="date[content]" content="{{ .Date.Format "2006.01.02" }}">
     {{ partial "breadcrumbs.html" . }}
 
     {{- $categories := first 1 (.GetTerms "categories") -}}
@@ -51,7 +56,7 @@
   {{- partialCached "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) .RelPermalink true $isHidden (.Params.cover.image | default "") }}
 
   {{- if (.Param "ShowToc") }}
-    {{- partial "toc.html" . }}
+    <div data-pagefind-ignore>{{- partial "toc.html" . }}</div>
   {{- end }}
 
   {{- if .Content }}
@@ -76,6 +81,7 @@
     </div>
     {{- end }}
     {{- partial "post_interactions_v2.html" . -}}
+    {{- partial "post-series-nav.html" . -}}
     {{- partial "post_related.html" . -}}
     {{- if (.Param "comments") }}
       {{- partial "comments.html" . }}
@@ -83,7 +89,7 @@
   </div>
   {{- end }}
 
-  <button class="article-scroll-top" type="button" data-scroll-top aria-label="回到頁面頂端" aria-hidden="true">
+  <button data-pagefind-ignore class="article-scroll-top" type="button" data-scroll-top aria-label="回到頁面頂端" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="m6 15 6-6 6 6"></path>
     </svg>

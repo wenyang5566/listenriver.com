@@ -1,6 +1,82 @@
 import { test, expect } from '@playwright/test';
 
 const paths = ['/', '/blog/', '/categories/', '/tags/', '/clubhouse/', '/about/', '/blog/電影心得/媽的多重宇宙01/'];
+
+for (const theme of ['light', 'dark']) {
+  test(`header interaction cues follow focus and expanded state in ${theme}`, async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.addInitScript(theme => localStorage.setItem('pref-theme', theme), theme);
+    await page.goto('/');
+    const header = page.locator('#site-header');
+    const trigger = header.locator('.nav-group-trigger').first();
+    const arrow = trigger.locator('.nav-chip-chevron');
+    const accent = theme === 'dark' ? 'rgb(240, 178, 149)' : 'rgb(180, 82, 57)';
+    await expect(arrow).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+    await trigger.hover();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(trigger.locator('.personal-header__nav-link-main')).toHaveCSS('color', accent);
+    await expect(arrow).toHaveCSS('transform', 'matrix(-1, 0, 0, -1, 0, 0)');
+    await expect(arrow).toHaveCSS('transition-duration', '0s');
+    await page.mouse.move(5, 400);
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(arrow).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+    await page.keyboard.press('Tab');
+    await trigger.focus();
+    await expect(trigger).toHaveCSS('outline-style', 'solid');
+    await expect(trigger.locator('.personal-header__nav-link-main')).toHaveCSS('color', accent);
+    const search = header.locator('.header-search-toggle');
+    await search.click();
+    await expect(search).toHaveAttribute('aria-expanded', 'true');
+    await expect(search).toHaveCSS('color', accent);
+    await expect(search).toHaveCSS('background-color', theme === 'dark' ? 'rgb(104, 83, 70)' : 'rgb(228, 213, 197)');
+    await page.keyboard.press('Escape');
+  });
+}
+
+for (const width of [390, 820, 1440]) {
+  for (const theme of ['light', 'dark']) {
+    test(`header keeps the journal palette after scrolling and opening panels at ${width}px in ${theme}`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 900 });
+      await page.addInitScript(theme => localStorage.setItem('pref-theme', theme), theme);
+      await page.goto('/blog/成為自己/正念的意義就在手中/');
+      const header = page.locator('#site-header');
+      const paper = theme === 'dark' ? 'rgb(52, 44, 40)' : 'rgb(255, 250, 242)';
+      const checkShells = async () => {
+        await expect(header.locator('.header-top-shell')).toHaveCSS('background-color', paper);
+        await expect(header.locator('.header-nav-shell')).toHaveCSS('background-color', paper);
+      };
+      await checkShells();
+      await page.evaluate(() => scrollTo(0, 1000));
+      await expect(header).toHaveClass(/nav--hidden/);
+      await page.evaluate(() => scrollBy(0, -80));
+      if (width > 860) {
+        await expect(header).toHaveClass(/nav--compact/);
+        await expect(header).not.toHaveClass(/nav--hidden/);
+        await checkShells();
+      }
+      await page.evaluate(() => scrollBy(0, -160));
+      await expect(header).not.toHaveClass(/nav--hidden|nav--compact/);
+      await expect(header).toHaveClass(/is-scrolled/);
+      await checkShells();
+      await header.locator('.header-search-toggle').click();
+      await expect(header.locator('.personal-header__search')).toBeVisible();
+      await expect(header.locator('.personal-header__search')).toHaveCSS('background-color', paper);
+      await checkShells();
+      await page.keyboard.press('Escape');
+      if (width <= 860) {
+        await header.locator('.header-mobile-menu-toggle').click();
+        await expect(header.locator('.mobile-nav-drawer')).toBeVisible();
+        await expect(header.locator('.mobile-nav-drawer')).toHaveCSS('background-color', paper);
+      } else {
+        await header.locator('.nav-group-trigger').first().click();
+        await expect(header.locator('.personal-header__dropdown-inner').first()).toBeVisible();
+        await expect(header.locator('.personal-header__dropdown-inner').first()).toHaveCSS('background-color', paper);
+      }
+    });
+  }
+}
+
 test('desktop hides categories first and the whole header after sustained downward reading', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -25,16 +101,18 @@ test('desktop hides categories first and the whole header after sustained downwa
   await moveTo(400);
   await expect(header).toHaveClass(/nav--hidden/);
   await moveTo(1000);
-  await moveTo(968);
+  await moveTo(921);
   await expect(header).toHaveClass(/nav--hidden/);
-  await moveTo(840);
+  await moveTo(920);
   await expect(header).not.toHaveClass(/nav--hidden/);
   await expect(header).toHaveClass(/nav--compact/);
   await expect(categories).toHaveAttribute('inert', '');
-  await moveTo(900);
+  await moveTo(980);
   await expect(header).not.toHaveClass(/nav--hidden/);
   await expect(header).toHaveClass(/nav--compact/);
-  await moveTo(620);
+  await moveTo(821);
+  await expect(header).toHaveClass(/nav--compact/);
+  await moveTo(820);
   await expect(header).not.toHaveClass(/nav--hidden|nav--compact/);
   await expect(categories).not.toHaveAttribute('inert', '');
   await moveTo(750);
@@ -86,12 +164,26 @@ for (const width of [390, 820, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       await page.addInitScript(theme => localStorage.setItem('pref-theme', theme), theme);
       for (const path of paths) {
-        await page.goto(path, { waitUntil: 'domcontentloaded' });
+        // pageshow initializes the scroll baseline; fonts can change page geometry.
+        await page.goto(path, { waitUntil: 'load' });
+        await page.evaluate(async () => {
+          await document.fonts.ready;
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        });
         const header = page.locator('#site-header');
         const toolbar = page.locator('[data-mobile-reading-toolbar]');
         const hasToolbar = width <= 768 && await toolbar.count() > 0;
         await expect(header).not.toHaveClass(/nav--hidden/);
+        const maxScroll = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
         await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 800); });
+        if (width > 860 && maxScroll < 400) {
+          // A short page cannot reach the full-hide travel threshold.
+          await expect(header).not.toHaveClass(/nav--hidden/);
+          if (maxScroll >= 160) await expect(header).toHaveClass(/nav--compact/);
+          await page.evaluate(() => scrollTo(0, 0));
+          await expect(header).not.toHaveClass(/nav--compact/);
+          continue;
+        }
         await expect(header).toHaveClass(/nav--hidden/);
         await expect(header).toHaveAttribute('inert', '');
         if (hasToolbar) {
@@ -106,17 +198,17 @@ for (const width of [390, 820, 1440]) {
         if (hasToolbar) {
           await expect(header).toHaveClass(/nav--hidden/);
           await expect(toolbar).toHaveClass(/is-hidden/);
-          await page.evaluate(() => window.scrollBy(0, -124));
+          await page.evaluate(() => window.scrollBy(0, -44));
           await expect(toolbar).not.toHaveClass(/is-hidden/);
           await expect(toolbar).toHaveClass(/is-compact/);
-          await page.evaluate(() => window.scrollBy(0, -320));
+          await page.evaluate(() => window.scrollBy(0, -160));
         }
         if (width > 860) {
           await expect(header).toHaveClass(/nav--hidden/);
-          await page.evaluate(() => window.scrollBy(0, -124));
+          await page.evaluate(() => window.scrollBy(0, -44));
           await expect(header).not.toHaveClass(/nav--hidden/);
           await expect(header).toHaveClass(/nav--compact/);
-          await page.evaluate(() => window.scrollBy(0, -280));
+          await page.evaluate(() => window.scrollBy(0, -160));
           await expect(header).not.toHaveClass(/nav--compact/);
         }
         await expect(header).not.toHaveClass(/nav--hidden/);
@@ -162,7 +254,11 @@ test('panels, keyboard focus, resize and reduced motion preserve navigation', as
 
 test('mobile article tools remain visible longer on downward scroll', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 900 });
-  await page.goto('/blog/電影心得/媽的多重宇宙01/', { waitUntil: 'domcontentloaded' });
+  await page.goto('/blog/電影心得/媽的多重宇宙01/', { waitUntil: 'load' });
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
   const header = page.locator('#site-header');
   const toolbar = page.locator('[data-mobile-reading-toolbar]');
   await expect(toolbar.locator('.mobile-reading-toolbar__label')).toHaveText(['上一頁', '字級', '更多文章', '分享']);
@@ -173,6 +269,7 @@ test('mobile article tools remain visible longer on downward scroll', async ({ p
   await expect(header).toHaveClass(/nav--hidden/);
   await page.evaluate(() => window.scrollBy(0, -100));
   await expect(header).not.toHaveClass(/nav--hidden/);
+  await page.waitForTimeout(450);
   await page.evaluate(() => window.scrollBy(0, 80));
   await expect(header).toHaveClass(/nav--hidden/);
   await expect(toolbar).not.toHaveClass(/is-hidden/);
@@ -185,18 +282,21 @@ test('mobile article tools remain visible longer on downward scroll', async ({ p
   await expect(toolbar).not.toHaveClass(/is-hidden/);
   await page.evaluate(() => window.scrollBy(0, 120));
   await expect(toolbar).not.toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, 120));
+  await page.evaluate(() => window.scrollBy(0, 97));
   await expect(toolbar).not.toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, 160));
+  await page.evaluate(() => window.scrollBy(0, 3));
   await expect(toolbar).toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, -32));
+  await page.evaluate(() => window.scrollBy(0, -77));
   await expect(toolbar).toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, -128));
+  await page.evaluate(() => window.scrollBy(0, -3));
   await expect(header).toHaveClass(/nav--hidden/);
   await expect(toolbar).not.toHaveClass(/is-hidden/);
   await expect(toolbar).toHaveClass(/is-compact/);
   await expect(toolbar).not.toHaveAttribute('inert', '');
-  await page.evaluate(() => window.scrollBy(0, -320));
+  await page.evaluate(() => window.scrollBy(0, -157));
+  await expect(header).toHaveClass(/nav--hidden/);
+  await expect(toolbar).toHaveClass(/is-compact/);
+  await page.evaluate(() => window.scrollBy(0, -3));
   await expect(header).not.toHaveClass(/nav--hidden/);
   await expect(toolbar).not.toHaveClass(/is-hidden/);
   await expect(toolbar).not.toHaveClass(/is-compact/);

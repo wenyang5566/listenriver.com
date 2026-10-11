@@ -1,0 +1,39 @@
+{{- /* Explicit series labels, scoped to their existing section and directory. */ -}}
+{{- $result := dict -}}
+{{- $label := .Params.seriesLabel | default "" -}}
+{{- if and (eq .Section "clubhouse") (findRE `^.+ [0-9]+$` $label) -}}
+  {{- $name := replaceRE ` [0-9]+$` "" $label -}}
+  {{- $destinations := index (index hugo.Data "taxonomy-landing") "topicDestinations" -}}
+  {{- with index $destinations $name -}}
+    {{- $directory := site.GetPage . -}}
+    {{- if and $directory (eq $.CurrentSection.RelPermalink $directory.RelPermalink) -}}
+      {{- $items := slice -}}
+      {{- $seen := slice -}}
+      {{- range $directory.RegularPages -}}
+        {{- $itemLabel := .Params.seriesLabel | default "" -}}
+        {{- $itemName := replaceRE ` [0-9]+$` "" $itemLabel -}}
+        {{- $digits := replaceRE `^.* ([0-9]+)$` "$1" $itemLabel -}}
+        {{- $number := 0 -}}
+        {{- if and (eq $itemName $name) (findRE `^[0-9]+$` $digits) -}}
+          {{- $number = int (replaceRE `^0+` "" $digits | default "0") -}}
+        {{- end -}}
+        {{- if or (lt $number 1) (in $seen $number) -}}
+          {{- errorf "Invalid or duplicate series number in %s: %s" .File.Path $itemLabel -}}
+        {{- end -}}
+        {{- $seen = $seen | append $number -}}
+        {{- $items = $items | append (dict "number" $number "page" .) -}}
+      {{- end -}}
+      {{- $items = sort $items "number" "asc" -}}
+      {{- range $index, $item := $items -}}
+        {{- if eq $item.page.RelPermalink $.RelPermalink -}}
+          {{- $previous := false -}}
+          {{- $next := false -}}
+          {{- if gt $index 0 -}}{{- $previous = (index $items (sub $index 1)).page -}}{{- end -}}
+          {{- if lt (add $index 1) (len $items) -}}{{- $next = (index $items (add $index 1)).page -}}{{- end -}}
+          {{- $result = dict "name" $name "label" $label "number" $item.number "directory" $directory "total" (len $items) "previous" $previous "next" $next -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}

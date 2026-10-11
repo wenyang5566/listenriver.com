@@ -5,7 +5,7 @@
 {{- else }} {{/* if not profileMode */}}
 
 {{- if not .IsHome | and .Title }}
-<header class="page-header">
+<header class="page-header{{ if and (eq .Kind "section") (eq .Section "blog") }} blog-archive-heading{{ end }}">
   {{- partial "breadcrumbs.html" . }}
   <h1>
     {{ .Title }}
@@ -76,7 +76,7 @@
 {{- end }}
 
 {{- if $isBlogArchive }}
-{{- partial "article-card.html" (dict "page" . "class" $class "variant" "latest-list") }}
+{{- partial "article-card.html" (dict "page" . "class" $class "variant" "editorial-list") }}
 {{- else }}
 <article class="{{ $class }}">
   {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
