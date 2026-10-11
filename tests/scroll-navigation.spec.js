@@ -25,16 +25,18 @@ test('desktop hides categories first and the whole header after sustained downwa
   await moveTo(400);
   await expect(header).toHaveClass(/nav--hidden/);
   await moveTo(1000);
-  await moveTo(968);
+  await moveTo(921);
   await expect(header).toHaveClass(/nav--hidden/);
-  await moveTo(840);
+  await moveTo(920);
   await expect(header).not.toHaveClass(/nav--hidden/);
   await expect(header).toHaveClass(/nav--compact/);
   await expect(categories).toHaveAttribute('inert', '');
-  await moveTo(900);
+  await moveTo(980);
   await expect(header).not.toHaveClass(/nav--hidden/);
   await expect(header).toHaveClass(/nav--compact/);
-  await moveTo(620);
+  await moveTo(821);
+  await expect(header).toHaveClass(/nav--compact/);
+  await moveTo(820);
   await expect(header).not.toHaveClass(/nav--hidden|nav--compact/);
   await expect(categories).not.toHaveAttribute('inert', '');
   await moveTo(750);
@@ -106,17 +108,17 @@ for (const width of [390, 820, 1440]) {
         if (hasToolbar) {
           await expect(header).toHaveClass(/nav--hidden/);
           await expect(toolbar).toHaveClass(/is-hidden/);
-          await page.evaluate(() => window.scrollBy(0, -124));
+          await page.evaluate(() => window.scrollBy(0, -44));
           await expect(toolbar).not.toHaveClass(/is-hidden/);
           await expect(toolbar).toHaveClass(/is-compact/);
-          await page.evaluate(() => window.scrollBy(0, -320));
+          await page.evaluate(() => window.scrollBy(0, -160));
         }
         if (width > 860) {
           await expect(header).toHaveClass(/nav--hidden/);
-          await page.evaluate(() => window.scrollBy(0, -124));
+          await page.evaluate(() => window.scrollBy(0, -44));
           await expect(header).not.toHaveClass(/nav--hidden/);
           await expect(header).toHaveClass(/nav--compact/);
-          await page.evaluate(() => window.scrollBy(0, -280));
+          await page.evaluate(() => window.scrollBy(0, -160));
           await expect(header).not.toHaveClass(/nav--compact/);
         }
         await expect(header).not.toHaveClass(/nav--hidden/);
@@ -185,18 +187,21 @@ test('mobile article tools remain visible longer on downward scroll', async ({ p
   await expect(toolbar).not.toHaveClass(/is-hidden/);
   await page.evaluate(() => window.scrollBy(0, 120));
   await expect(toolbar).not.toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, 120));
+  await page.evaluate(() => window.scrollBy(0, 97));
   await expect(toolbar).not.toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, 160));
+  await page.evaluate(() => window.scrollBy(0, 3));
   await expect(toolbar).toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, -32));
+  await page.evaluate(() => window.scrollBy(0, -77));
   await expect(toolbar).toHaveClass(/is-hidden/);
-  await page.evaluate(() => window.scrollBy(0, -128));
+  await page.evaluate(() => window.scrollBy(0, -3));
   await expect(header).toHaveClass(/nav--hidden/);
   await expect(toolbar).not.toHaveClass(/is-hidden/);
   await expect(toolbar).toHaveClass(/is-compact/);
   await expect(toolbar).not.toHaveAttribute('inert', '');
-  await page.evaluate(() => window.scrollBy(0, -320));
+  await page.evaluate(() => window.scrollBy(0, -157));
+  await expect(header).toHaveClass(/nav--hidden/);
+  await expect(toolbar).toHaveClass(/is-compact/);
+  await page.evaluate(() => window.scrollBy(0, -3));
   await expect(header).not.toHaveClass(/nav--hidden/);
   await expect(toolbar).not.toHaveClass(/is-hidden/);
   await expect(toolbar).not.toHaveClass(/is-compact/);

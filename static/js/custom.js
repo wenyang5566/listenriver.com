@@ -21,7 +21,7 @@
     bottomBars.forEach(bar => {
       // Keep article tools available longer than the header while reading down.
       const isReadingBar = bar.matches('[data-mobile-reading-toolbar]');
-      const hideDistance = isReadingBar ? 640 : 48;
+      const hideDistance = isReadingBar ? 480 : 48;
       const hideBar = hidden && mobileMedia.matches && hideTravel >= hideDistance;
       bar.classList.toggle('is-hidden', hideBar);
       bar.classList.toggle('is-compact', hidden && mobileMedia.matches && isReadingBar && hideTravel >= 160 && !hideBar);
@@ -79,23 +79,23 @@
       const stagedReveal = mobileMedia.matches && bottomBars.some(bar => bar.matches('[data-mobile-reading-toolbar]'));
       const headerHidden = header?.classList.contains('nav--hidden');
       if (!mobileHeaderMedia.matches) {
-        if (revealTravel >= 440) {
+        if (revealTravel >= 240) {
           const wasCollapsed = headerHidden || header?.classList.contains('nav--compact');
           setNavigationHidden(false);
           if (wasCollapsed) revealProtectedUntil = performance.now() + 400;
-        } else if (revealTravel >= 160 && headerHidden) {
+        } else if (revealTravel >= 80 && headerHidden) {
           setNavigationHidden(false);
           setDesktopCompact(true);
           revealProtectedUntil = performance.now() + 400;
         }
-      } else if (stagedReveal && headerHidden && revealTravel >= 160 && revealTravel < 480) {
+      } else if (stagedReveal && headerHidden && revealTravel >= 80 && revealTravel < 240) {
         bottomBars.filter(bar => bar.matches('[data-mobile-reading-toolbar]')).forEach(bar => {
           bar.classList.remove('is-hidden');
           bar.classList.add('is-compact');
           bar.inert = false;
         });
-        if (previousRevealTravel < 160) revealProtectedUntil = performance.now() + 400;
-      } else if (revealTravel >= (stagedReveal ? 480 : 32)) {
+        if (previousRevealTravel < 80) revealProtectedUntil = performance.now() + 400;
+      } else if (revealTravel >= (stagedReveal ? 240 : 32)) {
         if (mobileHeaderMedia.matches && header?.classList.contains('nav--hidden')) {
           revealProtectedUntil = performance.now() + 400;
         }
