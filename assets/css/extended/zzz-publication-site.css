@@ -198,7 +198,7 @@ body.publication-site .post-single .post-title {
 body.publication-site .post-single .post-content {
   color: var(--river-ink);
   font-size: 18px;
-  line-height: 1.95;
+  line-height: 2;
 }
 body.publication-site .post-single :is(.post-meta-top, figcaption, .breadcrumbs) {
   color: var(--river-muted);
@@ -236,16 +236,16 @@ body.publication-site :is(.floating-toc-toggle, .floating-toc-panel, .mobile-rea
 body.publication-site :is(.floating-toc-toggle, .floating-toc-panel) { border-radius: 6px; }
 body.publication-site .floating-toc-body a.is-active { color: var(--river-rust); }
 @media (max-width: 768px) {
-  html { --article-phone-font-size: 17px; }
+  html { --article-phone-font-size: 18px; }
   html[data-reading-size="small"] { --article-phone-font-size: 16px; }
-  html[data-reading-size="normal"] { --article-phone-font-size: 17px; }
+  html[data-reading-size="normal"] { --article-phone-font-size: 18px; }
   html[data-reading-size="large"] { --article-phone-font-size: 19px; }
   body.publication-site .post-single {
     --article-mobile-gutter: 24px;
     --article-media-outset: calc(var(--article-mobile-gutter) - var(--article-media-gutter));
   }
   body.publication-site .post-single .post-title { font-size: clamp(26px, 7vw, 30px); line-height: 1.5; }
-  body.publication-site .post-single .post-content { font-size: var(--article-phone-font-size); line-height: 1.95; }
+  body.publication-site .post-single .post-content { font-size: var(--article-phone-font-size); line-height: 2; }
 }
 
 /* A keyboard entry point shared by every page, including pages without home CSS. */
