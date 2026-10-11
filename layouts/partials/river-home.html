@@ -35,6 +35,7 @@
   </section>
 
   <section class="river-recent" aria-labelledby="river-recent-title">
+    {{ partial "river-section-current.html" . }}
     <div class="river-section-heading"><div><span class="river-kicker">LATEST / 02</span><h2 id="river-recent-title">最新文章</h2></div><a class="river-text-link" href="{{ "/blog/" | relURL }}">全部 {{ len .pages }} 篇文章 <span aria-hidden="true">↗</span></a></div>
     <div class="river-recent-list">
     {{- range .latest -}}
@@ -44,6 +45,7 @@
   </section>
 
   <section class="river-topics" aria-labelledby="river-topics-title">
+    {{ partial "river-section-current.html" . }}
     <div class="river-section-heading"><div><span class="river-kicker">CATEGORIES / 03</span><h2 id="river-topics-title">文章分類</h2></div><a class="river-text-link" href="{{ "/categories/" | relURL }}">查看分類總覽 <span aria-hidden="true">→</span></a></div>
     <div class="river-topic-grid">
       {{- range (index hugo.Data "taxonomy-landing").categoryCards -}}
@@ -73,6 +75,8 @@
   </section>
   {{ partial "home-gallery.html" .page }}
   <footer class="river-publication-footer" aria-label="網站頁尾">
+    {{ partial "river-section-current.html" . }}
+    <a class="river-footer-brand" href="{{ "/" | relURL }}"><span>聆聽的河流</span><small>閱讀、復元與助人工作的書寫</small></a>
     <div class="river-footer-navigation">
       <nav aria-label="頁尾導覽"><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a><a href="{{ "/about/" | relURL }}">關於文揚</a></nav>
       {{ with site.Params.salonFacebook }}<a class="river-footer-social" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開分頁）" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4A25 25 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v9Z"/></svg></a>{{ end }}
