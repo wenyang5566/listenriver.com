@@ -82,3 +82,24 @@
 - Google Analytics 後台連線回覆 invalid_grant（授權已過期或撤銷），無法查核報表入庫。初始化與請求驗證不代表能證明所有快速離站都已計入統計。
 
 - 使用全新 `.tmp/round-two-production` 目的地完成 Hugo 0.160.1 minify + Pagefind 1.5.2 建置：227 篇搜尋索引、639 個網址基準、0 新回歸（3 個既有解析問題）。預設 public 曾混入舊 localhost canonical，因此未用其網址結果作本輪部署依據。
+
+
+### 第二批正式部署與複測
+
+- 來源提交 `10bb3ec3` 已推送 main 並部署成功。[Cloudflare Pages](https://dash.cloudflare.com/?to=/0c941e997df8a4fdd3beda8f1ad835b8/pages/view/listenriver/4bc40c69-e291-4b8f-991a-614cec971090)、[Hugo Build](https://github.com/wenyang5566/listenriver.com/actions/runs/38139337828)、[Playwright Tests](https://github.com/wenyang5566/listenriver.com/actions/runs/38139337850) 全部成功。
+- 正式站實際只請求 `/fonts/river-home.woff2`，encodedBodySize 121,964 bytes；使用 stylesheet-home 與合併後的首頁 CSS，無 pageerror。
+- Google Analytics 的 script 使用 low 優先級；實際 `page_view` 請求收到 204。這可證明事件已送出並獲回應，不能替代已失效授權的 GA 報表入庫查核。
+- 正式站手機三次為 **81 / 65 / 71**，FCP 2.5 / 2.6 / 2.7 秒，LCP 4.4 / 6.3 / 4.5 秒，TBT 40 / 240 / 240 ms，CLS 均 0。**分數中位數 71，尚未穩定提升至 90；不能宣稱本機中位數代表正式站結果。** 原本 71 分僅量測一次，樣本不足以判定分數回歸，但本輪也沒有證明正式分數已穩定改善。
+- 三次實際 LCP 資源發現等待已降到約 7–23 ms；渲染等待約 528 / 2,193 / 2,216 ms。主執行緒 style/layout 約 1,183 / 740 / 725 ms，仍需關注渲染；單憑下載量不能解釋全部分數波動。
+- 固定首篇、封鎖第三方的冷快取測試：手機下載由 681,075 降至 279,978 bytes（減少約 59%）；桌機由 394,155 降至 264,532 bytes（減少約 33%），CLS 均 0。最終手機 LCP 中位數 2,300 ms，桌機 552 ms；初始繪製未顯示同等幅度的改善。
+- Google PageSpeed 官方 API 回覆 429（共享未驗證服務每日額度已滿），未取得新的官方服務分數；以上分數均為本機 Chrome 對正式站執行的 Lighthouse 手機模擬，應與使用者於 PageSpeed 網站看到的分數區分。
+- 原始正式資料：`.tmp/lighthouse-production-final-1.json` 至 `3.json`、`.tmp/production-round-two-smoke.json`、`.tmp/round-two-first-party-results/results.json`。
+
+
+### 最後的動態效果對照
+
+同一整合版本交錯測兩次：持續動畫為 69 / 77 分，暫停所有首頁 CSS 動畫為 69 / 78 分；LCP 均分別 4.9 / 4.6 秒。暫停能降低 style/layout 時間，但沒有足夠分數或 LCP 收益，未採用動畫行為變更。保留既有河流動態效果，避免為不確定收益改變閱讀風格。原始資料為 `.tmp/motion-active-*.json` / `.tmp/motion-still-*.json`。
+
+最後的報告提交僅更新文件，以 `[skip ci]` 前綴避免重做相同網站部署；網站程式碼仍以已通過所有檢查的 `10bb3ec3` 為上線版本。[Cloudflare 的略過文件建置指引](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/#skipping-a-build-via-a-commit-message)。
+
+下次接續應使用 PageSpeed 網站重新取得獨立測試環境的數據，或完整追蹤首屏渲染等待；不要以先前最高一次分數當作穩定結果。GA 報表查核需恢復連線授權。
