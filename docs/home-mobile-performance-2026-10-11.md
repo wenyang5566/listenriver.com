@@ -116,3 +116,23 @@
 - 同一 Brotli 伺服器、Lighthouse 13.5 手機模擬，依序交錯三組：原版本 92 / 84 / 83，精簡實驗 88 / 70 / 94。第三方網路及 TBT 波動明顯；原版 LCP 中位數 3.74 秒，實驗版 2.56 秒，但不能依此承諾正式站分數。一次與測試並行的初步量測未納入比較。
 - 最終保留原始跨瀏覽器宣告版本，獨立量測三次為 87 / 87 / 87，FCP 約 1.26 秒、LCP 3.63 / 3.63 / 3.67 秒、TBT 197 / 195 / 186 ms、CLS 均 0。兩份 CSS 合計傳輸量由 47,556 降至 25,523 bytes（約減少 46%，本機 Brotli5）。這是本機量測，發布後仍需正式站複測。
 - 本輪產物位於 `.tmp/perf-resume-*.json`、`.tmp/perf-resume-visual/` 與 `.tmp/perf-resume-final/`，不提交建置與測量產物。
+
+### 第三批正式部署結果
+
+- 來源提交 `e2390a06` 已發布。[Cloudflare Pages](https://dash.cloudflare.com/?to=/0c941e997df8a4fdd3beda8f1ad835b8/pages/view/listenriver/9c42f646-102e-4c7f-a4a7-2723e565aacf)、[Hugo Build](https://github.com/wenyang5566/listenriver.com/actions/runs/38143052798)、[Playwright Tests](https://github.com/wenyang5566/listenriver.com/actions/runs/38143052787) 與 Worker check 全數通過，新增子集同步守門亦通過。
+- 正式 HTML 使用 `stylesheet-home.f9ad77913d3a418987d30f56ec22413ee66529fa4fbe94b9686b199d2e60bb4f.css`，HTTP 200、解壓後 83,664 bytes（約減少 64%）；正式兩份 CSS 合計傳輸約 28.4–28.9 KB。僅下載首頁字型子集，GA page_view 回傳 204、無 pageerror。
+- 正式站依序量測五次，全部保留，沒有排除低分樣本：
+
+| 次數 | 手機分數 | FCP | LCP | TBT | CLS |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 1 | 96 | 1.32 秒 | 2.67 秒 | 46 ms | 0 |
+| 2 | 94 | 1.32 秒 | 3.04 秒 | 49 ms | 0 |
+| 3 | 69 | 2.58 秒 | 6.07 秒 | 156 ms | 0 |
+| 4 | 69 | 2.60 秒 | 6.08 秒 | 135 ms | 0 |
+| 5 | 83 | 1.31 秒 | 4.63 秒 | 74 ms | 0 |
+
+- **五次中位數 83，LCP 中位數 4.63 秒，尚未穩定達到 90 分或 LCP 2.5 秒。** 上批正式三次中位數為 71，本批觀察到較高的分數中位數，但樣本數與測量時段不同，不把差值當作穩定提升承諾；前三次的中位數 94 已由完整五次結果取代。
+- 第三次慢樣本的 HTML 約 352 ms、CSS 約 522–535 ms、字型約 565 ms 完成；LCP 圖片資源載入約 181 ms、發現等待約 11 ms，但元素渲染等待約 2,080 ms。快樣本渲染等待約 248 ms。Style/Layout 在慢樣本約 638 ms，快樣本約 914 ms，因此不能把慢樣本直接歸因於更多 CSS 執行或較慢網路；下一輪應追蹤繪製／圖片解碼與主執行緒時序，現階段原因尚未完全定位。
+- 官方 PageSpeed API 再試仍回傳 429（共享專案每日額度）；所有分數均為本機 Chrome Lighthouse 13.5 對正式站的手機模擬，不是 PageSpeed 網站的新服務結果或 CrUX field data。
+- GA hostname 分組顯示當日 `127.0.0.1` 381、`listenriver.com` 46、`wenyang.vercel.app` 6 次頁面瀏覽（查詢時快照）。先前裝置分組混入本機測試流量，不能當作正式訪客數；後續分析須限定 `hostName=listenriver.com`，且正式域名也可能包含 Lighthouse 測試。未在本輪變更 GA 收集行為或刪除歷史事件。
+- 正式原始報告：`.tmp/perf-resume-production-1.json` 至 `5.json`；上線 smoke：`.tmp/perf-resume-production-smoke.json`。
