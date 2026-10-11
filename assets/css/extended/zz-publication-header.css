@@ -29,9 +29,10 @@
 .publication-header .personal-header__nav-link { font-size: 14px; color: var(--pub-ink); }
 .publication-header.personal-header .header-icon-button { background: transparent !important; border-color: transparent !important; color: var(--pub-ink); width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
 .river-home .publication-header { position: sticky !important; top: 0; }
-.publication-header.personal-header .header-icon-button:hover { background: var(--pub-rule) !important; color: var(--pub-accent); }
+.publication-header.personal-header .header-icon-button:is(:hover, :focus-visible, [aria-expanded="true"], [aria-current="page"], .is-active) { background: var(--pub-rule) !important; color: var(--pub-accent); }
 .publication-header .header-icon-button { border-radius: 50%; transition: background .2s, color .2s; }
-[data-theme="dark"] .publication-header.personal-header .header-icon-button, [data-theme="dark"] .publication-header .personal-header__nav-link, [data-theme="dark"] .publication-header .personal-header__nav-trigger { color: var(--pub-ink) !important; }
+[data-theme="dark"] .publication-header.personal-header .header-icon-button, [data-theme="dark"] .publication-header .personal-header__nav-link, [data-theme="dark"] .publication-header .personal-header__nav-trigger { color: var(--pub-ink); }
+[data-theme="dark"] .publication-header.personal-header .header-icon-button:is(:hover, :focus-visible, [aria-expanded="true"], [aria-current="page"], .is-active) { color: var(--pub-accent); }
 .publication-header .personal-header__actions { gap: 18px; }
 .publication-about { font-size: 13px; color: var(--pub-ink); white-space: nowrap; padding-block: 12px; }
 .publication-header .header-search-toggle { gap: 8px; width: auto !important; }
@@ -42,7 +43,7 @@
 @media (max-width: 900px) { .publication-header .personal-header__top, .publication-header .personal-header__nav { padding-inline: 28px; } .publication-header .personal-header__nav { gap: 12px; } }
 @media (max-width: 640px) {
  .publication-header .personal-header__top { padding-inline: 20px; min-height: 62px; }
- .publication-header.personal-header .publication-wordmark, .publication-header .personal-header__brand:hover .publication-wordmark { font-size: 17px; letter-spacing: .06em; }
+ .publication-header.personal-header .publication-wordmark, .publication-header .personal-header__brand:hover .publication-wordmark { font-size: 17px; letter-spacing: .06em; transform: translateY(7px); }
  .publication-mark { width: 32px; height: 32px; }
  .river-home .publication-mark { width: 36px; height: 36px; }
  .publication-header .personal-header__brand { gap: 7px; }

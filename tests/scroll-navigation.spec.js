@@ -2,6 +2,38 @@ import { test, expect } from '@playwright/test';
 
 const paths = ['/', '/blog/', '/categories/', '/tags/', '/clubhouse/', '/about/', '/blog/電影心得/媽的多重宇宙01/'];
 
+for (const theme of ['light', 'dark']) {
+  test(`header interaction cues follow focus and expanded state in ${theme}`, async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.addInitScript(theme => localStorage.setItem('pref-theme', theme), theme);
+    await page.goto('/');
+    const header = page.locator('#site-header');
+    const trigger = header.locator('.nav-group-trigger').first();
+    const arrow = trigger.locator('.nav-chip-chevron');
+    const accent = theme === 'dark' ? 'rgb(240, 178, 149)' : 'rgb(180, 82, 57)';
+    await expect(arrow).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+    await trigger.hover();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(trigger.locator('.personal-header__nav-link-main')).toHaveCSS('color', accent);
+    await expect(arrow).toHaveCSS('transform', 'matrix(-1, 0, 0, -1, 0, 0)');
+    await expect(arrow).toHaveCSS('transition-duration', '0s');
+    await page.mouse.move(5, 400);
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(arrow).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+    await page.keyboard.press('Tab');
+    await trigger.focus();
+    await expect(trigger).toHaveCSS('outline-style', 'solid');
+    await expect(trigger.locator('.personal-header__nav-link-main')).toHaveCSS('color', accent);
+    const search = header.locator('.header-search-toggle');
+    await search.click();
+    await expect(search).toHaveAttribute('aria-expanded', 'true');
+    await expect(search).toHaveCSS('color', accent);
+    await expect(search).toHaveCSS('background-color', theme === 'dark' ? 'rgb(104, 83, 70)' : 'rgb(228, 213, 197)');
+    await page.keyboard.press('Escape');
+  });
+}
+
 for (const width of [390, 820, 1440]) {
   for (const theme of ['light', 'dark']) {
     test(`header keeps the journal palette after scrolling and opening panels at ${width}px in ${theme}`, async ({ page }) => {

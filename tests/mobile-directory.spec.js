@@ -101,7 +101,7 @@ test('article context and mobile rotation preserve reading position', async ({pa
   await page.goto('/blog/電影心得/媽的多重宇宙01/');
   await page.evaluate(()=>window.scrollTo(0,600));
   await expect(page.locator('#site-header')).toHaveClass(/nav--hidden/);
-  await page.evaluate(()=>window.scrollBy(0,-40));
+  await page.evaluate(()=>window.scrollBy(0,-240));
   await expect(page.locator('#site-header')).not.toHaveClass(/nav--hidden/);
   const before=await page.evaluate(()=>scrollY);
   await page.locator('.header-mobile-menu-toggle').click();
