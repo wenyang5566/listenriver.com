@@ -1,4 +1,4 @@
-﻿(function() {
+(function() {
   document.querySelector('.river-skip')?.addEventListener('click', () => {
     document.dispatchEvent(new Event('navigation:reveal'));
     document.getElementById('river-content')?.focus({ preventScroll: true });
@@ -1095,51 +1095,60 @@
   }
 
   document.querySelectorAll('[data-gallery-slider]').forEach((slider) => {
+    const section = slider.closest('.home-gallery-section');
     const track = slider.querySelector('[data-gallery-track]');
     const prev = slider.querySelector('[data-gallery-prev]');
     const next = slider.querySelector('[data-gallery-next]');
-    const dotsContainer = slider.parentElement?.querySelector('[data-gallery-dots]');
-    const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('[data-gallery-dot]')) : [];
-    const total = track ? track.children.length : 0;
-    let index = 0;
-
-    if (!track || !prev || !next || total < 2 || dots.length !== total) {
-      return;
-    }
-
+    const dots = Array.from(section.querySelectorAll('[data-gallery-dot]'));
+    const slides = track ? Array.from(track.children) : [];
+    const total = slides.length;
+    if (!track || !prev || !next || total < 2 || dots.length !== total) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0, timer = null, visible = false, hovered = false, focused = false;
     function renderGallery() {
       track.style.transform = `translateX(-${index * 100}%)`;
-      dots.forEach((dot, dotIndex) => {
-        const active = dotIndex === index;
-        dot.classList.toggle('is-active', active);
-        if (active) {
-          dot.setAttribute('aria-current', 'true');
-        } else {
-          dot.removeAttribute('aria-current');
+      slides.forEach((slide, i) => {
+        slide.inert = i !== index;
+        slide.setAttribute('aria-hidden', String(i !== index));
+        if (visible && (i === index || i === (index + 1) % total)) {
+          const image = slide.querySelector('img');
+          if (image) image.loading = 'eager';
         }
       });
-    }
-
-    prev.addEventListener('click', () => {
-      index = (index - 1 + total) % total;
-      renderGallery();
-    });
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % total;
-      renderGallery();
-    });
-
-    dots.forEach((dot) => {
-      dot.addEventListener('click', () => {
-        const nextIndex = Number(dot.getAttribute('data-gallery-dot'));
-        if (Number.isNaN(nextIndex)) return;
-        index = nextIndex;
-        renderGallery();
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === index);
+        if (i === index) dot.setAttribute('aria-current', 'true');
+        else dot.removeAttribute('aria-current');
       });
+    }
+    function schedule() {
+      window.clearTimeout(timer);
+      const playing = visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
+      section.dataset.galleryPlaying = String(playing);
+      if (playing) timer = window.setTimeout(() => { index = (index + 1) % total; renderGallery(); schedule(); }, 6000);
+    }
+    function manual(nextIndex) {
+      index = (nextIndex + total) % total;
+      renderGallery();
+      schedule();
+    }
+    prev.addEventListener('click', () => manual(index - 1));
+    next.addEventListener('click', () => manual(index + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => manual(i)));
+    section.addEventListener('mouseenter', () => { hovered = true; schedule(); });
+    section.addEventListener('mouseleave', () => { hovered = false; schedule(); });
+    section.addEventListener('focusin', () => { focused = true; schedule(); });
+    section.addEventListener('focusout', () => { queueMicrotask(() => { focused = section.contains(document.activeElement); schedule(); }); });
+    document.addEventListener('visibilitychange', schedule);
+    reducedMotion.addEventListener('change', schedule);
+    section.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      manual(index + (event.key === 'ArrowRight' ? 1 : -1));
     });
-
     renderGallery();
+    schedule();
+    new IntersectionObserver(entries => { visible = entries[0].intersectionRatio >= .25; if (visible) renderGallery(); schedule(); }, { threshold: .25 }).observe(slider);
   });
 
   document.querySelectorAll('[data-clubhouse-slider]').forEach((slider) => {

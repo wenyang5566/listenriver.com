@@ -1,7 +1,7 @@
 {{- $galleryFiles := readDir "assets/images/home/gallery" -}}
 {{- $slides := slice -}}
 {{- range sort $galleryFiles "Name" "asc" -}}
-  {{- if and (not .IsDir) (eq (lower (path.Ext .Name)) ".webp") -}}
+  {{- if and (not .IsDir) (in (slice ".webp" ".jpg" ".jpeg" ".png") (lower (path.Ext .Name))) -}}
     {{- $slides = $slides | append .Name -}}
   {{- end -}}
 {{- end -}}

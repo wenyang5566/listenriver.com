@@ -115,3 +115,6 @@ body.publication-site #search-series { background: transparent; border: 0; borde
   body.publication-site #pagefind-search .pagefind-ui__result-link { font-size: 18px; }
   body.publication-site #pagefind-search .pagefind-ui__result-excerpt { font-size: 15px; }
 }
+
+body.publication-site .home-gallery-section button:focus-visible { outline: 2px solid var(--river-rust); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .home-gallery-track { transition: none !important; } }
