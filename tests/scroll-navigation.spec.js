@@ -164,12 +164,26 @@ for (const width of [390, 820, 1440]) {
       await page.setViewportSize({ width, height: 900 });
       await page.addInitScript(theme => localStorage.setItem('pref-theme', theme), theme);
       for (const path of paths) {
-        await page.goto(path, { waitUntil: 'domcontentloaded' });
+        // pageshow initializes the scroll baseline; fonts can change page geometry.
+        await page.goto(path, { waitUntil: 'load' });
+        await page.evaluate(async () => {
+          await document.fonts.ready;
+          await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+        });
         const header = page.locator('#site-header');
         const toolbar = page.locator('[data-mobile-reading-toolbar]');
         const hasToolbar = width <= 768 && await toolbar.count() > 0;
         await expect(header).not.toHaveClass(/nav--hidden/);
+        const maxScroll = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
         await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 800); });
+        if (width > 860 && maxScroll < 400) {
+          // A short page cannot reach the full-hide travel threshold.
+          await expect(header).not.toHaveClass(/nav--hidden/);
+          if (maxScroll >= 160) await expect(header).toHaveClass(/nav--compact/);
+          await page.evaluate(() => scrollTo(0, 0));
+          await expect(header).not.toHaveClass(/nav--compact/);
+          continue;
+        }
         await expect(header).toHaveClass(/nav--hidden/);
         await expect(header).toHaveAttribute('inert', '');
         if (hasToolbar) {
@@ -240,7 +254,11 @@ test('panels, keyboard focus, resize and reduced motion preserve navigation', as
 
 test('mobile article tools remain visible longer on downward scroll', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 900 });
-  await page.goto('/blog/電影心得/媽的多重宇宙01/', { waitUntil: 'domcontentloaded' });
+  await page.goto('/blog/電影心得/媽的多重宇宙01/', { waitUntil: 'load' });
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  });
   const header = page.locator('#site-header');
   const toolbar = page.locator('[data-mobile-reading-toolbar]');
   await expect(toolbar.locator('.mobile-reading-toolbar__label')).toHaveText(['上一頁', '字級', '更多文章', '分享']);

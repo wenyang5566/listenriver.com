@@ -2375,6 +2375,8 @@ body.mobile-nav-locked {
 .reader-lightbox.is-open {
   opacity: 1;
   visibility: visible;
+  /* Make controls focusable immediately; fade only the image overlay. */
+  transition: opacity 0.22s ease;
 }
 
 .reader-lightbox-backdrop {

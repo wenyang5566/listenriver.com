@@ -22,8 +22,8 @@
 {{- else }}
 <body class="publication-site" id="top">
 {{- end }}
+    <a class="river-skip" href="#river-content">跳至閱讀內容</a>
     {{- if .IsHome -}}
-        <a class="river-skip" href="#river-content">跳至閱讀內容</a>
         {{ partial "header.html" . }}
     {{- else -}}
         {{ partialCached "header.html" . .Page }}
@@ -32,7 +32,7 @@
         <span class="mobile-reading-progress-bar" data-reading-progress></span>
     </div>
     {{- $indexWithPagefind := and (eq .Kind `page`) (not (in (slice `search` `archives`) .Layout)) -}}
-    <main class="main"{{ if .IsHome }} id="river-content"{{ end }}{{ if $indexWithPagefind }} data-pagefind-body{{ else }} data-pagefind-ignore{{ end }}>
+    <main class="main" id="river-content" tabindex="-1"{{ if $indexWithPagefind }} data-pagefind-body{{ else }} data-pagefind-ignore{{ end }}>
         {{- block "main" . }}{{ end }}
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}

@@ -247,3 +247,23 @@ body.publication-site .floating-toc-body a.is-active { color: var(--river-rust);
   body.publication-site .post-single .post-title { font-size: clamp(26px, 7vw, 30px); line-height: 1.5; }
   body.publication-site .post-single .post-content { font-size: var(--article-phone-font-size); line-height: 1.95; }
 }
+
+/* A keyboard entry point shared by every page, including pages without home CSS. */
+body.publication-site .river-skip {
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  z-index: 2000;
+  transform: translateY(-200%);
+  padding: 12px 20px;
+  border: 1px solid var(--river-rule);
+  background: var(--river-paper);
+  color: var(--river-ink);
+  font-size: 16px;
+}
+body.publication-site .river-skip:focus { transform: translateY(0); }
+body.publication-site #river-content { scroll-margin-top: 140px; }
+body.publication-site #river-content:focus { outline: none; }
+@media (max-width: 860px) {
+  body.publication-site #river-content { scroll-margin-top: 90px; }
+}

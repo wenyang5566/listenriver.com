@@ -1,4 +1,8 @@
 ﻿(function() {
+  document.querySelector('.river-skip')?.addEventListener('click', () => {
+    document.dispatchEvent(new Event('navigation:reveal'));
+    document.getElementById('river-content')?.focus({ preventScroll: true });
+  });
   const header = document.getElementById('site-header');
   const bottomBars = [...document.querySelectorAll('.mobile-reading-toolbar, .mobile-bottom-bar')];
   const mobileMedia = window.matchMedia('(max-width: 768px)');
@@ -937,7 +941,11 @@
 
     const lightboxImage = lightbox.querySelector('.reader-lightbox-image');
     const lightboxCaption = lightbox.querySelector('.reader-lightbox-caption');
+    const lightboxDialog = lightbox.querySelector('.reader-lightbox-dialog');
+    const lightboxClose = lightbox.querySelector('.reader-lightbox-close');
     let activeIndex = -1;
+    let returnFocus = null;
+    const backgroundInert = new Map();
 
     lightboxImage.setAttribute('draggable', 'false');
     lightboxImage.addEventListener('contextmenu', (event) => event.preventDefault());
@@ -947,6 +955,14 @@
       const target = imageMeta[index];
       if (!target) return;
 
+      if (!lightbox.classList.contains('is-open')) {
+        returnFocus = target.image;
+        Array.from(document.body.children).forEach((element) => {
+          if (element === lightbox || element.matches('script, style, link')) return;
+          backgroundInert.set(element, element.hasAttribute('inert'));
+          toggleInert(element, true);
+        });
+      }
       activeIndex = index;
       lightboxImage.src = target.image.currentSrc || target.image.src;
       lightboxImage.alt = target.alt;
@@ -955,6 +971,7 @@
       lightbox.setAttribute('aria-hidden', 'false');
       toggleInert(lightbox, false);
       document.body.classList.add('reader-lightbox-open');
+      lightboxClose.focus({ preventScroll: true });
 
       if (prefersReducedMotion) {
         lightboxImage.style.transition = 'none';
@@ -965,9 +982,13 @@
       if (!lightbox.classList.contains('is-open')) return;
 
       lightbox.classList.remove('is-open');
+      document.body.classList.remove('reader-lightbox-open');
+      backgroundInert.forEach((wasInert, element) => toggleInert(element, wasInert));
+      backgroundInert.clear();
+      if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+      returnFocus = null;
       lightbox.setAttribute('aria-hidden', 'true');
       toggleInert(lightbox, true);
-      document.body.classList.remove('reader-lightbox-open');
       activeIndex = -1;
       window.setTimeout(() => {
         if (!lightbox.classList.contains('is-open')) {
@@ -1001,12 +1022,24 @@
     document.addEventListener('keydown', (event) => {
       if (!lightbox.classList.contains('is-open')) return;
 
-      if (event.key === 'Escape') {
+      if (event.key === 'Tab') {
+        // Currently the close button is the dialog's only interactive control.
+        event.preventDefault();
+        lightboxClose.focus({ preventScroll: true });
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
         closeLightbox();
       } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
         moveLightbox(1);
       } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
         moveLightbox(-1);
+      }
+    });
+    document.addEventListener('focusin', (event) => {
+      if (lightbox.classList.contains('is-open') && !lightboxDialog.contains(event.target)) {
+        lightboxClose.focus({ preventScroll: true });
       }
     });
   }

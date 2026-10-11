@@ -1,15 +1,20 @@
 {{- $page := .page -}}
 {{- $class := .class | default "post-entry" -}}
 {{- $variant := .variant | default "default" -}}
-{{- if eq $variant "latest-list" -}}
-<article class="{{ $class }}">
+{{- $editorial := eq $variant "editorial-list" -}}
+{{- if or $editorial (eq $variant "latest-list") -}}
+{{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
+{{- $hasMedia := and (not $isHidden) (or (not $editorial) $page.Params.cover.image) -}}
+<article class="{{ $class }}{{ if and $editorial (not $hasMedia) }} blog-archive-entry--text{{ end }}">
   <a class="home-latest-item__link" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}"></a>
+  {{- if $hasMedia }}
   <div class="home-latest-item__media" aria-hidden="true">
     {{- $isHidden := ($page.Param "cover.hiddenInList") | default ($page.Param "cover.hidden") | default false -}}
-    {{- $latestSizes := "(min-width: 768px) 176px, 100vw" -}}
+    {{- $latestSizes := cond $editorial "(max-width: 640px) 88px, 120px" "(min-width: 768px) 176px, 100vw" -}}
     {{- $latestWidths := slice 240 320 360 480 -}}
     {{- partialCached "cover.html" (dict "cxt" $page "IsSingle" false "isHidden" $isHidden "sizes" $latestSizes "widths" $latestWidths "maxWidth" 480) $page.RelPermalink false $isHidden ($page.Params.cover.image | default "") "lazy" "auto" $latestSizes (delimit $latestWidths "-") 480 -}}
   </div>
+  {{- end }}
   <div class="home-latest-item__body">
     {{- if not ($page.Param "hideMeta") }}
     <div class="home-latest-item__meta">
@@ -32,10 +37,13 @@
       </span>
       {{- end }}
     </h2>
-    {{- if ne ($page.Param "hideSummary") true }}
+    {{- if and (not $editorial) (ne ($page.Param "hideSummary") true) }}
     <p class="home-latest-item__excerpt">{{ $page.Summary | plainify | htmlUnescape | truncate 120 }}</p>
     {{- end }}
   </div>
+  {{- if and $editorial (ne ($page.Param "hideSummary") true) }}
+  <p class="home-latest-item__excerpt">{{ $page.Description | default ($page.Summary | plainify | htmlUnescape) | plainify | htmlUnescape | truncate 120 }}</p>
+  {{- end }}
 </article>
 {{- else -}}
 <article class="{{ $class }}">
