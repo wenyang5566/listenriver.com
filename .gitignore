@@ -3,8 +3,8 @@
 /public-build-check/
 /resources/_gen/
 /.hugo_cache/
-/.tmp/audit-*
-/.tmp/*
+/.hugo_build.lock
+/.tmp/
 __pycache__/
 *.pyc
 /.tmp_hugo_check/
