@@ -1,0 +1,16 @@
+{{- with partial "series-context.html" . -}}
+<nav class="post-series-nav" aria-label="{{ .name }}系列續讀" data-series-name="{{ .name }}" data-series-number="{{ .number }}">
+  <div class="post-series-heading">
+    <div><span class="post-series-kicker">繼續這個系列</span><h2>{{ .label }} <span>／ 共 {{ .total }} 篇</span></h2></div>
+    <a class="post-series-directory" href="{{ .directory.RelPermalink }}">回到{{ .name }}目錄 →</a>
+  </div>
+  <div class="post-series-links">
+    {{- with .previous }}
+    <a class="post-series-link" data-series-previous href="{{ .RelPermalink }}" rel="prev"><span>← 上一篇 · {{ .Params.seriesLabel }}</span><strong>{{ .Params.displayTitle | default .Title }}</strong></a>
+    {{- else }}<p class="post-series-boundary">這是系列第一篇</p>{{- end }}
+    {{- with .next }}
+    <a class="post-series-link" data-series-next href="{{ .RelPermalink }}" rel="next"><span>下一篇 · {{ .Params.seriesLabel }} →</span><strong>{{ .Params.displayTitle | default .Title }}</strong></a>
+    {{- else }}<p class="post-series-boundary">已讀到系列最新一篇</p>{{- end }}
+  </div>
+</nav>
+{{- end -}}

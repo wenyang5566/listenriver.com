@@ -11,13 +11,6 @@
       {{- $priority = $priority | append . -}}
     {{- end -}}
   {{- end -}}
-{{- else if eq .Section "clubhouse" -}}
-  {{- $current := . -}}
-  {{- range .CurrentSection.RegularPages.ByDate -}}
-    {{- if and (eq (len $priority) 0) (.Date.After $current.Date) -}}
-      {{- $priority = $priority | append . -}}
-    {{- end -}}
-  {{- end -}}
 {{- end -}}
 {{- $sameTags := where $pool "Params.tags" "intersect" (.Params.tags | default (slice)) -}}
 {{- $sameCategory := where $pool "Params.categories" "intersect" (.Params.categories | default (slice)) -}}

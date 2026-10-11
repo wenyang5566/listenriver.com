@@ -50,6 +50,19 @@
       showSubResults: false,
       autofocus: true,
       resetStyles: false,
+      excerptLength: 45,
+      processResult: function (result) {
+        result = Object.assign({}, result, { meta: Object.assign({}, result.meta) });
+        const metadata = [result.meta.category, result.meta.date].filter(Boolean);
+        if (metadata.length) {
+          const escaped = metadata.join(' · ').replace(/[&<>"']/g, function (character) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character];
+          });
+          result.excerpt = '<span class="search-result-meta">' + escaped + '</span>' + result.excerpt;
+        }
+        for (const key of ["category", "date", "tags", "series"]) delete result.meta[key];
+        return result;
+      },
       translations: {
         placeholder: "搜尋文章、分類、主題",
         clear_search: "清除",
@@ -80,6 +93,38 @@
       seriesRoot.hidden = matches === 0;
     }
 
+    // Save the clicked result, then restore only after it exists in the async results.
+    searchRoot.addEventListener("click", function (event) {
+      const link = event.target.closest(".pagefind-ui__result a[href]");
+      if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const state = Object.assign({}, window.history.state);
+      state.riverSearchPosition = { query: findPagefindInput().value.trim(), y: window.scrollY, href: link.href };
+      window.history.replaceState(state, "");
+    });
+
+    const savedPosition = window.history.state && window.history.state.riverSearchPosition;
+    const navigation = performance.getEntriesByType("navigation")[0];
+    if (savedPosition && savedPosition.query === initialQuery && navigation && navigation.type === "back_forward") {
+      let timer;
+      const observer = new MutationObserver(restorePosition);
+      const events = ["wheel", "touchstart", "pointerdown", "keydown"];
+      function cancelRestore() {
+        observer.disconnect();
+        window.clearTimeout(timer);
+        events.forEach(function (name) { window.removeEventListener(name, cancelRestore, true); });
+      }
+      function restorePosition() {
+        const ready = Array.from(searchRoot.querySelectorAll(".pagefind-ui__result a[href]")).some(function (link) { return link.href === savedPosition.href; });
+        if (!ready) return;
+        cancelRestore();
+        window.scrollTo({ top: savedPosition.y, behavior: "instant" });
+      }
+      observer.observe(searchRoot, { childList: true, subtree: true });
+      events.forEach(function (name) { window.addEventListener(name, cancelRestore, { capture: true, passive: true }); });
+      timer = window.setTimeout(cancelRestore, 10000);
+      restorePosition();
+    }
+
     function findPagefindInput() {
       return searchRoot ? searchRoot.querySelector(".pagefind-ui__search-input, input[type='search'], input[type='text']") : null;
     }
@@ -91,7 +136,9 @@
       } else {
         nextUrl.searchParams.delete("q");
       }
-      window.history.replaceState(null, "", nextUrl);
+      const state = Object.assign({}, window.history.state);
+      if (query !== searchParams.get("q")) delete state.riverSearchPosition;
+      window.history.replaceState(state, "", nextUrl);
     }
 
     function submitQuery(input, query) {
