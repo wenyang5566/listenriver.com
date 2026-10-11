@@ -103,3 +103,16 @@
 最後的報告提交僅更新文件，以 `[skip ci]` 前綴避免重做相同網站部署；網站程式碼仍以已通過所有檢查的 `10bb3ec3` 為上線版本。[Cloudflare 的略過文件建置指引](https://developers.cloudflare.com/pages/configuration/git-integration/github-integration/#skipping-a-build-via-a-commit-message)。
 
 下次接續應使用 PageSpeed 網站重新取得獨立測試環境的數據，或完整追蹤首屏渲染等待；不要以先前最高一次分數當作穩定結果。GA 報表查核需恢復連線授權。
+
+## GA 恢復後接續：第三批首頁共用 CSS
+
+- 2026/10/11 GA MCP 已成功讀取帳戶與即時報表，Property ID 為 `362788041`（wenyang-blog）。當日核心報表可讀到 desktop 377、mobile 11 次 page_view；即時報表亦收到事件。這證明報表讀取與事件入庫可用，不是效能改善的因果證據，也不是 Web Vitals 資料。
+- 開始時 main 為 `4d5888e5`，正式站仍使用第二批的 stylesheet-home。新的正式站手機 Lighthouse 為 73 分，FCP 2.7 秒、LCP 6.2 秒、TBT 10 ms、CLS 0。CSS coverage 預估共用樣式 88.2% 初始未使用；不能直接刪除，因為隱藏選單與互動仍需要樣式。
+- 新增 `assets/css/home-shared.css`，首頁以此替換 `custom.css`，保留原先插入順序。其他頁面仍用完整 custom.css；所有既有網址與內容結構保留。
+- `scripts/subset-home-css.mjs` 以建置後的完整首頁標記（包括隱藏輪播及導覽）與共享 JS 動態 class 作保守篩選。使用 PostCSS 保留原始宣告、vendor properties、media queries、動畫與規則順序；有可能匹配的整組 selector 保留，不只依首屏 coverage 篩選。保留 268 個規則、排除 1,274 個不適用規則。
+- 子集作為來源資產提交，`--check` 模式納入 Hugo CI，避免修改共用 CSS、首頁標記或 JS class 後忘記重製。重製命令與驗證要求記錄於 CONTRIBUTING.md。OAuth JSON 與 ADC 不加入 Git。
+- 首頁 stylesheet-home 從正式站約 233,239 bytes 降為 83,670 bytes（未壓縮，約減少 64%）。首頁仍為兩個 CSS 請求，不新增第三方服務。
+- 320 / 390 / 820 / 1440px × light / dark 共八組，每組 754 個元素，尺寸位置、字型、色彩、邊框、陰影、顯示、溢出、grid 與其他比對屬性均無差異。42 項首頁、圖集、手機與桌機導覽、文章與分類回歸通過。Hugo 0.160.1 minify 與 Pagefind 1.5.2 建置成功，227 頁索引；639 網址基準 0 新回歸、3 個既有解析問題。
+- 同一 Brotli 伺服器、Lighthouse 13.5 手機模擬，依序交錯三組：原版本 92 / 84 / 83，精簡實驗 88 / 70 / 94。第三方網路及 TBT 波動明顯；原版 LCP 中位數 3.74 秒，實驗版 2.56 秒，但不能依此承諾正式站分數。一次與測試並行的初步量測未納入比較。
+- 最終保留原始跨瀏覽器宣告版本，獨立量測三次為 87 / 87 / 87，FCP 約 1.26 秒、LCP 3.63 / 3.63 / 3.67 秒、TBT 197 / 195 / 186 ms、CLS 均 0。兩份 CSS 合計傳輸量由 47,556 降至 25,523 bytes（約減少 46%，本機 Brotli5）。這是本機量測，發布後仍需正式站複測。
+- 本輪產物位於 `.tmp/perf-resume-*.json`、`.tmp/perf-resume-visual/` 與 `.tmp/perf-resume-final/`，不提交建置與測量產物。

@@ -30,6 +30,7 @@
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@types/node": "^25.7.0",
-    "pagefind": "^1.5.2"
+    "pagefind": "^1.5.2",
+    "postcss": "^8.5.29"
   }
 }

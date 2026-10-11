@@ -31,6 +31,28 @@ npm run check
 - Prefer improving reading rhythm, spacing, and navigation without breaking existing article content
 - Keep generated output out of git history
 
+### Homepage shared CSS
+
+The homepage uses `assets/css/home-shared.css`, a source asset containing the
+applicable rules from `assets/css/extended/custom.css`. Other pages retain the
+complete shared stylesheet. The subset preserves rule order, original
+declarations, media queries, keyframes, and classes introduced by shared JS.
+
+After changing shared CSS, homepage markup, or shared JS classes, rebuild Hugo
+and regenerate the subset before building again:
+
+```powershell
+hugo --minify --destination public-build-check
+node scripts/subset-home-css.mjs public-build-check/index.html
+hugo --minify --destination public-build-check
+```
+
+The generator uses Playwright (Edge on Windows, Chromium elsewhere) and PostCSS.
+Commit the resulting source CSS, and verify mobile/desktop, light/dark themes,
+navigation opening, search, carousel, and gallery controls. Do not derive a
+subset solely from initial viewport coverage: hidden and interactive UI needs
+its CSS too.
+
 ## Deployment Notes
 
 - GitHub Actions validates the repository

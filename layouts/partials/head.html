@@ -78,10 +78,14 @@
 {{- $stylesheetName := "assets/css/stylesheet.css" -}}
 {{- if .IsHome -}}
   {{- /* These selectors belong to previous home layouts, articles and directories. */ -}}
-  {{- $excluded := slice "css/extended/home.css" "css/extended/zz-home-refine.css" "css/extended/zzzz-taxonomy-editorial.css" "css/extended/zzzzz-article-editorial.css" "css/extended/zzzzz-site-editorial.css" -}}
+  {{- $excluded := slice "css/extended/custom.css" "css/extended/home.css" "css/extended/zz-home-refine.css" "css/extended/zzzz-taxonomy-editorial.css" "css/extended/zzzzz-article-editorial.css" "css/extended/zzzzz-site-editorial.css" -}}
   {{- $homeStyles := slice -}}
   {{- range $extendedStyles -}}
-    {{- if not (in $excluded (strings.TrimPrefix "/" .Name)) -}}{{- $homeStyles = $homeStyles | append . -}}{{- end -}}
+    {{- if eq (strings.TrimPrefix "/" .Name) "css/extended/custom.css" -}}
+      {{- $homeStyles = $homeStyles | append (resources.Get "css/home-shared.css") -}}
+    {{- else if not (in $excluded (strings.TrimPrefix "/" .Name)) -}}
+      {{- $homeStyles = $homeStyles | append . -}}
+    {{- end -}}
   {{- end -}}
   {{- $extendedStyles = $homeStyles -}}
   {{- $extendedName = "assets/css/extended-home.css" -}}
