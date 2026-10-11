@@ -471,7 +471,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-journal .river-author .river-author-river { font-size: 16px; }
 }
 .river-journal .river-letter p { font-size: 18px; line-height: 1.95; }
-.river-recent { margin-top: 48px; padding-top: 26px; }
+.river-recent { margin-top: 24px; padding-top: 20px; }
 .river-letter-links { gap: 14px; margin-top: 24px; }
 .river-social-link { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--river-rule); border-radius: 50%; color: var(--river-muted); }
 .river-social-link svg { width: 20px; height: 20px; }
@@ -517,10 +517,75 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-story a { grid-template-columns: 106px minmax(0, 1fr); gap: 18px; }
   .river-story h3 { font-size: 19px; }
   .river-story p { font-size: 13px; }
-  .river-recent { margin-top: 28px; padding-top: 24px; }
-  .river-topics { margin-top: 32px; }
-  .river-journal .river-letter { margin-top: 28px; }
+  .river-recent { margin-top: 12px; padding-top: 16px; }
+  .river-topics { margin-top: 16px; padding-top: 16px; }
+  .river-journal .river-letter { margin-top: 24px; padding-top: 24px; }
   .river-section-heading { margin-bottom: 20px; }
   .river-section-heading h2 { margin-top: 6px; }
   .river-section-heading > a { margin-top: 10px; }
+}
+
+/* Compact content rhythm; retain the opening illustration's breathing room. */
+.river-recent-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: var(--river-muted); font-size: 14px; line-height: 1.7; margin: 7px 0 0; }
+.river-recent-row { padding-block: 18px; }
+.river-section-heading { margin-bottom: 20px; }
+@media (min-width: 769px) {
+  .river-topics { margin-top: 24px; padding-top: 20px; }
+  .river-journal .river-letter { margin-top: 40px; padding-block: 32px; }
+}
+
+/* Editorial trial: quieter image treatment and a continuous river motif. */
+.river-recent-row { box-sizing: border-box; gap: 22px; }
+.river-recent-photo { border-radius: 4px; aspect-ratio: 4 / 3; }
+.river-recent-row h3 { font-size: 19px; line-height: 1.55; text-wrap: pretty; }
+.river-recent-row time { font-size: 12px; }
+.river-recent-category { font-size: 12px; }
+.river-recent-summary { line-height: 1.8; margin-top: 8px; }
+.river-recent, .river-topics, .river-publication-footer { position: relative; border-top: 0; }
+.river-section-current { position: absolute; top: -8px; left: 0; width: 100%; height: 16px; pointer-events: none; }
+.river-section-current path { stroke: var(--river-green); stroke-width: .8; vector-effect: non-scaling-stroke; opacity: .38; }
+.river-section-current path + path { stroke: var(--river-rust); opacity: .2; }
+.river-publication-footer { display: grid; grid-template-columns: 1fr auto; gap: 18px 32px; align-items: center; padding-top: 32px; }
+.river-footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.river-footer-brand > span { font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif; font-size: 19px; font-weight: 500; letter-spacing: .08em; }
+.river-footer-brand small { font-size: 12px; color: var(--river-muted); }
+.river-footer-navigation { justify-content: flex-end; gap: 12px; }
+.river-footer-navigation nav { gap: 12px 20px; }
+.river-footer-navigation nav a { font-size: 13px; }
+.river-footer-copyright { grid-column: 1 / -1; margin: 0; text-align: left; font-size: 11px; }
+@media (min-width: 901px) {
+  .river-recent-row { grid-template-columns: 128px minmax(0, 1fr) 16px; }
+}
+@media (max-width: 600px) {
+  .river-recent-row { gap: 14px; }
+  .river-recent-row h3 { font-size: 18px; }
+  .river-recent-photo { aspect-ratio: 1; }
+  .river-publication-footer { grid-template-columns: 1fr; gap: 20px; }
+  .river-footer-navigation, .river-footer-navigation nav { justify-content: flex-start; }
+}
+
+/* Size the gallery to each photo's original ratio, without cropping or bands. */
+.river-home .home-gallery-slide picture { display: block; width: 100%; height: 100%; }
+.river-home .home-gallery-slide img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; transform: none; }
+.river-home .home-gallery-slider { max-width: 800px; margin-inline: auto; border: 0; border-radius: 24px; background: transparent; }
+.river-home .home-gallery-viewport { aspect-ratio: var(--gallery-ratio, 1.5); }
+.river-home .home-gallery-track { height: 100%; }
+.river-home .home-gallery-slide { aspect-ratio: auto; height: 100%; }
+@media (min-width: 769px) {
+  .river-home .home-gallery-slider { max-width: min(800px, 80svh); }
+  .river-home .home-gallery-viewport { aspect-ratio: 16 / 9; }
+  .river-home .home-gallery-slide img { object-fit: cover; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .river-lead-photo img, .river-recent-photo img,
+  .river-read > span, .river-recent-arrow { transition: transform .25s ease-out; }
+  .river-recent-row:hover .river-recent-photo img { transform: scale(1.06); }
+  .river-recent-row:hover .river-recent-arrow { transform: translate(3px, -3px); color: var(--river-rust); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .river-lead-link:hover .river-lead-photo img,
+  .river-selection a:hover .river-read > span,
+  .river-recent-row:hover .river-recent-arrow { transform: none; }
+  .river-lead-photo img, .river-recent-photo img,
+  .river-read > span, .river-recent-arrow { transition: none; }
 }

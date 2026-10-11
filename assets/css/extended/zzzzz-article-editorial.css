@@ -71,7 +71,16 @@ body.publication-site .post-single .post-header-chip:visited {
 body.publication-site .post-single .post-header-chip--category,
 body.publication-site .post-single .post-header-chip--category:visited,
 body.publication-site .post-single .post-header-chip:hover { color: var(--river-rust); }
-body.publication-site .post-single .post-title { font-weight: 500; margin-bottom: 24px; line-height: 1.5; }
+/* Latin-only title font; Chinese retains the existing system serif stack. */
+@font-face {
+  font-family: "Merriweather";
+  src: url("/fonts/merriweather-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body.publication-site .post-single .post-title { font-family: "Merriweather", "Noto Serif TC", "Songti TC", "PMingLiU", serif; font-weight: 500; margin-bottom: 24px; line-height: 1.5; }
 body.publication-site .post-single .post-meta-top { font-size: 13px; padding-top: 16px; line-height: 1.9; }
 body.publication-site .post-single .post-content :is(p, ul, ol, blockquote) { margin-bottom: 1.5em; }
 body.publication-site .post-single .post-content :is(h2, h3, h4) { color: var(--river-ink); font-weight: 500; line-height: 1.6; }
@@ -126,7 +135,7 @@ body.publication-site .post-single .post-header-chip:focus-visible { outline: 2p
 @media (min-width: 769px) {
   body.publication-site .post-single {
     --article-header-width: 680px;
-    --article-text-width: 680px;
+    --article-text-width: 640px;
   }
   body.publication-site .post-single .post-header .breadcrumbs { display: none; }
   body.publication-site .post-single .post-header-chip--category::before {

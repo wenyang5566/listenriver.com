@@ -1106,6 +1106,7 @@
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0, timer = null, visible = false, hovered = false, focused = false;
     function renderGallery() {
+      if (slides[index].dataset.galleryRatio) slider.style.setProperty('--gallery-ratio', slides[index].dataset.galleryRatio);
       track.style.transform = `translateX(-${index * 100}%)`;
       slides.forEach((slide, i) => {
         slide.inert = i !== index;

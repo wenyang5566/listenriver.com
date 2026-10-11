@@ -29,7 +29,8 @@
 .publication-header .personal-header__nav-link { font-size: 14px; color: var(--pub-ink); }
 .publication-header.personal-header .header-icon-button { background: transparent !important; border-color: transparent !important; color: var(--pub-ink); width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
 .river-home .publication-header { position: sticky !important; top: 0; }
-.publication-header.personal-header .header-icon-button:is(:hover, :focus-visible, [aria-expanded="true"], [aria-current="page"], .is-active) { background: var(--pub-rule) !important; color: var(--pub-accent); }
+.publication-header.personal-header .header-icon-button:is([aria-current="page"], .is-active) { background: transparent !important; color: var(--pub-accent); }
+.publication-header.personal-header .header-icon-button:is(:hover, :focus-visible, [aria-expanded="true"]) { background: color-mix(in srgb, var(--pub-rule) 35%, var(--pub-paper)) !important; color: var(--pub-accent); }
 .publication-header .header-icon-button { border-radius: 50%; transition: background .2s, color .2s; }
 [data-theme="dark"] .publication-header.personal-header .header-icon-button, [data-theme="dark"] .publication-header .personal-header__nav-link, [data-theme="dark"] .publication-header .personal-header__nav-trigger { color: var(--pub-ink); }
 [data-theme="dark"] .publication-header.personal-header .header-icon-button:is(:hover, :focus-visible, [aria-expanded="true"], [aria-current="page"], .is-active) { color: var(--pub-accent); }

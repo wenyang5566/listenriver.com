@@ -15,6 +15,14 @@ for (const width of [390,1440]) for (const theme of ['light','dark']) {
   await expect(gallery).toHaveAttribute('data-gallery-playing','true');
   await expect.poll(()=>gallery.locator('.home-gallery-slide').first().locator('img').evaluate(e=>e.complete&&e.naturalWidth>0)).toBe(true);
   expect(await gallery.locator('.home-gallery-slide img').first().evaluate(e=>e.currentSrc)).toMatch(/\.webp$/);
+  const imageFit = await gallery.locator('.home-gallery-slide img').first().evaluate(image => {
+    const frame = image.closest('.home-gallery-slide').getBoundingClientRect();
+    const box = image.getBoundingClientRect();
+    return { fit: getComputedStyle(image).objectFit, width: Math.abs(box.width - frame.width), height: Math.abs(box.height - frame.height) };
+  });
+  expect(imageFit.fit).toBe(width > 768 ? 'cover' : 'contain');
+  expect(imageFit.width).toBeLessThan(1);
+  expect(imageFit.height).toBeLessThan(1);
   await page.clock.runFor(4000);
   expect(await current()).toBe('0');
   await page.clock.runFor(2100);
