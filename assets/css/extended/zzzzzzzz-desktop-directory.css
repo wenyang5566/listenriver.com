@@ -36,10 +36,10 @@
   .publication-header.personal-header .personal-header__nav-link-main { font-size: 15px; font-weight: 500; }
   .publication-header.personal-header .personal-header__dropdown,
   .publication-header.personal-header .desktop-nav .header-submenu__links {
-    background: var(--pub-paper); border: 1px solid var(--pub-rule);
+    background: var(--pub-paper); border: 1px solid color-mix(in srgb, var(--pub-rule) 85%, var(--pub-ink));
     border-radius: 3px; box-shadow: none;
   }
-  .publication-header.personal-header .personal-header__dropdown-inner { box-shadow: none; border-radius: 2px; }
+  .publication-header.personal-header .personal-header__dropdown-inner { border: 0; box-shadow: none; border-radius: 2px; }
   .publication-header.personal-header .personal-header__dropdown-title,
   .publication-header.personal-header .header-submenu__trigger { font-weight: 600; }
   .publication-header.personal-header .header-submenu__link { font-size: 15px; }
