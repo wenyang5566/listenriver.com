@@ -471,7 +471,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-journal .river-author .river-author-river { font-size: 16px; }
 }
 .river-journal .river-letter p { font-size: 18px; line-height: 1.95; }
-.river-recent { margin-top: 48px; padding-top: 26px; }
+.river-recent { margin-top: 24px; padding-top: 20px; }
 .river-letter-links { gap: 14px; margin-top: 24px; }
 .river-social-link { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--river-rule); border-radius: 50%; color: var(--river-muted); }
 .river-social-link svg { width: 20px; height: 20px; }
@@ -517,10 +517,19 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-story a { grid-template-columns: 106px minmax(0, 1fr); gap: 18px; }
   .river-story h3 { font-size: 19px; }
   .river-story p { font-size: 13px; }
-  .river-recent { margin-top: 28px; padding-top: 24px; }
-  .river-topics { margin-top: 32px; }
-  .river-journal .river-letter { margin-top: 28px; }
+  .river-recent { margin-top: 12px; padding-top: 16px; }
+  .river-topics { margin-top: 16px; padding-top: 16px; }
+  .river-journal .river-letter { margin-top: 24px; padding-top: 24px; }
   .river-section-heading { margin-bottom: 20px; }
   .river-section-heading h2 { margin-top: 6px; }
   .river-section-heading > a { margin-top: 10px; }
+}
+
+/* Compact content rhythm; retain the opening illustration's breathing room. */
+.river-recent-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: var(--river-muted); font-size: 14px; line-height: 1.7; margin: 7px 0 0; }
+.river-recent-row { padding-block: 18px; }
+.river-section-heading { margin-bottom: 20px; }
+@media (min-width: 769px) {
+  .river-topics { margin-top: 24px; padding-top: 20px; }
+  .river-journal .river-letter { margin-top: 40px; padding-block: 32px; }
 }

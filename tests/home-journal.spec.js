@@ -9,10 +9,18 @@ test('editorial selections, topic entrances and recent articles resolve', async 
     return document.fonts.check('500 32px "River Home"', '聆聽的河流');
   })).toBeTruthy();
   await expect(page.locator('.river-lead')).toHaveCount(1);
-  await expect(page.locator('.river-story')).toHaveCount(2);
+  await expect(page.locator('.river-story')).toHaveCount(0);
   await expect(page.locator('.river-topic')).toHaveCount(6);
   await expect(page.locator('.river-recent-row')).toHaveCount(6);
-  await expect(page.locator('.river-photo img:visible')).toHaveCount(9);
+  await expect(page.locator('.river-recent-summary')).toHaveCount(6);
+  for (const summary of await page.locator('.river-recent-summary').all()) {
+    expect((await summary.innerText()).trim()).not.toBe('');
+    expect(await summary.evaluate(element => {
+      const style = getComputedStyle(element);
+      return element.getBoundingClientRect().height <= parseFloat(style.lineHeight) * 2 + 1;
+    })).toBeTruthy();
+  }
+  await expect(page.locator('.river-photo img:visible')).toHaveCount(7);
   for (const image of await page.locator('.river-photo img:visible').all()) {
     await image.scrollIntoViewIfNeeded();
     await expect.poll(() => image.evaluate(element => element.complete && element.naturalWidth > 0)).toBeTruthy();
