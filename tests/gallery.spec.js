@@ -20,7 +20,7 @@ for (const width of [390,1440]) for (const theme of ['light','dark']) {
     const box = image.getBoundingClientRect();
     return { fit: getComputedStyle(image).objectFit, width: Math.abs(box.width - frame.width), height: Math.abs(box.height - frame.height) };
   });
-  expect(imageFit.fit).toBe('cover');
+  expect(imageFit.fit).toBe(width > 768 ? 'cover' : 'contain');
   expect(imageFit.width).toBeLessThan(1);
   expect(imageFit.height).toBeLessThan(1);
   await page.clock.runFor(4000);
