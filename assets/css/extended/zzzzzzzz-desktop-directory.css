@@ -30,11 +30,43 @@
   .publication-header .personal-header__dropdown-title::after,
   .publication-header .personal-header__dropdown-link::after { content: "→"; grid-column: 3; color: var(--pub-accent); }
   .publication-header.personal-header .personal-header__dropdown-count { color: var(--pub-ink); opacity: .65; font-size: 12px; font-weight: 400; text-align: right; }
+  /* Flat paper menus, with weight reserved for navigation hierarchy. */
+  .publication-header { --pub-hover: #f6f1ea; }
+  [data-theme="dark"] .publication-header { --pub-hover: #3c332e; }
+  .publication-header.personal-header .personal-header__nav-link-main { font-size: 15px; font-weight: 500; }
+  .publication-header.personal-header .personal-header__dropdown,
+  .publication-header.personal-header .desktop-nav .header-submenu__links {
+    background: var(--pub-paper); border: 1px solid var(--pub-rule);
+    border-radius: 3px; box-shadow: none;
+  }
+  .publication-header.personal-header .personal-header__dropdown-inner { box-shadow: none; border-radius: 2px; }
+  .publication-header.personal-header .personal-header__dropdown-title,
+  .publication-header.personal-header .header-submenu__trigger { font-weight: 600; }
+  .publication-header.personal-header .header-submenu__link { font-size: 15px; }
+  .publication-header.personal-header .personal-header__dropdown-link,
+  .publication-header.personal-header .personal-header__dropdown-title,
+  .publication-header.personal-header .header-submenu__link {
+    border-radius: 2px; transition: color 150ms ease, background-color 150ms ease;
+  }
   .publication-header.personal-header .personal-header__dropdown-link:hover,
-  .publication-header.personal-header .personal-header__dropdown-link.is-active { background: var(--pub-rule); color: var(--pub-accent); }
+  .publication-header.personal-header .personal-header__dropdown-title:hover,
+  .publication-header.personal-header .header-submenu__link:hover {
+    background: var(--pub-hover); color: var(--pub-accent);
+  }
+  .publication-header.personal-header .personal-header__dropdown-link.is-active,
+  .publication-header.personal-header .personal-header__dropdown-link[aria-current="page"],
+  .publication-header.personal-header .header-submenu__link[aria-current="page"] {
+    color: var(--pub-accent); font-weight: 600;
+    text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px;
+    background: transparent;
+  }
+  .publication-header.personal-header .personal-header__nav-link-main:hover { background: transparent; color: var(--pub-accent); }
   .publication-header .nav-group-divider { background: var(--pub-rule); }
 }
 @media (prefers-reduced-motion: reduce) {
+  .publication-header.personal-header .personal-header__dropdown-link,
+  .publication-header.personal-header .personal-header__dropdown-title,
+  .publication-header.personal-header .header-submenu__link { transition: none; }
   .publication-header.personal-header .personal-header__nav-trigger .nav-chip-chevron,
   .navigation-ready .publication-header .nav-group.is-open .nav-group-menu { transition: none; }
 }
