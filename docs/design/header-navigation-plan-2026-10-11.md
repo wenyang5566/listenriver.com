@@ -37,3 +37,7 @@ Hugo 建置、首頁 CSS 子集同步检查與首輪 42 項測試通過（41.8 �
 ## 邊框最終調整
 
 使用者驗看後選擇單層較清楚的細框：內層 border=0，外框 1px，色彩由 pub-rule 85% 與 pub-ink 15% 混合；維持無陰影。Hugo live rebuild 後桌機明暗計算樣式確認外層 1px、內層 0px、shadow=none；git diff --check 通過。使用者授權 commit，尚未發布。
+
+## Header icon 統一
+
+所有 Header icon 的 hover／focus／展開底色統一為 pub-rule 35% 與 pub-paper 65% 的淡色；目前頁與 active 保持透明背景、以 accent 色提示。房子不再獨立使用不同規則。Hugo 預覽實測 390／1440px 明暗模式全部可見 icon 的 hover 底色一致，鍵盤外框保留。使用者授權 commit，尚未發布。
