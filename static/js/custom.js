@@ -416,19 +416,18 @@
         top: 0,
         behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
       });
+      document.getElementById('river-content')?.focus({ preventScroll: true });
     });
   });
 
   if (scrollTopButtons.length) {
     const updateScrollTopButtons = () => {
-      const doc = document.documentElement;
-      const totalScrollable = Math.max(doc.scrollHeight - window.innerHeight, 1);
-      const progress = window.scrollY / totalScrollable;
-      const visible = progress > 0.3;
+      const visible = window.scrollY > Math.max(600, window.innerHeight * 0.8);
 
       scrollTopButtons.forEach((button) => {
         button.classList.toggle('is-visible', visible);
         button.setAttribute('aria-hidden', visible ? 'false' : 'true');
+        button.tabIndex = visible ? 0 : -1;
       });
     };
 

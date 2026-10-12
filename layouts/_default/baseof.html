@@ -35,7 +35,7 @@
     <main class="main" id="river-content" tabindex="-1"{{ if $indexWithPagefind }} data-pagefind-body{{ else }} data-pagefind-ignore{{ end }}>
         {{- block "main" . }}{{ end }}
     </main>
-    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+    {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") (.Store.Get "articleScrollTop" | default false) -}}
 </body>
 
 </html>
