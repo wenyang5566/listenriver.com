@@ -160,3 +160,5 @@ body.publication-site .post-single .post-header-chip:focus-visible { outline: 2p
 @media (prefers-reduced-motion: reduce) {
   body.publication-site .post-single .post-related-card__media img { transition: none; transform: none; }
 }
+
+body.publication-site .article-scroll-top:focus-visible { outline: 2px solid var(--river-rust); outline-offset: 4px; }

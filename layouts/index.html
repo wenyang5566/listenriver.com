@@ -1,7 +1,7 @@
 ﻿{{- define "main" -}}
 {{- $allPages := partial "article-pages.html" . -}}
 {{- $allPages = where $allPages "Params.hiddenInHomeList" "!=" "true" -}}
-{{- $latestLimit := 6 -}}
+{{- $latestLimit := 4 -}}
 {{- $latestPages := first $latestLimit $allPages -}}
 {{- $paginator := .Paginate $allPages -}}
 

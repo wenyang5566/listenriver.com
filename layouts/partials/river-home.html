@@ -17,7 +17,7 @@
         {{- $isLead := eq .RelPermalink $lead.RelPermalink -}}
         <div class="river-feature-slide"{{ if $i }} hidden inert{{ end }}>
           <a href="{{ .RelPermalink }}" class="river-lead-link">
-            <div class="river-photo river-lead-photo">{{ partial "river-thumbnail.html" (dict "page" . "lead" true "lazy" (gt $i 0)) }}</div>
+            <div class="river-photo river-lead-photo" data-image-shape="{{ .Params.homeFeaturedImageShape | default "rounded" }}">{{ partial "river-thumbnail.html" (dict "page" . "lead" true "lazy" (gt $i 0)) }}</div>
             <div class="river-lead-copy"><span class="river-kicker">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span><h3>{{ if $isLead }}{{ $editorial.lead.title }}{{ else }}{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}{{ end }}</h3><p>{{ if $isLead }}{{ $editorial.lead.note }}{{ else }}{{ .Description | default (.Summary | plainify) | plainify | truncate 110 }}{{ end }}</p><span class="river-read">讀這篇文章 <span aria-hidden="true">↗</span></span></div>
           </a>
         </div>
@@ -27,7 +27,6 @@
           <button type="button" data-feature-prev aria-label="上一篇精選文章"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
           <span class="river-feature-position"><span class="river-feature-counter" role="status" aria-live="off" aria-atomic="true"></span><span class="river-feature-progress" aria-hidden="true"></span></span>
           <button type="button" data-feature-next aria-label="下一篇精選文章"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
-          <button type="button" class="river-feature-toggle" data-feature-toggle aria-label="暫停精選輪播"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path class="river-pause-icon" d="M9 6v12M15 6v12"/><path class="river-play-icon" d="m9 5 10 7-10 7Z"/></svg></button>
         </div>
       </article>
 
@@ -39,7 +38,7 @@
     <div class="river-section-heading"><div><span class="river-kicker">LATEST / 02</span><h2 id="river-recent-title">最新文章</h2></div><a class="river-text-link" href="{{ "/blog/" | relURL }}">全部 {{ len .pages }} 篇文章 <span aria-hidden="true">↗</span></a></div>
     <div class="river-recent-list">
     {{- range .latest -}}
-      <article><a class="river-recent-row" href="{{ .RelPermalink }}"><div class="river-photo river-recent-photo">{{ partial "river-thumbnail.html" (dict "page" . "small" true) }}</div><div class="river-recent-copy"><div class="river-recent-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span class="river-recent-category">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3>{{- $summary := .Description | default (.Summary | plainify) | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}{{- with $summary }}<p class="river-recent-summary">{{ . | truncate 90 }}</p>{{- end }}</div><span class="river-recent-arrow" aria-hidden="true">↗</span></a></article>
+      <article><a class="river-recent-row" href="{{ .RelPermalink }}"><div class="river-photo river-recent-photo" data-thumbnail-fit="{{ .Params.homeThumbnailFit | default "cover" }}"{{ with .Params.homeThumbnailPosition }} style="{{ printf "--river-thumbnail-position: %s;" . | safeCSS }}"{{ end }}>{{ partial "river-thumbnail.html" (dict "page" . "small" true) }}</div><div class="river-recent-copy"><div class="river-recent-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time><span class="river-recent-category">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span></div><h3>{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}</h3>{{- $summary := .Params.homeSummary | default .Description | default (.Summary | plainify) | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}{{- with $summary }}<p class="river-recent-summary">{{ . }}</p>{{- end }}</div><span class="river-recent-arrow" aria-hidden="true">↗</span></a></article>
     {{- end -}}
     </div>
   </section>

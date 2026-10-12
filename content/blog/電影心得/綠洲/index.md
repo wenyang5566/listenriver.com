@@ -3,6 +3,11 @@ title: 《綠洲》電影心得
 displayTitle: 《綠洲》：對話關係帶來的超越性
 date: 2026-05-17
 featured: true
+homeFeaturedImageShape: square
+socialImage: share-v1.jpg
+homeSummary: 當語言不再是對話的必要條件，兩個被排除的人如何看見彼此？重看《綠洲》，思考關係的力量。
+homeThumbnailPosition: '50% 45%'
+homeThumbnailFit: cover
 description: 當兩個「失語」的主體相遇後，他們開始互相對話。當洪宗道讀懂了韓恭洙破碎的語言，僅是透過一個眼神、呻吟、動作，都構成了雙方可以對話的條件。最讓我感動的是最後雙方透過砍樹與廣播在對話，向彼此傳達自己的在場、自己的聆聽。當看見樹的影子消失、當聽見廣播音量提高，這些外界看似無法理解的現象，甚至視為瘋子的行為，實際上是失語的兩個主體找到回應彼此的方式，形成專屬於他們的語言，是一場最美妙的對話。
 draft: false
 type: post

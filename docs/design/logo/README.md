@@ -22,3 +22,13 @@
 此 LOGO 可以作為網站 favicon。SVG 能直接作為現代瀏覽器的圖示來源。後續接入時可使用 /images/brand/listenriver-logo.svg，並輸出 32×32、16×16 PNG/ICO 作相容備援；16 px 必須實際檢視小弧間距，若需像素微調，另外保存 favicon 專用版，不覆蓋正式 LOGO。Apple touch icon 宜另製 180×180 並加適當背景與留白。
 
 已在 `codex/hero-flow-evaluation` 接入共用頁首與首頁主標，初版保存本機 commit `1b338988`。2026-10-09 使用者確認 Hero 與 Logo 整體定稿，保存後續本機提交。正式頁首沿用定稿幾何與明暗配色；Hero 使用較輕的插畫線寬及獨立延伸河線，不覆寫正式 SVG。整合紀錄見 [首頁 Logo 整合](../../home-logo-integration-2026-10-08.md)。尚未更新遠端 PR 或部署；favicon 仍未替換。
+
+## Favicon 本機實作（2026-10-12）
+
+在 `20261012-1` 接入全站共用 head，沿用 Header 左上角的正式圖形。SVG 依瀏覽器明暗背景調整配色；20px 以下主線 4.4、小弧 3.4，16px PNG 使用相同小尺寸線寬。32／48px 與 Apple 圖示保留正式幾何；Header 原檔不變。
+
+資產位於 `static/images/brand/`：favicon.svg、favicon-16.png、favicon-32.png、favicon-48.png、favicon.ico（16／32／48px）、apple-touch-icon.png（180px，米白底、圖形占72%）。
+
+重製：`node scripts/generate-favicons.mjs`，再用已安裝 Pillow 的 Python 執行 `python scripts/generate-favicon-ico.py`。前者需要專案 Playwright 與 Windows Edge。所有圖示都是發布所需的靜態品牌資產。
+
+Hugo 建置通過，首頁／文章列表五個圖示連結均 HTTP 200；ICO 尺寸與16px PNG像素一致已驗證。已查看16／32px明暗背景預覽。已完成本機實作，尚未推送或部署。

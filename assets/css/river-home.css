@@ -429,7 +429,6 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-feature-progress { width: 56px; height: 1px; background: var(--river-rule); overflow: hidden; }
 .river-feature-progress::after { content: ''; display: block; height: 100%; background: var(--river-rust); transform: scaleX(0); transform-origin: left; }
 .river-lead[data-feature-playing="true"] .river-feature-progress::after { animation: river-feature-time 5s linear forwards; }
-.river-lead[data-feature-stopped="false"] .river-feature-toggle .river-play-icon, .river-lead[data-feature-stopped="true"] .river-feature-toggle .river-pause-icon { display: none; }
 @keyframes river-feature-time { to { transform: scaleX(1); } }
 .river-feature-controls button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--river-rule); border-radius: 50%; background: transparent; color: var(--river-ink); cursor: pointer; }
 .river-feature-controls button:hover { background: var(--river-wash); color: var(--river-rust); }
@@ -526,7 +525,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 }
 
 /* Compact content rhythm; retain the opening illustration's breathing room. */
-.river-recent-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: var(--river-muted); font-size: 14px; line-height: 1.7; margin: 7px 0 0; }
+.river-recent-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; color: var(--river-muted); font-size: 14px; line-height: 1.7; margin: 7px 0 0; }
 .river-recent-row { padding-block: 18px; }
 .river-section-heading { margin-bottom: 20px; }
 @media (min-width: 769px) {
@@ -572,7 +571,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-home .home-gallery-track { height: 100%; }
 .river-home .home-gallery-slide { aspect-ratio: auto; height: 100%; }
 @media (min-width: 769px) {
-  .river-home .home-gallery-slider { max-width: min(800px, 80svh); }
+  .river-home .home-gallery-slider { max-width: min(880px, 90svh); }
   .river-home .home-gallery-viewport { aspect-ratio: 16 / 9; }
   .river-home .home-gallery-slide img { object-fit: cover; }
 }
@@ -588,4 +587,69 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-recent-row:hover .river-recent-arrow { transform: none; }
   .river-lead-photo img, .river-recent-photo img,
   .river-read > span, .river-recent-arrow { transition: none; }
+}
+
+/* Homepage thumbnails: restrained color and article-specific framing. */
+.river-recent-photo img { object-position: var(--river-thumbnail-position, 50% 50%); filter: saturate(.88); }
+.river-recent-photo[data-thumbnail-fit=contain] img { object-fit: contain; }
+
+/* Desktop featured images retain their original proportions in a stable frame. */
+@media (min-width: 901px) {
+  :is(.river-lead-link, .river-feature-ghost-link) {
+    grid-template-columns: minmax(0, 460px) minmax(0, 560px);
+    gap: 48px;
+    justify-content: center;
+    align-items: center;
+  }
+  .river-lead-photo {
+    width: 100%;
+    height: 440px;
+    aspect-ratio: auto;
+    border-radius: 4px;
+    background: transparent;
+  }
+  .river-lead-photo img {
+    object-fit: contain;
+    object-position: center;
+  }
+  .river-feature-slides { min-height: 440px; }
+}
+/* Recent article thumbnails retain the complete image inside existing frames. */
+.river-recent-photo { background: transparent; }
+.river-recent-photo img {
+  object-fit: contain;
+  object-position: center;
+}
+/* Round the rendered photo itself, rather than its letterboxed desktop frame. */
+@media (min-width: 901px) {
+  .river-lead-photo { border-radius: 0; }
+  .river-lead-photo picture { display: flex; align-items: center; justify-content: center; }
+  .river-lead-photo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+  }
+  .river-lead-photo[data-image-shape="square"] img { border-radius: 0; }
+}
+/* Desktop featured copy uses a restrained reading width. */
+@media (min-width: 901px) {
+  .river-lead {
+    max-width: 988px;
+    margin-inline: auto;
+  }
+  :is(.river-lead-link, .river-feature-ghost-link) {
+    grid-template-columns: minmax(0, 460px) minmax(0, 480px);
+  }
+}
+@media (min-width: 901px) {
+  .river-lead-copy { min-width: 0; }
+  .river-lead-copy > :is(h3, p) { max-width: 100%; }
+}
+
+/* Touch devices and reduced-motion readers keep thumbnails still. */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .river-lead-link:hover .river-lead-photo img,
+  .river-recent-row:hover .river-recent-photo img { transform: none; }
 }

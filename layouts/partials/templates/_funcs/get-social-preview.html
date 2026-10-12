@@ -1,14 +1,22 @@
 {{- $page := . -}}
 {{- $defaultAlt := site.Params.socialDefaultImageAlt | default site.Params.description | default site.Title | plainify | htmlUnescape | strings.TrimSpace -}}
-{{- $fallbackPath := site.Params.socialDefaultImage | default "/images/og-default.png" -}}
+{{- $fallbackPath := site.Params.socialDefaultImage | default "/images/brand/share-home-v1.jpg" -}}
 {{- $image := dict
   "url" ($fallbackPath | absURL)
   "alt" $defaultAlt
   "width" "1200"
   "height" "630"
-  "type" "image/png"
+  "type" "image/jpeg"
   "isDefault" true
 -}}
+
+{{- with $page.Params.socialImage -}}
+  {{- with $page.Resources.GetMatch . -}}
+    {{- return (dict "url" .Permalink "alt" ($page.Params.cover.alt | default $page.Title) "width" (printf "%d" .Width) "height" (printf "%d" .Height) "type" .MediaType.Type "isDefault" false) -}}
+  {{- else -}}
+    {{- errorf "Missing socialImage %q on %s" . $page.RelPermalink -}}
+  {{- end -}}
+{{- end -}}
 
 {{- with $page.Params.cover.image -}}
   {{- $coverPath := . -}}
@@ -18,11 +26,15 @@
   {{- $coverType := "" -}}
   {{- $coverAlt := $page.Params.cover.alt | default ($page.Title | default site.Title) | plainify | htmlUnescape | strings.TrimSpace -}}
   {{- with $page.Resources.GetMatch $coverPath -}}
-    {{- $coverURL = .Permalink -}}
-    {{- $coverWidth = printf "%d" .Width -}}
-    {{- $coverHeight = printf "%d" .Height -}}
-    {{- $coverType = .MediaType.Type -}}
+    {{- $processed := partialCached "templates/_funcs/social-image-resource.html" . .Key -}}
+    {{- $coverURL = $processed.Permalink -}}
+    {{- $coverWidth = printf "%d" $processed.Width -}}
+    {{- $coverHeight = printf "%d" $processed.Height -}}
+    {{- $coverType = $processed.MediaType.Type -}}
   {{- else -}}
+    {{- if and (not (strings.HasPrefix $coverPath "https://")) (not (strings.HasPrefix $coverPath "http://")) (not (fileExists (printf "static/%s" (strings.TrimPrefix "/" $coverPath)))) -}}
+      {{- return $image -}}
+    {{- end -}}
     {{- if ne $page.Params.cover.relative true -}}
       {{- $coverURL = $coverPath | absURL -}}
     {{- else -}}
@@ -40,15 +52,18 @@
 {{- else -}}
   {{- with partial "templates/_funcs/get-page-images" $page -}}
     {{- with index . 0 -}}
+      {{- $pageURL := .Permalink -}}
       {{- $pageAlt := $page.Params.cover.alt | default ($page.Title | default site.Title) | plainify | htmlUnescape | strings.TrimSpace -}}
       {{- $pageWidth := index $image "width" -}}
       {{- $pageHeight := index $image "height" -}}
       {{- $pageType := index $image "type" -}}
       {{- $isDefault := eq .Permalink (($fallbackPath | absURL)) -}}
       {{- with .Image -}}
-        {{- $pageWidth = printf "%d" .Width -}}
-        {{- $pageHeight = printf "%d" .Height -}}
-        {{- $pageType = .MediaType.Type -}}
+        {{- $processed := partialCached "templates/_funcs/social-image-resource.html" . .Key -}}
+        {{- $pageURL = $processed.Permalink -}}
+        {{- $pageWidth = printf "%d" $processed.Width -}}
+        {{- $pageHeight = printf "%d" $processed.Height -}}
+        {{- $pageType = $processed.MediaType.Type -}}
         {{- $isDefault = false -}}
       {{- end -}}
       {{- $image = dict

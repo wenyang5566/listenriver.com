@@ -1,4 +1,5 @@
 {{- define "main" }}
+{{- .Store.Set "articleScrollTop" true -}}
 
 <article class="post-single">
   <header class="post-header" data-pagefind-ignore>
@@ -89,7 +90,7 @@
   </div>
   {{- end }}
 
-  <button data-pagefind-ignore class="article-scroll-top" type="button" data-scroll-top aria-label="回到頁面頂端" aria-hidden="true">
+  <button data-pagefind-ignore class="article-scroll-top" type="button" data-scroll-top aria-label="回到頁面頂端" title="回到頂端（Alt + G）" accesskey="g" tabindex="-1" aria-hidden="true">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="m6 15 6-6 6 6"></path>
     </svg>

@@ -302,3 +302,39 @@ test('mobile article tools remain visible longer on downward scroll', async ({ p
   await expect(toolbar).not.toHaveClass(/is-compact/);
   await expect(toolbar.locator('.mobile-reading-toolbar__label').first()).toBeVisible();
 });
+
+test('desktop category row slides behind the top row before becoming transparent', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  const row = page.locator('#site-header .header-nav-shell');
+  await page.evaluate(() => {
+    const header = document.getElementById('site-header');
+    header.classList.remove('nav--compact');
+    getComputedStyle(header.querySelector('.header-nav-shell')).transform;
+    header.classList.add('nav--compact');
+  });
+  const midway = await row.evaluate(element => {
+    const animations = element.getAnimations();
+    animations.forEach(animation => { animation.pause(); animation.currentTime = 140; });
+    const style = getComputedStyle(element);
+    return { opacity: style.opacity, y: new DOMMatrix(style.transform).m42, height: element.offsetHeight };
+  });
+  expect(midway.opacity).toBe('1');
+  expect(midway.y).toBeLessThan(-12);
+  expect(midway.y).toBeGreaterThanOrEqual(-midway.height);
+  await row.evaluate(element => element.getAnimations().forEach(animation => animation.finish()));
+  await expect(row).toHaveCSS('opacity', '0');
+  await page.evaluate(() => document.getElementById('site-header').classList.remove('nav--compact'));
+  const restoring = await row.evaluate(element => {
+    const animations = element.getAnimations();
+    animations.forEach(animation => { animation.pause(); animation.currentTime = 140; });
+    const style = getComputedStyle(element);
+    return { opacity: style.opacity, y: new DOMMatrix(style.transform).m42 };
+  });
+  expect(restoring.opacity).toBe('1');
+  expect(restoring.y).toBeLessThan(0);
+  expect(restoring.y).toBeGreaterThan(-midway.height);
+  await row.evaluate(element => element.getAnimations().forEach(animation => animation.finish()));
+  expect(await row.evaluate(element => new DOMMatrix(getComputedStyle(element).transform).m42)).toBe(0);
+});

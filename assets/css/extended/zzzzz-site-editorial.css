@@ -118,3 +118,24 @@ body.publication-site #search-series { background: transparent; border: 0; borde
 
 body.publication-site .home-gallery-section button:focus-visible { outline: 2px solid var(--river-rust); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) { .home-gallery-track { transition: none !important; } }
+
+/* Article thumbnails share one rule; taxonomy templates include later inline
+   hover rules, so these narrowly scoped properties explicitly take precedence. */
+body.publication-site.list :is(.post-entry, .home-latest-item) .entry-cover img,
+body.publication-site :is(.taxonomy-story-card__media, .taxonomy-feature-card__media, .taxonomy-landing-hot-card__media, .taxonomy-landing-card__media) img,
+body.publication-site .post-related-card .entry-cover img {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+body.publication-site.list :is(.post-entry, .home-latest-item) .entry-cover,
+body.publication-site.list .home-latest-item__media,
+body.publication-site :is(.taxonomy-story-card__media, .taxonomy-feature-card__media, .taxonomy-landing-hot-card__media, .taxonomy-landing-card__media),
+body.publication-site .post-related-card__media,
+body.publication-site .post-related-card .entry-cover {
+  background: transparent !important;
+}
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  body.publication-site.list :is(.post-entry, .home-latest-item) .entry-cover img,
+  body.publication-site :is(.taxonomy-story-card__media, .taxonomy-feature-card__media, .taxonomy-landing-hot-card__media, .taxonomy-landing-card__media) img,
+  body.publication-site .post-related-card .entry-cover img { transform: none !important; }
+}
