@@ -625,3 +625,16 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   object-position: center;
   transform: none;
 }
+/* Round the rendered photo itself, rather than its letterboxed desktop frame. */
+@media (min-width: 901px) {
+  .river-lead-photo { border-radius: 0; }
+  .river-lead-photo picture { display: flex; align-items: center; justify-content: center; }
+  .river-lead-photo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+  }
+  .river-lead-photo[data-image-shape="square"] img { border-radius: 0; }
+}

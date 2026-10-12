@@ -17,7 +17,7 @@
         {{- $isLead := eq .RelPermalink $lead.RelPermalink -}}
         <div class="river-feature-slide"{{ if $i }} hidden inert{{ end }}>
           <a href="{{ .RelPermalink }}" class="river-lead-link">
-            <div class="river-photo river-lead-photo">{{ partial "river-thumbnail.html" (dict "page" . "lead" true "lazy" (gt $i 0)) }}</div>
+            <div class="river-photo river-lead-photo" data-image-shape="{{ .Params.homeFeaturedImageShape | default "rounded" }}">{{ partial "river-thumbnail.html" (dict "page" . "lead" true "lazy" (gt $i 0)) }}</div>
             <div class="river-lead-copy"><span class="river-kicker">{{ index (.Params.categories | default (slice "書寫")) 0 }}</span><h3>{{ if $isLead }}{{ $editorial.lead.title }}{{ else }}{{ .Params.displayTitle | default .Title | default .File.TranslationBaseName }}{{ end }}</h3><p>{{ if $isLead }}{{ $editorial.lead.note }}{{ else }}{{ .Description | default (.Summary | plainify) | plainify | truncate 110 }}{{ end }}</p><span class="river-read">讀這篇文章 <span aria-hidden="true">↗</span></span></div>
           </a>
         </div>
