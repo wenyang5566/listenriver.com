@@ -12,12 +12,11 @@
 
 {{- with $page.Params.socialImage -}}
   {{- with $page.Resources.GetMatch . -}}
-    {{- return (dict "url" .Permalink "alt" ($page.Params.cover.alt | default $page.Title) "width" (printf "%d" .Width) "height" (printf "%d" .Height) "type" .MediaType.Type "isDefault" false) -}}
+    {{- $image = (dict "url" .Permalink "alt" ($page.Params.cover.alt | default $page.Title) "width" (printf "%d" .Width) "height" (printf "%d" .Height) "type" .MediaType.Type "isDefault" false) -}}
   {{- else -}}
     {{- errorf "Missing socialImage %q on %s" . $page.RelPermalink -}}
   {{- end -}}
-{{- end -}}
-
+{{- else -}}
 {{- with $page.Params.cover.image -}}
   {{- $coverPath := . -}}
   {{- $coverURL := "" -}}
@@ -33,14 +32,14 @@
     {{- $coverType = $processed.MediaType.Type -}}
   {{- else -}}
     {{- if and (not (strings.HasPrefix $coverPath "https://")) (not (strings.HasPrefix $coverPath "http://")) (not (fileExists (printf "static/%s" (strings.TrimPrefix "/" $coverPath)))) -}}
-      {{- return $image -}}
-    {{- end -}}
-    {{- if ne $page.Params.cover.relative true -}}
+      {{- /* Keep the default image when the local cover is missing. */ -}}
+    {{- else if ne $page.Params.cover.relative true -}}
       {{- $coverURL = $coverPath | absURL -}}
     {{- else -}}
       {{- $coverURL = (path.Join $page.RelPermalink $coverPath) | absURL -}}
     {{- end -}}
   {{- end -}}
+  {{- if $coverURL -}}
   {{- $image = dict
     "url" $coverURL
     "alt" $coverAlt
@@ -49,6 +48,7 @@
     "type" $coverType
     "isDefault" false
   -}}
+  {{- end -}}
 {{- else -}}
   {{- with partial "templates/_funcs/get-page-images" $page -}}
     {{- with index . 0 -}}
@@ -67,7 +67,7 @@
         {{- $isDefault = false -}}
       {{- end -}}
       {{- $image = dict
-        "url" .Permalink
+        "url" $pageURL
         "alt" $pageAlt
         "width" $pageWidth
         "height" $pageHeight
@@ -78,4 +78,5 @@
   {{- end -}}
 {{- end -}}
 
+{{- end -}}
 {{- return $image -}}

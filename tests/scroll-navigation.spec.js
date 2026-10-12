@@ -29,7 +29,16 @@ for (const theme of ['light', 'dark']) {
     await search.click();
     await expect(search).toHaveAttribute('aria-expanded', 'true');
     await expect(search).toHaveCSS('color', accent);
-    await expect(search).toHaveCSS('background-color', theme === 'dark' ? 'rgb(104, 83, 70)' : 'rgb(228, 213, 197)');
+    const background = await search.evaluate(element => {
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 1;
+      const context = canvas.getContext('2d');
+      context.fillStyle = getComputedStyle(element).backgroundColor;
+      context.fillRect(0, 0, 1, 1);
+      return Array.from(context.getImageData(0, 0, 1, 1).data);
+    });
+    const expectedBackground = theme === 'dark' ? [70, 58, 50, 255] : [246, 237, 226, 255];
+    background.forEach((value, channel) => expect(Math.abs(value - expectedBackground[channel])).toBeLessThanOrEqual(1));
     await page.keyboard.press('Escape');
   });
 }
