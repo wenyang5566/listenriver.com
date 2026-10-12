@@ -611,18 +611,14 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-lead-photo img {
     object-fit: contain;
     object-position: center;
-    transform: none;
   }
-  .river-lead-link:hover .river-lead-photo img { transform: none; }
   .river-feature-slides { min-height: 440px; }
 }
 /* Recent article thumbnails retain the complete image inside existing frames. */
 .river-recent-photo { background: transparent; }
-.river-recent-photo img,
-.river-recent-row:hover .river-recent-photo img {
+.river-recent-photo img {
   object-fit: contain;
   object-position: center;
-  transform: none;
 }
 /* Round the rendered photo itself, rather than its letterboxed desktop frame. */
 @media (min-width: 901px) {
@@ -650,4 +646,10 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 @media (min-width: 901px) {
   .river-lead-copy { min-width: 0; }
   .river-lead-copy > :is(h3, p) { max-width: 100%; }
+}
+
+/* Touch devices and reduced-motion readers keep thumbnails still. */
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .river-lead-link:hover .river-lead-photo img,
+  .river-recent-row:hover .river-recent-photo img { transform: none; }
 }
