@@ -572,7 +572,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 .river-home .home-gallery-track { height: 100%; }
 .river-home .home-gallery-slide { aspect-ratio: auto; height: 100%; }
 @media (min-width: 769px) {
-  .river-home .home-gallery-slider { max-width: min(800px, 80svh); }
+  .river-home .home-gallery-slider { max-width: min(880px, 90svh); }
   .river-home .home-gallery-viewport { aspect-ratio: 16 / 9; }
   .river-home .home-gallery-slide img { object-fit: cover; }
 }
