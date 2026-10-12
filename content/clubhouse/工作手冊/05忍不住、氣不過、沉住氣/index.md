@@ -3,6 +3,7 @@ title: 工作手冊 05｜沉住氣的重要
 displayTitle: 沉住氣的重要
 seriesLabel: 工作手冊 05
 date: 2026-08-19
+socialImage: share-v1.jpg
 homeSummary: 當信任換來失望，如何沉住氣？從一次工作督導，重新理解關係中的差異與自己的期待。
 homeThumbnailPosition: '50% 35%'
 homeThumbnailFit: cover

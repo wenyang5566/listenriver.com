@@ -4,6 +4,7 @@ displayTitle: 身心狀態留下的痕跡
 seriesLabel: 工作日誌 19
 date: 2026-07-23
 featured: false
+socialImage: share-v1.jpg
 homeSummary: 走路、施力與重心，都留下身心的線索。從舞蹈治療的觀察，思考助人工作如何回應身體。
 homeThumbnailPosition: '50% 35%'
 homeThumbnailFit: cover

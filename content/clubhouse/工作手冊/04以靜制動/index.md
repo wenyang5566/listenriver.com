@@ -3,6 +3,7 @@ title: 工作手冊 04｜以靜制動
 displayTitle: 以靜制動：對話是一連串的反應
 seriesLabel: 工作手冊 04
 date: 2026-05-23
+socialImage: share-v1.jpg
 homeSummary: 在對話的張力中，先穩住自己、看清反應。靜並非不作為，而是讓觀察帶出更清楚的行動。
 homeThumbnailPosition: '50% 50%'
 homeThumbnailFit: contain

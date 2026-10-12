@@ -8,10 +8,14 @@
 <meta property="og:title" content="{{ $title }}">
 <meta property="og:description" content="{{ $description }}">
 
-{{- with or .Params.locale site.Language.LanguageCode }}
-<meta property="og:locale" content="{{ replace . `-` `_` }}">
+{{- with or .Params.locale site.Language.LanguageCode -}}
+  {{- $locale := replace . "-" "_" -}}
+  {{- $parts := split $locale "_" -}}
+  {{- if ge (len $parts) 2 -}}
+    {{- $locale = printf "%s_%s" (lower (index $parts 0)) (upper (index $parts 1)) -}}
+  {{- end }}
+<meta property="og:locale" content="{{ $locale }}">
 {{- end }}
-
 {{- if .IsPage }}
 <meta property="og:type" content="article">
   {{- with .Section }}

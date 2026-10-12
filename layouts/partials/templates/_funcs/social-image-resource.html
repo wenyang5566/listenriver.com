@@ -1,0 +1,10 @@
+{{- $photo := . -}}
+{{- if reflect.IsImageResourceProcessable $photo -}}
+  {{- $photo = $photo.Filter images.AutoOrient -}}
+  {{- $photo = $photo.Fit "1200x630 jpg q85" -}}
+  {{- $canvas := resources.Get "images/social/cream.png" -}}
+  {{- $x := int (div (sub 1200 $photo.Width) 2) -}}
+  {{- $y := int (div (sub 630 $photo.Height) 2) -}}
+  {{- $photo = ($canvas.Filter (images.Overlay $photo $x $y)).Process "jpg q85" -}}
+{{- end -}}
+{{- return $photo -}}

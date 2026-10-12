@@ -3,6 +3,7 @@ title: 《綠洲》電影心得
 displayTitle: 《綠洲》：對話關係帶來的超越性
 date: 2026-05-17
 featured: true
+socialImage: share-v1.jpg
 homeSummary: 當語言不再是對話的必要條件，兩個被排除的人如何看見彼此？重看《綠洲》，思考關係的力量。
 homeThumbnailPosition: '50% 45%'
 homeThumbnailFit: cover

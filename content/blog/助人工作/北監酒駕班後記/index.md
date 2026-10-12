@@ -7,7 +7,7 @@ aliases:
   - /blog/日常書寫/20200626北監酒駕班後記/
 type: post
 cover:
-  image: images/日常書寫/北監酒駕班觀察心得.png
+  image: 北監酒駕班.png
   alt: "北監酒駕班後記：關於集體創作的觀察"
 
 categories:
