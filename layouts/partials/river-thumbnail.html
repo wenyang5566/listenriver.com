@@ -11,7 +11,11 @@
 {{- $maxWidth := 360 -}}
 {{- $loading := "lazy" -}}
 {{- if .lead -}}
-  {{- $sizes = "(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 720px" -}}
+  {{- $desktopWidth := 460 -}}
+  {{- with $resource -}}
+    {{- $desktopWidth = int (math.Min 460 (math.Ceil (mul 440 (div (float .Width) (float .Height))))) -}}
+  {{- end -}}
+  {{- $sizes = printf "(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, %dpx" $desktopWidth -}}
   {{- $widths = slice 360 540 720 1080 -}}
   {{- $maxWidth = 1080 -}}
   {{- $loading = "eager" -}}
