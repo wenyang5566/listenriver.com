@@ -3,6 +3,9 @@ title: 工作手冊 04｜以靜制動
 displayTitle: 以靜制動：對話是一連串的反應
 seriesLabel: 工作手冊 04
 date: 2026-05-23
+homeSummary: 在對話的張力中，先穩住自己、看清反應。靜並非不作為，而是讓觀察帶出更清楚的行動。
+homeThumbnailPosition: '50% 50%'
+homeThumbnailFit: contain
 description: 人與人之間總是在一連串反應中發生，我反應你的反應、你又反應，接連不斷下去。對我來說，以靜制動意味著先看清楚自己的反應、先看清楚現場，先不急著去反應和行動，觀察更清楚再行動也行。快有快的效果，慢有慢的效果。
 draft: false
 type: post

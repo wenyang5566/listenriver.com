@@ -526,7 +526,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
 }
 
 /* Compact content rhythm; retain the opening illustration's breathing room. */
-.river-recent-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; color: var(--river-muted); font-size: 14px; line-height: 1.7; margin: 7px 0 0; }
+.river-recent-summary { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; color: var(--river-muted); font-size: 14px; line-height: 1.7; margin: 7px 0 0; }
 .river-recent-row { padding-block: 18px; }
 .river-section-heading { margin-bottom: 20px; }
 @media (min-width: 769px) {
@@ -589,3 +589,7 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-lead-photo img, .river-recent-photo img,
   .river-read > span, .river-recent-arrow { transition: none; }
 }
+
+/* Homepage thumbnails: restrained color and article-specific framing. */
+.river-recent-photo img { object-position: var(--river-thumbnail-position, 50% 50%); filter: saturate(.88); }
+.river-recent-photo[data-thumbnail-fit=contain] img { object-fit: contain; }

@@ -4,6 +4,9 @@ displayTitle: 身心狀態留下的痕跡
 seriesLabel: 工作日誌 19
 date: 2026-07-23
 featured: false
+homeSummary: 走路、施力與重心，都留下身心的線索。從舞蹈治療的觀察，思考助人工作如何回應身體。
+homeThumbnailPosition: '50% 35%'
+homeThumbnailFit: cover
 description: 套一句票亮昨天說的，我們都是能量體，會留下「能量的痕跡」。身心狀態亦是如此，身體狀態是心理留下的痕跡，心理狀態是身體留下的痕跡，兩者是緊密一體的，彼此互相影響，甚至存在代償的關係。身心應該一起被檢視。
 draft: false
 type: post

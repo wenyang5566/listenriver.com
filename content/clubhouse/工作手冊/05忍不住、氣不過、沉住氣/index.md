@@ -3,6 +3,9 @@ title: 工作手冊 05｜沉住氣的重要
 displayTitle: 沉住氣的重要
 seriesLabel: 工作手冊 05
 date: 2026-08-19
+homeSummary: 當信任換來失望，如何沉住氣？從一次工作督導，重新理解關係中的差異與自己的期待。
+homeThumbnailPosition: '50% 35%'
+homeThumbnailFit: cover
 description: 當我拿出真誠跟會員建立關係互動、不斷強調我們彼此的相同之處時，創造了信任關係。可是走到某一天，發現會員始終有他的習性、他的家庭、文化、階級等，你會知道彼此仍然有不同的地方，仍然很不一樣。我想我是一時很難接受那個不一樣，忽然因為那個反差而感到受傷。
 draft: false
 type: post
