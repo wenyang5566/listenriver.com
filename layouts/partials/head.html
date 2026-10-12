@@ -109,14 +109,11 @@
 
 
 {{- /* Favicons */}}
-<link rel="icon" href="{{ site.Params.assets.favicon | default "images/favicon.png" | absURL }}">
-{{- with site.Params.assets.favicon16x16 }}
-<link rel="icon" type="image/png" sizes="16x16" href="{{ . | absURL }}">
-{{- end }}
-{{- with site.Params.assets.favicon32x32 }}
-<link rel="icon" type="image/png" sizes="32x32" href="{{ . | absURL }}">
-{{- end }}
-<link rel="apple-touch-icon" href="{{ site.Params.assets.apple_touch_icon | default "images/favicon.png" | absURL }}">
+<link rel="icon" type="image/x-icon" href="{{ "images/brand/favicon.ico" | absURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ site.Params.assets.favicon16x16 | default "images/brand/favicon-16.png" | absURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.Params.assets.favicon32x32 | default "images/brand/favicon-32.png" | absURL }}">
+<link rel="icon" type="image/svg+xml" sizes="any" href="{{ site.Params.assets.favicon | default "images/brand/favicon.svg" | absURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ site.Params.assets.apple_touch_icon | default "images/brand/apple-touch-icon.png" | absURL }}">
 <link rel="mask-icon" color="#40352f" href="{{ site.Params.assets.safari_pinned_tab | default "images/brand/listenriver-logo-mono.svg" | absURL }}">
 <meta name="theme-color" content="{{ site.Params.assets.theme_color | default "#40352f" }}">
 <meta name="msapplication-TileColor" content="{{ site.Params.assets.msapplication_TileColor | default "#40352f" }}">
