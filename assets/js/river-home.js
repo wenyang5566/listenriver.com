@@ -10,9 +10,8 @@
   const frame = carousel.querySelector('.river-feature-slides');
   const controls = carousel.querySelector('.river-feature-controls');
   const counter = carousel.querySelector('.river-feature-counter');
-  const toggle = carousel.querySelector('[data-feature-toggle]');
   if (slides.length < 2) return;
-  let current = 0, timer = null, visible = false, hovered = false, focused = false, stopped = false, engaged = false;
+  let current = 0, timer = null, visible = false, hovered = false, focused = false, engaged = false;
   let animations = [], ghost = null;
   const stopTransition = () => {
     animations.forEach(animation => animation.cancel());
@@ -64,9 +63,8 @@
   const schedule = () => {
     window.clearTimeout(timer);
     carousel.dataset.featurePlaying = 'false';
-    carousel.dataset.featureStopped = String(!engaged || stopped || reducedMotion.matches);
-    const playing = engaged && visible && !hovered && !focused && !stopped && !reducedMotion.matches && !document.hidden;
-    toggle.setAttribute('aria-label', !engaged || stopped || reducedMotion.matches ? '播放精選輪播' : '暫停精選輪播');
+    carousel.dataset.featureStopped = String(!engaged || reducedMotion.matches);
+    const playing = engaged && visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
     counter.setAttribute('aria-live', playing ? 'off' : 'polite');
     if (!playing) return;
     // Restart both the progress line and the five-second timer together.
@@ -77,15 +75,13 @@
   // Leave the opening still until the reader interacts. Automatic changes during
   // loading interrupt reading and replace the browser's initial LCP candidate.
   const engage = event => {
-    // The Play button handles its own first activation.
-    if (event?.target instanceof Element && event.target.closest("[data-feature-toggle]")) return;
     if (engaged) return;
     engaged = true;
     ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(type => document.removeEventListener(type, engage));
     schedule();
   };
   ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(type => document.addEventListener(type, engage, { passive: true }));
-  const manual = direction => { stopped = true; show(current + direction, true, direction); schedule(); };
+  const manual = direction => { show(current + direction, true, direction); schedule(); };
   let previous = '';
   try { previous = sessionStorage.getItem('river-last-feature') || ''; } catch {}
   const choices = slides.map((slide, i) => i).filter(i => slides[i].querySelector('a').getAttribute('href') !== previous);
@@ -95,10 +91,6 @@
   controls.hidden = false;
   carousel.querySelector('[data-feature-prev]').addEventListener('click', () => manual(-1));
   carousel.querySelector('[data-feature-next]').addEventListener('click', () => manual(1));
-  toggle.addEventListener('click', () => {
-    if (!engaged) { stopped = false; engage(); }
-    else { stopped = !stopped; schedule(); }
-  });
   carousel.addEventListener('mouseenter', () => { hovered = true; schedule(); });
   carousel.addEventListener('mouseleave', () => { hovered = false; schedule(); });
   carousel.addEventListener('focusin', () => { focused = true; schedule(); });

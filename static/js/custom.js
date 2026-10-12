@@ -1126,7 +1126,7 @@
       window.clearTimeout(timer);
       const playing = visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
       section.dataset.galleryPlaying = String(playing);
-      if (playing) timer = window.setTimeout(() => { index = (index + 1) % total; renderGallery(); schedule(); }, 6000);
+      if (playing) timer = window.setTimeout(() => { index = (index + 1) % total; renderGallery(); schedule(); }, 3000);
     }
     function manual(nextIndex) {
       index = (nextIndex + total) % total;

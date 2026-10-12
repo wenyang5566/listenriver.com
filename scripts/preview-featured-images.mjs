@@ -1,7 +1,7 @@
 import {chromium} from 'playwright';import {mkdir,writeFile} from 'node:fs/promises';
 const out='.tmp/social-preview/featured';await mkdir(out,{recursive:true});
 const browser=await chromium.launch({channel:'msedge'});const cases=[];
-try{const page=await browser.newPage({viewport:{width:1440,height:1100},reducedMotion:'reduce'});await page.goto('http://127.0.0.1:1313/');await page.locator('[data-feature-toggle]').click();
+try{const page=await browser.newPage({viewport:{width:1440,height:1100},reducedMotion:'reduce'});await page.goto('http://127.0.0.1:1313/');
 await page.evaluate(async()=>{for(const e of document.querySelectorAll('.river-feature-slide [data-src],.river-feature-slide [data-srcset]')){if(e.dataset.src)e.src=e.dataset.src;if(e.dataset.srcset)e.srcset=e.dataset.srcset;}document.querySelectorAll('.river-feature-slide img').forEach(e=>e.loading='eager');await Promise.all([...document.querySelectorAll('.river-feature-slide img')].map(e=>e.decode()));await document.fonts.ready;});
 const slides=await page.locator('.river-feature-slide').evaluateAll(es=>es.map((e,i)=>({i,title:e.querySelector('h3').textContent,ratio:e.querySelector('img').naturalWidth/e.querySelector('img').naturalHeight})));
 const portrait=slides.filter(s=>s.ratio<1).sort((a,b)=>a.ratio-b.ratio);const landscape=slides.filter(s=>s.ratio>=1).sort((a,b)=>b.ratio-a.ratio);const selected=[...portrait.slice(0,2),...landscape.slice(0,2)];if(!selected.length)throw Error('No loaded images');console.log(JSON.stringify({slides,selected}));

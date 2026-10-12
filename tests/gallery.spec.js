@@ -23,9 +23,9 @@ for (const width of [390,1440]) for (const theme of ['light','dark']) {
   expect(imageFit.fit).toBe(width > 768 ? 'cover' : 'contain');
   expect(imageFit.width).toBeLessThan(1);
   expect(imageFit.height).toBeLessThan(1);
-  await page.clock.runFor(4000);
+  await page.clock.runFor(2000);
   expect(await current()).toBe('0');
-  await page.clock.runFor(2100);
+  await page.clock.runFor(1100);
   expect(await current()).toBe('1');
   await gallery.hover();
   await expect(gallery).toHaveAttribute('data-gallery-playing','false');
@@ -34,7 +34,7 @@ for (const width of [390,1440]) for (const theme of ['light','dark']) {
   await expect(gallery.locator('[data-gallery-toggle]')).toHaveCount(0);
   await page.mouse.move(0,0);
   await expect(gallery).toHaveAttribute('data-gallery-playing','true');
-  await page.clock.runFor(6100);
+  await page.clock.runFor(3100);
   expect(await current()).toBe('2');
   await gallery.locator('[data-gallery-prev]').focus();
   await expect(gallery).toHaveAttribute('data-gallery-playing','false');

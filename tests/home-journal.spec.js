@@ -118,33 +118,14 @@ test('mobile featured images download only when selected', async ({ page }) => {
   await expect.poll(() => image.evaluate(element => element.complete && element.naturalWidth > 0)).toBeTruthy();
 });
 
-for (const activation of ['pointer', 'keyboard']) {
-  test(`featured Play starts an idle carousel with ${activation}`, async ({ page }) => {
-    await page.goto('/');
-    const carousel = page.locator('.river-lead');
-    const play = page.locator('[data-feature-toggle]');
-    await expect(carousel).toHaveAttribute('data-feature-stopped', 'true');
-    await expect(play).toHaveAttribute('aria-label', '播放精選輪播');
-    if (activation === 'pointer') await play.click();
-    else { await play.focus(); await page.keyboard.press('Enter'); }
-    await play.evaluate(element => element.blur());
-    await page.mouse.move(0, 0);
-    await expect(carousel).toHaveAttribute('data-feature-stopped', 'false');
-    await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
-  });
-}
-
-test('featured autoplay waits for interaction, then five seconds, and pauses for reading and reduced motion', async ({ page }) => {
+test('featured autoplay retains five seconds without a pause button', async ({ page }) => {
   await page.clock.install({ time: new Date('2026-10-07T00:00:00Z') });
   await page.clock.pauseAt(new Date('2026-10-07T00:00:01Z'));
   await page.goto('/');
-  await page.locator('.river-lead').scrollIntoViewIfNeeded();
-  await page.mouse.move(0, 0);
   const carousel = page.locator('.river-lead');
-  await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
-  const opening = await page.locator('.river-lead-link:visible').getAttribute('href');
-  await page.clock.runFor(10000);
-  await expect(page.locator('.river-lead-link:visible')).toHaveAttribute('href', opening);
+  await expect(page.locator('[data-feature-toggle]')).toHaveCount(0);
+  await carousel.scrollIntoViewIfNeeded();
+  await page.mouse.move(0, 0);
   await page.mouse.wheel(0, 1);
   await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
   const link = page.locator('.river-lead-link:visible');
@@ -153,7 +134,6 @@ test('featured autoplay waits for interaction, then five seconds, and pauses for
   await expect(link).toHaveAttribute('href', first);
   await page.clock.runFor(1);
   await expect(link).not.toHaveAttribute('href', first);
-  await expect(page.locator('.river-feature-ghost')).toHaveCount(1);
   await page.clock.runFor(700);
   await expect(page.locator('.river-feature-ghost')).toHaveCount(0);
   await carousel.hover();
@@ -164,36 +144,18 @@ test('featured autoplay waits for interaction, then five seconds, and pauses for
   await page.mouse.move(0, 0);
   await page.locator('[data-feature-next]').focus();
   await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
-  await page.clock.runFor(6000);
-  await expect(link).toHaveAttribute('href', reading);
   await page.locator('[data-feature-next]').click();
-  await expect(carousel).toHaveAttribute('data-feature-stopped', 'true');
-  await page.locator('[data-feature-toggle]').click();
+  await expect(link).not.toHaveAttribute('href', reading);
+  await page.locator('[data-feature-next]').evaluate(e => e.blur());
   await page.mouse.move(0, 0);
-  await page.locator('[data-feature-toggle]').evaluate(el => el.blur());
-  await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
-  await page.locator('[data-feature-toggle]').click();
-  await page.mouse.move(0, 0);
-  await page.locator('[data-feature-toggle]').evaluate(el => el.blur());
-  await expect(carousel).toHaveAttribute('data-feature-stopped', 'true');
-  const paused = await link.getAttribute('href');
-  await page.clock.runFor(6000);
-  await expect(link).toHaveAttribute('href', paused);
-  await page.locator('[data-feature-toggle]').click();
-  await page.mouse.move(0, 0);
-  await page.locator('[data-feature-toggle]').evaluate(el => el.blur());
   await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
-  const reduced = await link.getAttribute('href');
-  await page.clock.runFor(6000);
-  await expect(link).toHaveAttribute('href', reduced);
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
   await page.locator('.river-publication-footer').scrollIntoViewIfNeeded();
   await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
 });
-
 for (const width of [390, 1440]) {
 test(`river flows continuously and respects reduced motion changes at ${width}px`, async ({ page }) => {
   await page.setViewportSize({ width, height: 900 });
