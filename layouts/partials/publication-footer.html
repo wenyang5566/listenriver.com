@@ -1,9 +1,5 @@
-  <footer class="publication-footer river-publication-footer" aria-label="網站頁尾">
-    {{ partial "river-section-current.html" . }}
-    <a class="river-footer-brand" href="{{ "/" | relURL }}"><span>聆聽的河流</span><small>{{ hugo.Data.author.publicationSubtitle }}</small></a>
-    <div class="river-footer-navigation">
-      <nav aria-label="頁尾導覽"><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a><a href="{{ "/reading-paths/" | relURL }}">閱讀路徑</a><a href="{{ "/about/" | relURL }}">關於文揚</a></nav>
-      {{ with site.Params.salonFacebook }}<a class="river-footer-social" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook（另開分頁）" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 22v-9h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.4A25 25 0 0 0 15 1c-3 0-5 1.8-5 5v3H7v4h3v9Z"/></svg></a>{{ end }}
-    </div>
-    {{ if not site.Params.footer.hideCopyright }}<p class="river-footer-copyright">{{ with site.Copyright }}{{ . | markdownify }}{{ else }}© {{ now.Year }} 聆聽的河流{{ end }}</p>{{ end }}{{ with site.Params.footer.text }}<div class="river-footer-copyright">{{ . | markdownify }}</div>{{ end }}
-  </footer>
+<footer class="publication-footer river-publication-footer" aria-label="網站頁尾">
+  <nav aria-label="頁尾導覽"><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a><a href="{{ "/about/" | relURL }}">關於文揚</a></nav>
+  {{- if not site.Params.footer.hideCopyright }}<p>{{ with site.Copyright }}{{ . | markdownify }}{{ else }}© {{ now.Year }} 聆聽的河流{{ end }}</p>{{ end -}}
+  {{- with site.Params.footer.text }}<div>{{ . | markdownify }}</div>{{ end -}}
+</footer>

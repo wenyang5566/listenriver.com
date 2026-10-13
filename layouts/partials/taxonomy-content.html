@@ -1632,7 +1632,6 @@
             </div>
           </nav>
         </header>
-        {{ partial "category-starts.html" . }}
       </div>
 
 {{- if not $isEditorialCategory }}
@@ -1719,7 +1718,7 @@
                 {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
               {{- end -}}
               {{- $cover := or $pageBundleCover $globalResourcesCover -}}
-              {{- $excerpt := partial "article-summary.html" $page -}}
+              {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
               {{- $firstTag := index ($page.Params.tags | default (slice)) 0 -}}
               <article class="taxonomy-feature-card">
                 <a class="taxonomy-feature-card__link" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}"></a>
@@ -1809,7 +1808,7 @@
                   {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
                 {{- end -}}
                 {{- $cover := or $pageBundleCover $globalResourcesCover -}}
-                {{- $excerpt := partial "article-summary.html" $page -}}
+                {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
                 {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
                 <article{{ if $isEditorialCategory }} data-reading-tags="{{ $page.Params.tags | default (slice) | jsonify }}"{{ end }} class="taxonomy-story-card{{ if and $isEditorialCategory (not (or $cover $coverImage)) }} taxonomy-story-card--text{{ end }}">
                   <a class="taxonomy-story-card__link" href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title | plainify }}"></a>
@@ -2140,7 +2139,7 @@
               {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
             {{- end -}}
             {{- $cover := or $pageBundleCover $globalResourcesCover -}}
-            {{- $excerpt := partial "article-summary.html" $page -}}
+            {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
             {{- $firstCategory := index ($page.Params.categories | default (slice)) 0 -}}
             {{- $imageLoading := cond (eq $idx 0) "eager" "lazy" -}}
             {{- $imageFetchPriority := cond (eq $idx 0) "high" "auto" -}}
@@ -2220,7 +2219,7 @@
             {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
           {{- end -}}
           {{- $cover := or $pageBundleCover $globalResourcesCover -}}
-          {{- $excerpt := partial "article-summary.html" $page -}}
+          {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
           {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
           <article class="taxonomy-story-card{{ if and (in (slice "閱讀筆記" "電影心得") $.Title) (not (or $cover $coverImage)) }} taxonomy-story-card--text{{ end }}">
             <a class="taxonomy-story-card__link" href="{{ $page.RelPermalink }}" aria-label="{{ $page.Title | plainify }}"></a>

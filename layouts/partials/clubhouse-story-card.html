@@ -10,7 +10,7 @@
   {{- $globalResourcesCover = (resources.ByType "image").GetMatch (printf "*%s*" $coverImage) -}}
 {{- end -}}
 {{- $cover := or $pageBundleCover $globalResourcesCover -}}
-{{- $excerpt := partial "article-summary.html" $page -}}
+{{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
 {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
 
 <article class="taxonomy-story-card">

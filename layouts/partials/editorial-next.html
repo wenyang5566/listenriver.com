@@ -1,8 +1,0 @@
-{{- $entry := .entry -}}
-<nav id="related-posts" class="reading-path-next" aria-labelledby="editorial-next-title" data-editorial-next>
-  <p class="reading-path-kicker">延伸閱讀</p>
-  <h2 id="editorial-next-title">接著讀</h2>
-  <p>{{ $entry.reason }}</p>
-  <a class="reading-path-next-article" href="{{ $entry.nextArticle.RelPermalink }}"><span>{{ $entry.nextArticle.Params.displayTitle | default $entry.nextArticle.Title }}</span><span aria-hidden="true">→</span></a>
-  <div class="reading-path-next-options">{{ with index (first 1 (.page.GetTerms "categories")) 0 }}<a href="{{ .RelPermalink }}">更多{{ .LinkTitle }}</a>{{ end }}<a href="{{ "/reading-paths/" | relURL }}">探索閱讀路徑</a></div>
-</nav>

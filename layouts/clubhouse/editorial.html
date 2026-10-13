@@ -493,7 +493,7 @@
       <div class="clubhouse-featured-grid">
         {{- range $featured -}}
           {{- $cover := partial "get-page-cover-resource.html" (dict "page" .) | transform.Unmarshal -}}
-          {{- $excerpt := partial "article-summary.html" . -}}
+          {{- $excerpt := .Description | default (.Summary | plainify | htmlUnescape) -}}
           {{- $firstTag := index (.Params.tags | default (slice)) 0 -}}
           <article class="clubhouse-feature-card">
             <a class="clubhouse-feature-card__media" href="{{ .RelPermalink }}" aria-label="閱讀 {{ .Title | plainify }}">
@@ -527,7 +527,7 @@
         <div class="clubhouse-story-list">
           {{- range $page := $group.Pages -}}
             {{- $cover := partial "get-page-cover-resource.html" (dict "page" $page) | transform.Unmarshal -}}
-            {{- $excerpt := partial "article-summary.html" $page -}}
+            {{- $excerpt := $page.Description | default ($page.Summary | plainify | htmlUnescape) -}}
             {{- $tags := first 2 ($page.Params.tags | default (slice)) -}}
             <article class="clubhouse-story-card">
               <a class="clubhouse-story-card__media" href="{{ $page.RelPermalink }}" aria-label="閱讀 {{ $page.Title | plainify }}">

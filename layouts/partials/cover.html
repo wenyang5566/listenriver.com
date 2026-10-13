@@ -7,7 +7,7 @@
     {{- $loading := $.loading | default (cond $.IsSingle "eager" "lazy") -}}
     {{- $fetchpriority := $.fetchpriority | default (cond (or $.IsSingle (eq $loading "eager")) "high" "auto") -}}
     {{- $addLink := and site.Params.cover.linkFullImages $.IsSingle -}}
-    {{- $alt := ($.alt | default .Params.cover.alt | default .Params.cover.caption | default .Title | plainify) -}}
+    {{- $alt := (.Params.cover.alt | default .Params.cover.caption | default .Title | plainify) -}}
 
     {{- $coverStem := replaceRE "\\.[^.]+$" "" (path.Base $coverImage) -}}
     {{- $pageBundleCover := (.Resources.ByType "image").GetMatch (printf "%s.*" $coverStem) -}}
@@ -60,7 +60,7 @@
     {{- end -}}
 
     {{- if $.IsSingle -}}
-      {{- with (.Params.cover.caption | default $.caption) -}}
+      {{- with .Params.cover.caption -}}
         <figcaption>{{ . | markdownify }}</figcaption>
       {{- end -}}
     {{- end -}}

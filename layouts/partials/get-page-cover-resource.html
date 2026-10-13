@@ -1,7 +1,6 @@
 {{- $page := .page -}}
 {{- $fallback := .fallback | default (site.Params.salonDefaultCover | relURL) -}}
 {{- $alt := $page.Params.cover.alt | default $page.Params.cover.caption | default $page.Title | plainify -}}
-{{- with partial "editorial-context.html" $page -}}{{- $alt = .coverAlt | default $alt -}}{{- end -}}
 {{- $coverImage := $page.Params.cover.image -}}
 {{- $result := dict
   "src" $fallback

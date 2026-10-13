@@ -1,7 +1,5 @@
 {{- define "main" }}
 {{- .Store.Set "articleScrollTop" true -}}
-{{- $editorial := partial "editorial-context.html" . -}}
-{{- $editorialAlt := "" -}}{{- $editorialCaption := "" -}}{{- with $editorial -}}{{- $editorialAlt = .coverAlt -}}{{- $editorialCaption = .caption -}}{{- end -}}
 
 <article class="post-single">
   <header class="post-header">
@@ -53,11 +51,10 @@
     </div>
     {{- end }}
 
-    {{ with $editorial }}<p class="article-introduction">{{ .intro }}</p>{{ end }}
   </header>
 
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
-  {{- partialCached "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden "alt" $editorialAlt "caption" $editorialCaption) .RelPermalink true $isHidden (.Params.cover.image | default "") }}
+  {{- partialCached "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) .RelPermalink true $isHidden (.Params.cover.image | default "") }}
 
   {{- if (.Param "ShowToc") }}
     <div data-pagefind-ignore>{{- partial "toc.html" . }}</div>
@@ -85,11 +82,8 @@
     </div>
     {{- end }}
     {{- partial "post_interactions_v2.html" . -}}
-    {{- $readingPath := partial "reading-path-context.html" . -}}
-    {{- with $readingPath -}}{{- partial "reading-path-next.html" (dict "context" . "page" $) -}}{{- end -}}
-    {{- if and $editorial (not $readingPath) -}}{{- with $editorial.nextArticle -}}{{- partial "editorial-next.html" (dict "entry" $editorial "page" $) -}}{{- end -}}{{- end -}}
     {{- partial "post-series-nav.html" . -}}
-    {{- if and (not $readingPath) (not $editorial) -}}{{- partial "post_related.html" . -}}{{- end -}}
+    {{- partial "post_related.html" . -}}
     {{- if (.Param "comments") }}
       {{- partial "comments.html" . }}
     {{- end }}

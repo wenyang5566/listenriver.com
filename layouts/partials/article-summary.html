@@ -1,3 +1,0 @@
-{{- $summary := .Description | default (.Summary | plainify | htmlUnescape) -}}
-{{- with partial "editorial-context.html" . -}}{{- $summary = .intro -}}{{- end -}}
-{{- return $summary -}}
