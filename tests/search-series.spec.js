@@ -31,7 +31,8 @@ for (const {name, items} of groups) {
 test.beforeEach(async ({request}, info) => {
   if (!info.title.includes('every article')) {
     const index = await request.get('/pagefind/pagefind.js');
-    test.skip(!index.ok(), 'Search checks require a complete Hugo + Pagefind build.');
+    if (process.env.CI) expect(index.ok(), 'CI must serve a complete Hugo + Pagefind build').toBe(true);
+    else test.skip(!index.ok(), 'Search checks require a complete Hugo + Pagefind build.');
   }
 });
 for (const width of [390,1440]) for (const theme of ['light','dark']) {
