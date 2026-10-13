@@ -1,0 +1,39 @@
+{
+  "conditions": {
+    "database": "local sqlite in-memory, no production API call",
+    "sqliteVersion": "3.53.1",
+    "sql": "extracted from current incrementCounter source, ${column} replaced by views/likes"
+  },
+  "source": "workers/post-interactions/src/index.ts:137",
+  "sql": "INSERT INTO post_stats (slug, views, likes)\n       VALUES (?1, 0, 0)\n       ON CONFLICT(slug) DO UPDATE SET\n         ${column} = post_stats.${column} + 1,\n         updated_at = CURRENT_TIMESTAMP",
+  "results": [
+    {
+      "slug": "/audit-views/",
+      "field": "views",
+      "call": 1,
+      "views": 0,
+      "likes": 0
+    },
+    {
+      "slug": "/audit-views/",
+      "field": "views",
+      "call": 2,
+      "views": 1,
+      "likes": 0
+    },
+    {
+      "slug": "/audit-likes/",
+      "field": "likes",
+      "call": 1,
+      "views": 0,
+      "likes": 0
+    },
+    {
+      "slug": "/audit-likes/",
+      "field": "likes",
+      "call": 2,
+      "views": 0,
+      "likes": 1
+    }
+  ]
+}

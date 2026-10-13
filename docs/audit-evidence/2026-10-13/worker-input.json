@@ -1,0 +1,42 @@
+{
+  "conditions": {
+    "scope": "current exported Worker fetch with malformed post values, DB mock is never called, no production HTTP"
+  },
+  "results": [
+    {
+      "post": 42,
+      "status": 500,
+      "body": {
+        "error": "value.trim is not a function"
+      }
+    },
+    {
+      "post": {},
+      "status": 500,
+      "body": {
+        "error": "value.trim is not a function"
+      }
+    },
+    {
+      "post": [],
+      "status": 500,
+      "body": {
+        "error": "value.trim is not a function"
+      }
+    },
+    {
+      "post": null,
+      "status": 400,
+      "body": {
+        "error": "Missing post in request body."
+      }
+    },
+    {
+      "post": "",
+      "status": 400,
+      "body": {
+        "error": "Missing post in request body."
+      }
+    }
+  ]
+}

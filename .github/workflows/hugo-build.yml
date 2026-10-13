@@ -32,6 +32,9 @@ jobs:
       - name: Install site dependencies
         run: npm ci
 
+      - name: Validate exact search aliases
+        run: node --test tests/unit/search-query.mjs
+
       - name: Build site
         run: npm run build
 
@@ -50,6 +53,9 @@ jobs:
 
       - name: Validate search UX
         run: npm run check:search-ux
+
+      - name: Validate search recall
+        run: node scripts/check-search-recall.mjs
 
       - name: Validate sitemap URLs
         run: |
@@ -92,12 +98,15 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: npm
-          cache-dependency-path: workers/post-interactions/package.json
+          cache-dependency-path: workers/post-interactions/package-lock.json
 
       - name: Install worker dependencies
-        run: npm install
+        run: npm ci
 
       - name: Check worker
         run: npm run check
+
+      - name: Validate local D1 behavior
+        run: npm test

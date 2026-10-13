@@ -16,11 +16,12 @@
       <div class="home-gallery-track" data-gallery-track>
         {{- range $index, $file := $slides -}}
         {{- $image := resources.Get (printf "images/home/gallery/%s" $file) -}}
+        {{- $alt := index (index hugo.Data "gallery-alt") $file -}}
         <div class="home-gallery-slide"{{ with $image }} data-gallery-ratio="{{ div (float .Width) (float .Height) }}"{{ end }}>
           {{- if $image -}}
             {{- partialCached "optimized-image.html" (dict
               "resource" $image
-              "alt" (printf "首頁圖集 %d" (add $index 1))
+              "alt" $alt
               "loading" "lazy"
               "sizes" "(min-width: 769px) min(880px, 90vh), calc(100vw - 44px)"
               "maxWidth" 1200
@@ -30,7 +31,7 @@
           {{- else -}}
             <img
               src="{{ printf "/images/home/gallery/%s" $file | relURL }}"
-              alt="{{ printf "首頁圖集 %d" (add $index 1) }}"
+              alt="{{ $alt }}"
               loading="lazy"
               decoding="async">
           {{- end -}}

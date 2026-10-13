@@ -1169,6 +1169,8 @@ body.mobile-nav-locked {
   background: transparent;
 }
 
+[data-mobile-reading-toolbar][hidden] { display: none !important; }
+
 .mobile-reading-toolbar__item {
   appearance: none;
   min-width: 0;
@@ -1177,7 +1179,7 @@ body.mobile-nav-locked {
   border: 0;
   border-radius: 8px;
   background: transparent;
-  color: rgba(76, 72, 66, 0.72);
+  color: #4c4842;
   font: inherit;
   text-decoration: none;
   display: flex;
@@ -2188,7 +2190,7 @@ body.mobile-nav-locked {
 .post-interactions--offline .post-like-button,
 .post-interactions--offline .post-comment-button,
 .post-interactions--offline .post-floating-tools__item {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .post-rabbit-burst {
@@ -6919,24 +6921,25 @@ body:not(.list) .main .salon-hero {
 .home-gallery-dots {
   display: flex;
   justify-content: center;
-  gap: 0.65rem;
+  gap: 2px;
 }
 
 .home-gallery-dot {
-  width: 10px;
-  height: 10px;
+  width: 28px;
+  height: 44px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: rgba(17, 24, 39, 0.18);
+  border-radius: 6px;
+  background: transparent;
+  display: grid;
+  place-items: center;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.home-gallery-dot.is-active {
-  width: 24px;
-  background: rgba(17, 24, 39, 0.55);
-}
+.home-gallery-dot::before { content: ""; width: 10px; height: 10px; border-radius: 999px; background: rgba(17, 24, 39, 0.4); }
+.home-gallery-dot.is-active::before { width: 20px; background: rgba(17, 24, 39, 0.7); }
+@media (min-width: 600px) { .home-gallery-dot { width: 44px; } }
 
 .home-author-card {
   display: grid;
@@ -10302,12 +10305,14 @@ body.list .blog-archive-entry .home-latest-item__excerpt {
 }
 
 .feat-dot {
-  width: 10px;
-  height: 10px;
+  width: 28px;
+  height: 44px;
   padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: rgba(17, 24, 39, 0.18);
+  border-radius: 6px;
+  background: transparent;
+  display: grid;
+  place-items: center;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -10447,11 +10452,11 @@ body.list .blog-archive-entry .home-latest-item__excerpt {
   background: rgba(255, 255, 255, 0.04);
 }
 
-[data-theme="dark"] .home-gallery-dot {
-  background: rgba(255, 255, 255, 0.22);
+[data-theme="dark"] .home-gallery-dot::before {
+  background: rgba(255, 255, 255, 0.5);
 }
 
-[data-theme="dark"] .home-gallery-dot.is-active {
+[data-theme="dark"] .home-gallery-dot.is-active::before {
   background: rgba(111, 202, 209, 0.82);
 }
 

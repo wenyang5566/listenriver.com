@@ -1,0 +1,12 @@
+{{- define "main" }}
+<section class="missing-page" aria-labelledby="missing-page-title">
+  <p class="taxonomy-page-kicker">404</p>
+  <h1 id="missing-page-title">找不到這一頁</h1>
+  <p>網址可能有誤，或這一頁已經搬家。你可以搜尋文章，或從下面的入口繼續閱讀。</p>
+  <form action="{{ "/search/" | relURL }}" method="get" role="search" aria-label="尋找文章">
+    <label for="missing-search">搜尋文章</label>
+    <div><input id="missing-search" type="search" name="q" placeholder="輸入文章名稱或主題"><button type="submit">搜尋</button></div>
+  </form>
+  <nav aria-label="繼續閱讀"><a href="{{ "/" | relURL }}">回到首頁</a><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a></nav>
+</section>
+{{- end }}

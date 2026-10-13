@@ -1,0 +1,8 @@
+/* Quiet shared footer; keep author links distinguishable. */
+body .publication-footer { display: block; max-width: 1184px; width: calc(100% - 96px); margin: 40px auto 0; padding: 16px 0 24px; border-top: 1px solid var(--border); text-align: center; color: var(--secondary); font-size: 12px; line-height: 1.8; }
+body .publication-footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0 24px; }
+body .publication-footer nav a { display: inline-flex; align-items: center; min-height: 44px; color: var(--primary); font-size: 13px; }
+body .publication-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+body .publication-footer p { margin: 4px 0 0; }
+body.publication-site .post-single .post-meta a.post-meta-author { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+@media(max-width:768px) { body .publication-footer { width: calc(100% - 44px); margin-top: 28px; } }

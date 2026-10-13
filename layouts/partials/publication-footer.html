@@ -1,0 +1,5 @@
+<footer class="publication-footer river-publication-footer" aria-label="網站頁尾">
+  <nav aria-label="頁尾導覽"><a href="{{ "/blog/" | relURL }}">所有文章</a><a href="{{ "/categories/" | relURL }}">文章分類</a><a href="{{ "/about/" | relURL }}">關於文揚</a></nav>
+  {{- if not site.Params.footer.hideCopyright }}<p>{{ with site.Copyright }}{{ . | markdownify }}{{ else }}© {{ now.Year }} 聆聽的河流{{ end }}</p>{{ end -}}
+  {{- with site.Params.footer.text }}<div>{{ . | markdownify }}</div>{{ end -}}
+</footer>

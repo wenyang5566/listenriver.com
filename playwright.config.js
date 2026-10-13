@@ -63,7 +63,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'hugo server --bind 127.0.0.1 --port 1313 --disableFastRender',
+    command: process.env.CI
+      ? 'npm run build && node scripts/serve-test-site.mjs public 1313'
+      : 'hugo server --bind 127.0.0.1 --port 1313 --disableFastRender',
     url: 'http://127.0.0.1:1313',
     reuseExistingServer: !process.env.CI,
     timeout: process.env.CI ? 420 * 1000 : 120 * 1000,

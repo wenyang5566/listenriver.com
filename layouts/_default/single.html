@@ -2,7 +2,7 @@
 {{- .Store.Set "articleScrollTop" true -}}
 
 <article class="post-single">
-  <header class="post-header" data-pagefind-ignore>
+  <header class="post-header">
     <meta data-pagefind-meta="title[content]" content="{{ .Title }}">
     <meta data-pagefind-meta="category[content]" content="{{ delimit (.Params.categories | default (slice)) "、" }}">
     <meta data-pagefind-meta="tags[content]" content="{{ delimit (.Params.tags | default (slice)) "、" }}">
@@ -19,18 +19,18 @@
     {{- if or $seriesLabel (or (gt (len $categories) 0) (gt (len $tags) 0)) }}
     <div class="post-header-taxonomy" aria-label="文章分類與主題">
       {{- range $categories }}
-      <a class="post-header-chip post-header-chip--category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+      <a data-pagefind-ignore class="post-header-chip post-header-chip--category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
       {{- end }}
       {{- with $seriesLabel }}
-      <span class="post-header-chip post-header-chip--series">{{ . }}</span>
+      <span class="post-header-chip post-header-chip--series" data-pagefind-index-attrs="data-series-search" data-series-search="{{ replaceRE ` 0+([0-9]+)$` ` $1` . }}">{{ . }}</span>
       {{- end }}
       {{- range $tags }}
-      <a class="post-header-chip post-header-chip--tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+      <a data-pagefind-ignore class="post-header-chip post-header-chip--tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
       {{- end }}
     </div>
     {{- end }}
 
-    <h1 class="post-title entry-hint-parent">
+    <h1 class="post-title entry-hint-parent" data-pagefind-weight="5" data-pagefind-index-attrs="data-search-key{{ if and .Params.displayTitle (ne .Params.displayTitle .Title) }},data-search-title{{ end }}" data-search-key="{{ partial "article-search-key.html" . }}"{{ if and .Params.displayTitle (ne .Params.displayTitle .Title) }} data-search-title="{{ .Title }}"{{ end }}>
       {{ .Params.displayTitle | default .Title }}
       {{- if .Draft }}
       <span class="entry-hint" title="Draft">
@@ -43,7 +43,7 @@
     </h1>
 
     {{- if not (.Param "hideMeta") }}
-    <div class="post-meta post-meta-top">
+    <div class="post-meta post-meta-top" data-pagefind-ignore>
       {{- partial "post_meta.html" . -}}
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
