@@ -1,4 +1,4 @@
-<nav class="mobile-reading-toolbar" data-mobile-reading-toolbar aria-label="手機文章閱讀工具列">
+<nav class="mobile-reading-toolbar" data-mobile-reading-toolbar hidden aria-label="手機文章閱讀工具列">
   <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-back data-fallback-url="{{ "/" | relLangURL }}" aria-label="上一頁">
     <span class="mobile-reading-toolbar__icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -164,6 +164,7 @@
       });
     }
 
+    toolbar.hidden = false;
     showToolbar();
   })();
 </script>

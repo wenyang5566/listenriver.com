@@ -1169,6 +1169,8 @@ body.mobile-nav-locked {
   background: transparent;
 }
 
+[data-mobile-reading-toolbar][hidden] { display: none !important; }
+
 .mobile-reading-toolbar__item {
   appearance: none;
   min-width: 0;

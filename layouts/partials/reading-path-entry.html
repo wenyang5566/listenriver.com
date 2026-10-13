@@ -1,0 +1,6 @@
+{{- with index (partialCached "reading-paths.html" .) 0 -}}
+<aside class="reading-path-entry" aria-label="沿著一個問題閱讀">
+  <div><span class="reading-path-kicker">一條閱讀路徑 · {{ len .nodes }} 篇</span><h3>{{ .title }}</h3><p>自身經驗 → 閱讀與理解 → 對話 → 工作現場</p></div>
+  <a href="{{ .hub.RelPermalink }}" data-reading-path-entry>沿著這條線讀 <span aria-hidden="true">→</span></a>
+</aside>
+{{- end -}}

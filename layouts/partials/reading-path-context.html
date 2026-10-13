@@ -1,0 +1,13 @@
+{{- $context := false -}}
+{{- $current := .RelPermalink -}}
+{{- range partialCached "reading-paths.html" . -}}
+  {{- $path := . -}}
+  {{- range $index, $node := .nodes -}}
+    {{- if eq $node.article.RelPermalink $current -}}
+      {{- $next := false -}}
+      {{- if lt (add $index 1) (len $path.nodes) -}}{{- $next = index $path.nodes (add $index 1) -}}{{- end -}}
+      {{- $context = dict "path" $path "node" $node "next" $next -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $context -}}

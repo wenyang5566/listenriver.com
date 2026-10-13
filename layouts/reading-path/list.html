@@ -1,0 +1,29 @@
+{{- define "main" -}}
+{{- $page := . -}}
+{{- range partialCached "reading-paths.html" . -}}
+{{- if eq .id $page.Params.readingPath -}}
+<article class="reading-path-page" data-reading-path="{{ .id }}">
+  <header class="reading-path-header">
+    <a class="reading-path-back" href="{{ "/" | relURL }}">← 回到首頁</a>
+    <p class="reading-path-kicker">一個問題，{{ len .nodes }} 篇書寫</p>
+    <h1>{{ .title }}</h1>
+    <div class="reading-path-introduction">{{ $page.Content }}</div>
+    <a class="reading-path-start" href="{{ (index .nodes 0).article.RelPermalink }}" data-reading-path-start>從第一篇開始 <span aria-hidden="true">→</span></a>
+  </header>
+  <div class="reading-path-river">
+    <svg class="reading-path-line" viewBox="0 0 72 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M36 0C8 80 64 120 36 210S8 335 36 420 64 540 36 625 8 750 36 840 64 935 36 1000"/></svg>
+    <ol class="reading-path-nodes" role="list" aria-label="{{ .title }}的閱讀順序">
+      {{- range .nodes -}}
+      <li class="reading-path-node" data-path-node="{{ .number }}">
+        <span class="reading-path-number" aria-hidden="true">{{ printf "%02d" .number }}</span>
+        <div class="reading-path-node-copy"><p class="reading-path-kicker">{{ .theme }}</p><h2>{{ .question }}</h2><p>{{ .note }}</p><a class="reading-path-article" href="{{ .article.RelPermalink }}" data-reading-path-article>{{ .article.Params.displayTitle | default .article.Title }} <span aria-hidden="true">↗</span></a></div>
+        <div class="reading-path-image" aria-hidden="true">{{- partial "cover.html" (dict "cxt" .article "IsSingle" false "isHidden" false "loading" "lazy" "sizes" "(max-width: 600px) 88px, 160px" "widths" (slice 160 240 320) "maxWidth" 320) -}}</div>
+      </li>
+      {{- end -}}
+    </ol>
+  </div>
+  <footer class="reading-path-footer"><p>四篇文章各自留下了不同的提問。沿著這條線讀，也可以回到各自的書寫方向，繼續找想讀的文章。</p><a href="{{ "/categories/" | relURL }}">探索其他書寫方向 →</a></footer>
+</article>
+{{- end -}}
+{{- end -}}
+{{- end -}}

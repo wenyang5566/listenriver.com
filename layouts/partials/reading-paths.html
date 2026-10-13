@@ -1,0 +1,15 @@
+{{- /* Resolve the same curated paths for the homepage, hub and article endings. */ -}}
+{{- $paths := slice -}}
+{{- range $key, $path := index hugo.Data "reading-paths" -}}
+  {{- $hub := site.GetPage $path.destination -}}
+  {{- if not $hub -}}{{- errorf "Reading path %s has no hub at %s" $key $path.destination -}}{{- end -}}
+  {{- $nodes := slice -}}
+  {{- range $index, $node := $path.nodes -}}
+    {{- $article := site.GetPage $node.page -}}
+    {{- if or (not $article) $article.Draft -}}{{- errorf "Reading path %s has an unavailable article at %s" $key $node.page -}}{{- end -}}
+    {{- $nodes = $nodes | append (merge $node (dict "article" $article "number" (add $index 1))) -}}
+  {{- end -}}
+  {{- if lt (len $nodes) 2 -}}{{- errorf "Reading path %s needs at least two articles" $key -}}{{- end -}}
+  {{- $paths = $paths | append (dict "id" $key "title" $path.title "introduction" $path.introduction "hub" $hub "nodes" $nodes) -}}
+{{- end -}}
+{{- return $paths -}}

@@ -506,6 +506,8 @@ body.mobile-nav-locked {
   overflow: hidden;
 }
 
+[data-mobile-reading-toolbar][hidden] { display: none !important; }
+
 .category-entry:has(.entry-cover) .entry-header,
 .category-entry:has(.entry-cover) .entry-content,
 .category-entry:has(.entry-cover) .entry-footer {

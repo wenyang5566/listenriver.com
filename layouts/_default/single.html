@@ -82,8 +82,10 @@
     </div>
     {{- end }}
     {{- partial "post_interactions_v2.html" . -}}
+    {{- $readingPath := partial "reading-path-context.html" . -}}
+    {{- with $readingPath -}}{{- partial "reading-path-next.html" (dict "context" . "page" $) -}}{{- end -}}
     {{- partial "post-series-nav.html" . -}}
-    {{- partial "post_related.html" . -}}
+    {{- if not $readingPath -}}{{- partial "post_related.html" . -}}{{- end -}}
     {{- if (.Param "comments") }}
       {{- partial "comments.html" . }}
     {{- end }}
