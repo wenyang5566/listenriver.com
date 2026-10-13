@@ -1,0 +1,39 @@
+{
+  "removedTags": {
+    "電影": "電影心得",
+    "講座": "講座筆記"
+  },
+  "expectedArticles": 226,
+  "expectedTagCount": 39,
+  "expectedTermCounts": {
+    "電影心得": 33,
+    "講座筆記": 9,
+    "講座心得": 3
+  },
+  "articleChanges": {
+    "電影": 30,
+    "講座": 4
+  },
+  "redirects": [
+    "/tags/電影 /tags/電影心得/ 301",
+    "/tags/電影/ /tags/電影心得/ 301",
+    "/tags/電影/index.html /tags/電影心得/ 301",
+    "/tags/電影/index.xml /tags/電影心得/index.xml 301",
+    "/tags/電影/page/1 /tags/電影心得/ 301",
+    "/tags/電影/page/1/ /tags/電影心得/ 301",
+    "/tags/電影/page/1/index.html /tags/電影心得/ 301",
+    "/tags/電影/page/2 /tags/電影心得/page/2/ 301",
+    "/tags/電影/page/2/ /tags/電影心得/page/2/ 301",
+    "/tags/電影/page/2/index.html /tags/電影心得/page/2/ 301",
+    "/tags/電影/page/3 /tags/電影心得/page/3/ 301",
+    "/tags/電影/page/3/ /tags/電影心得/page/3/ 301",
+    "/tags/電影/page/3/index.html /tags/電影心得/page/3/ 301",
+    "/tags/講座 /tags/講座筆記/ 301",
+    "/tags/講座/ /tags/講座筆記/ 301",
+    "/tags/講座/index.html /tags/講座筆記/ 301",
+    "/tags/講座/index.xml /tags/講座筆記/index.xml 301",
+    "/tags/講座/page/1 /tags/講座筆記/ 301",
+    "/tags/講座/page/1/ /tags/講座筆記/ 301",
+    "/tags/講座/page/1/index.html /tags/講座筆記/ 301"
+  ]
+}

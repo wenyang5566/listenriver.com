@@ -318,7 +318,7 @@ async function checkSeriesEntries(browser, origin) {
 const localServer = externalTarget ? null : await startStaticServer();
 const origin = localServer?.origin || new URL(externalTarget).origin;
 const target = externalTarget || toSearchTarget(origin);
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch({ headless: true, ...(process.platform === "win32" ? { channel: "msedge" } : {}) });
 
 try {
   await checkPrefilledSearch(browser, target, "desktop", { width: 1280, height: 900 });

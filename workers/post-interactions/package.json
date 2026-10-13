@@ -4,13 +4,19 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev --local",
-    "check": "wrangler check",
+    "check": "tsc --noEmit && wrangler deploy --dry-run --outdir ../../.tmp/phase-one/worker-build",
     "deploy": "wrangler deploy",
     "d1:migrate:local": "wrangler d1 migrations apply listenriver-post-interactions --local",
-    "d1:migrate:remote": "wrangler d1 migrations apply listenriver-post-interactions --remote"
+    "d1:migrate:remote": "wrangler d1 migrations apply listenriver-post-interactions --remote",
+    "test": "node --test tests/interactions.mjs"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261013.1",
+    "miniflare": "^5.20261006.1-alpha",
     "typescript": "^5.8.3",
     "wrangler": "^4.11.1"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

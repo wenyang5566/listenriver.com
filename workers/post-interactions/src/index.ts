@@ -11,7 +11,7 @@ type StatsRow = {
 };
 
 type JsonBody = {
-  post?: string;
+  post?: unknown;
 };
 
 export default {
@@ -61,8 +61,8 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
 
     return json({ error: "Not found." }, 404, corsHeaders);
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Unknown error";
-    return json({ error: message }, 500, corsHeaders);
+    if (error instanceof InputError) return json({ error: error.message }, error.status, corsHeaders);
+    return json({ error: "Unable to update article statistics." }, 500, corsHeaders);
   }
 }
 
@@ -81,30 +81,30 @@ function buildCorsHeaders(request: Request, env: Env): Headers {
   });
 }
 
-async function readJson(request: Request): Promise<JsonBody> {
-  const contentLength = request.headers.get("Content-Length");
-  if (contentLength === "0") {
-    return {};
-  }
-
-  return (await request.json()) as JsonBody;
+class InputError extends Error {
+  constructor(message: string, public status = 400) { super(message); }
 }
 
-function normalizeSlug(value: string | null | undefined): string | null {
-  if (!value) return null;
+async function readJson(request: Request): Promise<JsonBody> {
+  if (Number(request.headers.get("Content-Length")) > 8192) throw new InputError("Request body too large.", 413);
+  const text = await request.text();
+  if (new TextEncoder().encode(text).length > 8192) throw new InputError("Request body too large.", 413);
+  let body: unknown;
+  try { body = JSON.parse(text); } catch { throw new InputError("Invalid JSON body."); }
+  if (!body || typeof body !== "object" || Array.isArray(body)) throw new InputError("Expected a JSON object.");
+  return body as JsonBody;
+}
 
+function normalizeSlug(value: unknown): string | null {
+  if (typeof value !== "string") return null;
   let slug = value.trim();
-  if (!slug) return null;
-
-  if (!slug.startsWith("/")) {
-    slug = `/${slug}`;
-  }
-
-  if (!slug.endsWith("/")) {
-    slug = `${slug}/`;
-  }
-
-  return slug;
+  if (!slug || slug.length > 2048) return null;
+  if (!slug.startsWith("/")) slug = `/${slug}`;
+  let decoded: string;
+  try { decoded = decodeURIComponent(slug); } catch { return null; }
+  if (decoded.startsWith("//") || /[\\?#\s\u0000-\u001f\u007f]/u.test(decoded) || decoded.split("/").some(part => part === "." || part === "..")) return null;
+  if (!slug.endsWith("/")) slug = `${slug}/`;
+  return slug.length <= 2048 ? slug : null;
 }
 
 async function getOrCreateStats(db: D1Database, slug: string): Promise<StatsRow> {
@@ -143,7 +143,7 @@ async function incrementCounter(
   await db
     .prepare(
       `INSERT INTO post_stats (slug, views, likes)
-       VALUES (?1, 0, 0)
+       VALUES (?1, ${field === "views" ? 1 : 0}, ${field === "likes" ? 1 : 0})
        ON CONFLICT(slug) DO UPDATE SET
          ${column} = post_stats.${column} + 1,
          updated_at = CURRENT_TIMESTAMP`

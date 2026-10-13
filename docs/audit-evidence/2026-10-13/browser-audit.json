@@ -1,0 +1,414 @@
+{
+  "conditions": {
+    "browser": "155.0.4283.45",
+    "base": "http://127.0.0.1:1340",
+    "thirdParty": "all external blocked, first-party DOM/runtime only",
+    "reducedMotion": "reduce",
+    "axe": true
+  },
+  "results": [
+    {
+      "name": "home",
+      "path": "/",
+      "width": 390,
+      "theme": "light",
+      "title": "聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "聆聽的河流"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 11
+          }
+        ],
+        "passes": 23
+      }
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "width": 1440,
+      "theme": "light",
+      "title": "聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "聆聽的河流"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 11
+          }
+        ],
+        "passes": 23
+      }
+    },
+    {
+      "name": "home",
+      "path": "/",
+      "width": 1440,
+      "theme": "dark",
+      "title": "聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "聆聽的河流"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 11
+          }
+        ],
+        "passes": 23
+      }
+    },
+    {
+      "name": "reading",
+      "path": "/categories/閱讀筆記/",
+      "width": 390,
+      "theme": "light",
+      "title": "閱讀筆記 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "閱讀筆記"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 60
+          }
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "name": "movie",
+      "path": "/tags/電影心得/",
+      "width": 1440,
+      "theme": "dark",
+      "title": "電影心得 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "#電影心得"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 30
+          }
+        ],
+        "passes": 22
+      }
+    },
+    {
+      "name": "article",
+      "path": "/blog/成為自己/正念的意義就在手中/",
+      "width": 390,
+      "theme": "light",
+      "title": "正念的意義就在手中 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "正念的意義就在手中"
+      ],
+      "brokenImages": [
+        ""
+      ],
+      "font": "merriweather, \"noto serif tc\", \"songti tc\", pmingliu, serif",
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".post-comment-button > span:nth-child(3)"
+                ],
+                "html": "<span>留言</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.96 (foreground color: #a09083, background color: #fffaf2, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".post-like-button > span:nth-child(3)"
+                ],
+                "html": "<span>喜歡這篇文章</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.96 (foreground color: #a09083, background color: #fffaf2, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "button[data-mobile-reading-back=\"\"] > .mobile-reading-toolbar__label"
+                ],
+                "html": "<span class=\"mobile-reading-toolbar__label\">上一頁</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #7e7a73, background color: #fffaf2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  ".mobile-reading-toolbar__icon--text"
+                ],
+                "html": "<span class=\"mobile-reading-toolbar__icon mobile-reading-toolbar__icon--text\" aria-hidden=\"true\">Aa</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #7e7a73, background color: #fffaf2, font size: 12.6pt (16.8px), font weight: bold). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "button[data-mobile-reading-size=\"\"] > .mobile-reading-toolbar__label"
+                ],
+                "html": "<span class=\"mobile-reading-toolbar__label\">字級</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #7e7a73, background color: #fffaf2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "button[data-mobile-reading-related=\"\"] > .mobile-reading-toolbar__label"
+                ],
+                "html": "<span class=\"mobile-reading-toolbar__label\">更多文章</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #7e7a73, background color: #fffaf2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+              },
+              {
+                "target": [
+                  "button[data-mobile-reading-share=\"\"] > .mobile-reading-toolbar__label"
+                ],
+                "html": "<span class=\"mobile-reading-toolbar__label\">分享</span>",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.1 (foreground color: #7e7a73, background color: #fffaf2, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ]
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "impact": "serious",
+            "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+            "help": "Elements must have their visible text as part of their accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  "button[data-mobile-reading-size=\"\"]"
+                ],
+                "html": "<button class=\"mobile-reading-toolbar__item\" type=\"button\" data-mobile-reading-size=\"\" aria-label=\"調整文章字級，目前為標準\" data-reading-size-current=\"normal\">",
+                "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "nodes": 1
+          },
+          {
+            "id": "color-contrast",
+            "nodes": 12
+          },
+          {
+            "id": "link-in-text-block",
+            "nodes": 1
+          }
+        ],
+        "passes": 25
+      }
+    },
+    {
+      "name": "article",
+      "path": "/blog/成為自己/正念的意義就在手中/",
+      "width": 1440,
+      "theme": "dark",
+      "title": "正念的意義就在手中 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "正念的意義就在手中"
+      ],
+      "brokenImages": [
+        ""
+      ],
+      "font": "merriweather, \"noto serif tc\", \"songti tc\", pmingliu, serif",
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [
+          {
+            "id": "link-in-text-block",
+            "impact": "serious",
+            "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+            "help": "Links must be distinguishable without relying on color",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/link-in-text-block?application=axeAPI",
+            "nodes": [
+              {
+                "target": [
+                  ".post-meta-author"
+                ],
+                "html": "<a class=\"post-meta-item post-meta-author\" href=\"/about/\">文揚 Wen-Yang</a>",
+                "failureSummary": "Fix any of the following:\n  The link has insufficient color contrast of 1.62:1 with the surrounding text. (Minimum contrast is 3:1, link text: #fff1df, surrounding text: #d5bda6)\n  The link has no styling (such as underline) to distinguish it from the surrounding text"
+              }
+            ]
+          }
+        ],
+        "incomplete": [
+          {
+            "id": "aria-prohibited-attr",
+            "nodes": 1
+          },
+          {
+            "id": "color-contrast",
+            "nodes": 12
+          }
+        ],
+        "passes": 25
+      }
+    },
+    {
+      "name": "about",
+      "path": "/about/",
+      "width": 1440,
+      "theme": "light",
+      "title": "關於 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "文揚 Wen-Yang"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [],
+        "passes": 20
+      }
+    },
+    {
+      "name": "clubhouse",
+      "path": "/clubhouse/",
+      "width": 390,
+      "theme": "dark",
+      "title": "會所模式 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "會所模式"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": false,
+      "firstFocus": {
+        "tag": "A",
+        "text": "跳至閱讀內容",
+        "class": "river-skip"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 60
+          }
+        ],
+        "passes": 26
+      }
+    },
+    {
+      "name": "search",
+      "path": "/search/?q=英雄",
+      "width": 390,
+      "theme": "light",
+      "title": "搜尋 | 聆聽的河流｜閱讀・書寫・心理・社工",
+      "overflow": 0,
+      "h1": [
+        "搜尋"
+      ],
+      "brokenImages": [],
+      "font": null,
+      "searchPresent": true,
+      "firstFocus": {
+        "tag": "BUTTON",
+        "text": "清除",
+        "class": "pagefind-ui__search-clear svelte-e9gkc3"
+      },
+      "errors": [],
+      "a11y": {
+        "violations": [],
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "nodes": 7
+          }
+        ],
+        "passes": 27
+      }
+    }
+  ]
+}

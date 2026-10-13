@@ -317,14 +317,15 @@ test('desktop category row slides behind the top row before becoming transparent
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
   const row = page.locator('#site-header .header-nav-shell');
-  await page.evaluate(() => {
-    const header = document.getElementById('site-header');
-    header.classList.remove('nav--compact');
-    getComputedStyle(header.querySelector('.header-nav-shell')).transform;
-    header.classList.add('nav--compact');
-  });
   const midway = await row.evaluate(element => {
+    const header = element.closest('#site-header');
+    header.classList.remove('nav--compact');
+    element.getAnimations().forEach(animation => animation.finish());
+    getComputedStyle(element).transform;
+    header.classList.add('nav--compact');
+    getComputedStyle(element).transform;
     const animations = element.getAnimations();
+    if (!animations.length) throw new Error('Expected an active header transition');
     animations.forEach(animation => { animation.pause(); animation.currentTime = 140; });
     const style = getComputedStyle(element);
     return { opacity: style.opacity, y: new DOMMatrix(style.transform).m42, height: element.offsetHeight };
@@ -334,9 +335,11 @@ test('desktop category row slides behind the top row before becoming transparent
   expect(midway.y).toBeGreaterThanOrEqual(-midway.height);
   await row.evaluate(element => element.getAnimations().forEach(animation => animation.finish()));
   await expect(row).toHaveCSS('opacity', '0');
-  await page.evaluate(() => document.getElementById('site-header').classList.remove('nav--compact'));
   const restoring = await row.evaluate(element => {
+    element.closest('#site-header').classList.remove('nav--compact');
+    getComputedStyle(element).transform;
     const animations = element.getAnimations();
+    if (!animations.length) throw new Error('Expected an active header transition');
     animations.forEach(animation => { animation.pause(); animation.currentTime = 140; });
     const style = getComputedStyle(element);
     return { opacity: style.opacity, y: new DOMMatrix(style.transform).m42 };

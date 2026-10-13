@@ -118,12 +118,12 @@ test('mobile featured images download only when selected', async ({ page }) => {
   await expect.poll(() => image.evaluate(element => element.complete && element.naturalWidth > 0)).toBeTruthy();
 });
 
-test('featured autoplay retains five seconds without a pause button', async ({ page }) => {
+test('featured autoplay retains five seconds and lets readers keep all motion paused', async ({ page }) => {
   await page.clock.install({ time: new Date('2026-10-07T00:00:00Z') });
   await page.clock.pauseAt(new Date('2026-10-07T00:00:01Z'));
   await page.goto('/');
   const carousel = page.locator('.river-lead');
-  await expect(page.locator('[data-feature-toggle]')).toHaveCount(0);
+  await expect(page.locator('[data-feature-toggle]')).toHaveCount(1);
   await carousel.scrollIntoViewIfNeeded();
   await page.mouse.move(0, 0);
   await page.mouse.wheel(0, 1);
@@ -147,6 +147,25 @@ test('featured autoplay retains five seconds without a pause button', async ({ p
   await page.locator('[data-feature-next]').click();
   await expect(link).not.toHaveAttribute('href', reading);
   await page.locator('[data-feature-next]').evaluate(e => e.blur());
+  await page.mouse.move(0, 0);
+  await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
+  const toggle = page.locator('[data-feature-toggle]');
+  await toggle.click();
+  await toggle.evaluate(e => e.blur());
+  await page.mouse.move(0, 0);
+  await expect(carousel).toHaveAttribute('data-feature-paused', 'true');
+  await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
+  await expect(page.locator('body')).toHaveAttribute('data-river-motion', 'paused');
+  const pausedLink = await link.getAttribute('href');
+  await page.clock.runFor(15000);
+  await expect(link).toHaveAttribute('href', pausedLink);
+  await page.locator('[data-feature-next]').click();
+  await expect(link).not.toHaveAttribute('href', pausedLink);
+  await page.locator('[data-feature-next]').evaluate(e => e.blur());
+  await page.mouse.move(0, 0);
+  await expect(carousel).toHaveAttribute('data-feature-playing', 'false');
+  await toggle.click();
+  await toggle.evaluate(e => e.blur());
   await page.mouse.move(0, 0);
   await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
   await page.emulateMedia({ reducedMotion: 'reduce' });

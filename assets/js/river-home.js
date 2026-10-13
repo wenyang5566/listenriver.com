@@ -1,7 +1,9 @@
 (() => {
   if (!document.querySelector('.river-editorial-opening')) return;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const sync = () => { document.body.dataset.riverMotion = reducedMotion.matches ? 'paused' : 'running'; };
+  let userPaused = false;
+  try { userPaused = sessionStorage.getItem('river-motion-paused') === 'true'; } catch {}
+  const sync = () => { document.body.dataset.riverMotion = userPaused || reducedMotion.matches ? 'paused' : 'running'; };
   reducedMotion.addEventListener('change', sync);
   sync();
   const carousel = document.querySelector('.river-lead');
@@ -10,6 +12,7 @@
   const frame = carousel.querySelector('.river-feature-slides');
   const controls = carousel.querySelector('.river-feature-controls');
   const counter = carousel.querySelector('.river-feature-counter');
+  const toggle = carousel.querySelector('[data-feature-toggle]');
   if (slides.length < 2) return;
   let current = 0, timer = null, visible = false, hovered = false, focused = false, engaged = false;
   let animations = [], ghost = null;
@@ -26,7 +29,7 @@
     stopTransition();
     const outgoing = slides[current];
     const next = (index + slides.length) % slides.length;
-    if (animate && next !== current && !reducedMotion.matches) {
+    if (animate && next !== current && !reducedMotion.matches && !userPaused) {
       ghost = outgoing.cloneNode(true);
       ghost.className = 'river-feature-ghost';
       ghost.hidden = false;
@@ -63,8 +66,11 @@
   const schedule = () => {
     window.clearTimeout(timer);
     carousel.dataset.featurePlaying = 'false';
-    carousel.dataset.featureStopped = String(!engaged || reducedMotion.matches);
-    const playing = engaged && visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
+    carousel.dataset.featureStopped = String(!engaged || userPaused || reducedMotion.matches);
+    carousel.dataset.featurePaused = String(userPaused);
+    toggle.disabled = reducedMotion.matches;
+    toggle.querySelector('[data-feature-toggle-label]').textContent = reducedMotion.matches ? '已減少動態' : userPaused ? '繼續動態' : '暫停動態';
+    const playing = !userPaused && engaged && visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
     counter.setAttribute('aria-live', playing ? 'off' : 'polite');
     if (!playing) return;
     // Restart both the progress line and the five-second timer together.
@@ -89,6 +95,11 @@
   // Repeat visits still choose a different opening from the previous article.
   show(previous ? choices[Math.floor(Math.random() * choices.length)] : 0, false);
   controls.hidden = false;
+  toggle.addEventListener('click', () => {
+    userPaused = !userPaused;
+    try { sessionStorage.setItem('river-motion-paused', String(userPaused)); } catch {}
+    stopTransition(); sync(); schedule();
+  });
   carousel.querySelector('[data-feature-prev]').addEventListener('click', () => manual(-1));
   carousel.querySelector('[data-feature-next]').addEventListener('click', () => manual(1));
   carousel.addEventListener('mouseenter', () => { hovered = true; schedule(); });

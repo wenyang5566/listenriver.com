@@ -139,3 +139,13 @@ body.publication-site .post-related-card .entry-cover {
   body.publication-site :is(.taxonomy-story-card__media, .taxonomy-feature-card__media, .taxonomy-landing-hot-card__media, .taxonomy-landing-card__media) img,
   body.publication-site .post-related-card .entry-cover img { transform: none !important; }
 }
+.missing-page { max-width: 640px; margin: 48px auto; }
+.missing-page h1 { font-size: clamp(28px, 5vw, 40px); }
+.missing-page p { line-height: 1.9; }
+.missing-page form { margin: 32px 0; }
+.missing-page label { display: block; margin-bottom: 8px; }
+.missing-page form div { display: flex; gap: 8px; }
+.missing-page input { min-width: 0; flex: 1; padding: 10px; border: 1px solid var(--river-muted); color: var(--river-ink); background: var(--river-paper); }
+.missing-page button { min-height: 44px; padding: 8px 16px; border: 1px solid var(--river-rust); background: var(--river-rust); color: var(--river-paper); }
+.missing-page nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.missing-page nav a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: underline; text-underline-offset: 4px; }

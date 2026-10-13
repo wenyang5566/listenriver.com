@@ -1,0 +1,245 @@
+{
+  "baseline": "13a21cac, 2026-10-13 published article metadata",
+  "cases": [
+    {
+      "kind": "exact-title",
+      "query": "開放式對話：肯認每一種聲音的存在",
+      "expectedUrls": [
+        "/blog/開放式對話/肯認每一種聲音的存在/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "正念的意義就在手中",
+      "expectedUrls": [
+        "/blog/成為自己/正念的意義就在手中/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "最大的自由是承擔，最大的神蹟是人的超越性",
+      "expectedUrls": [
+        "/blog/成為自己/最大的自由是承擔/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "《阿鼻》",
+      "expectedUrls": [
+        "/blog/電影心得/阿鼻/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "《綠洲》電影心得",
+      "expectedUrls": [
+        "/blog/電影心得/綠洲/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "《成為一個人》的再理解：不為而成",
+      "expectedUrls": [
+        "/blog/成為自己/不為而成/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "講座心得｜創傷知情與兒少服務工作坊",
+      "expectedUrls": [
+        "/blog/助人工作/創傷知情工作坊心得/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "住院記：擁抱陰影",
+      "expectedUrls": [
+        "/blog/病痛經驗/住院記擁抱陰影/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "關於自我揭露",
+      "expectedUrls": [
+        "/blog/病痛經驗/關於自我揭露/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "同步聽打培訓",
+      "expectedUrls": [
+        "/blog/助人工作/同步聽打培訓/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "素描03：Still負形",
+      "expectedUrls": [
+        "/blog/素描/03繼續負形/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "美劇《無恥之徒 Shameless》心得：人人都是無恥之徒",
+      "expectedUrls": [
+        "/blog/電影心得/無恥之徒/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "課堂報告小結",
+      "expectedUrls": [
+        "/blog/病痛經驗/課堂報告小結/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "exact-title",
+      "query": "實習紀錄 06｜如實",
+      "expectedUrls": [
+        "/clubhouse/實習紀錄/06如實/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "display-title",
+      "query": "肯認每一種聲音的存在",
+      "expectedUrls": [
+        "/blog/開放式對話/肯認每一種聲音的存在/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "工作手冊 05",
+      "expectedUrls": [
+        "/clubhouse/工作手冊/05忍不住氣不過沉住氣/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "工作手冊 5",
+      "expectedUrls": [
+        "/clubhouse/工作手冊/05忍不住氣不過沉住氣/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "工作日誌 01",
+      "expectedUrls": [
+        "/clubhouse/工作日誌/01工作一個月/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "工作日誌 1",
+      "expectedUrls": [
+        "/clubhouse/工作日誌/01工作一個月/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "實習紀錄 01",
+      "expectedUrls": [
+        "/clubhouse/實習紀錄/01初入會所的觀察/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "實習紀錄 1",
+      "expectedUrls": [
+        "/clubhouse/實習紀錄/01初入會所的觀察/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "素描 01",
+      "expectedUrls": [
+        "/blog/素描/01盲畫/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-number",
+      "query": "素描 1",
+      "expectedUrls": [
+        "/blog/素描/01盲畫/"
+      ],
+      "top3": true
+    },
+    {
+      "kind": "series-recall",
+      "query": "聆聽疼痛計畫",
+      "expectedUrls": [
+        "/blog/聆聽疼痛計畫/11自傷疼痛/",
+        "/blog/聆聽疼痛計畫/09腕隧道症候群/",
+        "/blog/聆聽疼痛計畫/08胃痛/",
+        "/blog/聆聽疼痛計畫/07腰部肌肉纖維化/",
+        "/blog/聆聽疼痛計畫/06貝西氏症/",
+        "/blog/聆聽疼痛計畫/05生理期疼痛/",
+        "/blog/聆聽疼痛計畫/10心臟瓣膜疼痛/",
+        "/blog/聆聽疼痛計畫/04未知疼痛/",
+        "/blog/聆聽疼痛計畫/03僵直性脊椎炎/",
+        "/blog/聆聽疼痛計畫/02成果發表/",
+        "/blog/聆聽疼痛計畫/00撿拾疼痛的碎片/",
+        "/blog/聆聽疼痛計畫/01近況分享/"
+      ]
+    },
+    {
+      "kind": "series-recall",
+      "query": "工作日誌",
+      "expectedUrls": [
+        "/clubhouse/工作日誌/19身心狀態留下的痕跡/",
+        "/clubhouse/工作日誌/18保持真誠好奇/",
+        "/clubhouse/工作日誌/17將言語視為符號/",
+        "/clubhouse/工作日誌/16你想要什麼樣的支持/",
+        "/clubhouse/工作日誌/15認真回應會員動力/",
+        "/clubhouse/工作日誌/14強迫症的意義/",
+        "/clubhouse/工作日誌/13初次社區宣導/",
+        "/clubhouse/工作日誌/12餐飲部當然不只是料理/",
+        "/clubhouse/工作日誌/11敘事的見證/",
+        "/clubhouse/工作日誌/10料理是行動是對話/",
+        "/clubhouse/工作日誌/09不敢說借過的會員/",
+        "/clubhouse/工作日誌/08推動會員帶開會與導覽部門/",
+        "/clubhouse/工作日誌/07白板溝通/",
+        "/clubhouse/工作日誌/06複雜用藥下改變如何發生/",
+        "/clubhouse/工作日誌/05兩週就業訓練反思/",
+        "/clubhouse/工作日誌/04就業前準備/",
+        "/clubhouse/工作日誌/03回顧會員f來會所的學習/",
+        "/clubhouse/工作日誌/02緊握垃圾的力道/",
+        "/clubhouse/工作日誌/01工作一個月/"
+      ]
+    },
+    {
+      "kind": "latin-keyword",
+      "query": "EEAAO",
+      "expectedUrls": [
+        "/blog/電影心得/媽的多重宇宙01/"
+      ]
+    },
+    {
+      "kind": "no-results",
+      "query": "riverzznomatchxyz987654321",
+      "expectedUrls": [],
+      "zeroResults": true
+    }
+  ]
+}

@@ -653,3 +653,12 @@ body[data-river-motion] .river-hero-stream .river-current-traces { animation-dur
   .river-lead-link:hover .river-lead-photo img,
   .river-recent-row:hover .river-recent-photo img { transform: none; }
 }
+
+/* One reader control pauses the carousel and the repeating river decoration. */
+.river-feature-controls [data-feature-toggle] { width: auto; min-width: 84px; padding: 0 10px; border-radius: 22px; font-size: 12px; }
+.river-feature-controls [data-feature-toggle]:disabled { cursor: default; }
+body[data-river-motion="paused"] :is(.river-water, .river-bank, .river-current-traces),
+body[data-river-motion="paused"] .river-feature-progress::after { animation-play-state: paused; }
+/* A stored pause renders one-time entrance art in its complete state. */
+body[data-river-motion="paused"] :is(.river-wordmark-water path, .river-brand-ribbon, .river-masthead h1, .river-opening-statement) { animation: none; }
+.river-letter .river-text-link { text-decoration: underline; text-underline-offset: 4px; }

@@ -25,7 +25,7 @@ categoryCards:
     cover:
       src: /blog/助人工作/受苦的倒影/《受苦的倒影》新書講座.jpg
       alt: 《受苦的倒影》新書講座現場
-    description: 我還在學習怎麼理解一個人、怎麼陪伴，把課堂與工作裡的嘗試和困惑寫下來。
+    description: 從社工學習到工作現場，我記下陪伴、對話與共同做事的嘗試和困惑。
     tags:
       - 助人工作
       - 開放式對話
@@ -76,7 +76,7 @@ categoryCards:
     accent: clubhouse
     index: "06"
     en: Clubhouse Model
-    title: 會所模式
+    title: 會所模式專區
     page: /clubhouse/
     source:
       kind: tag
@@ -97,6 +97,7 @@ selectedTopics:
 
 # Series entry links share the same article sets as the corresponding tags.
 topicDestinations:
+  聆聽疼痛計畫: /tags/聆聽疼痛計畫/
   工作日誌: /clubhouse/工作日誌/
   實習紀錄: /clubhouse/實習紀錄/
   工作手冊: /clubhouse/工作手冊/

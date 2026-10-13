@@ -4,6 +4,8 @@
 {{- $robots := "index, follow" -}}
 {{- if not (or hugo.IsProduction (eq site.Params.env "production")) -}}
   {{- $robots = "noindex, nofollow" -}}
+{{- else if eq .Kind "404" -}}
+  {{- $robots = "noindex, follow" -}}
 {{- else if eq .Params.robotsNoIndex true -}}
   {{- $robots = "noindex, nofollow" -}}
 {{- else if eq .Section "tags" -}}
@@ -16,7 +18,7 @@
 <meta name="robots" content="{{ $robots }}">
 
 {{- /* Title */}}
-<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+<title>{{ if eq .Kind "404" }}找不到這一頁 | {{ else if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}

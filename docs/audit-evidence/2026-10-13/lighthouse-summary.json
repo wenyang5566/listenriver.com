@@ -1,0 +1,744 @@
+[
+  {
+    "file": "lh-article-1.json",
+    "fetchTime": "2026-10-13T01:50:22.001Z",
+    "url": "https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%84%8F%E7%BE%A9%E5%B0%B1%E5%9C%A8%E6%89%8B%E4%B8%AD/",
+    "version": "13.5.0",
+    "error": null,
+    "warnings": [],
+    "performance": 95.0,
+    "accessibility": 98.0,
+    "bestPractices": 100,
+    "seo": 100,
+    "FCPms": 1903.616,
+    "LCPms": 2659.502,
+    "TBTms": 34.5,
+    "CLS": 0,
+    "bytes": 749141,
+    "blockedUrlPatterns": null,
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "networkUA": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+    "LCPbreakdown": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 339.495
+            },
+            {
+              "subpart": "resourceLoadDelay",
+              "label": "Resource load delay",
+              "duration": 8.25
+            },
+            {
+              "subpart": "resourceLoadDuration",
+              "label": "Resource load duration",
+              "duration": 343.12
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 137.436
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,1,FIGURE,0,PICTURE,1,IMG",
+          "selector": "article.post-single > figure.entry-cover > picture > img.is-zoomable",
+          "boundingRect": {
+            "top": 316,
+            "bottom": 865,
+            "left": 0,
+            "right": 412,
+            "width": 412,
+            "height": 549
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A…\" srcset=\"/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%…\" alt=\"正念的意義就在手中\" width=\"1108\" height=\"1477\" sizes=\"(min-width: 1200px) 860px, (min-width: 769px) 90vw, 100vw\" class=\"is-zoomable\" tabindex=\"0\" role=\"button\" draggable=\"false\" aria-label=\"放大圖片：正念的意義就在手中\">",
+          "nodeLabel": "正念的意義就在手中"
+        }
+      ]
+    },
+    "LCPdiscovery": {
+      "type": "list",
+      "items": [
+        {
+          "type": "checklist",
+          "items": {
+            "priorityHinted": {
+              "label": "fetchpriority=high applied",
+              "value": true
+            },
+            "requestDiscoverable": {
+              "label": "Request is discoverable in initial document",
+              "value": true
+            },
+            "eagerlyLoaded": {
+              "label": "LCP resources should not use loading=lazy",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,1,FIGURE,0,PICTURE,1,IMG",
+          "selector": "article.post-single > figure.entry-cover > picture > img.is-zoomable",
+          "boundingRect": {
+            "top": 316,
+            "bottom": 865,
+            "left": 0,
+            "right": 412,
+            "width": 412,
+            "height": 549
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A…\" srcset=\"/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%…\" alt=\"正念的意義就在手中\" width=\"1108\" height=\"1477\" sizes=\"(min-width: 1200px) 860px, (min-width: 769px) 90vw, 100vw\" class=\"is-zoomable\" tabindex=\"0\" role=\"button\" draggable=\"false\" aria-label=\"放大圖片：正念的意義就在手中\">",
+          "nodeLabel": "正念的意義就在手中"
+        }
+      ]
+    },
+    "failedAudits": [
+      "heading-order",
+      "label-content-name-mismatch",
+      "unused-css-rules",
+      "forced-reflow-insight",
+      "render-blocking-insight"
+    ]
+  },
+  {
+    "file": "lh-article-2.json",
+    "fetchTime": "2026-10-13T01:50:40.033Z",
+    "url": "https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%84%8F%E7%BE%A9%E5%B0%B1%E5%9C%A8%E6%89%8B%E4%B8%AD/",
+    "version": "13.5.0",
+    "error": null,
+    "warnings": [],
+    "performance": 94.0,
+    "accessibility": 98.0,
+    "bestPractices": 100,
+    "seo": 100,
+    "FCPms": 1827.926,
+    "LCPms": 2792.238,
+    "TBTms": 32,
+    "CLS": 0,
+    "bytes": 749140,
+    "blockedUrlPatterns": null,
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "networkUA": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+    "LCPbreakdown": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 338.109
+            },
+            {
+              "subpart": "resourceLoadDelay",
+              "label": "Resource load delay",
+              "duration": 7.811
+            },
+            {
+              "subpart": "resourceLoadDuration",
+              "label": "Resource load duration",
+              "duration": 146.183
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 278.242
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,1,FIGURE,0,PICTURE,1,IMG",
+          "selector": "article.post-single > figure.entry-cover > picture > img.is-zoomable",
+          "boundingRect": {
+            "top": 316,
+            "bottom": 865,
+            "left": 0,
+            "right": 412,
+            "width": 412,
+            "height": 549
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A…\" srcset=\"/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%…\" alt=\"正念的意義就在手中\" width=\"1108\" height=\"1477\" sizes=\"(min-width: 1200px) 860px, (min-width: 769px) 90vw, 100vw\" class=\"is-zoomable\" tabindex=\"0\" role=\"button\" draggable=\"false\" aria-label=\"放大圖片：正念的意義就在手中\">",
+          "nodeLabel": "正念的意義就在手中"
+        }
+      ]
+    },
+    "LCPdiscovery": {
+      "type": "list",
+      "items": [
+        {
+          "type": "checklist",
+          "items": {
+            "priorityHinted": {
+              "label": "fetchpriority=high applied",
+              "value": true
+            },
+            "requestDiscoverable": {
+              "label": "Request is discoverable in initial document",
+              "value": true
+            },
+            "eagerlyLoaded": {
+              "label": "LCP resources should not use loading=lazy",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,1,FIGURE,0,PICTURE,1,IMG",
+          "selector": "article.post-single > figure.entry-cover > picture > img.is-zoomable",
+          "boundingRect": {
+            "top": 316,
+            "bottom": 865,
+            "left": 0,
+            "right": 412,
+            "width": 412,
+            "height": 549
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A…\" srcset=\"/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%…\" alt=\"正念的意義就在手中\" width=\"1108\" height=\"1477\" sizes=\"(min-width: 1200px) 860px, (min-width: 769px) 90vw, 100vw\" class=\"is-zoomable\" tabindex=\"0\" role=\"button\" draggable=\"false\" aria-label=\"放大圖片：正念的意義就在手中\">",
+          "nodeLabel": "正念的意義就在手中"
+        }
+      ]
+    },
+    "failedAudits": [
+      "heading-order",
+      "label-content-name-mismatch",
+      "unused-css-rules",
+      "forced-reflow-insight",
+      "render-blocking-insight"
+    ]
+  },
+  {
+    "file": "lh-article-3.json",
+    "fetchTime": "2026-10-13T01:50:59.824Z",
+    "url": "https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%84%8F%E7%BE%A9%E5%B0%B1%E5%9C%A8%E6%89%8B%E4%B8%AD/",
+    "version": "13.5.0",
+    "error": null,
+    "warnings": [],
+    "performance": 94.0,
+    "accessibility": 98.0,
+    "bestPractices": 100,
+    "seo": 100,
+    "FCPms": 1965.3029999999999,
+    "LCPms": 2747.85,
+    "TBTms": 31,
+    "CLS": 0,
+    "bytes": 749174,
+    "blockedUrlPatterns": null,
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "networkUA": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+    "LCPbreakdown": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 377.747
+            },
+            {
+              "subpart": "resourceLoadDelay",
+              "label": "Resource load delay",
+              "duration": 27.796
+            },
+            {
+              "subpart": "resourceLoadDuration",
+              "label": "Resource load duration",
+              "duration": 221.241
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 247.696
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,1,FIGURE,0,PICTURE,1,IMG",
+          "selector": "article.post-single > figure.entry-cover > picture > img.is-zoomable",
+          "boundingRect": {
+            "top": 316,
+            "bottom": 865,
+            "left": 0,
+            "right": 412,
+            "width": 412,
+            "height": 549
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A…\" srcset=\"/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%…\" alt=\"正念的意義就在手中\" width=\"1108\" height=\"1477\" sizes=\"(min-width: 1200px) 860px, (min-width: 769px) 90vw, 100vw\" class=\"is-zoomable\" tabindex=\"0\" role=\"button\" draggable=\"false\" aria-label=\"放大圖片：正念的意義就在手中\">",
+          "nodeLabel": "正念的意義就在手中"
+        }
+      ]
+    },
+    "LCPdiscovery": {
+      "type": "list",
+      "items": [
+        {
+          "type": "checklist",
+          "items": {
+            "priorityHinted": {
+              "label": "fetchpriority=high applied",
+              "value": true
+            },
+            "requestDiscoverable": {
+              "label": "Request is discoverable in initial document",
+              "value": true
+            },
+            "eagerlyLoaded": {
+              "label": "LCP resources should not use loading=lazy",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,1,FIGURE,0,PICTURE,1,IMG",
+          "selector": "article.post-single > figure.entry-cover > picture > img.is-zoomable",
+          "boundingRect": {
+            "top": 316,
+            "bottom": 865,
+            "left": 0,
+            "right": 412,
+            "width": 412,
+            "height": 549
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A…\" srcset=\"/blog/%E6%88%90%E7%82%BA%E8%87%AA%E5%B7%B1/%E6%AD%A3%E5%BF%B5%E7%9A%84%E6%…\" alt=\"正念的意義就在手中\" width=\"1108\" height=\"1477\" sizes=\"(min-width: 1200px) 860px, (min-width: 769px) 90vw, 100vw\" class=\"is-zoomable\" tabindex=\"0\" role=\"button\" draggable=\"false\" aria-label=\"放大圖片：正念的意義就在手中\">",
+          "nodeLabel": "正念的意義就在手中"
+        }
+      ]
+    },
+    "failedAudits": [
+      "heading-order",
+      "label-content-name-mismatch",
+      "unused-css-rules",
+      "forced-reflow-insight",
+      "render-blocking-insight"
+    ]
+  },
+  {
+    "file": "lh-home-1.json",
+    "fetchTime": "2026-10-13T01:49:06.352Z",
+    "url": "https://listenriver.com/",
+    "version": "13.5.0",
+    "error": null,
+    "warnings": [],
+    "performance": 76.0,
+    "accessibility": 96.0,
+    "bestPractices": 100,
+    "seo": 100,
+    "FCPms": 2763.787,
+    "LCPms": 5256.827,
+    "TBTms": 23.5,
+    "CLS": 0,
+    "bytes": 889319,
+    "blockedUrlPatterns": null,
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "networkUA": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+    "LCPbreakdown": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 501.915
+            },
+            {
+              "subpart": "resourceLoadDelay",
+              "label": "Resource load delay",
+              "duration": 10.761
+            },
+            {
+              "subpart": "resourceLoadDuration",
+              "label": "Resource load duration",
+              "duration": 785.799
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 55.856
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,DIV,0,SECTION,2,DIV,0,ARTICLE,0,DIV,0,DIV,0,A,0,DIV,0,PICTURE,1,IMG",
+          "selector": "a.river-lead-link > div.river-photo > picture > img",
+          "boundingRect": {
+            "top": 570,
+            "bottom": 798,
+            "left": 24,
+            "right": 388,
+            "width": 364,
+            "height": 228
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1…\" srcset=\"/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%…\" alt=\"\" width=\"960\" height=\"720\" sizes=\"(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 460px\">",
+          "nodeLabel": "a.river-lead-link > div.river-photo > picture > img"
+        }
+      ]
+    },
+    "LCPdiscovery": {
+      "type": "list",
+      "items": [
+        {
+          "type": "checklist",
+          "items": {
+            "priorityHinted": {
+              "label": "fetchpriority=high applied",
+              "value": true
+            },
+            "requestDiscoverable": {
+              "label": "Request is discoverable in initial document",
+              "value": true
+            },
+            "eagerlyLoaded": {
+              "label": "LCP resources should not use loading=lazy",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,DIV,0,SECTION,2,DIV,0,ARTICLE,0,DIV,0,DIV,0,A,0,DIV,0,PICTURE,1,IMG",
+          "selector": "a.river-lead-link > div.river-photo > picture > img",
+          "boundingRect": {
+            "top": 570,
+            "bottom": 798,
+            "left": 24,
+            "right": 388,
+            "width": 364,
+            "height": 228
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1…\" srcset=\"/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%…\" alt=\"\" width=\"960\" height=\"720\" sizes=\"(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 460px\">",
+          "nodeLabel": "a.river-lead-link > div.river-photo > picture > img"
+        }
+      ]
+    },
+    "failedAudits": [
+      "target-size",
+      "unused-css-rules",
+      "unused-javascript",
+      "network-dependency-tree-insight",
+      "render-blocking-insight"
+    ]
+  },
+  {
+    "file": "lh-home-2.json",
+    "fetchTime": "2026-10-13T01:49:47.85Z",
+    "url": "https://listenriver.com/",
+    "version": "13.5.0",
+    "error": null,
+    "warnings": [],
+    "performance": 89.0,
+    "accessibility": 96.0,
+    "bestPractices": 100,
+    "seo": 100,
+    "FCPms": 1294.634,
+    "LCPms": 3739.583,
+    "TBTms": 10,
+    "CLS": 0,
+    "bytes": 888504,
+    "blockedUrlPatterns": null,
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "networkUA": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+    "LCPbreakdown": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 395.03900024414065
+            },
+            {
+              "subpart": "resourceLoadDelay",
+              "label": "Resource load delay",
+              "duration": 9.507999755859375
+            },
+            {
+              "subpart": "resourceLoadDuration",
+              "label": "Resource load duration",
+              "duration": 359.328
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 228.587
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,DIV,0,SECTION,2,DIV,0,ARTICLE,0,DIV,0,DIV,0,A,0,DIV,0,PICTURE,1,IMG",
+          "selector": "a.river-lead-link > div.river-photo > picture > img",
+          "boundingRect": {
+            "top": 570,
+            "bottom": 798,
+            "left": 24,
+            "right": 388,
+            "width": 364,
+            "height": 228
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1…\" srcset=\"/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%…\" alt=\"\" width=\"960\" height=\"720\" sizes=\"(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 460px\">",
+          "nodeLabel": "a.river-lead-link > div.river-photo > picture > img"
+        }
+      ]
+    },
+    "LCPdiscovery": {
+      "type": "list",
+      "items": [
+        {
+          "type": "checklist",
+          "items": {
+            "priorityHinted": {
+              "label": "fetchpriority=high applied",
+              "value": true
+            },
+            "requestDiscoverable": {
+              "label": "Request is discoverable in initial document",
+              "value": true
+            },
+            "eagerlyLoaded": {
+              "label": "LCP resources should not use loading=lazy",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,DIV,0,SECTION,2,DIV,0,ARTICLE,0,DIV,0,DIV,0,A,0,DIV,0,PICTURE,1,IMG",
+          "selector": "a.river-lead-link > div.river-photo > picture > img",
+          "boundingRect": {
+            "top": 570,
+            "bottom": 798,
+            "left": 24,
+            "right": 388,
+            "width": 364,
+            "height": 228
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1…\" srcset=\"/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%…\" alt=\"\" width=\"960\" height=\"720\" sizes=\"(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 460px\">",
+          "nodeLabel": "a.river-lead-link > div.river-photo > picture > img"
+        }
+      ]
+    },
+    "failedAudits": [
+      "target-size",
+      "unused-javascript",
+      "network-dependency-tree-insight",
+      "render-blocking-insight"
+    ]
+  },
+  {
+    "file": "lh-home-3.json",
+    "fetchTime": "2026-10-13T01:50:04.933Z",
+    "url": "https://listenriver.com/",
+    "version": "13.5.0",
+    "error": null,
+    "warnings": [],
+    "performance": 88.0,
+    "accessibility": 96.0,
+    "bestPractices": 100,
+    "seo": 100,
+    "FCPms": 2142.7430000000004,
+    "LCPms": 3655.2530000000006,
+    "TBTms": 38,
+    "CLS": 0,
+    "bytes": 889875,
+    "blockedUrlPatterns": null,
+    "formFactor": "mobile",
+    "throttlingMethod": "simulate",
+    "networkUA": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+    "LCPbreakdown": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 378.2839997558594
+            },
+            {
+              "subpart": "resourceLoadDelay",
+              "label": "Resource load delay",
+              "duration": 7.359000244140625
+            },
+            {
+              "subpart": "resourceLoadDuration",
+              "label": "Resource load duration",
+              "duration": 228.19
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 307.27
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,DIV,0,SECTION,2,DIV,0,ARTICLE,0,DIV,0,DIV,0,A,0,DIV,0,PICTURE,1,IMG",
+          "selector": "a.river-lead-link > div.river-photo > picture > img",
+          "boundingRect": {
+            "top": 570,
+            "bottom": 798,
+            "left": 24,
+            "right": 388,
+            "width": 364,
+            "height": 228
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1…\" srcset=\"/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%…\" alt=\"\" width=\"960\" height=\"720\" sizes=\"(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 460px\">",
+          "nodeLabel": "a.river-lead-link > div.river-photo > picture > img"
+        }
+      ]
+    },
+    "LCPdiscovery": {
+      "type": "list",
+      "items": [
+        {
+          "type": "checklist",
+          "items": {
+            "priorityHinted": {
+              "label": "fetchpriority=high applied",
+              "value": true
+            },
+            "requestDiscoverable": {
+              "label": "Request is discoverable in initial document",
+              "value": true
+            },
+            "eagerlyLoaded": {
+              "label": "LCP resources should not use loading=lazy",
+              "value": true
+            }
+          }
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-IMG",
+          "path": "1,HTML,1,BODY,3,MAIN,0,DIV,0,SECTION,2,DIV,0,ARTICLE,0,DIV,0,DIV,0,A,0,DIV,0,PICTURE,1,IMG",
+          "selector": "a.river-lead-link > div.river-photo > picture > img",
+          "boundingRect": {
+            "top": 570,
+            "bottom": 798,
+            "left": 24,
+            "right": 388,
+            "width": 364,
+            "height": 228
+          },
+          "snippet": "<img loading=\"eager\" decoding=\"async\" fetchpriority=\"high\" src=\"https://listenriver.com/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1…\" srcset=\"/blog/%E9%96%8B%E6%94%BE%E5%BC%8F%E5%B0%8D%E8%A9%B1/%E8%82%AF%E8%AA%8D%E6%…\" alt=\"\" width=\"960\" height=\"720\" sizes=\"(max-width: 600px) calc(100vw - 44px), (max-width: 900px) 55vw, 460px\">",
+          "nodeLabel": "a.river-lead-link > div.river-photo > picture > img"
+        }
+      ]
+    },
+    "failedAudits": [
+      "target-size",
+      "forced-reflow-insight",
+      "network-dependency-tree-insight",
+      "render-blocking-insight"
+    ]
+  }
+]

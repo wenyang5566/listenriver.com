@@ -20,8 +20,8 @@
       {{- $landing := index hugo.Data "taxonomy-landing" -}}
       {{- range $name, $path := index $landing "topicDestinations" -}}
         {{- with site.GetPage $path -}}
-        {{- $oldNames := dict "工作日誌" "會所工作日誌" "實習紀錄" "會所實習" "工作手冊" "會所工作手冊" -}}
-        <li data-series-name="{{ $name }}" data-series-keywords="{{ index $oldNames $name }} 會所模式" hidden><a href="{{ .RelPermalink }}">{{ $name }}（{{ len .RegularPages }} 篇）</a></li>
+        {{- $oldNames := dict "工作日誌" "會所工作日誌" "實習紀錄" "會所實習" "工作手冊" "會所工作手冊" "聆聽疼痛計畫" "疼痛計畫" -}}
+        <li data-series-name="{{ $name }}" data-series-keywords="{{ index $oldNames $name }}{{ if hasPrefix $path "/clubhouse/" }} 會所模式{{ end }}" hidden><a href="{{ .RelPermalink }}">{{ $name }}（{{ len .RegularPages }} 篇）</a></li>
         {{- end -}}
       {{- end -}}
     </ul>
@@ -39,9 +39,22 @@
 </style>
 <link rel="stylesheet" href="{{ "/pagefind/pagefind-ui.css" | relLangURL }}">
 <script src="{{ "/pagefind/pagefind-ui.js" | relLangURL }}" defer></script>
-<script defer>
-  window.addEventListener("DOMContentLoaded", function () {
-    if (!window.PagefindUI) {
+{{- /* Resolve only unique exact titles/series aliases; all other searches stay full-text. */ -}}
+{{- $searchCatalog := slice -}}
+{{- $editorial := index hugo.Data "river-home" -}}
+{{- $lead := site.GetPage $editorial.lead.page -}}
+{{- range partial "article-pages.html" . -}}
+  {{- $aliases := slice .Title (.Params.displayTitle | default "") (.Params.seriesLabel | default "") -}}
+  {{- if eq .File.UniqueID $lead.File.UniqueID -}}{{- $aliases = $aliases | append $editorial.lead.title -}}{{- end -}}
+  {{- $searchCatalog = $searchCatalog | append (dict "key" (partial "article-search-key.html" .) "aliases" $aliases) -}}
+{{- end -}}
+<script type="application/json" id="search-catalog">{{ $searchCatalog | jsonify | safeJS }}</script>
+{{- $searchQuery := resources.Get "js/search-query.js" | minify | fingerprint -}}
+<script type="module" data-search-query-module="{{ $searchQuery.RelPermalink }}">
+  import { createExactTitleResolver, cleanSearchExcerpt } from "{{ $searchQuery.RelPermalink }}";
+  const resolveSearchTerm = createExactTitleResolver(JSON.parse(document.getElementById("search-catalog").textContent));
+  function initializeSearch() {
+    if (!window.PagefindUI || document.querySelector("#pagefind-search input")) {
       return;
     }
 
@@ -51,8 +64,10 @@
       autofocus: true,
       resetStyles: false,
       excerptLength: 45,
+      processTerm: resolveSearchTerm,
       processResult: function (result) {
         result = Object.assign({}, result, { meta: Object.assign({}, result.meta) });
+        result.excerpt = cleanSearchExcerpt(result.excerpt);
         const metadata = [result.meta.category, result.meta.date].filter(Boolean);
         if (metadata.length) {
           const escaped = metadata.join(' · ').replace(/[&<>"']/g, function (character) {
@@ -70,6 +85,7 @@
         search_label: "搜尋",
         filters_label: "篩選",
         zero_results: "找不到相關內容",
+        one_result: "1 筆結果",
         many_results: "[COUNT] 筆結果"
       }
     });
@@ -193,6 +209,9 @@
     }
 
     connectInput(40);
-  });
+  }
+  window.addEventListener('DOMContentLoaded', initializeSearch, { once: true });
+  window.addEventListener('load', initializeSearch, { once: true });
+  if (document.readyState !== 'loading') initializeSearch();
 </script>
 {{- end -}}

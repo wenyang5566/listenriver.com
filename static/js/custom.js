@@ -583,6 +583,8 @@
     const rabbitImageSrc = '/images/mao_3.png';
     const viewedSessionKey = 'listenriver:view:' + postPath;
     const likedSessionKey = 'listenriver:like:' + postPath;
+    const status = root.querySelector('[data-post-interactions-status]');
+    const announce = message => { if (status) { status.textContent = message; status.hidden = !message; } };
     let isLikePending = false;
     const scheduleIdle = window.requestIdleCallback || function(callback) {
       window.setTimeout(callback, 700);
@@ -596,6 +598,7 @@
 
     if (!apiBase) {
       root.classList.add('post-interactions--offline');
+      announce('喜歡功能目前無法使用。');
       likeButtons.forEach((button) => {
         button.setAttribute('aria-disabled', 'true');
         button.title = '尚未設定統計 API';
@@ -629,6 +632,7 @@
         if (!apiBase || isLikePending) return;
 
         isLikePending = true;
+        announce('');
         likeButtons.forEach((item) => {
           item.classList.add('is-busy');
           item.setAttribute('aria-busy', 'true');
@@ -644,11 +648,15 @@
             setCountText(viewsValues, formatCount(stats.views));
           }
           likeButtons.forEach((item) => item.classList.add('is-liked'));
-          sessionStorage.setItem(likedSessionKey, '1');
+          try { sessionStorage.setItem(likedSessionKey, '1'); } catch {}
+          announce('已送出喜歡，謝謝你。');
+          likeButtons.forEach(item => item.removeAttribute('title'));
+          root.classList.remove('post-interactions--offline');
           launchRabbitBurst(button, rabbitImageSrc, prefersReducedMotion.matches ? 3 : 6);
         } catch (error) {
           likeButtons.forEach((item) => {
             item.title = '按讚暫時失敗，請稍後再試';
+            announce('喜歡暫時無法送出，請再按一次重試。');
           });
         } finally {
           isLikePending = false;
@@ -704,6 +712,7 @@
         setCountText(likesValues, formatCount(stats.likes));
       } catch (error) {
         root.classList.add('post-interactions--offline');
+        announce('目前無法載入統計；仍可嘗試送出喜歡。');
         setCountText(viewsValues, '--');
         setCountText(likesValues, '--');
       }
