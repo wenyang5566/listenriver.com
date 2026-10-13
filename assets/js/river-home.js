@@ -3,7 +3,7 @@
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let userPaused = false;
   try { userPaused = sessionStorage.getItem('river-motion-paused') === 'true'; } catch {}
-  const sync = () => { document.body.dataset.riverMotion = userPaused || reducedMotion.matches ? 'paused' : 'running'; };
+  const sync = () => { document.body.dataset.riverMotion = userPaused || reducedMotion.matches ? 'paused' : 'running'; document.dispatchEvent(new Event('river:motion-change')); };
   reducedMotion.addEventListener('change', sync);
   sync();
   const carousel = document.querySelector('.river-lead');

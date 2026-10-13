@@ -8,6 +8,7 @@
 {{- if eq $paginator.PageNumber 1 -}}
   {{- partial "river-home.html" (dict "page" . "pages" $allPages "latest" $latestPages) -}}
 {{- else -}}
+  <header class="page-header legacy-article-archive"><h1>文章存檔 · 第 {{ $paginator.PageNumber }} 頁</h1><p>這是舊版首頁的文章分頁。<a href="{{ "/blog/" | relURL }}">前往所有文章</a>，或<a href="{{ "/categories/" | relURL }}">依分類閱讀</a>。</p></header>
   {{- range $paginator.Pages -}}
     {{- partial "article-card.html" (dict "page" .) -}}
   {{- end -}}
@@ -17,7 +18,7 @@
     <nav class="pagination">
       {{- if $paginator.HasPrev -}}
       <a class="prev" href="{{ $paginator.Prev.URL | relURL }}">
-        竄&nbsp;{{ i18n "prev_page" }}&nbsp;
+        ←&nbsp;{{ i18n "prev_page" }}&nbsp;
         {{- if (.Param "ShowPageNums") -}}
         {{- sub $paginator.PageNumber 1 }}/{{ $paginator.TotalPages }}
         {{- end -}}
@@ -28,7 +29,7 @@
         {{- i18n "next_page" }}&nbsp;
         {{- if (.Param "ShowPageNums") -}}
         {{- add 1 $paginator.PageNumber }}/{{ $paginator.TotalPages }}
-        {{- end -}}&nbsp;罈
+        {{- end -}}&nbsp;→
       </a>
       {{- end -}}
     </nav>

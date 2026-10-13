@@ -1113,7 +1113,9 @@
     if (!track || !prev || !next || total < 2 || dots.length !== total) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let index = 0, timer = null, visible = false, hovered = false, focused = false;
+    const caption = section.querySelector("[data-gallery-caption-output]");
     function renderGallery() {
+      if (caption) caption.textContent = slides[index].dataset.galleryCaption || "";
       if (slides[index].dataset.galleryRatio) slider.style.setProperty('--gallery-ratio', slides[index].dataset.galleryRatio);
       track.style.transform = `translateX(-${index * 100}%)`;
       slides.forEach((slide, i) => {
@@ -1132,7 +1134,7 @@
     }
     function schedule() {
       window.clearTimeout(timer);
-      const playing = visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
+      const playing = visible && !hovered && !focused && !reducedMotion.matches && !document.hidden && document.body.dataset.riverMotion !== "paused";
       section.dataset.galleryPlaying = String(playing);
       if (playing) timer = window.setTimeout(() => { index = (index + 1) % total; renderGallery(); schedule(); }, 3000);
     }
@@ -1149,6 +1151,7 @@
     section.addEventListener('focusin', () => { focused = true; schedule(); });
     section.addEventListener('focusout', () => { queueMicrotask(() => { focused = section.contains(document.activeElement); schedule(); }); });
     document.addEventListener('visibilitychange', schedule);
+    document.addEventListener('river:motion-change', schedule);
     reducedMotion.addEventListener('change', schedule);
     section.addEventListener('keydown', event => {
       if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;

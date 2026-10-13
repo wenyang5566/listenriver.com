@@ -1,0 +1,13 @@
+{{- $items := dict -}}
+{{- range index hugo.Data "editorial-articles" -}}
+  {{- $article := site.GetPage .page -}}
+  {{- if not $article -}}{{- errorf "Editorial article missing: %s" .page -}}{{- end -}}
+  {{- $item := merge . (dict "article" $article) -}}
+  {{- with .next -}}
+    {{- $next := site.GetPage . -}}
+    {{- if not $next -}}{{- errorf "Editorial continuation missing: %s" . -}}{{- end -}}
+    {{- $item = merge $item (dict "nextArticle" $next) -}}
+  {{- end -}}
+  {{- $items = merge $items (dict $article.RelPermalink $item) -}}
+{{- end -}}
+{{- return $items -}}

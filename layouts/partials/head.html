@@ -1,3 +1,4 @@
+{{- $homePaginator := dict "PageNumber" 1 -}}{{- if .IsHome -}}{{- $homePaginator = .Paginate (where (partial "article-pages.html" .) "Params.hiddenInHomeList" "!=" "true") -}}{{- end -}}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,13 +13,13 @@
   {{- $robots = "noindex, follow" -}}
 {{- else if or (eq .Layout "search") (eq .RelPermalink "/search/") -}}
   {{- $robots = "noindex, follow" -}}
-{{- else if in .RelPermalink "/page/" -}}
+{{- else if or (in .RelPermalink "/page/") (and .IsHome (gt $homePaginator.PageNumber 1)) -}}
   {{- $robots = "noindex, follow" -}}
 {{- end -}}
 <meta name="robots" content="{{ $robots }}">
 
 {{- /* Title */}}
-<title>{{ if eq .Kind "404" }}找不到這一頁 | {{ else if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+<title>{{ if and .IsHome (gt $homePaginator.PageNumber 1) }}文章存檔 · 第 {{ $homePaginator.PageNumber }} 頁 | {{ else if eq .Kind "404" }}找不到這一頁 | {{ else if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}
@@ -33,6 +34,7 @@
     {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 <meta name="author" content="{{ (partial "author.html" . ) }}">
 {{- $canonicalURL := .RelPermalink | absURL -}}
+
 {{- with .Params.canonicalURL }}
   {{- $canonicalURL = trim . " " -}}
 {{- end }}

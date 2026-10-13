@@ -69,11 +69,11 @@ for (const width of [390, 1440]) {
 
 test('closing a lightbox preserves existing inert regions', async ({ page }) => {
   await page.goto(article);
-  await page.locator('.footer').evaluate(el => el.setAttribute('inert', ''));
+  await page.locator('footer.publication-footer').evaluate(el => el.setAttribute('inert', ''));
   const image = page.locator('.post-content img[role="button"]').first();
   await image.click();
   await page.keyboard.press('Escape');
   await expect(image).toBeFocused();
-  expect(await page.locator('.footer').evaluate(el => el.inert)).toBe(true);
+  expect(await page.locator('footer.publication-footer').evaluate(el => el.inert)).toBe(true);
   expect(await page.locator('main').evaluate(el => el.inert)).toBe(false);
 });

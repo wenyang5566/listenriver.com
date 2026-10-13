@@ -210,8 +210,9 @@ body[data-river-motion="paused"] :is(.river-water, .river-bank, .river-current-t
 .river-home .home-gallery-section { margin: 32px 0 0; padding: 0; display: grid; gap: 18px; }
 .river-home .home-gallery-slider { border-radius: 5px; border-color: var(--river-rule); background: var(--river-wash); }
 .river-home .home-gallery-arrow { background: var(--river-paper); color: var(--river-rust); border-color: var(--river-rule); }
-.river-home .home-gallery-dot { background: var(--river-rule); }
-.river-home .home-gallery-dot.is-active { background: var(--river-rust); }
+.river-home .home-gallery-dot { background: transparent; }
+.river-home .home-gallery-dot::before { background: var(--river-muted); }
+.river-home .home-gallery-dot.is-active::before { background: var(--river-rust); }
 .river-endnote { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .river-endnote p { font-size: 12px; margin: 0; }
 /* Editorial opening: a publication masthead, a foreword, then the first story. */

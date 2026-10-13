@@ -1,0 +1,6 @@
+{{- with index (index hugo.Data "category-starts") .Title -}}
+<section class="category-starts" aria-labelledby="category-starts-title" data-category-starts>
+  <h2 id="category-starts-title">從這幾篇開始</h2>
+  <ol>{{ range $i, $item := . }}{{ $article := site.GetPage (index $item 1) }}{{ if not $article }}{{ errorf "Category start missing: %s" (index $item 1) }}{{ end }}<li><span class="category-starts-label">{{ if eq $i 0 }}先讀這篇{{ else }}延伸閱讀{{ end }}</span><a href="{{ $article.RelPermalink }}">{{ index $item 0 }}</a><p>{{ index $item 2 }}</p></li>{{ end }}</ol>
+</section>
+{{- end -}}
