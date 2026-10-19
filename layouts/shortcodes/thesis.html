@@ -1,0 +1,50 @@
+{{- if .Page.Params.thesis -}}
+  {{- range .Page.Resources -}}
+    {{- if eq (lower (path.Ext .Name)) ".pdf" -}}
+      {{- errorf "Private thesis PDFs must not be included in the website: %s" .Name -}}
+    {{- end -}}
+  {{- end -}}
+  {{- with .Page.Resources.Get "thesis-body.html" -}}
+    {{- .Content | safeHTML -}}
+  {{- else -}}
+    {{- errorf "Missing original thesis body for %s" .Page.File.Path -}}
+  {{- end -}}
+{{- $readerStyle := resources.Get "css/thesis-reader.css" | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $readerStyle.RelPermalink }}" integrity="{{ $readerStyle.Data.Integrity }}">
+{{- $readerScript := resources.Get "js/thesis-reader.js" | minify | fingerprint -}}
+<script defer src="{{ $readerScript.RelPermalink }}" integrity="{{ $readerScript.Data.Integrity }}"></script>
+<style>
+  .post-content .thesis-document { overflow-wrap: anywhere; }
+  .post-content .thesis-document p { text-align: start; }
+  .post-content .thesis-document h2 { scroll-margin-top: 160px; }
+  .post-content .thesis-document h3 { scroll-margin-top: 160px; }
+  .post-content .thesis-document h4, .post-content .thesis-document h5 { scroll-margin-top: 160px; }
+  .thesis-source-anchor { scroll-margin-top: 160px; }
+  .post-content .thesis-outline { margin: 28px 0 48px; padding: 20px 24px; border: 1px solid var(--border); border-radius: 8px; }
+  .thesis-outline summary { cursor: pointer; font-weight: 600; }
+  .post-content .thesis-outline ul { margin: 16px 0 0; padding-inline-start: 24px; }
+  .post-content .thesis-outline li { margin: 8px 0; }
+  .post-content .thesis-figure { margin: 24px auto; max-width: 100%; }
+  .post-content .thesis-figure img { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; background: #fff; }
+  .post-content .thesis-caption { font-weight: 600; font-size: 16px; line-height: 1.8; margin: 16px 0 28px; }
+  .post-content .thesis-table-scroll { max-width: 100%; margin: 24px 0; overflow-x: auto; overscroll-behavior-x: contain; border: 1px solid var(--border); border-radius: 4px; scroll-margin-top: 180px; }
+  .post-content .thesis-table-scroll:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+  .post-content .thesis-table-scroll table { display: table; width: 100%; min-width: 600px; margin: 0; border-collapse: collapse; font-size: 16px; line-height: 1.8; }
+  .post-content .thesis-table-scroll th, .post-content .thesis-table-scroll td { min-width: 110px; padding: 12px; vertical-align: top; border: 1px solid var(--border); }
+  .post-content .thesis-table-scroll th { background: var(--code-bg); color: var(--primary); }
+  .post-content .thesis-table-scroll p { margin: 0 0 8px; font-size: inherit; line-height: inherit; }
+  .post-content .thesis-table-scroll p:last-child { margin-bottom: 0; }
+  .post-content .thesis-photo-table table { min-width: 540px; }
+  .post-content .thesis-photo-table .thesis-figure { margin: 0; }
+  .post-content .thesis-note-ref { font-size: 0.75em; }
+  .post-content .thesis-note-ref a { padding: 3px; }
+  .thesis-note-ref, .thesis-footnotes li, .thesis-appendix-ref { scroll-margin-top: 180px; }
+  .post-content .thesis-backlinks { font-size: 15px; margin: 12px 0 24px; }
+  .post-content .thesis-footnotes li { margin-bottom: 24px; font-size: 15px; }
+  .post-content .thesis-footnotes p { font-size: 15px; line-height: 1.9; }
+  .post-content .thesis-list-label { display: inline; }
+  @media (max-width: 600px) {
+    .post-content .thesis-outline { padding: 16px; }
+  }
+</style>
+{{- end -}}

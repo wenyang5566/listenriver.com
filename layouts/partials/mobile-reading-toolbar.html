@@ -1,4 +1,4 @@
-<nav class="mobile-reading-toolbar" data-mobile-reading-toolbar hidden aria-label="手機文章閱讀工具列">
+<nav class="mobile-reading-toolbar{{ if .Param "ShowToc" }} has-toc-shortcut{{ end }}" data-mobile-reading-toolbar hidden aria-label="手機文章閱讀工具列">
   <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-back data-fallback-url="{{ "/" | relLangURL }}" aria-label="上一頁">
     <span class="mobile-reading-toolbar__icon" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
@@ -12,6 +12,18 @@
     <span class="mobile-reading-toolbar__icon mobile-reading-toolbar__icon--text" aria-hidden="true">Aa</span>
     <span class="mobile-reading-toolbar__label">字級</span>
   </button>
+
+  {{- if .Param "ShowToc" }}
+  <button class="mobile-reading-toolbar__item" type="button" data-mobile-toc-shortcut aria-expanded="false" aria-controls="floating-toc-panel" aria-label="開啟文章目錄">
+    <span class="mobile-reading-toolbar__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 6h12M8 12h12M8 18h12"></path>
+        <path d="M4 6h.01M4 12h.01M4 18h.01"></path>
+      </svg>
+    </span>
+    <span class="mobile-reading-toolbar__label">目錄</span>
+  </button>
+  {{- end }}
 
   <button class="mobile-reading-toolbar__item" type="button" data-mobile-reading-related aria-label="跳到更多文章">
     <span class="mobile-reading-toolbar__icon" aria-hidden="true">

@@ -270,7 +270,7 @@ test('mobile article tools remain visible longer on downward scroll', async ({ p
   });
   const header = page.locator('#site-header');
   const toolbar = page.locator('[data-mobile-reading-toolbar]');
-  await expect(toolbar.locator('.mobile-reading-toolbar__label')).toHaveText(['上一頁', '字級', '更多文章', '分享']);
+  await expect(toolbar.locator('.mobile-reading-toolbar__label')).toHaveText(['上一頁', '字級', '目錄', '更多文章', '分享']);
   for (const label of await toolbar.locator('.mobile-reading-toolbar__label').all()) {
     await expect(label).toBeVisible();
   }

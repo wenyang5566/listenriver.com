@@ -154,6 +154,8 @@
     }
     if (mobileTocShortcut) {
       mobileTocShortcut.classList.toggle('is-active', isOpen);
+      mobileTocShortcut.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      mobileTocShortcut.setAttribute('aria-label', isOpen ? '關閉文章目錄' : '開啟文章目錄');
     }
   }
 
@@ -165,6 +167,7 @@
 
   if (mobileTocShortcut) {
     const tocAvailable = !!floatingToc;
+    mobileTocShortcut.hidden = !tocAvailable;
     mobileTocShortcut.classList.toggle('is-disabled', !tocAvailable);
     mobileTocShortcut.classList.toggle('is-available', tocAvailable);
     mobileTocShortcut.disabled = !tocAvailable;

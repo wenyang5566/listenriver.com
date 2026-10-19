@@ -1,0 +1,709 @@
+{
+  "description": "Reviewed reference boundaries in the author-supplied DOCX. Continuation paragraphs remain part of the same reference. No fuzzy author/year matching.",
+  "entries": [
+    {
+      "source": "source-p-1770",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1772",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1774",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1776",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1777",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1779",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1781",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1783",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1785",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1787",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1789",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1791",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1793",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1795",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1797",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1799",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1801",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1803",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1805",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1808",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1810",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1812",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1814",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1817",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1819",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1821",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1823",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1824",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1826",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1827",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1828",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1830",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1832",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1834",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1836",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1838",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1840",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1842",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1844",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1845",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1847",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1849",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1851",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1853",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1854",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1856",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1857",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1859",
+      "group": "一、中文部分"
+    },
+    {
+      "source": "source-p-1862",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1864",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1866",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1867",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1868",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1870",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1872",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1874",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1876",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1878",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1880",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1882",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1884",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1886",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1888",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1890",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1892",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1894",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1896",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1898",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1900",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1901",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1903",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1905",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1906",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1908",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1910",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1912",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1914",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1916",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1918",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1920",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1922",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1924",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1926",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1928",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1930",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1932",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1934",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1936",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1938",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1940",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1942",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1944",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1946",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1948",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1950",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1952",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1954",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1956",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1957",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1959",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1961",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1963",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1965",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1967",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1968",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1970",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1972",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1974",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1976",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1978",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1980",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1982",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1984",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1986",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1988",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1990",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1992",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1994",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1996",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1997",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-1999",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2001",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2003",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2005",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2007",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2009",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2011",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2013",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2015",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2017",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2019",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2021",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2023",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2025",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2027",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2029",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2031",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2033",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2035",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2037",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2039",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2041",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2043",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2045",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2047",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2049",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2050",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2053",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2055",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2057",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2059",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2061",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2063",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2064",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2067",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2069",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2071",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2073",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2075",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2077",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2079",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2080",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2082",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2084",
+      "group": "二、英文部分"
+    },
+    {
+      "source": "source-p-2087",
+      "group": "三、網頁資料"
+    },
+    {
+      "source": "source-p-2089",
+      "group": "三、網頁資料"
+    },
+    {
+      "source": "source-p-2091",
+      "group": "三、網頁資料"
+    },
+    {
+      "source": "source-p-2093",
+      "group": "三、網頁資料"
+    },
+    {
+      "source": "source-p-2095",
+      "group": "三、網頁資料"
+    },
+    {
+      "source": "source-p-2097",
+      "group": "三、網頁資料"
+    },
+    {
+      "source": "source-p-2099",
+      "group": "三、網頁資料"
+    }
+  ],
+  "compound_years": {
+    "source-p-1886": [
+      "2013/2023"
+    ],
+    "source-p-1926": [
+      "1963/2019"
+    ],
+    "source-p-1936": [
+      "1963/2010"
+    ],
+    "source-p-1952": [
+      "1988/2020"
+    ],
+    "source-p-2047": [
+      "1990/1997"
+    ],
+    "source-p-1898": [
+      "1999/2005"
+    ]
+  }
+}

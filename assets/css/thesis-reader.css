@@ -1,0 +1,49 @@
+.post-content .thesis-disclosure { margin: 24px 0; border: 1px solid var(--border); border-radius: 8px; padding: 0 20px; scroll-margin-top: 160px; }
+.post-content .thesis-disclosure > summary { cursor: pointer; padding: 16px 0; }
+.post-single .post-content .thesis-disclosure > summary h2,
+.post-single .post-content .thesis-disclosure > summary h4 { display: inline; font-size: 22px; margin: 0; line-height: 1.7; }
+.post-content .thesis-disclosure[open] > summary { margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+.post-content .thesis-disclosure > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.post-content .thesis-reference-entry { margin: 0 0 24px; scroll-margin-top: 180px; }
+.post-content .thesis-reference-entry p { margin: 0; }
+.post-content a.thesis-citation { color: inherit; text-decoration: underline dotted; text-decoration-color: var(--secondary); text-underline-offset: 4px; box-shadow: none; }
+.post-content a.thesis-citation:hover,
+.post-content a.thesis-citation:focus-visible { color: var(--primary); text-decoration-style: solid; }
+.thesis-reference-popup { position: fixed; inset: auto; margin: 0; padding: 0; width: min(440px, calc(100vw - 24px)); max-width: none; max-height: min(64dvh, 500px); border: 1px solid var(--border); border-radius: 12px; background: var(--theme); color: var(--primary); box-shadow: 0 12px 44px #0003; z-index: 10010; overflow: hidden; font-family: inherit; font-size: 16px; line-height: 1.8; overflow-wrap: anywhere; }
+.thesis-reference-popup[open] { display: flex; flex-direction: column; }
+.thesis-reference-popup::backdrop { background: #0003; }
+.thesis-popup-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; border-bottom: 1px solid var(--border); flex: none; }
+.thesis-popup-header h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.thesis-popup-close { width: 40px; height: 40px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: inherit; font-size: 28px; cursor: pointer; }
+.thesis-popup-close:hover { background: var(--code-bg); }
+.thesis-popup-close:focus-visible,
+.thesis-reference-popup a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.thesis-popup-content { overflow-y: auto; overscroll-behavior: contain; padding: 16px 20px; min-height: 0; }
+.thesis-popup-content p { margin: 0; }
+.thesis-popup-content .thesis-reference-entry + .thesis-reference-entry { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+.thesis-popup-content a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px), (hover: none) {
+  .thesis-reference-popup { left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(100vw - 32px); max-height: min(64dvh, 480px); }
+  .post-content .thesis-disclosure { padding-inline: 14px; }
+}
+
+/* Keep thesis excerpts distinct without reducing their text size. */
+.post-single .post-content .thesis-interview-quote {
+  border-inline-start: 2px solid var(--border);
+  padding-inline-start: 18px;
+  margin-inline-start: 0;
+  color: inherit;
+}
+.post-content .thesis-reference-entry,
+.thesis-popup-content .thesis-reference-entry {
+  padding-inline-start: 1.4em;
+  text-indent: -1.4em;
+}
+.post-content .thesis-reference-entry p,
+.thesis-popup-content .thesis-reference-entry p {
+  display: inline;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .post-single .post-content .thesis-interview-quote { padding-inline-start: 12px; }
+}

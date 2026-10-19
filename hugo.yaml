@@ -46,6 +46,7 @@ params:
   mainSections:
     - blog
     - clubhouse
+    - keloid
 
   homeInfoParams:
     Title: "聆聽的河流"

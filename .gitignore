@@ -19,3 +19,5 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+# Private thesis review PDFs must never enter the site source.
+/content/keloid/research/*.pdf

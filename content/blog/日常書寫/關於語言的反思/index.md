@@ -81,9 +81,9 @@ categories:
 ---
 ## 參考資料
 
-#### 語言相對論    
+### 語言相對論
 https://zh.wikipedia.org/wiki/%E8%AA%9E%E8%A8%80%E7%9B%B8%E5%B0%8D%E8%AB%96
 
 
-#### 入境異星的人：語言學家究竟都在忙什麼？   
+### 入境異星的人：語言學家究竟都在忙什麼？
 https://zi.media/@yidianzixun/post/YXUU5G

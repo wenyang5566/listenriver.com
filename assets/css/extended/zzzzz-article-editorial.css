@@ -83,10 +83,13 @@ body.publication-site .post-single .post-header-chip:hover { color: var(--river-
 body.publication-site .post-single .post-title { font-family: "Merriweather", "Noto Serif TC", "Songti TC", "PMingLiU", serif; font-weight: 500; margin-bottom: 24px; line-height: 1.5; }
 body.publication-site .post-single .post-meta-top { font-size: 13px; padding-top: 16px; line-height: 1.9; }
 body.publication-site .post-single .post-content :is(p, ul, ol, blockquote) { margin-bottom: 1.5em; }
-body.publication-site .post-single .post-content :is(h2, h3, h4) { color: var(--river-ink); font-weight: 500; line-height: 1.6; }
-body.publication-site .post-single .post-content h2 { font-size: 26px; margin-top: 2.2em; margin-bottom: .9em; }
-body.publication-site .post-single .post-content h3 { font-size: 22px; margin-top: 1.8em; margin-bottom: .8em; }
-body.publication-site .post-single .post-content h4 { font-size: 19px; }
+body.publication-site .post-single .post-content :is(h1, h2, h3, h4, h5, h6) { color: var(--river-ink); font-weight: 600; line-height: 1.6; }
+body.publication-site .post-single .post-content h1 { font-size: 32px; }
+body.publication-site .post-single .post-content h2 { font-size: 28px; margin-top: 2.2em; margin-bottom: .9em; }
+body.publication-site .post-single .post-content h3 { font-size: 24px; margin-top: 1.8em; margin-bottom: .8em; }
+body.publication-site .post-single .post-content h4 { font-size: 21px; }
+body.publication-site .post-single .post-content h5 { font-size: 19px; margin-top: 1.5em; margin-bottom: .8em; }
+body.publication-site .post-single .post-content h6 { font-size: 18px; margin-top: 1.5em; margin-bottom: .8em; }
 body.publication-site .post-single .post-content a { text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
 body.publication-site .post-single .post-content a.anchor { text-decoration: none; }
 body.publication-site .post-single .post-content :is(hr, table th, table td) { border-color: var(--river-rule); }
@@ -150,9 +153,10 @@ body.publication-site .post-single .post-header-chip:focus-visible { outline: 2p
   body.publication-site .post-single .post-header { margin-bottom: 24px; }
   body.publication-site .post-single .post-header-taxonomy { gap: 0 16px; margin-bottom: 12px; }
   body.publication-site .post-single .post-title { margin-bottom: 20px; }
-  body.publication-site .post-single .post-content h2 { font-size: 23px; }
-  body.publication-site .post-single .post-content h3 { font-size: 20px; }
-  body.publication-site .post-single .post-content h4 { font-size: 18px; }
+  body.publication-site .post-single .post-content h1 { font-size: 28px; }
+  body.publication-site .post-single .post-content h2 { font-size: 26px; }
+  body.publication-site .post-single .post-content h3 { font-size: 22px; }
+  body.publication-site .post-single .post-content h4 { font-size: 20px; }
   body.publication-site .post-single .post-related-card { grid-template-columns: 88px minmax(0, 1fr); gap: 16px; }
   body.publication-site .post-single .post-related-card__media .entry-cover { height: 88px; }
   body.publication-site .post-single .post-related-card__title { font-size: 18px; }

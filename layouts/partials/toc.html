@@ -1,4 +1,7 @@
 {{- $headers := findRE "<h[1-6].*?>(.|\\n])+?</h[1-6]>" .Content -}}
+{{- if .Params.thesis -}}
+  {{- $headers = findRE "<h[23].*?>(.|\\n])+?</h[23]>" .Content -}}
+{{- end -}}
 {{- $hasHeaders := ge (len $headers) 1 -}}
 {{- if $hasHeaders -}}
 <aside class="floating-toc" data-floating-toc>
