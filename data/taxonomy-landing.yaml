@@ -76,7 +76,7 @@ categoryCards:
     accent: clubhouse
     index: "06"
     en: Clubhouse Model
-    title: 會所模式專區
+    title: 會所模式
     page: /clubhouse/
     source:
       kind: tag

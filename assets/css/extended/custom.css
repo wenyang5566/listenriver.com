@@ -8756,6 +8756,10 @@ body:not(.list):has(.post-single) {
     will-change: transform, opacity;
   }
 
+  .mobile-reading-toolbar.has-toc-shortcut {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .mobile-reading-toolbar.is-compact {
     transform: translate3d(0, 0, 0);
   }

@@ -60,8 +60,13 @@
     <div data-pagefind-ignore>{{- partial "toc.html" . }}</div>
   {{- end }}
 
+  {{- if eq .Section "keloid" }}{{ partial "keloid-medical-note.html" . }}{{ end }}
+
   {{- if .Content }}
-  {{- $content := partial "content_cleanup.html" .Content -}}
+  {{- $content := .Content -}}
+  {{- if not .Params.thesis -}}
+    {{- $content = partial "content_cleanup.html" $content -}}
+  {{- end -}}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}
       {{- partial "anchored_headings.html" $content -}}

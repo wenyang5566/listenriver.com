@@ -29,6 +29,7 @@
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
+            if (e.defaultPrevented || this.classList.contains('thesis-citation')) return;
             e.preventDefault();
             var id = this.getAttribute("href").substr(1);
             if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

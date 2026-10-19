@@ -13,10 +13,17 @@ for (const width of [390, 1440]) {
       const entry = page.locator('.blog-archive-entry').nth(4);
       const title = (await entry.locator('h2').innerText()).trim();
       const link = entry.locator('.home-latest-item__link');
+      const articleUrl = await link.getAttribute('href');
       await link.scrollIntoViewIfNeeded();
       const position = await page.evaluate(() => scrollY);
       await link.click();
-      await expect(page.locator('.post-title')).toHaveText(title);
+      await expect(page).toHaveURL(new URL(articleUrl, page.url()).href);
+      const articleTitle = page.locator('.post-title');
+      await expect(articleTitle).toBeVisible();
+      // Series articles retain the full title in metadata and show displayTitle in h1.
+      await expect.poll(async () =>
+        await articleTitle.getAttribute('data-search-title') || (await articleTitle.innerText()).trim()
+      ).toBe(title);
       await page.goBack({ waitUntil: 'load' });
       await expect(page).toHaveURL(/\/blog\/page\/2\/$/);
       await expect.poll(() => page.evaluate(y => Math.abs(scrollY - y), position)).toBeLessThan(12);

@@ -31,7 +31,7 @@
     <div class="mobile-reading-progress" aria-hidden="true">
         <span class="mobile-reading-progress-bar" data-reading-progress></span>
     </div>
-    {{- $indexWithPagefind := and (eq .Kind `page`) (not (in (slice `search` `archives`) .Layout)) -}}
+    {{- $indexWithPagefind := or (and (eq .Kind `page`) (not (in (slice `search` `archives`) .Layout))) (eq .RelPermalink ("/keloid/" | relLangURL)) -}}
     <main class="main" id="river-content" tabindex="-1"{{ if $indexWithPagefind }} data-pagefind-body{{ else }} data-pagefind-ignore{{ end }}>
         {{- block "main" . }}{{ end }}
     </main>

@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="keloid-section">
+  <meta data-pagefind-meta="title[content]" content="{{ .Title }}">
+  <meta data-pagefind-meta="category[content]" content="病痛經驗">
+  <header class="page-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 data-pagefind-weight="5">{{ .Title }}</h1>
+    {{ with .Content }}<div class="keloid-intro">{{ . }}</div>{{ end }}
+    {{ partial "keloid-medical-note.html" . }}
+  </header>
+  <nav class="keloid-topics" aria-label="蟹足腫內容">
+    {{ range .Params.groups }}<a href="#{{ .id }}">{{ .title }}</a>{{ end }}
+  </nav>
+  {{ range .Params.groups }}
+    {{ $pages := slice }}
+    {{ with .tag }}
+      {{ $pages = where site.RegularPages "Params.tags" "intersect" (slice .) }}
+    {{ end }}
+    {{ with .page }}
+      {{ with site.GetPage . }}
+        {{ if .IsPage }}{{ $pages = slice . }}{{ else }}{{ $pages = .RegularPagesRecursive }}{{ end }}
+      {{ end }}
+    {{ end }}
+    <section class="keloid-group" id="{{ .id }}" aria-labelledby="keloid-{{ .id }}">
+      <h2 id="keloid-{{ .id }}">{{ .title }}</h2>
+      <p class="keloid-description">{{ .description }}</p>
+      {{ if $pages }}
+        <ul class="keloid-articles">
+          {{ range $pages.ByDate.Reverse }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+          </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <p class="keloid-empty">{{ .empty | default "文章整理中。" }}</p>
+      {{ end }}
+    </section>
+  {{ end }}
+  <p class="keloid-back"><a href="{{ "/categories/病痛經驗/" | relLangURL }}">所有病痛經驗文章 →</a></p>
+</div>
+<style>
+  .keloid-section { max-width: 760px; margin: 0 auto; }
+  .keloid-section .page-header { margin-bottom: 24px; }
+  .keloid-section .keloid-intro { margin: 20px 0 0; font-size: 18px; line-height: 2; }
+  .keloid-topics { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-bottom: 24px; }
+  .keloid-topics a, .keloid-back a { text-decoration: underline; text-underline-offset: 5px; }
+  .keloid-topics a { padding: 10px 0; }
+  .keloid-group { padding: 30px 0; border-top: 1px solid var(--border); scroll-margin-top: 180px; }
+  .keloid-group h2 { margin: 0 0 12px; font-size: 25px; }
+  .keloid-description { margin: 0 0 20px; line-height: 1.8; }
+  .keloid-articles { list-style: none; padding: 0; margin: 0; }
+  .keloid-articles li { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 13px 0; }
+  .keloid-articles a { font-size: 18px; line-height: 1.8; text-decoration: underline; text-underline-offset: 5px; overflow-wrap: anywhere; }
+  .keloid-articles time { flex-shrink: 0; font-size: 14px; }
+  .keloid-empty { margin: 0; color: var(--secondary); line-height: 1.8; }
+  .keloid-back { padding: 20px 0; line-height: 1.8; }
+  @media (max-width: 600px) {
+    .keloid-articles li { flex-direction: column; gap: 4px; }
+  }
+</style>
+{{ end }}

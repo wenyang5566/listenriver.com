@@ -154,7 +154,7 @@ tags:
 最後，講師推薦這本書來學習更多關於開放式對話（Open Dialogue）的概念。附上連結：[https://reurl.cc/avrbZY](https://reurl.cc/avrbZY)
 
 ---
-#### 相關文章：
+## 相關文章：
 
 [開放式對話（Open Dialogue）課後筆記Part1](/blog/開放式對話/課後筆記01/)
 

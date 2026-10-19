@@ -4,7 +4,7 @@ import {resolve,relative,isAbsolute,extname} from 'node:path';
 import {brotliCompressSync,constants} from 'node:zlib';
 export async function serveSite(root,port=0){
  root=resolve(root);const cache=new Map();
- const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.json':'application/json','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png','.woff2':'font/woff2'};
+ const mime={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.json':'application/json','.webp':'image/webp','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.ico':'image/x-icon','.pdf':'application/pdf','.woff2':'font/woff2'};
  const server=createServer(async(req,res)=>{try{
   let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(path.endsWith('/'))path+='index.html';
   const file=resolve(root,'.'+path),rel=relative(root,file);if(rel.startsWith('..')||isAbsolute(rel)){res.writeHead(403).end();return;}
