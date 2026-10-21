@@ -1,0 +1,19 @@
+{{- if in (slice "blog" "clubhouse") .Section -}}
+<nav class="breadcrumbs article-breadcrumbs" aria-label="文章所在位置" data-pagefind-ignore>
+  {{- if eq .Section "clubhouse" -}}
+  <a href="{{ "/clubhouse/" | relLangURL }}">會所模式</a>
+  {{- if and .Parent (ne .Parent.RelPermalink ("/clubhouse/" | relLangURL)) }}
+  <span class="breadcrumbs-separator" aria-hidden="true">›</span>
+  <a href="{{ .Parent.RelPermalink }}">{{ .Parent.LinkTitle }}</a>
+  {{- end -}}
+  {{- else -}}
+  <a href="{{ "/blog/" | relLangURL }}">所有文章</a>
+  {{- range first 1 (.GetTerms "categories") }}
+  <span class="breadcrumbs-separator" aria-hidden="true">›</span>
+  <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+  {{- end -}}
+  {{- end }}
+</nav>
+{{- else -}}
+{{- partial "breadcrumbs.html" . -}}
+{{- end -}}

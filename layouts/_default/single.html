@@ -8,19 +8,17 @@
     <meta data-pagefind-meta="tags[content]" content="{{ delimit (.Params.tags | default (slice)) "、" }}">
     <meta data-pagefind-meta="series[content]" content="{{ .Params.seriesLabel | default "" }}">
     <meta data-pagefind-meta="date[content]" content="{{ .Date.Format "2006.01.02" }}">
-    {{ partial "breadcrumbs.html" . }}
 
-    {{- $categories := first 1 (.GetTerms "categories") -}}
     {{- $tags := .GetTerms "tags" -}}
     {{- $seriesLabel := .Params.seriesLabel -}}
     {{- if and (not $seriesLabel) (findRE `^(工作日誌|實習紀錄|工作手冊) [0-9]+｜` .Title) -}}
       {{- $seriesLabel = replaceRE `^((工作日誌|實習紀錄|工作手冊) [0-9]+)｜.*$` "$1" .Title -}}
     {{- end -}}
-    {{- if or $seriesLabel (or (gt (len $categories) 0) (gt (len $tags) 0)) }}
-    <div class="post-header-taxonomy" aria-label="文章分類與主題">
-      {{- range $categories }}
-      <a data-pagefind-ignore class="post-header-chip post-header-chip--category" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
-      {{- end }}
+
+    <div class="article-header-navigation">
+      {{ partial "article-breadcrumbs.html" . }}
+    {{- if or $seriesLabel (gt (len $tags) 0) }}
+    <div class="post-header-taxonomy" aria-label="文章主題與系列">
       {{- with $seriesLabel }}
       <span class="post-header-chip post-header-chip--series" data-pagefind-index-attrs="data-series-search" data-series-search="{{ replaceRE ` 0+([0-9]+)$` ` $1` . }}">{{ . }}</span>
       {{- end }}
@@ -29,6 +27,7 @@
       {{- end }}
     </div>
     {{- end }}
+    </div>
 
     <h1 class="post-title entry-hint-parent" data-pagefind-weight="5" data-pagefind-index-attrs="data-search-key{{ if and .Params.displayTitle (ne .Params.displayTitle .Title) }},data-search-title{{ end }}" data-search-key="{{ partial "article-search-key.html" . }}"{{ if and .Params.displayTitle (ne .Params.displayTitle .Title) }} data-search-title="{{ .Title }}"{{ end }}>
       {{ .Params.displayTitle | default .Title }}
@@ -50,6 +49,7 @@
       {{- partial "post_canonical.html" . -}}
     </div>
     {{- end }}
+
 
   </header>
 
@@ -78,7 +78,6 @@
     {{- $tags := .Language.Params.Taxonomies.tag | default "tags" }}
     {{- with ($.GetTerms $tags) }}
     <div class="article-ending-topics">
-    <span class="article-ending-label">相關主題</span>
     <ul class="post-tags">
       {{- range . }}
       <li><a href="{{ .Permalink }}">#{{ .LinkTitle }}</a></li>
