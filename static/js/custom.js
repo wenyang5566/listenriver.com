@@ -666,7 +666,7 @@
           }
           likeButtons.forEach((item) => item.classList.add('is-liked'));
           try { sessionStorage.setItem(likedSessionKey, '1'); } catch {}
-          announce('已送出喜歡，謝謝你。');
+          announce('');
           likeButtons.forEach(item => item.removeAttribute('title'));
           root.classList.remove('post-interactions--offline');
           preparedRabbit.then((image) => {

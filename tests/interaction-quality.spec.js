@@ -16,7 +16,7 @@ test('like errors are visible, retry works, and duplicate clicks stay pending',a
   await expect(button).not.toHaveClass(/is-liked/);
   await expect(page.locator('.post-rabbit-burst')).toHaveCount(0);
   await button.dblclick();
-  await expect(page.locator('[data-post-interactions-status]')).toContainText('已送出喜歡');
+  await expect(page.locator('[data-post-interactions-status]')).toBeHidden();
   await expect(button).toHaveClass(/is-liked/);
   await expect(button).not.toHaveAttribute('aria-busy','true');
   expect(attempts).toBe(2);
