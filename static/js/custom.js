@@ -672,7 +672,7 @@
           preparedRabbit.then((image) => {
             if (!image || !button.isConnected || document.hidden) return;
             const reducedMotion = prefersReducedMotion.matches;
-            const amount = reducedMotion ? 1 : window.matchMedia('(max-width: 767px)').matches ? 3 : 6;
+            const amount = reducedMotion ? 1 : 6;
             launchRabbitBurst(button, image, amount, reducedMotion);
           });
         } catch (error) {
@@ -874,9 +874,6 @@
     const baseY = rect.top + rect.height * 0.45;
     if (rect.bottom < 0 || rect.top > window.innerHeight) return;
 
-    // Bound overlapping celebrations even when the API responds to rapid clicks.
-    const active = Array.from(document.querySelectorAll('.post-rabbit-burst'));
-    active.slice(0, Math.max(0, active.length + amount - 12)).forEach(node => node.remove());
     const fragment = document.createDocumentFragment();
 
     for (let index = 0; index < amount; index += 1) {

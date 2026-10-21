@@ -46,14 +46,14 @@ for (const width of [390,1440]) for (const theme of ['light','dark']) test(`rabb
   await page.addStyleTag({content:'.post-rabbit-burst { animation-play-state: paused; animation-delay: -0.2s; }'});
   releaseLike();
   const rabbits=page.locator('.post-rabbit-burst');
-  await expect(rabbits).toHaveCount(width<768?3:6);
+  await expect(rabbits).toHaveCount(6);
   await expect(page.locator('[data-post-likes]').first()).toHaveText('1');
   expect(await rabbits.first().locator('img').evaluate(image=>image.complete && image.naturalWidth>0)).toBe(true);
   await page.screenshot({path:`.tmp/rabbit-${width}-${theme}.png`});
   await expect(rabbits).toHaveCount(0,{timeout:3000});
 });
 
-test('rapid successful likes bound overlapping rabbits and reduced motion fades',async({page})=>{
+test('rapid successful likes accumulate rabbits, clean up, and reduced motion fades',async({page})=>{
   await page.setViewportSize({width:1440,height:900});
   await page.route('**/stats?*',route=>route.fulfill({json:{views:2,likes:0}}));
   await page.route('**/view',route=>route.fulfill({json:{views:3,likes:0}}));
@@ -67,7 +67,7 @@ test('rapid successful likes bound overlapping rabbits and reduced motion fades'
   for(let index=2;index<=4;index++) {
     await button.click();
     await expect(page.locator('[data-post-likes]').first()).toHaveText(String(index));
-    await expect(page.locator('.post-rabbit-burst')).toHaveCount(12);
+    await expect(page.locator('.post-rabbit-burst')).toHaveCount(index*6);
   }
   await expect(page.locator('.post-rabbit-burst')).toHaveCount(0,{timeout:3000});
   await page.emulateMedia({reducedMotion:'reduce'});
