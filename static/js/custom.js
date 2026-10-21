@@ -580,7 +580,20 @@
     const commentsAnchor = document.querySelector('[data-comments-anchor]');
     const content = document.querySelector('.post-content');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const rabbitImageSrc = '/images/mao_3.png';
+    const rabbitImageSrc = '/images/post-rabbit.webp';
+    let rabbitImageReady;
+    const prepareRabbitImage = () => {
+      if (!rabbitImageReady) {
+        const image = new Image(44, 44);
+        image.alt = '';
+        image.src = rabbitImageSrc;
+        rabbitImageReady = image.decode().then(() => image).catch(() => {
+          rabbitImageReady = null;
+          return null;
+        });
+      }
+      return rabbitImageReady;
+    };
     const viewedSessionKey = 'listenriver:view:' + postPath;
     const likedSessionKey = 'listenriver:like:' + postPath;
     const status = root.querySelector('[data-post-interactions-status]');
@@ -606,6 +619,7 @@
       setCountText(viewsValues, '--');
       setCountText(likesValues, '--');
     } else {
+      scheduleIdle(prepareRabbitImage, { timeout: 1500 });
       scheduleIdle(() => {
         loadStats();
         if (!sessionStorage.getItem(viewedSessionKey)) {
@@ -628,10 +642,13 @@
     }
 
     likeButtons.forEach((button) => {
+      button.addEventListener('pointerenter', prepareRabbitImage, { passive: true });
+      button.addEventListener('focus', prepareRabbitImage);
       button.addEventListener('click', async () => {
         if (!apiBase || isLikePending) return;
 
         isLikePending = true;
+        const preparedRabbit = prepareRabbitImage();
         announce('');
         likeButtons.forEach((item) => {
           item.classList.add('is-busy');
@@ -649,10 +666,15 @@
           }
           likeButtons.forEach((item) => item.classList.add('is-liked'));
           try { sessionStorage.setItem(likedSessionKey, '1'); } catch {}
-          announce('已送出喜歡，謝謝你。');
+          announce('');
           likeButtons.forEach(item => item.removeAttribute('title'));
           root.classList.remove('post-interactions--offline');
-          launchRabbitBurst(button, rabbitImageSrc, prefersReducedMotion.matches ? 3 : 6);
+          preparedRabbit.then((image) => {
+            if (!image || !button.isConnected || document.hidden) return;
+            const reducedMotion = prefersReducedMotion.matches;
+            const amount = reducedMotion ? 1 : 6;
+            launchRabbitBurst(button, image, amount, reducedMotion);
+          });
         } catch (error) {
           likeButtons.forEach((item) => {
             item.title = '按讚暫時失敗，請稍後再試';
@@ -846,29 +868,37 @@
     });
   }
 
-  function launchRabbitBurst(button, imageSrc, amount) {
+  function launchRabbitBurst(button, preparedImage, amount, reducedMotion) {
     const rect = button.getBoundingClientRect();
     const baseX = rect.left + rect.width * 0.5;
     const baseY = rect.top + rect.height * 0.45;
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+    const fragment = document.createDocumentFragment();
 
     for (let index = 0; index < amount; index += 1) {
       const burst = document.createElement('span');
       burst.className = 'post-rabbit-burst';
+      burst.setAttribute('aria-hidden', 'true');
+      if (reducedMotion) burst.classList.add('post-rabbit-burst--reduced');
       burst.style.left = baseX - 22 + 'px';
       burst.style.top = baseY - 22 + 'px';
       burst.style.setProperty('--burst-x', randomInRange(-140, 140) + 'px');
       burst.style.setProperty('--burst-y', randomInRange(-170, -70) + 'px');
 
-      const image = document.createElement('img');
-      image.src = imageSrc;
-      image.alt = '';
+      const image = preparedImage.cloneNode();
       burst.appendChild(image);
-      document.body.appendChild(burst);
+      fragment.appendChild(burst);
 
-      burst.addEventListener('animationend', () => {
+      const cleanup = () => {
         burst.remove();
-      }, { once: true });
+        window.clearTimeout(cleanupTimer);
+      };
+      const cleanupTimer = window.setTimeout(cleanup, 1500);
+      burst.addEventListener('animationend', cleanup, { once: true });
+      burst.addEventListener('animationcancel', cleanup, { once: true });
     }
+    document.body.appendChild(fragment);
   }
 
   function randomInRange(min, max) {

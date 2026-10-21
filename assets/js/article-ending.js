@@ -1,5 +1,6 @@
 (() => {
   const button = document.querySelector('[data-article-share]');
+  const label = button?.querySelector('[data-article-share-label]');
   if (button) button.hidden = false;
   button?.addEventListener('click', async () => {
     const url = document.querySelector('link[rel="canonical"]')?.href || location.href;
@@ -8,11 +9,11 @@
       if (navigator.share) await navigator.share({ title, url });
       else {
         await navigator.clipboard.writeText(url);
-        button.textContent = '連結已複製';
-        setTimeout(() => { button.textContent = '分享'; }, 2500);
+        label.textContent = '已複製';
+        setTimeout(() => { label.textContent = '分享'; }, 2500);
       }
     } catch (error) {
-      if (error.name !== 'AbortError') button.textContent = '請複製網址分享';
+      if (error.name !== 'AbortError') label.textContent = '請複製網址';
     }
   });
   document.querySelectorAll('[data-post-views], [data-post-likes], [data-post-comments]').forEach(value => {

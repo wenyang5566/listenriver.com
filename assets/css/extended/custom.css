@@ -2130,8 +2130,9 @@ body.mobile-nav-locked {
   color: #f2547d;
 }
 
-.post-like-button.is-busy .post-like-button__icon {
-  animation: post-like-pulse 0.8s ease;
+.post-like-button.is-busy .post-like-button__icon,
+.post-floating-tools__item--like.is-busy .post-floating-tools__icon {
+  animation: post-like-pulse 0.28s ease;
 }
 
 .post-floating-tools {
@@ -2201,7 +2202,16 @@ body.mobile-nav-locked {
   z-index: 1200;
   opacity: 0;
   transform: translate3d(0, 0, 0) scale(0.9);
-  animation: post-rabbit-burst 1.25s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation: post-rabbit-burst 0.85s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.post-rabbit-burst--reduced {
+  animation: post-rabbit-fade 0.25s ease forwards;
+}
+
+@keyframes post-rabbit-fade {
+  0%, 100% { opacity: 0; }
+  35%, 65% { opacity: 1; }
 }
 
 .post-rabbit-burst img {

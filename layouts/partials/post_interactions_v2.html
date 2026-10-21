@@ -12,7 +12,15 @@
   data-comments-server-url="{{ $walineServerURL }}"
   data-post-title="{{ .Title | plainify | htmlEscape }}">
   <div class="post-interactions__panel" aria-live="polite">
-    {{- if ne .Params.disableShare true }}<button type="button" class="article-share-button" data-article-share hidden>分享</button>{{ end }}
+    <button type="button" class="post-like-button" data-post-like-button>
+      <span class="post-like-button__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 20.25c-.3 0-.6-.09-.86-.26C8.29 18.06 3 14.08 3 8.99 3 5.96 5.42 3.75 8.2 3.75c1.52 0 2.98.68 3.8 1.83.82-1.15 2.28-1.83 3.8-1.83 2.78 0 5.2 2.21 5.2 5.24 0 5.09-5.29 9.07-8.14 11-.26.17-.56.26-.86.26Z"></path>
+        </svg>
+      </span>
+      <span class="post-like-button__count" data-post-likes>--</span>
+      <span>喜歡</span>
+    </button>
     {{- if $commentsEnabled }}
     <button type="button" class="post-comment-button" data-post-comments-button>
       <span class="post-comment-button__icon" aria-hidden="true">
@@ -24,6 +32,16 @@
       <span>留言</span>
     </button>
     {{- end }}
+    {{- if ne .Params.disableShare true }}
+    <button type="button" class="article-share-button" data-article-share hidden>
+      <span class="article-share-button__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 16V3m-4 4 4-4 4 4M5 12v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-8"></path>
+        </svg>
+      </span>
+      <span data-article-share-label>分享</span>
+    </button>
+    {{- end }}
     <span class="post-stat post-stat--views">
       <span class="post-stat__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
@@ -33,15 +51,6 @@
       </span>
       <span class="post-stat__value" data-post-views>--</span>
     </span>
-    <button type="button" class="post-like-button" data-post-like-button>
-      <span class="post-like-button__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 20.25c-.3 0-.6-.09-.86-.26C8.29 18.06 3 14.08 3 8.99 3 5.96 5.42 3.75 8.2 3.75c1.52 0 2.98.68 3.8 1.83.82-1.15 2.28-1.83 3.8-1.83 2.78 0 5.2 2.21 5.2 5.24 0 5.09-5.29 9.07-8.14 11-.26.17-.56.26-.86.26Z"></path>
-        </svg>
-      </span>
-      <span class="post-like-button__count" data-post-likes>--</span>
-      <span>喜歡這篇文章</span>
-    </button>
   </div>
   <p class="post-interactions-status" data-post-interactions-status role="status" aria-live="polite" hidden></p>
 </section>

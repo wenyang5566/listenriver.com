@@ -142,7 +142,7 @@
     }
 
     function copyUrl() {
-      const url = window.location.href;
+      const url = document.querySelector('link[rel="canonical"]')?.href || window.location.href;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         return navigator.clipboard.writeText(url).then(function () { showToast('已複製連結'); });
       }
@@ -166,7 +166,7 @@
       shareButton.addEventListener('click', function () {
         const shareData = {
           title: document.title,
-          url: window.location.href
+          url: document.querySelector('link[rel="canonical"]')?.href || window.location.href
         };
         if (navigator.share) {
           navigator.share(shareData).catch(function () {});
