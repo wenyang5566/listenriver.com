@@ -715,6 +715,15 @@ body.mobile-nav-locked {
   }
 }
 
+.post-rabbit-burst--reduced {
+  animation: post-rabbit-fade 0.25s ease forwards;
+}
+
+@keyframes post-rabbit-fade {
+  0%, 100% { opacity: 0; }
+  35%, 65% { opacity: 1; }
+}
+
 @keyframes post-rabbit-burst {
   0% {
     opacity: 0;

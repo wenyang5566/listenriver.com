@@ -14,11 +14,67 @@ test('like errors are visible, retry works, and duplicate clicks stay pending',a
   await button.click();
   await expect(page.locator('[data-post-interactions-status]')).toContainText('請再按一次重試');
   await expect(button).not.toHaveClass(/is-liked/);
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(0);
   await button.dblclick();
   await expect(page.locator('[data-post-interactions-status]')).toContainText('已送出喜歡');
   await expect(button).toHaveClass(/is-liked/);
   await expect(button).not.toHaveAttribute('aria-busy','true');
   expect(attempts).toBe(2);
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(6);
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(0,{timeout:2000});
+});
+for (const width of [390,1440]) for (const theme of ['light','dark']) test(`rabbit celebration at ${width}px in ${theme}`,async({page})=>{
+  await page.setViewportSize({width,height:900});
+  await page.addInitScript(theme=>localStorage.setItem('pref-theme',theme),theme);
+  await page.route('**/stats?*',route=>route.fulfill({json:{views:2,likes:0}}));
+  await page.route('**/view',route=>route.fulfill({json:{views:3,likes:0}}));
+  let releaseLike;
+  await page.route('**/like',async route=>{
+    await new Promise(resolve=>{releaseLike=resolve;});
+    await route.fulfill({json:{views:3,likes:1}});
+  });
+  await page.goto(article);
+  const button=page.locator('[data-post-like-button]');
+  await button.focus();
+  await expect.poll(()=>page.evaluate(()=>performance.getEntriesByType('resource').some(entry=>entry.name.endsWith('/images/post-rabbit.webp')))).toBe(true);
+  await button.click();
+  await expect(button).toHaveAttribute('aria-busy','true');
+  await expect(page.locator('[data-post-likes]').first()).not.toHaveText('1');
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(0);
+  await expect.poll(()=>typeof releaseLike).toBe('function');
+  // Pause only the celebration so its image and visual state can be inspected.
+  await page.addStyleTag({content:'.post-rabbit-burst { animation-play-state: paused; animation-delay: -0.2s; }'});
+  releaseLike();
+  const rabbits=page.locator('.post-rabbit-burst');
+  await expect(rabbits).toHaveCount(width<768?3:6);
+  await expect(page.locator('[data-post-likes]').first()).toHaveText('1');
+  expect(await rabbits.first().locator('img').evaluate(image=>image.complete && image.naturalWidth>0)).toBe(true);
+  await page.screenshot({path:`.tmp/rabbit-${width}-${theme}.png`});
+  await expect(rabbits).toHaveCount(0,{timeout:3000});
+});
+
+test('rapid successful likes bound overlapping rabbits and reduced motion fades',async({page})=>{
+  await page.setViewportSize({width:1440,height:900});
+  await page.route('**/stats?*',route=>route.fulfill({json:{views:2,likes:0}}));
+  await page.route('**/view',route=>route.fulfill({json:{views:3,likes:0}}));
+  let likes=0;
+  await page.route('**/like',route=>route.fulfill({json:{views:3,likes:++likes}}));
+  await page.goto(article);
+  await page.addStyleTag({content:'.post-rabbit-burst { animation-play-state: paused; }'});
+  const button=page.locator('[data-post-like-button]');
+  await button.click();
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(6);
+  for(let index=2;index<=4;index++) {
+    await button.click();
+    await expect(page.locator('[data-post-likes]').first()).toHaveText(String(index));
+    await expect(page.locator('.post-rabbit-burst')).toHaveCount(12);
+  }
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(0,{timeout:3000});
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await button.click();
+  await expect(page.locator('.post-rabbit-burst--reduced')).toHaveCount(1);
+  await expect(page.locator('.post-rabbit-burst--reduced')).toHaveCSS('animation-name','post-rabbit-fade');
+  await expect(page.locator('.post-rabbit-burst')).toHaveCount(0,{timeout:3000});
 });
 for(const width of [320,390,1440]) test(`gallery targets and 404 recovery at ${width}px`,async({page})=>{
   await page.setViewportSize({width,height:900});
