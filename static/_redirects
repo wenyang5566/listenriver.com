@@ -67,15 +67,12 @@
 /blog/邁向助人工作/ /categories/助人工作/ 301
 /blog/邁向助人工作 /blog/助人工作/ 301
 /blog/邁向助人工作/ /blog/助人工作/ 301
-/blog/邁向助人工作/* /blog/助人工作/:splat 301
 /tags/邁向助人工作 /tags/助人工作/ 301
 /tags/邁向助人工作/ /tags/助人工作/ 301
 /categories/會所模式 /clubhouse/ 301
 /categories/會所模式/ /clubhouse/ 301
 /tags/閱讀書摘/ /tags/書摘/ 301
 /tags/閱讀/ /tags/閱讀心得/ 301
-/categories/閱讀書摘/:splat /categories/書摘/:splat 301
-/blog/會所模式/* /clubhouse/:splat 301
 /blog/閱讀心得/閱讀心得英雄之旅個體化找回自己的碎片/ /blog/閱讀心得/英雄之旅/ 301
 # Retired archive pages after switching to 20 articles per batch.
 /categories/助人工作/page/4 /categories/助人工作/ 301
@@ -132,7 +129,6 @@
 /clubhouse/page/4 /clubhouse/ 301
 /clubhouse/page/4/ /clubhouse/ 301
 /clubhouse/page/4/index.html /clubhouse/ 301
-/:path.html /:path/ 301
 
 # Clubhouse tag rename, 2026-10-09. HTML keeps section canonical; RSS keeps tag feeds.
 /tags/會所工作日誌 /clubhouse/工作日誌/ 301
@@ -984,3 +980,9 @@
 /categories/日常書寫/page/2/ /categories/日常札記/ 301
 /categories/日常書寫/page/2/index.html /categories/日常札記/ 301
 /categories/日常書寫/index.xml /categories/日常札記/index.xml 301
+
+# Cloudflare: exact rules must precede all wildcard/placeholder rules.
+/blog/邁向助人工作/* /blog/助人工作/:splat 301
+/categories/閱讀書摘/:splat /categories/書摘/:splat 301
+/blog/會所模式/* /clubhouse/:splat 301
+/:path.html /:path/ 301

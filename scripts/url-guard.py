@@ -108,8 +108,30 @@ def resolve(snapshot, url):
     return None, 'too many redirects'
 
 
-def check(old, new, moves):
+def validate_redirect_layout(rules):
+    """Cloudflare counts exact rules after a wildcard against its dynamic budget."""
     failures = []
+    dynamic_seen = False
+    static_count = dynamic_count = 0
+    for rule in rules:
+        source = rule.split()[0]
+        dynamic = bool(re.search(r'\*|:[A-Za-z]', source))
+        if dynamic:
+            dynamic_seen = True
+            dynamic_count += 1
+        else:
+            static_count += 1
+            if dynamic_seen:
+                failures.append(f'Static redirect must precede dynamic rules: {source}')
+        if len(rule) > 1000:
+            failures.append(f'Redirect exceeds Cloudflare line limit: {source}')
+    if static_count > 2000 or dynamic_count > 100:
+        failures.append(f'Cloudflare redirect limits exceeded: {static_count} static, {dynamic_count} dynamic')
+    return failures
+
+
+def check(old, new, moves):
+    failures = validate_redirect_layout(new['redirect_rules'])
     for rule in old['redirect_rules']:
         if rule not in new['redirect_rules']:
             source, destination, status = rule.split()
