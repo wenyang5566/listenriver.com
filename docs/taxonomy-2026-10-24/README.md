@@ -27,6 +27,7 @@
 - 本機不代表正式Cloudflare HTTP已驗證；發布後仍需抽查分類301、feed與文章頁。
 - 收尾補驗：既有閱讀筆記遷移檢查通過（40條直接301、canonical、Open Graph、sitemap、RSS與內部連結）；Pagefind必要產物齊全且索引229頁；26篇正文再次比對未變；git diff --check通過。已更新完整58個來源路徑清單。
 - 提交前舊名稱清查：所有文章 categories、有效模板、分類資料與 hugo.yaml 均已移除舊名稱；16條舊分類路由直接導到新分類或feed，沒有再導回舊分類。舊字樣僅保留於文章／資源歷史路徑、aliases、轉址來源、作者原文及歷史紀錄，不做全repo盲目替換。
+- PR #72 首輪完整CI為129項通過、2項桌機提示色測試失敗：舊測試仍在展開按鈕內找已拆出的分類連結。已更新定位並修正CSS，維持展開／鍵盤焦點時連結的提示色；明暗兩項本機重測通過，隨PR重新執行完整CI。
 
 ## 預覽
 
@@ -38,6 +39,7 @@
 
 - `assets/css/extended/zzzzzzz-mobile-directory.css`
 - `assets/css/river-home-font.css`
+- `assets/css/extended/zzzzzzzz-desktop-directory.css`
 - `content/blog/_index.md`
 - `content/blog/日常書寫/clubhouse的密室/index.md`
 - `content/blog/日常書寫/clubhouse的療癒空間/index.md`
@@ -94,3 +96,4 @@
 - `tests/home-controls.spec.js`
 - `tests/mobile-directory.spec.js`
 - `tests/simplified-site.spec.js`
+- `tests/scroll-navigation.spec.js`
