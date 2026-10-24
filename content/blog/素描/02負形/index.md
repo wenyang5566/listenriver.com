@@ -13,7 +13,7 @@ cover:
   alt: "素描02：負形"
 
 categories:
-  - 日常書寫
+  - 日常札記
 tags:
   - 素描
 ---

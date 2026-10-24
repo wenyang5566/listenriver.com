@@ -13,7 +13,7 @@ cover:
   alt: "素描06：Still光影、色階"
 
 categories:
-  - 日常書寫
+  - 日常札記
 tags:
   - 素描
 ---

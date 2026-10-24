@@ -11,7 +11,7 @@ cover:
   alt: "如何看待暴力？"
 
 categories:
-  - 日常書寫
+  - 閱讀筆記
 tags:
   - 電影心得
 ---

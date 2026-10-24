@@ -4,10 +4,17 @@ for (const width of [390, 1440]) test(`category links and keloid drawer ${width}
   await page.goto('/');
   if(width<861) await page.locator('.header-mobile-menu-toggle').click();
   const nav=page.locator(width<861?'#mobile-nav-drawer':'.desktop-nav');
-  const links=nav.locator(width<861?'.mobile-nav-category-row > a':'.personal-header__nav-combo > a');
+  const links=nav.locator(width<861?'.mobile-nav-all-link':'.personal-header__nav-combo > a');
   expect(await links.count()).toBe(6);
   for(const link of await links.all()) expect((await request.get(await link.getAttribute('href'))).ok()).toBeTruthy();
-  await links.filter({hasText:'日常書寫'}).click();
+  if(width<861) {
+    const before=page.url();
+    const group=nav.locator('.mobile-nav-group').filter({has:page.locator('.mobile-nav-category-link',{hasText:'日常札記'})});
+    await group.locator('.mobile-nav-category-link').click();
+    await expect(group.locator('.mobile-nav-group-trigger')).toHaveAttribute('aria-expanded','true');
+    expect(page.url()).toBe(before);
+    await group.locator('.mobile-nav-all-link').click();
+  } else await links.filter({hasText:'日常札記'}).click();
   await expect(page).toHaveURL(/\/categories\/.*\/$/);
   if(width<861) await page.locator('.header-mobile-menu-toggle').click();
   const trigger=nav.getByRole('button',{name:width<861?'展開或收合 病痛經驗 子題':'展開 病痛經驗',exact:true});

@@ -184,8 +184,8 @@
       {{- if and (eq .key "helping") (hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL)) -}}{{- $isCurrent = false -}}{{- end -}}
       <section class="mobile-nav-group{{ if $isCurrent }} is-open is-current{{ end }}">
         <div class="mobile-nav-category-row">
-          <a class="mobile-nav-category-link" href="{{ .url }}"{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} aria-current="page"{{ end }}><span>{{ .label }}</span></a>
           <button class="mobile-nav-group-trigger" type="button" aria-label="展開或收合 {{ .label }} {{ if eq .key "clubhouse" }}系列{{ else }}子題{{ end }}" aria-controls="mobile-nav-panel-{{ .key }}" aria-expanded="{{ if $isCurrent }}true{{ else }}false{{ end }}">
+            <span class="mobile-nav-category-link"><span>{{ .label }}</span></span>
             <span class="mobile-nav-expand-symbol" aria-hidden="true"></span>
           </button>
         </div>

@@ -30,7 +30,7 @@
   .publication-header .mobile-nav-category-link { font-size: 19px; font-weight: 600; color: var(--pub-ink); gap: 10px; padding: 0; }
   .publication-header .mobile-nav-category-link .personal-header__dropdown-count { font-size: 13px; font-weight: 400; color: var(--pub-ink); opacity: .65; }
   .publication-header .mobile-nav-category-row .mobile-nav-group-trigger {
-    display: flex; width: 44px; min-width: 44px; min-height: 62px; flex: 0 0 44px; padding: 0; justify-content: center;
+    display: flex; width: 100%; min-width: 44px; min-height: 62px; flex: 1; padding: 0; justify-content: space-between; text-align: left;
     border: 0; border-radius: 0; background: transparent;
     font-size: 12px; font-weight: 400; color: var(--pub-ink);
   }
