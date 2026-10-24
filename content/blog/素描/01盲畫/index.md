@@ -13,7 +13,7 @@ cover:
   alt: "素描01：盲畫"
 
 categories:
-  - 日常書寫
+  - 日常札記
 tags:
   - 素描
 ---

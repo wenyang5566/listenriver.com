@@ -15,14 +15,16 @@ for (const width of [320,390,430,820]) {
       await expect(drawer).toHaveAttribute('aria-hidden','true');
       await page.locator('.header-mobile-menu-toggle').click();
       await expect(groups).toHaveCount(6);
-      await expect(drawer.locator('.mobile-nav-category-link > span:first-child')).toHaveText(['閱讀筆記','日常書寫','成為自己','病痛經驗','助人工作','會所模式']);
+      await expect(drawer.locator('.mobile-nav-category-link > span:first-child')).toHaveText(['閱讀筆記','日常札記','成為自己','病痛經驗','助人工作','會所模式']);
       await expect(drawer.locator('.mobile-nav-category-link .personal-header__dropdown-count')).toHaveCount(0);
       await expect(drawer.locator('.mobile-nav-all-link .personal-header__dropdown-count')).toHaveCount(6);
       for (const group of await groups.all()) {
         const link = group.locator('.mobile-nav-all-link');
         const trigger = group.locator('.mobile-nav-group-trigger');
         expect((await request.get(await link.getAttribute('href'))).ok()).toBeTruthy();
-        await trigger.click();
+        const before=page.url();
+        await group.locator('.mobile-nav-category-link').click();
+        expect(page.url()).toBe(before);
         await expect(trigger).toHaveAttribute('aria-expanded','true');
         await expect(groups.filter({has:page.locator('.mobile-nav-group-trigger[aria-expanded="true"]')})).toHaveCount(1);
         const triggerBox = await trigger.boundingBox();
@@ -58,7 +60,7 @@ for (const width of [900,1440]) {
       await page.goto('/');
       const groups=page.locator('.desktop-nav .nav-group');
       await expect(groups).toHaveCount(6);
-      await expect(groups.locator('.personal-header__nav-link-main')).toHaveText(['閱讀筆記','日常書寫','成為自己','病痛經驗','助人工作','會所模式']);
+      await expect(groups.locator('.personal-header__nav-link-main')).toHaveText(['閱讀筆記','日常札記','成為自己','病痛經驗','助人工作','會所模式']);
       await expect(groups.locator('.personal-header__nav-link-main .personal-header__dropdown-count')).toHaveCount(0);
       for(const group of await groups.all()) {
         const button=group.locator('.nav-group-trigger');

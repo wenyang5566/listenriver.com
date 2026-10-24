@@ -13,7 +13,7 @@ cover:
   alt: "素描03：Still負形"
 
 categories:
-  - 日常書寫
+  - 日常札記
 tags:
   - 素描
   - 正念的河流

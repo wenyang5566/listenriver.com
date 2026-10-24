@@ -11,7 +11,7 @@ cover:
   alt: "一種抵達經驗的方式"
 
 categories:
-  - 日常書寫
+  - 閱讀筆記
 tags:
   - 講座心得
   - 現象學

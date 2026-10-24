@@ -150,7 +150,13 @@ test('featured autoplay retains five seconds and lets readers keep all motion pa
   await page.mouse.move(0, 0);
   await expect(carousel).toHaveAttribute('data-feature-playing', 'true');
   const toggle = page.locator('[data-feature-toggle]');
+  await expect(toggle).toHaveAccessibleName('暫停動態');
+  await expect(toggle.locator('[data-feature-pause]')).toBeVisible();
+  await expect(toggle.locator('[data-feature-play]')).toBeHidden();
   await toggle.click();
+  await expect(toggle).toHaveAccessibleName('繼續動態');
+  await expect(toggle.locator('[data-feature-play]')).toBeVisible();
+  await expect(toggle.locator('[data-feature-pause]')).toBeHidden();
   await toggle.evaluate(e => e.blur());
   await page.mouse.move(0, 0);
   await expect(carousel).toHaveAttribute('data-feature-paused', 'true');

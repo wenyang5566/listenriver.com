@@ -11,7 +11,9 @@ cover:
   alt: "網頁架設學習歷程"
 
 categories:
-  - 日常書寫
+  - 日常札記
+tags:
+  - 數位生活
 ---
 生日這天過得如日常般幸福，但很想分享個人網站作為成果發表。我終於順利把網站從wenyang0223.github.io搬家到 [http://listenriver.com](https://listenriver.com/) ，並且建立Waline 的留言板還有毛生按讚按鈕。
 

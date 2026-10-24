@@ -7,7 +7,7 @@ keywords:
   - 助人工作
   - 病痛經驗
   - 成為自己
-  - 日常書寫
+  - 日常札記
 robotsNoIndex: false
 ---
 

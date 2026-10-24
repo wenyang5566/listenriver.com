@@ -96,12 +96,12 @@
 /categories/成為自己/page/4 /categories/成為自己/ 301
 /categories/成為自己/page/4/ /categories/成為自己/ 301
 /categories/成為自己/page/4/index.html /categories/成為自己/ 301
-/categories/日常書寫/page/3 /categories/日常書寫/ 301
-/categories/日常書寫/page/3/ /categories/日常書寫/ 301
-/categories/日常書寫/page/3/index.html /categories/日常書寫/ 301
-/categories/日常書寫/page/4 /categories/日常書寫/ 301
-/categories/日常書寫/page/4/ /categories/日常書寫/ 301
-/categories/日常書寫/page/4/index.html /categories/日常書寫/ 301
+/categories/日常書寫/page/3 /categories/日常札記/ 301
+/categories/日常書寫/page/3/ /categories/日常札記/ 301
+/categories/日常書寫/page/3/index.html /categories/日常札記/ 301
+/categories/日常書寫/page/4 /categories/日常札記/ 301
+/categories/日常書寫/page/4/ /categories/日常札記/ 301
+/categories/日常書寫/page/4/index.html /categories/日常札記/ 301
 /categories/病痛經驗/page/2 /categories/病痛經驗/ 301
 /categories/病痛經驗/page/2/ /categories/病痛經驗/ 301
 /categories/病痛經驗/page/2/index.html /categories/病痛經驗/ 301
@@ -972,3 +972,15 @@
 /clubhouse/會所工作手冊/page/1 /clubhouse/工作手冊/ 301
 /clubhouse/會所工作手冊/page/1/ /clubhouse/工作手冊/ 301
 /clubhouse/會所工作手冊/page/1/index.html /clubhouse/工作手冊/ 301
+
+# Daily category migration, 2026-10-24. Twenty articles fit on one page.
+/categories/日常書寫 /categories/日常札記/ 301
+/categories/日常書寫/ /categories/日常札記/ 301
+/categories/日常書寫/index.html /categories/日常札記/ 301
+/categories/日常書寫/page/1 /categories/日常札記/ 301
+/categories/日常書寫/page/1/ /categories/日常札記/ 301
+/categories/日常書寫/page/1/index.html /categories/日常札記/ 301
+/categories/日常書寫/page/2 /categories/日常札記/ 301
+/categories/日常書寫/page/2/ /categories/日常札記/ 301
+/categories/日常書寫/page/2/index.html /categories/日常札記/ 301
+/categories/日常書寫/index.xml /categories/日常札記/index.xml 301

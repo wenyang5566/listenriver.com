@@ -10,12 +10,13 @@ for (const theme of ['light', 'dark']) {
     await page.goto('/');
     const header = page.locator('#site-header');
     const trigger = header.locator('.nav-group-trigger').first();
+    const categoryLink = header.locator('.personal-header__nav-link-main').first();
     const arrow = trigger.locator('.nav-chip-chevron');
     const accent = theme === 'dark' ? 'rgb(240, 178, 149)' : 'rgb(180, 82, 57)';
     await expect(arrow).toHaveCSS('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     await trigger.hover();
     await expect(trigger).toHaveAttribute('aria-expanded', 'true');
-    await expect(trigger.locator('.personal-header__nav-link-main')).toHaveCSS('color', accent);
+    await expect(categoryLink).toHaveCSS('color', accent);
     await expect(arrow).toHaveCSS('transform', 'matrix(-1, 0, 0, -1, 0, 0)');
     await expect(arrow).toHaveCSS('transition-duration', '0s');
     await page.mouse.move(5, 400);
@@ -24,7 +25,7 @@ for (const theme of ['light', 'dark']) {
     await page.keyboard.press('Tab');
     await trigger.focus();
     await expect(trigger).toHaveCSS('outline-style', 'solid');
-    await expect(trigger.locator('.personal-header__nav-link-main')).toHaveCSS('color', accent);
+    await expect(categoryLink).toHaveCSS('color', accent);
     const search = header.locator('.header-search-toggle');
     await search.click();
     await expect(search).toHaveAttribute('aria-expanded', 'true');

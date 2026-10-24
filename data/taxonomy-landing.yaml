@@ -4,11 +4,12 @@ categoryCards:
     index: "01"
     en: Reading & Notes
     title: 閱讀筆記
+    filters: [閱讀心得, 書摘, 電影心得, 講座筆記, 講座心得, 展覽心得]
     page: /categories/閱讀筆記/
     source:
       kind: category
       name: 閱讀筆記
-    description: 讀書、看電影、聽講座，我把喜歡的段落和自己的心得留下來，也想和你分享。
+    description: 讀書、看電影、聽講座、看展，我把喜歡的段落和自己的心得留下來，也想和你分享。
     tags:
       - 書摘
       - 閱讀心得
@@ -64,13 +65,16 @@ categoryCards:
     accent: daily
     index: "05"
     en: Daily Writing
-    title: 日常書寫
-    page: /categories/日常書寫/
+    title: 日常札記
+    filters: [觀察反思, 數位生活, 素描]
+    page: /categories/日常札記/
     source:
       kind: category
-      name: 日常書寫
-    description: 生活裡有些事情，讓我忽然想寫點什麼。心情、靈感，還有畫畫時想到的事，都留在這裡。
+      name: 日常札記
+    description: 生活裡看到、聽到、參與到的事，讓我停下來想一想。
     tags:
+      - 觀察反思
+      - 數位生活
       - 素描
   - key: clubhouse-model
     accent: clubhouse

@@ -14,7 +14,7 @@ test('twelve articles retain native reading and recommendations without editoria
  await page.goto('/clubhouse/工作日誌/07白板溝通/');await expect(page.locator('.post-series-nav')).toHaveCount(1);
 });
 test('five categories keep their existing article lists without a second curated entry system',async({page})=>{
- for(const name of ['成為自己','日常書寫','病痛經驗','助人工作','閱讀筆記']){await page.goto('/categories/'+name+'/');await expect(page.getByRole('heading',{level:1})).toContainText(name);await expect(page.locator('[data-category-starts],.reading-path-entry')).toHaveCount(0);expect(await page.locator('main a[href*="/blog/"],main a[href*="/clubhouse/"]').count()).toBeGreaterThan(0);}
+ for(const name of ['成為自己','日常札記','病痛經驗','助人工作','閱讀筆記']){await page.goto('/categories/'+name+'/');await expect(page.getByRole('heading',{level:1})).toContainText(name);await expect(page.locator('[data-category-starts],.reading-path-entry')).toHaveCount(0);expect(await page.locator('main a[href*="/blog/"],main a[href*="/clubhouse/"]').count()).toBeGreaterThan(0);}
 });
 for(const width of [390,1440])test('gallery remains captionless, paused and manually operable at '+width,async({page})=>{
  await page.setViewportSize({width,height:900});await page.addInitScript(()=>sessionStorage.setItem('river-motion-paused','true'));await page.goto('/');

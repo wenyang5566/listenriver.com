@@ -105,8 +105,8 @@
       {{- if and (eq .key "helping") (hasPrefix $.RelPermalink ("/clubhouse/" | relLangURL)) -}}{{- $isCurrent = false -}}{{- end -}}
       <div class="nav-group personal-header__nav-group">
         <div class="personal-header__nav-combo{{ if $isCurrent }} is-active{{ end }}">
+          <a class="personal-header__nav-link personal-header__nav-link-main" href="{{ .url }}"{{ if (partial "header-item-exact.html" (dict "item" . "page" $)) }} aria-current="page"{{ end }}>{{ .label }}</a>
           <button class="nav-group-trigger personal-header__nav-trigger" type="button" aria-label="展開 {{ .label }}" aria-controls="desktop-nav-panel-{{ .key }}" aria-expanded="false">
-            <span class="personal-header__nav-link personal-header__nav-link-main">{{ .label }}</span>
             <svg class="nav-chip-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6"></path>
             </svg>

@@ -70,7 +70,7 @@ params:
     - 助人工作
     - 病痛經驗
     - 成為自己
-    - 日常書寫
+    - 日常札記
   homeTagAxes:
     - title: 閱讀筆記
       primaryTag: 閱讀心得
@@ -94,12 +94,12 @@ params:
         - 成為一個人
         - 正念的河流
         - 親密關係
-    - title: 日常書寫
-      primaryTag: 日常書寫
+    - title: 日常札記
+      primaryTag: 觀察反思
       tags:
-        - 日常書寫
-        - 講座心得
-        - 講座筆記
+        - 觀察反思
+        - 數位生活
+        - 素描
   headerFeaturedTags:
     - 閱讀心得
     - 會所模式
@@ -109,7 +109,7 @@ params:
   desktopHeader:
     categories:
       - 閱讀筆記
-      - 日常書寫
+      - 日常札記
       - 成為自己
       - 病痛經驗
       - 助人工作
