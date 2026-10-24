@@ -8,7 +8,7 @@
   .publication-header.personal-header .personal-header__nav { gap: clamp(12px, 2vw, 24px); }
   .publication-header.personal-header .personal-header__nav-trigger {
     display: flex; align-items: center; justify-content: center; gap: 8px;
-    width: auto; min-width: 0; min-height: 44px; padding: 0 4px;
+    width: 44px; min-width: 44px; min-height: 44px; padding: 0 4px;
     border: 0; background: transparent; color: var(--pub-ink);
   }
   .publication-header .personal-header__nav-trigger .personal-header__nav-link { padding: 0; white-space: nowrap; }

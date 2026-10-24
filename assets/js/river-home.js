@@ -69,7 +69,12 @@
     carousel.dataset.featureStopped = String(!engaged || userPaused || reducedMotion.matches);
     carousel.dataset.featurePaused = String(userPaused);
     toggle.disabled = reducedMotion.matches;
-    toggle.querySelector('[data-feature-toggle-label]').textContent = reducedMotion.matches ? '已減少動態' : userPaused ? '繼續動態' : '暫停動態';
+    const label = reducedMotion.matches ? '已減少動態' : userPaused ? '繼續動態' : '暫停動態';
+    toggle.querySelector('[data-feature-toggle-label]').textContent = label;
+    toggle.setAttribute('aria-label', label);
+    toggle.title = label;
+    toggle.querySelector('[data-feature-pause]').toggleAttribute('hidden', userPaused && !reducedMotion.matches);
+    toggle.querySelector('[data-feature-play]').toggleAttribute('hidden', !userPaused || reducedMotion.matches);
     const playing = !userPaused && engaged && visible && !hovered && !focused && !reducedMotion.matches && !document.hidden;
     counter.setAttribute('aria-live', playing ? 'off' : 'polite');
     if (!playing) return;
