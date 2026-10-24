@@ -10,6 +10,23 @@ spec.loader.exec_module(guard)
 
 
 class UrlGuardTests(unittest.TestCase):
+    def test_static_rule_after_dynamic_is_rejected(self):
+        rules = ['/old/* /new/:splat 301', '/late/ /new/ 301']
+        self.assertTrue(guard.validate_redirect_layout(rules))
+        snapshot = {'pages': {}, 'redirect_rules': rules}
+        self.assertTrue(any('Static redirect' in item for item in guard.check(snapshot, snapshot, {})[0]))
+
+    def test_static_rules_before_dynamic_are_valid(self):
+        self.assertEqual(guard.validate_redirect_layout([
+            '/old/ /new/ 301', '/old/* /new/:splat 301']), [])
+
+    def test_cloudflare_redirect_budgets(self):
+        static = [f'/old-{i}/ /new/ 301' for i in range(2000)]
+        dynamic = [f'/old-{i}/* /new/:splat 301' for i in range(100)]
+        self.assertEqual(guard.validate_redirect_layout(static + dynamic), [])
+        self.assertTrue(guard.validate_redirect_layout(static + ['/extra/ /new/ 301']))
+        self.assertTrue(guard.validate_redirect_layout(dynamic + ['/extra/* /new/:splat 301']))
+
     def test_historical_redirect_can_follow_reviewed_canonical_move(self):
         old = {'pages': {'/old/': {'canonical': '/old/', 'redirect': None}},
                'redirect_rules': ['/legacy/ /old/ 301']}
