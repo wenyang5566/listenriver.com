@@ -1,14 +1,11 @@
 ---
 title: 書摘｜《見佛殺佛》
 date: 2022-05-19 11:07:47+08:00
-description: ""
 draft: false
-aliases:
 type: post
 cover:
   image: 見佛殺佛.jpg
   alt: "書摘｜《見佛殺佛》"
-
 categories:
   - 閱讀筆記
 tags:

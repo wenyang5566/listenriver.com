@@ -1,7 +1,6 @@
 ---
 title: 待人：一條相互映照之路
 date: 2018-12-20 10:07:47+08:00
-description: ""
 draft: false
 aliases:
   - /blog/講座筆記/20181220待人一條相互映之路/
@@ -9,7 +8,6 @@ type: post
 cover:
   image: IMG_2062.JPG
   alt: "待人：一條相互映照之路"
-
 categories:
   - 閱讀筆記
 tags:

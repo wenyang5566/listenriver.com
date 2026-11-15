@@ -3,7 +3,6 @@ title: 工作日誌 06｜複雜用藥下，改變如何發生??
 displayTitle: 複雜用藥下，改變如何發生??
 seriesLabel: 工作日誌 06
 date: 2025-10-01
-description:
 draft: false
 type: post
 cover:

@@ -48,15 +48,26 @@ Build the site with a workspace-local absolute cache directory:
 powershell -ExecutionPolicy Bypass -File .\scripts\hugo-build-local.ps1
 ```
 
-Run a local preview without `hugo server`:
+Run the live article preview on Windows:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\hugo-preview-local.ps1
+npm run preview
 ```
 
-This uses `hugo --watch` to rebuild into `public-preview/` and serves that
-folder on `http://127.0.0.1:1313/` with Python's built-in static server.
-Use this when `hugo server` returns `Page Not Found` locally.
+Open `http://localhost:1313/`. Saving an article in Obsidian or VS Code rebuilds
+the page automatically. Drafts are included; press Ctrl+C to stop.
+Use `npm run preview -- -Port 1314` if port 1313 is occupied.
+
+The Windows helpers use Hugo extended 0.160.1, matching CI, and a project-local
+cache. If needed, they download the pinned official binary into ignored `.tmp/`
+and verify its published SHA256 checksum (the first run requires internet).
+They apply `GODEBUG=asyncpreemptoff=1` only during the local command to avoid
+the Windows Go/warpc runtime crash reproduced on this machine. The root
+`hugo.exe` is not used. Production build settings remain in `npm run build`.
+
+`npm run build:local` builds Hugo into `public-build-check/`. These helpers do
+not generate Pagefind, so they are for article layout and image previews;
+use the full production build when validating search.
 
 Clean generated output and local caches:
 

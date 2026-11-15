@@ -1,7 +1,6 @@
 ---
 title: 講座筆記｜2021政大質性研究工作坊：建制民族誌（王增勇老師）逐字稿整理
 date: 2021-10-31 10:07:47+08:00
-description: ""
 draft: false
 aliases:
   - /blog/工作坊筆記/建制民族誌/
@@ -10,7 +9,6 @@ type: post
 cover:
   image: 質性研究工作坊.jpg
   alt: "講座筆記｜2021政大質性研究工作坊：建制民族誌（王增勇老師）逐字稿整理"
-
 categories:
   - 閱讀筆記
 tags:

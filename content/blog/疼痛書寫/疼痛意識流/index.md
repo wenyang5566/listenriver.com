@@ -5,9 +5,6 @@ date: 2023-06-18
 description: 聽見的人，聽不見的人，不想聽見的人；無論多麼差異，終究在消失相遇。線條代表我們的關係，構成了面，陰影、明度、質地。
 draft: false
 type: post
-cover:
-  image:
-  alt:
 categories:
   - 病痛經驗
 tags:

@@ -3,7 +3,6 @@ title: 工作日誌 08｜推動會員帶開會與導覽部門
 displayTitle: 推動會員帶開會與導覽部門
 seriesLabel: 工作日誌 08
 date: 2025-11-11
-description:
 draft: false
 type: post
 cover:

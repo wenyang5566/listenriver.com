@@ -3,7 +3,6 @@ title: 工作日誌 11｜敘事的見證
 displayTitle: 敘事的見證
 seriesLabel: 工作日誌 11
 date: 2026-03-04
-description:
 draft: false
 type: post
 cover:

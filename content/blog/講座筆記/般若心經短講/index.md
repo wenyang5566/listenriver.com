@@ -1,12 +1,10 @@
 ---
 title: 紀金慶老師｜《般若心經》短講｜逐字稿
 date: 2021-12-21 10:07:47+08:00
-description: ""
 draft: false
 aliases:
   - /blog/講座筆記/20211221般若心經短講/
 type: post
-
 categories:
   - 閱讀筆記
 tags:

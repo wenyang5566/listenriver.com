@@ -5,9 +5,6 @@ date: 2022-11-23
 description: 聆聽疼痛所帶來的效果並非一種「治癒」而是一種「療癒」。面對癌症、不治之症或各種折磨人的病痛時，療癒帶來了治癒以外另一種可能性和超越性。
 draft: false
 type: post
-cover:
-  image:
-  alt:
 categories:
   - 病痛經驗
   - 助人工作

@@ -1,7 +1,6 @@
 ---
 title: 網頁架設學習歷程
 date: 2026-02-23
-description:
 draft: false
 aliases:
   - /blog/日常書寫/20260223網頁架設學習歷程/
@@ -9,7 +8,6 @@ type: post
 cover:
   image: 網頁學習歷程.png
   alt: "網頁架設學習歷程"
-
 categories:
   - 日常札記
 tags:

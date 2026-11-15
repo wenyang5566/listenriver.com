@@ -6,8 +6,6 @@ draft: false
 aliases:
   - /blog/聆聽疼痛計畫/聆聽疼痛計畫胃痛/
 type: post
-image:
-
 categories:
   - 病痛經驗
 tags:

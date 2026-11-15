@@ -3,8 +3,6 @@ title: 工作手冊 03｜負面教材
 displayTitle: 負面教材
 seriesLabel: 工作手冊 03
 date: 2026-04-25
-featured: false
-description:
 draft: true
 type: post
 cover:
