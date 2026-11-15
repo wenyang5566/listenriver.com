@@ -2,12 +2,8 @@
 title: 〈髒血〉
 displayTitle: 〈髒血〉
 date: 2023-06-20
-description:
 draft: false
 type: post
-cover:
-  image:
-  alt:
 categories:
   - 病痛經驗
 tags:

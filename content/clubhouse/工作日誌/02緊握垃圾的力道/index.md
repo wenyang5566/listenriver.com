@@ -3,7 +3,6 @@ title: 工作日誌 02｜緊握垃圾的力道
 displayTitle: 緊握垃圾的力道
 seriesLabel: 工作日誌 02
 date: 2025-09-10
-description:
 draft: false
 type: post
 cover:

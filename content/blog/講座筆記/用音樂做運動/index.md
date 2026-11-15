@@ -1,7 +1,6 @@
 ---
 title: 用音樂做運動
 date: 2019-03-03 10:07:47+08:00
-description: ""
 draft: false
 aliases:
   - /blog/講座筆記/20190303用音樂做運動/
@@ -9,7 +8,6 @@ type: post
 cover:
   image: 用音樂做運動.png
   alt: "用音樂做運動"
-
 categories:
   - 閱讀筆記
 tags:

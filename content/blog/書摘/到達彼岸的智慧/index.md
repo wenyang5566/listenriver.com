@@ -1,7 +1,6 @@
 ---
 title: 書摘｜一行禪師講《心經》：到達彼岸的智慧
 date: 2022-05-17 11:07:47+08:00
-description: ""
 draft: false
 aliases:
   - /blog/閱讀書摘/心經/
@@ -9,7 +8,6 @@ type: post
 cover:
   image: 心經.jpg
   alt: "書摘｜一行禪師講《心經》：到達彼岸的智慧"
-
 categories:
   - 閱讀筆記
 tags:

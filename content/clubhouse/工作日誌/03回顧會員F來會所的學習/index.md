@@ -3,7 +3,6 @@ title: 工作日誌 03｜回顧會員F來會所的學習
 displayTitle: 回顧會員F來會所的學習
 seriesLabel: 工作日誌 03
 date: 2025-09-11
-description:
 draft: false
 type: post
 cover:

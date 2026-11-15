@@ -3,7 +3,6 @@ title: 工作日誌 04｜就業前準備
 displayTitle: 就業前準備
 seriesLabel: 工作日誌 04
 date: 2025-09-16
-description:
 draft: false
 type: post
 cover:

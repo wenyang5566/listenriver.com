@@ -1,7 +1,6 @@
 ---
 title: 開放式對話進階工作坊Day 2
 date: 2020-11-15
-description:
 draft: false
 aliases:
   - /blog/開放式對話/開放式對話進階工作坊_day2/
@@ -9,7 +8,6 @@ type: post
 cover:
   image: 0001.jpg
   alt: "開放式對話進階工作坊Day 2"
-
 categories:
   - 助人工作
 tags:

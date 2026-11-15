@@ -1,7 +1,6 @@
 ---
 title: 講座筆記｜創傷知情與兒少服務工作坊筆記
 date: 2021-04-27 10:07:47+08:00
-description: ""
 draft: false
 aliases:
   - /blog/創傷知情/講座筆記創傷知情與兒少服務工作坊/
@@ -9,7 +8,6 @@ type: post
 cover:
   image: 創傷知情工作坊2.jpg
   alt: "講座筆記｜創傷知情與兒少服務工作坊筆記"
-
 categories:
   - 助人工作
 tags:

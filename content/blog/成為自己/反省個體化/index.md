@@ -10,10 +10,8 @@ cover:
   image: 反省個體化.jpg
   alt: "反省個體化"
 featured: true
-
 categories:
   - 成為自己
-tags:
 ---
 好好重新思考&反省個體化和「關係」這件事，才發現自己仍然會有盲點，可能來自過去的習慣、依附、創傷或投射。
 

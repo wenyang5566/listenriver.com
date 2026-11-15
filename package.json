@@ -6,6 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
+    "preview": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/hugo-preview-local.ps1",
+    "build:local": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/hugo-build-local.ps1",
     "check:urls": "python scripts/url-guard.py check --site public --moves docs/taxonomy-url-moves.json",
     "build": "hugo --minify && npm run clean:pagefind && pagefind --site public && npm run check:pagefind-output",
     "clean:pagefind": "node scripts/clean-pagefind.mjs",

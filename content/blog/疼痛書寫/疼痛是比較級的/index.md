@@ -5,9 +5,6 @@ date: 2023-11-17
 description: 正是因為自己的痛苦屬於自己，他人的痛苦專屬他人，這個專屬特性是確定的、絕對的。我們才能在彼此之間，產生張力，產生意義。
 draft: false
 type: post
-cover:
-  image:
-  alt:
 categories:
   - 病痛經驗
 tags:

@@ -3,7 +3,6 @@ title: 正念的意義就在手中
 date: 2026-04-23
 description: 正念的意義在我的手中，穿越、此時此刻、彼時彼刻、素描的負形、互為主體、空白並非缺陷而是互補空間，有其意義，這些都幫助我去穿越。
 draft: false
-aliases:
 type: post
 cover:
   image: 正念的意義就在手中.jpg
