@@ -1,0 +1,66 @@
+{{- $pattern := .Get "match" | default "*.jpg" -}}
+{{- $label := .Get "label" | default "店內照片" -}}
+{{- $photos := .Page.Resources.Match $pattern -}}
+{{- with .Get "images" -}}
+{{- $photos = slice -}}
+{{- range split . "," -}}
+{{- with $.Page.Resources.GetMatch (trim . " ") -}}
+{{- $photos = $photos | append . -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if $photos -}}
+{{- if not (.Page.Store.Get "photo-rail-styles") -}}
+{{- .Page.Store.Set "photo-rail-styles" true -}}
+<style>
+.photo-rail { margin: 1.5em 0; min-width: 0; }
+.photo-rail__hint { display: flex; justify-content: space-between; align-items: center; gap: .5em; font-size: 14px; color: var(--secondary); margin-bottom: .5em; }
+.photo-rail__controls { display: flex; gap: 4px; }
+.photo-rail__controls[hidden] { display: none; }
+.photo-rail__controls button { width: 44px; height: 44px; border: 1px solid var(--border); border-radius: 50%; color: var(--primary); background: var(--entry); cursor: pointer; }
+.photo-rail__track { display: flex; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding-bottom: 10px; scrollbar-width: thin; }
+.photo-rail__track:focus-visible, .photo-rail__controls button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.photo-rail__item { flex: 0 0 auto; scroll-snap-align: start; display: block; box-shadow: none !important; }
+.post-content .photo-rail__item img { display: block; height: 340px; width: auto; max-width: 540px; object-fit: contain; margin: 0; border-radius: 4px; }
+@media (max-width: 640px) { .post-content .photo-rail__item img { height: 260px; max-width: 78vw; } }
+</style>
+{{- end -}}
+<section class="photo-rail" aria-label="{{ $label }}">
+  <div class="photo-rail__hint">
+    <span>{{ $label }} · 左右滑動，點圖看原圖</span>
+    <span class="photo-rail__controls" hidden>
+      <button type="button" data-direction="-1" aria-label="上一張照片">←</button>
+      <button type="button" data-direction="1" aria-label="下一張照片">→</button>
+    </span>
+  </div>
+  <div class="photo-rail__track" tabindex="0" role="region" aria-label="{{ $label }}，可左右捲動">
+    {{- range $index, $photo := $photos -}}
+    {{- if eq $photo.ResourceType "image" -}}
+    {{- $preview := $photo -}}
+    {{- if in (slice "image/jpeg" "image/png" "image/webp") $photo.MediaType.Type -}}
+    {{- $preview = $photo.Fit "1080x680 webp q82" -}}
+    {{- end -}}
+    <a class="photo-rail__item" href="{{ $photo.RelPermalink }}" aria-label="{{ $label }}第 {{ add $index 1 }} 張，查看原圖">
+      <img src="{{ $preview.RelPermalink }}" width="{{ $preview.Width }}" height="{{ $preview.Height }}" alt="{{ $label }}（{{ add $index 1 }}）" loading="lazy" decoding="async">
+    </a>
+    {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+<script>
+(() => {
+  const rail = document.currentScript.previousElementSibling;
+  const track = rail.querySelector('.photo-rail__track');
+  const controls = rail.querySelector('.photo-rail__controls');
+  controls.hidden = false;
+  controls.addEventListener('click', event => {
+    const button = event.target.closest('button');
+    if (!button) return;
+    const items = [...track.children];
+    const current = items.reduce((best, item, index) => Math.abs(item.offsetLeft - items[0].offsetLeft - track.scrollLeft) < Math.abs(items[best].offsetLeft - items[0].offsetLeft - track.scrollLeft) ? index : best, 0);
+    const next = Math.max(0, Math.min(items.length - 1, current + Number(button.dataset.direction)));
+    track.scrollTo({ left: items[next].offsetLeft - items[0].offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  });
+})();
+</script>
+{{- end -}}
